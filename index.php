@@ -1,32 +1,22 @@
 <?php
-  echo get_redirect_url('http://www.oschina.net/action/project/go?id=1089&p=home');
-
-  function get_redirect_url($url){
-    $redirect_url = null; 
-
-    $url_parts = @parse_url($url);
-    if (!$url_parts) return false;
-    if (!isset($url_parts['host'])) return false; //can't process relative URLs
-    if (!isset($url_parts['path'])) $url_parts['path'] = '/';
-
-    $sock = fsockopen($url_parts['host'], (isset($url_parts['port']) ? (int)$url_parts['port'] : 80), $errno, $errstr, 30);
-    if (!$sock) return false;
-
-    $request = "HEAD " . $url_parts['path'] . (isset($url_parts['query']) ? '?'.$url_parts['query'] : '') . " HTTP/1.1\r\n"; 
-    $request .= 'Host: ' . $url_parts['host'] . "\r\n"; 
-    $request .= "Connection: Close\r\n\r\n"; 
-    fwrite($sock, $request);
-    $response = '';
-    while(!feof($sock)) $response .= fread($sock, 8192);
-    fclose($sock);
-
-    if (preg_match('/^Location: (.+?)$/m', $response, $matches)){
-        if ( substr($matches[1], 0, 1) == "/" )
-            return $url_parts['scheme'] . "://" . $url_parts['host'] . trim($matches[1]);
-        else
-            return trim($matches[1]);
-
-    } else {
-        return false;
-    }
+  function getrealurl($url){
+      $header = @get_headers($url,1);  //默认第二个参数0，可选1，返回关联数组
+      if(!$header){
+          exit('无法打开此网站'.$url);
+      }
+      //var_dump($header);
+      if (strpos($header[0],'301') || strpos($header[0],'302')) {
+          if(is_array($header['Location'])) {
+              return $header['Location'][count($header['Location'])-1];
+          }else{
+              return $header['Location'];
+          }
+      }else {
+          return $url;
+      }
   }
+
+  $url = 'http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000930184&appid=eds&time=2019-06-2815:54:07&sign=0f5565e3fa910d1bd23959ebe4c7d172';
+  $url = getrealurl($url);
+  echo '真实的url为：'.$url;
+?>  
