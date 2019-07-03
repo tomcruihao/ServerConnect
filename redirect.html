@@ -4,6 +4,7 @@
   <meta charset="utf-8">
 </head>
 <body>
+  <button id="btn" class='btn' onclick='window.open("http://stackoverflow.com", "_blank");'>Open Google search</button>
   <a href="http://archive.nstl.gov.cn/Archives/search.do?action=quickSearch&searchText=10.1007/s002360050037&dbname=All&searchType=fuzzy&field1=DOI" target="_blank">
     Test
   </a>
@@ -12,8 +13,10 @@
 </html>
 <script src="https://gss.ebscohost.com/chchang/lib/jquery.js"></script>
 <script type="text/javascript">
-  var wnd = window.open("http://stackoverflow.com","width=350,height=250");
-  setTimeout(function() {
-    wnd.close();
-  }, 1000);
+  let btn = document.getElementById('btn');
+  btn.onclick();
+  // var wnd = window.open("http://stackoverflow.com","width=350,height=250");
+  // setTimeout(function() {
+  //   wnd.close();
+  // }, 1000);
 </script>
