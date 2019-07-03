@@ -1,7 +1,7 @@
 <?php
   header("Access-Control-Allow-Origin: *");
 
-  $getOriginalUrl = $_GET['oriurl'];
+  // $getOriginalUrl = $_GET['oriurl'];
 
   function getrealurl($url){
     $header = @get_headers($url,1);  //默认第二个参数0，可选1，返回关联数组
@@ -20,11 +20,13 @@
     }
   }
 
-  // $url = 'http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000930184&appid=eds&time=2019-06-2815:54:07&sign=0f5565e3fa910d1bd23959ebe4c7d172';
-  $url = getrealurl($getOriginalUrl);
+  $url = 'http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000930184&appid=eds&time=2019-06-2815:54:07&sign=0f5565e3fa910d1bd23959ebe4c7d172';
+  $url = getrealurl($url);
   $url_extract = explode("=",$url);
+
+  echo file_get_contents("http://opac.lib.nankai.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1]);
   // echo $url_extract[1];
-  header("Location: http://opac.lib.nankai.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1]);
+  // header("Location: http://opac.lib.nankai.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1]);
 
   // http://opac.lib.nankai.edu.cn/opac/ajax_item.php?marc_no=44737544646d47744264694d7350795a725538426f413d3d
   // echo '真实的url为：'.$url;
