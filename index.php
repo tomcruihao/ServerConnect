@@ -18,5 +18,7 @@
 
   $url = 'http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000930184&appid=eds&time=2019-06-2815:54:07&sign=0f5565e3fa910d1bd23959ebe4c7d172';
   $url = getrealurl($url);
+  $url_extract = explode("=",$url);
+  print_r($url_extract);
   echo '真实的url为：'.$url;
-?>  
+?>
