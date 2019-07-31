@@ -17,11 +17,15 @@
 
   $sign = md5($stringBinding);
   echo $connectingUrl.'?marc_no='.$marcNum.'&appid='.$appID.'&time='.$timestamp.'&sign='.$sign;
+
+
+  // http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000995368&appid=eds&time=2019-07-31 07:51:01&sign=d01753a092bfec9308761d76b65fd276
+
   // return `${connectUrl}?marc_no=${marcNum}&appid=${appID}&time=${timestamp}&sign=${sign}`;
 
   function getCurrentTime() {
     $currentTime = time();
-    return date("Y-m-d h:i:s", $currentTime);
+    return date("Y-m-dh:i:s", $currentTime);
   }
 
 
