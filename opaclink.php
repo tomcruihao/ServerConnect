@@ -16,7 +16,7 @@
   echo $stringBinding;
 
   $sign = md5($stringBinding);
-  echo $connectingUrl.'?marc_no='.$marcNum.'&appid='$appID.'&time='.$timestamp.'&sign='.$sign;
+  echo $connectingUrl.'?marc_no='.$marcNum.'&appid='.$appID.'&time='.$timestamp.'&sign='.$sign;
   // return `${connectUrl}?marc_no=${marcNum}&appid=${appID}&time=${timestamp}&sign=${sign}`;
 
   function getCurrentTime() {
