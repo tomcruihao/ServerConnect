@@ -14,11 +14,14 @@
 
 
   $timestamp = getCurrentTime();
-  $stringBinding = marcNum.timestamp.appKey;
+  $stringBinding = $marcNum.$timestamp.$appKey;
 
 
   $sign = md5($stringBinding);
   echo $connectingUrl.'?marc_no='.$marcNum.'&appid='.$appID.'&time='.$timestamp.'&sign='.$sign;
+
+
+  http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000930184&appid=eds&time=2019-07-3115:49:40&sign=056edfadbaae78783c447481985fb744
 
   // return `${connectUrl}?marc_no=${marcNum}&appid=${appID}&time=${timestamp}&sign=${sign}`;
 
