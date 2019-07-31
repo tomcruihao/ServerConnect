@@ -24,7 +24,7 @@
 
   function getCurrentTime() {
     $currentTime = time();
-    return trim(date("Y-m-dh:i:s", $currentTime), '');
+    return trim(date("Y-m-d H:i:s", $currentTime), '');
   }
 
 
