@@ -12,12 +12,16 @@
 
 
   $timestamp = getCurrentTime();
-  echo $timestamp;
   $stringBinding = marcNum.timestamp.appKey;
+  echo $stringBinding;
+
+  $sign = md5($stringBinding);
+  echo $connectingUrl.'?marc_no='.$marcNum.'&appid='$appID.'&time='.$timestamp.'&sign='.$sign;
+  // return `${connectUrl}?marc_no=${marcNum}&appid=${appID}&time=${timestamp}&sign=${sign}`;
 
   function getCurrentTime() {
     $currentTime = time();
-    return date("d-m-Y h:i:s", $currentTime);
+    return date("Y-m-d h:i:s", $currentTime);
   }
 
 
