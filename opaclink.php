@@ -12,7 +12,7 @@
 
 
   $timestamp = getCurrentTime();
-  echo timestamp;
+  echo $timestamp;
   $stringBinding = marcNum.timestamp.appKey;
 
   function getCurrentTime() {
