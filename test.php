@@ -31,7 +31,7 @@
 
   function getUnivInfo() {
     // json object.
-    $contents = '{"firstName":"John", "lastName":"Doe"}';
+    $contents = '{"firstName":"John", "lastName":[{"test": "est1"}]}';
 
     // Option 1: through the use of an array.
     $jsonArray = json_decode($contents,true);
@@ -45,10 +45,10 @@
     $jsonObj = json_decode($contents);
 
     $firstName = $jsonObj->$key;
-    // $univInfo = [
+    // $univInfo = {"universities": [
     //   {"id": "s1213459", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.nankai.edu.cn/api/itemgo.php"},
     //   {"id": "29", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.hit.edu.cn/api/itemgo.php"}
-    // ];
+    // ]};
 
     // foreach($json->universities as $row) {
     //   foreach($row as $key => $val) {
