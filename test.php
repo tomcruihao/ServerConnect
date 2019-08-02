@@ -30,10 +30,10 @@
   }
 
   function getUnivInfo() {
-    $univInfo = {"universities":[
+    $univInfo = [
       {"id": "s1213459", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.nankai.edu.cn/api/itemgo.php"},
       {"id": "29", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.hit.edu.cn/api/itemgo.php"}
-    ]};
+    ];
 
     // foreach($json->universities as $row) {
     //   foreach($row as $key => $val) {
