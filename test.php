@@ -31,8 +31,9 @@
 
   function getUnivInfo() {
     // json object.
-    $contents = '{"firstName":"John", "lastName":[{"test": "est1"}]}';
-
+    $contents = '{"universities": [{"id": "s1213459", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.nankai.edu.cn/api/itemgo.php"},
+      {"id": "29", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.hit.edu.cn/api/itemgo.php"}
+    ]}';
     // Option 1: through the use of an array.
     $jsonArray = json_decode($contents,true);
 
