@@ -30,10 +30,21 @@
   }
 
   function getUnivInfo() {
-    $univInfo = [
-      {"id": "s1213459", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.nankai.edu.cn/api/itemgo.php"},
-      {"id": "29", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.hit.edu.cn/api/itemgo.php"}
+    $test = [
+      {"Name":"Adam","Post": "Assistant Manager",
+       "Address":{"Street":"1000 Brooklyn Meadow","City":"Denver"},
+       "Email":"adam@gmail.com", "Phone": "+47349900047"},
+      {"Name":"Bob","Post": "Manager",
+       "Address":{"Street":"23 Sharp Crescent","City":"Bristol"},
+       "Email":"bob@gmail.com", "Phone":"+479975047"},
+      {"Name":"Kate","Post": "CEO",
+       "Address":{"Street":"7 Yuki Street","City":"Tokyo"},
+       "Email":"kate@gmail.com", "Phone": "+47377800047"}
     ];
+    // $univInfo = [
+    //   {"id": "s1213459", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.nankai.edu.cn/api/itemgo.php"},
+    //   {"id": "29", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.hit.edu.cn/api/itemgo.php"}
+    // ];
 
     // foreach($json->universities as $row) {
     //   foreach($row as $key => $val) {
