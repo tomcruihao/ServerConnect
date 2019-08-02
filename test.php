@@ -22,6 +22,8 @@
 
   echo $connectingUrl.'?marc_no='.$marcNum.'&appid='.$appID.'&time='.$timestamp.'&sign='.$sign;
 
+  getUnivInfo();
+
   // return `${connectUrl}?marc_no=${marcNum}&appid=${appID}&time=${timestamp}&sign=${sign}`;
 
   function getCurrentTime() {
