@@ -29,19 +29,19 @@
     return trim(date("Y-m-dH:i:s", $currentTime), ' ');
   }
 
-  function getUnivInfo() {
-    $univInfo = {"universities":[
-      {'id': 's1213459', 'appID': 'eds', 'appKey': 'z18gEZ0bzPMeGpai', "connectingUrl": 'http://opac.lib.nankai.edu.cn/api/itemgo.php'},
-      {'id': '29', 'appID': 'eds', 'appKey': 'z18gEZ0bzPMeGpai', 'connectingUrl': 'http://opac.lib.hit.edu.cn/api/itemgo.php'}
-    ]};
+  // function getUnivInfo() {
+  //   $univInfo = {"universities":[
+  //     {'id': 's1213459', 'appID': 'eds', 'appKey': 'z18gEZ0bzPMeGpai', "connectingUrl": 'http://opac.lib.nankai.edu.cn/api/itemgo.php'},
+  //     {'id': '29', 'appID': 'eds', 'appKey': 'z18gEZ0bzPMeGpai', 'connectingUrl': 'http://opac.lib.hit.edu.cn/api/itemgo.php'}
+  //   ]};
 
-    foreach($json->universities as $row) {
-      foreach($row as $key => $val) {
-        echo $key . ': ' . $val;
-        echo '<br>';
-      }
-    }
-  }
+  //   foreach($json->universities as $row) {
+  //     foreach($row as $key => $val) {
+  //       echo $key . ': ' . $val;
+  //       echo '<br>';
+  //     }
+  //   }
+  // }
   // $getOriginalUrl = $_GET['oriurl'];
 
   // function getrealurl($url){
