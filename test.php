@@ -39,12 +39,12 @@
     //   {"id": "29", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.hit.edu.cn/api/itemgo.php"}
     // ]};
 
-    // foreach($json->universities as $row) {
-    //   foreach($row as $key => $val) {
-    //     echo $key . ': ' . $val;
-    //     echo '<br>';
-    //   }
-    // }
+    foreach($json->universities as $row) {
+      foreach($row as $key => $val) {
+        echo $key . ': ' . $val;
+        echo '<br>';
+      }
+    }
 
     //     // Option 1: through the use of an array.
     // $jsonArray = json_decode($contents,true);
