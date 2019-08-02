@@ -44,7 +44,7 @@
     // ]};
 
 
-    foreach ($data as $emp) {
+    foreach ($univInfo as $emp) {
       echo $emp['id']."<br/>";
     }
     // foreach($json->universities as $row) {
