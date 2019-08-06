@@ -35,9 +35,9 @@
 
     curl_close($ch);
 
-    // echo "Original URL:   " . $url . "\n";
-    echo "Redirected URL: " . $redirectedUrl . "\n";
     return $redirectedUrl;
+
+
     // $curl = curl_init();
     // curl_setopt_array($curl, array(    
     //   CURLOPT_URL => $url,
@@ -63,11 +63,11 @@
 
   // $url = 'http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000930184&appid=eds&time=2019-06-2815:54:07&sign=0f5565e3fa910d1bd23959ebe4c7d172';
   $url = newGetrealurl($getOriginalUrl);
-  echo $url;
-  $url_extract = explode("=",$url);
-  echo $url_extract[1];
 
-  echo file_get_contents("http://opac.lib.hit.edu.cn/opac/ajax_item.php??marc_no=".$url_extract[1]);
+  $url_extract = explode("=",$url);
+
+
+  echo file_get_contents("http://opac.lib.hit.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1]);
 
 
   // echo $url_extract[1];
