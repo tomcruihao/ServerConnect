@@ -61,12 +61,12 @@
 
   function getContent($url) {
     $ch1 = curl_init();
-    curl_setopt($ch1,CURLOPT_URL,$url);
-    curl_setopt($ch1,CURLOPT_RETURNTRANSFER,1);
-    curl_setopt($ch1,CURLOPT_CONNECTTIMEOUT, 4);
-    $json = curl_exec($ch1);
-    curl_close($ch1);
-    print_r($json);
+    // curl_setopt($ch1,CURLOPT_URL,$url);
+    // curl_setopt($ch1,CURLOPT_RETURNTRANSFER,1);
+    // curl_setopt($ch1,CURLOPT_CONNECTTIMEOUT, 4);
+    // $json = curl_exec($ch1);
+    // curl_close($ch1);
+    // print_r($json);
   }
 
   // $url = 'http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000930184&appid=eds&time=2019-06-2815:54:07&sign=0f5565e3fa910d1bd23959ebe4c7d172';
