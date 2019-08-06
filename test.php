@@ -65,10 +65,9 @@
   $url = newGetrealurl($getOriginalUrl);
 
   $url_extract = explode("=",$url);
-
+  echo "http://opac.lib.hit.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1];
 
   echo file_get_contents("http://opac.lib.hit.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1]);
-
 
   // echo $url_extract[1];
   // header("Location: http://opac.lib.nankai.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1]);
