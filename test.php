@@ -3,6 +3,7 @@
   header("Content-Type:text/html; charset=utf-8");
 
   $getOriginalUrl = $_GET['oriurl'];
+  echo $getOriginalUrl;
 
   function getrealurl($url){
     $header = @get_headers($url,1);  //默认第二个参数0，可选1，返回关联数组
@@ -32,7 +33,15 @@
     $header = explode("\n", curl_exec($curl));
     curl_close($curl);
 
-    print_r($header);
+    if (strpos($header[0],'301') || strpos($header[0],'302')) {
+      if(is_array($header['Location'])) {
+        return $header['Location'][count($header['Location'])-1];
+      } else {
+        return $header['Location'];
+      }
+    } else {
+      return $url;
+    }
   }
 
 
