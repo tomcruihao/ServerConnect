@@ -22,7 +22,7 @@
   //   }
   // }
 
-  function newGetrealurl($url) {
+  function getrealurl($url) {
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -59,7 +59,20 @@
     // }
   }
 
+  function getContent($url) {
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+    curl_setopt($ch,CURLOPT_CONNECTTIMEOUT, 4);
+    $json = curl_exec($ch);
+    if(!$json) {
+        echo curl_error($ch);
+    }
+    curl_close($ch);
+    print_r(json_decode($json));
 
+    return $redirectedUrl;
+  }
 
   // $url = 'http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000930184&appid=eds&time=2019-06-2815:54:07&sign=0f5565e3fa910d1bd23959ebe4c7d172';
   $url = newGetrealurl($getOriginalUrl);
@@ -67,7 +80,7 @@
   $url_extract = explode("=",$url);
   echo "http://opac.lib.hit.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1];
 
-  echo file_get_contents("http://opac.lib.hit.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1]);
+  echo getContent("http://opac.lib.hit.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1]);
 
   // echo $url_extract[1];
   // header("Location: http://opac.lib.nankai.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1]);
