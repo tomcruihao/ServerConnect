@@ -35,6 +35,8 @@
 
     curl_close($ch);
 
+    // echo "Original URL:   " . $url . "\n";
+    echo "Redirected URL: " . $redirectedUrl . "\n";
     return $redirectedUrl;
     // $curl = curl_init();
     // curl_setopt_array($curl, array(    
