@@ -5,6 +5,7 @@
 
   function main() {
     $univInfo = getJson($jsonFilePath);
+    print_r($univInfo);
     
     // get Univ detail
     $appID = null;
