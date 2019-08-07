@@ -3,9 +3,7 @@
   $jsonFilePath = './test.json';
   $SID = $_GET['sid'];
 
-  $getUnivInfo = getJson($jsonFilePath);
-  
-  print_r($getUnivInfo);
+  $univInfo = getJson($jsonFilePath);
 
   // get Univ detail
   $appID = null;
