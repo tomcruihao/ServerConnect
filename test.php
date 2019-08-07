@@ -4,6 +4,9 @@
   $SID = $_GET['sid'];
 
   function main() {
+    echo $jsonFilePath;
+    echo $SID;
+
     $univInfo = getJson($jsonFilePath);
     print_r($univInfo);
     
