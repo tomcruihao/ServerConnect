@@ -2,10 +2,11 @@
 
   $jsonFilePath = './test.json';
   $SID = $_GET['sid'];
-  echo $jsonFilePath.' and '.$SID;
 
   $getUnivInfo = getJson($jsonFilePath);
   
+  print_r($getUnivInfo);
+
   // get Univ detail
   $appID = null;
   $appKey = null;
