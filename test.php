@@ -10,7 +10,7 @@ print_r(getJson($jsonFilePath));
 function getJson($path) {
   echo $path;
   $jsonRawData = file_get_contents($path);
-  $jsonData = json_decode($json, true);
+  $jsonData = json_decode($jsonRawData, true);
   print_r($jsonData);
   return $jsonData;
 }
