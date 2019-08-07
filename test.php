@@ -8,8 +8,10 @@ $jsonFilePath = './test.json';
 print_r(getJson($jsonFilePath));
 
 function getJson($path) {
+  echo $path;
   $jsonRawData = file_get_contents($path);
   $jsonData = json_decode($json, true);
+  print_r($jsonData);
   return $jsonData;
 }
 
