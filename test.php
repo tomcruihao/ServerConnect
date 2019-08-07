@@ -9,7 +9,8 @@ print_r(getJson($jsonFilePath));
 
 function getJson($path) {
   $jsonRawData = file_get_contents($path);
-  $json_data = json_decode($json, true);
+  $jsonData = json_decode($json, true);
+  return $jsonData;
 }
 
 // function writeJsonFile() {
