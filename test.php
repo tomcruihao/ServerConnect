@@ -28,7 +28,7 @@
   function getJson($path) {
     $getJsonData = file_get_contents($path);
     $decodeJsonData = json_decode($getJsonData, true);
-
+    print_r($decodeJsonData);
     return $decodeJsonData;
   }
 
