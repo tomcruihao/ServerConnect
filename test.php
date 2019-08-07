@@ -1,19 +1,31 @@
 <?php
 
-$jsonFilePath = './test.json';
+  $jsonFilePath = './test.json';
+  $SID = $_GET['sid'];
 
+  function main() {
+    $getUnivInfo = getJson($jsonFilePath);
+    
+    // get Univ detail
+    $appID, $appKey, $connectingUrl;
 
+    foreach ($univInfo as $univ) {
+      if(strcasecmp($univ['id'], $SID)== 0){
+        $appID = $univ['appID'];
+        $appKey = $univ['appID'];
+        $connectingUrl = $univ['appID'];
+        break;
+      }
+    }
+    echo 'AppID='.$appID.'</br>AppKey='.$appKey.'</br>ConnectingUrl='.$connectingUrl;
+  }
 
-//Print data
-print_r(getJson($jsonFilePath));
+  function getJson($path) {
+    $getJsonData = file_get_contents($path);
+    $decodeJsonData = json_decode($getJsonData, true);
 
-function getJson($path) {
-  echo $path;
-  $jsonRawData = file_get_contents($path);
-  $jsonData = json_decode($jsonRawData, true);
-  print_r($jsonData);
-  return $jsonData;
-}
+    return $decodeJsonData;
+  }
 
 // function writeJsonFile() {
 //   while($row=mysql_fetch_array($result)) { 
@@ -29,5 +41,5 @@ function getJson($path) {
 //   fwrite($fp, json_encode($response));
 //   fclose($fp);  
 // }
-
+  main();
 ?>
