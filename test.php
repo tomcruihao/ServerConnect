@@ -1,37 +1,29 @@
 <?php
 
   $jsonFilePath = './test.json';
-  $sid = $_GET['sid'];
+  $SID = $_GET['sid'];
 
-  function main($path, $sid) {
-    echo 'jsonFilePath='.$jsonFilePath;
-    echo $SID;
+  $getUnivInfo = getJson($jsonFilePath);
+  
+  // get Univ detail
+  $appID = null;
+  $appKey = null;
+  $connectingUrl = null;
 
-    $univInfo = getJson($jsonFilePath);
-    print_r($univInfo);
-    
-    // get Univ detail
-    $appID = null;
-    $appKey = null;
-    $connectingUrl = null;
-
-    foreach ($univInfo as $univ) {
-      echo $univ['id'];
-      echo strcasecmp($univ['id'], $SID);
-      if(strcasecmp($univ['id'], $SID) == 0) {
-        $appID = $univ['appID'];
-        $appKey = $univ['appID'];
-        $connectingUrl = $univ['appID'];
-        break;
-      }
+  foreach ($univInfo as $univ) {
+    if(strcasecmp($univ['id'], $SID) == 0) {
+      $appID = $univ['appID'];
+      $appKey = $univ['appID'];
+      $connectingUrl = $univ['appID'];
+      break;
     }
-    echo 'AppID='.$appID.'</br>AppKey='.$appKey.'</br>ConnectingUrl='.$connectingUrl;
   }
+  echo 'AppID='.$appID.'</br>AppKey='.$appKey.'</br>ConnectingUrl='.$connectingUrl;
 
   function getJson($path) {
     $getJsonData = file_get_contents($path);
     $decodeJsonData = json_decode($getJsonData, true);
-    print_r($decodeJsonData);
+
     return $decodeJsonData;
   }
 
@@ -49,5 +41,4 @@
 //   fwrite($fp, json_encode($response));
 //   fclose($fp);  
 // }
-  main($jsonFilePath, $sid);
 ?>
