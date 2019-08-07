@@ -1,10 +1,10 @@
 <?php
   header("Access-Control-Allow-Origin: *");
   header("Content-Type:text/html; charset=utf-8");
-
   date_default_timezone_set('Asia/Taipei');
 
-  $jsonFilePath = './test.json';
+
+  $jsonFilePath = './univ.json';
 
   $sid = $_GET['sid'];
   $marcNum = $_GET['marc'];
