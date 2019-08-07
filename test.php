@@ -12,6 +12,8 @@
     $connectingUrl = null;
 
     foreach ($univInfo as $univ) {
+      echo $univ['id'];
+      echo strcasecmp($univ['id'], $SID);
       if(strcasecmp($univ['id'], $SID) == 0) {
         $appID = $univ['appID'];
         $appKey = $univ['appID'];
