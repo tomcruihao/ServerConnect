@@ -4,7 +4,7 @@
   $SID = $_GET['sid'];
 
   function main() {
-    $getUnivInfo = getJson($jsonFilePath);
+    $univInfo = getJson($jsonFilePath);
     
     // get Univ detail
     $appID = null;
