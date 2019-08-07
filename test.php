@@ -1,9 +1,9 @@
 <?php
 
   $jsonFilePath = './test.json';
-  $SID = $_GET['sid'];
+  $sid = $_GET['sid'];
 
-  function main() {
+  function main($path, $sid) {
     echo 'jsonFilePath='.$jsonFilePath;
     echo $SID;
 
@@ -49,5 +49,5 @@
 //   fwrite($fp, json_encode($response));
 //   fclose($fp);  
 // }
-  main();
+  main($jsonFilePath, $sid);
 ?>
