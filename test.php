@@ -1,12 +1,30 @@
 <?php
 
-// Get JSON from file
-$json = file_get_contents('./test.json');
+$jsonFilePath = './test.json';
 
-//Decode JSON
-$json_data = json_decode($json, true);
+
 
 //Print data
-print_r($json_data);
+print_r(getJson($jsonFilePath));
+
+function getJson($path) {
+  $jsonRawData = file_get_contents($path);
+  $json_data = json_decode($json, true);
+}
+
+// function writeJsonFile() {
+//   while($row=mysql_fetch_array($result)) { 
+//     $title=$row['title']; 
+//     $url=$row['url']; 
+
+//     $posts[] = array('title'=> $title, 'url'=> $url);
+//   } 
+
+//   $response['posts'] = $posts;
+
+//   $fp = fopen('results.json', 'w');
+//   fwrite($fp, json_encode($response));
+//   fclose($fp);  
+// }
 
 ?>
