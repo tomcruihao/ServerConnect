@@ -7,17 +7,19 @@
     $getUnivInfo = getJson($jsonFilePath);
     
     // get Univ detail
-    $appID, $appKey, $connectingUrl;
+    $appID = null;
+    $appKey = null;
+    $connectingUrl = null;
 
-    foreach ($univInfo as $univ) {
-      if(strcasecmp($univ['id'], $SID)== 0){
-        $appID = $univ['appID'];
-        $appKey = $univ['appID'];
-        $connectingUrl = $univ['appID'];
-        break;
-      }
-    }
-    echo 'AppID='.$appID.'</br>AppKey='.$appKey.'</br>ConnectingUrl='.$connectingUrl;
+    // foreach ($univInfo as $univ) {
+    //   if(strcasecmp($univ['id'], $SID)== 0){
+    //     $appID = $univ['appID'];
+    //     $appKey = $univ['appID'];
+    //     $connectingUrl = $univ['appID'];
+    //     break;
+    //   }
+    // }
+    // echo 'AppID='.$appID.'</br>AppKey='.$appKey.'</br>ConnectingUrl='.$connectingUrl;
   }
 
   function getJson($path) {
