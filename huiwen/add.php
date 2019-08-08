@@ -24,6 +24,7 @@
     $newItem->appID = $appKey;
     $newItem->appKey = $appID;
     $newItem->connectingUrl = $connectUrl;
+    echo $newItem;
     array_push($decodeJsonData, $newItem);
     echo json_encode($decodeJsonData, JSON_NUMERIC_CHECK);
   }
