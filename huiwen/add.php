@@ -19,7 +19,7 @@
     }
   }
 
-  if(!checkExist) {
+  if(!$checkExist) {
     $newItem = array('id' => $sid,'appKey' => $appKey, 'appID' => $appID, 'connectUrl' => $connectUrl);
     array_push($decodeJsonData, $newItem);
     echo json_encode($decodeJsonData, JSON_NUMERIC_CHECK);
