@@ -19,18 +19,18 @@
     }
   }
 
-  if(!checkExist) {
-    $newItem->id = $sid;
-    $newItem->appID = $appKey;
-    $newItem->appKey = $appID;
-    $newItem->connectingUrl = $connectUrl;
-    echo $newItem;
-    array_push($decodeJsonData, $newItem);
-    echo json_encode($decodeJsonData, JSON_NUMERIC_CHECK);
-  }
+  // if(!checkExist) {
+  //   $newItem->id = $sid;
+  //   $newItem->appID = $appKey;
+  //   $newItem->appKey = $appID;
+  //   $newItem->connectingUrl = $connectUrl;
+  //   echo $newItem;
+  //   array_push($decodeJsonData, $newItem);
+  //   echo json_encode($decodeJsonData, JSON_NUMERIC_CHECK);
+  // }
 
 
   // return json value
-  // $data = array('appKey' => $appKey, 'appID' => $appID, 'connectUrl' => $connectUrl);
-  // echo json_encode($data, JSON_NUMERIC_CHECK);
+  $data = array('sid' => $sid,'appKey' => $appKey, 'appID' => $appID, 'connectUrl' => $connectUrl);
+  echo json_encode($data, JSON_NUMERIC_CHECK);
 ?>
