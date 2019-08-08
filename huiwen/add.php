@@ -21,7 +21,7 @@
 
   if(!$checkExist) {
     // create an obj and attend to original json
-    $newItem = array('id' => strval($sid),'appKey' => strval($appKey), 'appID' => strval($appID), 'connectUrl' => strval($connectUrl));
+    $newItem = array('id' => (string)$sid,'appKey' => (string)$appKey, 'appID' => (string)$appID, 'connectUrl' => (string)$connectUrl);
     array_push($decodeJsonData, $newItem);
 
     // rewrite the file
@@ -30,5 +30,6 @@
     // return result
     $data = array('result' => true, 'msg' => 'success');
     echo json_encode($data, JSON_NUMERIC_CHECK);
+    echo json_encode($decodeJsonData, JSON_NUMERIC_CHECK);
   }
 ?>
