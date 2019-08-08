@@ -29,7 +29,10 @@
 
     // return result
     $data = array('result' => true, 'msg' => 'success');
-    // echo json_encode($data, JSON_NUMERIC_CHECK);
-    echo json_encode($decodeJsonData, JSON_NUMERIC_CHECK);
+    echo json_encode($data, JSON_NUMERIC_CHECK);
+    // echo json_encode($decodeJsonData, JSON_NUMERIC_CHECK);
+  } else {
+    $data = array('result' => false, 'msg' => 'Duplicate to add');
+    echo json_encode($data, JSON_NUMERIC_CHECK);
   }
 ?>
