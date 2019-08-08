@@ -8,18 +8,44 @@
 </style>
 <body>
   <div id="addNewUniv">
-    <input type="text" v-model="appKey">
-    <input type="text" v-model="appID">
-    <input type="text" v-model="connectUrl">
-    <button @click="sentToServer()">Sent</button>
-    <div>{{result}}</div>
+    <h1>Add Huiwen Connect Info</h1>
+    <h3>Please Fill All Blank!</h3>
+    <div class="row">
+      <div class="title">
+        SID(The facility ID on EBSCO):
+      </div>
+      <input type="text" v-model="sid">
+    </div>
+    <div class="row">
+      <div class="title">
+        App Key:
+      </div>
+      <input type="text" v-model="appKey">
+    </div>
+    <div class="row">
+      <div class="title">
+        App ID:
+      </div>
+      <input type="text" v-model="appID">
+    </div>
+    <div class="row">
+      <div class="title">
+        The OPAC URL(Only Domain):
+      </div>
+      <input type="text" v-model="connectUrl" placeholder="example: http://XXX.XXX.cn">
+    </div>
+    <div class="row">
+      <div class="msg">{{result}}</div>
+      <button @click="sentToServer()">Sent</button>
+    </div>    
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="../lib/jquery.js"></script>
-  <script type="text/javascript">    
+  <script type="text/javascript">
     new Vue({
       el:'#addNewUniv',
       data: {
+        sid: '',
         appKey: '',
         appID: '',
         connectUrl: '',
@@ -27,38 +53,62 @@
       },
       methods:{
         sentToServer: function() {
-          $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/huiwen/add.php',
-            type: 'POST',
-            data: {
-              appKey: this.appKey,
-              appID: this.appID,
-              connectUrl: this.connectUrl
-            },
-            error: function(jqXHR, exception) {
-              //use url variable here
-              console.log(jqXHR);
-              console.log(exception);
-            },
-            success: function(res) {
-              console.log(res);
-              this.result = 'success';
-            }
-          });
+          if (this.sid !== '' && this.appKey !== '' && this.appID !== '' && this.connectUrl !== '') {
+            let self = this
+            $.ajax({
+              url: 'https://gss.ebscohost.com/chchang/ServerConnect/huiwen/add.php',
+              type: 'POST',
+              data: {
+                sid: this.sid,
+                appKey: this.appKey,
+                appID: this.appID,
+                connectUrl: this.connectUrl + '/api/itemgo.php'
+              },
+              error: function(jqXHR, exception) {
+                //use url variable here
+                console.log(jqXHR);
+                console.log(exception);
+              },
+              success: function(res) {
+                self.result = 'success';
+              }
+            });
+          }
         }
       }
     });
-    // new Vue({
-    //   el: '#example-6',
-    //   data: {
-    //     selected: 'A',
-    //     options: [
-    //       { text: 'One', value: 'A' },
-    //       { text: 'Two', value: 'B' },
-    //       { text: 'Three', value: 'C' }
-    //     ]
-    //   }
-    // })
   </script>
+  <style>
+    h3 {
+      color: #0000ff;
+    }
+    input[type="text"] {
+      width: 300px;
+      height: 30px;
+      border-radius: 10px;
+      border: 2px solid #cccccc;
+    }
+    input:focus, textarea:focus, select:focus, button {
+      outline: none;
+    }
+    button {
+      width: 80px;
+      height: 30px;
+      border-radius: 10px;
+      background-color: #4e73df;
+      color: #ffffff;
+    }
+    .row {
+      padding: 5px 0px;
+      display: flex;
+      align-items: center;
+    }
+    .row > .title {
+      width: 250px;
+    }
+    .row > .msg {
+      width: 470px;
+    }
+  </style>
 </body>
 </html>
