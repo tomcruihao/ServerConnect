@@ -20,8 +20,15 @@
   }
 
   if(!$checkExist) {
+    // create an obj and attend to original json
     $newItem = array('id' => strval($sid),'appKey' => strval($appKey), 'appID' => strval($appID), 'connectUrl' => strval($connectUrl));
     array_push($decodeJsonData, $newItem);
-    echo json_encode($decodeJsonData, JSON_NUMERIC_CHECK);
+
+    // rewrite the file
+    file_put_contents('./univ.json', json_encode($decodeJsonData, JSON_NUMERIC_CHECK));
+
+    // return result
+    $data = array('result' => true, 'msg' => 'success');
+    echo json_encode($data, JSON_NUMERIC_CHECK);
   }
 ?>

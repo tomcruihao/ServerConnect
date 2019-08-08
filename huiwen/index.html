@@ -70,7 +70,9 @@
                 console.log(exception);
               },
               success: function(res) {
-                self.result = 'success';
+                if(res.result) {
+                  self.result = res.msg;
+                }
               }
             });
           }
