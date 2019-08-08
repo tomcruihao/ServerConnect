@@ -20,15 +20,8 @@
   }
 
   if(!$checkExist) {
-    $newItem = array('id' => $sid,'appKey' => $appKey, 'appID' => $appID, 'connectUrl' => $connectUrl);
+    $newItem = array('id' => strval($sid,'appKey') => strval($appKey), 'appID' => strval($appID), 'connectUrl' => strval($connectUrl));
     array_push($decodeJsonData, $newItem);
     echo json_encode($decodeJsonData, JSON_NUMERIC_CHECK);
-  } else {
-    // return json value
-    $data = array('id' => $sid,'appKey' => $appKey, 'appID' => $appID, 'connectUrl' => $connectUrl);
-    echo json_encode($data, JSON_NUMERIC_CHECK);
   }
-
-
-
 ?>
