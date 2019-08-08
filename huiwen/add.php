@@ -12,7 +12,7 @@
 
   $checkExist = false;
 
-  foreach ($getJsonData as $univ) {
+  foreach ($decodeJsonData as $univ) {
     if(strcasecmp($univ['id'], $sid) == 0) {
       $checkExist = true;
       break;
