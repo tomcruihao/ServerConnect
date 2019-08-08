@@ -5,6 +5,6 @@
   $appKey = $_POST['appKey'];
   $appID = $_POST['appID'];
   $connectUrl = $_POST['connectUrl'];
-  $data = array('appKey' => $appKey, 'appID' => $appID, 'connectUrl' => $connectUrl), JSON_NUMERIC_CHECK;
-  echo json_encode($data);
+  $data = array('appKey' => $appKey, 'appID' => $appID, 'connectUrl' => $connectUrl);
+  echo json_encode($data, JSON_NUMERIC_CHECK);
 ?>
