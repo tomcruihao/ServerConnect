@@ -15,6 +15,7 @@
     <div>{{result}}</div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="../lib/jquery.js"></script>
   <script type="text/javascript">    
     new Vue({
       el:'#addNewUniv',
@@ -26,9 +27,6 @@
       },
       methods:{
         sentToServer: function() {
-          console.log(this.appKey);
-          console.log(this.appID);
-          console.log(this.connectUrl);
           $.ajax({
             url: 'https://gss.ebscohost.com/chchang/ServerConnect/huiwen/add.php',
             type: 'POST',
@@ -43,7 +41,8 @@
               console.log(exception);
             },
             success: function(res) {
-              result = res;
+              console.log(res);
+              this.result = 'success';
             }
           });
         }
