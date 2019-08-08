@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+</head>
+<style>
+</style>
+<body>
+  <div id="addNewUniv">
+    <input type="text" v-model="appKey">
+    <input type="text" v-model="appID">
+    <input type="text" v-model="connectUrl">
+    <button @click="sentToServer()">Sent</button>
+    <div>{{result}}</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script type="text/javascript">    
+    new Vue({
+      el:'#addNewUniv',
+      data: {
+        appKey: '',
+        appID: '',
+        connectUrl: '',
+        result: ''
+      },
+      methods:{
+        sentToServer: function() {
+          console.log(this.appKey);
+          console.log(this.appID);
+          console.log(this.connectUrl);
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/huiwen/opac.php',
+            type: 'POST',
+            data: {
+              appKey: this.appKey,
+              appID: this.appID,
+              connectUrl: this.connectUrl
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              result = res;
+            }
+          });
+        }
+      }
+    });
+    // new Vue({
+    //   el: '#example-6',
+    //   data: {
+    //     selected: 'A',
+    //     options: [
+    //       { text: 'One', value: 'A' },
+    //       { text: 'Two', value: 'B' },
+    //       { text: 'Three', value: 'C' }
+    //     ]
+    //   }
+    // })
+  </script>
+</body>
+</html>
