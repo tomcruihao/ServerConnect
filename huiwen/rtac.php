@@ -74,11 +74,12 @@
 
   $getDomainName = parse_url($url);
   $domainName = $getDomainName["host"];
-  echo $domainName;
+  $port = $getDomainName["port"];
+  echo $domainName.$port;
 
   $url_extract = explode("=",$url);
 
-  getContent($domainName."/opac/ajax_item.php?marc_no=".$url_extract[1]);
+  getContent($domainName.$port."/opac/ajax_item.php?marc_no=".$url_extract[1]);
   // echo getContent("http://opac.lib.hit.edu.cn/opac/ajax_item.php?marc_no=".$url_extract[1]);
 
   // echo $url_extract[1];
