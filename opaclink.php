@@ -29,6 +29,16 @@
     return trim(date("Y-m-dH:i:s", $currentTime), ' ');
   }
 
+  function getUnivInfo() {
+    $univInfo = json_decode('[{"id": "s1213459", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.nankai.edu.cn/api/itemgo.php"},
+      {"id": "s4411044", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.hit.edu.cn/api/itemgo.php"}
+    ]', true);
+
+
+    foreach ($univInfo as $univ) {
+      echo $univ['id']."<br/>";
+    }
+  }
 
   // $getOriginalUrl = $_GET['oriurl'];
 

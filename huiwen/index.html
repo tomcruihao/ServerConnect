@@ -8,7 +8,7 @@
 </style>
 <body>
   <div id="addNewUniv">
-    <h1>Add Huiwen Connect Info</h1>
+    <h1>Add Huiwen OPAC System Info</h1>
     <h3>Please Fill All Blank!</h3>
     <div class="row">
       <div class="title">
@@ -35,7 +35,7 @@
       <input type="text" v-model="connectUrl" placeholder="example: http://XXX.XXX.cn">
     </div>
     <div class="row">
-      <div class="msg">{{result}}</div>
+      <h4 class="msg">{{result}}</h4>
       <button @click="sentToServer()">Sent</button>
     </div>    
   </div>
@@ -72,6 +72,8 @@
               success: function(res) {
                 if(res.result) {
                   self.result = res.msg;
+                } else {
+                  self.result = res.msg;
                 }
               }
             });
@@ -83,6 +85,9 @@
   <style>
     h3 {
       color: #0000ff;
+    }
+    h4 {
+      color: #ff0000;
     }
     input[type="text"] {
       width: 300px;
