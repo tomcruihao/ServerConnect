@@ -19,7 +19,7 @@
 
   function getRandomBookList($booklist, $quantity) {
     $elementCount = count($bookList);
-
+    echo $elementCount - 1;
     $listAry = array();
     // while(count($listAry) < 5) {
     //   array_push($listAry, mt_rand(0, $elementCount - 1));
