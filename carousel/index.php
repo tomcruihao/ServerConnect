@@ -25,7 +25,7 @@
       $listAry[] = mt_rand(0, $elementCount - 1);
       $listAry = array_unique($listAry);
     }
-    print_r($tmp);
+    print_r($listAry);
     // while(listAry.length < randomQuantity) {
     //   let randomValue = Math.floor(Math.random()*recommandBookLength);
     //   if(!listAry.includes(randomValue)) {
