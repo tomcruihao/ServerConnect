@@ -19,20 +19,18 @@
 
   function getBookInfoFromServer($booklist) {
     // generate query
-    $queryContent = 'IB';
+    $queryContent = 'IB+';
     foreach($booklist as $key => $value) {
       if($key) {
         $queryContent = $queryContent.'+or+'.$value['isbn'];
       } else {
-        $queryContent = $queryContent."+".$value['isbn'];
+        $queryContent = $queryContent.$value['isbn'];
       }
     }
 
     // get value from API
-    $requestUrl = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent;
-    echo $requestUrl.<br>;
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $requestUrl);
+    curl_setopt($ch, CURLOPT_URL, "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent);
     $output = curl_exec($ch);
     curl_close($ch);
     var_dump(json_decode($output, true));
