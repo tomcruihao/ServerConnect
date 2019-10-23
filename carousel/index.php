@@ -19,14 +19,20 @@
 
   function getRandomBookList($booklist, $quantity) {
     $elementCount = count($bookList);
-    $listAry = [];
+
+    $listAry = array();
+    while(count($listAry) < 5) {
+      $listAry[] = mt_rand(0, $elementCount - 1);
+      $listAry = array_unique($listAry);
+    }
+    print_r($tmp);
     // while(listAry.length < randomQuantity) {
     //   let randomValue = Math.floor(Math.random()*recommandBookLength);
     //   if(!listAry.includes(randomValue)) {
     //     listAry.push(randomValue);
     //   }
     // }
-    return listAry;
+    return $listAry;
   }
   // foreach ($univInfo as $univ) {
   //   if(strcasecmp($univ['id'], $sid) == 0) {
