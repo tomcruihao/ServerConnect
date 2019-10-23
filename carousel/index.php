@@ -34,7 +34,7 @@
     // $xml = curl_exec($ch);
     $xml = simplexml_load_string(curl_exec($ch));
     curl_close($ch);
-    $xml->plink[0];
+    echo $xml;
     // var_dump(json_decode($output, true));
     // $decodeVal = json_decode($output, true);
     // print_r($decodeVal);
