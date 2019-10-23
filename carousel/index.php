@@ -12,10 +12,22 @@
   // var_dump($array); // print array
   $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuanty);
 
+  $bookInfoList = getBookInfoFromServer();
   // get the length of list
   
   print_r($randomBooklist);
 
+  function getBookInfoFromServer($booklist) {
+
+    foreach($booklist as $key => $value) {
+      echo $key.$value;
+      // $ch = curl_init();
+      // curl_setopt($ch, CURLOPT_URL, "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=IB+9780195141832");
+      // $output = curl_exec($ch);
+      // curl_close($ch);
+      // var_dump(json_decode($output, true));
+    }
+  }
 
   function getRandomBookList($booklist, $quantity) {
     $elementCount = count($booklist);
@@ -39,14 +51,6 @@
     // }
     return $result;
   }
-  // foreach ($univInfo as $univ) {
-  //   if(strcasecmp($univ['id'], $sid) == 0) {
-  //     $appID = $univ['appID'];
-  //     $appKey = $univ['appKey'];
-  //     $connectingUrl = $univ['connectingUrl'];
-  //     break;
-  //   }
-  // }
 
   // // create curl resource
   // $ch = curl_init();
