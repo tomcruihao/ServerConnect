@@ -20,7 +20,7 @@
   function getBookInfoFromServer($booklist) {
 
     foreach($booklist as $key => $value) {
-      echo $key.$value;
+      echo $key."@@@@@@@@@@@@".$value;
       // $ch = curl_init();
       // curl_setopt($ch, CURLOPT_URL, "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=IB+9780195141832");
       // $output = curl_exec($ch);
