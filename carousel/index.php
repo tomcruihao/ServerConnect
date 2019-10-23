@@ -22,7 +22,7 @@
 
     $listAry = array();
     while(count($listAry) < 5) {
-      $listAry[] = mt_rand(0, $elementCount - 1);
+      array_push($listAry, mt_rand(0, $elementCount - 1));
       $listAry = array_unique($listAry);
     }
     print_r($listAry);
