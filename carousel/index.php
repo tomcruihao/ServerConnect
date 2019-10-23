@@ -3,16 +3,31 @@
   header("Content-Type:text/html; charset=utf-8");
   date_default_timezone_set('Asia/Taipei');
 
+  $randomBookQuanty = 20;
 
   // Get the contents of the JSON file 
   $strJsonFileContents = file_get_contents("./booklist.json");
   // Convert to array 
-  $bookList = json_decode($strJsonFileContents, true);
+  $totalBooklist = json_decode($strJsonFileContents, true);
   // var_dump($array); // print array
+  $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuanty);
 
   // get the length of list
-  $elementCount  = count($bookList);
+  
+  echo $randomBooklist;
 
+
+  function getRandomBookList($booklist, $quantity) {
+    $elementCount = count($bookList);
+    $listAry = []
+    // while(listAry.length < randomQuantity) {
+    //   let randomValue = Math.floor(Math.random()*recommandBookLength);
+    //   if(!listAry.includes(randomValue)) {
+    //     listAry.push(randomValue);
+    //   }
+    // }
+    return listAry;
+  }
   // foreach ($univInfo as $univ) {
   //   if(strcasecmp($univ['id'], $sid) == 0) {
   //     $appID = $univ['appID'];
