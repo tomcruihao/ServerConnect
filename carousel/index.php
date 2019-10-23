@@ -27,8 +27,8 @@
     }
 
     // // get value from API
-    // $apiUrl = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent;
-    // $ch = curl_init();
+    $apiUrl = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent;
+    $ch = curl_init();
     // curl_setopt($ch, CURLOPT_URL, $apiUrl);
     // $output = simplexml_load_string(curl_exec($ch));
     // // echo $output->plink[0];
