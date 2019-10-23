@@ -15,7 +15,11 @@
 
   $bookInfoList = getBookInfoFromServer($randomBooklist);
 
+  print_r($bookInfoList);
+
   function getBookInfoFromServer($booklist) {
+    $result = array();
+
     // generate query
     $queryContent = 'IB+';
     foreach($booklist as $key => $value) {
@@ -36,16 +40,19 @@
     $xml = curl_exec($ch);
     $parseXml = simplexml_load_string($xml);
     curl_close($ch);
-    // echo $parseXml->SearchResults->records->rec->plink;
+
     foreach($parseXml->SearchResults->records->children() as $rec) {
       // get url and parse
       $parseUrlParam = parse_url($rec->plink);
       parse_str($parseUrlParam['query'], $query);
       $parts = parse_url($url);
       $AN = $query['AN'];
+      $imgUrl = 'http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$PDF&s=l';
 
       $title = $rec->header->controlInfo->bkinfo->btl;
-      echo $title;
+      $tempItem = array('title' => strval($title),'imgUrl' => strval($imgUrl));
+      array_push($result, $tempItem);
+
       // $newItem = array('id' => strval($sid),'appKey' => strval($appKey), 'appID' => strval($appID), 'connectingUrl' => strval($connectUrl));
       // array_push($decodeJsonData, $newItem);
       // file_put_contents('./univ.json', json_encode($decodeJsonData, JSON_NUMERIC_CHECK));
@@ -57,6 +64,7 @@
       // echo '<img src="http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$PDF&s=l"><br>';
       // https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24108391%24PDF&s=l
     }
+    return $result;
     // var_dump(json_decode($output, true));
     // $decodeVal = json_decode($output, true);
     // print_r($decodeVal);
