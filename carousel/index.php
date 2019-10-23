@@ -4,7 +4,7 @@
   date_default_timezone_set('Asia/Taipei');
 
 
-  $jsonFilePath = './booklist.json';
+  $jsonFilePath = './univ.json';
 
   $univInfo = getJson($jsonFilePath);
 
