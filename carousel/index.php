@@ -1,9 +1,13 @@
 <?php
   header("Access-Control-Allow-Origin: *");
   header("Content-Type:text/html; charset=utf-8");
+  date_default_timezone_set('Asia/Taipei');
 
-  $jsonFilePath = './booklist.json';
-  $bookList = getJson($jsonFilePath);
+
+  $jsonFilePath = './univ.json';
+
+  $sid = $_GET['sid'];
+  $marcNum = $_GET['marc'];
 
   // get the length of list
   // $elementCount  = count($bookList);

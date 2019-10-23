@@ -1,0 +1,5 @@
+[
+  {"id": "s1213459", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.nankai.edu.cn/api/itemgo.php"},
+  {"id": "s4411044", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.hit.edu.cn/api/itemgo.php"},
+  {"id": "s1397862", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://www.libopac.seu.edu.cn:8080/api/itemgo.php"}
+]
