@@ -18,6 +18,7 @@
   // print_r($randomBooklist);
 
   function getBookInfoFromServer($booklist) {
+    // generate query
     $queryContent = 'IB ';
     foreach($booklist as $key => $value) {
       if($key) {
@@ -25,12 +26,14 @@
       } else {
         $queryContent = $queryContent.$value['isbn'];
       }
-      // $ch = curl_init();
-      // curl_setopt($ch, CURLOPT_URL, "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=IB+9780195141832");
-      // $output = curl_exec($ch);
-      // curl_close($ch);
-      // var_dump(json_decode($output, true));
     }
+
+    // get value from API
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent);
+    $output = curl_exec($ch);
+    curl_close($ch);
+    var_dump(json_decode($output, true));
     echo $queryContent;
   }
 
