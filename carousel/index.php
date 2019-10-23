@@ -43,7 +43,7 @@
       parse_str($parseUrlParam['query'], $query);
       $parts = parse_url($url);
       $AN = $query['AN'];
-      echo '<img src="http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$PDF&s=r"><br>';
+      echo '<img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$PDF&s=L"><br>';
     }
     // var_dump(json_decode($output, true));
     // $decodeVal = json_decode($output, true);
