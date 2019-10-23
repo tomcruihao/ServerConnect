@@ -43,7 +43,18 @@
       parse_str($parseUrlParam['query'], $query);
       $parts = parse_url($url);
       $AN = $query['AN'];
-      echo '<img src="http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$PDF&s=l"><br>';
+
+      $title = $rec->header->controlInfo->bkinfo->btl;
+      echo $title;
+      // $newItem = array('id' => strval($sid),'appKey' => strval($appKey), 'appID' => strval($appID), 'connectingUrl' => strval($connectUrl));
+      // array_push($decodeJsonData, $newItem);
+      // file_put_contents('./univ.json', json_encode($decodeJsonData, JSON_NUMERIC_CHECK));
+      // $data = array('result' => true, 'msg' => 'success');
+      // echo json_encode($data, JSON_NUMERIC_CHECK);
+
+
+      //////////////////////////////////////////////////
+      // echo '<img src="http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$PDF&s=l"><br>';
       // https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24108391%24PDF&s=l
     }
     // var_dump(json_decode($output, true));
