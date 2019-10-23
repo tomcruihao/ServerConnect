@@ -16,7 +16,7 @@
   $bookInfoList = getBookInfoFromServer($randomBooklist);
 
   // convert to json and display
-  echo json_encode($data, JSON_NUMERIC_CHECK);
+  echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
   function getBookInfoFromServer($booklist) {
     $result = array();
