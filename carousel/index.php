@@ -19,7 +19,7 @@
 
   function getRandomBookList($booklist, $quantity) {
     $elementCount = count($bookList);
-    $listAry = []
+    $listAry = [];
     // while(listAry.length < randomQuantity) {
     //   let randomValue = Math.floor(Math.random()*recommandBookLength);
     //   if(!listAry.includes(randomValue)) {
