@@ -34,8 +34,8 @@
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
     $output = curl_exec($ch);
     curl_close($ch);
-    var_dump(json_decode($output, true));
-    echo $queryContent;
+    // var_dump(json_decode($output, true));
+    echo json_decode($output, true);
   }
 
   function getRandomBookList($booklist, $quantity) {
