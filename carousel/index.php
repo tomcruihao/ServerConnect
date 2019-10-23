@@ -19,12 +19,12 @@
 
   function getBookInfoFromServer($booklist) {
     // generate query
-    $queryContent = 'IB ';
+    $queryContent = 'IB';
     foreach($booklist as $key => $value) {
       if($key) {
-        $queryContent = $queryContent.' or '.$value['isbn'];
+        $queryContent = $queryContent.'+or+'.$value['isbn'];
       } else {
-        $queryContent = $queryContent.$value['isbn'];
+        $queryContent = $queryContent."+".$value['isbn'];
       }
     }
 
