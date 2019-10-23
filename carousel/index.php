@@ -17,14 +17,14 @@
 
   function getBookInfoFromServer($booklist) {
     // generate query
-    // $queryContent = 'IB+';
-    // foreach($booklist as $key => $value) {
-    //   if($key) {
-    //     $queryContent = $queryContent.'+or+'.$value['isbn'];
-    //   } else {
-    //     $queryContent = $queryContent.$value['isbn'];
-    //   }
-    // }
+    $queryContent = 'IB+';
+    foreach($booklist as $key => $value) {
+      if($key) {
+        $queryContent = $queryContent.'+or+'.$value['isbn'];
+      } else {
+        $queryContent = $queryContent.$value['isbn'];
+      }
+    }
 
     // // get value from API
     // $apiUrl = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent;
