@@ -33,6 +33,7 @@
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
     $output = curl_exec($ch);
+    $output = simplexml_load_string($output);
     curl_close($ch);
     // var_dump(json_decode($output, true));
     echo json_decode($output, true);
