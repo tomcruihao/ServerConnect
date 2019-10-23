@@ -6,8 +6,8 @@
   $bookList = getJson($jsonFilePath);
 
   // get the length of list
-  $elementCount  = count($bookList);
-  echo "total: ".$elementCount;
+  // $elementCount  = count($bookList);
+  echo "total: ".$bookList;
 
   // foreach ($univInfo as $univ) {
   //   if(strcasecmp($univ['id'], $sid) == 0) {
