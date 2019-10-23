@@ -4,9 +4,11 @@
   date_default_timezone_set('Asia/Taipei');
 
 
-  $jsonFilePath = './univ.json';
-
-  $univInfo = getJson($jsonFilePath);
+  // Get the contents of the JSON file 
+  $strJsonFileContents = file_get_contents("./booklist.json");
+  // Convert to array 
+  $array = json_decode($strJsonFileContents, true);
+  var_dump($array); // print array
 
   // get the length of list
   // $elementCount  = count($bookList);
