@@ -12,10 +12,10 @@
   // var_dump($array); // print array
   $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuanty);
 
-  $bookInfoList = getBookInfoFromServer();
+  $bookInfoList = getBookInfoFromServer($randomBooklist);
   // get the length of list
   
-  print_r($randomBooklist);
+  // print_r($randomBooklist);
 
   function getBookInfoFromServer($booklist) {
 
