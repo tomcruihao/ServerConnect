@@ -38,7 +38,12 @@
     curl_close($ch);
     // echo $parseXml->SearchResults->records->rec->plink;
     foreach($parseXml->SearchResults->records->children() as $rec) {
-      echo $rec->plink."<br>";
+      // get url and parse
+      $parseUrlParam = parse_url($rec->plink);
+      parse_str($parseUrlParam['query'], $query);
+      $parts = parse_url($url);
+      $AN = $query['AN'];
+      echo '<img src="http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$PDF&s=r"><br>';
     }
     // var_dump(json_decode($output, true));
     // $decodeVal = json_decode($output, true);
