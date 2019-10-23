@@ -31,10 +31,10 @@
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-    $xml = curl_exec($ch);
-    // $xml = simplexml_load_string(curl_exec($ch));
-    echo $xml;
+    // $xml = curl_exec($ch);
+    $xml = simplexml_load_string(curl_exec($ch));
     curl_close($ch);
+    $xml->plink[0];
     // var_dump(json_decode($output, true));
     // $decodeVal = json_decode($output, true);
     // print_r($decodeVal);
