@@ -21,10 +21,10 @@
     $elementCount = count($bookList);
 
     $listAry = array();
-    while(count($listAry) < 5) {
-      array_push($listAry, mt_rand(0, $elementCount - 1));
-      $listAry = array_unique($listAry);
-    }
+    // while(count($listAry) < 5) {
+    //   array_push($listAry, mt_rand(0, $elementCount - 1));
+    //   $listAry = array_unique($listAry);
+    // }
     print_r($listAry);
     // while(listAry.length < randomQuantity) {
     //   let randomValue = Math.floor(Math.random()*recommandBookLength);
