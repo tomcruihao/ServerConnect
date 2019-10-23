@@ -34,9 +34,8 @@
 
     $xml = curl_exec($ch);
     $parseXml = simplexml_load_string($xml);
-    echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
     curl_close($ch);
-    print_r($parseXml->SearchResults->records->rec->plink);
+    echo $parseXml->SearchResults->records->rec->plink;
     // var_dump(json_decode($output, true));
     // $decodeVal = json_decode($output, true);
     // print_r($decodeVal);
