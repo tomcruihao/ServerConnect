@@ -6,8 +6,7 @@
 
   $jsonFilePath = './booklist.json';
 
-  $sid = $_GET['sid'];
-  $marcNum = $_GET['marc'];
+  $univInfo = getJson($jsonFilePath);
 
   // get the length of list
   // $elementCount  = count($bookList);
