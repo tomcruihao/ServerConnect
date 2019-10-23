@@ -29,8 +29,10 @@
     }
 
     // get value from API
+    $requestUrl = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent;
+    echo $requestUrl.<br>;
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent);
+    curl_setopt($ch, CURLOPT_URL, $requestUrl);
     $output = curl_exec($ch);
     curl_close($ch);
     var_dump(json_decode($output, true));
