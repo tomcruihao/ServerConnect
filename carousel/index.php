@@ -15,7 +15,8 @@
 
   $bookInfoList = getBookInfoFromServer($randomBooklist);
 
-  print_r($bookInfoList);
+  // convert to json and display
+  echo json_encode($data, JSON_NUMERIC_CHECK);
 
   function getBookInfoFromServer($booklist) {
     $result = array();
@@ -32,7 +33,7 @@
 
     // // get value from API
     $apiUrl = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent;
-    echo $apiUrl."<br>";
+    // echo $apiUrl."<br>";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -52,22 +53,9 @@
       $title = $rec->header->controlInfo->bkinfo->btl;
       $tempItem = array('title' => strval($title),'imgUrl' => strval($imgUrl));
       array_push($result, $tempItem);
-
-      // $newItem = array('id' => strval($sid),'appKey' => strval($appKey), 'appID' => strval($appID), 'connectingUrl' => strval($connectUrl));
-      // array_push($decodeJsonData, $newItem);
-      // file_put_contents('./univ.json', json_encode($decodeJsonData, JSON_NUMERIC_CHECK));
-      // $data = array('result' => true, 'msg' => 'success');
-      // echo json_encode($data, JSON_NUMERIC_CHECK);
-
-
-      //////////////////////////////////////////////////
-      // echo '<img src="http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$PDF&s=l"><br>';
-      // https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24108391%24PDF&s=l
     }
+
     return $result;
-    // var_dump(json_decode($output, true));
-    // $decodeVal = json_decode($output, true);
-    // print_r($decodeVal);
   }
 
   function getRandomBookList($booklist, $quantity) {
