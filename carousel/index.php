@@ -30,7 +30,7 @@
     $apiUrl = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     $xml = curl_exec($ch);
     // $xml = simplexml_load_string(curl_exec($ch));
     echo $xml->plink[0];
