@@ -4,7 +4,7 @@
   date_default_timezone_set('Asia/Taipei');
 
 
-  $jsonFilePath = './univ.json';
+  $jsonFilePath = './booklist.json';
 
   $sid = $_GET['sid'];
   $marcNum = $_GET['marc'];
