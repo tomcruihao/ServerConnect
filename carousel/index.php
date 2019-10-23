@@ -14,18 +14,17 @@
 
   // get the length of list
   
-  echo $randomBooklist;
+  print_r($randomBooklist);
 
 
   function getRandomBookList($booklist, $quantity) {
     $elementCount = count($booklist);
-    
+
     $listAry = array();
-    while(count($listAry) < 5) {
+    while(count($listAry) <= $quantity) {
       array_push($listAry, mt_rand(0, $elementCount - 1));
       $listAry = array_unique($listAry);
     }
-    print_r($listAry);
     // while(listAry.length < randomQuantity) {
     //   let randomValue = Math.floor(Math.random()*recommandBookLength);
     //   if(!listAry.includes(randomValue)) {
