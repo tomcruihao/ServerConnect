@@ -7,15 +7,13 @@
 
   // Get the contents of the JSON file 
   $strJsonFileContents = file_get_contents("./booklist.json");
+
   // Convert to array 
   $totalBooklist = json_decode($strJsonFileContents, true);
-  // var_dump($array); // print array
+
   $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuanty);
 
   $bookInfoList = getBookInfoFromServer($randomBooklist);
-  // get the length of list
-  
-  // print_r($randomBooklist);
 
   function getBookInfoFromServer($booklist) {
     // generate query
@@ -32,12 +30,11 @@
     $apiUrl = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
-    $output = curl_exec($ch);
-    $output = simplexml_load_string($output);
+    $output = simplexml_load_string(curl_exec($ch));
     // echo $output->plink[0];
     curl_close($ch);
     // var_dump(json_decode($output, true));
-    $decodeVal = json_decode($output, true);
+    // $decodeVal = json_decode($output, true);
     // print_r($decodeVal);
   }
 
