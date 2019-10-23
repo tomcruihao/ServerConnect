@@ -34,7 +34,7 @@
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
     $output = curl_exec($ch);
     $output = simplexml_load_string($output);
-    echo $output->plink[0];
+    // echo $output->plink[0];
     curl_close($ch);
     // var_dump(json_decode($output, true));
     $decodeVal = json_decode($output, true);
