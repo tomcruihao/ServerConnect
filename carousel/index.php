@@ -38,7 +38,7 @@
     curl_close($ch);
     // var_dump(json_decode($output, true));
     $decodeVal = json_decode($output, true);
-    print_r($decodeVal);
+    // print_r($decodeVal);
   }
 
   function getRandomBookList($booklist, $quantity) {
