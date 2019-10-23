@@ -36,9 +36,8 @@
     $parseXml = simplexml_load_string($xml);
     curl_close($ch);
     // echo $parseXml->SearchResults->records->rec->plink;
-    foreach($parseXml->SearchResults->records->rec->children() as $rec) {
-      echo $rec->plink . ", ";
-      echo $books->price . "<br>";
+    foreach($parseXml->searchResponse->SearchResults->records->rec->children() as $rec) {
+      echo $rec->plink . "<br>";
     }
     // var_dump(json_decode($output, true));
     // $decodeVal = json_decode($output, true);
