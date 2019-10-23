@@ -2,6 +2,22 @@
   header("Access-Control-Allow-Origin: *");
   header("Content-Type:text/html; charset=utf-8");
 
+  $jsonFilePath = './booklist.json';
+  $bookList = getJson($jsonFilePath);
+
+  // get the length of list
+  $elementCount  = count($bookList);
+  echo "total: ".$elementCount;
+
+  // foreach ($univInfo as $univ) {
+  //   if(strcasecmp($univ['id'], $sid) == 0) {
+  //     $appID = $univ['appID'];
+  //     $appKey = $univ['appKey'];
+  //     $connectingUrl = $univ['connectingUrl'];
+  //     break;
+  //   }
+  // }
+
   // create curl resource
   $ch = curl_init();
   // set url 
