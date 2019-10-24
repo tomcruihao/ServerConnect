@@ -1,7 +1,7 @@
 <?php
   header('Access-Control-Allow-Origin: *');
-  // header('Content-Type: application/json; charset=utf-8');
-  header( 'Content-Type:text/html;charset=utf-8 ');
+  header('Content-Type: application/json; charset=utf-8');
+  // header( 'Content-Type:text/html;charset=utf-8 ');
   date_default_timezone_set('Asia/Taipei');
 
   $randomBookQuanty = 20;
@@ -34,7 +34,8 @@
 
     // // get value from API
     $apiUrl = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk&query=".$queryContent;
-    echo $apiUrl;
+    // echo $apiUrl;
+    
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
