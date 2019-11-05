@@ -31,10 +31,10 @@
         $queryContent = $queryContent.$value['isbn'];
       }
     }
-    echo $queryContent;
-    // // get value from API
-    // $apiUrl = $apiConnection."&query=".$queryContent;
-    // echo $apiUrl;
+
+    // get value from API
+    $apiUrl = $apiConnection."&query=".$queryContent;
+    echo $apiUrl;
     
     // $ch = curl_init();
     // curl_setopt($ch, CURLOPT_URL, $apiUrl);
