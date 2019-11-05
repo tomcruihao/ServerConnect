@@ -17,7 +17,7 @@
 
   $bookInfoList = getBookInfoFromServer($apiConnection, $randomBooklist);
 
-  // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
+  echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
   function getBookInfoFromServer($apiUrl, $booklist) {
     $result = array();
