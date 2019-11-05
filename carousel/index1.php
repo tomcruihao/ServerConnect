@@ -21,9 +21,8 @@
 
   function generateHTML($bookList) {
     foreach($bookList as $key => $value) {
-      echo '<div class="ebook-wrap"><a href="'.$value['directionUrl'].'" target="_blank"><div class="image-frame"><img src="'.$value['imgUrl'].'" title="'.$value['title'].'"></div><h2>'.$value['title'].'</h2></a></div>';
+      echo '<div class="ebook-wrap"><a href="'.$value['directionUrl'].'" target="_blank"><div class="image-frame"><img src="'.$value['imgUrl'].'" onerror="this.src=\''.$value['onErrorUrlImg'].'\'" title="'.$value['title'].'"></div><h2>'.$value['title'].'</h2></a></div>';
     }
-    // onerror="this.src=\''.$value['onErrorUrlImg'].'\'" 
   }
 
   function getBookInfoFromServer($apiUrl, $booklist) {
