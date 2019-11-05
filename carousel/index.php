@@ -34,15 +34,14 @@
 
     // get value from API
     $apiUrl = $apiUrl."&query=".$queryContent;
-    echo $apiUrl;
     
-    // $ch = curl_init();
-    // curl_setopt($ch, CURLOPT_URL, $apiUrl);
-    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $apiUrl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
-    // $xml = curl_exec($ch);
-    // $parseXml = simplexml_load_string($xml);
-    // curl_close($ch);
+    $xml = curl_exec($ch);
+    $parseXml = simplexml_load_string($xml);
+    curl_close($ch);
 
     foreach($parseXml->SearchResults->records->children() as $rec) {
       // get url and parse
