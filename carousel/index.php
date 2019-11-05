@@ -15,7 +15,7 @@
 
   $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuantity);
 
-  // $bookInfoList = getBookInfoFromServer($randomBooklist);
+  $bookInfoList = getBookInfoFromServer($randomBooklist);
 
   // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
