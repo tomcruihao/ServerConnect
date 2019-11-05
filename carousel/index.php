@@ -14,6 +14,7 @@
   $totalBooklist = json_decode($strJsonFileContents, true);
 
   $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuantity);
+  print_r($randomBooklist);
 
   $bookInfoList = getBookInfoFromServer($randomBooklist);
 
