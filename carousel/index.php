@@ -33,7 +33,7 @@
     }
 
     // get value from API
-    $apiUrl = $apiConnection."&query=".$queryContent;
+    $apiUrl = $apiUrl."&query=".$queryContent;
     echo $apiUrl;
     
     // $ch = curl_init();
