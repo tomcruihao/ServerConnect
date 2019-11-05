@@ -1,4 +1,28 @@
   var connectToBackendUrl = "http://gss.ebscohost.com/chchang/ServerConnect/carousel/index.php";
+  const carouselParam = {
+    dots: true,
+    infinite: true, 
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      }
+    ]
+  };
 
   let makeEbookField = () => {
     return new Promise((resolve, reject) => {
@@ -17,44 +41,40 @@
       xhttp.send();
     })
   }
-  // async function getRandomBookList() {
-  //   let listAry = []
-  //   let recommandBookLength = recommandBookList.length;
-  //   while(listAry.length < randomQuantity) {
-  //     let randomValue = Math.floor(Math.random()*recommandBookLength);
-  //     if(!listAry.includes(randomValue)) {
-  //       listAry.push(randomValue);
-  //     }
-  //   }
-  //   return listAry;
-  // }
   async function genCarousel() {
-    $(".regular").slick({
-      dots: true,
-      infinite: true, 
-      slidesToShow: 5,
-      slidesToScroll: 5,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
-        },
-        {
-          breakpoint: 640,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        }
-      ]
-    });
+    $(".regular").slick(carouselParam);
+  }
+  function initial() {
+    var head = document.getElementsByTagName('HEAD')[0];  
+
+    // Create new link Element 
+    let link_slick = document.createElement('link');
+    link_slick.rel = 'stylesheet';  
+    link_slick.type = 'text/css'; 
+    link_slick.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css';
+
+    let link_slickTheme = document.createElement('link');
+    link_slickTheme.rel = 'stylesheet';  
+    link_slickTheme.type = 'text/css'; 
+    link_slickTheme.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css';
+
+    let link_slickTheme = document.createElement('link');
+    link_slickTheme.rel = 'stylesheet';  
+    link_slickTheme.type = 'text/css'; 
+    link_slickTheme.href = 'http://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
+
+    let script = document.createElement("script");
+    script.src = 'http://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/js/slick.js';
+
+    // Append link element to HTML head 
+    head.appendChild(link_slick);
+    head.appendChild(link_slickTheme);
+    head.appendChild(script);
   }
   $(document).on('ready', async function() {
+    // init js and css
+    const init = await initial();
+
     $("#ebook").append(await makeEbookField());
     const carousel = await genCarousel();
   });
