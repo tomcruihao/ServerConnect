@@ -15,11 +15,11 @@
 
   $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuantity);
 
-  $bookInfoList = getBookInfoFromServer($randomBooklist);
+  $bookInfoList = getBookInfoFromServer($apiConnection, $randomBooklist);
 
   // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
-  function getBookInfoFromServer($booklist) {
+  function getBookInfoFromServer($apiUrl, $booklist) {
     $result = array();
 
     // generate query
