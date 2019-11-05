@@ -64,7 +64,7 @@
     link_indexCss.href = 'http://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
 
     let script = document.createElement("script");
-    script.src = 'http://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/js/slick.js';
+    script.src = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js';
 
     // Append link element to HTML head 
     head.appendChild(link_slick);
