@@ -20,20 +20,21 @@
   // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
   function getBookInfoFromServer($booklist) {
+    echo $booklist;
     $result = array();
 
     // generate query
-    $queryContent = 'IB+';
-    foreach($booklist as $key => $value) {
-      if($key) {
-        $queryContent = $queryContent.'+or+'.$value['isbn'];
-      } else {
-        $queryContent = $queryContent.$value['isbn'];
-      }
-    }
+    // $queryContent = 'IB+';
+    // foreach($booklist as $key => $value) {
+    //   if($key) {
+    //     $queryContent = $queryContent.'+or+'.$value['isbn'];
+    //   } else {
+    //     $queryContent = $queryContent.$value['isbn'];
+    //   }
+    // }
 
     // // get value from API
-    $apiUrl = $apiConnection."&query=".$queryContent;
+    // $apiUrl = $apiConnection."&query=".$queryContent;
     // echo $apiUrl;
     
     // $ch = curl_init();
