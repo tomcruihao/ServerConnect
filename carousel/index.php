@@ -13,7 +13,7 @@
   // Convert to array 
   $totalBooklist = json_decode($strJsonFileContents, true);
 
-  // $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuantity);
+  $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuantity);
 
   // $bookInfoList = getBookInfoFromServer($randomBooklist);
 
