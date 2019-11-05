@@ -14,14 +14,13 @@
   $totalBooklist = json_decode($strJsonFileContents, true);
 
   $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuantity);
-  print_r($randomBooklist);
 
   $bookInfoList = getBookInfoFromServer($randomBooklist);
 
   // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
   function getBookInfoFromServer($booklist) {
-    echo $booklist;
+    print_r($booklist);
     $result = array();
 
     // generate query
