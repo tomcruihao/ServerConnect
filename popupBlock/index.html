@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>OpenNewTab</title>
+
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+</head>
+<body>  
+
+<center>
+    <canvas id="myCanvas" width="200" height="200" style="border-style: solid; border-width: 1px"> </canvas>
+</center>
+
+<script>   
+
+    var canvas;
+    var linkURL = "http://www.google.com";        
+
+    createLink();
+
+    function createLink() {
+
+        canvas = document.getElementById("myCanvas");           
+        canvas.addEventListener("click", Link_click, false);
+
+    }
+
+    function Link_click(e) {
+
+         window.open(linkURL,'_blank'); 
+
+    }     
+</script>
+
+</body>
+</html>
