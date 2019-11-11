@@ -14,6 +14,9 @@
     echo "Sorry, can not reached this page, please contact 'support@ebsco.com'";
   }
 ?>
+<button onclick="exe()">
+  test
+</button>
 <script type="text/javascript">
   var checkingExpiredMin = 10;
   
@@ -66,5 +69,5 @@
   function openRealUrl() {
     window.location.href = <?php echo "'".$url."'" ?>;
   }
-  exe();
+  // exe();
 </script>
