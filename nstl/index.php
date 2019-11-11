@@ -64,7 +64,7 @@
     })
   }
   function openRealUrl() {
-    window.location.href = <?php echo $url ?>;
+    window.location.href = <?php echo "'".$url."'" ?>;
   }
   exe();
 </script>
