@@ -1,22 +1,33 @@
 <?php
   $url = '';
-
+  $message = '';
+  $disabled = false;
   // get parameter from URL
   if(isset($_GET["DOI"])) {
     $DOI = $_GET['DOI'];
     $url = "http://archive.nstl.gov.cn/Archives/search.do?action=quickSearch&searchText=".$DOI."&dbname=All&searchType=fuzzy&field1=DOI";
-    echo "Please wait a moment...";
+    $message = "请点击下方的按钮访问国家科技图书文献中心";
   } elseif(isset($_GET["Title"])) {
     $title = $_GET['Title'];
     $url = "http://archive.nstl.gov.cn/Archives/search.do?action=quickSearch&searchText=".$title."&dbname=All&searchType=fuzzy&field1=Title";
-    echo "Please wait a moment...";
+    $message = "请点击下方的按钮访问国家科技图书文献中心";
   } else {
-    echo "Sorry, can not reached this page, please contact 'support@ebsco.com'";
+    $message = "抱歉, 这篇期刊/电子书资讯有误, 请<a href='mailto:ChinaSupport@ebsco.com'>点击</a>此处与客服人员联系, 谢谢";
+    $disabled = true;
   }
 ?>
-<button onclick="exe()">
-  test
-</button>
+<div>
+  <h2><?php echo $message ?></h2>
+  <button onclick="exe()" disabled="<?php echo $disabled ?>">
+    访问国家科技图书文献中心
+  </button>
+</div>
+<style type="text/css">
+  button {
+    padding: 10px;
+    font-size: 16px;
+  }
+</style>
 <script type="text/javascript">
   var checkingExpiredMin = 10;
   
