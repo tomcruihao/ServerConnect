@@ -21,7 +21,7 @@
 ?>
 <div>
   <h2><?php echo $message ?></h2>
-  <button onclick="exe()" disabled="<?php echo $disabled ?>">
+  <button onclick="exe()" <?php if($disabled){echo "disabled";} ?>>
     访问国家科技图书文献中心
   </button>
 </div>
