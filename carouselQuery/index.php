@@ -17,6 +17,7 @@
 
     // get value from API
     $apiUrl = $apiUrl."&query=".$keyword;
+    echo $apiUrl;
     
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $apiUrl);
