@@ -6,7 +6,7 @@
   $randomBookQuantity = 20;
   $apiConnection = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk";
 
-  $keyword = "block chain";
+  $keyword = "blockchain";
 
   $bookInfoList = getBookInfoFromServer($apiConnection, $keyword);
 
