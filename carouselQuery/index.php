@@ -17,13 +17,13 @@
 
     // get value from API
     $apiUrl = $apiUrl."&query=".$keyword;
-    
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $apiUrl);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    echo $apiUrl;
 
-    $xml = curl_exec($ch);
-    print_r($xml);
+    // $ch = curl_init();
+    // curl_setopt($ch, CURLOPT_URL, $apiUrl);
+    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+
+    // $xml = curl_exec($ch);
     // $parseXml = simplexml_load_string($xml);
     // curl_close($ch);
 
