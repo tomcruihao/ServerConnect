@@ -1,0 +1,73 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.slider {
+  width: 90%;
+  margin: 100px auto;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+a {
+  outline: none;
+  text-decoration: none;
+}
+.ebook-wrap img {
+  width: auto;
+  height: 100%;
+}
+.ebook-wrap {
+  position: relative;
+}
+.ebook-wrap h2 {
+  width: 100%;
+  margin: 0;
+  padding: 3px;
+  text-align: center;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
+}
+.image-frame {
+  height: 200px;
+  /*box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);*/
+  display: flex;
+  justify-content: center;
+}
+.image-frame:hover + h2 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* when screen pixel less than 640px */
+@media screen and (max-width: 639px) {
+  .image-frame {
+    height: 300px;
+  }
+}

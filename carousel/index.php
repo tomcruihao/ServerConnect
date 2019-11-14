@@ -26,7 +26,7 @@
     $queryContent = 'IB+';
     foreach($booklist as $key => $value) {
       if($key) {
-        $queryContent = $queryContent.'+or+'.$value['isbn'];
+        $queryContent = $queryContent.'+OR+'.$value['isbn'];
       } else {
         $queryContent = $queryContent.$value['isbn'];
       }
