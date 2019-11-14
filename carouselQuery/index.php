@@ -23,9 +23,10 @@
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
     $xml = curl_exec($ch);
-    $parseXml = simplexml_load_string($xml);
-    curl_close($ch);
-    print_r($parseXml);
+    print_r($xml);
+    // $parseXml = simplexml_load_string($xml);
+    // curl_close($ch);
+
 
     // foreach($parseXml->SearchResults->records->children() as $rec) {
     //   // get url and parse
