@@ -8,7 +8,7 @@
 
   $keyword = "block chain"
 
-  $bookInfoList = getBookInfoFromServer($apiConnection, $keyword);
+  // $bookInfoList = getBookInfoFromServer($apiConnection, $keyword);
 
   // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
