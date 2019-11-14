@@ -13,8 +13,7 @@
   // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
   function getBookInfoFromServer($apiUrl, $keyword) {
-    $result = array();
-    echo $keyword;
+    // $result = array();
 
     // get value from API
     // $apiUrl = $apiUrl."&query=".$keyword;
