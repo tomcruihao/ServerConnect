@@ -17,10 +17,9 @@
 
     // get value from API
     $connectApiUrl = $apiUrl."&query=".$keyword;
-    echo $connectApiUrl;
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $apiUrl);
+    curl_setopt($ch, CURLOPT_URL, $connectApiUrl);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 
     $xml = curl_exec($ch);
