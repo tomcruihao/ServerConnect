@@ -1,20 +1,16 @@
 <?php
   header('Access-Control-Allow-Origin: *');
   header('Content-Type: application/json; charset=utf-8');
-  // header( 'Content-Type:text/html;charset=utf-8 ');
   date_default_timezone_set('Asia/Taipei');
 
   $randomBookQuantity = 20;
   $apiConnection = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk";
 
-  // $strJsonFileContents = file_get_contents("./booklist.json");
-  // $totalBooklist = json_decode($strJsonFileContents, true);
-  // $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuantity);
   $keyword = "block chain"
 
-  $bookInfoList = getBookInfoFromServer($apiConnection, $keyword);
+  // $bookInfoList = getBookInfoFromServer($apiConnection, $keyword);
 
-  echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
+  // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
   function getBookInfoFromServer($apiUrl, $keyword) {
     $result = array();
