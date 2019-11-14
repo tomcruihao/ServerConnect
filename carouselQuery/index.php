@@ -25,7 +25,6 @@
     $xml = curl_exec($ch);
     $parseXml = simplexml_load_string($xml);
     curl_close($ch);
-    print_r($xml);
 
 
     foreach($parseXml->SearchResults->records->children() as $rec) {
