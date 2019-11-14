@@ -1,4 +1,4 @@
-  var connectToBackendUrl = "http://gss.ebscohost.com/chchang/ServerConnect/carousel/index.php";
+  var connectToBackendUrl = "http://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/index.php";
   const carouselParam = {
     dots: true,
     infinite: true, 
@@ -73,6 +73,7 @@
     head.appendChild(script);
   }
   $(document).on('ready', async function() {
+    console.log(location.search);
     // init js and css
     const init = await initial();
     console.log('initial finish');
