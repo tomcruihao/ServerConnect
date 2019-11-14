@@ -6,17 +6,17 @@
   $randomBookQuantity = 20;
   $apiConnection = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk";
 
-  $keyword = "block chain"
+  $keyword = "block chain";
 
-  // $bookInfoList = getBookInfoFromServer($apiConnection, $keyword);
+  $bookInfoList = getBookInfoFromServer($apiConnection, $keyword);
 
   // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
   function getBookInfoFromServer($apiUrl, $keyword) {
-    // $result = array();
+    $result = array();
 
     // get value from API
-    // $apiUrl = $apiUrl."&query=".$keyword;
+    $apiUrl = $apiUrl."&query=".$keyword;
     
     // $ch = curl_init();
     // curl_setopt($ch, CURLOPT_URL, $apiUrl);
