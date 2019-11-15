@@ -78,8 +78,8 @@
   }
   $(document).on('ready', async function() {
     console.log(location.search);
-    var test = document.currentScript;
-    console.log(test);
+    var config = document.currentScript.getAttribute('query');
+    console.log(config);
     document.querySelectorAll("script[src*=query]").forEach(res => {
       console.log(res);
     });
