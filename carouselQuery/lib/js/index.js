@@ -78,7 +78,9 @@
   }
   $(document).on('ready', async function() {
     console.log(location.search);
-    document.querySelectorAll("script[src*=somefile]").forEach(res => {
+    var test = document.currentScript.query;
+    console.log(test);
+    document.querySelectorAll("script[src*=query]").forEach(res => {
       console.log(res);
     });
     // init js and css
