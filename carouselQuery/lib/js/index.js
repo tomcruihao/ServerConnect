@@ -78,7 +78,7 @@
   }
   $(document).on('ready', async function() {
     console.log(location.search);
-    var test = document.currentScript.query;
+    var test = document.currentScript;
     console.log(test);
     document.querySelectorAll("script[src*=query]").forEach(res => {
       console.log(res);
