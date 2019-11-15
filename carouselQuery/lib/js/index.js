@@ -39,7 +39,12 @@
           resolve(result);
         }
       };
-      xhttp.open("GET", connectToBackendUrl, true);
+
+      let urlWithParam = connectToBackendUrl;
+      if(queryParam) {
+        urlWithParam = `${connectToBackendUrl}?uquery=${queryParam}`;
+      }
+      xhttp.open("GET", urlWithParam, true);
       xhttp.send();
     })
   }
@@ -79,11 +84,8 @@
     })
   }
   $(document).on('ready', async function() {
-    console.log(location.search);
     console.log(queryParam);
-    document.querySelectorAll("script[src*=query]").forEach(res => {
-      console.log(res);
-    });
+
     // init js and css
     const init = await initial();
     $("#ebook").append(await makeEbookField());
