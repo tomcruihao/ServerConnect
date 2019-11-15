@@ -1,4 +1,6 @@
   var connectToBackendUrl = "http://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/index.php";
+  var queryParam = document.currentScript.getAttribute('query');
+
   const carouselParam = {
     dots: true,
     infinite: true, 
@@ -78,8 +80,7 @@
   }
   $(document).on('ready', async function() {
     console.log(location.search);
-    var config = document.currentScript.getAttribute('query');
-    console.log(config);
+    console.log(queryParam);
     document.querySelectorAll("script[src*=query]").forEach(res => {
       console.log(res);
     });
