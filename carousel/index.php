@@ -8,6 +8,10 @@
   $randomBookQuantity = 20;
   $apiConnection = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk";
 
+
+  $profile = $_GET['profile'];
+  $custID = $_GET['custID'];
+
   // Get the contents of the JSON file 
   $strJsonFileContents = file_get_contents("./booklist.json");
 
@@ -16,11 +20,11 @@
 
   $randomBooklist = getRandomBookList($totalBooklist, $randomBookQuantity);
 
-  $bookInfoList = getBookInfoFromServer($apiConnection, $randomBooklist);
+  $bookInfoList = getBookInfoFromServer($apiConnection, $randomBooklist, $profile, $custID);
 
   echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
-  function getBookInfoFromServer($apiUrl, $booklist) {
+  function getBookInfoFromServer($apiUrl, $booklist, $profile, $custID) {
     $result = array();
 
     // generate query
@@ -51,7 +55,7 @@
       $parts = parse_url($url);
       $AN = $query['AN'];
       $imgUrl = 'http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$PDF&s=l';
-      $directionUrl = 'http://search.ebscohost.com/login.aspx?direct=true&db=nlebk&AN='.$AN.'&site=ehost-live&custid=s1213459&authtype=ip,uid&groupid=main&profileid=ehost&scope=site';
+      $directionUrl = 'http://search.ebscohost.com/login.aspx?direct=true&db=nlebk&AN='.$AN.'&custid='.$custID.'&authtype=ip,uid&groupid=main&profileid='.$profile.'&scope=site';
       $onErrorImgUrl = 'http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$EPUB&s=l';
       $title = $rec->header->controlInfo->bkinfo->btl;
       $tempItem = array('title' => strval($title), 'imgUrl' => strval($imgUrl), 'directionUrl' => strval($directionUrl), 'onErrorUrlImg' => strval($onErrorImgUrl));

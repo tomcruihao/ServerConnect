@@ -1,4 +1,7 @@
   var connectToBackendUrl = "https://gss.ebscohost.com/chchang/ServerConnect/carousel/index.php";
+  var custID = document.currentScript.getAttribute('custID');
+  var profile = document.currentScript.getAttribute('profile');
+
   const carouselParam = {
     dots: true,
     infinite: true, 
@@ -37,7 +40,7 @@
           resolve(result);
         }
       };
-      xhttp.open("GET", connectToBackendUrl, true);
+      xhttp.open("GET", `${connectToBackendUrl}?custID=${custID}&profile=${profile}`, true);
       xhttp.send();
     })
   }
