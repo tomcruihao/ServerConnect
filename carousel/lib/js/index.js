@@ -69,6 +69,7 @@
 
       let script = document.createElement("script");
       script.src = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js';
+      script.defer = true;
 
       // Append link element to HTML head 
       head.appendChild(link_slick);
