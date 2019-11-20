@@ -48,36 +48,33 @@
     $(".regular").slick(carouselParam);
   }
   async function initial() {
-    return new Promise((resolve, reject) => {
-      var head = document.getElementsByTagName('HEAD')[0];  
+    var head = document.getElementsByTagName('HEAD')[0];  
 
-      // Create new link Element 
-      let link_slick = document.createElement('link');
-      link_slick.rel = 'stylesheet';  
-      link_slick.type = 'text/css'; 
-      link_slick.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css';
+    // Create new link Element 
+    let link_slick = document.createElement('link');
+    link_slick.rel = 'stylesheet';  
+    link_slick.type = 'text/css'; 
+    link_slick.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css';
 
-      let link_slickTheme = document.createElement('link');
-      link_slickTheme.rel = 'stylesheet';  
-      link_slickTheme.type = 'text/css'; 
-      link_slickTheme.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css';
+    let link_slickTheme = document.createElement('link');
+    link_slickTheme.rel = 'stylesheet';  
+    link_slickTheme.type = 'text/css'; 
+    link_slickTheme.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css';
 
-      let link_indexCss = document.createElement('link');
-      link_indexCss.rel = 'stylesheet';  
-      link_indexCss.type = 'text/css'; 
-      link_indexCss.href = 'https://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
+    let link_indexCss = document.createElement('link');
+    link_indexCss.rel = 'stylesheet';  
+    link_indexCss.type = 'text/css'; 
+    link_indexCss.href = 'https://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
 
-      let script = document.createElement("script");
-      script.src = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js';
-      script.defer = true;
+    let script = document.createElement("script");
+    script.src = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js';
+    script.defer = true;
 
-      // Append link element to HTML head 
-      head.appendChild(link_slick);
-      head.appendChild(link_slickTheme);
-      head.appendChild(link_indexCss);
-      head.appendChild(script);
-      resolve();
-    })
+    // Append link element to HTML head 
+    head.appendChild(link_slick);
+    head.appendChild(link_slickTheme);
+    head.appendChild(link_indexCss);
+    head.appendChild(script);
   }
   $(document).on('ready', async function() {
     // init js and css
