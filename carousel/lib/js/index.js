@@ -1,4 +1,4 @@
-  var connectToBackendUrl = "http://gss.ebscohost.com/chchang/ServerConnect/carousel/index.php";
+  var connectToBackendUrl = "https://gss.ebscohost.com/chchang/ServerConnect/carousel/index.php";
   const carouselParam = {
     dots: true,
     infinite: true, 
@@ -61,7 +61,7 @@
     let link_indexCss = document.createElement('link');
     link_indexCss.rel = 'stylesheet';  
     link_indexCss.type = 'text/css'; 
-    link_indexCss.href = 'http://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
+    link_indexCss.href = 'https://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
 
     let script = document.createElement("script");
     script.src = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js';
