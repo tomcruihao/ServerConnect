@@ -1,5 +1,6 @@
 <?php
   header('Access-Control-Allow-Origin: *');
+  header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json; charset=utf-8');
   // header( 'Content-Type:text/html;charset=utf-8 ');
   date_default_timezone_set('Asia/Taipei');
