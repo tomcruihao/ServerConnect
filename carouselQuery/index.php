@@ -7,10 +7,9 @@
   $randomBookQuantity = 20;
   $apiConnection = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk";
 
-  $keyword = $_GET['uquery'];
+  $keyword = str_replace(' ', '+', $_GET['uquery']);
   $profile = $_GET['profile'];
   $custID = $_GET['custID'];
-  echo $keyword;
 
   // $keyword = "blockchain";
 
@@ -18,7 +17,7 @@
 
   // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
-  function getBookInfoFromServer($apiUrl, $keyword) {
+  function getBookInfoFromServer($apiUrl, $keyword, $profile, $custID) {
     $result = array();
 
     // get value from API
