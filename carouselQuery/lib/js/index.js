@@ -1,5 +1,5 @@
   var connectToBackendUrl = "https://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/index.php";
-  var queryParam = document.currentScript.getAttribute('query').replace(/ /g, "+");
+  var queryParam = document.currentScript.getAttribute('query');
   var custID = document.currentScript.getAttribute('custID');
   var profile = document.currentScript.getAttribute('profile');
 
