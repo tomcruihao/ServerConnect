@@ -1,12 +1,15 @@
 <?php
   header('Access-Control-Allow-Origin: *');
   header('Content-Type: application/json; charset=utf-8');
+  header("Content-Security-Policy: upgrade-insecure-requests");
   date_default_timezone_set('Asia/Taipei');
 
   $randomBookQuantity = 20;
   $apiConnection = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=tylee.main.eit&&pwd=ebs3705&db=edsebk";
 
   $keyword = $_GET['uquery'];
+  $profile = $_GET['profile'];
+  $custID = $_GET['custID'];
 
   // $keyword = "blockchain";
 
