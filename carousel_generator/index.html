@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Carousel Generator</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css"/>
+</head>
+<style>
+</style>
+<body>
+  <div id="generateCarousel">
+    <h1>Carousel Generator</h1>
+    <section>
+      <h2>Step 1: Create Slide Content</h2>
+      <div v-for="(ebook, index) in ebookList">
+        <div class="ebook-wrap">
+          <h3>{{index+1}}.</h3>
+          <div class="row">
+            <div class="title">Book Title:</div>
+            <input type="text" v-model="ebook.title">
+          </div>
+          <div class="row">
+            <div class="title">Img Url:</div>
+            <input type="text" v-model="ebook.imgUrl">
+          </div>
+          <div class="row">
+            <div class="title">Link Url:</div>
+            <input type="text" v-model="ebook.linkUrl">
+          </div>
+          <label class="remove-ebook" @click="removeItem(ebook)">
+            <img src="img/cancel.svg" alt="Remove this item block">
+          </label>
+        </div>
+      </div>
+      <div class="button-frame">
+        <button @click="genNewEbookInList()">
+          <img src="img/add.svg" alt="Add New ebook block">
+          Add New ebook block
+        </button>
+      </div>
+    </section>
+    <section>
+      <h2>Step 2: Set the carousel configuration</h2>
+      <div class="configuration-wrap">
+        <div class="row">
+          <div class="title">Dots(Pagination):</div>
+          <div class="content-frame">
+            <label class="switch">
+              <input type="checkbox" v-model="configuration.dots" :selected="configuration.dots">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">Slides To Show:</div>
+          <div class="content-frame">
+            <input type="number" name="delete_at_post" min="1" max="10" v-model.number="configuration.slidesToShow" :selected="configuration.slidesToShow">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">Infinite:</div>
+          <div class="content-frame">
+            <label class="switch">
+              <input type="checkbox" v-model="configuration.infinite" :selected="configuration.infinite">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">Slides To Scroll:</div>
+          <div class="content-frame">
+            <input type="number" name="delete_at_post" min="1" max="10" v-model.number="configuration.slidesToScroll">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">Swipe To Slide:</div>
+          <div class="content-frame">
+            <label class="switch">
+              <input type="checkbox" checked="true" v-model="configuration.swipeToSlide" :selected="configuration.swipeToSlide">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+        <div class="setting-frame">
+          <div class="title">Responsive:</div>
+          <div class="content-frame">
+            <div v-if="configuration.responsive.length !== 0" v-for="(responsiveBlk, index) in configuration.responsive">
+              <div class="break-frame">
+                <h3>{{index+1}}.</h3>
+                <div class="row">
+                  <div class="title">Break Point(Pixel):</div>
+                  <div class="content-frame">
+                    <input type="number" name="delete_at_post" min="1" v-model.number="responsiveBlk.breakpoint">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="title">Dots(Pagination):</div>
+                  <div class="content-frame">
+                    <label class="switch">
+                      <input type="checkbox" v-model="responsiveBlk.settings.dots" :selected="responsiveBlk.settings.dots">
+                      <div class="slider round"></div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="title">Slides To Show:</div>
+                  <div class="content-frame">
+                    <input type="number" name="delete_at_post" min="1" max="10" v-model.number="responsiveBlk.settings.slidesToShow" :selected="responsiveBlk.settings.slidesToShow">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="title">Infinite:</div>
+                  <div class="content-frame">
+                    <label class="switch">
+                      <input type="checkbox" v-model="responsiveBlk.settings.infinite" :selected="responsiveBlk.settings.infinite">
+                      <div class="slider round"></div>
+                    </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="title">Slides To Scroll:</div>
+                  <div class="content-frame">
+                    <input type="number" name="delete_at_post" min="1" max="10" v-model.number="responsiveBlk.settings.slidesToScroll">
+                  </div>
+                </div>
+                <label class="remove-ebook" @click="removeBreakPoint(responsiveBlk)">
+                  <img src="img/cancel.svg" alt="Remove this item block">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="button-frame">
+            <button @click="genBreakPoint()">
+              <img src="img/add.svg" alt="Add New Break Point">
+              Add New Break Point
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Step 3: Generate the carousel code</h2>
+      <div class="generateWrap">
+        <textarea class="genField" placeholder="Please click the Generate button to generate the carousel code">{{carouselCode}}</textarea>
+        <div class="button-frame">
+          <button @click="genCode()">Generate</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el:'#generateCarousel',
+      data: {
+        ebookList: [],
+        carouselCode: '',
+        configuration: {
+          'dots': true,
+          'slidesToShow': 1,
+          'infinite': true,
+          'slidesToScroll': 1,
+          'swipeToSlide': false,
+          'responsive': []
+        }
+      },
+      beforeMount: function() {
+        // add one book in booklist
+        this.genNewEbookInList();
+      },
+      methods:{
+        genCode: function() {
+          // cleare textarea
+          this.carouselCode = '';
+
+          // append css and js library
+          this.carouselCode = this.carouselCode + `<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>\n<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>\n<link rel="stylesheet" type="text/css" href="http://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/lib/css/index.css"/>\n<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"/><\/script>\n<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"/><\/script>\n`;
+
+          // generate carousel and append it
+          this.carouselCode = this.carouselCode + this.getEbookCarousel();
+
+          // generate script
+          this.carouselCode = this.carouselCode + this.genScript();
+        },
+        genScript: function() {
+          return `
+<script type="text/javascript">
+$(".regular").slick(${JSON.stringify(this.configuration).replace(/"/g, '\'')});
+<\/script>`;
+//           return `
+// <script type="text/javascript">
+// $(".regular").slick({
+//   dots: true,
+//   infinite: true,
+//   slidesToShow: 5,
+//   slidesToScroll: 5,
+//   responsive: [
+//     {
+//       breakpoint: 1024,
+//       settings: {
+//         slidesToShow: 3,
+//         slidesToScroll: 3,
+//         infinite: true,
+//         dots: true
+//       }
+//     },
+//     {
+//       breakpoint: 640,
+//       settings: {
+//         slidesToShow: 1,
+//         slidesToScroll: 1
+//       }
+//     }
+//   ]
+// });
+// <\/script>`;
+        },
+        genBreakPoint: function() {
+          const breakPointObj = new Object();
+          breakPointObj.breakpoint = 1024;
+          breakPointObj.settings = {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          };
+          this.configuration.responsive.push(breakPointObj);
+          console.log(this.configuration.responsive);
+        },
+        genNewEbookInList: function() {
+          const ebook = new Object();
+          ebook.title = '';
+          ebook.imgUrl = '';
+          ebook.linkUrl = '';
+          this.ebookList.push(ebook);
+        },
+        getEbookCarousel: function() {
+          const prefix = `<section id="ebook" class="regular slider">\n`;
+          const suffix = `</section>`;
+          let content = '';
+          this.ebookList.forEach( ebook => {
+            content = content + `<div class="ebook-wrap"><a href="${ebook.linkUrl}"><img src="${ebook.imgUrl}"><h2>${ebook.title}</h2></a></div>\n`;
+          });
+
+          return prefix + content + suffix;
+        },
+        removeItem: function(item) {
+          // console.log(this.ebookList.indexOf(item));
+          this.ebookList.splice(this.ebookList.indexOf(item), 1);
+        },
+        removeBreakPoint: function(item) {
+          this.configuration.responsive.splice(this.configuration.responsive.indexOf(item), 1);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
