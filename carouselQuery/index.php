@@ -10,12 +10,13 @@
   $keyword = $_GET['uquery'];
   $profile = $_GET['profile'];
   $custID = $_GET['custID'];
+  echo $keyword;
 
   // $keyword = "blockchain";
 
-  $bookInfoList = getBookInfoFromServer($apiConnection, $keyword);
+  // $bookInfoList = getBookInfoFromServer($apiConnection, $keyword);
 
-  echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
+  // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
   function getBookInfoFromServer($apiUrl, $keyword) {
     $result = array();
