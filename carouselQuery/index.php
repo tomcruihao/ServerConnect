@@ -13,11 +13,11 @@
 
   // $keyword = "blockchain";
 
-  $bookInfoList = getBookInfoFromServer($apiConnection, $keyword, );
+  $bookInfoList = getBookInfoFromServer($apiConnection, $keyword, $profile, $custID);
 
   echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
-  function getBookInfoFromServer($apiUrl, $keyword, $profile, $custID, $profile, $custID) {
+  function getBookInfoFromServer($apiUrl, $keyword, $profile, $custID) {
     $result = array();
 
     // get value from API
