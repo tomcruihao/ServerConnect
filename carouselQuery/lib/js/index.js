@@ -1,5 +1,7 @@
-  var connectToBackendUrl = "http://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/index.php";
+  var connectToBackendUrl = "https://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/index.php";
   var queryParam = document.currentScript.getAttribute('query');
+  var custID = document.currentScript.getAttribute('custID');
+  var profile = document.currentScript.getAttribute('profile');
 
   const carouselParam = {
     dots: true,
@@ -42,7 +44,7 @@
 
       let urlWithParam = connectToBackendUrl;
       if(queryParam) {
-        urlWithParam = `${connectToBackendUrl}?uquery=${queryParam}`;
+        urlWithParam = `${connectToBackendUrl}?uquery=${queryParam}&custID=${custID}&profile=${profile}`;
       }
       xhttp.open("GET", urlWithParam, true);
       xhttp.send();
@@ -69,7 +71,7 @@
       let link_indexCss = document.createElement('link');
       link_indexCss.rel = 'stylesheet';  
       link_indexCss.type = 'text/css'; 
-      link_indexCss.href = 'http://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
+      link_indexCss.href = 'https://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
 
       let script = document.createElement("script");
       script.src = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js';
