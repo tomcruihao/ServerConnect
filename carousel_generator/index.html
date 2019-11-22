@@ -16,7 +16,7 @@
         <div class="ebook-wrap">
           <h3>{{index+1}}.</h3>
           <div class="row">
-            <div class="title">Book Title:</div>
+            <div class="title">Title:</div>
             <input type="text" v-model="ebook.title">
           </div>
           <div class="row">
@@ -35,7 +35,7 @@
       <div class="button-frame">
         <button @click="genNewEbookInList()">
           <img src="img/add.svg" alt="Add New ebook block">
-          Add New ebook block
+          Add New block of Content
         </button>
       </div>
     </section>
@@ -138,8 +138,16 @@
         </div>
       </div>
     </section>
+    <form id="hiddenForm" action="http://gss.ebscohost.com/chchang/ServerConnect/carousel_generator/preview.php" method="post" target="newWin"  style="display: none;">
+      <input type="text" name="code" v-model="temp" />
+    </form>
     <section>
       <h2>Step 3: Generate the carousel code</h2>
+      <div class="button-frame" v-if="configuration.responsive.length !== 0" v-for="(btn, index) in configuration.responsive">
+        <button @click="openPreview(btn.breakpoint)">
+          Preview in {{btn.breakpoint}} pixel
+        </button>
+      </div>
       <div class="generateWrap">
         <textarea class="genField" placeholder="Please click the Generate button to generate the carousel code">{{carouselCode}}</textarea>
         <div class="button-frame">
@@ -149,6 +157,7 @@
     </section>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="js/base64.js"></script>
   <script type="text/javascript">
     new Vue({
       el:'#generateCarousel',
@@ -162,58 +171,48 @@
           'slidesToScroll': 1,
           'swipeToSlide': false,
           'responsive': []
-        }
+        },
+        temp: ''
       },
       beforeMount: function() {
         // add one book in booklist
         this.genNewEbookInList();
       },
       methods:{
+        openPreview: function(frameWidth) {
+          let tempCode = `<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>\n<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>\n<link rel="stylesheet" type="text/css" href="http://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/lib/css/index.css"/>\n<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"/><\/script>\n<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"/><\/script>\n`+ this.getEbookCarousel() + this.genScript();
+          this.temp = base64.encode(tempCode);
+          window.setTimeout(( () => {
+            window.open('','newWin',`width=${frameWidth}, height=300`);
+            let formDom = document.getElementById("hiddenForm");
+            formDom.submit();
+          }), 1000);
+          // let previewOpen = window.open("", "previewOpen", `width=${frameWidth}, height=600`);
+          // console.log(this.carouselCode);
+          // previewOpen.document.body.innerHTML = this.carouselCode;
+        },
         genCode: function() {
           // cleare textarea
-          this.carouselCode = '';
+          const commentStart = '<!-- start carousel -->\n';
+          const commentEnd = '\n<!-- end carousel -->';
+          this.carouselCode = commentStart;
 
           // append css and js library
-          this.carouselCode = this.carouselCode + `<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>\n<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>\n<link rel="stylesheet" type="text/css" href="http://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/lib/css/index.css"/>\n<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"/><\/script>\n<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"/><\/script>\n`;
+          this.carouselCode =  this.carouselCode + `<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>\n<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>\n<link rel="stylesheet" type="text/css" href="http://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/lib/css/index.css"/>\n<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"/><\/script>\n<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"/><\/script>\n`;
 
           // generate carousel and append it
           this.carouselCode = this.carouselCode + this.getEbookCarousel();
 
           // generate script
           this.carouselCode = this.carouselCode + this.genScript();
+
+          this.carouselCode = this.carouselCode + commentEnd;
         },
         genScript: function() {
           return `
 <script type="text/javascript">
 $(".regular").slick(${JSON.stringify(this.configuration).replace(/"/g, '\'')});
 <\/script>`;
-//           return `
-// <script type="text/javascript">
-// $(".regular").slick({
-//   dots: true,
-//   infinite: true,
-//   slidesToShow: 5,
-//   slidesToScroll: 5,
-//   responsive: [
-//     {
-//       breakpoint: 1024,
-//       settings: {
-//         slidesToShow: 3,
-//         slidesToScroll: 3,
-//         infinite: true,
-//         dots: true
-//       }
-//     },
-//     {
-//       breakpoint: 640,
-//       settings: {
-//         slidesToShow: 1,
-//         slidesToScroll: 1
-//       }
-//     }
-//   ]
-// });
-// <\/script>`;
         },
         genBreakPoint: function() {
           const breakPointObj = new Object();
