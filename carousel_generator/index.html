@@ -12,6 +12,13 @@
     <h1>Carousel Generator</h1>
     <section>
       <h2>Step 1: Create Slide Content</h2>
+      <div class="upload-csv-wrap">
+        <a href="http://gss.ebscohost.com/chchang/ServerConnect/carousel_generator/carousel_template.csv">Template</a>
+        <label class="upload-csv">
+          Upload CSV
+          <input type="file" @change="onFileChange">
+        </label>
+      </div>
       <div v-for="(ebook, index) in ebookList">
         <div class="ebook-wrap">
           <h3>{{index+1}}.</h3>
@@ -35,7 +42,7 @@
       <div class="button-frame">
         <button @click="genNewEbookInList()">
           <img src="img/add.svg" alt="Add New ebook block">
-          Add New block of Content
+          Add New block
         </button>
       </div>
     </section>
@@ -179,6 +186,35 @@
         this.genNewEbookInList();
       },
       methods:{
+        onFileChange(e) {
+          let csvFile = e.target.files || e.dataTransfer.files;
+          if (!csvFile.length)
+            return;
+          this.getCsvData(csvFile[0]);
+        },
+        getCsvData: function(file) {
+          let reader = new FileReader();
+          let vm = this;
+
+          reader.onload = (e) => {
+            const rawData = e.target.result;
+            vm.dealCsvDataAndPush(rawData);
+          };
+
+          reader.readAsBinaryString(file);
+        },
+        dealCsvDataAndPush(rawData) {
+          const dataList = rawData.split("\n");
+          this.ebookList.pop();
+          for(let loop = 1; loop < dataList.length; loop++) {
+            const blockData = dataList[loop].split(",");
+            const ebook = new Object();
+            ebook.title = blockData[0];
+            ebook.imgUrl = blockData[1];
+            ebook.linkUrl = blockData[2];
+            this.ebookList.push(ebook);
+          }
+        },
         openPreview: function(frameWidth) {
           let tempCode = `<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>\n<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>\n<link rel="stylesheet" type="text/css" href="http://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/lib/css/index.css"/>\n<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"/><\/script>\n<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"/><\/script>\n`+ this.getEbookCarousel() + this.genScript();
           this.temp = base64.encode(tempCode);

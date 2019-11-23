@@ -6,6 +6,7 @@ section {
   background-color: #ffffff;
   padding: 20px 15px;
   margin-bottom: 20px;
+  position: relative;
 }
 input[type="text"] {
   flex: 1;
@@ -154,4 +155,21 @@ input:checked + .slider:before {
   position: relative;
   background-color: #fff3cd;
   border-radius: 10px;
+}
+.upload-csv-wrap {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.upload-csv-wrap > .upload-csv, .upload-csv-wrap > a {
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #28a745;
+  text-decoration: none;
+  border-radius: 10px;
+  display: inline-block;
+}
+.upload-csv > input {
+  display: none;
 }
