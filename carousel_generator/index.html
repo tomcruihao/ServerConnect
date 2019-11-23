@@ -183,7 +183,7 @@
           let tempCode = `<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>\n<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>\n<link rel="stylesheet" type="text/css" href="http://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/lib/css/index.css"/>\n<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"/><\/script>\n<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"/><\/script>\n`+ this.getEbookCarousel() + this.genScript();
           this.temp = base64.encode(tempCode);
           window.setTimeout(( () => {
-            window.open('','newWin',`width=${frameWidth}, height=300`);
+            window.open('','newWin',`width=${frameWidth-1}, height=400`);
             let formDom = document.getElementById("hiddenForm");
             formDom.submit();
           }), 1000);
