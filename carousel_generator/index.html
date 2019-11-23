@@ -16,7 +16,7 @@
         <a href="http://gss.ebscohost.com/chchang/ServerConnect/carousel_generator/carousel_template.csv">Template</a>
         <label class="upload-csv">
           Upload CSV
-          <input type="file" @change="onFileChange">
+          <input type="file" accept=".csv" @change="onFileChange">
         </label>
       </div>
       <div v-for="(ebook, index) in ebookList">
