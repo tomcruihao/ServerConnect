@@ -169,6 +169,7 @@ input:checked + .slider:before {
   text-decoration: none;
   border-radius: 10px;
   display: inline-block;
+  cursor: pointer;
 }
 .upload-csv > input {
   display: none;
