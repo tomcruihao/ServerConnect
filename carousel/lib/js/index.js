@@ -45,17 +45,24 @@
     })
   }
   async function genCarousel() {
-    var trackCall = setInterval(function() {  
+    var execLoop = setInterval(checkExist, 10);
+    function checkExist() {
       if (window.slick) {
-        console.log('slick check');
-        clearInterval(trackCall);
-        try{
-          console.log('slick exist');
-          $(".regular").slick(carouselParam);
-        } catch(e){
-        }
+        clearInterval(execLoop);
+        $(".regular").slick(carouselParam);
       }
-    }, 100);
+    }
+    // var trackCall = setInterval(function() {  
+    //   if (window.slick) {
+    //     console.log('slick check');
+    //     clearInterval(trackCall);
+    //     try{
+    //       console.log('slick exist');
+    //       $(".regular").slick(carouselParam);
+    //     } catch(e){
+    //     }
+    //   }
+    // }, 100);
   }
   async function initial() {
     return new Promise((resolve, reject) => {
