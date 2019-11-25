@@ -55,7 +55,7 @@
       $parts = parse_url($url);
       $AN = $query['AN'];
       $imgUrl = 'http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$PDF&s=l';
-      $directionUrl = 'http://search.ebscohost.com/login.aspx?direct=true&&bquery=AN+'.$AN.'&custid='.$custID.'&profileid='.$profile;
+      $directionUrl = 'http://search.ebscohost.com/login.aspx?direct=true&&bquery=AN+'.$AN.'&custid='.$custID.'&profile='.$profile;
       $onErrorImgUrl = 'http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$EPUB&s=l';
       $title = $rec->header->controlInfo->bkinfo->btl;
       $tempItem = array('title' => strval($title), 'imgUrl' => strval($imgUrl), 'directionUrl' => strval($directionUrl), 'onErrorUrlImg' => strval($onErrorImgUrl));
