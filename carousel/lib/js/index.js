@@ -47,6 +47,7 @@
   async function genCarousel() {
     var trackCall = setInterval(function() {  
       if (window.slick) {
+        console.log('slick check');
         clearInterval(trackCall);
         try{
           console.log('slick exist');
