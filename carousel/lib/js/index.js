@@ -47,24 +47,11 @@
   async function genCarousel() {
     var execLoop = setInterval(checkExist, 100);
     function checkExist() {
-      console.log('check')
       if (jQuery().slick) {
-        console.log('exist')
         clearInterval(execLoop);
         $(".regular").slick(carouselParam);
       }
     }
-    // var trackCall = setInterval(function() {  
-    //   if (window.slick) {
-    //     console.log('slick check');
-    //     clearInterval(trackCall);
-    //     try{
-    //       console.log('slick exist');
-    //       $(".regular").slick(carouselParam);
-    //     } catch(e){
-    //     }
-    //   }
-    // }, 100);
   }
   async function initial() {
     return new Promise((resolve, reject) => {

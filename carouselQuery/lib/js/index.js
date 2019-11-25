@@ -51,16 +51,13 @@
     })
   }
   async function genCarousel() {
-    var trackCall = setInterval(function() {  
-      if (window.slick) {
-        clearInterval(trackCall);
-        try{
-          console.log('slick exist');
-          $(".regular").slick(carouselParam);
-        } catch(e){
-        }
+    var execLoop = setInterval(checkExist, 100);
+    function checkExist() {
+      if (jQuery().slick) {
+        clearInterval(execLoop);
+        $(".regular").slick(carouselParam);
       }
-    }, 100);
+    }
   }
   async function initial() {
     return new Promise((resolve, reject) => {
