@@ -48,7 +48,7 @@
     var execLoop = setInterval(checkExist, 100);
     function checkExist() {
       console.log('check')
-      if ($.isFunction(slick)) {
+      if (jQuery().slick) {
         console.log('exist')
         clearInterval(execLoop);
         $(".regular").slick(carouselParam);
