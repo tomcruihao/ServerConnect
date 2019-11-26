@@ -1,0 +1,240 @@
+<body>
+  <div class="logo-frame">
+    <img src="img/logo.png" class="logo">
+  </div>
+  <section>
+    <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" onsubmit="ebscoPreProcess(this)" class="field">
+      <h3>搜索：湖南师范大学 - 学术发现系统</h3>
+      <div class="search-frame">
+        <select name="search_prefix" id="search_prefix" class="search_prefix">
+          <option selected="selected" value="">关键字</option>
+          <option value="TI ">题名</option>
+          <option value="AU ">作者</option>
+          <option value="JN ">期刊</option>
+        </select>
+        <input type="text" placeholder="搜索期刊文章、图书和更多学术资源" id="searchKeyword" name="uquery" class="search-text">
+        <button type="submit" class="btn-primary">
+          <img src="img/search.svg">
+        </button>      
+      </div>
+      <input name="direct" value="true" type="hidden">
+      <input name="scope" value="site" type="hidden">
+      <input name="site" value="eds-live" type="hidden">
+      <input name="authtype" value="ip,guest" type="hidden">
+      <input name="custid" value="s4241502" type="hidden">
+      <input name="groupid" value="main" type="hidden">
+      <input name="profile" value="eds" type="hidden">
+      <input name="bquery" value="" type="hidden">
+    </form>
+  </section>
+  <section>
+    <div class="field">
+      <h3>公告</h3>
+      <div class="table">
+        <div class="table-row">
+          <a href="http://lib.hunnu.edu.cn/ask/faqInfo">
+            <div class="icon-frame">
+              <img src="img/arrow.svg">
+            </div>
+            <p class="content">
+              常见问题
+            </p>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="http://lib.hunnu.edu.cn/ask/searchMessageList">
+            <div class="icon-frame">
+              <img src="img/arrow.svg">
+            </div>
+            <p class="content">
+              读者留言
+            </p>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="http://lib.hunnu.edu.cn/category50/index.shtml">
+            <div class="icon-frame">
+              <img src="img/arrow.svg">
+            </div>
+            <p class="content">
+              实时咨询
+            </p>
+          </a>
+        </div>
+        <div class="table-row">
+            <a href="http://lib.hunnu.edu.cn/category53/index.shtml">
+            <div class="icon-frame">
+              <img src="img/arrow.svg">
+            </div>
+            <p class="content">
+              电话咨询
+            </p>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="http://lib.hunnu.edu.cn/category47/index.shtml">
+            <div class="icon-frame">
+              <img src="img/arrow.svg">
+            </div>
+            <p class="content">
+              馆长信箱
+            </p>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="http://lib.hunnu.edu.cn/category49/index.shtml">
+            <div class="icon-frame">
+              <img src="img/arrow.svg">
+            </div>
+            <p class="content">
+              读者荐购
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="field">
+      <h3>快速链接</h3>
+      <div class="news-table">
+        <div class="table-row">
+          <a href="http://lib.hunnu.edu.cn/category22/index.shtml">
+            <div class="icon-frame">
+              <img src="img/arrow.svg">
+            </div>
+            <p class="content">
+              校外远程访问系统
+            </p>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="http://lib.hunnu.edu.cn/category30/index.shtml">
+            <div class="icon-frame">
+              <img src="img/arrow.svg">
+            </div>
+            <p class="content">
+              新生专栏
+            </p>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="http://www.hnadl.cn/">
+            <div class="icon-frame">
+              <img src="img/arrow.svg">
+            </div>
+            <p class="content">
+              湖南省高校数字图书馆
+            </p>
+          </a>
+        </div>
+        <div class="table-row">
+          <a href="http://lib.hunnu.edu.cn/category156/index.shtml">
+            <div class="icon-frame">
+              <img src="img/arrow.svg">
+            </div>
+            <p class="content">
+              岳麓书苑
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+<script>
+  function ebscoPreProcess(searchForm) {
+    let key = document.getElementById("searchKeyword").value;
+    var query;
+    var prefix = document.getElementById("search_prefix").value;
+    if(prefix !== '') {
+      query = `${prefix} ${key}`;
+    } else {
+      query = key;
+    }
+    searchForm.bquery.value = query;
+  }
+</script>
+<style type="text/css">
+  body {
+    background-color: #cccccc;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+  section {
+    padding: 0 15px;
+  }
+  .table-row > a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  .table-row {
+    border-top: 1px solid #dddddd;
+    padding: 10px 0;
+  }
+  .table-row:first-child {
+    border-top: none;
+  }
+  .icon-frame {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    margin-left: 10px;
+    color: #333333;
+  }
+  .logo-frame {
+    width: 100%;
+    padding: 15px;
+    background: url(img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .logo {
+    width: 100%;
+    max-width: 400px;
+  }
+  .field {
+    width: 100%;
+    padding: 20px 15px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 2px solid #9C2323;
+  }
+  .search-frame {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .search_prefix, .search-text, .btn-primary {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  .search_prefix {
+    width: 100px;
+    font-size: 16px;
+  }
+  .search-text {
+    flex: 1;
+    font-size: 16px;
+  }
+  .btn-primary {
+    width: 60px;
+    font-size: 16px;
+    border-radius: 0 10px 10px 0;
+    background-color: #9C2323;
+    color: #ffffff;
+    cursor: pointer;
+  }
+</style>
