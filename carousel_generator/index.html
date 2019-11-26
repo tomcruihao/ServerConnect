@@ -13,7 +13,7 @@
     <section>
       <h2>Step 1: Create Slide Content</h2>
       <div class="upload-csv-wrap">
-        <a href="http://gss.ebscohost.com/chchang/ServerConnect/carousel_generator/carousel_template.csv">Template</a>
+        <a href="http://gss.ebscohost.com/chchang/ServerConnect/carousel_generator/carousel_template.csv">Download Template</a>
         <label class="upload-csv">
           Upload CSV
           <input type="file" accept=".csv" @change="onFileChange">
@@ -95,9 +95,16 @@
               <div class="break-frame">
                 <h3>{{index+1}}.</h3>
                 <div class="row">
-                  <div class="title">Break Point(Pixel):</div>
+                  <div class="title">Break Point (Screen size less than this pixel):</div>
                   <div class="content-frame">
-                    <input type="number" name="delete_at_post" min="1" v-model.number="responsiveBlk.breakpoint">
+                    <!-- <input type="number" name="delete_at_post" min="1" v-model.number="responsiveBlk.breakpoint"> -->
+                    <select v-model.number="responsiveBlk.breakpoint">
+                      <option>1081</option>
+                      <option>961</option>
+                      <option>721</option>
+                      <option>601</option>
+                      <option>481</option>
+                    </select>
                   </div>
                 </div>
                 <div class="row">
@@ -150,9 +157,12 @@
     </form>
     <section>
       <h2>Step 3: Generate the carousel code</h2>
-      <div class="button-frame" v-if="configuration.responsive.length !== 0" v-for="(btn, index) in configuration.responsive">
-        <button @click="openPreview(btn.breakpoint)">
-          Preview in {{btn.breakpoint}} pixel
+      <div class="preview-wrap">
+        <button @click="openPreview()">
+          Preview in full
+        </button>
+        <button v-if="configuration.responsive.length !== 0" v-for="(btn, index) in configuration.responsive" @click="openPreview(btn.breakpoint-1)">
+          Preview in {{btn.breakpoint-1}} pixel
         </button>
       </div>
       <div class="generateWrap">
@@ -215,13 +225,20 @@
             this.ebookList.push(ebook);
           }
         },
-        openPreview: function(frameWidth) {
+        openPreview: function(frameWidth='default') {
+          console.log(frameWidth)
           let tempCode = `<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>\n<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>\n<link rel="stylesheet" type="text/css" href="http://gss.ebscohost.com/chchang/ServerConnect/carouselQuery/lib/css/index.css"/>\n<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"/><\/script>\n<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"/><\/script>\n`+ this.getEbookCarousel() + this.genScript();
           this.temp = base64.encode(tempCode);
           window.setTimeout(( () => {
-            window.open('','newWin',`width=${frameWidth-1}, height=400`);
-            let formDom = document.getElementById("hiddenForm");
-            formDom.submit();
+            if(frameWidth === 'default') {
+              window.open('','newWin', "width="+screen.availWidth+",height="+screen.availHeight);
+              let formDom = document.getElementById("hiddenForm");
+              formDom.submit();
+            } else {
+              window.open('','newWin',`width=${frameWidth}, height=400`);
+              let formDom = document.getElementById("hiddenForm");
+              formDom.submit();
+            }
           }), 1000);
           // let previewOpen = window.open("", "previewOpen", `width=${frameWidth}, height=600`);
           // console.log(this.carouselCode);
@@ -252,7 +269,7 @@ $(".regular").slick(${JSON.stringify(this.configuration).replace(/"/g, '\'')});
         },
         genBreakPoint: function() {
           const breakPointObj = new Object();
-          breakPointObj.breakpoint = 1024;
+          breakPointObj.breakpoint = 1081;
           breakPointObj.settings = {
             slidesToShow: 3,
             slidesToScroll: 3,

@@ -89,8 +89,15 @@ textarea {
   right: 15px;
 }
 .button-frame {
-  width: 100%;
   padding: 20px 0;
+}
+.preview-wrap {
+  margin-bottom: 20px; 
+}
+.preview-wrap button{
+  width: auto;
+  font-size: 12px;
+  display: inline-block;
 }
 .generateWrap {
   width: 100%;
@@ -158,11 +165,11 @@ input:checked + .slider:before {
 }
 .upload-csv-wrap {
   position: absolute;
-  top: 15px;
+  top: 40px;
   right: 15px;
 }
 .upload-csv-wrap > .upload-csv, .upload-csv-wrap > a {
-  padding: 15px 30px;
+  padding: 5px 15px;
   font-size: 16px;
   color: #ffffff;
   background-color: #28a745;
