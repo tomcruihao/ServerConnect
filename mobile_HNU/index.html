@@ -2,13 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carousel Generator</title>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
   </head>
 <body>
-  <div class="logo-frame">
+  <picture class="logo-frame">
     <img src="img/logo.png" class="logo">
-  </div>
+  </picture>
   <section>
     <form action="https://search.ebscohost.com/login.aspx" method="get" target="_blank" onsubmit="ebscoPreProcess(this)" class="field">
       <h3>搜索：湖南师范大学 - 学术发现系统</h3>
@@ -103,7 +104,7 @@
   </section>
   <section>
     <div class="field">
-      <h3>快速链接</h3>
+      <h3>互动与沟通</h3>
       <div class="news-table">
         <div class="table-row">
           <a href="http://lib.hunnu.edu.cn/category22/index.shtml">
@@ -166,12 +167,16 @@
 <style type="text/css">
   body {
     background-color: #cccccc;
+    width: 100%;
     max-width: 960px;
     margin: 0 auto;
     padding-bottom: 50px;
   }
   section {
-    padding: 0 15px;
+    padding: 0 3%;
+  }
+  h3 {
+    font-size: 4vw;
   }
   .table-row > a {
     text-decoration: none;
@@ -197,14 +202,16 @@
   .content {
     margin-left: 10px;
     color: #333333;
-    font-size: 1.6rem;
+    font-size: 5vw;
   }
   .logo-frame {
     width: 100%;
     padding: 15px;
+    display: block;
     background: url(img/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    box-sizing: border-box;
   }
   .logo {
     width: 100%;
