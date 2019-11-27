@@ -2,34 +2,37 @@
   var custID = document.currentScript.getAttribute('custID');
   var profile = document.currentScript.getAttribute('profile');
 
-  // append the js and css
-  var head = document.getElementsByTagName('HEAD')[0];  
+  function appendLibrary() {
+    // append the js and css
+    var head = document.getElementsByTagName('HEAD')[0];  
 
-  // Create new link Element 
-  let link_slick = document.createElement('link');
-  link_slick.rel = 'stylesheet';  
-  link_slick.type = 'text/css'; 
-  link_slick.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css';
+    // Create new link Element 
+    let link_slick = document.createElement('link');
+    link_slick.rel = 'stylesheet';  
+    link_slick.type = 'text/css'; 
+    link_slick.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css';
 
-  let link_slickTheme = document.createElement('link');
-  link_slickTheme.rel = 'stylesheet';  
-  link_slickTheme.type = 'text/css'; 
-  link_slickTheme.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css';
+    let link_slickTheme = document.createElement('link');
+    link_slickTheme.rel = 'stylesheet';  
+    link_slickTheme.type = 'text/css'; 
+    link_slickTheme.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css';
 
-  let link_indexCss = document.createElement('link');
-  link_indexCss.rel = 'stylesheet';  
-  link_indexCss.type = 'text/css'; 
-  link_indexCss.href = 'https://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
+    let link_indexCss = document.createElement('link');
+    link_indexCss.rel = 'stylesheet';  
+    link_indexCss.type = 'text/css'; 
+    link_indexCss.href = 'https://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
 
-  let script = document.createElement("script");
-  script.src = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js';
-  script.defer = true;
+    let script = document.createElement("script");
+    script.src = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js';
+    script.defer = true;
 
-  // Append link element to HTML head 
-  head.appendChild(link_slick);
-  head.appendChild(link_slickTheme);
-  head.appendChild(link_indexCss);
-  head.appendChild(script);
+    // Append link element to HTML head 
+    head.appendChild(link_slick);
+    head.appendChild(link_slickTheme);
+    head.appendChild(link_indexCss);
+    head.appendChild(script);
+  }
+  appendLibrary();
 
   const carouselParam = {
     dots: true,
@@ -74,13 +77,18 @@
     })
   }
   async function genCarousel() {
-    var execLoop = setInterval(checkExist, 100);
+    var execLoop = setInterval(checkExist, 200);
+    var countExeLoop = 0;
     function checkExist() {
       console.log('checkExist');
+      countExeLoop = countExeLoop + 1;
       if (jQuery().slick) {
         console.log('Exist!');
         clearInterval(execLoop);
         $(".regular").slick(carouselParam);
+      } else if(countExeLoop > 10) {
+        appendLibrary();
+        countExeLoop = 0;
       }
     }
   }
