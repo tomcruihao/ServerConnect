@@ -68,6 +68,9 @@ a {
 
 /* when screen pixel less than 640px */
 @media screen and (max-width: 639px) {
+  .image-frame {
+    height: auto;
+  }
   .ebook-wrap img {
     height: auto;
     width: 100%;
