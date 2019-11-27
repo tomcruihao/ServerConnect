@@ -30,6 +30,7 @@ a {
 }
 .ebook-wrap img {
   width: auto;
+  max-width: 90%;
   height: 100%;
 }
 .ebook-wrap {
