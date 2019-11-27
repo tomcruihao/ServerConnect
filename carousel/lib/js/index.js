@@ -94,5 +94,5 @@
     setTimeout(function(){
       $("#ebook").append(await makeEbookField());
       const carousel = await genCarousel();
-    }, 1000);
+    }, 3000);
   });
