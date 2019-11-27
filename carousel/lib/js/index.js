@@ -76,23 +76,20 @@
   async function genCarousel() {
     var execLoop = setInterval(checkExist, 100);
     function checkExist() {
+      console.log('checkExist');
       if (jQuery().slick) {
+        console.log('Exist!');
         clearInterval(execLoop);
         $(".regular").slick(carouselParam);
       }
     }
   }
-  // async function initial() {
-  //   return new Promise((resolve, reject) => {
-
-  //     resolve();
-  //   })
-  // }
-  $(document).on('ready', async function() {
+  async function initial() {
+    $("#ebook").append(await makeEbookField());
+    const carousel = await genCarousel();
+  }
+  $(document).on('ready', function() {
     // init js and css
     // const init = await initial();
-    setTimeout(function(){
-      $("#ebook").append(await makeEbookField());
-      const carousel = await genCarousel();
-    }, 3000);
+    setTimeout(initial, 1000);
   });
