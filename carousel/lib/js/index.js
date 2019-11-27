@@ -78,7 +78,7 @@
     function checkExist() {
       console.log('checkExist');
       if (jQuery().slick) {
-        console.log('checkExist');
+        console.log('Exist!');
         clearInterval(execLoop);
         $(".regular").slick(carouselParam);
       }
