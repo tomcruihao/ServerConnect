@@ -291,7 +291,7 @@ $(".regular").slick(${JSON.stringify(this.configuration).replace(/"/g, '\'')});
           const suffix = `</section>`;
           let content = '';
           this.ebookList.forEach( ebook => {
-            content = content + `<div class="ebook-wrap"><a href="${ebook.linkUrl}"><img src="${ebook.imgUrl}"><h2>${ebook.title}</h2></a></div>\n`;
+            content = content + `<div class="ebook-wrap"><a href="${ebook.linkUrl}"><div class="image-frame"><img src="${ebook.imgUrl}"></div><h2>${ebook.title}</h2></a></div>\n`;
           });
 
           return prefix + content + suffix;
