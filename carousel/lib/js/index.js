@@ -91,7 +91,8 @@
   $(document).on('ready', async function() {
     // init js and css
     // const init = await initial();
-    console.log('initial finish');
-    $("#ebook").append(await makeEbookField());
-    const carousel = await genCarousel();
+    setTimeout(function(){
+      $("#ebook").append(await makeEbookField());
+      const carousel = await genCarousel();
+    }, 1000);
   });
