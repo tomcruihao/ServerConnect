@@ -34,6 +34,13 @@
             <div class="title">Link Url:</div>
             <input type="text" v-model="ebook.linkUrl">
           </div>
+          <div class="row">
+            <div class="title">Upload to imgur</div>
+            <label class="upload-to-imgur">
+              Upload to Imgur
+              <input type="file" accept=".png,.jpg,.gif" @change="uploadToImgur($event, ebook)">
+            </lable>
+          </div>
           <label class="remove-ebook" @click="removeItem(ebook)">
             <img src="img/cancel.svg" alt="Remove this item block">
           </label>
@@ -196,6 +203,44 @@
         this.genNewEbookInList();
       },
       methods:{
+        uploadToImgur(e, ebook) {
+          let imgFile = e.target.files || e.dataTransfer.files;
+          if (!imgFile.length) {
+            return;
+          } else {
+            // call imgur api and fill the response in the data
+            const vm = this;
+
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                console.log(this.response);
+              }
+            };
+            xhr.open("POST", 'https://api.imgur.com/3/image', true);
+            xhr.setRequestHeader('headers', {'Authorization': 'Client-ID 61c349606bd5d8a'});
+            xhr.send(imgFile[0]);
+            // $.ajax({
+            //   url: "https://api.imgur.com/3/image",
+            //   headers: {
+            //     'Authorization': 'Client-ID 61c349606bd5d8a'
+            //   },
+            //   data: {
+            //     "image": imgFile
+            //   },
+            //   type: "POST",
+            //   success: function(result) {
+            //     console.log(result);
+            //       var link = result.data.link;
+            //       imgurCanvas.location = link;
+                  
+            //   },
+            //   error: function(result) {
+            //     console.log(result);
+            //   }
+            // });
+          }
+        },
         onFileChange(e) {
           let csvFile = e.target.files || e.dataTransfer.files;
           if (!csvFile.length)
