@@ -97,7 +97,6 @@
     const carousel = await genCarousel();
   }
   $(document).on('ready', function() {
-    // init js and css
-    // const init = await initial();
     setTimeout(initial, 1000);
   });
+  
