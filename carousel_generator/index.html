@@ -106,11 +106,11 @@
                   <div class="content-frame">
                     <!-- <input type="number" name="delete_at_post" min="1" v-model.number="responsiveBlk.breakpoint"> -->
                     <select v-model.number="responsiveBlk.breakpoint">
-                      <option>1081</option>
-                      <option>961</option>
-                      <option>721</option>
-                      <option>601</option>
-                      <option>481</option>
+                      <option>1080</option>
+                      <option>960</option>
+                      <option>720</option>
+                      <option>640</option>
+                      <option>480</option>
                     </select>
                   </div>
                 </div>
@@ -168,8 +168,8 @@
         <button @click="openPreview()">
           Preview in full
         </button>
-        <button v-if="configuration.responsive.length !== 0" v-for="(btn, index) in configuration.responsive" @click="openPreview(btn.breakpoint-1)">
-          Preview in {{btn.breakpoint-1}} pixel
+        <button v-if="configuration.responsive.length !== 0" v-for="(btn, index) in configuration.responsive" @click="openPreview(btn.breakpoint)">
+          Preview in {{btn.breakpoint}} pixel
         </button>
       </div>
       <div class="generateWrap">
@@ -259,25 +259,6 @@
             //   console.error(JSON.stringify(error));
             //   alert('Upload failed: ' + error);
             // });
-
-            // $.ajax({
-            //   url: "https://api.imgur.com/3/image",
-            //   headers: {
-            //     'Authorization': 'Client-ID 61c349606bd5d8a'
-            //   },
-            //   data: {
-            //     "image": vm.imgFile[0]
-            //   },
-            //   type: "POST",
-            //   success: function(result) {
-            //     console.log(result);
-            //       // var link = result.data.link;
-            //       // imgurCanvas.location = link;
-            //   },
-            //   error: function(result) {
-            //     console.log(result);
-            //   }
-            // });
           }
         },
         onFileChange(e) {
@@ -346,14 +327,20 @@
           this.carouselCode = this.carouselCode + commentEnd;
         },
         genScript: function() {
+          let tempObj = Object.assign({}, this.configuration);
+          if(tempObj.responsive.length > 0) {
+            for(let index in tempObj.responsive) {
+              tempObj.responsive[index].breakpoint = tempObj.responsive[index].breakpoint + 1;
+            }
+          }
           return `
 <script type="text/javascript">
-$(".regular").slick(${JSON.stringify(this.configuration).replace(/"/g, '\'')});
+$(".regular").slick(${JSON.stringify(tempObj).replace(/"/g, '\'')});
 <\/script>`;
         },
         genBreakPoint: function() {
           const breakPointObj = new Object();
-          breakPointObj.breakpoint = 1081;
+          breakPointObj.breakpoint = 1080;
           breakPointObj.settings = {
             slidesToShow: 3,
             slidesToScroll: 3,
