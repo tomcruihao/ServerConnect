@@ -181,3 +181,22 @@ input:checked + .slider:before {
 .upload-csv > input {
   display: none;
 }
+.upload-to-imgur-wrap {
+  display: flex;
+}
+.upload-to-imgur-wrap label{
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #28a745;
+  line-height: 36px;
+  cursor: pointer;
+}
+.upload-to-imgur-wrap input{
+  display: none;
+}
+.upload-to-imgur-wrap img{
+  width: 36px;
+  height: 36px;
+}

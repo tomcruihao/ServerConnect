@@ -36,10 +36,16 @@
           </div>
           <div class="row">
             <div class="title">Upload to imgur</div>
-            <label class="upload-to-imgur">
-              Upload to Imgur
-              <input type="file" accept=".png,.jpg,.gif" @change="uploadToImgur($event, ebook)">
-            </lable>
+            <div class="upload-to-imgur-wrap">
+              <label class="upload-to-imgur">
+                Choose Image
+                <input type="file" accept=".png,.jpg,.gif" @change="uploadToImgur($event, ebook)">
+              </label>
+              <div class="status" v-if="ebook.status !== 'none'">
+                <img src="img/Spinner.svg" v-if="ebook.status === 'uploading'">
+                <img src="img/check_circle.svg" v-else-if="ebook.status === 'success'">
+              </div>
+            </div>
           </div>
           <label class="remove-ebook" @click="removeItem(ebook)">
             <img src="img/cancel.svg" alt="Remove this item block">
@@ -102,7 +108,7 @@
               <div class="break-frame">
                 <h3>{{index+1}}.</h3>
                 <div class="row">
-                  <div class="title">Break Point (Screen size less than this pixel):</div>
+                  <div class="title">Break Point (the width of screen size less equal to):</div>
                   <div class="content-frame">
                     <!-- <input type="number" name="delete_at_post" min="1" v-model.number="responsiveBlk.breakpoint"> -->
                     <select v-model.number="responsiveBlk.breakpoint">
@@ -228,12 +234,15 @@
               contentType: false,
               data: formData,
               beforeSend: function() {
-                console.log("uploading...");
+                ebook.status = 'uploading';
               },
               success: function(res) {
-                console.log(res.data);
+                let vm = this;
+                ebook.status = 'success';
+                setTimeout(()=>{
+                  ebook.status = 'none';
+                }, 2000);
                 ebook.imgUrl = res.data.link;
-                // $('body').append('<img src="' + res.data.link + '" height = "200px"/>');
               },
               error: function() {
                 alert("upload failed");
@@ -305,9 +314,6 @@
               formDom.submit();
             }
           }), 1000);
-          // let previewOpen = window.open("", "previewOpen", `width=${frameWidth}, height=600`);
-          // console.log(this.carouselCode);
-          // previewOpen.document.body.innerHTML = this.carouselCode;
         },
         genCode: function() {
           // cleare textarea
@@ -348,13 +354,13 @@ $(".regular").slick(${JSON.stringify(tempObj).replace(/"/g, '\'')});
             dots: true
           };
           this.configuration.responsive.push(breakPointObj);
-          console.log(this.configuration.responsive);
         },
         genNewEbookInList: function() {
           const ebook = new Object();
           ebook.title = '';
           ebook.imgUrl = '';
           ebook.linkUrl = '';
+          ebook.status = 'none';
           this.ebookList.push(ebook);
         },
         getEbookCarousel: function() {
@@ -368,7 +374,6 @@ $(".regular").slick(${JSON.stringify(tempObj).replace(/"/g, '\'')});
           return prefix + content + suffix;
         },
         removeItem: function(item) {
-          // console.log(this.ebookList.indexOf(item));
           this.ebookList.splice(this.ebookList.indexOf(item), 1);
         },
         removeBreakPoint: function(item) {
