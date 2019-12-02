@@ -2,9 +2,9 @@
   header("Access-Control-Allow-Origin: *");
   header("Content-Type:text/html; charset=utf-8");
 
-  $domainUrl = $_GET['oriurl'];
-  $term = $_GET['term'];
-  $AN = $_GET['an'];
+  $domainUrl = $_POST['oriurl'];
+  $term = $_POST['term'];
+  $AN = $_POST['an'];
 
   $connectUrl = $domainUrl.'/holding?('.$term.')'.$AN;
   echo $connectUrl;
