@@ -5,9 +5,11 @@
   $domainUrl = $_GET['oriurl'];
   $term = $_GET['term'];
 
-  $connectUrl = $domainUrl.'/opac/api/holding/'.$AN;
+  // $connectUrl = $domainUrl.'/opac/api/holding/'.$AN;
 
-  getContent($connectUrl);
+  // getContent($connectUrl);
+
+  getContent('http://reader.szlib.com/opac/api/holding/1005891840');
 
   function getContent($url) {
     $ch1 = curl_init();
