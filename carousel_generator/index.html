@@ -27,20 +27,23 @@
             <input type="text" v-model="ebook.title">
           </div>
           <div class="row">
-            <div class="title">Img Url:</div>
-            <input type="text" v-model="ebook.imgUrl">
-          </div>
-          <div class="row">
             <div class="title">Link Url:</div>
             <input type="text" v-model="ebook.linkUrl">
           </div>
           <div class="row">
+            <div class="title">Img Url:</div>
+            <input type="text" v-model="ebook.imgUrl">
+          </div>
+          <div class="row">
             <div class="title">Upload to imgur</div>
             <div class="upload-to-imgur-wrap">
-              <label class="upload-to-imgur">
-                Choose Image
-                <input type="file" accept=".png,.jpg,.gif" @change="uploadToImgur($event, ebook)">
-              </label>
+              <div @drop.prevent="addFile($event, ebook)" @dragover.prevent class="drag-drop-frame">
+                <div class="drag-drop-head">Drag & Drop Image</div>
+                <label class="upload-to-imgur">
+                  Choose Image
+                  <input type="file" accept=".png,.jpg,.gif" @change="uploadToImgur($event, ebook)">
+                </label>
+              </div>
               <div class="status" v-if="ebook.status !== 'none'">
                 <img src="img/Spinner.svg" v-if="ebook.status === 'uploading'">
                 <img src="img/check_circle.svg" v-else-if="ebook.status === 'success'">
@@ -179,10 +182,10 @@
         </button>
       </div>
       <div class="generateWrap">
-        <textarea class="genField" placeholder="Please click the Generate button to generate the carousel code">{{carouselCode}}</textarea>
         <div class="button-frame">
-          <button @click="genCode()">Generate</button>
+          <button @click="genCode()">Generate Carousel</button>
         </div>
+        <textarea class="genField" placeholder="Please click the Generate button to generate the carousel code">{{carouselCode}}</textarea>
       </div>
     </section>
   </div>
@@ -210,6 +213,10 @@
         this.genNewEbookInList();
       },
       methods:{
+        addFile(e, ebook) {
+          let droppedFiles = e.dataTransfer.files;
+          this.uploadToImgur(e, ebook);
+        },
         uploadToImgur(e, ebook) {
           let imgFile = e.target.files || e.dataTransfer.files;
           if (!imgFile.length) {

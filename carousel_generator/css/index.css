@@ -184,6 +184,19 @@ input:checked + .slider:before {
 .upload-to-imgur-wrap {
   display: flex;
 }
+.drag-drop-frame {
+  width: 240px;
+  height: 160px;
+  background-color: #cccccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #91b0b3;
+}
+.drag-drop-head {
+  color: #ffffff;
+}
 .upload-to-imgur-wrap label{
   height: 36px;
   padding: 0 10px;
