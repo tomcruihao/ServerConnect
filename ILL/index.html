@@ -1,0 +1,73 @@
+<!DOCTYPE xtml PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title>eBook Preview</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+  <form action="test_post.php" method="post" accept-charset="UTF-8">
+    <main>
+      <h1>Create an account!</h1>
+      <div class="form-field">
+        <label for="field" class="label--required">Name</label>
+        <section>
+          <input id="field" required type="text" placeholder="Jane Doe" name="Name" />
+        </section>
+      </div>
+
+      <!-- PHONE FIELD -->
+      <div class="form-field">
+        <label for="phone" class="label--required">Phone</label>
+        <section>
+          <input id="phone" required type="tel" placeholder="(234) 234-2342" name="phone" />
+        </section>
+      </div>
+
+      <!-- EMAIL FIELD -->
+      <div class="form-field">
+          <label for="email" class="label--required">Email</label>
+          <section>
+              <input id="email" required type="email" placeholder="somebody@me.com" />
+          </section>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="form-buttons">
+        <button type="submit" class="a-btn--filled">Sign-up!</button>
+        <button class="a-btn">Log in</button>
+      </div>
+    </main>
+    <main>
+        <h1>Create an account!</h1>
+        <div class="form-field">
+          <label for="field" class="label--required">Name</label>
+          <section>
+            <input id="field" required type="text" placeholder="Jane Doe" />
+          </section>
+        </div>
+  
+        <!-- PHONE FIELD -->
+        <div class="form-field">
+          <label for="phone" class="label--required">Phone</label>
+          <section>
+            <input id="phone" required type="tel" placeholder="(234) 234-2342" />
+          </section>
+        </div>
+  
+        <!-- EMAIL FIELD -->
+        <div class="form-field">
+            <label for="email" class="label--required">Email</label>
+            <section>
+                <input id="email" required type="email" placeholder="somebody@me.com" />
+            </section>
+        </div>
+  
+        <!-- BUTTONS -->
+        <div class="form-buttons">
+          <button type="submit" class="a-btn--filled">Send</button>
+          <button class="a-btn">Log in</button>
+        </div>
+      </main>
+  </form>
+</body>
