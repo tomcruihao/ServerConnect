@@ -2,71 +2,104 @@
 <html>
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <title>eBook Preview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>文献传递申请</title>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
+  <header>
+    <h1>文献传递申请</h1>
+  </header>
   <form action="send.php" method="post" accept-charset="UTF-8">
     <main>
-      <h1>Create an account!</h1>
+      <h2>申请人信息</h2>
       <div class="form-field">
-        <label for="field" class="label--required">Name</label>
+        <label for="field" class="label--required">姓名</label>
         <section>
-          <input id="field" required type="text" placeholder="Jane Doe" name="Name" />
+          <input id="field" required type="text" placeholder="" name="Name" />
         </section>
       </div>
 
       <!-- PHONE FIELD -->
       <div class="form-field">
-        <label for="phone" class="label--required">Phone</label>
+        <label for="userphone" class="label--required">手机号码</label>
         <section>
-          <input id="phone" required type="tel" placeholder="(234) 234-2342" name="phone" />
+          <input id="userphone" required type="tel" placeholder="" name="userphone" />
         </section>
       </div>
 
       <!-- EMAIL FIELD -->
       <div class="form-field">
-          <label for="email" class="label--required">Email</label>
+          <label for="useremail" class="label--required">请求邮箱</label>
           <section>
-              <input id="email" required type="email" placeholder="somebody@me.com" />
+            <input id="useremail" required type="email" placeholder="" name="useremail"/>
           </section>
       </div>
 
-      <!-- BUTTONS -->
-      <div class="form-buttons">
-        <button type="submit" class="a-btn--filled">Sign-up!</button>
-        <button class="a-btn">Log in</button>
-      </div>
     </main>
+
     <main>
-        <h1>Create an account!</h1>
+        <h2>关于这文献</h2>
         <div class="form-field">
-          <label for="field" class="label--required">Name</label>
+          <label for="title" class="label--required">文献标题</label>
           <section>
-            <input id="field" required type="text" placeholder="Jane Doe" />
+            <input id="title" required type="text" placeholder="" name="title" />
           </section>
         </div>
   
-        <!-- PHONE FIELD -->
         <div class="form-field">
-          <label for="phone" class="label--required">Phone</label>
+          <label for="magtitle">期刊名称</label>
           <section>
-            <input id="phone" required type="tel" placeholder="(234) 234-2342" />
+            <input id="magtitle" type="text" placeholder="" name="magtitle" />
+          </section>
+        </div>
+
+        <div class="form-field">
+          <label for="mayyear">出版年份</label>
+          <section>
+            <input id="mayyear" type="text" placeholder="" name="mayyear" />
+          </section>
+        </div>
+
+        <div class="form-field">
+          <label for="volnum">(期刊)卷</label>
+          <section>
+            <input id="volnum" type="text" placeholder="" name="volnum" />
           </section>
         </div>
   
-        <!-- EMAIL FIELD -->
         <div class="form-field">
-            <label for="email" class="label--required">Email</label>
-            <section>
-              <input id="email" required type="email" placeholder="somebody@me.com" />
-            </section>
+          <label for="magnum">(期刊)卷</label>
+          <section>
+            <input id="magnum" type="text" placeholder="" name="magnum" />
+          </section>
         </div>
-  
+
+        <div class="form-field">
+          <label for="pagenum">(期刊)页</label>
+          <section>
+            <input id="pagenum" type="text" placeholder="" name="pagenum" />
+          </section>
+        </div>
+
+        <div class="form-field">
+          <label for="issn">ISSN</label>
+          <section>
+            <input id="issn" type="text" placeholder="" name="issn" />
+          </section>
+        </div>
+
+        <div class="form-field">
+          <label for="doi">DOI</label>
+          <section>
+            <input id="doi" type="text" placeholder="" name="doi" />
+          </section>
+        </div>
+
         <!-- BUTTONS -->
         <div class="form-buttons">
-          <button type="submit" class="a-btn--filled">Send</button>
-          <button class="a-btn">Log in</button>
+          <button type="submit" class="a-btn--filled">发送</button>
+          <button type="reset" class="a-btn">重新设置</button>
         </div>
       </main>
   </form>
