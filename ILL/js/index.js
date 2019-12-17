@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
   let url = new URL(url_string);
   
   for(count in paramTable) {
-    let title = url.searchParams.get(paramTable[count].param);
-    console.log(title);
-    if(!isEmpty(title)) {
+    let paramVal = url.searchParams.get(paramTable[count].param);
+    console.log(paramVal);
+    if(paramVal !== null) {
       console.log('exist');
-      document.getElementById(paramTable[count].domID);
+      document.getElementById(paramTable[count].domID).value = paramVal;
     }
   }
 });
