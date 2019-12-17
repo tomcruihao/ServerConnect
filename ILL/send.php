@@ -50,10 +50,10 @@
     curl_setopt($ch1,CURLOPT_URL,$url);
     curl_setopt($ch1,CURLOPT_RETURNTRANSFER,1);
     curl_setopt($ch1,CURLOPT_CONNECTTIMEOUT, 4);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($sendInfo));
+    curl_setopt($ch1, CURLOPT_POST, true);
+    curl_setopt($ch1, CURLOPT_POSTFIELDS, http_build_query($formInfo));
     $response = curl_exec($ch1);
     curl_close($ch1);
-    echo $response;
+    echo '<br>Response: '.$response;
   }
 ?>
