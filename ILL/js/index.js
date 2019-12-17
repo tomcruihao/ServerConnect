@@ -2,8 +2,8 @@ let paramTable = [
   {"param": "topic", "domID": "title"},
   {"param": "jtl", "domID": "magtitle"},
   {"param": "mayyear", "domID": "publishdate"},
-  {"param": "volnum", "domID": "volume"},
-  {"param": "pagenum", "domID": "pagination"},
+  {"param": "volume", "domID": "volnum"},
+  {"param": "pagination", "domID": "pagenum"},
   {"param": "issn", "domID": "issn"},
   {"param": "doi", "domID": "doi"}
 ]
