@@ -35,6 +35,7 @@
   );
 
   print_r($paramToApi);
+  getContent($connectUrl, $paramToApi);
 
   function checkDataInfo($formInfo) {
     // required: libcode, useremail
