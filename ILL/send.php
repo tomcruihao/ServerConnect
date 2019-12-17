@@ -17,21 +17,25 @@
   $jISSN = $_POST['issn'];
   $jDOI = $_POST['doi'];
 
-  echo $userName.' '.$userPhone.' '.$userEmail.' '.$jTitle.' '.$jMagtitle.' '.$jMayyear.' '.$jVolume.' '.$jMagnum.' '.$jPagenum.' '.$jISSN.' '.$jDOI;
-  // array(
-  //   "libcode"=>$nm_patient,
-  //   "useremail"=>$id_patno,
-  //   "userphone"=>$st_sex,
-  //   "title"=>$dt_birth,
-  //   "magtitle"=>$st_age,
-  //   "mayyear"=>$id_patient,
-  //   "volnum"=>$id_bed,
-  //   "magnum"=>$txtInfo,
-  //   "pagenum"=>$imgInfo,
-  //   "systemid"=>$imgDraw,
-  //   "issn"=>$imgSign,
-  //   "doi"=>$imgSign
-  // );
+  // echo $userName.' '.$userPhone.' '.$userEmail.' '.$jTitle.' '.$jMagtitle.' '.$jMayyear.' '.$jVolume.' '.$jMagnum.' '.$jPagenum.' '.$jISSN.' '.$jDOI;
+
+  $paramToApi = array(
+    "libcode"=>301000,
+    "useremail"=>$userEmail,
+    "userphone"=>$userPhone,
+    "title"=>$jTitle,
+    "magtitle"=>$jMagtitle,
+    "mayyear"=>$jMayyear,
+    "volnum"=>$jVolume,
+    "magnum"=>$jMagnum,
+    "pagenum"=>$jPagenum,
+    "systemid"=>3,
+    "issn"=>$jISSN,
+    "doi"=>$jDOI
+  );
+  
+  print_r(paramToApi);
+
   function checkDataInfo($formInfo) {
     // required: libcode, useremail
     return 0;
