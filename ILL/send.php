@@ -51,6 +51,6 @@
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($sendInfo));
     $response = curl_exec($ch1);
     curl_close($ch1);
-    // echo $response;
+    echo $response;
   }
 ?>
