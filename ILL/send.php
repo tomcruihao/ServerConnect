@@ -4,9 +4,9 @@
 
   $connectUrl = 'http://47.104.60.189:8085/services/WebService?wsdl';
 
-  $userName = $_POST['userName'];
-  $userPhone = $_POST['userPhone'];
-  $userEmail = $_POST['userEmail'];
+  $userName = $_POST['username'];
+  $userPhone = $_POST['userphone'];
+  $userEmail = $_POST['useremail'];
 
   $jTitle = $_POST['title'];
   $jMagtitle = $_POST['magtitle'];
