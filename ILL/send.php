@@ -43,6 +43,9 @@
   }
 
   function getContent($url, $formInfo) {
+    echo $url;
+    echo $formInfo;
+
     $ch1 = curl_init();
     curl_setopt($ch1,CURLOPT_URL,$url);
     curl_setopt($ch1,CURLOPT_RETURNTRANSFER,1);
