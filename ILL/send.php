@@ -33,8 +33,8 @@
     "issn"=>$jISSN,
     "doi"=>$jDOI
   );
-  
-  print_r(paramToApi);
+
+  print_r($paramToApi);
 
   function checkDataInfo($formInfo) {
     // required: libcode, useremail
