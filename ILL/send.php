@@ -34,7 +34,6 @@
     "doi"=>$jDOI
   );
 
-  print_r($paramToApi);
   getContent($connectUrl, $paramToApi);
 
   function checkDataInfo($formInfo) {
@@ -44,7 +43,7 @@
 
   function getContent($url, $formInfo) {
     echo $url;
-    echo $formInfo;
+    print_r($formInfo);
 
     $ch1 = curl_init();
     curl_setopt($ch1,CURLOPT_URL,$url);
