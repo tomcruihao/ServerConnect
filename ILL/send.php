@@ -4,9 +4,9 @@
 
   $connectUrl = 'http://47.104.60.189:8085/services/WebService?wsdl';
 
-  $userName = $_POST['username'];
-  $userPhone = $_POST['userphone'];
-  $userEmail = $_POST['useremail'];
+  $userName = $_POST['userName'];
+  $userPhone = $_POST['userPhone'];
+  $userEmail = $_POST['userEmail'];
 
   $jTitle = $_POST['title'];
   $jMagtitle = $_POST['magtitle'];
@@ -17,7 +17,7 @@
   $jISSN = $_POST['issn'];
   $jDOI = $_POST['doi'];
 
-  echo $jTitle.' '.$jMagtitle.' '.$jMayyear.' '.$jVolume.' '.$jMagnum.' '.$jPagenum.' '.$jISSN.' '.$jDOI;
+  echo $userName.' '.$userPhone.' '.$userEmail.' '.$jTitle.' '.$jMagtitle.' '.$jMayyear.' '.$jVolume.' '.$jMagnum.' '.$jPagenum.' '.$jISSN.' '.$jDOI;
   // array(
   //   "libcode"=>$nm_patient,
   //   "useremail"=>$id_patno,
