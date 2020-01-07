@@ -1,6 +1,6 @@
 <?php
-  // error_reporting(E_ALL);
-  // ini_set('display_errors', 1);
+  error_reporting(E_ALL);
+  ini_set('display_errors', 1);
 
   // $objSoapClient = new SoapClient("http://47.104.60.189:8085/services/WebService?wsdl");
   // $param = array(
