@@ -10,8 +10,5 @@
   // Invoke WS method (Function1) with the request params 
   $response = $client->__soapCall("referReqmag", array('{"libcode":"301000","useremail":"chchang@ebsco.com","title":"test","systemid":"3"}'));
 
-  // Print WS response
-  // var_dump($response);
   echo $response;
-  print_r($params);
 ?>
