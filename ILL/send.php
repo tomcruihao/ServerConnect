@@ -24,18 +24,18 @@
   $client = new SoapClient($connectUrl);
 
   $params = '{
-    "libcode": '.$libCode.',
-    "useremail": '.$userEmail.',
-    "userphone": '.$userPhone.',
-    "title": '.$jTitle.',
-    "magtitle": '.$jMagtitle.',
-    "issn": '.$jISSN.',
-    "mayyear": '.$jMayyear.',
-    "volnum": '.$jVolume.',
-    "magnum": '.$jMagnum.',
-    "pagenum": '.$jPagenum.',
-    "systemid": '.$systemid.',
-    "doi": '.$jDOI.'
+    "libcode": "'.$libCode.'",
+    "useremail": "'.$userEmail.'",
+    "userphone": "'.$userPhone.'",
+    "title": "'.$jTitle.'",
+    "magtitle": "'.$jMagtitle.'",
+    "issn": "'.$jISSN.'",
+    "mayyear": "'.$jMayyear.'",
+    "volnum": "'.$jVolume.'",
+    "magnum": "'.$jMagnum.'",
+    "pagenum": "'.$jPagenum.'",
+    "systemid": "'.$systemid.'",
+    "doi": "'.$jDOI.'"
   }';
   echo $params;
 
