@@ -7,8 +7,23 @@
   // Initialize WS with the WSDL
   $client = new SoapClient("http://47.104.60.189:8085/services/WebService?wsdl");
 
+  $params = '{
+    "libcode": "301000",
+    "useremail": "chchang@ebsco.com",
+    "userphone": "",
+    "title": "Nature Experiences and Adults’ Self-Reported Pro-environmental Behaviors: The Role of Connectedness to Nature and Childhood Nature Experiences.",
+    "magtitle": "",
+    "issn": "",
+    "mayyear": "",
+    "volnum": "",
+    "magnum": "",
+    "pagenum": "",
+    "systemid": "3",
+    "doi": ""
+  }';
+
   // Invoke WS method (Function1) with the request params 
-  $response = $client->__soapCall("referReqmag", array('{"libcode":"301000","useremail":"chchang@ebsco.com","title":"test","systemid":"3"}'));
+  $response = $client->__soapCall("referReqmag", array($params));
 
   echo $response;
 ?>
