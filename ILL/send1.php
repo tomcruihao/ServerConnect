@@ -42,7 +42,7 @@
   //   "doi"=>""
   // );
   $params = array(
-    "args"=>"{'libcode':'301000','useremail':'chchang@ebsco.com','title':'test','systemid':'3'}"
+    "{'libcode':'301000','useremail':'chchang@ebsco.com','title':'test','systemid':'3'}"
   );
 
   // Invoke WS method (Function1) with the request params 
