@@ -45,7 +45,7 @@
   $response = $client->__soapCall("referReqmag", array($params));
 
   // Print WS response
-  var_dump($response);
+  // var_dump($response);
   echo $response;
-  print_r($params);
+  // print_r($params);
 ?>
