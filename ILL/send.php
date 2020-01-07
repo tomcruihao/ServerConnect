@@ -38,8 +38,7 @@
   }';
 
   // Invoke WS method (Function1) with the request params 
-  // $response = $client->__soapCall("referReqmag", array($params));
+  $response = $client->__soapCall("referReqmag", array($params));
 
-  echo '{"message":"提交文献请求成功","seriesid":"200107OZPC","returnflag":"0"}';
-  // echo $response;
+  echo $response;
 ?>
