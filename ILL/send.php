@@ -1,4 +1,5 @@
 <?php
+  // ns125288 CHINA PLA GENERAL HOSPITAL
   header("Content-Type:application/json; charset=utf-8");
 
   $connectUrl = 'http://47.104.60.189:8085/services/WebService?wsdl';
