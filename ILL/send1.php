@@ -42,10 +42,10 @@
   );
 
   // Invoke WS method (Function1) with the request params 
-  $response = $client->__soapCall("referReqmag", strval($params));
+  $response = $client->__soapCall("referReqmag", array($params));
 
   // Print WS response
   var_dump($response);
   echo $response;
-  echo strval($params);
+  print_r($params);
 ?>
