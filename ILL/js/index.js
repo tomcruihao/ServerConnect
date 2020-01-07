@@ -31,7 +31,7 @@ $("#illForm").submit(function(e) {
     data: form.serialize(), // serializes the form's elements.
     success: function(data)
     {
-       alert(data); // show response from the php script.
+      alert(data.message); // show response from the php script.
     }
   });
 
