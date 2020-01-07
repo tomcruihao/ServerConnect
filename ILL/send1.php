@@ -51,5 +51,5 @@
   // Print WS response
   // var_dump($response);
   echo $response;
-  // print_r($params);
+  print_r($params);
 ?>
