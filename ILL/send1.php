@@ -27,19 +27,22 @@
   $client = new SoapClient("http://47.104.60.189:8085/services/WebService?wsdl");
 
   // Set request params
+  // $params = array(
+  //   "libcode"=>"301000",
+  //   "useremail"=>"chchang@ebsco.com",
+  //   "userphone"=>"",
+  //   "title"=>"test",
+  //   "magtitle"=>"",
+  //   "issn"=>"",
+  //   "mayyear"=>"",
+  //   "volnum"=>"",
+  //   "magnum"=>"",
+  //   "pagenum"=>"",
+  //   "systemid"=>"3",
+  //   "doi"=>""
+  // );
   $params = array(
-    "libcode"=>"301000",
-    "useremail"=>"chchang@ebsco.com",
-    "userphone"=>"",
-    "title"=>"test",
-    "magtitle"=>"",
-    "issn"=>"",
-    "mayyear"=>"",
-    "volnum"=>"",
-    "magnum"=>"",
-    "pagenum"=>"",
-    "systemid"=>"3",
-    "doi"=>""
+    "args"=>"'libcode':'301000','useremail':'chchang@ebsco.com','title':'test','systemid':'3'"
   );
 
   // Invoke WS method (Function1) with the request params 
