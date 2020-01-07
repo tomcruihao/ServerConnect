@@ -37,6 +37,7 @@
     "systemid": '.$systemid.',
     "doi": '.$jDOI.'
   }';
+  echo $params;
 
   // Invoke WS method (Function1) with the request params 
   $response = $client->__soapCall("referReqmag", array($params));
