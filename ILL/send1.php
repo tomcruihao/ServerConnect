@@ -1,4 +1,4 @@
-<? php
+<?php
   $objSoapClient = new SoapClient("http://47.104.60.189:8085/services/WebService?wsdl");
   $param = array(
     "libcode"=>"301000",
