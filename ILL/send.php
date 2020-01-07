@@ -3,56 +3,43 @@
   date_default_timezone_set('Asia/Taipei');
 
   $connectUrl = 'http://47.104.60.189:8085/services/WebService?wsdl';
+  $libCode = '301000';
+  $systemid = '3';
 
-  $userName = $_POST['userName'];
-  $userPhone = $_POST['userPhone'];
-  $userEmail = $_POST['userEmail'];
+  $userName = isset($_POST['userName']) ? $_POST['userName'] : '';
+  $userPhone = isset($_POST['userPhone']) ? $_POST['userPhone'] : '';
+  $userEmail = isset($_POST['userEmail']) ? $_POST['userEmail'] : '';
 
-  $jTitle = $_POST['title'];
-  $jMagtitle = $_POST['magtitle'];
-  $jMayyear = $_POST['mayyear'];
-  $jVolume = $_POST['volnum'];
-  $jMagnum = $_POST['magnum'];
-  $jPagenum = $_POST['pagenum'];
-  $jISSN = $_POST['issn'];
-  $jDOI = $_POST['doi'];
+  $jTitle = isset($_POST['title']) ? $_POST['title'] : '';
+  $jMagtitle = isset($_POST['magtitle']) ? $_POST['magtitle'] : '';
+  $jMayyear = isset($_POST['mayyear']) ? $_POST['mayyear'] : '';
+  $jVolume = isset($_POST['volnum']) ? $_POST['volnum'] : '';
+  $jMagnum = isset($_POST['magnum']) ? $_POST['magnum'] : '';
+  $jPagenum = isset($_POST['pagenum']) ? $_POST['pagenum'] : '';
+  $jISSN = isset($_POST['issn']) ? $_POST['issn'] : '';
+  $jDOI = isset($_POST['doi']) ? $_POST['doi'] : '';
 
   // echo $userName.' '.$userPhone.' '.$userEmail.' '.$jTitle.' '.$jMagtitle.' '.$jMayyear.' '.$jVolume.' '.$jMagnum.' '.$jPagenum.' '.$jISSN.' '.$jDOI;
 
-  $paramToApi = array(
-    "libcode"=>301000,
-    "useremail"=>$userEmail,
-    "userphone"=>$userPhone,
-    "title"=>$jTitle,
-    "magtitle"=>$jMagtitle,
-    "mayyear"=>$jMayyear,
-    "volnum"=>$jVolume,
-    "magnum"=>$jMagnum,
-    "pagenum"=>$jPagenum,
-    "systemid"=>3,
-    "issn"=>$jISSN,
-    "doi"=>$jDOI
-  );
+  $client = new SoapClient($connectUrl);
 
-  getContent($connectUrl, $paramToApi);
+  $params = '{
+    "libcode": '.$libCode.',
+    "useremail": '.$userEmail.',
+    "userphone": '.$userPhone.',
+    "title": '.$jTitle.',
+    "magtitle": '.$jMagtitle.',
+    "issn": '.$jISSN.',
+    "mayyear": '.$jMayyear.',
+    "volnum": '.$jVolume.',
+    "magnum": '.$jMagnum.',
+    "pagenum": '.$jPagenum.',
+    "systemid": '.$systemid.',
+    "doi": '.$jDOI.'
+  }';
 
-  function checkDataInfo($formInfo) {
-    // required: libcode, useremail
-    return 0;
-  }
+  // Invoke WS method (Function1) with the request params 
+  $response = $client->__soapCall("referReqmag", array($params));
 
-  function getContent($url, $formInfo) {
-    echo $url;
-    print_r($formInfo);
-
-    $ch1 = curl_init();
-    curl_setopt($ch1,CURLOPT_URL,$url);
-    curl_setopt($ch1,CURLOPT_RETURNTRANSFER,1);
-    curl_setopt($ch1,CURLOPT_CONNECTTIMEOUT, 4);
-    curl_setopt($ch1, CURLOPT_POST, true);
-    curl_setopt($ch1, CURLOPT_POSTFIELDS, http_build_query($formInfo));
-    $response = curl_exec($ch1);
-    curl_close($ch1);
-    echo '<br>Response: '.$response;
-  }
+  echo $response;
 ?>
