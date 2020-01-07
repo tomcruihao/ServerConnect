@@ -1,6 +1,5 @@
 <?php
-  header("Content-Type:text/html; charset=utf-8");
-  date_default_timezone_set('Asia/Taipei');
+  header("Content-Type:application/json; charset=utf-8");
 
   $connectUrl = 'http://47.104.60.189:8085/services/WebService?wsdl';
   $libCode = '301000';
@@ -37,10 +36,10 @@
     "systemid": "'.$systemid.'",
     "doi": "'.$jDOI.'"
   }';
-  echo $params;
 
   // Invoke WS method (Function1) with the request params 
-  $response = $client->__soapCall("referReqmag", array($params));
+  // $response = $client->__soapCall("referReqmag", array($params));
 
-  echo $response;
+  echo '{"message":"提交文献请求成功","seriesid":"200107OZPC","returnflag":"0"}';
+  // echo $response;
 ?>

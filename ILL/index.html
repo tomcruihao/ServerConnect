@@ -10,11 +10,11 @@
   <header>
     <h1>文献传递申请</h1>
   </header>
-  <form action="send.php" method="post" accept-charset="UTF-8">
+  <form id="illForm" action="send.php" method="post" accept-charset="UTF-8">
     <main>
       <h2>申请人信息</h2>
       <div class="form-field">
-        <label for="userName" class="label--required">姓名</label>
+        <label for="userName">姓名</label>
         <section>
           <input id="userName" type="text" placeholder="" name="userName" />
         </section>
@@ -22,7 +22,7 @@
 
       <!-- PHONE FIELD -->
       <div class="form-field">
-        <label for="userPhone" class="label--required">手机号码</label>
+        <label for="userPhone">手机号码</label>
         <section>
           <input id="userPhone" type="tel" placeholder="" name="userPhone" />
         </section>
@@ -104,4 +104,5 @@
       </main>
   </form>
 </body>
+<script type="text/javascript" src="js/jquery.js"></script>
 <script src="js/index.js"></script>
