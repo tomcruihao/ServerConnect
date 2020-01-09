@@ -68,6 +68,7 @@
 					//get the url of the link
 					// check if it's a plumx custom link
 					var objPlumX=jQuery(this);
+					console.log(objPlumX.attr('href'));
 					var url=decodeURIComponent(objPlumX.attr('href'));
 					var l=jQuery(this).html();
 					
