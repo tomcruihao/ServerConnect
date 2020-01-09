@@ -68,8 +68,16 @@
 					//get the url of the link
 					// check if it's a plumx custom link
 					var objPlumX=jQuery(this);
-					console.log(objPlumX.attr('href'));
-					var url=decodeURIComponent(objPlumX.attr('href'));
+					// console.log(objPlumX.attr('href'));
+					var url='';
+					try {
+					    url=decodeURIComponent(objPlumX.attr('href'));
+					}
+					catch (e) {
+					    logMyErrors(e) // 把例外物件傳給錯誤處理器
+					    console.log(`failed URL: ${objPlumX.attr('href')}`);
+					}
+					
 					var l=jQuery(this).html();
 					
 						if (l.indexOf("plumx")>0) {
