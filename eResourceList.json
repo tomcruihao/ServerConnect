@@ -1,8 +1,9 @@
 {
   "total": 343,
   "totalNotFiltered": 343,
-    "rows": [
+  "rows": [
     {
+      "id": 1,
       "resourceName": "ACROSS檔案資源整合查詢平台",
       "url": "http://across.archives.gov.tw/naahyint/search.jsp",
       "resourceType": "免費OA",
@@ -19,6 +20,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 2,
       "resourceName": "HKJO - Hong Kong Journals Online",
       "url": "http://sunzi1.lib.hku.hk/hkjo/index.jsp",
       "resourceType": "免費OA",
@@ -35,6 +37,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 3,
       "resourceName": "SOCOLAR (Open Access資源一站式檢索服務平台)",
       "url": "http://www.socolar.com/",
       "resourceType": "免費OA",
@@ -51,6 +54,7 @@
       "relevanceUrl": "http://www.socolar.com/js.aspx?#P1"
     },
     {
+      "id": 4,
       "resourceName": "中央研究院漢籍電子文獻(免費每年2月需續訂)(校園內無須輸入帳號及密碼即可瀏覽)。包含: 漢籍全文資料庫/古漢語文獻語料庫/古漢語語料庫(開放)/臺灣文獻叢刊/近代史數位資料庫/清代經世文編/近現代中國史事日誌/新民說/內閣漢文題本專題檔案：刑科婚姻類提要/文心雕龍/佛經三論/姚際恒著作集/泉翁大全集/正統道藏/話集成/新清史-本紀/府詩集/閩南語俗曲唱本「歌仔冊」/人文資料庫師生版1.1 電子書",
       "url": "http://hanji.sinica.edu.tw/",
       "resourceType": "訂購",
@@ -67,6 +71,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 5,
       "resourceName": "台灣期刊論文索引",
       "url": "http://readopac.ncl.edu.tw/nclJournal/",
       "resourceType": "免費OA",
@@ -83,6 +88,7 @@
       "relevanceUrl": "http://readopac2.ncl.edu.tw/nclJournal/intro.jsp?type=chapter&la=ch"
     },
     {
+      "id": 6,
       "resourceName": "中華民國統計資訊網",
       "url": "http://www1.stat.gov.tw/mp.asp?mp=3",
       "resourceType": "免費OA",
@@ -99,6 +105,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 7,
       "resourceName": "全國法規資料庫",
       "url": "http://law.moj.gov.tw/",
       "resourceType": "免費OA",
@@ -115,6 +122,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 8,
       "resourceName": "全國特殊教育資訊網",
       "url": "http://spec.moe.gov.tw/site",
       "resourceType": "免費OA",
@@ -131,6 +139,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 9,
       "resourceName": "台灣地名檢索系統",
       "url": "http://gissrv3.sinica.edu.tw/search/",
       "resourceType": "免費OA",
@@ -147,6 +156,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 10,
       "resourceName": "台灣大學學術資源網",
       "url": "http://sg.lib.ntu.edu.tw/",
       "resourceType": "免費OA",
@@ -163,6 +173,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 11,
       "resourceName": "台灣百年歷史地圖系統",
       "url": "http://gissrv4.sinica.edu.tw/gis/twhgis.aspx",
       "resourceType": "免費OA",
@@ -179,6 +190,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 12,
       "resourceName": "台灣研究入口網",
       "url": "http://thcts.ascc.net/twstudy_ncl_ch.htm",
       "resourceType": "免費OA",
@@ -195,6 +207,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 13,
       "resourceName": "台灣網站典藏系統",
       "url": "http://webarchive.ncl.edu.tw/nclwa98Front/new_search/detail.jsp?dtd_id=000018&xml_id=0000013262&search_index=Subject&search_value=%E7%B6%9C%E5%90%88%3A%E5%85%A5%E5%8F%A3%E7%B6%B2%E7%AB%99&sort_index=Title&sort_type=0&isAdvance=N&index_no=1&total=491",
       "resourceType": "免費OA",
@@ -211,6 +224,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 14,
       "resourceName": "國家圖書館政府公報資訊網",
       "url": "http://gaz.ncl.edu.tw/",
       "resourceType": "免費OA",
@@ -227,6 +241,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 15,
       "resourceName": "國家文化資料庫",
       "url": "http://nrch.culture.tw/",
       "resourceType": "免費OA",
@@ -243,6 +258,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 16,
       "resourceName": "學術名詞資訊網",
       "url": "http://terms.naer.edu.tw/",
       "resourceType": "免費OA",
@@ -259,6 +275,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 17,
       "resourceName": "政府出版資料回應網 OPEN (Official Publications Echo Network)",
       "url": "http://www.ndc.gov.tw/News_Content.aspx?n=0546649C8F2D44B4&sms=A96D15D0376520B1&s=EE5837FF3C7416BB",
       "resourceType": "免費OA",
@@ -275,6 +292,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 18,
       "resourceName": "教育論文線上資料庫 EDD Online(已停用)(請改用\"臺灣期刊論文索引系統\"查詢)",
       "url": "http://readopac.ncl.edu.tw/nclJournal/",
       "resourceType": "免費OA",
@@ -291,6 +309,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 19,
       "resourceName": "數位典藏國家型科技計畫─計畫網站",
       "url": "http://www.ndap.org.tw/",
       "resourceType": "免費OA",
@@ -307,6 +326,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 20,
       "resourceName": "數位典藏與數位學習國家型科技計畫 計畫入口網",
       "url": "http://www.teldap.tw/",
       "resourceType": "免費OA",
@@ -323,6 +343,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 21,
       "resourceName": "日治時期期刊全文影像系統",
       "url": "http://stfj.ntl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dwebmge",
       "resourceType": "免費OA",
@@ -339,6 +360,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 22,
       "resourceName": "REAL+ 學術資源文獻探索系統",
       "url": "http://real.stpi.narl.org.tw",
       "resourceType": "免費OA",
@@ -355,6 +377,7 @@
       "relevanceUrl": "http://realmeta.stpi.narl.org.tw/docs/REAL_NDDS_10003.pdf"
     },
     {
+      "id": 23,
       "resourceName": "線上文學書房 (English Literature Online)",
       "url": "http://mediahive.lib.ntu.edu.tw/website/literature/index.htm",
       "resourceType": "免費OA",
@@ -371,6 +394,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 24,
       "resourceName": "臺灣大學學術期刊資料庫",
       "url": "http://ejournal.press.ntu.edu.tw/",
       "resourceType": "免費OA",
@@ -387,6 +411,7 @@
       "relevanceUrl": "http://ntur.lib.ntu.edu.tw/"
     },
     {
+      "id": 25,
       "resourceName": "台灣大百科全書(併入國家文化資料庫)",
       "url": "http://nrch.culture.tw/",
       "resourceType": "免費OA",
@@ -403,6 +428,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 26,
       "resourceName": "臺灣社會科學引文索引資料庫 (TSSCI)",
       "url": "http://db1n.sinica.edu.tw/textdb/tssci/searchindex.php",
       "resourceType": "免費OA",
@@ -419,6 +445,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 27,
       "resourceName": "臺灣觀光資訊網",
       "url": "http://www.taiwan.net.tw/w1.aspx",
       "resourceType": "免費OA",
@@ -435,6 +462,7 @@
       "relevanceUrl": "http://www.taiwantravels.com.tw/?page_id=24"
     },
     {
+      "id": 28,
       "resourceName": "辭書資訊網",
       "url": "http://terms.naer.edu.tw/",
       "resourceType": "免費OA",
@@ -451,6 +479,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 29,
       "resourceName": "BMC (BioMed Central)",
       "url": "http://www.biomedcentral.com/journals",
       "resourceType": "免費OA",
@@ -467,6 +496,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 30,
       "resourceName": "arXiv",
       "url": "http://arxiv.org/",
       "resourceType": "免費OA",
@@ -483,6 +513,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 31,
       "resourceName": "BMC  (BioMed Central)",
       "url": "http://www.biomedcentral.com/info/libraries/oajournals",
       "resourceType": "免費OA",
@@ -499,6 +530,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 32,
       "resourceName": "Bioline International",
       "url": "http://www.bioline.org.br/journals",
       "resourceType": "免費OA",
@@ -515,6 +547,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 33,
       "resourceName": "Caltech Library Services",
       "url": "http://library.caltech.edu/",
       "resourceType": "免費OA",
@@ -531,6 +564,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 34,
       "resourceName": "Directory of Open Access Scholarly Journals in Education",
       "url": "http://ergo.asu.edu/ejdirectory.html",
       "resourceType": "免費OA",
@@ -547,6 +581,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 35,
       "resourceName": "DOAJ (Directory of Open Access Journals)",
       "url": "http://www.doaj.org/",
       "resourceType": "免費OA",
@@ -563,6 +598,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 36,
       "resourceName": "eScholarship Repository",
       "url": "eScholarship Repository",
       "resourceType": "免費OA",
@@ -579,6 +615,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 37,
       "resourceName": "HighWire Press",
       "url": "http://highwire.stanford.edu/",
       "resourceType": "免費OA",
@@ -595,6 +632,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 38,
       "resourceName": "Japan Science and Technology Information Aggregator, Electronic (簡稱J-STAGE)日本科學技術情報發信與流通總合系統",
       "url": "http://www.jstage.jst.go.jp/browse/",
       "resourceType": "免費OA",
@@ -611,6 +649,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 39,
       "resourceName": "OAIster 密西根大學數位圖書館計畫",
       "url": "http://oaister.umdl.umich.edu/o/oaister/",
       "resourceType": "免費OA",
@@ -627,6 +666,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 40,
       "resourceName": "The Online books page",
       "url": "http://onlinebooks.library.upenn.edu/",
       "resourceType": "免費OA",
@@ -643,6 +683,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 41,
       "resourceName": "PLoS(Public Library of Science) 公共科學圖書館",
       "url": "http://www.plos.org/",
       "resourceType": "免費OA",
@@ -659,6 +700,7 @@
       "relevanceUrl": "http://www.myoops.org/twocw/plos/journals/index.html"
     },
     {
+      "id": 42,
       "resourceName": "Registry of Open Access Repositories（ROAR）",
       "url": "http://roar.eprints.org/index.php",
       "resourceType": "免費OA",
@@ -675,6 +717,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 43,
       "resourceName": "SHERPA/RoMEO (列出期刊文章作者和出版社的版權協議)",
       "url": "http://www.sherpa.ac.uk/romeo/",
       "resourceType": "免費OA",
@@ -691,6 +734,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 44,
       "resourceName": "Social Theory《社會理論與社會學資料庫》",
       "url": "http://soth.alexanderstreet.com/",
       "resourceType": "試用",
@@ -707,6 +751,7 @@
       "relevanceUrl": "http://www.stpi.org.tw/fdb/st/index.html\nhttp://alexanderstreet.com/video/SOTH/tutorial.html"
     },
     {
+      "id": 45,
       "resourceName": "Springer online Journal Archives (人文與社會科學類線上期刊回溯資料庫)",
       "url": "http://springerlink.metapress.com/journals/",
       "resourceType": "免費OA",
@@ -723,6 +768,7 @@
       "relevanceUrl": "http://www.stpi.narl.org.tw/fdb/link/index.html"
     },
     {
+      "id": 46,
       "resourceName": "ticTOCs Journal Tables of Contents service",
       "url": "http://www.journaltocs.ac.uk",
       "resourceType": "免費OA",
@@ -739,6 +785,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 47,
       "resourceName": "世界大學學術排名榜",
       "url": "http://www.zuihaodaxue.com/worldrankings.html",
       "resourceType": "免費OA",
@@ -755,6 +802,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 48,
       "resourceName": "臺灣博碩士論文知識加值系統 NDLTD in Taiwan",
       "url": "http://ndltd.ncl.edu.tw",
       "resourceType": "免費OA",
@@ -771,6 +819,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 49,
       "resourceName": "ARTstor Digital Library 數位藝術典藏資料庫",
       "url": "http://www.artstor.org",
       "resourceType": "試用",
@@ -787,6 +836,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 50,
       "resourceName": "SAGE 綜合型即期全文資料庫",
       "url": "http://online.sagepub.com",
       "resourceType": "試用",
@@ -803,6 +853,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 51,
       "resourceName": "FOR DUMMIES 系列電子書選輯",
       "url": "http://lb20.dummies.libraryandbook.net/",
       "resourceType": "試用",
@@ -819,6 +870,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 52,
       "resourceName": "L & B 數位圖書館",
       "url": "http://lb20.libraryandbook.net/",
       "resourceType": "試用",
@@ -835,6 +887,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 53,
       "resourceName": "McGraw-Hill電子書選輯",
       "url": "http://lb20.mcgrawhill.libraryandbook.net/",
       "resourceType": "試用",
@@ -851,6 +904,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 54,
       "resourceName": "RefWorks 書目管理軟體",
       "url": "",
       "resourceType": "試用",
@@ -867,6 +921,7 @@
       "relevanceUrl": "http://www.refworks.com/tw/"
     },
     {
+      "id": 55,
       "resourceName": "Wiley-Blackwell New Journals",
       "url": "http://olabout.wiley.com/WileyCDA/Section/id-811883.html",
       "resourceType": "試用",
@@ -883,6 +938,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 56,
       "resourceName": "世界美術資料庫",
       "url": "http://www.airitiart.com/",
       "resourceType": "試用",
@@ -899,6 +955,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 57,
       "resourceName": "SAGE 研究方法資料庫(開放試用至2017/8/31日止）",
       "url": "http://methods.sagepub.com/",
       "resourceType": "試用",
@@ -915,6 +972,7 @@
       "relevanceUrl": "http://srmo.sagepub.com/page/tips-and-tutorials/tutorials;jsessionid=762D6883868E65653ED415EA61A3BB1E\nhttp://srmo.sagepub.com/page/help-1/help\nhttps://www.youtube.com/watch?v=CBSCijzKRMc"
     },
     {
+      "id": 58,
       "resourceName": "ACLS Humanities E-book《美國學術團體協會‧人文社會科學電子書》",
       "url": "http://www.humanitiesebook.org/",
       "resourceType": "試用",
@@ -931,6 +989,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 59,
       "resourceName": "國家地理雜誌",
       "url": "http://infotrac.galegroup.com/itweb/twnsc064",
       "resourceType": "試用",
@@ -947,6 +1006,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 60,
       "resourceName": "TAO台灣學術線上 電子期刊庫",
       "url": "http://tao.wordpedia.com/",
       "resourceType": "試用",
@@ -963,6 +1023,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 61,
       "resourceName": "科學人雜誌資料庫",
       "url": "http://edu1.wordpedia.com/SACH/default.asp",
       "resourceType": "試用",
@@ -979,6 +1040,7 @@
       "relevanceUrl": "http://sa.ylib.com/"
     },
     {
+      "id": 62,
       "resourceName": "大英百科全書線上繁體中文版",
       "url": "http://daying.wordpedia.com/",
       "resourceType": "試用",
@@ -995,6 +1057,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 63,
       "resourceName": "遠流活用中文大辭典",
       "url": "http://edu1.wordpedia.com/ChtDict/Default.aspx",
       "resourceType": "試用",
@@ -1011,6 +1074,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 64,
       "resourceName": "遠流台灣話大辭典",
       "url": "http://edu1.wordpedia.com/taiwanese/default.aspx",
       "resourceType": "試用",
@@ -1027,6 +1091,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 65,
       "resourceName": "讀秀中文學術搜索(開放試用至105/06/30)(進入體驗版)提供線上部分內容試閱，另提供全書內容文獻傳遞服務，需線上填寫申請表單，再寄送PDF全文至申請人的電子信箱。",
       "url": "http://www.duxiu.com/",
       "resourceType": "試用",
@@ -1043,6 +1108,7 @@
       "relevanceUrl": "http://tul.blog.ntu.edu.tw/archives/10171\nhttp://tul.blog.ntu.edu.tw/archives/8512"
     },
     {
+      "id": 66,
       "resourceName": "Chinamaxx超星數字圖書館",
       "url": "http://www.chinamaxx.net",
       "resourceType": "訂購",
@@ -1059,6 +1125,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 67,
       "resourceName": "國家標準(CNS)網路服務系統",
       "url": "http://www.cnsonline.com.tw/?node=search&locale=zh_TW",
       "resourceType": "免費OA",
@@ -1075,6 +1142,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 68,
       "resourceName": "PTC布樣與概念設計系統",
       "url": "http://www.designptc.com/Index.aspx",
       "resourceType": "試用",
@@ -1091,6 +1159,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 69,
       "resourceName": "Oxford Art Online",
       "url": "http://www.oxfordartonline.com/",
       "resourceType": "試用",
@@ -1107,6 +1176,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 70,
       "resourceName": "Scopus",
       "url": "http://taiwan1.elsevier.com/ElsevierDNN/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BElsevier%E8%B3%87%E6%96%99%E5%BA%AB/SciVerseScopus/tabid/1955/Default.aspx",
       "resourceType": "試用",
@@ -1123,6 +1193,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 71,
       "resourceName": "自然世界資料庫",
       "url": "http://www.airitinature.com/",
       "resourceType": "試用",
@@ -1139,6 +1210,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 72,
       "resourceName": "國立高雄師範大學博碩士論文系統",
       "url": "http://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&extralimit=asc=%22%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8%22&extralimitunit=%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8&searchmode=advance",
       "resourceType": "買斷永久使用",
@@ -1155,6 +1227,7 @@
       "relevanceUrl": "http://ncl.nknu.edu.tw/cdrfb3/index.htm\nhttp://140.122.127.247/"
     },
     {
+      "id": 73,
       "resourceName": "資料庫_數位學習影音課程_自我學習篇",
       "url": "http://concert.stpi.narl.org.tw/database_list",
       "resourceType": "免費OA",
@@ -1171,6 +1244,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 74,
       "resourceName": "漢斯中文電子學術期刊",
       "url": "http://www.hanspub.org",
       "resourceType": "免費OA",
@@ -1187,6 +1261,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 75,
       "resourceName": "漢珍知識網",
       "url": "http://hanwu.infolinker.com.tw/login_rrxin.htm",
       "resourceType": "試用",
@@ -1203,6 +1278,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 76,
       "resourceName": "ACS ebook backfile (1949-2009)",
       "url": "http://pubs.acs.org/series/advances",
       "resourceType": "試用",
@@ -1219,6 +1295,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 77,
       "resourceName": "Open Access Library學術性圖書館",
       "url": "http://www.oalib.com",
       "resourceType": "免費OA",
@@ -1235,6 +1312,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 78,
       "resourceName": "日治時期圖書全文影像系統",
       "url": "http://stfb.ntl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dwebmge",
       "resourceType": "免費OA",
@@ -1251,6 +1329,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 79,
       "resourceName": "Pubu電子書城(試用至2016/11/30日止)",
       "url": "http://www.pubu.com.tw/libraryTrial/NKNU",
       "resourceType": "試用",
@@ -1267,6 +1346,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 80,
       "resourceName": "學術不端文獻檢測系統",
       "url": "http://check.oversea.cnki.net/big5/",
       "resourceType": "試用",
@@ -1283,6 +1363,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 81,
       "resourceName": "全國學術版人文及社會科學資料庫檢索系統 (Huso)(永久使用)",
       "url": "https://huso.stpi.narl.org.tw/husoc/husokm",
       "resourceType": "聯盟提供(年度)",
@@ -1299,6 +1380,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 82,
       "resourceName": "臺灣人文及社會科學引文索引資料庫 TCI-HSS",
       "url": "http://tci.ncl.edu.tw",
       "resourceType": "免費OA",
@@ -1315,6 +1397,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 83,
       "resourceName": "天下雜誌群知識庫",
       "url": "http://new.cwk.com.tw/login_guest-cw.htm?V0000001",
       "resourceType": "試用",
@@ -1331,6 +1414,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 84,
       "resourceName": "天下影音知識庫",
       "url": "http://new.cwk.com.tw/login_guest-cw.htm?V0000001",
       "resourceType": "試用",
@@ -1347,6 +1431,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 85,
       "resourceName": "人口普查資料庫",
       "url": "http://tongji.oversea.cnki.net/npcc/navi/navidefault.aspx",
       "resourceType": "試用",
@@ -1363,6 +1448,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 86,
       "resourceName": "臺灣引文資料庫",
       "url": "http://award.libraryandbook.net/taci/FE/main_index.action",
       "resourceType": "試用",
@@ -1379,6 +1465,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 87,
       "resourceName": "Cambridge Books Online",
       "url": "http://ebooks.cambridge.org/home.jsf",
       "resourceType": "試用",
@@ -1395,6 +1482,7 @@
       "relevanceUrl": "http://www-o.ntust.edu.tw/~lib/databases_manual/CBO_20100511.pdf"
     },
     {
+      "id": 88,
       "resourceName": "Naxos Video Library",
       "url": "http://www.naxosvideolibrary.com/",
       "resourceType": "試用",
@@ -1411,6 +1499,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 89,
       "resourceName": "Medici.tv",
       "url": "http://www.medici.tv/",
       "resourceType": "試用",
@@ -1427,6 +1516,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 90,
       "resourceName": "Alexander Street Press - Music Online",
       "url": "http://musictrial.alexanderstreet.com/",
       "resourceType": "試用",
@@ -1443,6 +1533,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 91,
       "resourceName": "Education Source 教育大全資料庫",
       "url": "http://search.ebscohost.com/login.aspx?profile=ehost&defaultdb=eue",
       "resourceType": "試用",
@@ -1459,6 +1550,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 92,
       "resourceName": "Naxos Spoken Word Library",
       "url": "",
       "resourceType": "試用",
@@ -1475,6 +1567,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 93,
       "resourceName": "Naxos Music Library-Jazz",
       "url": "",
       "resourceType": "試用",
@@ -1491,6 +1584,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 94,
       "resourceName": "Bridgeman Education",
       "url": "",
       "resourceType": "試用",
@@ -1507,6 +1601,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 95,
       "resourceName": "AtoZ World Travel",
       "url": "",
       "resourceType": "試用",
@@ -1523,6 +1618,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 96,
       "resourceName": "AtoZ Maps Online",
       "url": "",
       "resourceType": "試用",
@@ -1539,6 +1635,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 97,
       "resourceName": "AtoZ World Culture",
       "url": "",
       "resourceType": "試用",
@@ -1555,6 +1652,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 98,
       "resourceName": "AtoZ World Trade",
       "url": "",
       "resourceType": "試用",
@@ -1571,6 +1669,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 99,
       "resourceName": "Mergent Online 全球企業與金融證券資料庫",
       "url": "http://www.mergentonline.com/",
       "resourceType": "試用",
@@ -1587,6 +1686,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 100,
       "resourceName": "EOL",
       "url": "http://eoldb.jp/EolDb/",
       "resourceType": "試用",
@@ -1603,6 +1703,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 101,
       "resourceName": "EOL Asia One",
       "url": "http://eoldb.jp/EolDb/",
       "resourceType": "試用",
@@ -1619,6 +1720,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 102,
       "resourceName": "EOL 100萬社",
       "url": "http://eoldb.jp/EolDbJp/",
       "resourceType": "試用",
@@ -1635,6 +1737,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 103,
       "resourceName": "Science of Synthesis 化學資料庫",
       "url": "https://science-of-synthesis.thieme.com/.",
       "resourceType": "試用",
@@ -1651,6 +1754,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 104,
       "resourceName": "Mendeley 書目管理軟體(本館訂ScienceDirect資料庫附贈機構版Mendeley)",
       "url": "http://www.mendeley.com",
       "resourceType": "免費OA",
@@ -1667,6 +1771,7 @@
       "relevanceUrl": "http://tul.blog.ntu.edu.tw/archives/category/%E5%85%B6%E4%BB%96%E6%9B%B8%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BB%9F%E9%AB%94"
     },
     {
+      "id": 105,
       "resourceName": "臺灣文獻叢刊續編",
       "url": "http://taisyu.udpweb.com.tw/",
       "resourceType": "試用",
@@ -1683,6 +1788,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 106,
       "resourceName": "中華語文知識庫",
       "url": "http://chinese-linguipedia.org/clk/index.php",
       "resourceType": "免費OA",
@@ -1699,6 +1805,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 107,
       "resourceName": "雕龍中日文古籍資料庫",
       "url": "http://www.kaixidb.com",
       "resourceType": "試用",
@@ -1715,6 +1822,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 108,
       "resourceName": "中國近代報刊 | 臺灣民報>開放試用至2017年06月30日止",
       "url": "http://www.dhcdb.com.tw/SP/",
       "resourceType": "試用",
@@ -1731,6 +1839,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 109,
       "resourceName": "大成老舊期刊全文數據庫",
       "url": "http://www.dachengdata.com/",
       "resourceType": "試用",
@@ -1747,6 +1856,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 110,
       "resourceName": "FUNDAY線上外語學習平台",
       "url": "http://tomwang.fun-day.com.tw",
       "resourceType": "試用",
@@ -1763,6 +1873,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 111,
       "resourceName": "高等教育知識庫",
       "url": "http://www.ericdata.com/hypage.cgi?hyqstr=aihhiliibdbhbfekfpfeedenejdpcucthfglgfhegjgmcqgughgodjctglgugighhocsgkhgglcihjftglgkdrdedldhdcdodfdfdpdidcdgdidkdkdl",
       "resourceType": "試用",
@@ -1779,6 +1890,7 @@
       "relevanceUrl": "http://www.hyread.com.tw/frontdesk/download.htm"
     },
     {
+      "id": 112,
       "resourceName": "人文學全文資料庫(Humanities Source)",
       "url": "http://search.ebscohost.com/login.aspx?profile=ehost&defaultdb=hus",
       "resourceType": "試用",
@@ -1795,6 +1907,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 113,
       "resourceName": "Applied Science & Technology Index",
       "url": "http://www.ebscohost.com/academic/applied-science-technology-index",
       "resourceType": "試用",
@@ -1811,6 +1924,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 114,
       "resourceName": "APA PsycTHERAPY 資料庫",
       "url": "http://psyctherapy.apa.org/",
       "resourceType": "試用",
@@ -1827,6 +1941,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 115,
       "resourceName": "NEW TOEIC應考特訓課程初級",
       "url": "http://ilibrary.com.tw/courses/toeic/index.asp",
       "resourceType": "試用",
@@ -1843,6 +1958,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 116,
       "resourceName": "PELAPELA日本語學習資料庫",
       "url": "http://www.ilibrary.com.tw/context1_1.asp",
       "resourceType": "試用",
@@ -1859,6 +1975,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 117,
       "resourceName": "雲端365生活實用短篇",
       "url": "http://www.ilibrary.com.tw/courses/365/index.asp",
       "resourceType": "試用",
@@ -1875,6 +1992,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 118,
       "resourceName": "空中英語教室校園教育雲",
       "url": "http://demo.webenglish.tv/",
       "resourceType": "試用",
@@ -1891,6 +2009,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 119,
       "resourceName": "Credo Reference",
       "url": "http://search.credoreference.com",
       "resourceType": "試用",
@@ -1907,6 +2026,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 120,
       "resourceName": "商周周刊知識庫",
       "url": "http://udndata.com/bsw/",
       "resourceType": "試用",
@@ -1923,6 +2043,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 121,
       "resourceName": "遠見雜誌知識庫",
       "url": "http://udndata.com/gvm/",
       "resourceType": "試用",
@@ -1939,6 +2060,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 122,
       "resourceName": "動腦雜誌知識庫",
       "url": "http://udndata.com/brain/",
       "resourceType": "試用",
@@ -1955,6 +2077,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 123,
       "resourceName": "臺灣文獻叢刊",
       "url": "http://tai.udpweb.com.tw/",
       "resourceType": "試用",
@@ -1971,6 +2094,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 124,
       "resourceName": "經典人文學刊庫",
       "url": "http://sinoweb.udpweb.com.tw/",
       "resourceType": "試用",
@@ -1987,6 +2111,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 125,
       "resourceName": "雄獅美術知識庫(臺灣美術知識庫)(開放試用至2017/1/10)",
       "url": "http://km.lionart.com.tw/",
       "resourceType": "試用",
@@ -2003,6 +2128,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 126,
       "resourceName": "五南電子書",
       "url": "http://hunteq.com/wunan.htm",
       "resourceType": "試用",
@@ -2019,6 +2145,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 127,
       "resourceName": "鼎文公職電子書庫",
       "url": "http://hunteq.com/tingwenc/tingwenkm",
       "resourceType": "試用",
@@ -2035,6 +2162,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 128,
       "resourceName": "化學期刊SYNLETT, SYNTHESIS以及SYNFACTS",
       "url": "http://www.thieme-connect.com/ejournals",
       "resourceType": "試用",
@@ -2051,6 +2179,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 129,
       "resourceName": "ACO全球音樂分析資料庫",
       "url": "http://ipm.academiccharts.com",
       "resourceType": "試用",
@@ -2067,6 +2196,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 130,
       "resourceName": "SAGE 研究方法資料庫個案分析",
       "url": "http://srmo.sagepub.com/cases",
       "resourceType": "試用",
@@ -2083,6 +2213,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 131,
       "resourceName": "天下影音知識庫",
       "url": "http://new.cwk.com.tw/login_guest-cw.htm?V0000001",
       "resourceType": "試用",
@@ -2099,6 +2230,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 132,
       "resourceName": "東方雜誌",
       "url": "http://cpem.cp.com.cn/",
       "resourceType": "試用",
@@ -2115,6 +2247,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 133,
       "resourceName": "新聞知識庫",
       "url": "http://hunteq.com/ttsnewsc/ttsnewskm",
       "resourceType": "試用",
@@ -2131,6 +2264,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 134,
       "resourceName": "台灣當代藝術資料庫",
       "url": "http://archive.avat-art.org",
       "resourceType": "免費OA",
@@ -2147,6 +2281,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 135,
       "resourceName": "華文雜誌知識庫",
       "url": "http://reading.udn.com/lib/nknuc",
       "resourceType": "試用",
@@ -2163,6 +2298,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 136,
       "resourceName": "遠景繁體中文電子書",
       "url": "http://hunteq.com/ebookkm.htm",
       "resourceType": "試用",
@@ -2179,6 +2315,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 137,
       "resourceName": "鼎文電子書庫",
       "url": "http://hunteq.com/tingwen.htm",
       "resourceType": "試用",
@@ -2195,6 +2332,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 138,
       "resourceName": "餐飲文化暨管理資料庫",
       "url": "http://hunteq.com/foodkm.htm",
       "resourceType": "試用",
@@ -2211,6 +2349,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 139,
       "resourceName": "自由中國",
       "url": "http://hunteq.com/freechina.htm",
       "resourceType": "試用",
@@ -2227,6 +2366,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 140,
       "resourceName": "自由時代",
       "url": "http://hunteq.com/freetime.htm",
       "resourceType": "試用",
@@ -2243,6 +2383,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 141,
       "resourceName": "明治大正年間『理蕃』事件簿",
       "url": "http://hunteq.com/fanc/fankm",
       "resourceType": "試用",
@@ -2259,6 +2400,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 142,
       "resourceName": "臨時臺灣舊慣調查會-原住民慣習大調查",
       "url": "http://hunteq.com/twfanc/twfankm",
       "resourceType": "試用",
@@ -2275,6 +2417,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 143,
       "resourceName": "臨時臺灣舊慣調查會-臺灣私法暨附錄參考書",
       "url": "http://hunteq.com/twplsc/twplskm",
       "resourceType": "試用",
@@ -2291,6 +2434,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 144,
       "resourceName": "後藤新平著作 選集電子書",
       "url": "http://hunteq.com/shinpei.html",
       "resourceType": "試用",
@@ -2307,6 +2451,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 145,
       "resourceName": "中山學術資料庫",
       "url": "http://sunology.culture.tw",
       "resourceType": "免費OA",
@@ -2323,6 +2468,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 146,
       "resourceName": "空中英語教室影音典藏學習系統",
       "url": "http://ecourse.webenglish.tv/",
       "resourceType": "試用",
@@ -2339,6 +2485,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 147,
       "resourceName": "NEW TOEIC 應考特訓課程",
       "url": "http://www.ilibrary.com.tw/index.asp",
       "resourceType": "試用",
@@ -2355,6 +2502,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 148,
       "resourceName": "PELA PELA日本語學習資料庫",
       "url": "http://www.ilibrary.com.tw/index.asp",
       "resourceType": "試用",
@@ -2371,6 +2519,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 149,
       "resourceName": "我的雲端智慧英語",
       "url": "http://www.iqenglish.tw",
       "resourceType": "試用",
@@ -2387,6 +2536,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 150,
       "resourceName": "英語學習暨教學參考資料庫 (ELL)",
       "url": "http://search.ebscohost.com/login.asp?profile=ell",
       "resourceType": "試用",
@@ -2403,6 +2553,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 151,
       "resourceName": "PUBU電子書城-精選考試用書",
       "url": "http://www.pubu.com.tw/libraryTrial/NKNU",
       "resourceType": "試用",
@@ -2419,6 +2570,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 152,
       "resourceName": "達志教育創藝網",
       "url": "http://www.tpgimages.com/vector/index.php",
       "resourceType": "試用",
@@ -2435,6 +2587,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 153,
       "resourceName": "FUNDAY線上外語學習平台",
       "url": "http://tts-nknu.fun-day.com.tw",
       "resourceType": "試用",
@@ -2451,6 +2604,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 154,
       "resourceName": "華藝世界美術資料庫",
       "url": "http://www.airitiart.com/",
       "resourceType": "試用",
@@ -2467,6 +2621,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 155,
       "resourceName": "ACLS Humanities E-book《美國學術團體協會‧人文社會科學電子書》",
       "url": "http://www.humanitiesebook.org/",
       "resourceType": "試用",
@@ -2483,6 +2638,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 156,
       "resourceName": "Grolier Online葛羅里百科全書線上資料庫(開放試用至2018/1/15)1. Encyclopedia Americana Online - http://ea.grolier.com    2. Grolier Multimedia Encyclopedia Online - http://gme.grolier.com",
       "url": "http://go.grolier.com/",
       "resourceType": "試用",
@@ -2499,6 +2655,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 157,
       "resourceName": "Bridgeman Education《布里奇曼藝術教育‧數位圖像資料庫》",
       "url": "http://www.bridgemaneducation.com",
       "resourceType": "試用",
@@ -2515,6 +2672,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 158,
       "resourceName": "AtoZ World Trade 《A到Z世界各國貿易》",
       "url": "http://www.atozworldtrade.com/",
       "resourceType": "試用",
@@ -2531,6 +2689,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 159,
       "resourceName": "AtoZ World Travel 《A到Z世界城市旅遊》",
       "url": "http://www.atozworldtravel.com/",
       "resourceType": "試用",
@@ -2547,6 +2706,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 160,
       "resourceName": "AtoZ World Culture 《A到Z世界各國文化》",
       "url": "http://www.atozworldculture.com/",
       "resourceType": "試用",
@@ -2563,6 +2723,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 161,
       "resourceName": "eol AsiaOne亞洲15國企業資訊資料庫",
       "url": "https://asiaone.eoldb.com/",
       "resourceType": "試用",
@@ -2579,6 +2740,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 162,
       "resourceName": "EOL日本綜合企業資訊資料庫",
       "url": "http://eoldb.jp/EolDb/",
       "resourceType": "試用",
@@ -2595,6 +2757,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 163,
       "resourceName": "Medici.tv 麥迪西TV《現場直播音樂會》開放試用至2017/12/17日止",
       "url": "http://edu.medici.tv",
       "resourceType": "試用",
@@ -2611,6 +2774,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 164,
       "resourceName": "Discovery Education - Streaming《Discovery ‧數位課程教學影片資料庫》",
       "url": "http://www.discoveryeducation.com/",
       "resourceType": "試用",
@@ -2627,6 +2791,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 165,
       "resourceName": "F1000Prime醫學與生物核心論文評選",
       "url": "http://f1000.com/prime",
       "resourceType": "試用",
@@ -2643,6 +2808,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 166,
       "resourceName": "智慧藏百科知識網",
       "url": "http://www.wordpedia.com/edu/",
       "resourceType": "試用",
@@ -2659,6 +2825,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 167,
       "resourceName": "SAGE Video",
       "url": "http://sk.sagepub.com/",
       "resourceType": "試用",
@@ -2675,6 +2842,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 168,
       "resourceName": "續修四庫全書",
       "url": "http://www.xuxiu.net",
       "resourceType": "試用",
@@ -2691,6 +2859,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 169,
       "resourceName": "Patentcloud專利雲",
       "url": "http://www.patentcloud.com/edu/nknu",
       "resourceType": "試用",
@@ -2707,6 +2876,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 170,
       "resourceName": "電子期刊搜尋系統",
       "url": "http://140.127.41.95/online_books/",
       "resourceType": "免費OA",
@@ -2723,6 +2893,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 171,
       "resourceName": "MUZIK資料庫",
       "url": "http://www.muzikstudy.com/home",
       "resourceType": "試用",
@@ -2739,6 +2910,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 172,
       "resourceName": "FOR DUMMIES系列電子書選輯",
       "url": "http://lb20.dummies.libraryandbook.net/",
       "resourceType": "試用",
@@ -2755,6 +2927,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 173,
       "resourceName": "Cambridge Bookd Online電子書",
       "url": "http://ebooks.cambridge.org/",
       "resourceType": "試用",
@@ -2771,6 +2944,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 174,
       "resourceName": "雅昌藝術圖書資料庫",
       "url": "http://ysts.artron.net/",
       "resourceType": "試用",
@@ -2787,6 +2961,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 175,
       "resourceName": "民國近代史料資料庫",
       "url": "http://www.digroc.com/",
       "resourceType": "試用",
@@ -2803,6 +2978,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 176,
       "resourceName": "台灣商學企管資料庫",
       "url": "http://elib.infolinker.com.tw/login_tebko.htm",
       "resourceType": "試用",
@@ -2819,6 +2995,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 177,
       "resourceName": "Bookworld書世界",
       "url": "http://bookworld.sslibrary.com/",
       "resourceType": "試用",
@@ -2835,6 +3012,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 178,
       "resourceName": "美聯社新聞英文影音資料庫",
       "url": "http://demo.vookslibrary.com",
       "resourceType": "試用",
@@ -2851,6 +3029,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 179,
       "resourceName": "IEK產業情報網-線上研討會",
       "url": "http://iekedu.tw",
       "resourceType": "試用",
@@ -2867,6 +3046,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 180,
       "resourceName": "清代宮中檔及軍機處檔摺件資料庫",
       "url": "http://npmhost.npm.gov.tw/tts/npmmeta/GC/indexcg.html",
       "resourceType": "試用",
@@ -2883,6 +3063,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 181,
       "resourceName": "大清國史人物列傳及史館檔傳包傳稿全文影像資料庫",
       "url": "http://npmhost.npm.gov.tw/tts/npmmeta/DQ/indexcg.html",
       "resourceType": "試用",
@@ -2899,6 +3080,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 182,
       "resourceName": "亞歷山大‧音樂資料庫",
       "url": "http://search.alexanderstreet.com/music-performing-arts",
       "resourceType": "試用",
@@ -2915,6 +3097,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 183,
       "resourceName": "東方雜誌全文檢索資料庫",
       "url": "http://cpem.cp.com.cn/",
       "resourceType": "試用",
@@ -2931,6 +3114,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 184,
       "resourceName": "美國科研出版社",
       "url": "http://www.scirp.org/journal",
       "resourceType": "試用",
@@ -2947,6 +3131,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 185,
       "resourceName": "文訊雜誌知識庫demo版",
       "url": "http://210.243.166.78/udndataWSN/index.html",
       "resourceType": "免費OA",
@@ -2963,6 +3148,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 186,
       "resourceName": "Airiti Library 華藝線上圖書館  (CEPS 中文電子期刊 + CETD 中文電子學位論文)",
       "url": "http://www.airitilibrary.com/",
       "resourceType": "訂購",
@@ -2979,6 +3165,7 @@
       "relevanceUrl": "http://www.airitilibrary.com/aluserguide.aspx"
     },
     {
+      "id": 187,
       "resourceName": "CLISA 中文圖書資訊學文獻摘要資料庫",
       "url": "http://news.ncl.edu.tw/ttscgi/ttsweb?@0:0:1:clisa",
       "resourceType": "訂購",
@@ -2995,6 +3182,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 188,
       "resourceName": "ACI 學術引用文獻資料庫(105年起停訂)(開放試用至2017年2月28日",
       "url": "http://www.airiti.com/ACI/",
       "resourceType": "試用",
@@ -3011,6 +3199,7 @@
       "relevanceUrl": "http://portal.airiti.com/uploads/apupload/ACI120315_tw.pdf"
     },
     {
+      "id": 189,
       "resourceName": "HyRead ebook 電子雜誌 電子書",
       "url": "http://nknu.ebook.hyread.com.tw/",
       "resourceType": "訂購",
@@ -3027,6 +3216,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 190,
       "resourceName": "中國優秀碩博士學位論文全文數據庫",
       "url": "http://cnki50.csis.com.tw/kns50/Navigator.aspx?ID=CDFD",
       "resourceType": "訂購",
@@ -3043,6 +3233,7 @@
       "relevanceUrl": "http://www.cnkiuser.com/download.asp\nhttp://www.cnkiuser.com/\nhttp://140.127.53.222/lib/howto/node/15105"
     },
     {
+      "id": 191,
       "resourceName": "中國報紙資源全文數據庫",
       "url": "http://dlib.apabi.com/nknu",
       "resourceType": "訂購",
@@ -3059,6 +3250,7 @@
       "relevanceUrl": "http://www.tbmc.com.tw/tbmc2/cdb/intro/Newsdb-apabiNewspaper.htm"
     },
     {
+      "id": 192,
       "resourceName": "中國期刊全文數據庫  (中國期刊全文+中國博碩士論文全文) (文史哲及社會科學專輯) 中國知識資源總庫 CNKI系列數據庫",
       "url": "http://cnki.sris.com.tw/kns55/",
       "resourceType": "訂購",
@@ -3075,6 +3267,7 @@
       "relevanceUrl": "http://cnki.sris.com.tw/kns55/"
     },
     {
+      "id": 193,
       "resourceName": "臺灣期刊論文索引系統",
       "url": "http://readopac2.ncl.edu.tw/nclJournal/",
       "resourceType": "免費OA",
@@ -3091,6 +3284,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 194,
       "resourceName": "全四庫(三部)(限校園使用)",
       "url": "http://140.127.41.15/endnote/download/QuansikuSetup.exe",
       "resourceType": "買斷永久使用",
@@ -3107,6 +3301,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 195,
       "resourceName": "古今圖書集成 (限校園使用)",
       "url": "http://140.127.41.89/Chinesebookweb/home/index.asp",
       "resourceType": "買斷永久使用",
@@ -3123,6 +3318,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 196,
       "resourceName": "台灣史知識庫(臺灣史知識庫)（限校園使用）",
       "url": "http://140.127.41.87:8080/twnohwdb/start.htm",
       "resourceType": "買斷永久使用",
@@ -3139,6 +3335,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 197,
       "resourceName": "台灣大事記資料庫 (限校園使用)",
       "url": "http://140.127.41.87/tcenturyweb/index.htm",
       "resourceType": "買斷永久使用",
@@ -3155,6 +3352,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 198,
       "resourceName": "台灣文獻叢刊資料庫 (限校園使用)",
       "url": "http://140.127.53.3/ttsweb/index.htm",
       "resourceType": "訂購",
@@ -3171,6 +3369,7 @@
       "relevanceUrl": "http://hanji.sinica.edu.tw/index.html?"
     },
     {
+      "id": 199,
       "resourceName": "台灣鄉土語言影音資料庫：台語系列主題 (限校園使用)  (臺灣鄉土語言影音資料庫)",
       "url": "http://140.127.41.87:8080/twloclang/homepage",
       "resourceType": "買斷永久使用",
@@ -3187,6 +3386,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 200,
       "resourceName": "金庸作品集電子書",
       "url": "http://lib.wordpedia.com/jp_index.php",
       "resourceType": "買斷永久使用",
@@ -3203,6 +3403,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 201,
       "resourceName": "慧科大中華新聞網 WiseNews(開放試用至2016/11/27日止)",
       "url": "http://nknu.portal.wisenews.net/?gid=nknu&user=ipaccess",
       "resourceType": "試用",
@@ -3219,6 +3420,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 202,
       "resourceName": "萬方數據知識服務平臺(試用至2016/12/31)",
       "url": "http://g.wanfangdata.com.hk/",
       "resourceType": "試用",
@@ -3235,6 +3437,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 203,
       "resourceName": "明清實錄 (限校園使用)",
       "url": "http://140.127.41.15/endnote/download/MingqingClientSetup.exe",
       "resourceType": "買斷永久使用",
@@ -3251,6 +3454,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 204,
       "resourceName": "歷代書法碑帖集成",
       "url": "http://140.127.41.89/WritingArtWeb/default.asp",
       "resourceType": "買斷永久使用",
@@ -3267,6 +3471,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 205,
       "resourceName": "紅樓夢研究資料庫 (限校園使用)",
       "url": "http://140.127.41.87/hunglousdy/",
       "resourceType": "買斷永久使用",
@@ -3283,6 +3488,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 206,
       "resourceName": "聯合知識庫 udndata",
       "url": "http://udndata.com/library/",
       "resourceType": "訂購",
@@ -3299,6 +3505,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 207,
       "resourceName": "臺灣日日新報(台灣日日新報)(限校園使用)請使用IE瀏覽器(版本10以上)",
       "url": "http://140.127.41.87:8008/",
       "resourceType": "買斷永久使用",
@@ -3315,6 +3522,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 208,
       "resourceName": "iRead eBook華藝電子書(提供館合服務點數5000點免費申請)",
       "url": "http://www.airitibooks.com/Home/Index",
       "resourceType": "訂購",
@@ -3331,6 +3539,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 209,
       "resourceName": "Academic Search Premier (ASP) 綜合學科參考類全文資料庫精華版",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -3347,6 +3556,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 210,
       "resourceName": "ACS Journals (American chemical Society) (化學推動中心+學校購買)",
       "url": "http://pubs.acs.org/",
       "resourceType": "訂購",
@@ -3363,6 +3573,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 211,
       "resourceName": "AIP 電子期刊 (American Institute of Physics電子期刊) (物理研究推動中心+學校購買)",
       "url": "http://journals.aip.org/",
       "resourceType": "訂購",
@@ -3379,6 +3590,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 212,
       "resourceName": "Allgemeine Künstlerlexikon (AKL) 藝術類資料庫",
       "url": "http://refworks.reference-global.com/AKL",
       "resourceType": "訂購",
@@ -3395,6 +3607,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/AKLintro.pdf\nhttp://140.127.53.222/lib/files/AKLintro2.pdf"
     },
     {
+      "id": 213,
       "resourceName": "AMS MathSciNet (數學研究推動中心+學校購買(數學系))",
       "url": "http://www.ams.org/mathscinet/index.html",
       "resourceType": "訂購",
@@ -3411,6 +3624,7 @@
       "relevanceUrl": "http://web.a.ebscohost.com/ehost/search/advanced?sid=26f2a147-0910-48b9-957a-8ff85c54cb73%40sessionmgr4006&vid=1&hid=4104"
     },
     {
+      "id": 214,
       "resourceName": "APS 電子期刊(American Physical Society電子期刊) (物理研究推動中心+學校購買)",
       "url": "http://publish.aps.org/",
       "resourceType": "訂購",
@@ -3427,6 +3641,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 215,
       "resourceName": "Bibliothèque des lettres 法國文學百科全書資料庫",
       "url": "http://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColBdl",
       "resourceType": "訂購",
@@ -3443,6 +3658,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/BibliothequedeslettresIntro.pdf\nhttp://140.127.53.222/lib/files/BibliothequedeslettresManual.pdf"
     },
     {
+      "id": 216,
       "resourceName": "Brepolis Médiéval (法文版)--文學/中世紀主題書目資料庫",
       "url": "http://www.brepolis.net/",
       "resourceType": "訂購",
@@ -3459,6 +3675,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/BrepolisMedievalintro.pdf\nhttp://140.127.53.222/lib/files/BrepolisMedievalintro2.pdf\nhttp://140.127.53.222/lib/files/BrepolisMedievallist.xls"
     },
     {
+      "id": 217,
       "resourceName": "Business Source Premier (BSP) 商管財經類全文資料庫精華版",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -3475,6 +3692,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/bsp.pdf\nhttp://support.ebscohost.com/training/lang/zh/zh-tw-t.php\nhttp://www.youtube.com/results?search_query=ebsco%E4%B8%AD%E6%96%87&search_type=&aq=f"
     },
     {
+      "id": 218,
       "resourceName": "Cairn 綜合性資料庫 (法文版)",
       "url": "http://www.cairn.info/accueil.php?PG=START",
       "resourceType": "訂購",
@@ -3491,6 +3709,7 @@
       "relevanceUrl": "http://french2.nccu.edu.tw/db_intro/Cairn.pdf\nhttp://french2.nccu.edu.tw/db_intro/CAIRN%20PPT manual.pdf"
     },
     {
+      "id": 219,
       "resourceName": "Cambridge Companion Online (CCO) 電子書 #cambtidge電子書",
       "url": "https://www.cambridge.org/core/",
       "resourceType": "買斷永久使用",
@@ -3507,6 +3726,7 @@
       "relevanceUrl": "https://www.cambridge.org/core/services/aop-file-manager/file/57f641b7000ca2530629e0aa"
     },
     {
+      "id": 220,
       "resourceName": "CiNii資料庫 -- CiNii－NII論文情報ナビゲータ",
       "url": "http://ci.nii.ac.jp/",
       "resourceType": "訂購",
@@ -3523,6 +3743,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/Ciniiintro.ppt\nhttp://140.127.53.222/lib/files/CINIIintro2.ppt"
     },
     {
+      "id": 221,
       "resourceName": "Communication & Mass Media  Complete",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -3539,6 +3760,7 @@
       "relevanceUrl": "http://web.ebscohost.com/ehost/publication?sid=aa67ae39-0534-43a1-bf91-497ff0a27b54%40sessionmgr14&vid=2&hid=12\nhttp://support.ebscohost.com/training/lang/zh/zh-tw-t.php"
     },
     {
+      "id": 222,
       "resourceName": "Corpus de la literature narrative du Moyen Âge au XXe siècle 法國文學資料庫",
       "url": "http://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColBasile",
       "resourceType": "訂購",
@@ -3555,6 +3777,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/CorpusIntro.pdf\nhttp://140.127.53.222/lib/files/CorpusManual.pdf"
     },
     {
+      "id": 223,
       "resourceName": "CRC NetBase電子書資料庫(僅加入2008年臺灣學術電子書聯盟)",
       "url": "http://www.crcnetbase.com",
       "resourceType": "買斷永久使用",
@@ -3571,6 +3794,7 @@
       "relevanceUrl": "http://nknulib.nknu.edu.tw/search*cht/X?SEARCH=(CRC)&SORT=D&m=z"
     },
     {
+      "id": 224,
       "resourceName": "Dictionnaires de l'Académie Française 字典資料庫",
       "url": "http://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColAcademie2",
       "resourceType": "訂購",
@@ -3587,6 +3811,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/DictionnairesFrancaiseIntro.pdf\nhttp://140.127.53.222/lib/files/DictionnairesfrancaiseManual.pdf"
     },
     {
+      "id": 225,
       "resourceName": "Digitaler Bibliothek Deutscher Klassiker (德文版)",
       "url": "http://klassiker.chadwyck.co.uk",
       "resourceType": "免費OA",
@@ -3603,6 +3828,7 @@
       "relevanceUrl": "http://german2.nccu.edu.tw/db_intro/Digitaler%20Bibliothek%20Deutscher%20Klassiker.pdf"
     },
     {
+      "id": 226,
       "resourceName": "Dissertations (PQDD-- 美加地區博碩士數位論文典藏聯盟 )",
       "url": "http://pqdd.sinica.edu.tw",
       "resourceType": "訂購",
@@ -3619,6 +3845,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/ProQuesT new.platform_user.guide_Mar_2011.ppt"
     },
     {
+      "id": 227,
       "resourceName": "EBSCOhost 全文資料庫  本館採購(Academic Search Premier ASP)(Business Source Premier BSP)(Communication & Mass Media  Complete CMMC)。EBSCO贈送 1. ERIC/ 2. MEDLINE/ 3. EconLit / 4. MLA Int’l Bibliography and MLA Directory of Periodicals/ 5. Applied Science & Technology Index (ASTI)(H.W. Wilson)/ 6.Regional Business News/ 7. Library, Information Science & Technology Abstracts with Full Text (LISTA with Full Text)/ 8. Professional Development Collection/ 9. Newspaper Source/  10. The Serials Directory/ 11. IBT&D with full Text/ 12. English Language Learner Reference Center(ELL) # ebsco",
       "url": "http://search.ebscohost.com",
       "resourceType": "訂購",
@@ -3635,6 +3862,7 @@
       "relevanceUrl": "http://support.ebscohost.com/training/lang/zh/zh-tw-t.php\nhttp://prezi.com/iiayxkjd3bks/ebookeconlit-asp-bsp-cmmc-ebscohost/\nhttp://web.b.ebscohost.com/ehost/search/basic?sid=e3ba6915-4d1b-4bf0-b2a1-31922566c8d4@sessionmgr101&vid=1&tid=2003EB"
     },
     {
+      "id": 228,
       "resourceName": "Electronic Journals Library",
       "url": "http://rzblx1.uni-regensburg.de/ezeit/fl.phtml?bibid=AAAAA&colors=7&lang=en",
       "resourceType": "免費OA",
@@ -3651,6 +3879,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 229,
       "resourceName": "Encyclopædia Universalis 資料庫 (法文版)",
       "url": "http://www.universalis-edu.com/",
       "resourceType": "訂購",
@@ -3667,6 +3896,7 @@
       "relevanceUrl": "http://french2.nccu.edu.tw/db_intro/Encyclopaedia%20universalis.pdf\nhttp://french2.nccu.edu.tw/db_intro/Encyclopia_universalis_PPT manual.pdf"
     },
     {
+      "id": 230,
       "resourceName": "ERIC全文資料庫 (EBSCOhost Web - ERIC)",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -3683,6 +3913,7 @@
       "relevanceUrl": "http://support.ebscohost.com/training/lang/zh/zh-tw-t.php"
     },
     {
+      "id": 231,
       "resourceName": "Funk & Wagnalls New World Encyclopedia",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -3699,6 +3930,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 232,
       "resourceName": "GreenFILE",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -3715,6 +3947,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 233,
       "resourceName": "Greenwood Digital Collection (電子書) 本館2008年訂購693種電子書。",
       "url": "http://ebooks.abc-clio.com/main.aspx",
       "resourceType": "買斷永久使用",
@@ -3731,6 +3964,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 234,
       "resourceName": "Oxford Music Online (原名: Grove Music Online 葛洛夫音樂百科全書)",
       "url": "http://www.oxfordmusiconline.com",
       "resourceType": "訂購",
@@ -3747,6 +3981,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 235,
       "resourceName": "Internationale Bibliographie der Geistes- und Sozialwissenschaftlichen Zeitschriftenliteratur (IBZ) 綜合類資料庫 (德文版)",
       "url": "http://refworks.reference-global.com/IBZ",
       "resourceType": "訂購",
@@ -3763,6 +3998,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 236,
       "resourceName": "IOS Press Books Online (電子書) 本館2008年訂購56種電子書。",
       "url": "http://ebooks.windeal.com.tw/ios/pass.asp",
       "resourceType": "買斷永久使用",
@@ -3779,6 +4015,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 237,
       "resourceName": "Japan Knowledge 資料庫",
       "url": "http://japanknowledge.com/library/",
       "resourceType": "訂購",
@@ -3795,6 +4032,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/chineseintro.ppt\nhttp://140.127.53.222/lib/files/japanknowledge.xls"
     },
     {
+      "id": 238,
       "resourceName": "InCites™Journal Citation Reports® (原JCR Web)",
       "url": "https://jcr.clarivate.com",
       "resourceType": "訂購",
@@ -3811,6 +4049,7 @@
       "relevanceUrl": "https://lis.nknu.edu.tw/zh/news_display/820-2018%E5%B9%B4%E7%99%BC%E5%B8%83%E7%9A%84-incites-journal-citation-reports-2017%E6%95%B8%E6%93%9A%E5%B7%B2%E7%B6%93%E4%B8%8A%E7%B7%9A%EF%BC%8C%E6%AD%A1%E8%BF%8E%E6%82%A8%E5%A4%9A%E5%8A%A0%E5%88%A9%E7%94%A8%EF%BC%81\nhttp://clarivate.libguides.com/jcr"
     },
     {
+      "id": 239,
       "resourceName": "JSTOR - Arts & Sciences III Collection",
       "url": "http://www.jstor.org/action/showJournals?browseType=collectionInfoPage&selectCollection=asiii",
       "resourceType": "訂購",
@@ -3827,6 +4066,7 @@
       "relevanceUrl": "http://www.stpi.org.tw/fdb/jstor/index.html"
     },
     {
+      "id": 240,
       "resourceName": "Juris de 法學資料庫",
       "url": "http://www.juris.de/jportal?action=JLoginUser&username=NATIONAL_KAOHSIUNG_NO_DEP",
       "resourceType": "訂購",
@@ -3843,6 +4083,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 241,
       "resourceName": "Kafkas Werke im WWW (德文版)",
       "url": "http://kafka.chadwyck.co.uk",
       "resourceType": "免費OA",
@@ -3859,6 +4100,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/Kafkas_Werke.pdf"
     },
     {
+      "id": 242,
       "resourceName": "Lextenso.fr 法學資料庫",
       "url": "http://www.lextenso.fr",
       "resourceType": "訂購",
@@ -3875,6 +4117,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/Lextenso.fr_PPT.pdf"
     },
     {
+      "id": 243,
       "resourceName": "Library, Information Science & Technology Abstracts(併入EBSCOhost 全文資料庫平台)",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -3891,6 +4134,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 244,
       "resourceName": "MagV中文電子雜誌",
       "url": "http://site.magv.com/RNI/",
       "resourceType": "訂購",
@@ -3907,6 +4151,7 @@
       "relevanceUrl": "http://140.127.53.13/cgi-bin/ej/browse.cgi?q=iMagV%A4%A4%A4%E5%B9q%A4l%C2%F8%BBx%B8%EA%AE%C6%AEw.pub&ccd=rJuti0&sentry=1&o=select"
     },
     {
+      "id": 245,
       "resourceName": "MAS Ultra - School Edition",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -3923,6 +4168,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 246,
       "resourceName": "MLA Directory of Periodicals",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -3939,6 +4185,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 247,
       "resourceName": "Munzinger 德文資料庫",
       "url": "http://www.Munzinger.de",
       "resourceType": "訂購",
@@ -3955,6 +4202,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/Munzinger_Online.pdf\nhttp://140.127.53.222/lib/files/Kurzanleitung_Munzinger_Online_englisch.pdf"
     },
     {
+      "id": 248,
       "resourceName": "MyiLibrary電子書 (本館目前購入4690個Titles全文電子書)",
       "url": "http://www.myilibrary.com/browse/open.asp",
       "resourceType": "買斷永久使用",
@@ -3971,6 +4219,7 @@
       "relevanceUrl": "http://nknulib.nknu.edu.tw/search*cht/X?SEARCH=(MyiLibrary)&SORT=D&m=z"
     },
     {
+      "id": 249,
       "resourceName": "Nautre Archive: 1987-1996",
       "url": "http://www.nature.com/nature/archive/index.html",
       "resourceType": "免費OA",
@@ -3987,6 +4236,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 250,
       "resourceName": "NAXOS Music Library Online",
       "url": "http://nknu.naxosmusiclibrary.com/",
       "resourceType": "訂購",
@@ -4003,6 +4253,7 @@
       "relevanceUrl": "http://www.chiuru.com.tw/web1/index.php/introduction/111-introduction/104-nml\nhttp://www.chiuru.com.tw/web1/index.php/oup-ppt/110-ppt/87-nml\nhttp://www.naxosmusiclibrary.com/faqs.asp"
     },
     {
+      "id": 251,
       "resourceName": "OCLC FirstSearch-OCLC Collection (1) ArticleFirst(1990-)(2) ECO (A&I)(1995-)(3) PapersFirst(1993-)(4) ProceedingsFirst(1993-)",
       "url": "http://newfirstsearch.oclc.org/fsip",
       "resourceType": "聯盟提供(年度)",
@@ -4019,6 +4270,7 @@
       "relevanceUrl": "http://www.stpi.org.tw/fdb/oclc/index.html"
     },
     {
+      "id": 252,
       "resourceName": "OSA 光學物理期刊 (Optics InfoBase)",
       "url": "http://proxy.osapublishing.org/",
       "resourceType": "訂購",
@@ -4035,6 +4287,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 253,
       "resourceName": "Oxford Scholarship Online 牛津線上學術電子書 (1800+本電子書)",
       "url": "http://www.oxfordscholarship.com/",
       "resourceType": "買斷永久使用",
@@ -4051,6 +4304,7 @@
       "relevanceUrl": "http://nknulib.nknu.edu.tw/search*cht/?searchtype=a&searcharg=Oxford+University+Press&SUBMIT="
     },
     {
+      "id": 254,
       "resourceName": "The Oxford Journals Archive (ODJA) 牛津期刊回溯資料庫",
       "url": "http://www.chiuru.com.tw/ojdatw/index.php?option=com_content&view=article&id=59",
       "resourceType": "訂購",
@@ -4067,6 +4321,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 255,
       "resourceName": "Past Masters 哲學主題資料庫(法文版)",
       "url": "http://pm.nlx.com/xtf/search?browse-collections=true",
       "resourceType": "免費OA",
@@ -4083,6 +4338,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/PasT Masters_intro.pdf\nhttp://140.127.53.222/lib/files/PasT Masters_PPT.pdf"
     },
     {
+      "id": 256,
       "resourceName": "Periodicals Archive Online Collection 6 （PAO 6）19-20 世紀典藏人文社會學術期刊全文資料庫",
       "url": "http://huso.stpi.narl.org.tw/husoc/husokm?00D41A690000000000000000000013600000001E000000000",
       "resourceType": "免費OA",
@@ -4099,6 +4355,7 @@
       "relevanceUrl": "http://www.tbmc.com.tw/NSC/Download/PAO/PAO_1-6_Jun_2010.ppt\nhttp://www.tbmc.com.tw/NSC/Download/PAO/PAO6-titles.xls"
     },
     {
+      "id": 257,
       "resourceName": "Professional Development Collection(併入EBSCOhost 全文資料庫平台)",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -4115,6 +4372,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 258,
       "resourceName": "ProQuest Dissertations & Theses: A&I (PQDT)(1639-) 美加地區博碩士論文",
       "url": "https://search.proquest.com/pqdt?accountid=7990",
       "resourceType": "聯盟提供(年度)",
@@ -4131,6 +4389,7 @@
       "relevanceUrl": "http://pqdd.sinica.edu.tw/twdaoapp/basic"
     },
     {
+      "id": 259,
       "resourceName": "Reaxys化學資料庫(持續以全國學術版方式提供使用至2019年1月底)",
       "url": "https://www.reaxys.com/",
       "resourceType": "聯盟提供(年度)",
@@ -4147,6 +4406,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 260,
       "resourceName": "Regional Business News(併入EBSCOhost 全文資料庫平台)",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -4163,6 +4423,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 261,
       "resourceName": "RSC(Royal Society of Chemistry) & RSC Journals Archives(化學推動中心)",
       "url": "http://www.rsc.org/Publishing/",
       "resourceType": "聯盟提供(年度)",
@@ -4179,6 +4440,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 262,
       "resourceName": "SAGE eReference (電子書) /本館目前訂購47種電子書。",
       "url": "http://sage-ereference.com/",
       "resourceType": "買斷永久使用",
@@ -4195,6 +4457,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 263,
       "resourceName": "Schillers Werke im WWW (德文版)",
       "url": "http://schiller.chadwyck.co.uk",
       "resourceType": "免費OA",
@@ -4211,6 +4474,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/Schillers_Werke.pdf"
     },
     {
+      "id": 264,
       "resourceName": "Science Direct (又稱SDOL)__支援 ipad、Android 及 Kindle閱讀器",
       "url": "http://www.sciencedirect.com/",
       "resourceType": "訂購",
@@ -4227,6 +4491,7 @@
       "relevanceUrl": "http://taiwan1.elsevier.com/ElsevierDNN/%E7%94%A2%E5%93%81/%E7%B7%9A%E4%B8%8A%E7%94%A2%E5%93%81/SciVerseScienceDirect/tabid/439/Default.aspx\nhttp://taiwan1.elsevier.com/ElsevierDNN/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BElsevier%E8%B3%87%E6%96%99%E5%BA%AB/SciVerseScienceDirect/tabid/1954/Default.aspx"
     },
     {
+      "id": 265,
       "resourceName": "SDOS (ScienceDirect Onsite)",
       "url": "http://sdos.ejournal.ascc.net/",
       "resourceType": "訂購",
@@ -4243,6 +4508,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 266,
       "resourceName": "SIAM eBooks  (電子書) /本館目前訂購323種電子書",
       "url": "http://www.igpublish.com/siam-ebook",
       "resourceType": "買斷永久使用",
@@ -4259,6 +4525,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 267,
       "resourceName": "SpringerLink英文電子書資料庫(本館目前訂購3430種電子書)",
       "url": "https://link.springer.com/",
       "resourceType": "買斷永久使用",
@@ -4275,6 +4542,7 @@
       "relevanceUrl": "http://nknulib.nknu.edu.tw/search*cht/a?searchtype=a&SORT=D&searcharg=SpringerLink&submit.x=29&submit.y=14&submit=Submit"
     },
     {
+      "id": 268,
       "resourceName": "The Serials Directory(併入EBSCOhost 全文資料庫平台)",
       "url": "http://search.ebscohost.com/",
       "resourceType": "訂購",
@@ -4291,6 +4559,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 269,
       "resourceName": "Teacher Reference Cente",
       "url": "http://search.ebscohost.com",
       "resourceType": "訂購",
@@ -4307,6 +4576,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 270,
       "resourceName": "Tech Science Press 電子期刊",
       "url": "http://www.techscience.com/academic.html",
       "resourceType": "訂購",
@@ -4323,6 +4593,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 271,
       "resourceName": "Wiley Online Library",
       "url": "https://onlinelibrary.wiley.com/",
       "resourceType": "訂購",
@@ -4339,6 +4610,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 272,
       "resourceName": "WilsonWeb - OmniFile Full Text Select 改平台EBSCOhost - OmniFile Full Text Select  # ebsco",
       "url": "http://search.ebscohost.com/login.aspx?profile=wilson",
       "resourceType": "聯盟提供(年度)",
@@ -4355,6 +4627,7 @@
       "relevanceUrl": "http://www.stpi.narl.org.tw/fdb/wilson/index.html"
     },
     {
+      "id": 273,
       "resourceName": "World Public Library電子書資料庫",
       "url": "http://community.ebooklibrary.org/?AffiliateKey=Kaohsiung4",
       "resourceType": "訂購",
@@ -4371,6 +4644,7 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/World_Public_Library_User_Guide_001121.doc"
     },
     {
+      "id": 274,
       "resourceName": "WOS (Web of Science-SCIE& SSCI)",
       "url": "https://www.isiknowledge.com/wos",
       "resourceType": "訂購",
@@ -4387,6 +4661,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 275,
       "resourceName": "Acer Walking Library 電子雜誌出版服務平台 (含空中英語教室、彭蒙惠英語等12種期刊)",
       "url": "http://edo.tw/ocp.aspx?subs_no=00063",
       "resourceType": "訂購",
@@ -4403,6 +4678,7 @@
       "relevanceUrl": "https://lis.nknu.edu.tw/zh/infoservices/vpn%E9%80%A3%E7%B7%9A%E6%9C%8D%E5%8B%99"
     },
     {
+      "id": 276,
       "resourceName": "IEEE Xplore _ 可於iPhone、iPad、iPod 使用(107/04/01日起改網址為 https://ieeexplore.ieee.org)",
       "url": "http://ieeexplore.ieee.org",
       "resourceType": "訂購",
@@ -4419,6 +4695,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 277,
       "resourceName": "World ebooks Library-Educational Resource Collection教育專輯電子書資料庫",
       "url": "http://community.ebooklibrary.org/?AffiliateKey=Kaohsiung4",
       "resourceType": "訂購",
@@ -4435,6 +4712,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 278,
       "resourceName": "Mental Measurements Yearbook",
       "url": "http://search.ebscohost.com/login.aspx?profile=ehost&defaultdb=loh",
       "resourceType": "訂購",
@@ -4451,6 +4729,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 279,
       "resourceName": "國史館台灣文獻館數位典藏整合查詢系統  #日治時期臺灣總督府公文類纂與專賣局數位化檔案資料庫(帳號：ui2531  密碼：ui7172930)",
       "url": "http://ds3.th.gov.tw/DS3/index.php",
       "resourceType": "訂購",
@@ -4467,6 +4746,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 280,
       "resourceName": "Digital Dissertation Consortium (DDC) 數位化論文典藏聯盟 #ProQuest Dissertations & Theses: A&I (PQDT) 美加地區博碩士論文(ProQuest) (PQDT)",
       "url": "http://rpa.lib.nknu.edu.tw:81/login?url=http://ddc.elib.com.tw/",
       "resourceType": "訂購",
@@ -4483,6 +4763,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 281,
       "resourceName": "Udn 電子書庫",
       "url": "http://reading.udn.com/lib/nknu",
       "resourceType": "買斷永久使用",
@@ -4499,6 +4780,7 @@
       "relevanceUrl": "http://reading.udn.com/libnew/setting_help.html"
     },
     {
+      "id": 282,
       "resourceName": "全清經解",
       "url": "https://bookrecommend.nknu.edu.tw:8443/endnote/download/QuanqingSetup.exe",
       "resourceType": "買斷永久使用",
@@ -4515,6 +4797,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 283,
       "resourceName": "EndNote 書目管理軟體(版本 EndNote X9 Windows)",
       "url": "https://bookrecommend.nknu.edu.tw:8443/endnote/download/NKNU_WIN_EndNoteX9.zip",
       "resourceType": "訂購",
@@ -4531,6 +4814,7 @@
       "relevanceUrl": "http://www.sris.com.tw/download/EndNoteX9_QRC_Cht.pdf\nhttp://www.sris.com.tw/training/sris/EndNoteX7.asp\nhttps://bookrecommend.nknu.edu.tw:8443/endnote/download/NKNU_ENX8_Windows.zip\nhttps://bookrecommend.nknu.edu.tw:8443/endnote/download/EndNoteX8SiteInstaller.dmg\nhttp://www.customer-support.com.tw/training/sris/EndNoteX8.php\nhttp://www.customer-support.com.tw/training/sris/EndNoteX8_mac.php\nhttps://bookrecommend.nknu.edu.tw:8443/endnote/download/EndNoteX9SiteInstaller.dmg"
     },
     {
+      "id": 284,
       "resourceName": "Turnitin論文原創性比對系統",
       "url": "https://lis.nknu.edu.tw/zh/thesis_upload/turnitin",
       "resourceType": "訂購",
@@ -4547,6 +4831,7 @@
       "relevanceUrl": "https://moocs.nknu.edu.tw/moodle/course/view.php?id=59"
     },
     {
+      "id": 285,
       "resourceName": "udn聯合知識庫 內含#聯合報 #經濟日報 #聯合晚報 #upaper #美洲世界日報 #民生報 #星報 #歐洲日報",
       "url": "http://udndata.com/library/",
       "resourceType": "訂購",
@@ -4563,6 +4848,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 286,
       "resourceName": "文淵閣四庫全書內聯網版(2人版) (首次安裝請先下載安裝閱讀器，設定伺服器ip位址為140.127.41.103，點選 IP 登入使用，校外使用請輸入帳號密碼「nknu」登入使用。) 使用完畢後請記得登出以利下一個使用者可以順利使用。",
       "url": "http://140.127.41.103/skqs/download/",
       "resourceType": "買斷永久使用",
@@ -4579,6 +4865,7 @@
       "relevanceUrl": "https://lis.nknu.edu.tw/zh/news_display/83-news3/353-proxy\nhttps://lis.nknu.edu.tw/zh/infoservices/vpn%E9%80%A3%E7%B7%9A%E6%9C%8D%E5%8B%99"
     },
     {
+      "id": 287,
       "resourceName": "中華數字書苑電子書 (原北大方正中文電子書) (原萬方數據庫)",
       "url": "http://www.apabi.com/cec",
       "resourceType": "買斷永久使用",
@@ -4595,6 +4882,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 288,
       "resourceName": "RILM Abstracts of Music Literature(試用至2016/12/31止)",
       "url": "http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=ram",
       "resourceType": "試用",
@@ -4611,6 +4899,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 289,
       "resourceName": "Emerald Management (120 eJournal Collection)(人知所2017年停訂)",
       "url": "http://www.emeraldinsight.com/",
       "resourceType": "訂購",
@@ -4627,6 +4916,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 290,
       "resourceName": "SAGE Video 學科教學影片資料庫(開放試用至2017/8/31日止）",
       "url": "http://sk.sagepub.com/video",
       "resourceType": "試用",
@@ -4643,6 +4933,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 291,
       "resourceName": "SAGE Video教育學 Education Collection",
       "url": "http://sk.sagepub.com/video/education",
       "resourceType": "試用",
@@ -4659,6 +4950,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 292,
       "resourceName": "SAGE Video心理諮商與治療",
       "url": "http://sk.sagepub.com/video/counseling-psychotherapy",
       "resourceType": "試用",
@@ -4675,6 +4967,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 293,
       "resourceName": "SAGE Video心理學",
       "url": "http://sk.sagepub.com/video/psychology",
       "resourceType": "試用",
@@ -4691,6 +4984,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 294,
       "resourceName": "eBook University Press Collection",
       "url": "http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=e008tww",
       "resourceType": "試用",
@@ -4707,6 +5001,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 295,
       "resourceName": "《Man'Du漫讀》電子書整合平台(試用至2018/12/31)請用Goolge Chrome瀏覽器,試用期間開放每本書前30頁碼試閱",
       "url": "http://hunteq.com/mandu.htm",
       "resourceType": "試用",
@@ -4723,6 +5018,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 296,
       "resourceName": "JSTOR回溯期刊全系列(試用至2016/06/30)",
       "url": "http://www.jstor.org/action/showBasicSearch",
       "resourceType": "試用",
@@ -4739,6 +5035,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 297,
       "resourceName": "Global Plants(試用至2016/06/30)",
       "url": "http://plants.jstor.org/",
       "resourceType": "試用",
@@ -4755,6 +5052,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 298,
       "resourceName": "Cambridge Journals Online 劍橋大學出版社電子期刊(試用至1050531)",
       "url": "http://journals.cambridge.org/",
       "resourceType": "試用",
@@ -4771,6 +5069,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 299,
       "resourceName": "雅昌藝術書城資料庫(開放試用至105/06/30)",
       "url": "http://ysts.artron.net/",
       "resourceType": "試用",
@@ -4787,6 +5086,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 300,
       "resourceName": "國立公共資訊圖書館電子書服務平台(開放全國民眾以各公共圖書館讀者身分註冊會員後使用)",
       "url": "http://ebook.nlpi.edu.tw",
       "resourceType": "免費OA",
@@ -4803,6 +5103,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 301,
       "resourceName": "圓夢繪本資料庫",
       "url": "http://storybook.nlpi.edu.tw",
       "resourceType": "免費OA",
@@ -4819,6 +5120,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 302,
       "resourceName": "解密圖書DNA",
       "url": "http://libdna.nlpi.edu.tw",
       "resourceType": "免費OA",
@@ -4835,6 +5137,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 303,
       "resourceName": "設計師之手",
       "url": "http://digitalgallery.nlpi.edu.tw",
       "resourceType": "免費OA",
@@ -4851,6 +5154,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 304,
       "resourceName": "電影與文學資料庫",
       "url": "http://fl.nlpi.edu.tw",
       "resourceType": "免費OA",
@@ -4867,6 +5171,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 305,
       "resourceName": "數位典藏服務網",
       "url": "http://das.nlpi.edu.tw",
       "resourceType": "免費OA",
@@ -4883,6 +5188,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 306,
       "resourceName": "數位典藏教材推廣網頁",
       "url": "http://earp.nlpi.edu.tw",
       "resourceType": "免費OA",
@@ -4899,6 +5205,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 307,
       "resourceName": "Alexander Street Music Online 15種音楽資料庫 開放試用至106/12/25日止",
       "url": "http://search.alexanderstreet.com/",
       "resourceType": "試用",
@@ -4915,6 +5222,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 308,
       "resourceName": "聯合百科資料庫(開放試用至105/07/31止) 臺灣人社百刊",
       "url": "http://db1.udpweb.com.tw/soc_trial/",
       "resourceType": "試用",
@@ -4931,6 +5239,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 309,
       "resourceName": "聯合百科資料庫(開放試用至105/07/31止) 經典人文學刊庫（中研院漢學網）",
       "url": "http://sinoweb.udpweb.com.tw/",
       "resourceType": "試用",
@@ -4947,6 +5256,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 310,
       "resourceName": "科技大觀園",
       "url": "http://scitechvista.most.gov.tw/zh-tw/Home.htm",
       "resourceType": "免費OA",
@@ -4963,6 +5273,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 311,
       "resourceName": "天下雜誌群知識庫(七庫)開放試用至105/7/31",
       "url": "http://new.cwk.com.tw/login_guest-cw.htm",
       "resourceType": "試用",
@@ -4979,6 +5290,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 312,
       "resourceName": "JoVE Journal & Science Education開放試用至14/11/2016日止",
       "url": "http://www.jove.com/",
       "resourceType": "試用",
@@ -4995,6 +5307,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 313,
       "resourceName": "中華經典古籍庫 (開放試用至2016/12/31日止)",
       "url": "http://www.gujilianhe.com.cn/",
       "resourceType": "試用",
@@ -5011,6 +5324,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 314,
       "resourceName": "公共電視教育影音公播網(開放試用至105/12/31日止)",
       "url": "http://ptsvod.sunnystudy.com.tw",
       "resourceType": "試用",
@@ -5027,6 +5341,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 315,
       "resourceName": "台灣雲端書庫@高雄(需有高市圖借書證每年可免費借60本) 電子書",
       "url": "http://lib.ebookservice.tw/ks/",
       "resourceType": "免費OA",
@@ -5043,6 +5358,7 @@
       "relevanceUrl": "http://cdnevent.ebookservice.tw/ksmlRegister/index.html"
     },
     {
+      "id": 316,
       "resourceName": "Zotero書目管理軟體(只能在FireFox 瀏覽器環境下使用)>Firefox安裝完成後，開啟Firefox瀏覽器，輸入\"Zotero\"http://www.zotero.org/網址進行安裝。",
       "url": "http://www.zotero.org",
       "resourceType": "免費OA\n免費OA",
@@ -5059,6 +5375,7 @@
       "relevanceUrl": "http://book.lib.ksu.edu.tw/blog/394/zotero-%E6%9B%B8%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BB%9F%E9%AB%94"
     },
     {
+      "id": 317,
       "resourceName": "台灣文學知識庫-文訊雜誌(開放試用至106/04/20止)( ( 帳號：nknu / 密碼：nknu))",
       "url": "http://udndata.com/ndapp/Literature/Login",
       "resourceType": "試用",
@@ -5075,6 +5392,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 318,
       "resourceName": "EBSCOhost eBook Collection (原NetLibrary)  # ebsco 電子書",
       "url": "http://search.ebscohost.com/login.aspx?profile=ehost&defaultdb=NLEBK",
       "resourceType": "買斷永久使用",
@@ -5091,6 +5409,7 @@
       "relevanceUrl": "http://nknulib.nknu.edu.tw/search*cht/X?SEARCH=(netLibrary)&SORT=D&m=z"
     },
     {
+      "id": 319,
       "resourceName": "Open Access eBooks on JSTOR",
       "url": "http://about.jstor.org/open-access",
       "resourceType": "免費OA",
@@ -5107,6 +5426,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 320,
       "resourceName": "CiteScore (SCOPUS 期刊評鑑指標)",
       "url": "https://journalmetrics.scopus.com/",
       "resourceType": "免費OA",
@@ -5123,6 +5443,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 321,
       "resourceName": "SkillPort 自我學習平台 開放試用至2017/10/31日止",
       "url": "https://igrouplibrary01.skillport.com/skillportfe/login.action",
       "resourceType": "試用",
@@ -5139,6 +5460,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 322,
       "resourceName": "快刀 PPvS.org 中文論文抄襲比對系統((提供100點試用用完為止)",
       "url": "http://www.ppvs.org/v2",
       "resourceType": "試用",
@@ -5155,6 +5477,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 323,
       "resourceName": "EBSCO探索服務解決方案（Discovery Solutions）EDS",
       "url": "http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=eds",
       "resourceType": "訂購",
@@ -5171,6 +5494,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 324,
       "resourceName": "ProQuest Central 旗艦級學術期刊全文資料庫(試用至12/31/2017止)",
       "url": "https://search.proquest.com/central",
       "resourceType": "試用",
@@ -5187,6 +5511,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 325,
       "resourceName": "競業知識網 開放試用至2018年4月30日止",
       "url": "http://www.RMBNewsBank.com",
       "resourceType": "試用",
@@ -5203,6 +5528,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 326,
       "resourceName": "Easy test 線上學習測驗＜開放試用至106/09/30日止＞歡迎多加利用！",
       "url": "http://www.lib.nknu.edu.tw/nknu/portal_f7_cnt_page.php?button_num=f7&folder_id=11&cnt_id=1580&order_field=rank&order_type=desc&search_field=&search_word=&search_field2=&search_word2=&search_field3=&search_word3=&bool1=&bool2=&search_type=1&up_page=1",
       "resourceType": "試用",
@@ -5219,6 +5545,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 327,
       "resourceName": "中國近代報刊 |自立晚報>開放試用至2017年10月25日止",
       "url": "http://www.dhcdb.com.tw/SP/",
       "resourceType": "試用",
@@ -5235,6 +5562,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 328,
       "resourceName": "臺灣引文資料庫(Taiwan Academic Citation Index, TACI)開放試用至2017年9月30日止",
       "url": "http://award.libraryandbook.net/taci",
       "resourceType": "試用",
@@ -5251,6 +5579,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 329,
       "resourceName": "World eBook Library(WEL)電子圖書與電子文獻資料庫 開放試用至12/31日止",
       "url": "http://Community.eBookLibrary.org/?AffiliateKey=WEL-NaKaNoUnJu30",
       "resourceType": "試用",
@@ -5267,6 +5596,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 330,
       "resourceName": "ProQuest - Arts Premium Collection 藝術資源套裝 開放試用至12/31/2017止",
       "url": "https://search.proquest.com/?accountid=7990&selectids=10000235,1000277",
       "resourceType": "試用",
@@ -5283,6 +5613,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 331,
       "resourceName": "中國綜合方志庫((開放試用至106年11月21日止)",
       "url": "http://ccg.eastview.com/",
       "resourceType": "試用",
@@ -5299,6 +5630,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 332,
       "resourceName": "全球專利檢索系統 Global Patent Search System",
       "url": "https://gpss.tipo.gov.tw/",
       "resourceType": "免費OA",
@@ -5315,6 +5647,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 333,
       "resourceName": "Dynamic Health",
       "url": "https://www.dynahealth.com/",
       "resourceType": "試用",
@@ -5331,6 +5664,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 334,
       "resourceName": "Man'Du漫讀(試用至~6/30/2019止)",
       "url": "http://hunteq.com/mandu.htm",
       "resourceType": "",
@@ -5347,6 +5681,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 335,
       "resourceName": "臺灣學術經典資料庫(試用至~5/15/2019止)",
       "url": "http://db1.udpweb.com.tw/tac/",
       "resourceType": "試用",
@@ -5363,6 +5698,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 336,
       "resourceName": "中國綜合方志庫(試用至~5/15/2019止)",
       "url": "http://ccg.eastview.com/",
       "resourceType": "試用",
@@ -5379,6 +5715,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 337,
       "resourceName": "中國金石總錄(試用~5/15/2019止)",
       "url": "http://www.ch5000.com.cn/",
       "resourceType": "試用",
@@ -5395,6 +5732,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 338,
       "resourceName": "AISP情報顧問服務資料庫(試用至2019/04/30止)",
       "url": "http://www.airitiplagchecker.com/",
       "resourceType": "試用",
@@ -5411,6 +5749,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 339,
       "resourceName": "華藝文獻相似度檢測服務 (試用至7/31/2019止)",
       "url": "http://www.airitiplagchecker.com/",
       "resourceType": "試用",
@@ -5427,6 +5766,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 340,
       "resourceName": "天下雜誌群知識庫(試用~4/30/2019止)",
       "url": "http://new.cwk.com.tw/",
       "resourceType": "試用",
@@ -5443,6 +5783,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 341,
       "resourceName": "花木蘭數位資料庫(試用至04/30/2019止)",
       "url": "http://elib.infolinker.com.tw/login_hua.htm",
       "resourceType": "試用",
@@ -5459,6 +5800,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 342,
       "resourceName": "WE Online全英語環境線上即時互動課程(試用至04/30/2019止)",
       "url": "https://tutor.webenglish.tv/zh-tw/",
       "resourceType": "試用",
@@ -5475,6 +5817,7 @@
       "relevanceUrl": ""
     },
     {
+      "id": 343,
       "resourceName": "臺灣文學知識庫(試用至~03/31/2019止)",
       "url": "https://udndata.com/ndapp/Literature/Login",
       "resourceType": "試用",
