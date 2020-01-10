@@ -1,11 +1,11 @@
 {
   "total": 343,
   "totalNotFiltered": 343,
-  "rows": [
+    "rows": [
     {
-      "resourceType": "ACROSS檔案資源整合查詢平台",
+      "resourceName": "ACROSS檔案資源整合查詢平台",
       "url": "http://across.archives.gov.tw/naahyint/search.jsp",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院\nX 藝術學院",
@@ -19,9 +19,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "HKJO - Hong Kong Journals Online",
+      "resourceName": "HKJO - Hong Kong Journals Online",
       "url": "http://sunzi1.lib.hku.hk/hkjo/index.jsp",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院",
@@ -35,9 +35,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SOCOLAR (Open Access資源一站式檢索服務平台)",
+      "resourceName": "SOCOLAR (Open Access資源一站式檢索服務平台)",
       "url": "http://www.socolar.com/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -51,9 +51,9 @@
       "relevanceUrl": "http://www.socolar.com/js.aspx?#P1"
     },
     {
-      "resourceType": "中央研究院漢籍電子文獻(免費每年2月需續訂)(校園內無須輸入帳號及密碼即可瀏覽)。包含: 漢籍全文資料庫/古漢語文獻語料庫/古漢語語料庫(開放)/臺灣文獻叢刊/近代史數位資料庫/清代經世文編/近現代中國史事日誌/新民說/內閣漢文題本專題檔案：刑科婚姻類提要/文心雕龍/佛經三論/姚際恒著作集/泉翁大全集/正統道藏/話集成/新清史-本紀/府詩集/閩南語俗曲唱本「歌仔冊」/人文資料庫師生版1.1 電子書",
+      "resourceName": "中央研究院漢籍電子文獻(免費每年2月需續訂)(校園內無須輸入帳號及密碼即可瀏覽)。包含: 漢籍全文資料庫/古漢語文獻語料庫/古漢語語料庫(開放)/臺灣文獻叢刊/近代史數位資料庫/清代經世文編/近現代中國史事日誌/新民說/內閣漢文題本專題檔案：刑科婚姻類提要/文心雕龍/佛經三論/姚際恒著作集/泉翁大全集/正統道藏/話集成/新清史-本紀/府詩集/閩南語俗曲唱本「歌仔冊」/人文資料庫師生版1.1 電子書",
       "url": "http://hanji.sinica.edu.tw/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "U 文學院",
@@ -67,9 +67,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣期刊論文索引",
+      "resourceName": "台灣期刊論文索引",
       "url": "http://readopac.ncl.edu.tw/nclJournal/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -83,9 +83,9 @@
       "relevanceUrl": "http://readopac2.ncl.edu.tw/nclJournal/intro.jsp?type=chapter&la=ch"
     },
     {
-      "resourceType": "中華民國統計資訊網",
+      "resourceName": "中華民國統計資訊網",
       "url": "http://www1.stat.gov.tw/mp.asp?mp=3",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -99,9 +99,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "全國法規資料庫",
+      "resourceName": "全國法規資料庫",
       "url": "http://law.moj.gov.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -115,9 +115,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "全國特殊教育資訊網",
+      "resourceName": "全國特殊教育資訊網",
       "url": "http://spec.moe.gov.tw/site",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院",
@@ -131,9 +131,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣地名檢索系統",
+      "resourceName": "台灣地名檢索系統",
       "url": "http://gissrv3.sinica.edu.tw/search/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -147,9 +147,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣大學學術資源網",
+      "resourceName": "台灣大學學術資源網",
       "url": "http://sg.lib.ntu.edu.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -163,9 +163,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣百年歷史地圖系統",
+      "resourceName": "台灣百年歷史地圖系統",
       "url": "http://gissrv4.sinica.edu.tw/gis/twhgis.aspx",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -179,9 +179,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣研究入口網",
+      "resourceName": "台灣研究入口網",
       "url": "http://thcts.ascc.net/twstudy_ncl_ch.htm",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -195,9 +195,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣網站典藏系統",
+      "resourceName": "台灣網站典藏系統",
       "url": "http://webarchive.ncl.edu.tw/nclwa98Front/new_search/detail.jsp?dtd_id=000018&xml_id=0000013262&search_index=Subject&search_value=%E7%B6%9C%E5%90%88%3A%E5%85%A5%E5%8F%A3%E7%B6%B2%E7%AB%99&sort_index=Title&sort_type=0&isAdvance=N&index_no=1&total=491",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院",
@@ -211,9 +211,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "國家圖書館政府公報資訊網",
+      "resourceName": "國家圖書館政府公報資訊網",
       "url": "http://gaz.ncl.edu.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -227,9 +227,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "國家文化資料庫",
+      "resourceName": "國家文化資料庫",
       "url": "http://nrch.culture.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院\nX 藝術學院",
@@ -243,9 +243,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "學術名詞資訊網",
+      "resourceName": "學術名詞資訊網",
       "url": "http://terms.naer.edu.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -259,9 +259,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "政府出版資料回應網 OPEN (Official Publications Echo Network)",
+      "resourceName": "政府出版資料回應網 OPEN (Official Publications Echo Network)",
       "url": "http://www.ndc.gov.tw/News_Content.aspx?n=0546649C8F2D44B4&sms=A96D15D0376520B1&s=EE5837FF3C7416BB",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -275,9 +275,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "教育論文線上資料庫 EDD Online(已停用)(請改用\"臺灣期刊論文索引系統\"查詢)",
+      "resourceName": "教育論文線上資料庫 EDD Online(已停用)(請改用\"臺灣期刊論文索引系統\"查詢)",
       "url": "http://readopac.ncl.edu.tw/nclJournal/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院",
@@ -291,9 +291,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "數位典藏國家型科技計畫─計畫網站",
+      "resourceName": "數位典藏國家型科技計畫─計畫網站",
       "url": "http://www.ndap.org.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -307,9 +307,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "數位典藏與數位學習國家型科技計畫 計畫入口網",
+      "resourceName": "數位典藏與數位學習國家型科技計畫 計畫入口網",
       "url": "http://www.teldap.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -323,9 +323,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "日治時期期刊全文影像系統",
+      "resourceName": "日治時期期刊全文影像系統",
       "url": "http://stfj.ntl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dwebmge",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院",
@@ -339,9 +339,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "REAL+ 學術資源文獻探索系統",
+      "resourceName": "REAL+ 學術資源文獻探索系統",
       "url": "http://real.stpi.narl.org.tw",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -355,9 +355,9 @@
       "relevanceUrl": "http://realmeta.stpi.narl.org.tw/docs/REAL_NDDS_10003.pdf"
     },
     {
-      "resourceType": "線上文學書房 (English Literature Online)",
+      "resourceName": "線上文學書房 (English Literature Online)",
       "url": "http://mediahive.lib.ntu.edu.tw/website/literature/index.htm",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -371,9 +371,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣大學學術期刊資料庫",
+      "resourceName": "臺灣大學學術期刊資料庫",
       "url": "http://ejournal.press.ntu.edu.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -387,9 +387,9 @@
       "relevanceUrl": "http://ntur.lib.ntu.edu.tw/"
     },
     {
-      "resourceType": "台灣大百科全書(併入國家文化資料庫)",
+      "resourceName": "台灣大百科全書(併入國家文化資料庫)",
       "url": "http://nrch.culture.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -403,9 +403,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣社會科學引文索引資料庫 (TSSCI)",
+      "resourceName": "臺灣社會科學引文索引資料庫 (TSSCI)",
       "url": "http://db1n.sinica.edu.tw/textdb/tssci/searchindex.php",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
@@ -419,9 +419,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣觀光資訊網",
+      "resourceName": "臺灣觀光資訊網",
       "url": "http://www.taiwan.net.tw/w1.aspx",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -435,9 +435,9 @@
       "relevanceUrl": "http://www.taiwantravels.com.tw/?page_id=24"
     },
     {
-      "resourceType": "辭書資訊網",
+      "resourceName": "辭書資訊網",
       "url": "http://terms.naer.edu.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -451,9 +451,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "BMC (BioMed Central)",
+      "resourceName": "BMC (BioMed Central)",
       "url": "http://www.biomedcentral.com/journals",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "V 理學院",
@@ -467,9 +467,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "arXiv",
+      "resourceName": "arXiv",
       "url": "http://arxiv.org/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "V 理學院",
@@ -483,9 +483,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "BMC  (BioMed Central)",
+      "resourceName": "BMC  (BioMed Central)",
       "url": "http://www.biomedcentral.com/info/libraries/oajournals",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "V 理學院",
@@ -499,9 +499,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Bioline International",
+      "resourceName": "Bioline International",
       "url": "http://www.bioline.org.br/journals",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "V 理學院",
@@ -515,9 +515,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Caltech Library Services",
+      "resourceName": "Caltech Library Services",
       "url": "http://library.caltech.edu/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院\nV 理學院\nW 科技學院",
@@ -531,9 +531,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Directory of Open Access Scholarly Journals in Education",
+      "resourceName": "Directory of Open Access Scholarly Journals in Education",
       "url": "http://ergo.asu.edu/ejdirectory.html",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院",
@@ -547,9 +547,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "DOAJ (Directory of Open Access Journals)",
+      "resourceName": "DOAJ (Directory of Open Access Journals)",
       "url": "http://www.doaj.org/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -563,9 +563,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "eScholarship Repository",
+      "resourceName": "eScholarship Repository",
       "url": "eScholarship Repository",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -579,9 +579,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "HighWire Press",
+      "resourceName": "HighWire Press",
       "url": "http://highwire.stanford.edu/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nV 理學院",
@@ -595,9 +595,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Japan Science and Technology Information Aggregator, Electronic (簡稱J-STAGE)日本科學技術情報發信與流通總合系統",
+      "resourceName": "Japan Science and Technology Information Aggregator, Electronic (簡稱J-STAGE)日本科學技術情報發信與流通總合系統",
       "url": "http://www.jstage.jst.go.jp/browse/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -611,9 +611,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "OAIster 密西根大學數位圖書館計畫",
+      "resourceName": "OAIster 密西根大學數位圖書館計畫",
       "url": "http://oaister.umdl.umich.edu/o/oaister/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -627,9 +627,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "The Online books page",
+      "resourceName": "The Online books page",
       "url": "http://onlinebooks.library.upenn.edu/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nX 藝術學院",
@@ -643,9 +643,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "PLoS(Public Library of Science) 公共科學圖書館",
+      "resourceName": "PLoS(Public Library of Science) 公共科學圖書館",
       "url": "http://www.plos.org/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nV 理學院",
@@ -659,9 +659,9 @@
       "relevanceUrl": "http://www.myoops.org/twocw/plos/journals/index.html"
     },
     {
-      "resourceType": "Registry of Open Access Repositories（ROAR）",
+      "resourceName": "Registry of Open Access Repositories（ROAR）",
       "url": "http://roar.eprints.org/index.php",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -675,9 +675,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SHERPA/RoMEO (列出期刊文章作者和出版社的版權協議)",
+      "resourceName": "SHERPA/RoMEO (列出期刊文章作者和出版社的版權協議)",
       "url": "http://www.sherpa.ac.uk/romeo/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -691,9 +691,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Social Theory《社會理論與社會學資料庫》",
+      "resourceName": "Social Theory《社會理論與社會學資料庫》",
       "url": "http://soth.alexanderstreet.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院\nU 文學院",
@@ -707,9 +707,9 @@
       "relevanceUrl": "http://www.stpi.org.tw/fdb/st/index.html\nhttp://alexanderstreet.com/video/SOTH/tutorial.html"
     },
     {
-      "resourceType": "Springer online Journal Archives (人文與社會科學類線上期刊回溯資料庫)",
+      "resourceName": "Springer online Journal Archives (人文與社會科學類線上期刊回溯資料庫)",
       "url": "http://springerlink.metapress.com/journals/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "2014/12/31",
       "faculty": "T 教育學院\nU 文學院",
@@ -723,9 +723,9 @@
       "relevanceUrl": "http://www.stpi.narl.org.tw/fdb/link/index.html"
     },
     {
-      "resourceType": "ticTOCs Journal Tables of Contents service",
+      "resourceName": "ticTOCs Journal Tables of Contents service",
       "url": "http://www.journaltocs.ac.uk",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -739,9 +739,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "世界大學學術排名榜",
+      "resourceName": "世界大學學術排名榜",
       "url": "http://www.zuihaodaxue.com/worldrankings.html",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -755,9 +755,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣博碩士論文知識加值系統 NDLTD in Taiwan",
+      "resourceName": "臺灣博碩士論文知識加值系統 NDLTD in Taiwan",
       "url": "http://ndltd.ncl.edu.tw",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -771,11 +771,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "ARTstor Digital Library 數位藝術典藏資料庫",
+      "resourceName": "ARTstor Digital Library 數位藝術典藏資料庫",
       "url": "http://www.artstor.org",
-      "resourceType__1": "試用",
-      "startDate": "2012/10/01",
-      "expireDate": "2012/11/08",
+      "resourceType": "試用",
+      "startDate": "2012/10/1",
+      "expireDate": "2012/11/8",
       "faculty": "W 科技學院\nX 藝術學院",
       "subject": "人文藝術類",
       "category": "11220 博物館及資產組織\n0243 社會與文化",
@@ -787,11 +787,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SAGE 綜合型即期全文資料庫",
+      "resourceName": "SAGE 綜合型即期全文資料庫",
       "url": "http://online.sagepub.com",
-      "resourceType__1": "試用",
-      "startDate": "2012/10/08",
-      "expireDate": "2016/03/31",
+      "resourceType": "試用",
+      "startDate": "2012/10/8",
+      "expireDate": "2016/3/31",
       "faculty": "T 教育學院\nV 理學院",
       "subject": "社會科學類\n教育類\n生物醫學類\n工程科技類",
       "category": "0158 運動醫學\n1122 社會學",
@@ -803,10 +803,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "FOR DUMMIES 系列電子書選輯",
+      "resourceName": "FOR DUMMIES 系列電子書選輯",
       "url": "http://lb20.dummies.libraryandbook.net/",
-      "resourceType__1": "試用",
-      "startDate": "2012/10/09",
+      "resourceType": "試用",
+      "startDate": "2012/10/9",
       "expireDate": "2012/12/31",
       "faculty": "",
       "subject": "綜合類",
@@ -819,11 +819,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "L & B 數位圖書館",
+      "resourceName": "L & B 數位圖書館",
       "url": "http://lb20.libraryandbook.net/",
-      "resourceType__1": "試用",
-      "startDate": "2012/12/03",
-      "expireDate": "2013/01/02",
+      "resourceType": "試用",
+      "startDate": "2012/12/3",
+      "expireDate": "2013/1/2",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
       "category": "0243 社會與文化\n01162 家庭醫學",
@@ -835,11 +835,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "McGraw-Hill電子書選輯",
+      "resourceName": "McGraw-Hill電子書選輯",
       "url": "http://lb20.mcgrawhill.libraryandbook.net/",
-      "resourceType__1": "試用",
-      "startDate": "2012/10/09",
-      "expireDate": "2012/11/08",
+      "resourceType": "試用",
+      "startDate": "2012/10/9",
+      "expireDate": "2012/11/8",
       "faculty": "",
       "subject": "工業科技類\n生物醫學類\n商管類\n自然科學類\n人文藝術類",
       "category": "01272 醫療資訊學\n0243 社會與文化\n1337 商業管理",
@@ -851,10 +851,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "RefWorks 書目管理軟體",
+      "resourceName": "RefWorks 書目管理軟體",
       "url": "",
-      "resourceType__1": "試用",
-      "startDate": "2012/09/14",
+      "resourceType": "試用",
+      "startDate": "2012/9/14",
       "expireDate": "2012/11/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -867,11 +867,11 @@
       "relevanceUrl": "http://www.refworks.com/tw/"
     },
     {
-      "resourceType": "Wiley-Blackwell New Journals",
+      "resourceName": "Wiley-Blackwell New Journals",
       "url": "http://olabout.wiley.com/WileyCDA/Section/id-811883.html",
-      "resourceType__1": "試用",
-      "startDate": "2012/09/10",
-      "expireDate": "2014/06/28",
+      "resourceType": "試用",
+      "startDate": "2012/9/10",
+      "expireDate": "2014/6/28",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
       "category": "16200 數位圖書館",
@@ -883,11 +883,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "世界美術資料庫",
+      "resourceName": "世界美術資料庫",
       "url": "http://www.airitiart.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2012/10/15",
-      "expireDate": "2014/07/31",
+      "expireDate": "2014/7/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "人文藝術類",
       "category": "0243 社會與文化",
@@ -899,11 +899,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SAGE 研究方法資料庫(開放試用至2017/8/31日止）",
+      "resourceName": "SAGE 研究方法資料庫(開放試用至2017/8/31日止）",
       "url": "http://methods.sagepub.com/",
-      "resourceType__1": "試用",
-      "startDate": "2017/06/15",
-      "expireDate": "2017/08/31",
+      "resourceType": "試用",
+      "startDate": "2017/6/15",
+      "expireDate": "2017/8/31",
       "faculty": "T 教育學院\nU 文學院",
       "subject": "社會科學類\n教育類",
       "category": "",
@@ -915,10 +915,10 @@
       "relevanceUrl": "http://srmo.sagepub.com/page/tips-and-tutorials/tutorials;jsessionid=762D6883868E65653ED415EA61A3BB1E\nhttp://srmo.sagepub.com/page/help-1/help\nhttps://www.youtube.com/watch?v=CBSCijzKRMc"
     },
     {
-      "resourceType": "ACLS Humanities E-book《美國學術團體協會‧人文社會科學電子書》",
+      "resourceName": "ACLS Humanities E-book《美國學術團體協會‧人文社會科學電子書》",
       "url": "http://www.humanitiesebook.org/",
-      "resourceType__1": "試用",
-      "startDate": "2012/12/04",
+      "resourceType": "試用",
+      "startDate": "2012/12/4",
       "expireDate": "2013/11/30",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
       "subject": "社會科學類\n人文藝術類",
@@ -931,9 +931,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "國家地理雜誌",
+      "resourceName": "國家地理雜誌",
       "url": "http://infotrac.galegroup.com/itweb/twnsc064",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2012/12/12",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -947,11 +947,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "TAO台灣學術線上 電子期刊庫",
+      "resourceName": "TAO台灣學術線上 電子期刊庫",
       "url": "http://tao.wordpedia.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2012/12/24",
-      "expireDate": "2013/02/28",
+      "expireDate": "2013/2/28",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "人文藝術類\n社會科學類\n自然科學類\n生物醫學類",
       "category": "",
@@ -963,11 +963,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "科學人雜誌資料庫",
+      "resourceName": "科學人雜誌資料庫",
       "url": "http://edu1.wordpedia.com/SACH/default.asp",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2012/12/25",
-      "expireDate": "2013/02/28",
+      "expireDate": "2013/2/28",
       "faculty": "V 理學院\nW 科技學院",
       "subject": "自然科學類\n工業科技類",
       "category": "",
@@ -979,11 +979,11 @@
       "relevanceUrl": "http://sa.ylib.com/"
     },
     {
-      "resourceType": "大英百科全書線上繁體中文版",
+      "resourceName": "大英百科全書線上繁體中文版",
       "url": "http://daying.wordpedia.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2012/12/25",
-      "expireDate": "2013/02/28",
+      "expireDate": "2013/2/28",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
       "category": "",
@@ -995,11 +995,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "遠流活用中文大辭典",
+      "resourceName": "遠流活用中文大辭典",
       "url": "http://edu1.wordpedia.com/ChtDict/Default.aspx",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2012/12/25",
-      "expireDate": "2013/02/28",
+      "expireDate": "2013/2/28",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
       "category": "",
@@ -1011,11 +1011,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "遠流台灣話大辭典",
+      "resourceName": "遠流台灣話大辭典",
       "url": "http://edu1.wordpedia.com/taiwanese/default.aspx",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2012/12/25",
-      "expireDate": "2013/02/28",
+      "expireDate": "2013/2/28",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
       "subject": "教育類\n社會科學類",
       "category": "",
@@ -1027,11 +1027,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "讀秀中文學術搜索(開放試用至105/06/30)(進入體驗版)提供線上部分內容試閱，另提供全書內容文獻傳遞服務，需線上填寫申請表單，再寄送PDF全文至申請人的電子信箱。",
+      "resourceName": "讀秀中文學術搜索(開放試用至105/06/30)(進入體驗版)提供線上部分內容試閱，另提供全書內容文獻傳遞服務，需線上填寫申請表單，再寄送PDF全文至申請人的電子信箱。",
       "url": "http://www.duxiu.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2016/06/30",
+      "expireDate": "2016/6/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
       "category": "",
@@ -1043,9 +1043,9 @@
       "relevanceUrl": "http://tul.blog.ntu.edu.tw/archives/10171\nhttp://tul.blog.ntu.edu.tw/archives/8512"
     },
     {
-      "resourceType": "Chinamaxx超星數字圖書館",
+      "resourceName": "Chinamaxx超星數字圖書館",
       "url": "http://www.chinamaxx.net",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "2015/10/19",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1059,10 +1059,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "國家標準(CNS)網路服務系統",
+      "resourceName": "國家標準(CNS)網路服務系統",
       "url": "http://www.cnsonline.com.tw/?node=search&locale=zh_TW",
-      "resourceType__1": "免費OA",
-      "startDate": "2013/01/07",
+      "resourceType": "免費OA",
+      "startDate": "2013/1/7",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "工程科技類\n綜合類",
@@ -1075,10 +1075,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "PTC布樣與概念設計系統",
+      "resourceName": "PTC布樣與概念設計系統",
       "url": "http://www.designptc.com/Index.aspx",
-      "resourceType__1": "試用",
-      "startDate": "2013/03/04",
+      "resourceType": "試用",
+      "startDate": "2013/3/4",
       "expireDate": "2013/12/31",
       "faculty": "X 藝術學院",
       "subject": "人文藝術類",
@@ -1091,11 +1091,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Oxford Art Online",
+      "resourceName": "Oxford Art Online",
       "url": "http://www.oxfordartonline.com/",
-      "resourceType__1": "試用",
-      "startDate": "2013/03/04",
-      "expireDate": "2013/04/30",
+      "resourceType": "試用",
+      "startDate": "2013/3/4",
+      "expireDate": "2013/4/30",
       "faculty": "X 藝術學院",
       "subject": "人文藝術類",
       "category": "",
@@ -1107,11 +1107,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Scopus",
+      "resourceName": "Scopus",
       "url": "http://taiwan1.elsevier.com/ElsevierDNN/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BElsevier%E8%B3%87%E6%96%99%E5%BA%AB/SciVerseScopus/tabid/1955/Default.aspx",
-      "resourceType__1": "試用",
-      "startDate": "2013/04/01",
-      "expireDate": "2013/06/30",
+      "resourceType": "試用",
+      "startDate": "2013/4/1",
+      "expireDate": "2013/6/30",
       "faculty": "V 理學院\nW 科技學院",
       "subject": "自然科學類\n生物醫學類",
       "category": "",
@@ -1123,11 +1123,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "自然世界資料庫",
+      "resourceName": "自然世界資料庫",
       "url": "http://www.airitinature.com/",
-      "resourceType__1": "試用",
-      "startDate": "2013/04/03",
-      "expireDate": "2014/07/31",
+      "resourceType": "試用",
+      "startDate": "2013/4/3",
+      "expireDate": "2014/7/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "自然科學類",
       "category": "",
@@ -1139,10 +1139,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "國立高雄師範大學博碩士論文系統",
+      "resourceName": "國立高雄師範大學博碩士論文系統",
       "url": "http://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&extralimit=asc=%22%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8%22&extralimitunit=%E5%9C%8B%E7%AB%8B%E9%AB%98%E9%9B%84%E5%B8%AB%E7%AF%84%E5%A4%A7%E5%AD%B8&searchmode=advance",
-      "resourceType__1": "買斷永久使用",
-      "startDate": "2013/04/08",
+      "resourceType": "買斷永久使用",
+      "startDate": "2013/4/8",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -1155,10 +1155,10 @@
       "relevanceUrl": "http://ncl.nknu.edu.tw/cdrfb3/index.htm\nhttp://140.122.127.247/"
     },
     {
-      "resourceType": "資料庫_數位學習影音課程_自我學習篇",
+      "resourceName": "資料庫_數位學習影音課程_自我學習篇",
       "url": "http://concert.stpi.narl.org.tw/database_list",
-      "resourceType__1": "免費OA",
-      "startDate": "2013/04/16",
+      "resourceType": "免費OA",
+      "startDate": "2013/4/16",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -1171,10 +1171,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "漢斯中文電子學術期刊",
+      "resourceName": "漢斯中文電子學術期刊",
       "url": "http://www.hanspub.org",
-      "resourceType__1": "免費OA",
-      "startDate": "2013/04/25",
+      "resourceType": "免費OA",
+      "startDate": "2013/4/25",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -1187,11 +1187,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "漢珍知識網",
+      "resourceName": "漢珍知識網",
       "url": "http://hanwu.infolinker.com.tw/login_rrxin.htm",
-      "resourceType__1": "試用",
-      "startDate": "2013/05/13",
-      "expireDate": "2013/06/30",
+      "resourceType": "試用",
+      "startDate": "2013/5/13",
+      "expireDate": "2013/6/30",
       "faculty": "T 教育學院\nU 文學院",
       "subject": "社會科學類",
       "category": "",
@@ -1203,11 +1203,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "ACS ebook backfile (1949-2009)",
+      "resourceName": "ACS ebook backfile (1949-2009)",
       "url": "http://pubs.acs.org/series/advances",
-      "resourceType__1": "試用",
-      "startDate": "2013/05/23",
-      "expireDate": "2013/08/31",
+      "resourceType": "試用",
+      "startDate": "2013/5/23",
+      "expireDate": "2013/8/31",
       "faculty": "V 理學院",
       "subject": "生物醫學類\n自然科學類",
       "category": "08253 無機化學\n08269 生物化學\n08279 有機化學\n08280 臨床化學\n08283 電化學\n08321 環境化學\n08338 幅射化學\n0885 製藥化學",
@@ -1219,10 +1219,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Open Access Library學術性圖書館",
+      "resourceName": "Open Access Library學術性圖書館",
       "url": "http://www.oalib.com",
-      "resourceType__1": "免費OA",
-      "startDate": "2013/06/07",
+      "resourceType": "免費OA",
+      "startDate": "2013/6/7",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院",
       "subject": "自然科學類\n社會科學類\n人文藝術類",
@@ -1235,10 +1235,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "日治時期圖書全文影像系統",
+      "resourceName": "日治時期圖書全文影像系統",
       "url": "http://stfb.ntl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dwebmge",
-      "resourceType__1": "免費OA",
-      "startDate": "2013/06/10",
+      "resourceType": "免費OA",
+      "startDate": "2013/6/10",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院",
       "subject": "綜合類",
@@ -1251,10 +1251,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Pubu電子書城(試用至2016/11/30日止)",
+      "resourceName": "Pubu電子書城(試用至2016/11/30日止)",
       "url": "http://www.pubu.com.tw/libraryTrial/NKNU",
-      "resourceType__1": "試用",
-      "startDate": "2016/10/06",
+      "resourceType": "試用",
+      "startDate": "2016/10/6",
       "expireDate": "2016/11/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -1267,11 +1267,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "學術不端文獻檢測系統",
+      "resourceName": "學術不端文獻檢測系統",
       "url": "http://check.oversea.cnki.net/big5/",
-      "resourceType__1": "試用",
-      "startDate": "2014/08/08",
-      "expireDate": "2014/10/09",
+      "resourceType": "試用",
+      "startDate": "2014/8/8",
+      "expireDate": "2014/10/9",
       "faculty": "",
       "subject": "綜合類",
       "category": "",
@@ -1283,10 +1283,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "全國學術版人文及社會科學資料庫檢索系統 (Huso)(永久使用)",
+      "resourceName": "全國學術版人文及社會科學資料庫檢索系統 (Huso)(永久使用)",
       "url": "https://huso.stpi.narl.org.tw/husoc/husokm",
-      "resourceType__1": "聯盟提供(年度)",
-      "startDate": "2013/09/18",
+      "resourceType": "聯盟提供(年度)",
+      "startDate": "2013/9/18",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
       "subject": "人文藝術類\n社會科學類",
@@ -1299,10 +1299,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣人文及社會科學引文索引資料庫 TCI-HSS",
+      "resourceName": "臺灣人文及社會科學引文索引資料庫 TCI-HSS",
       "url": "http://tci.ncl.edu.tw",
-      "resourceType__1": "免費OA",
-      "startDate": "2013/09/18",
+      "resourceType": "免費OA",
+      "startDate": "2013/9/18",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
       "subject": "人文藝術類\n社會科學類\n教育類",
@@ -1315,10 +1315,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "天下雜誌群知識庫",
+      "resourceName": "天下雜誌群知識庫",
       "url": "http://new.cwk.com.tw/login_guest-cw.htm?V0000001",
-      "resourceType__1": "試用",
-      "startDate": "2013-09/25",
+      "resourceType": "試用",
+      "startDate": "2013/9/25",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -1331,10 +1331,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "天下影音知識庫",
+      "resourceName": "天下影音知識庫",
       "url": "http://new.cwk.com.tw/login_guest-cw.htm?V0000001",
-      "resourceType__1": "試用",
-      "startDate": "2013/09/25",
+      "resourceType": "試用",
+      "startDate": "2013/9/25",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -1347,10 +1347,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "人口普查資料庫",
+      "resourceName": "人口普查資料庫",
       "url": "http://tongji.oversea.cnki.net/npcc/navi/navidefault.aspx",
-      "resourceType__1": "試用",
-      "startDate": "2013/10/01",
+      "resourceType": "試用",
+      "startDate": "2013/10/1",
       "expireDate": "2013/10/24",
       "faculty": "T 教育學院\nU 文學院",
       "subject": "社會科學類",
@@ -1363,10 +1363,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣引文資料庫",
+      "resourceName": "臺灣引文資料庫",
       "url": "http://award.libraryandbook.net/taci/FE/main_index.action",
-      "resourceType__1": "試用",
-      "startDate": "2013/10/02",
+      "resourceType": "試用",
+      "startDate": "2013/10/2",
       "expireDate": "2013/11/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -1379,11 +1379,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Cambridge Books Online",
+      "resourceName": "Cambridge Books Online",
       "url": "http://ebooks.cambridge.org/home.jsf",
-      "resourceType__1": "試用",
-      "startDate": "2013/10/07",
-      "expireDate": "2013/11/07",
+      "resourceType": "試用",
+      "startDate": "2013/10/7",
+      "expireDate": "2013/11/7",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "生物醫學類\n人文藝術類\n社會科學類",
       "category": "",
@@ -1395,10 +1395,10 @@
       "relevanceUrl": "http://www-o.ntust.edu.tw/~lib/databases_manual/CBO_20100511.pdf"
     },
     {
-      "resourceType": "Naxos Video Library",
+      "resourceName": "Naxos Video Library",
       "url": "http://www.naxosvideolibrary.com/",
-      "resourceType__1": "試用",
-      "startDate": "2013/10/07",
+      "resourceType": "試用",
+      "startDate": "2013/10/7",
       "expireDate": "2013/11/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "人文藝術類",
@@ -1411,10 +1411,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Medici.tv",
+      "resourceName": "Medici.tv",
       "url": "http://www.medici.tv/",
-      "resourceType__1": "試用",
-      "startDate": "2013/10/07",
+      "resourceType": "試用",
+      "startDate": "2013/10/7",
       "expireDate": "2013/11/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "人文藝術類",
@@ -1427,10 +1427,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Alexander Street Press - Music Online",
+      "resourceName": "Alexander Street Press - Music Online",
       "url": "http://musictrial.alexanderstreet.com/",
-      "resourceType__1": "試用",
-      "startDate": "2013/10/07",
+      "resourceType": "試用",
+      "startDate": "2013/10/7",
       "expireDate": "2013/11/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "人文藝術類",
@@ -1443,9 +1443,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Education Source 教育大全資料庫",
+      "resourceName": "Education Source 教育大全資料庫",
       "url": "http://search.ebscohost.com/login.aspx?profile=ehost&defaultdb=eue",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/11",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院\nV 理學院",
@@ -1459,9 +1459,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Naxos Spoken Word Library",
+      "resourceName": "Naxos Spoken Word Library",
       "url": "",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/11/30",
       "faculty": "U 文學院\nX 藝術學院",
@@ -1475,9 +1475,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Naxos Music Library-Jazz",
+      "resourceName": "Naxos Music Library-Jazz",
       "url": "",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/11/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1491,9 +1491,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Bridgeman Education",
+      "resourceName": "Bridgeman Education",
       "url": "",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
@@ -1507,9 +1507,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "AtoZ World Travel",
+      "resourceName": "AtoZ World Travel",
       "url": "",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/12/31",
       "faculty": "",
@@ -1523,9 +1523,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "AtoZ Maps Online",
+      "resourceName": "AtoZ Maps Online",
       "url": "",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1539,9 +1539,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "AtoZ World Culture",
+      "resourceName": "AtoZ World Culture",
       "url": "",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1555,9 +1555,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "AtoZ World Trade",
+      "resourceName": "AtoZ World Trade",
       "url": "",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1571,9 +1571,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Mergent Online 全球企業與金融證券資料庫",
+      "resourceName": "Mergent Online 全球企業與金融證券資料庫",
       "url": "http://www.mergentonline.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/11/30",
       "faculty": "T 教育學院",
@@ -1587,9 +1587,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "EOL",
+      "resourceName": "EOL",
       "url": "http://eoldb.jp/EolDb/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院",
@@ -1603,9 +1603,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "EOL Asia One",
+      "resourceName": "EOL Asia One",
       "url": "http://eoldb.jp/EolDb/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院",
@@ -1619,9 +1619,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "EOL 100萬社",
+      "resourceName": "EOL 100萬社",
       "url": "http://eoldb.jp/EolDbJp/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/10/15",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院",
@@ -1635,9 +1635,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Science of Synthesis 化學資料庫",
+      "resourceName": "Science of Synthesis 化學資料庫",
       "url": "https://science-of-synthesis.thieme.com/.",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/4/1",
       "expireDate": "2014/6/30",
       "faculty": "V 理學院",
@@ -1651,9 +1651,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Mendeley 書目管理軟體(本館訂ScienceDirect資料庫附贈機構版Mendeley)",
+      "resourceName": "Mendeley 書目管理軟體(本館訂ScienceDirect資料庫附贈機構版Mendeley)",
       "url": "http://www.mendeley.com",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "2013/11/11",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1667,11 +1667,11 @@
       "relevanceUrl": "http://tul.blog.ntu.edu.tw/archives/category/%E5%85%B6%E4%BB%96%E6%9B%B8%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BB%9F%E9%AB%94"
     },
     {
-      "resourceType": "臺灣文獻叢刊續編",
+      "resourceName": "臺灣文獻叢刊續編",
       "url": "http://taisyu.udpweb.com.tw/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/12/10",
-      "expireDate": "2014/06/30",
+      "expireDate": "2014/6/30",
       "faculty": "U 文學院",
       "subject": "人文藝術類\n社會科學類",
       "category": "",
@@ -1683,9 +1683,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "中華語文知識庫",
+      "resourceName": "中華語文知識庫",
       "url": "http://chinese-linguipedia.org/clk/index.php",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "2013/12/16",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院",
@@ -1699,11 +1699,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "雕龍中日文古籍資料庫",
+      "resourceName": "雕龍中日文古籍資料庫",
       "url": "http://www.kaixidb.com",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/12/19",
-      "expireDate": "2014/03/31",
+      "expireDate": "2014/3/31",
       "faculty": "T 教育學院\nU 文學院",
       "subject": "人文藝術類",
       "category": "",
@@ -1715,11 +1715,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "中國近代報刊 | 臺灣民報>開放試用至2017年06月30日止",
+      "resourceName": "中國近代報刊 | 臺灣民報>開放試用至2017年06月30日止",
       "url": "http://www.dhcdb.com.tw/SP/",
-      "resourceType__1": "試用",
-      "startDate": "2017/05/03",
-      "expireDate": "2017/06/30",
+      "resourceType": "試用",
+      "startDate": "2017/5/3",
+      "expireDate": "2017/6/30",
       "faculty": "T 教育學院\nU 文學院",
       "subject": "綜合類",
       "category": "",
@@ -1731,11 +1731,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "大成老舊期刊全文數據庫",
+      "resourceName": "大成老舊期刊全文數據庫",
       "url": "http://www.dachengdata.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2013/12/27",
-      "expireDate": "2014/06/30",
+      "expireDate": "2014/6/30",
       "faculty": "T 教育學院\nU 文學院",
       "subject": "人文藝術類",
       "category": "",
@@ -1747,11 +1747,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "FUNDAY線上外語學習平台",
+      "resourceName": "FUNDAY線上外語學習平台",
       "url": "http://tomwang.fun-day.com.tw",
-      "resourceType__1": "試用",
-      "startDate": "2014/02/18",
-      "expireDate": "2014/04/30",
+      "resourceType": "試用",
+      "startDate": "2014/2/18",
+      "expireDate": "2014/4/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "教育類",
       "category": "",
@@ -1763,11 +1763,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "高等教育知識庫",
+      "resourceName": "高等教育知識庫",
       "url": "http://www.ericdata.com/hypage.cgi?hyqstr=aihhiliibdbhbfekfpfeedenejdpcucthfglgfhegjgmcqgughgodjctglgugighhocsgkhgglcihjftglgkdrdedldhdcdodfdfdpdidcdgdidkdkdl",
-      "resourceType__1": "試用",
-      "startDate": "2014/03/05",
-      "expireDate": "2014/05/31",
+      "resourceType": "試用",
+      "startDate": "2014/3/5",
+      "expireDate": "2014/5/31",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
       "subject": "教育類",
       "category": "",
@@ -1779,11 +1779,11 @@
       "relevanceUrl": "http://www.hyread.com.tw/frontdesk/download.htm"
     },
     {
-      "resourceType": "人文學全文資料庫(Humanities Source)",
+      "resourceName": "人文學全文資料庫(Humanities Source)",
       "url": "http://search.ebscohost.com/login.aspx?profile=ehost&defaultdb=hus",
-      "resourceType__1": "試用",
-      "startDate": "2014/03/19",
-      "expireDate": "2014/05/31",
+      "resourceType": "試用",
+      "startDate": "2014/3/19",
+      "expireDate": "2014/5/31",
       "faculty": "T 教育學院\nU 文學院",
       "subject": "教育類\n社會科學類",
       "category": "",
@@ -1795,9 +1795,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Applied Science & Technology Index",
+      "resourceName": "Applied Science & Technology Index",
       "url": "http://www.ebscohost.com/academic/applied-science-technology-index",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/3/5",
       "expireDate": "2015/12/31",
       "faculty": "V 理學院\nW 科技學院",
@@ -1811,9 +1811,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "APA PsycTHERAPY 資料庫",
+      "resourceName": "APA PsycTHERAPY 資料庫",
       "url": "http://psyctherapy.apa.org/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/4/15",
       "expireDate": "2014/5/15",
       "faculty": "T 教育學院",
@@ -1827,9 +1827,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "NEW TOEIC應考特訓課程初級",
+      "resourceName": "NEW TOEIC應考特訓課程初級",
       "url": "http://ilibrary.com.tw/courses/toeic/index.asp",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/4/21",
       "expireDate": "2014/5/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1843,9 +1843,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "PELAPELA日本語學習資料庫",
+      "resourceName": "PELAPELA日本語學習資料庫",
       "url": "http://www.ilibrary.com.tw/context1_1.asp",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/4/21",
       "expireDate": "2014/5/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1859,9 +1859,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "雲端365生活實用短篇",
+      "resourceName": "雲端365生活實用短篇",
       "url": "http://www.ilibrary.com.tw/courses/365/index.asp",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/4/21",
       "expireDate": "2014/5/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1875,9 +1875,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "空中英語教室校園教育雲",
+      "resourceName": "空中英語教室校園教育雲",
       "url": "http://demo.webenglish.tv/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/4/21",
       "expireDate": "2014/5/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1891,9 +1891,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Credo Reference",
+      "resourceName": "Credo Reference",
       "url": "http://search.credoreference.com",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/4/28",
       "expireDate": "2014/5/28",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1907,9 +1907,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "商周周刊知識庫",
+      "resourceName": "商周周刊知識庫",
       "url": "http://udndata.com/bsw/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/5/8",
       "expireDate": "2014/6/10",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1923,9 +1923,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "遠見雜誌知識庫",
+      "resourceName": "遠見雜誌知識庫",
       "url": "http://udndata.com/gvm/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/5/8",
       "expireDate": "2014/6/10",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1939,9 +1939,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "動腦雜誌知識庫",
+      "resourceName": "動腦雜誌知識庫",
       "url": "http://udndata.com/brain/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/5/8",
       "expireDate": "2014/6/10",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -1955,9 +1955,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣文獻叢刊",
+      "resourceName": "臺灣文獻叢刊",
       "url": "http://tai.udpweb.com.tw/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/5/9",
       "expireDate": "2014/6/9",
       "faculty": "U 文學院",
@@ -1971,9 +1971,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "經典人文學刊庫",
+      "resourceName": "經典人文學刊庫",
       "url": "http://sinoweb.udpweb.com.tw/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/5/9",
       "expireDate": "2014/6/9",
       "faculty": "U 文學院",
@@ -1987,9 +1987,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "雄獅美術知識庫(臺灣美術知識庫)(開放試用至2017/1/10)",
+      "resourceName": "雄獅美術知識庫(臺灣美術知識庫)(開放試用至2017/1/10)",
       "url": "http://km.lionart.com.tw/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2016/11/11",
       "expireDate": "2017/1/10",
       "faculty": "X 藝術學院",
@@ -2003,11 +2003,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "五南電子書",
+      "resourceName": "五南電子書",
       "url": "http://hunteq.com/wunan.htm",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/05/31",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/5/31",
       "faculty": "",
       "subject": "綜合類",
       "category": "",
@@ -2019,9 +2019,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "鼎文公職電子書庫",
+      "resourceName": "鼎文公職電子書庫",
       "url": "http://hunteq.com/tingwenc/tingwenkm",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/9/30",
       "expireDate": "2014/12/31",
       "faculty": "",
@@ -2035,9 +2035,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "化學期刊SYNLETT, SYNTHESIS以及SYNFACTS",
+      "resourceName": "化學期刊SYNLETT, SYNTHESIS以及SYNFACTS",
       "url": "http://www.thieme-connect.com/ejournals",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/9/30",
       "expireDate": "2014/12/31",
       "faculty": "V 理學院",
@@ -2051,9 +2051,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "ACO全球音樂分析資料庫",
+      "resourceName": "ACO全球音樂分析資料庫",
       "url": "http://ipm.academiccharts.com",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/10/1",
       "expireDate": "2014/10/31",
       "faculty": "",
@@ -2067,11 +2067,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SAGE 研究方法資料庫個案分析",
+      "resourceName": "SAGE 研究方法資料庫個案分析",
       "url": "http://srmo.sagepub.com/cases",
-      "resourceType__1": "試用",
-      "startDate": "2014/10/08",
-      "expireDate": "2016/03/31",
+      "resourceType": "試用",
+      "startDate": "2014/10/8",
+      "expireDate": "2016/3/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院",
       "subject": "11 社會科學\n教育類",
       "category": "1122 社會學\n0218 教育及職業\n0243 社會與文化",
@@ -2083,9 +2083,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "天下影音知識庫",
+      "resourceName": "天下影音知識庫",
       "url": "http://new.cwk.com.tw/login_guest-cw.htm?V0000001",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/10/16",
       "expireDate": "2014/12/31",
       "faculty": "",
@@ -2099,9 +2099,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "東方雜誌",
+      "resourceName": "東方雜誌",
       "url": "http://cpem.cp.com.cn/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2014/10/20",
       "expireDate": "2014/10/31",
       "faculty": "",
@@ -2115,11 +2115,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "新聞知識庫",
+      "resourceName": "新聞知識庫",
       "url": "http://hunteq.com/ttsnewsc/ttsnewskm",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/05/31",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/5/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2131,10 +2131,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣當代藝術資料庫",
+      "resourceName": "台灣當代藝術資料庫",
       "url": "http://archive.avat-art.org",
-      "resourceType__1": "免費OA",
-      "startDate": "2014/12/04",
+      "resourceType": "免費OA",
+      "startDate": "2014/12/4",
       "expireDate": "",
       "faculty": "",
       "subject": "02 藝術與人文",
@@ -2147,11 +2147,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "華文雜誌知識庫",
+      "resourceName": "華文雜誌知識庫",
       "url": "http://reading.udn.com/lib/nknuc",
-      "resourceType__1": "試用",
-      "startDate": "2015/01/01",
-      "expireDate": "2015/01/31",
+      "resourceType": "試用",
+      "startDate": "2015/1/1",
+      "expireDate": "2015/1/31",
       "faculty": "",
       "subject": "02 藝術與人文\n生物醫學類\n13 商業經濟管理",
       "category": "",
@@ -2163,11 +2163,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "遠景繁體中文電子書",
+      "resourceName": "遠景繁體中文電子書",
       "url": "http://hunteq.com/ebookkm.htm",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/05/31",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/5/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2179,11 +2179,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "鼎文電子書庫",
+      "resourceName": "鼎文電子書庫",
       "url": "http://hunteq.com/tingwen.htm",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/05/31",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/5/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2195,11 +2195,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "餐飲文化暨管理資料庫",
+      "resourceName": "餐飲文化暨管理資料庫",
       "url": "http://hunteq.com/foodkm.htm",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/04/30",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2211,11 +2211,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "自由中國",
+      "resourceName": "自由中國",
       "url": "http://hunteq.com/freechina.htm",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/04/30",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2227,11 +2227,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "自由時代",
+      "resourceName": "自由時代",
       "url": "http://hunteq.com/freetime.htm",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/04/30",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2243,11 +2243,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "明治大正年間『理蕃』事件簿",
+      "resourceName": "明治大正年間『理蕃』事件簿",
       "url": "http://hunteq.com/fanc/fankm",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/04/30",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2259,11 +2259,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臨時臺灣舊慣調查會-原住民慣習大調查",
+      "resourceName": "臨時臺灣舊慣調查會-原住民慣習大調查",
       "url": "http://hunteq.com/twfanc/twfankm",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/04/30",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2275,11 +2275,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臨時臺灣舊慣調查會-臺灣私法暨附錄參考書",
+      "resourceName": "臨時臺灣舊慣調查會-臺灣私法暨附錄參考書",
       "url": "http://hunteq.com/twplsc/twplskm",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/04/30",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2291,11 +2291,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "後藤新平著作 選集電子書",
+      "resourceName": "後藤新平著作 選集電子書",
       "url": "http://hunteq.com/shinpei.html",
-      "resourceType__1": "試用",
-      "startDate": "2015/02/25",
-      "expireDate": "2015/04/30",
+      "resourceType": "試用",
+      "startDate": "2015/2/25",
+      "expireDate": "2015/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2307,9 +2307,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "中山學術資料庫",
+      "resourceName": "中山學術資料庫",
       "url": "http://sunology.culture.tw",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "",
@@ -2323,9 +2323,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "空中英語教室影音典藏學習系統",
+      "resourceName": "空中英語教室影音典藏學習系統",
       "url": "http://ecourse.webenglish.tv/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2339,9 +2339,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "NEW TOEIC 應考特訓課程",
+      "resourceName": "NEW TOEIC 應考特訓課程",
       "url": "http://www.ilibrary.com.tw/index.asp",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2355,9 +2355,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "PELA PELA日本語學習資料庫",
+      "resourceName": "PELA PELA日本語學習資料庫",
       "url": "http://www.ilibrary.com.tw/index.asp",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2371,9 +2371,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "我的雲端智慧英語",
+      "resourceName": "我的雲端智慧英語",
       "url": "http://www.iqenglish.tw",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "",
@@ -2387,9 +2387,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "英語學習暨教學參考資料庫 (ELL)",
+      "resourceName": "英語學習暨教學參考資料庫 (ELL)",
       "url": "http://search.ebscohost.com/login.asp?profile=ell",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2403,9 +2403,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "PUBU電子書城-精選考試用書",
+      "resourceName": "PUBU電子書城-精選考試用書",
       "url": "http://www.pubu.com.tw/libraryTrial/NKNU",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2419,9 +2419,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "達志教育創藝網",
+      "resourceName": "達志教育創藝網",
       "url": "http://www.tpgimages.com/vector/index.php",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2435,11 +2435,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "FUNDAY線上外語學習平台",
+      "resourceName": "FUNDAY線上外語學習平台",
       "url": "http://tts-nknu.fun-day.com.tw",
-      "resourceType__1": "試用",
-      "startDate": "2015/03/10",
-      "expireDate": "2015/04/30",
+      "resourceType": "試用",
+      "startDate": "2015/3/10",
+      "expireDate": "2015/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2451,10 +2451,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "華藝世界美術資料庫",
+      "resourceName": "華藝世界美術資料庫",
       "url": "http://www.airitiart.com/",
-      "resourceType__1": "試用",
-      "startDate": "2015/03/17",
+      "resourceType": "試用",
+      "startDate": "2015/3/17",
       "expireDate": "2015/12/31",
       "faculty": "",
       "subject": "02 藝術與人文",
@@ -2467,9 +2467,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "ACLS Humanities E-book《美國學術團體協會‧人文社會科學電子書》",
+      "resourceName": "ACLS Humanities E-book《美國學術團體協會‧人文社會科學電子書》",
       "url": "http://www.humanitiesebook.org/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/5/13",
       "expireDate": "2015/6/30",
       "faculty": "",
@@ -2483,9 +2483,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Grolier Online葛羅里百科全書線上資料庫(開放試用至2018/1/15)1. Encyclopedia Americana Online - http://ea.grolier.com    2. Grolier Multimedia Encyclopedia Online - http://gme.grolier.com",
+      "resourceName": "Grolier Online葛羅里百科全書線上資料庫(開放試用至2018/1/15)1. Encyclopedia Americana Online - http://ea.grolier.com    2. Grolier Multimedia Encyclopedia Online - http://gme.grolier.com",
       "url": "http://go.grolier.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
       "expireDate": "2018/1/15",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -2499,9 +2499,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Bridgeman Education《布里奇曼藝術教育‧數位圖像資料庫》",
+      "resourceName": "Bridgeman Education《布里奇曼藝術教育‧數位圖像資料庫》",
       "url": "http://www.bridgemaneducation.com",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/5/13",
       "expireDate": "2015/8/5",
       "faculty": "",
@@ -2515,9 +2515,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "AtoZ World Trade 《A到Z世界各國貿易》",
+      "resourceName": "AtoZ World Trade 《A到Z世界各國貿易》",
       "url": "http://www.atozworldtrade.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/5/13",
       "expireDate": "2015/8/7",
       "faculty": "",
@@ -2531,9 +2531,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "AtoZ World Travel 《A到Z世界城市旅遊》",
+      "resourceName": "AtoZ World Travel 《A到Z世界城市旅遊》",
       "url": "http://www.atozworldtravel.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/5/13",
       "expireDate": "2015/8/7",
       "faculty": "",
@@ -2547,9 +2547,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "AtoZ World Culture 《A到Z世界各國文化》",
+      "resourceName": "AtoZ World Culture 《A到Z世界各國文化》",
       "url": "http://www.atozworldculture.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/5/13",
       "expireDate": "2015/8/7",
       "faculty": "",
@@ -2563,9 +2563,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "eol AsiaOne亞洲15國企業資訊資料庫",
+      "resourceName": "eol AsiaOne亞洲15國企業資訊資料庫",
       "url": "https://asiaone.eoldb.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/5/13",
       "expireDate": "2015/7/15",
       "faculty": "",
@@ -2579,9 +2579,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "EOL日本綜合企業資訊資料庫",
+      "resourceName": "EOL日本綜合企業資訊資料庫",
       "url": "http://eoldb.jp/EolDb/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/5/13",
       "expireDate": "2015/7/15",
       "faculty": "",
@@ -2595,9 +2595,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Medici.tv 麥迪西TV《現場直播音樂會》開放試用至2017/12/17日止",
+      "resourceName": "Medici.tv 麥迪西TV《現場直播音樂會》開放試用至2017/12/17日止",
       "url": "http://edu.medici.tv",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2016/10/18",
       "expireDate": "2017/12/17",
       "faculty": "",
@@ -2611,9 +2611,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Discovery Education - Streaming《Discovery ‧數位課程教學影片資料庫》",
+      "resourceName": "Discovery Education - Streaming《Discovery ‧數位課程教學影片資料庫》",
       "url": "http://www.discoveryeducation.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/5/13",
       "expireDate": "2015/7/6",
       "faculty": "",
@@ -2627,9 +2627,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "F1000Prime醫學與生物核心論文評選",
+      "resourceName": "F1000Prime醫學與生物核心論文評選",
       "url": "http://f1000.com/prime",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/5/13",
       "expireDate": "2015/8/5",
       "faculty": "",
@@ -2643,11 +2643,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "智慧藏百科知識網",
+      "resourceName": "智慧藏百科知識網",
       "url": "http://www.wordpedia.com/edu/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/6/2",
-      "expireDate": "2015/06/30",
+      "expireDate": "2015/6/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2659,9 +2659,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SAGE Video",
+      "resourceName": "SAGE Video",
       "url": "http://sk.sagepub.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/6/2",
       "expireDate": "2015/7/31",
       "faculty": "",
@@ -2675,9 +2675,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "續修四庫全書",
+      "resourceName": "續修四庫全書",
       "url": "http://www.xuxiu.net",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/6/18",
       "expireDate": "2015/8/31",
       "faculty": "",
@@ -2691,9 +2691,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Patentcloud專利雲",
+      "resourceName": "Patentcloud專利雲",
       "url": "http://www.patentcloud.com/edu/nknu",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/8/20",
       "expireDate": "2015/12/31",
       "faculty": "",
@@ -2707,10 +2707,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "電子期刊搜尋系統",
+      "resourceName": "電子期刊搜尋系統",
       "url": "http://140.127.41.95/online_books/",
-      "resourceType__1": "免費OA",
-      "startDate": "2015/09/03",
+      "resourceType": "免費OA",
+      "startDate": "2015/9/3",
       "expireDate": "",
       "faculty": "",
       "subject": "",
@@ -2723,10 +2723,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "MUZIK資料庫",
+      "resourceName": "MUZIK資料庫",
       "url": "http://www.muzikstudy.com/home",
-      "resourceType__1": "試用",
-      "startDate": "2015/9/07",
+      "resourceType": "試用",
+      "startDate": "2015/9/7",
       "expireDate": "2015/10/31",
       "faculty": "",
       "subject": "",
@@ -2739,11 +2739,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "FOR DUMMIES系列電子書選輯",
+      "resourceName": "FOR DUMMIES系列電子書選輯",
       "url": "http://lb20.dummies.libraryandbook.net/",
-      "resourceType__1": "試用",
-      "startDate": "2015/9/08",
-      "expireDate": "2015/10/02",
+      "resourceType": "試用",
+      "startDate": "2015/9/8",
+      "expireDate": "2015/10/2",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2755,11 +2755,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Cambridge Bookd Online電子書",
+      "resourceName": "Cambridge Bookd Online電子書",
       "url": "http://ebooks.cambridge.org/",
-      "resourceType__1": "試用",
-      "startDate": "2015/9/08",
-      "expireDate": "2015/10/02",
+      "resourceType": "試用",
+      "startDate": "2015/9/8",
+      "expireDate": "2015/10/2",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -2771,10 +2771,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "雅昌藝術圖書資料庫",
+      "resourceName": "雅昌藝術圖書資料庫",
       "url": "http://ysts.artron.net/",
-      "resourceType__1": "試用",
-      "startDate": "2015/9/08",
+      "resourceType": "試用",
+      "startDate": "2015/9/8",
       "expireDate": "2015/10/31",
       "faculty": "",
       "subject": "",
@@ -2787,9 +2787,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "民國近代史料資料庫",
+      "resourceName": "民國近代史料資料庫",
       "url": "http://www.digroc.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/9/25",
       "expireDate": "2015/12/31",
       "faculty": "",
@@ -2803,9 +2803,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣商學企管資料庫",
+      "resourceName": "台灣商學企管資料庫",
       "url": "http://elib.infolinker.com.tw/login_tebko.htm",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2819,9 +2819,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Bookworld書世界",
+      "resourceName": "Bookworld書世界",
       "url": "http://bookworld.sslibrary.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2835,9 +2835,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "美聯社新聞英文影音資料庫",
+      "resourceName": "美聯社新聞英文影音資料庫",
       "url": "http://demo.vookslibrary.com",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2851,9 +2851,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "IEK產業情報網-線上研討會",
+      "resourceName": "IEK產業情報網-線上研討會",
       "url": "http://iekedu.tw",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2867,9 +2867,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "清代宮中檔及軍機處檔摺件資料庫",
+      "resourceName": "清代宮中檔及軍機處檔摺件資料庫",
       "url": "http://npmhost.npm.gov.tw/tts/npmmeta/GC/indexcg.html",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2883,9 +2883,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "大清國史人物列傳及史館檔傳包傳稿全文影像資料庫",
+      "resourceName": "大清國史人物列傳及史館檔傳包傳稿全文影像資料庫",
       "url": "http://npmhost.npm.gov.tw/tts/npmmeta/DQ/indexcg.html",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/10/19",
       "expireDate": "2015/11/30",
       "faculty": "",
@@ -2899,10 +2899,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "亞歷山大‧音樂資料庫",
+      "resourceName": "亞歷山大‧音樂資料庫",
       "url": "http://search.alexanderstreet.com/music-performing-arts",
-      "resourceType__1": "試用",
-      "startDate": "2015/11/02",
+      "resourceType": "試用",
+      "startDate": "2015/11/2",
       "expireDate": "2015/12/31",
       "faculty": "",
       "subject": "",
@@ -2915,9 +2915,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "東方雜誌全文檢索資料庫",
+      "resourceName": "東方雜誌全文檢索資料庫",
       "url": "http://cpem.cp.com.cn/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/11/30",
       "expireDate": "2015/12/23",
       "faculty": "",
@@ -2931,9 +2931,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "美國科研出版社",
+      "resourceName": "美國科研出版社",
       "url": "http://www.scirp.org/journal",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2015/11/30",
       "expireDate": "2015/12/31",
       "faculty": "",
@@ -2947,10 +2947,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "文訊雜誌知識庫demo版",
+      "resourceName": "文訊雜誌知識庫demo版",
       "url": "http://210.243.166.78/udndataWSN/index.html",
-      "resourceType__1": "免費OA",
-      "startDate": "2015/12/08",
+      "resourceType": "免費OA",
+      "startDate": "2015/12/8",
       "expireDate": "",
       "faculty": "",
       "subject": "",
@@ -2963,9 +2963,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Airiti Library 華藝線上圖書館  (CEPS 中文電子期刊 + CETD 中文電子學位論文)",
+      "resourceName": "Airiti Library 華藝線上圖書館  (CEPS 中文電子期刊 + CETD 中文電子學位論文)",
       "url": "http://www.airitilibrary.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -2979,9 +2979,9 @@
       "relevanceUrl": "http://www.airitilibrary.com/aluserguide.aspx"
     },
     {
-      "resourceType": "CLISA 中文圖書資訊學文獻摘要資料庫",
+      "resourceName": "CLISA 中文圖書資訊學文獻摘要資料庫",
       "url": "http://news.ncl.edu.tw/ttscgi/ttsweb?@0:0:1:clisa",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "U 文學院\nX 藝術學院",
@@ -2995,11 +2995,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "ACI 學術引用文獻資料庫(105年起停訂)(開放試用至2017年2月28日",
+      "resourceName": "ACI 學術引用文獻資料庫(105年起停訂)(開放試用至2017年2月28日",
       "url": "http://www.airiti.com/ACI/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2017/02/28",
+      "expireDate": "2017/2/28",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
       "category": "",
@@ -3011,9 +3011,9 @@
       "relevanceUrl": "http://portal.airiti.com/uploads/apupload/ACI120315_tw.pdf"
     },
     {
-      "resourceType": "HyRead ebook 電子雜誌 電子書",
+      "resourceName": "HyRead ebook 電子雜誌 電子書",
       "url": "http://nknu.ebook.hyread.com.tw/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3027,9 +3027,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "中國優秀碩博士學位論文全文數據庫",
+      "resourceName": "中國優秀碩博士學位論文全文數據庫",
       "url": "http://cnki50.csis.com.tw/kns50/Navigator.aspx?ID=CDFD",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院\nU 文學院",
@@ -3043,9 +3043,9 @@
       "relevanceUrl": "http://www.cnkiuser.com/download.asp\nhttp://www.cnkiuser.com/\nhttp://140.127.53.222/lib/howto/node/15105"
     },
     {
-      "resourceType": "中國報紙資源全文數據庫",
+      "resourceName": "中國報紙資源全文數據庫",
       "url": "http://dlib.apabi.com/nknu",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3059,9 +3059,9 @@
       "relevanceUrl": "http://www.tbmc.com.tw/tbmc2/cdb/intro/Newsdb-apabiNewspaper.htm"
     },
     {
-      "resourceType": "中國期刊全文數據庫  (中國期刊全文+中國博碩士論文全文) (文史哲及社會科學專輯) 中國知識資源總庫 CNKI系列數據庫",
+      "resourceName": "中國期刊全文數據庫  (中國期刊全文+中國博碩士論文全文) (文史哲及社會科學專輯) 中國知識資源總庫 CNKI系列數據庫",
       "url": "http://cnki.sris.com.tw/kns55/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院",
@@ -3075,9 +3075,9 @@
       "relevanceUrl": "http://cnki.sris.com.tw/kns55/"
     },
     {
-      "resourceType": "臺灣期刊論文索引系統",
+      "resourceName": "臺灣期刊論文索引系統",
       "url": "http://readopac2.ncl.edu.tw/nclJournal/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3091,9 +3091,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "全四庫(三部)(限校園使用)",
+      "resourceName": "全四庫(三部)(限校園使用)",
       "url": "http://140.127.41.15/endnote/download/QuansikuSetup.exe",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -3107,9 +3107,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "古今圖書集成 (限校園使用)",
+      "resourceName": "古今圖書集成 (限校園使用)",
       "url": "http://140.127.41.89/Chinesebookweb/home/index.asp",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -3123,9 +3123,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣史知識庫(臺灣史知識庫)（限校園使用）",
+      "resourceName": "台灣史知識庫(臺灣史知識庫)（限校園使用）",
       "url": "http://140.127.41.87:8080/twnohwdb/start.htm",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -3139,9 +3139,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣大事記資料庫 (限校園使用)",
+      "resourceName": "台灣大事記資料庫 (限校園使用)",
       "url": "http://140.127.41.87/tcenturyweb/index.htm",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -3155,9 +3155,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣文獻叢刊資料庫 (限校園使用)",
+      "resourceName": "台灣文獻叢刊資料庫 (限校園使用)",
       "url": "http://140.127.53.3/ttsweb/index.htm",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "U 文學院",
@@ -3171,9 +3171,9 @@
       "relevanceUrl": "http://hanji.sinica.edu.tw/index.html?"
     },
     {
-      "resourceType": "台灣鄉土語言影音資料庫：台語系列主題 (限校園使用)  (臺灣鄉土語言影音資料庫)",
+      "resourceName": "台灣鄉土語言影音資料庫：台語系列主題 (限校園使用)  (臺灣鄉土語言影音資料庫)",
       "url": "http://140.127.41.87:8080/twloclang/homepage",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院",
@@ -3187,9 +3187,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "金庸作品集電子書",
+      "resourceName": "金庸作品集電子書",
       "url": "http://lib.wordpedia.com/jp_index.php",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3203,9 +3203,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "慧科大中華新聞網 WiseNews(開放試用至2016/11/27日止)",
+      "resourceName": "慧科大中華新聞網 WiseNews(開放試用至2016/11/27日止)",
       "url": "http://nknu.portal.wisenews.net/?gid=nknu&user=ipaccess",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
       "expireDate": "2016/11/27",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3219,9 +3219,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "萬方數據知識服務平臺(試用至2016/12/31)",
+      "resourceName": "萬方數據知識服務平臺(試用至2016/12/31)",
       "url": "http://g.wanfangdata.com.hk/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
       "expireDate": "2016/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3235,9 +3235,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "明清實錄 (限校園使用)",
+      "resourceName": "明清實錄 (限校園使用)",
       "url": "http://140.127.41.15/endnote/download/MingqingClientSetup.exe",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "2012/10/25",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -3251,9 +3251,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "歷代書法碑帖集成",
+      "resourceName": "歷代書法碑帖集成",
       "url": "http://140.127.41.89/WritingArtWeb/default.asp",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -3267,9 +3267,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "紅樓夢研究資料庫 (限校園使用)",
+      "resourceName": "紅樓夢研究資料庫 (限校園使用)",
       "url": "http://140.127.41.87/hunglousdy/",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -3283,9 +3283,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "聯合知識庫 udndata",
+      "resourceName": "聯合知識庫 udndata",
       "url": "http://udndata.com/library/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2014/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3299,9 +3299,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣日日新報(台灣日日新報)(限校園使用)請使用IE瀏覽器(版本10以上)",
+      "resourceName": "臺灣日日新報(台灣日日新報)(限校園使用)請使用IE瀏覽器(版本10以上)",
       "url": "http://140.127.41.87:8008/",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院",
@@ -3315,9 +3315,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "iRead eBook華藝電子書(提供館合服務點數5000點免費申請)",
+      "resourceName": "iRead eBook華藝電子書(提供館合服務點數5000點免費申請)",
       "url": "http://www.airitibooks.com/Home/Index",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3331,9 +3331,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Academic Search Premier (ASP) 綜合學科參考類全文資料庫精華版",
+      "resourceName": "Academic Search Premier (ASP) 綜合學科參考類全文資料庫精華版",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3347,9 +3347,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "ACS Journals (American chemical Society) (化學推動中心+學校購買)",
+      "resourceName": "ACS Journals (American chemical Society) (化學推動中心+學校購買)",
       "url": "http://pubs.acs.org/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "V 理學院",
@@ -3363,9 +3363,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "AIP 電子期刊 (American Institute of Physics電子期刊) (物理研究推動中心+學校購買)",
+      "resourceName": "AIP 電子期刊 (American Institute of Physics電子期刊) (物理研究推動中心+學校購買)",
       "url": "http://journals.aip.org/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "V 理學院",
@@ -3379,9 +3379,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Allgemeine Künstlerlexikon (AKL) 藝術類資料庫",
+      "resourceName": "Allgemeine Künstlerlexikon (AKL) 藝術類資料庫",
       "url": "http://refworks.reference-global.com/AKL",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "X 藝術學院",
@@ -3395,9 +3395,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/AKLintro.pdf\nhttp://140.127.53.222/lib/files/AKLintro2.pdf"
     },
     {
-      "resourceType": "AMS MathSciNet (數學研究推動中心+學校購買(數學系))",
+      "resourceName": "AMS MathSciNet (數學研究推動中心+學校購買(數學系))",
       "url": "http://www.ams.org/mathscinet/index.html",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "V 理學院",
@@ -3411,9 +3411,9 @@
       "relevanceUrl": "http://web.a.ebscohost.com/ehost/search/advanced?sid=26f2a147-0910-48b9-957a-8ff85c54cb73%40sessionmgr4006&vid=1&hid=4104"
     },
     {
-      "resourceType": "APS 電子期刊(American Physical Society電子期刊) (物理研究推動中心+學校購買)",
+      "resourceName": "APS 電子期刊(American Physical Society電子期刊) (物理研究推動中心+學校購買)",
       "url": "http://publish.aps.org/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "V 理學院",
@@ -3427,9 +3427,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Bibliothèque des lettres 法國文學百科全書資料庫",
+      "resourceName": "Bibliothèque des lettres 法國文學百科全書資料庫",
       "url": "http://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColBdl",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "U 文學院",
@@ -3443,11 +3443,11 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/BibliothequedeslettresIntro.pdf\nhttp://140.127.53.222/lib/files/BibliothequedeslettresManual.pdf"
     },
     {
-      "resourceType": "Brepolis Médiéval (法文版)--文學/中世紀主題書目資料庫",
+      "resourceName": "Brepolis Médiéval (法文版)--文學/中世紀主題書目資料庫",
       "url": "http://www.brepolis.net/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
-      "expireDate": "2013/01/31",
+      "expireDate": "2013/1/31",
       "faculty": "U 文學院",
       "subject": "人文藝術類",
       "category": "",
@@ -3459,9 +3459,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/BrepolisMedievalintro.pdf\nhttp://140.127.53.222/lib/files/BrepolisMedievalintro2.pdf\nhttp://140.127.53.222/lib/files/BrepolisMedievallist.xls"
     },
     {
-      "resourceType": "Business Source Premier (BSP) 商管財經類全文資料庫精華版",
+      "resourceName": "Business Source Premier (BSP) 商管財經類全文資料庫精華版",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "T 教育學院",
@@ -3475,9 +3475,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/bsp.pdf\nhttp://support.ebscohost.com/training/lang/zh/zh-tw-t.php\nhttp://www.youtube.com/results?search_query=ebsco%E4%B8%AD%E6%96%87&search_type=&aq=f"
     },
     {
-      "resourceType": "Cairn 綜合性資料庫 (法文版)",
+      "resourceName": "Cairn 綜合性資料庫 (法文版)",
       "url": "http://www.cairn.info/accueil.php?PG=START",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "U 文學院",
@@ -3491,9 +3491,9 @@
       "relevanceUrl": "http://french2.nccu.edu.tw/db_intro/Cairn.pdf\nhttp://french2.nccu.edu.tw/db_intro/CAIRN%20PPT manual.pdf"
     },
     {
-      "resourceType": "Cambridge Companion Online (CCO) 電子書 #cambtidge電子書",
+      "resourceName": "Cambridge Companion Online (CCO) 電子書 #cambtidge電子書",
       "url": "https://www.cambridge.org/core/",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院",
@@ -3507,11 +3507,11 @@
       "relevanceUrl": "https://www.cambridge.org/core/services/aop-file-manager/file/57f641b7000ca2530629e0aa"
     },
     {
-      "resourceType": "CiNii資料庫 -- CiNii－NII論文情報ナビゲータ",
+      "resourceName": "CiNii資料庫 -- CiNii－NII論文情報ナビゲータ",
       "url": "http://ci.nii.ac.jp/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
-      "expireDate": "2015/03/31",
+      "expireDate": "2015/3/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院",
       "subject": "綜合類",
       "category": "",
@@ -3523,9 +3523,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/Ciniiintro.ppt\nhttp://140.127.53.222/lib/files/CINIIintro2.ppt"
     },
     {
-      "resourceType": "Communication & Mass Media  Complete",
+      "resourceName": "Communication & Mass Media  Complete",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "T 教育學院\nW 科技學院",
@@ -3539,9 +3539,9 @@
       "relevanceUrl": "http://web.ebscohost.com/ehost/publication?sid=aa67ae39-0534-43a1-bf91-497ff0a27b54%40sessionmgr14&vid=2&hid=12\nhttp://support.ebscohost.com/training/lang/zh/zh-tw-t.php"
     },
     {
-      "resourceType": "Corpus de la literature narrative du Moyen Âge au XXe siècle 法國文學資料庫",
+      "resourceName": "Corpus de la literature narrative du Moyen Âge au XXe siècle 法國文學資料庫",
       "url": "http://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColBasile",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "U 文學院",
@@ -3555,9 +3555,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/CorpusIntro.pdf\nhttp://140.127.53.222/lib/files/CorpusManual.pdf"
     },
     {
-      "resourceType": "CRC NetBase電子書資料庫(僅加入2008年臺灣學術電子書聯盟)",
+      "resourceName": "CRC NetBase電子書資料庫(僅加入2008年臺灣學術電子書聯盟)",
       "url": "http://www.crcnetbase.com",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "V 理學院",
@@ -3571,9 +3571,9 @@
       "relevanceUrl": "http://nknulib.nknu.edu.tw/search*cht/X?SEARCH=(CRC)&SORT=D&m=z"
     },
     {
-      "resourceType": "Dictionnaires de l'Académie Française 字典資料庫",
+      "resourceName": "Dictionnaires de l'Académie Française 字典資料庫",
       "url": "http://www.classiques-garnier.com/numerique-bases/index.php?module=App&action=FrameMain&colname=ColAcademie2",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "U 文學院",
@@ -3587,9 +3587,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/DictionnairesFrancaiseIntro.pdf\nhttp://140.127.53.222/lib/files/DictionnairesfrancaiseManual.pdf"
     },
     {
-      "resourceType": "Digitaler Bibliothek Deutscher Klassiker (德文版)",
+      "resourceName": "Digitaler Bibliothek Deutscher Klassiker (德文版)",
       "url": "http://klassiker.chadwyck.co.uk",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -3603,9 +3603,9 @@
       "relevanceUrl": "http://german2.nccu.edu.tw/db_intro/Digitaler%20Bibliothek%20Deutscher%20Klassiker.pdf"
     },
     {
-      "resourceType": "Dissertations (PQDD-- 美加地區博碩士數位論文典藏聯盟 )",
+      "resourceName": "Dissertations (PQDD-- 美加地區博碩士數位論文典藏聯盟 )",
       "url": "http://pqdd.sinica.edu.tw",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3619,9 +3619,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/ProQuesT new.platform_user.guide_Mar_2011.ppt"
     },
     {
-      "resourceType": "EBSCOhost 全文資料庫  本館採購(Academic Search Premier ASP)(Business Source Premier BSP)(Communication & Mass Media  Complete CMMC)。EBSCO贈送 1. ERIC/ 2. MEDLINE/ 3. EconLit / 4. MLA Int’l Bibliography and MLA Directory of Periodicals/ 5. Applied Science & Technology Index (ASTI)(H.W. Wilson)/ 6.Regional Business News/ 7. Library, Information Science & Technology Abstracts with Full Text (LISTA with Full Text)/ 8. Professional Development Collection/ 9. Newspaper Source/  10. The Serials Directory/ 11. IBT&D with full Text/ 12. English Language Learner Reference Center(ELL) # ebsco",
+      "resourceName": "EBSCOhost 全文資料庫  本館採購(Academic Search Premier ASP)(Business Source Premier BSP)(Communication & Mass Media  Complete CMMC)。EBSCO贈送 1. ERIC/ 2. MEDLINE/ 3. EconLit / 4. MLA Int’l Bibliography and MLA Directory of Periodicals/ 5. Applied Science & Technology Index (ASTI)(H.W. Wilson)/ 6.Regional Business News/ 7. Library, Information Science & Technology Abstracts with Full Text (LISTA with Full Text)/ 8. Professional Development Collection/ 9. Newspaper Source/  10. The Serials Directory/ 11. IBT&D with full Text/ 12. English Language Learner Reference Center(ELL) # ebsco",
       "url": "http://search.ebscohost.com",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3635,9 +3635,9 @@
       "relevanceUrl": "http://support.ebscohost.com/training/lang/zh/zh-tw-t.php\nhttp://prezi.com/iiayxkjd3bks/ebookeconlit-asp-bsp-cmmc-ebscohost/\nhttp://web.b.ebscohost.com/ehost/search/basic?sid=e3ba6915-4d1b-4bf0-b2a1-31922566c8d4@sessionmgr101&vid=1&tid=2003EB"
     },
     {
-      "resourceType": "Electronic Journals Library",
+      "resourceName": "Electronic Journals Library",
       "url": "http://rzblx1.uni-regensburg.de/ezeit/fl.phtml?bibid=AAAAA&colors=7&lang=en",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3651,9 +3651,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Encyclopædia Universalis 資料庫 (法文版)",
+      "resourceName": "Encyclopædia Universalis 資料庫 (法文版)",
       "url": "http://www.universalis-edu.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "U 文學院\nX 藝術學院",
@@ -3667,9 +3667,9 @@
       "relevanceUrl": "http://french2.nccu.edu.tw/db_intro/Encyclopaedia%20universalis.pdf\nhttp://french2.nccu.edu.tw/db_intro/Encyclopia_universalis_PPT manual.pdf"
     },
     {
-      "resourceType": "ERIC全文資料庫 (EBSCOhost Web - ERIC)",
+      "resourceName": "ERIC全文資料庫 (EBSCOhost Web - ERIC)",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "T 教育學院\nV 理學院\nW 科技學院",
@@ -3683,9 +3683,9 @@
       "relevanceUrl": "http://support.ebscohost.com/training/lang/zh/zh-tw-t.php"
     },
     {
-      "resourceType": "Funk & Wagnalls New World Encyclopedia",
+      "resourceName": "Funk & Wagnalls New World Encyclopedia",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3699,9 +3699,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "GreenFILE",
+      "resourceName": "GreenFILE",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2014/12/31",
       "faculty": "V 理學院\nW 科技學院",
@@ -3715,9 +3715,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Greenwood Digital Collection (電子書) 本館2008年訂購693種電子書。",
+      "resourceName": "Greenwood Digital Collection (電子書) 本館2008年訂購693種電子書。",
       "url": "http://ebooks.abc-clio.com/main.aspx",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
@@ -3731,9 +3731,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Oxford Music Online (原名: Grove Music Online 葛洛夫音樂百科全書)",
+      "resourceName": "Oxford Music Online (原名: Grove Music Online 葛洛夫音樂百科全書)",
       "url": "http://www.oxfordmusiconline.com",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "X 藝術學院",
@@ -3747,9 +3747,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Internationale Bibliographie der Geistes- und Sozialwissenschaftlichen Zeitschriftenliteratur (IBZ) 綜合類資料庫 (德文版)",
+      "resourceName": "Internationale Bibliographie der Geistes- und Sozialwissenschaftlichen Zeitschriftenliteratur (IBZ) 綜合類資料庫 (德文版)",
       "url": "http://refworks.reference-global.com/IBZ",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院",
@@ -3763,9 +3763,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "IOS Press Books Online (電子書) 本館2008年訂購56種電子書。",
+      "resourceName": "IOS Press Books Online (電子書) 本館2008年訂購56種電子書。",
       "url": "http://ebooks.windeal.com.tw/ios/pass.asp",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nW 科技學院",
@@ -3779,9 +3779,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Japan Knowledge 資料庫",
+      "resourceName": "Japan Knowledge 資料庫",
       "url": "http://japanknowledge.com/library/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2014/12/31",
       "faculty": "U 文學院",
@@ -3795,9 +3795,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/chineseintro.ppt\nhttp://140.127.53.222/lib/files/japanknowledge.xls"
     },
     {
-      "resourceType": "InCites™Journal Citation Reports® (原JCR Web)",
+      "resourceName": "InCites™Journal Citation Reports® (原JCR Web)",
       "url": "https://jcr.clarivate.com",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3811,9 +3811,9 @@
       "relevanceUrl": "https://lis.nknu.edu.tw/zh/news_display/820-2018%E5%B9%B4%E7%99%BC%E5%B8%83%E7%9A%84-incites-journal-citation-reports-2017%E6%95%B8%E6%93%9A%E5%B7%B2%E7%B6%93%E4%B8%8A%E7%B7%9A%EF%BC%8C%E6%AD%A1%E8%BF%8E%E6%82%A8%E5%A4%9A%E5%8A%A0%E5%88%A9%E7%94%A8%EF%BC%81\nhttp://clarivate.libguides.com/jcr"
     },
     {
-      "resourceType": "JSTOR - Arts & Sciences III Collection",
+      "resourceName": "JSTOR - Arts & Sciences III Collection",
       "url": "http://www.jstor.org/action/showJournals?browseType=collectionInfoPage&selectCollection=asiii",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
@@ -3827,9 +3827,9 @@
       "relevanceUrl": "http://www.stpi.org.tw/fdb/jstor/index.html"
     },
     {
-      "resourceType": "Juris de 法學資料庫",
+      "resourceName": "Juris de 法學資料庫",
       "url": "http://www.juris.de/jportal?action=JLoginUser&username=NATIONAL_KAOHSIUNG_NO_DEP",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院",
@@ -3843,9 +3843,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Kafkas Werke im WWW (德文版)",
+      "resourceName": "Kafkas Werke im WWW (德文版)",
       "url": "http://kafka.chadwyck.co.uk",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -3859,11 +3859,11 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/Kafkas_Werke.pdf"
     },
     {
-      "resourceType": "Lextenso.fr 法學資料庫",
+      "resourceName": "Lextenso.fr 法學資料庫",
       "url": "http://www.lextenso.fr",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
-      "expireDate": "2013/03/31",
+      "expireDate": "2013/3/31",
       "faculty": "T 教育學院",
       "subject": "社會科學類",
       "category": "",
@@ -3875,9 +3875,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/Lextenso.fr_PPT.pdf"
     },
     {
-      "resourceType": "Library, Information Science & Technology Abstracts(併入EBSCOhost 全文資料庫平台)",
+      "resourceName": "Library, Information Science & Technology Abstracts(併入EBSCOhost 全文資料庫平台)",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "T 教育學院\nW 科技學院",
@@ -3891,9 +3891,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "MagV中文電子雜誌",
+      "resourceName": "MagV中文電子雜誌",
       "url": "http://site.magv.com/RNI/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2013/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3907,9 +3907,9 @@
       "relevanceUrl": "http://140.127.53.13/cgi-bin/ej/browse.cgi?q=iMagV%A4%A4%A4%E5%B9q%A4l%C2%F8%BBx%B8%EA%AE%C6%AEw.pub&ccd=rJuti0&sentry=1&o=select"
     },
     {
-      "resourceType": "MAS Ultra - School Edition",
+      "resourceName": "MAS Ultra - School Edition",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院\nU 文學院",
@@ -3923,9 +3923,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "MLA Directory of Periodicals",
+      "resourceName": "MLA Directory of Periodicals",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "U 文學院\nX 藝術學院",
@@ -3939,11 +3939,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Munzinger 德文資料庫",
+      "resourceName": "Munzinger 德文資料庫",
       "url": "http://www.Munzinger.de",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
-      "expireDate": "2013/09/30",
+      "expireDate": "2013/9/30",
       "faculty": "U 文學院\nX 藝術學院",
       "subject": "綜合類",
       "category": "",
@@ -3955,9 +3955,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/Munzinger_Online.pdf\nhttp://140.127.53.222/lib/files/Kurzanleitung_Munzinger_Online_englisch.pdf"
     },
     {
-      "resourceType": "MyiLibrary電子書 (本館目前購入4690個Titles全文電子書)",
+      "resourceName": "MyiLibrary電子書 (本館目前購入4690個Titles全文電子書)",
       "url": "http://www.myilibrary.com/browse/open.asp",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -3971,9 +3971,9 @@
       "relevanceUrl": "http://nknulib.nknu.edu.tw/search*cht/X?SEARCH=(MyiLibrary)&SORT=D&m=z"
     },
     {
-      "resourceType": "Nautre Archive: 1987-1996",
+      "resourceName": "Nautre Archive: 1987-1996",
       "url": "http://www.nature.com/nature/archive/index.html",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "V 理學院\nW 科技學院",
@@ -3987,9 +3987,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "NAXOS Music Library Online",
+      "resourceName": "NAXOS Music Library Online",
       "url": "http://nknu.naxosmusiclibrary.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4003,9 +4003,9 @@
       "relevanceUrl": "http://www.chiuru.com.tw/web1/index.php/introduction/111-introduction/104-nml\nhttp://www.chiuru.com.tw/web1/index.php/oup-ppt/110-ppt/87-nml\nhttp://www.naxosmusiclibrary.com/faqs.asp"
     },
     {
-      "resourceType": "OCLC FirstSearch-OCLC Collection (1) ArticleFirst(1990-)(2) ECO (A&I)(1995-)(3) PapersFirst(1993-)(4) ProceedingsFirst(1993-)",
+      "resourceName": "OCLC FirstSearch-OCLC Collection (1) ArticleFirst(1990-)(2) ECO (A&I)(1995-)(3) PapersFirst(1993-)(4) ProceedingsFirst(1993-)",
       "url": "http://newfirstsearch.oclc.org/fsip",
-      "resourceType__1": "聯盟提供(年度)",
+      "resourceType": "聯盟提供(年度)",
       "startDate": "",
       "expireDate": "2019/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4019,9 +4019,9 @@
       "relevanceUrl": "http://www.stpi.org.tw/fdb/oclc/index.html"
     },
     {
-      "resourceType": "OSA 光學物理期刊 (Optics InfoBase)",
+      "resourceName": "OSA 光學物理期刊 (Optics InfoBase)",
       "url": "http://proxy.osapublishing.org/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "V 理學院\nW 科技學院",
@@ -4035,9 +4035,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Oxford Scholarship Online 牛津線上學術電子書 (1800+本電子書)",
+      "resourceName": "Oxford Scholarship Online 牛津線上學術電子書 (1800+本電子書)",
       "url": "http://www.oxfordscholarship.com/",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院",
@@ -4051,9 +4051,9 @@
       "relevanceUrl": "http://nknulib.nknu.edu.tw/search*cht/?searchtype=a&searcharg=Oxford+University+Press&SUBMIT="
     },
     {
-      "resourceType": "The Oxford Journals Archive (ODJA) 牛津期刊回溯資料庫",
+      "resourceName": "The Oxford Journals Archive (ODJA) 牛津期刊回溯資料庫",
       "url": "http://www.chiuru.com.tw/ojdatw/index.php?option=com_content&view=article&id=59",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院\nU 文學院",
@@ -4067,9 +4067,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Past Masters 哲學主題資料庫(法文版)",
+      "resourceName": "Past Masters 哲學主題資料庫(法文版)",
       "url": "http://pm.nlx.com/xtf/search?browse-collections=true",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院",
@@ -4083,9 +4083,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/PasT Masters_intro.pdf\nhttp://140.127.53.222/lib/files/PasT Masters_PPT.pdf"
     },
     {
-      "resourceType": "Periodicals Archive Online Collection 6 （PAO 6）19-20 世紀典藏人文社會學術期刊全文資料庫",
+      "resourceName": "Periodicals Archive Online Collection 6 （PAO 6）19-20 世紀典藏人文社會學術期刊全文資料庫",
       "url": "http://huso.stpi.narl.org.tw/husoc/husokm?00D41A690000000000000000000013600000001E000000000",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
@@ -4099,9 +4099,9 @@
       "relevanceUrl": "http://www.tbmc.com.tw/NSC/Download/PAO/PAO_1-6_Jun_2010.ppt\nhttp://www.tbmc.com.tw/NSC/Download/PAO/PAO6-titles.xls"
     },
     {
-      "resourceType": "Professional Development Collection(併入EBSCOhost 全文資料庫平台)",
+      "resourceName": "Professional Development Collection(併入EBSCOhost 全文資料庫平台)",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "T 教育學院",
@@ -4115,9 +4115,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "ProQuest Dissertations & Theses: A&I (PQDT)(1639-) 美加地區博碩士論文",
+      "resourceName": "ProQuest Dissertations & Theses: A&I (PQDT)(1639-) 美加地區博碩士論文",
       "url": "https://search.proquest.com/pqdt?accountid=7990",
-      "resourceType__1": "聯盟提供(年度)",
+      "resourceType": "聯盟提供(年度)",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4131,9 +4131,9 @@
       "relevanceUrl": "http://pqdd.sinica.edu.tw/twdaoapp/basic"
     },
     {
-      "resourceType": "Reaxys化學資料庫(持續以全國學術版方式提供使用至2019年1月底)",
+      "resourceName": "Reaxys化學資料庫(持續以全國學術版方式提供使用至2019年1月底)",
       "url": "https://www.reaxys.com/",
-      "resourceType__1": "聯盟提供(年度)",
+      "resourceType": "聯盟提供(年度)",
       "startDate": "",
       "expireDate": "2019/12/31",
       "faculty": "V 理學院",
@@ -4147,9 +4147,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Regional Business News(併入EBSCOhost 全文資料庫平台)",
+      "resourceName": "Regional Business News(併入EBSCOhost 全文資料庫平台)",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "T 教育學院",
@@ -4163,9 +4163,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "RSC(Royal Society of Chemistry) & RSC Journals Archives(化學推動中心)",
+      "resourceName": "RSC(Royal Society of Chemistry) & RSC Journals Archives(化學推動中心)",
       "url": "http://www.rsc.org/Publishing/",
-      "resourceType__1": "聯盟提供(年度)",
+      "resourceType": "聯盟提供(年度)",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "V 理學院",
@@ -4179,9 +4179,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SAGE eReference (電子書) /本館目前訂購47種電子書。",
+      "resourceName": "SAGE eReference (電子書) /本館目前訂購47種電子書。",
       "url": "http://sage-ereference.com/",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院",
@@ -4195,9 +4195,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Schillers Werke im WWW (德文版)",
+      "resourceName": "Schillers Werke im WWW (德文版)",
       "url": "http://schiller.chadwyck.co.uk",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "U 文學院",
@@ -4211,9 +4211,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/Schillers_Werke.pdf"
     },
     {
-      "resourceType": "Science Direct (又稱SDOL)__支援 ipad、Android 及 Kindle閱讀器",
+      "resourceName": "Science Direct (又稱SDOL)__支援 ipad、Android 及 Kindle閱讀器",
       "url": "http://www.sciencedirect.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nV 理學院\nW 科技學院",
@@ -4227,9 +4227,9 @@
       "relevanceUrl": "http://taiwan1.elsevier.com/ElsevierDNN/%E7%94%A2%E5%93%81/%E7%B7%9A%E4%B8%8A%E7%94%A2%E5%93%81/SciVerseScienceDirect/tabid/439/Default.aspx\nhttp://taiwan1.elsevier.com/ElsevierDNN/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BElsevier%E8%B3%87%E6%96%99%E5%BA%AB/SciVerseScienceDirect/tabid/1954/Default.aspx"
     },
     {
-      "resourceType": "SDOS (ScienceDirect Onsite)",
+      "resourceName": "SDOS (ScienceDirect Onsite)",
       "url": "http://sdos.ejournal.ascc.net/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院\nV 理學院\nW 科技學院",
@@ -4243,9 +4243,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SIAM eBooks  (電子書) /本館目前訂購323種電子書",
+      "resourceName": "SIAM eBooks  (電子書) /本館目前訂購323種電子書",
       "url": "http://www.igpublish.com/siam-ebook",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "V 理學院\nW 科技學院",
@@ -4259,9 +4259,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SpringerLink英文電子書資料庫(本館目前訂購3430種電子書)",
+      "resourceName": "SpringerLink英文電子書資料庫(本館目前訂購3430種電子書)",
       "url": "https://link.springer.com/",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4275,9 +4275,9 @@
       "relevanceUrl": "http://nknulib.nknu.edu.tw/search*cht/a?searchtype=a&SORT=D&searcharg=SpringerLink&submit.x=29&submit.y=14&submit=Submit"
     },
     {
-      "resourceType": "The Serials Directory(併入EBSCOhost 全文資料庫平台)",
+      "resourceName": "The Serials Directory(併入EBSCOhost 全文資料庫平台)",
       "url": "http://search.ebscohost.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4291,9 +4291,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Teacher Reference Cente",
+      "resourceName": "Teacher Reference Cente",
       "url": "http://search.ebscohost.com",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "T 教育學院",
@@ -4307,9 +4307,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Tech Science Press 電子期刊",
+      "resourceName": "Tech Science Press 電子期刊",
       "url": "http://www.techscience.com/academic.html",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2012/12/31",
       "faculty": "V 理學院\nW 科技學院",
@@ -4323,9 +4323,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Wiley Online Library",
+      "resourceName": "Wiley Online Library",
       "url": "https://onlinelibrary.wiley.com/",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4339,9 +4339,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "WilsonWeb - OmniFile Full Text Select 改平台EBSCOhost - OmniFile Full Text Select  # ebsco",
+      "resourceName": "WilsonWeb - OmniFile Full Text Select 改平台EBSCOhost - OmniFile Full Text Select  # ebsco",
       "url": "http://search.ebscohost.com/login.aspx?profile=wilson",
-      "resourceType__1": "聯盟提供(年度)",
+      "resourceType": "聯盟提供(年度)",
       "startDate": "",
       "expireDate": "2019/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4355,9 +4355,9 @@
       "relevanceUrl": "http://www.stpi.narl.org.tw/fdb/wilson/index.html"
     },
     {
-      "resourceType": "World Public Library電子書資料庫",
+      "resourceName": "World Public Library電子書資料庫",
       "url": "http://community.ebooklibrary.org/?AffiliateKey=Kaohsiung4",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2015/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4371,9 +4371,9 @@
       "relevanceUrl": "http://140.127.53.222/lib/files/World_Public_Library_User_Guide_001121.doc"
     },
     {
-      "resourceType": "WOS (Web of Science-SCIE& SSCI)",
+      "resourceName": "WOS (Web of Science-SCIE& SSCI)",
       "url": "https://www.isiknowledge.com/wos",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4387,10 +4387,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Acer Walking Library 電子雜誌出版服務平台 (含空中英語教室、彭蒙惠英語等12種期刊)",
+      "resourceName": "Acer Walking Library 電子雜誌出版服務平台 (含空中英語教室、彭蒙惠英語等12種期刊)",
       "url": "http://edo.tw/ocp.aspx?subs_no=00063",
-      "resourceType__1": "訂購",
-      "startDate": "2014/12/04",
+      "resourceType": "訂購",
+      "startDate": "2014/12/4",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -4403,9 +4403,9 @@
       "relevanceUrl": "https://lis.nknu.edu.tw/zh/infoservices/vpn%E9%80%A3%E7%B7%9A%E6%9C%8D%E5%8B%99"
     },
     {
-      "resourceType": "IEEE Xplore _ 可於iPhone、iPad、iPod 使用(107/04/01日起改網址為 https://ieeexplore.ieee.org)",
+      "resourceName": "IEEE Xplore _ 可於iPhone、iPad、iPod 使用(107/04/01日起改網址為 https://ieeexplore.ieee.org)",
       "url": "http://ieeexplore.ieee.org",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "2013/12/23",
       "expireDate": "2020/12/31",
       "faculty": "V 理學院\nW 科技學院",
@@ -4419,11 +4419,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "World ebooks Library-Educational Resource Collection教育專輯電子書資料庫",
+      "resourceName": "World ebooks Library-Educational Resource Collection教育專輯電子書資料庫",
       "url": "http://community.ebooklibrary.org/?AffiliateKey=Kaohsiung4",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "2012/12/15",
-      "expireDate": "2013/06/14",
+      "expireDate": "2013/6/14",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
       "category": "",
@@ -4435,11 +4435,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Mental Measurements Yearbook",
+      "resourceName": "Mental Measurements Yearbook",
       "url": "http://search.ebscohost.com/login.aspx?profile=ehost&defaultdb=loh",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "2012/12/17",
-      "expireDate": "2013/06/30",
+      "expireDate": "2013/6/30",
       "faculty": "T 教育學院",
       "subject": "教育類\n社會科學類",
       "category": "",
@@ -4451,10 +4451,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "國史館台灣文獻館數位典藏整合查詢系統  #日治時期臺灣總督府公文類纂與專賣局數位化檔案資料庫(帳號：ui2531  密碼：ui7172930)",
+      "resourceName": "國史館台灣文獻館數位典藏整合查詢系統  #日治時期臺灣總督府公文類纂與專賣局數位化檔案資料庫(帳號：ui2531  密碼：ui7172930)",
       "url": "http://ds3.th.gov.tw/DS3/index.php",
-      "resourceType__1": "訂購",
-      "startDate": "2013/03/08",
+      "resourceType": "訂購",
+      "startDate": "2013/3/8",
       "expireDate": "",
       "faculty": "U 文學院",
       "subject": "人文藝術類",
@@ -4467,10 +4467,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Digital Dissertation Consortium (DDC) 數位化論文典藏聯盟 #ProQuest Dissertations & Theses: A&I (PQDT) 美加地區博碩士論文(ProQuest) (PQDT)",
+      "resourceName": "Digital Dissertation Consortium (DDC) 數位化論文典藏聯盟 #ProQuest Dissertations & Theses: A&I (PQDT) 美加地區博碩士論文(ProQuest) (PQDT)",
       "url": "http://rpa.lib.nknu.edu.tw:81/login?url=http://ddc.elib.com.tw/",
-      "resourceType__1": "訂購",
-      "startDate": "2013/03/22",
+      "resourceType": "訂購",
+      "startDate": "2013/3/22",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -4483,10 +4483,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Udn 電子書庫",
+      "resourceName": "Udn 電子書庫",
       "url": "http://reading.udn.com/lib/nknu",
-      "resourceType__1": "買斷永久使用",
-      "startDate": "2013/06/20",
+      "resourceType": "買斷永久使用",
+      "startDate": "2013/6/20",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -4499,9 +4499,9 @@
       "relevanceUrl": "http://reading.udn.com/libnew/setting_help.html"
     },
     {
-      "resourceType": "全清經解",
+      "resourceName": "全清經解",
       "url": "https://bookrecommend.nknu.edu.tw:8443/endnote/download/QuanqingSetup.exe",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "2013/10/31",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院",
@@ -4515,9 +4515,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "EndNote 書目管理軟體(版本 EndNote X9 Windows)",
+      "resourceName": "EndNote 書目管理軟體(版本 EndNote X9 Windows)",
       "url": "https://bookrecommend.nknu.edu.tw:8443/endnote/download/NKNU_WIN_EndNoteX9.zip",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "2013/11/12",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4531,10 +4531,10 @@
       "relevanceUrl": "http://www.sris.com.tw/download/EndNoteX9_QRC_Cht.pdf\nhttp://www.sris.com.tw/training/sris/EndNoteX7.asp\nhttps://bookrecommend.nknu.edu.tw:8443/endnote/download/NKNU_ENX8_Windows.zip\nhttps://bookrecommend.nknu.edu.tw:8443/endnote/download/EndNoteX8SiteInstaller.dmg\nhttp://www.customer-support.com.tw/training/sris/EndNoteX8.php\nhttp://www.customer-support.com.tw/training/sris/EndNoteX8_mac.php\nhttps://bookrecommend.nknu.edu.tw:8443/endnote/download/EndNoteX9SiteInstaller.dmg"
     },
     {
-      "resourceType": "Turnitin論文原創性比對系統",
+      "resourceName": "Turnitin論文原創性比對系統",
       "url": "https://lis.nknu.edu.tw/zh/thesis_upload/turnitin",
-      "resourceType__1": "訂購",
-      "startDate": "2015/07/01",
+      "resourceType": "訂購",
+      "startDate": "2015/7/1",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -4547,10 +4547,10 @@
       "relevanceUrl": "https://moocs.nknu.edu.tw/moodle/course/view.php?id=59"
     },
     {
-      "resourceType": "udn聯合知識庫 內含#聯合報 #經濟日報 #聯合晚報 #upaper #美洲世界日報 #民生報 #星報 #歐洲日報",
+      "resourceName": "udn聯合知識庫 內含#聯合報 #經濟日報 #聯合晚報 #upaper #美洲世界日報 #民生報 #星報 #歐洲日報",
       "url": "http://udndata.com/library/",
-      "resourceType__1": "訂購",
-      "startDate": "2014/10/01",
+      "resourceType": "訂購",
+      "startDate": "2014/10/1",
       "expireDate": "2020/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -4563,10 +4563,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "文淵閣四庫全書內聯網版(2人版) (首次安裝請先下載安裝閱讀器，設定伺服器ip位址為140.127.41.103，點選 IP 登入使用，校外使用請輸入帳號密碼「nknu」登入使用。) 使用完畢後請記得登出以利下一個使用者可以順利使用。",
+      "resourceName": "文淵閣四庫全書內聯網版(2人版) (首次安裝請先下載安裝閱讀器，設定伺服器ip位址為140.127.41.103，點選 IP 登入使用，校外使用請輸入帳號密碼「nknu」登入使用。) 使用完畢後請記得登出以利下一個使用者可以順利使用。",
       "url": "http://140.127.41.103/skqs/download/",
-      "resourceType__1": "買斷永久使用",
-      "startDate": "2014/11/07",
+      "resourceType": "買斷永久使用",
+      "startDate": "2014/11/7",
       "expireDate": "",
       "faculty": "",
       "subject": "",
@@ -4579,10 +4579,10 @@
       "relevanceUrl": "https://lis.nknu.edu.tw/zh/news_display/83-news3/353-proxy\nhttps://lis.nknu.edu.tw/zh/infoservices/vpn%E9%80%A3%E7%B7%9A%E6%9C%8D%E5%8B%99"
     },
     {
-      "resourceType": "中華數字書苑電子書 (原北大方正中文電子書) (原萬方數據庫)",
+      "resourceName": "中華數字書苑電子書 (原北大方正中文電子書) (原萬方數據庫)",
       "url": "http://www.apabi.com/cec",
-      "resourceType__1": "買斷永久使用",
-      "startDate": "2015/01/01",
+      "resourceType": "買斷永久使用",
+      "startDate": "2015/1/1",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "",
@@ -4595,10 +4595,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "RILM Abstracts of Music Literature(試用至2016/12/31止)",
+      "resourceName": "RILM Abstracts of Music Literature(試用至2016/12/31止)",
       "url": "http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=ram",
-      "resourceType__1": "試用",
-      "startDate": "2016/03/01",
+      "resourceType": "試用",
+      "startDate": "2016/3/1",
       "expireDate": "2016/12/31",
       "faculty": "",
       "subject": "綜合類",
@@ -4611,10 +4611,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Emerald Management (120 eJournal Collection)(人知所2017年停訂)",
+      "resourceName": "Emerald Management (120 eJournal Collection)(人知所2017年停訂)",
       "url": "http://www.emeraldinsight.com/",
-      "resourceType__1": "訂購",
-      "startDate": "2016/03/01",
+      "resourceType": "訂購",
+      "startDate": "2016/3/1",
       "expireDate": "2019/12/31",
       "faculty": "T 教育學院\nW 科技學院",
       "subject": "13 商業經濟管理\n商管類\n綜合類",
@@ -4627,11 +4627,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SAGE Video 學科教學影片資料庫(開放試用至2017/8/31日止）",
+      "resourceName": "SAGE Video 學科教學影片資料庫(開放試用至2017/8/31日止）",
       "url": "http://sk.sagepub.com/video",
-      "resourceType__1": "試用",
-      "startDate": "2017/06/15",
-      "expireDate": "2017/08/31",
+      "resourceType": "試用",
+      "startDate": "2017/6/15",
+      "expireDate": "2017/8/31",
       "faculty": "T 教育學院\nU 文學院",
       "subject": "教育類\n社會科學類",
       "category": "",
@@ -4643,11 +4643,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SAGE Video教育學 Education Collection",
+      "resourceName": "SAGE Video教育學 Education Collection",
       "url": "http://sk.sagepub.com/video/education",
-      "resourceType__1": "試用",
-      "startDate": "2016/03/14",
-      "expireDate": "2016/05/31",
+      "resourceType": "試用",
+      "startDate": "2016/3/14",
+      "expireDate": "2016/5/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4659,11 +4659,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SAGE Video心理諮商與治療",
+      "resourceName": "SAGE Video心理諮商與治療",
       "url": "http://sk.sagepub.com/video/counseling-psychotherapy",
-      "resourceType__1": "試用",
-      "startDate": "2016/03/14",
-      "expireDate": "2016/05/31",
+      "resourceType": "試用",
+      "startDate": "2016/3/14",
+      "expireDate": "2016/5/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4675,11 +4675,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SAGE Video心理學",
+      "resourceName": "SAGE Video心理學",
       "url": "http://sk.sagepub.com/video/psychology",
-      "resourceType__1": "試用",
-      "startDate": "2016/03/14",
-      "expireDate": "2016/05/31",
+      "resourceType": "試用",
+      "startDate": "2016/3/14",
+      "expireDate": "2016/5/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4691,11 +4691,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "eBook University Press Collection",
+      "resourceName": "eBook University Press Collection",
       "url": "http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=ehost&defaultdb=e008tww",
-      "resourceType__1": "試用",
-      "startDate": "2016/03/30",
-      "expireDate": "2016/06/30",
+      "resourceType": "試用",
+      "startDate": "2016/3/30",
+      "expireDate": "2016/6/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4707,10 +4707,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "《Man'Du漫讀》電子書整合平台(試用至2018/12/31)請用Goolge Chrome瀏覽器,試用期間開放每本書前30頁碼試閱",
+      "resourceName": "《Man'Du漫讀》電子書整合平台(試用至2018/12/31)請用Goolge Chrome瀏覽器,試用期間開放每本書前30頁碼試閱",
       "url": "http://hunteq.com/mandu.htm",
-      "resourceType__1": "試用",
-      "startDate": "2016/04/12",
+      "resourceType": "試用",
+      "startDate": "2016/4/12",
       "expireDate": "2018/12/31",
       "faculty": "",
       "subject": "",
@@ -4723,11 +4723,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "JSTOR回溯期刊全系列(試用至2016/06/30)",
+      "resourceName": "JSTOR回溯期刊全系列(試用至2016/06/30)",
       "url": "http://www.jstor.org/action/showBasicSearch",
-      "resourceType__1": "試用",
-      "startDate": "2016/04/14",
-      "expireDate": "2016/06/30",
+      "resourceType": "試用",
+      "startDate": "2016/4/14",
+      "expireDate": "2016/6/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4739,11 +4739,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Global Plants(試用至2016/06/30)",
+      "resourceName": "Global Plants(試用至2016/06/30)",
       "url": "http://plants.jstor.org/",
-      "resourceType__1": "試用",
-      "startDate": "2016/04/14",
-      "expireDate": "2016/06/30",
+      "resourceType": "試用",
+      "startDate": "2016/4/14",
+      "expireDate": "2016/6/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4755,11 +4755,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Cambridge Journals Online 劍橋大學出版社電子期刊(試用至1050531)",
+      "resourceName": "Cambridge Journals Online 劍橋大學出版社電子期刊(試用至1050531)",
       "url": "http://journals.cambridge.org/",
-      "resourceType__1": "試用",
-      "startDate": "2016/04/18",
-      "expireDate": "2016/05/31",
+      "resourceType": "試用",
+      "startDate": "2016/4/18",
+      "expireDate": "2016/5/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4771,11 +4771,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "雅昌藝術書城資料庫(開放試用至105/06/30)",
+      "resourceName": "雅昌藝術書城資料庫(開放試用至105/06/30)",
       "url": "http://ysts.artron.net/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2016/06/30",
+      "expireDate": "2016/6/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4787,9 +4787,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "國立公共資訊圖書館電子書服務平台(開放全國民眾以各公共圖書館讀者身分註冊會員後使用)",
+      "resourceName": "國立公共資訊圖書館電子書服務平台(開放全國民眾以各公共圖書館讀者身分註冊會員後使用)",
       "url": "http://ebook.nlpi.edu.tw",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -4803,9 +4803,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "圓夢繪本資料庫",
+      "resourceName": "圓夢繪本資料庫",
       "url": "http://storybook.nlpi.edu.tw",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
@@ -4819,9 +4819,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "解密圖書DNA",
+      "resourceName": "解密圖書DNA",
       "url": "http://libdna.nlpi.edu.tw",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "105/05/19",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
@@ -4835,9 +4835,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "設計師之手",
+      "resourceName": "設計師之手",
       "url": "http://digitalgallery.nlpi.edu.tw",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "X 藝術學院",
@@ -4851,9 +4851,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "電影與文學資料庫",
+      "resourceName": "電影與文學資料庫",
       "url": "http://fl.nlpi.edu.tw",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nX 藝術學院",
@@ -4867,9 +4867,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "數位典藏服務網",
+      "resourceName": "數位典藏服務網",
       "url": "http://das.nlpi.edu.tw",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院",
@@ -4883,9 +4883,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "數位典藏教材推廣網頁",
+      "resourceName": "數位典藏教材推廣網頁",
       "url": "http://earp.nlpi.edu.tw",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院",
@@ -4899,10 +4899,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Alexander Street Music Online 15種音楽資料庫 開放試用至106/12/25日止",
+      "resourceName": "Alexander Street Music Online 15種音楽資料庫 開放試用至106/12/25日止",
       "url": "http://search.alexanderstreet.com/",
-      "resourceType__1": "試用",
-      "startDate": "2016/05/27",
+      "resourceType": "試用",
+      "startDate": "2016/5/27",
       "expireDate": "2017/12/25",
       "faculty": "",
       "subject": "",
@@ -4915,11 +4915,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "聯合百科資料庫(開放試用至105/07/31止) 臺灣人社百刊",
+      "resourceName": "聯合百科資料庫(開放試用至105/07/31止) 臺灣人社百刊",
       "url": "http://db1.udpweb.com.tw/soc_trial/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2016/07/31",
+      "expireDate": "2016/7/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4931,11 +4931,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "聯合百科資料庫(開放試用至105/07/31止) 經典人文學刊庫（中研院漢學網）",
+      "resourceName": "聯合百科資料庫(開放試用至105/07/31止) 經典人文學刊庫（中研院漢學網）",
       "url": "http://sinoweb.udpweb.com.tw/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2016/07/31",
+      "expireDate": "2016/7/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4947,10 +4947,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "科技大觀園",
+      "resourceName": "科技大觀園",
       "url": "http://scitechvista.most.gov.tw/zh-tw/Home.htm",
-      "resourceType__1": "免費OA",
-      "startDate": "2016/06/14",
+      "resourceType": "免費OA",
+      "startDate": "2016/6/14",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "",
@@ -4963,11 +4963,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "天下雜誌群知識庫(七庫)開放試用至105/7/31",
+      "resourceName": "天下雜誌群知識庫(七庫)開放試用至105/7/31",
       "url": "http://new.cwk.com.tw/login_guest-cw.htm",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2016/07/31",
+      "expireDate": "2016/7/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -4979,9 +4979,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "JoVE Journal & Science Education開放試用至14/11/2016日止",
+      "resourceName": "JoVE Journal & Science Education開放試用至14/11/2016日止",
       "url": "http://www.jove.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2016/10/19",
       "expireDate": "2016/11/14",
       "faculty": "V 理學院\nW 科技學院",
@@ -4995,9 +4995,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "中華經典古籍庫 (開放試用至2016/12/31日止)",
+      "resourceName": "中華經典古籍庫 (開放試用至2016/12/31日止)",
       "url": "http://www.gujilianhe.com.cn/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2016/10/24",
       "expireDate": "2016/12/31",
       "faculty": "U 文學院",
@@ -5011,9 +5011,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "公共電視教育影音公播網(開放試用至105/12/31日止)",
+      "resourceName": "公共電視教育影音公播網(開放試用至105/12/31日止)",
       "url": "http://ptsvod.sunnystudy.com.tw",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
       "expireDate": "2016/12/31",
       "faculty": "",
@@ -5027,9 +5027,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "台灣雲端書庫@高雄(需有高市圖借書證每年可免費借60本) 電子書",
+      "resourceName": "台灣雲端書庫@高雄(需有高市圖借書證每年可免費借60本) 電子書",
       "url": "http://lib.ebookservice.tw/ks/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -5043,9 +5043,9 @@
       "relevanceUrl": "http://cdnevent.ebookservice.tw/ksmlRegister/index.html"
     },
     {
-      "resourceType": "Zotero書目管理軟體(只能在FireFox 瀏覽器環境下使用)>Firefox安裝完成後，開啟Firefox瀏覽器，輸入\"Zotero\"http://www.zotero.org/網址進行安裝。",
+      "resourceName": "Zotero書目管理軟體(只能在FireFox 瀏覽器環境下使用)>Firefox安裝完成後，開啟Firefox瀏覽器，輸入\"Zotero\"http://www.zotero.org/網址進行安裝。",
       "url": "http://www.zotero.org",
-      "resourceType__1": "免費OA\n免費OA",
+      "resourceType": "免費OA\n免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -5059,11 +5059,11 @@
       "relevanceUrl": "http://book.lib.ksu.edu.tw/blog/394/zotero-%E6%9B%B8%E7%9B%AE%E7%AE%A1%E7%90%86%E8%BB%9F%E9%AB%94"
     },
     {
-      "resourceType": "台灣文學知識庫-文訊雜誌(開放試用至106/04/20止)( ( 帳號：nknu / 密碼：nknu))",
+      "resourceName": "台灣文學知識庫-文訊雜誌(開放試用至106/04/20止)( ( 帳號：nknu / 密碼：nknu))",
       "url": "http://udndata.com/ndapp/Literature/Login",
-      "resourceType__1": "試用",
-      "startDate": "2017/02/20",
-      "expireDate": "2017/04/20",
+      "resourceType": "試用",
+      "startDate": "2017/2/20",
+      "expireDate": "2017/4/20",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5075,9 +5075,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "EBSCOhost eBook Collection (原NetLibrary)  # ebsco 電子書",
+      "resourceName": "EBSCOhost eBook Collection (原NetLibrary)  # ebsco 電子書",
       "url": "http://search.ebscohost.com/login.aspx?profile=ehost&defaultdb=NLEBK",
-      "resourceType__1": "買斷永久使用",
+      "resourceType": "買斷永久使用",
       "startDate": "",
       "expireDate": "",
       "faculty": "",
@@ -5091,9 +5091,9 @@
       "relevanceUrl": "http://nknulib.nknu.edu.tw/search*cht/X?SEARCH=(netLibrary)&SORT=D&m=z"
     },
     {
-      "resourceType": "Open Access eBooks on JSTOR",
+      "resourceName": "Open Access eBooks on JSTOR",
       "url": "http://about.jstor.org/open-access",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -5107,9 +5107,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "CiteScore (SCOPUS 期刊評鑑指標)",
+      "resourceName": "CiteScore (SCOPUS 期刊評鑑指標)",
       "url": "https://journalmetrics.scopus.com/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -5123,10 +5123,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "SkillPort 自我學習平台 開放試用至2017/10/31日止",
+      "resourceName": "SkillPort 自我學習平台 開放試用至2017/10/31日止",
       "url": "https://igrouplibrary01.skillport.com/skillportfe/login.action",
-      "resourceType__1": "試用",
-      "startDate": "2017/05/08",
+      "resourceType": "試用",
+      "startDate": "2017/5/8",
       "expireDate": "2017/10/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "",
@@ -5139,11 +5139,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "快刀 PPvS.org 中文論文抄襲比對系統((提供100點試用用完為止)",
+      "resourceName": "快刀 PPvS.org 中文論文抄襲比對系統((提供100點試用用完為止)",
       "url": "http://www.ppvs.org/v2",
-      "resourceType__1": "試用",
-      "startDate": "2017/05/10",
-      "expireDate": "2017/06/30",
+      "resourceType": "試用",
+      "startDate": "2017/5/10",
+      "expireDate": "2017/6/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
       "category": "",
@@ -5155,9 +5155,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "EBSCO探索服務解決方案（Discovery Solutions）EDS",
+      "resourceName": "EBSCO探索服務解決方案（Discovery Solutions）EDS",
       "url": "http://search.ebscohost.com/login.aspx?authtype=ip,uid&profile=eds",
-      "resourceType__1": "訂購",
+      "resourceType": "訂購",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -5171,10 +5171,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "ProQuest Central 旗艦級學術期刊全文資料庫(試用至12/31/2017止)",
+      "resourceName": "ProQuest Central 旗艦級學術期刊全文資料庫(試用至12/31/2017止)",
       "url": "https://search.proquest.com/central",
-      "resourceType__1": "試用",
-      "startDate": "2017/08/01",
+      "resourceType": "試用",
+      "startDate": "2017/8/1",
       "expireDate": "2017/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "綜合類",
@@ -5187,10 +5187,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "競業知識網 開放試用至2018年4月30日止",
+      "resourceName": "競業知識網 開放試用至2018年4月30日止",
       "url": "http://www.RMBNewsBank.com",
-      "resourceType__1": "試用",
-      "startDate": "2017/09/24",
+      "resourceType": "試用",
+      "startDate": "2017/9/24",
       "expireDate": "2018/4/30",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "",
@@ -5203,10 +5203,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Easy test 線上學習測驗＜開放試用至106/09/30日止＞歡迎多加利用！",
+      "resourceName": "Easy test 線上學習測驗＜開放試用至106/09/30日止＞歡迎多加利用！",
       "url": "http://www.lib.nknu.edu.tw/nknu/portal_f7_cnt_page.php?button_num=f7&folder_id=11&cnt_id=1580&order_field=rank&order_type=desc&search_field=&search_word=&search_field2=&search_word2=&search_field3=&search_word3=&bool1=&bool2=&search_type=1&up_page=1",
-      "resourceType__1": "試用",
-      "startDate": "2017/08/21",
+      "resourceType": "試用",
+      "startDate": "2017/8/21",
       "expireDate": "2017/09/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "",
@@ -5219,10 +5219,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "中國近代報刊 |自立晚報>開放試用至2017年10月25日止",
+      "resourceName": "中國近代報刊 |自立晚報>開放試用至2017年10月25日止",
       "url": "http://www.dhcdb.com.tw/SP/",
-      "resourceType__1": "試用",
-      "startDate": "2017/08/28",
+      "resourceType": "試用",
+      "startDate": "2017/8/28",
       "expireDate": "2017/10/25",
       "faculty": "T 教育學院\nU 文學院",
       "subject": "",
@@ -5235,11 +5235,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣引文資料庫(Taiwan Academic Citation Index, TACI)開放試用至2017年9月30日止",
+      "resourceName": "臺灣引文資料庫(Taiwan Academic Citation Index, TACI)開放試用至2017年9月30日止",
       "url": "http://award.libraryandbook.net/taci",
-      "resourceType__1": "試用",
-      "startDate": "2017/08/29",
-      "expireDate": "2017/09/30",
+      "resourceType": "試用",
+      "startDate": "2017/8/29",
+      "expireDate": "2017/9/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5251,10 +5251,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "World eBook Library(WEL)電子圖書與電子文獻資料庫 開放試用至12/31日止",
+      "resourceName": "World eBook Library(WEL)電子圖書與電子文獻資料庫 開放試用至12/31日止",
       "url": "http://Community.eBookLibrary.org/?AffiliateKey=WEL-NaKaNoUnJu30",
-      "resourceType__1": "試用",
-      "startDate": "2017/08/31",
+      "resourceType": "試用",
+      "startDate": "2017/8/31",
       "expireDate": "2017/12/31",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
       "subject": "",
@@ -5267,10 +5267,10 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "ProQuest - Arts Premium Collection 藝術資源套裝 開放試用至12/31/2017止",
+      "resourceName": "ProQuest - Arts Premium Collection 藝術資源套裝 開放試用至12/31/2017止",
       "url": "https://search.proquest.com/?accountid=7990&selectids=10000235,1000277",
-      "resourceType__1": "試用",
-      "startDate": "2017/09/06",
+      "resourceType": "試用",
+      "startDate": "2017/9/6",
       "expireDate": "2017/12/31",
       "faculty": "X 藝術學院",
       "subject": "人文藝術類",
@@ -5283,9 +5283,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "中國綜合方志庫((開放試用至106年11月21日止)",
+      "resourceName": "中國綜合方志庫((開放試用至106年11月21日止)",
       "url": "http://ccg.eastview.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "2017/10/20",
       "expireDate": "2017/11/21",
       "faculty": "U 文學院",
@@ -5299,9 +5299,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "全球專利檢索系統 Global Patent Search System",
+      "resourceName": "全球專利檢索系統 Global Patent Search System",
       "url": "https://gpss.tipo.gov.tw/",
-      "resourceType__1": "免費OA",
+      "resourceType": "免費OA",
       "startDate": "",
       "expireDate": "",
       "faculty": "T 教育學院\nU 文學院\nV 理學院\nW 科技學院\nX 藝術學院",
@@ -5315,9 +5315,9 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Dynamic Health",
+      "resourceName": "Dynamic Health",
       "url": "https://www.dynahealth.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
       "expireDate": "",
       "faculty": "",
@@ -5331,11 +5331,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "Man'Du漫讀(試用至~6/30/2019止)",
+      "resourceName": "Man'Du漫讀(試用至~6/30/2019止)",
       "url": "http://hunteq.com/mandu.htm",
-      "resourceType__1": "",
+      "resourceType": "",
       "startDate": "",
-      "expireDate": "2019/06/30",
+      "expireDate": "2019/6/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5347,11 +5347,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣學術經典資料庫(試用至~5/15/2019止)",
+      "resourceName": "臺灣學術經典資料庫(試用至~5/15/2019止)",
       "url": "http://db1.udpweb.com.tw/tac/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2019/05/15",
+      "expireDate": "2019/5/15",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5363,11 +5363,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "中國綜合方志庫(試用至~5/15/2019止)",
+      "resourceName": "中國綜合方志庫(試用至~5/15/2019止)",
       "url": "http://ccg.eastview.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2019/05/15",
+      "expireDate": "2019/5/15",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5379,11 +5379,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "中國金石總錄(試用~5/15/2019止)",
+      "resourceName": "中國金石總錄(試用~5/15/2019止)",
       "url": "http://www.ch5000.com.cn/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2019/05/15",
+      "expireDate": "2019/5/15",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5395,11 +5395,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "AISP情報顧問服務資料庫(試用至2019/04/30止)",
+      "resourceName": "AISP情報顧問服務資料庫(試用至2019/04/30止)",
       "url": "http://www.airitiplagchecker.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2019/04/30",
+      "expireDate": "2019/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5411,11 +5411,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "華藝文獻相似度檢測服務 (試用至7/31/2019止)",
+      "resourceName": "華藝文獻相似度檢測服務 (試用至7/31/2019止)",
       "url": "http://www.airitiplagchecker.com/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2019/07/31",
+      "expireDate": "2019/7/31",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5427,11 +5427,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "天下雜誌群知識庫(試用~4/30/2019止)",
+      "resourceName": "天下雜誌群知識庫(試用~4/30/2019止)",
       "url": "http://new.cwk.com.tw/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2019/04/30",
+      "expireDate": "2019/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5443,11 +5443,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "花木蘭數位資料庫(試用至04/30/2019止)",
+      "resourceName": "花木蘭數位資料庫(試用至04/30/2019止)",
       "url": "http://elib.infolinker.com.tw/login_hua.htm",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2019/04/30",
+      "expireDate": "2019/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5459,11 +5459,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "WE Online全英語環境線上即時互動課程(試用至04/30/2019止)",
+      "resourceName": "WE Online全英語環境線上即時互動課程(試用至04/30/2019止)",
       "url": "https://tutor.webenglish.tv/zh-tw/",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2019/04/30",
+      "expireDate": "2019/4/30",
       "faculty": "",
       "subject": "",
       "category": "",
@@ -5475,11 +5475,11 @@
       "relevanceUrl": ""
     },
     {
-      "resourceType": "臺灣文學知識庫(試用至~03/31/2019止)",
+      "resourceName": "臺灣文學知識庫(試用至~03/31/2019止)",
       "url": "https://udndata.com/ndapp/Literature/Login",
-      "resourceType__1": "試用",
+      "resourceType": "試用",
       "startDate": "",
-      "expireDate": "2019/03/31",
+      "expireDate": "2019/3/31",
       "faculty": "",
       "subject": "",
       "category": "",
