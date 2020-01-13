@@ -1,9 +1,8 @@
-.search-wrap {
-  padding: 10px;
-}
-
 .search-wrap .search-frame {
-  height: 30px;
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  padding: 5px;
   border: 2px solid #cccccc;
   border-radius: 50%;
 }
@@ -13,6 +12,7 @@
   height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border: none;
 }
 
 .databaseList-table {
