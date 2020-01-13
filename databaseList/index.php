@@ -3,7 +3,7 @@
 <?php
   $getJsonData = file_get_contents('eResourceList.json');
   $decodeJsonData = json_decode($getJsonData, true);
-  echo $decodeJsonData;
+  print_r($decodeJsonData);
 ?>
 <html>
 <head>
