@@ -14,7 +14,9 @@
 <body onload="init();">
   <section>
     <div id="databaseList">
-      <input type="text" class="search" placeholder="Search contact" />
+      <div class="search-frame">
+        <input type="text" class="search" placeholder="Search contact" />
+      </div>
       <table class="databaseList-table">
         <thead>
           <tr>

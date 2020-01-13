@@ -1,3 +1,20 @@
+.search-wrap {
+  padding: 10px;
+}
+
+.search-wrap .search-frame {
+  height: 30px;
+  border: 2px solid #cccccc;
+  border-radius: 50%;
+}
+
+.search-wrap .search-frame .search {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .databaseList-table {
   border: 1px solid #aaaaaa;
 }
@@ -19,6 +36,7 @@
   font-size: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 600px) {
