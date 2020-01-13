@@ -23,6 +23,7 @@
       </thead>
       <tbody class="list" id="databaseList">
 <?php
+  echo $decodeJsonData['row'];
   foreach ($decodeJsonData['row'] as $row) {
     echo '<tr>';
     echo '<td class="id" style="display:none;">1</td>';
