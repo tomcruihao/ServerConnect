@@ -35,6 +35,7 @@
 
 .databaseList-table th {
   cursor: pointer;
+  text-align: left;
 }
 
 .databaseList-table td {

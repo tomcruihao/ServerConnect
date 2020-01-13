@@ -13,6 +13,7 @@
 </head>
 <body onload="init();">
   <section>
+    <h1>資料庫列表</h1>
     <div id="databaseList">
       <div class="search-wrap">
         <div class="search-frame">
