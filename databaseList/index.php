@@ -29,7 +29,7 @@
   foreach ($decodeJsonData['rows'] as $row) {
     echo '<tr>
             <td class="id">'.$row['id'].'</td>
-            <td class="name">
+            <td class="name" data-label="test">
               <a href="'.$row['url'].'">'
                 .$row['resourceName'].
               '</a>
