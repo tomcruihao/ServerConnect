@@ -51,6 +51,11 @@ html, body {
   white-space: nowrap;
 }
 
+.databaseList-table td a {
+  color: blue;
+  text-decoration: none;
+}
+
 .pagination {
   text-align: center;
 }

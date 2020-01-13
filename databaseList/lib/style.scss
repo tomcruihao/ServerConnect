@@ -45,6 +45,11 @@ html, body{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
   }
 }
 .pagination {
