@@ -18,7 +18,7 @@
         <tr>
           <th class="sort" data-sort="id">編號</th>
           <th class="sort" data-sort="name">資源名稱</th>
-          <th class="sort" data-sort="age">類型</th>
+          <th class="sort" data-sort="type">類型</th>
           <th class="sort" data-sort="city">語文</th>
         </tr>
       </thead>
@@ -32,7 +32,7 @@
                 .$row['resourceName'].
               '</a>
             </td>
-            <td class="age">'.$row['type'].'</td>
+            <td class="type">'.$row['type'].'</td>
             <td class="city">'.$row['language'].'</td>
           </tr>';
   }
@@ -50,7 +50,7 @@
     console.log('test');
   }
   var options = {
-    valueNames: [ 'id', 'name', 'age', 'city' ],
+    valueNames: [ 'id', 'name', 'type', 'city' ],
     page: 10,
     pagination: true
   };
@@ -60,7 +60,7 @@
 
   var idField = $('#id-field'),
       nameField = $('#name-field'),
-      ageField = $('#age-field'),
+      typeField = $('#type-field'),
       cityField = $('#city-field'),
       addBtn = $('#add-btn'),
       editBtn = $('#edit-btn').hide();
@@ -72,7 +72,7 @@
     contactList.add({
       id: Math.floor(Math.random()*110000),
       name: nameField.val(),
-      age: ageField.val(),
+      type: typeField.val(),
       city: cityField.val()
     });
     clearFields();
@@ -84,7 +84,7 @@
     item.values({
       id:idField.val(),
       name: nameField.val(),
-      age: ageField.val(),
+      type: typeField.val(),
       city: cityField.val()
     });
     clearFields();
@@ -111,7 +111,7 @@
 
   function clearFields() {
     nameField.val('');
-    ageField.val('');
+    typeField.val('');
     cityField.val('');
   }
 </script>
