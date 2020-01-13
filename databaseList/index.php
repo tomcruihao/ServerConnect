@@ -94,13 +94,7 @@
 
   function refreshCallbacks() {
     // Needed to add new buttons to jQuery-extended object
-    removeBtns = $(removeBtns.selector);
     editBtns = $(editBtns.selector);
-    
-    removeBtns.click(function() {
-      var itemId = $(this).closest('tr').find('.id').text();
-      contactList.remove('id', itemId);
-    });
     
     editBtns.click(function() {
       var itemId = $(this).closest('tr').find('.id').text();
