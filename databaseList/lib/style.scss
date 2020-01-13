@@ -48,9 +48,9 @@
   text-align: center;
 
   li {
+    display:inline-block;
+    padding:5px;
     a {
-      display:inline-block;
-      padding:5px;
       color: black;
       text-decoration: none;
     }
