@@ -28,14 +28,14 @@
 <?php
   foreach ($decodeJsonData['rows'] as $row) {
     echo '<tr>
-            <td class="id">'.$row['id'].'</td>
-            <td class="name" data-label="test">
+            <td class="id" data-label="編號">'.$row['id'].'</td>
+            <td class="name" data-label="資源名稱">
               <a href="'.$row['url'].'">'
                 .$row['resourceName'].
               '</a>
             </td>
-            <td class="type">'.$row['type'].'</td>
-            <td class="city">'.$row['language'].'</td>
+            <td class="type" data-label="類型">'.$row['type'].'</td>
+            <td class="city" data-label="語文">'.$row['language'].'</td>
           </tr>';
   }
 ?>
