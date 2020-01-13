@@ -31,26 +31,12 @@
                 .$row['resourceName'].
               '</a>
             </td>
-            <td class="age">27</td>';
-    echo '<td class="city">Stockholm</td>';
-    echo '<td class="edit"><button class="edit-item-btn">Edit</button></td>';
-    echo '<td class="remove"><button class="remove-item-btn">Remove</button></td>';
-    echo '</tr>';
+            <td class="age">27</td>
+            <td class="city">Stockholm</td>
+          </tr>';
   }
 ?>
       </tbody>
-    </table>
-    <table>
-      <td class="name">
-        <input type="hidden" id="id-field" />
-        <input type="text" id="name-field" placeholder="Name" />
-      </td>
-      <td class="age">
-        <input type="text" id="age-field" placeholder="Age" />
-      </td>
-      <td class="city">
-        <input type="text" id="city-field" placeholder="City" />
-      </td>
     </table>
   </div>
 </body>
