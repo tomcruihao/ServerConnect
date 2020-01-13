@@ -10,6 +10,7 @@
 .search-wrap .search-frame .search {
   width: 100%;
   height: 100%;
+  font-size: 1.2rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   outline: none;
@@ -18,6 +19,7 @@
 
 .databaseList-table {
   width: 100%;
+  margin-top: 20px;
   border: 1px solid #aaaaaa;
 }
 
