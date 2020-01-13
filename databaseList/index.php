@@ -16,7 +16,7 @@
     <div id="databaseList">
       <div class="search-wrap">
         <div class="search-frame">
-          <input type="text" class="search" placeholder="Search contact" />
+          <input type="text" class="search" placeholder="搜尋" />
         </div>
       </div>
       <table class="databaseList-table">
