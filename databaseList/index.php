@@ -18,7 +18,7 @@
         <div class="search-frame">
           <input type="text" class="search" placeholder="Search contact" />
         </div>
-      <div>
+      </div>
       <table class="databaseList-table">
         <thead>
           <tr>
