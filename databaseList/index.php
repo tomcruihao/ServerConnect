@@ -51,10 +51,6 @@
       <td class="city">
         <input type="text" id="city-field" placeholder="City" />
       </td>
-      <td class="add">
-        <button id="add-btn">Add</button>
-        <button id="edit-btn">Edit</button>
-      </td>
     </table>
   </div>
 </body>
