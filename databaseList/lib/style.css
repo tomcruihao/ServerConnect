@@ -1,3 +1,37 @@
+.databaseList-table {
+  border: 1px solid #aaaaaa;
+}
+
+.databaseList-table caption {
+  font-size: 1.3em;
+}
+
+.databaseList-table thead {
+  border: none;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.databaseList-table tr {
+  background-color: lightgrey;
+  border-bottom: 3px solid #ddd;
+  display: block;
+  margin-bottom: .625em;
+}
+
+.databaseList-table td {
+  color: #D20B2A;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  font-size: .8em;
+  text-align: right;
+}
+
 @media screen and (max-width: 600px) {
   .databaseList-table {
     border: 0;
