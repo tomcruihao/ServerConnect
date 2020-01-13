@@ -2,14 +2,15 @@
   .search-frame {
     width: 100%;
     max-width: 500px;
-    height: 40px;
-    padding: 5px;
+    height: 30px;
+    padding: 7px;
     border: 2px solid #cccccc;
-    border-radius: 40px;
+    border-radius: 30px;
     .search {
       width: 100%;
       height: 100%;
       box-sizing: border-box;
+      outline: none;
       border: none;
     }
   }

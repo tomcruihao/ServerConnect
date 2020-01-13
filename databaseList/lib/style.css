@@ -1,10 +1,10 @@
 .search-wrap .search-frame {
   width: 100%;
   max-width: 500px;
-  height: 40px;
-  padding: 5px;
+  height: 30px;
+  padding: 7px;
   border: 2px solid #cccccc;
-  border-radius: 40px;
+  border-radius: 30px;
 }
 
 .search-wrap .search-frame .search {
@@ -12,6 +12,7 @@
   height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  outline: none;
   border: none;
 }
 
