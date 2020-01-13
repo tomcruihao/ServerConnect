@@ -9,20 +9,22 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>資料庫</title>
+  <link rel="stylesheet" type="text/css" href="lib/style.css"/>
 </head>
 <body onload="init();">
-  <div id="databaseList">
-    <input type="text" class="search" placeholder="Search contact" />
-    <table>
-      <thead>
-        <tr>
-          <th class="sort" data-sort="id">編號</th>
-          <th class="sort" data-sort="name">資源名稱</th>
-          <th class="sort" data-sort="type">類型</th>
-          <th class="sort" data-sort="city">語文</th>
-        </tr>
-      </thead>
-      <tbody class="list" id="databaseList">
+  <section>
+    <div id="databaseList">
+      <input type="text" class="search" placeholder="Search contact" />
+      <table class="databaseList-table">
+        <thead>
+          <tr>
+            <th class="sort" data-sort="id">編號</th>
+            <th class="sort" data-sort="name">資源名稱</th>
+            <th class="sort" data-sort="type">類型</th>
+            <th class="sort" data-sort="city">語文</th>
+          </tr>
+        </thead>
+        <tbody class="list" id="databaseList">
 <?php
   foreach ($decodeJsonData['rows'] as $row) {
     echo '<tr>
@@ -37,10 +39,11 @@
           </tr>';
   }
 ?>
-      </tbody>
-    </table>
-    <ul class="pagination"></ul>
-  </div>
+        </tbody>
+      </table>
+      <ul class="pagination"></ul>
+    </div>
+  </section>
 </body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
