@@ -3,6 +3,7 @@
 <?php
   $getJsonData = file_get_contents('eResourceList.json');
   $decodeJsonData = json_decode($getJsonData, true);
+  echo $decodeJsonData;
 ?>
 <html>
 <head>
@@ -23,17 +24,16 @@
       </thead>
       <tbody class="list" id="databaseList">
 <?php
-  echo $getJsonData['row'];
-  foreach ($decodeJsonData['row'] as $row) {
-    echo '<tr>';
-    echo '<td class="id" style="display:none;">1</td>';
-    echo '<td class="name">Jonny</td>';
-    echo '<td class="age">27</td>';
-    echo '<td class="city">Stockholm</td>';
-    echo '<td class="edit"><button class="edit-item-btn">Edit</button></td>';
-    echo '<td class="remove"><button class="remove-item-btn">Remove</button></td>';
-    echo '</tr>';
-  }
+  // foreach ($decodeJsonData['row'] as $row) {
+  //   echo '<tr>';
+  //   echo '<td class="id" style="display:none;">1</td>';
+  //   echo '<td class="name">Jonny</td>';
+  //   echo '<td class="age">27</td>';
+  //   echo '<td class="city">Stockholm</td>';
+  //   echo '<td class="edit"><button class="edit-item-btn">Edit</button></td>';
+  //   echo '<td class="remove"><button class="remove-item-btn">Remove</button></td>';
+  //   echo '</tr>';
+  // }
 ?>
       </tbody>
     </table>
