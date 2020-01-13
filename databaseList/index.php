@@ -32,7 +32,7 @@
                 .$row['resourceName'].
               '</a>
             </td>
-            <td class="age">27</td>
+            <td class="age">'.$row['type'].'</td>
             <td class="city">'.$row['language'].'</td>
           </tr>';
   }
