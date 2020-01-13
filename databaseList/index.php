@@ -39,6 +39,7 @@
 ?>
       </tbody>
     </table>
+    <ul class="pagination"></ul>
   </div>
 </body>
 </html>
@@ -49,7 +50,9 @@
     console.log('test');
   }
   var options = {
-    valueNames: [ 'id', 'name', 'age', 'city' ]
+    valueNames: [ 'id', 'name', 'age', 'city' ],
+    page: 3,
+    pagination: true
   };
 
   // Init list
@@ -60,9 +63,7 @@
       ageField = $('#age-field'),
       cityField = $('#city-field'),
       addBtn = $('#add-btn'),
-      editBtn = $('#edit-btn').hide(),
-      removeBtns = $('.remove-item-btn'),
-      editBtns = $('.edit-item-btn');
+      editBtn = $('#edit-btn').hide();
 
   // Sets callbacks to the buttons in the list
   refreshCallbacks();
