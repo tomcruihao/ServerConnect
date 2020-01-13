@@ -16,23 +16,24 @@
     <table>
       <thead>
         <tr>
-          <th class="sort" data-sort="name">Name</th>
-          <th class="sort" data-sort="age">Age</th>
-          <th class="sort" data-sort="city">City</th>
+          <th class="sort" data-sort="id">編號</th>
+          <th class="sort" data-sort="name">資源名稱</th>
+          <th class="sort" data-sort="age">類型</th>
+          <th class="sort" data-sort="city">語文</th>
         </tr>
       </thead>
       <tbody class="list" id="databaseList">
 <?php
   foreach ($decodeJsonData['rows'] as $row) {
     echo '<tr>
-            <td class="id" style="display:none;">'.$row['id'].'</td>
+            <td class="id">'.$row['id'].'</td>
             <td class="name">
               <a href="'.$row['url'].'">'
                 .$row['resourceName'].
               '</a>
             </td>
             <td class="age">27</td>
-            <td class="city">Stockholm</td>
+            <td class="city">'.$row['language'].'</td>
           </tr>';
   }
 ?>
