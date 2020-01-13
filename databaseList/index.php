@@ -1,13 +1,14 @@
 <!DOCTYPE xtml PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
 <?php
-  echo file_get_contents('eResourceList.json');
+  $getJsonData = file_get_contents('eResourceList.json');
   $decodeJsonData = json_decode($getJsonData, true);
 ?>
 <html>
-
 <head>
-
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>資料庫</title>
 </head>
 <body onload="init();">
   <div id="databaseList">
