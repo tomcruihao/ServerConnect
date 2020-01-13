@@ -1,11 +1,7 @@
-.search-wrap {
-  height: 30px;
-}
-
 .search-wrap .search-frame {
   width: 100%;
   max-width: 500px;
-  height: 100%;
+  height: 30px;
   padding: 7px;
   border: 2px solid #cccccc;
   border-radius: 30px;
@@ -51,6 +47,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .search-wrap .search-frame {
+    height: 40px;
+  }
   .databaseList-table {
     border: 0;
   }
