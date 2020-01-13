@@ -25,8 +25,8 @@
 <?php
   foreach ($decodeJsonData['rows'] as $row) {
     echo '<tr>';
-    echo '<td class="id" style="display:none;">1</td>';
-    echo '<td class="name">Jonny</td>';
+    echo '<td class="id" style="display:none;">'.$row['id'].'</td>';
+    echo '<td class="name">'.$row['resourceName'].'</td>';
     echo '<td class="age">27</td>';
     echo '<td class="city">Stockholm</td>';
     echo '<td class="edit"><button class="edit-item-btn">Edit</button></td>';
