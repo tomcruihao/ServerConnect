@@ -51,7 +51,7 @@
   }
   var options = {
     valueNames: [ 'id', 'name', 'age', 'city' ],
-    page: 3,
+    page: 10,
     pagination: true
   };
 
@@ -66,7 +66,7 @@
       editBtn = $('#edit-btn').hide();
 
   // Sets callbacks to the buttons in the list
-  refreshCallbacks();
+  // refreshCallbacks();
 
   addBtn.click(function() {
     contactList.add({
@@ -76,7 +76,7 @@
       city: cityField.val()
     });
     clearFields();
-    refreshCallbacks();
+    // refreshCallbacks();
   });
 
   editBtn.click(function() {
@@ -92,22 +92,22 @@
     addBtn.show();
   });
 
-  function refreshCallbacks() {
-    // Needed to add new buttons to jQuery-extended object
-    editBtns = $(editBtns.selector);
+  // function refreshCallbacks() {
+  //   // Needed to add new buttons to jQuery-extended object
+  //   editBtns = $(editBtns.selector);
     
-    editBtns.click(function() {
-      var itemId = $(this).closest('tr').find('.id').text();
-      var itemValues = contactList.get('id', itemId)[0].values();
-      idField.val(itemValues.id);
-      nameField.val(itemValues.name);
-      ageField.val(itemValues.age);
-      cityField.val(itemValues.city);
+  //   editBtns.click(function() {
+  //     var itemId = $(this).closest('tr').find('.id').text();
+  //     var itemValues = contactList.get('id', itemId)[0].values();
+  //     idField.val(itemValues.id);
+  //     nameField.val(itemValues.name);
+  //     ageField.val(itemValues.age);
+  //     cityField.val(itemValues.city);
       
-      editBtn.show();
-      addBtn.hide();
-    });
-  }
+  //     editBtn.show();
+  //     addBtn.hide();
+  //   });
+  // }
 
   function clearFields() {
     nameField.val('');
