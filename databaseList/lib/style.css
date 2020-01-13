@@ -7,9 +7,12 @@
 }
 
 .databaseList-table tr {
-  background-color: lightgrey;
   border-bottom: 3px solid #ddd;
   display: block;
+}
+
+.databaseList-table th {
+  cursor: pointer;
 }
 
 .databaseList-table td {

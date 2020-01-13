@@ -6,9 +6,12 @@
   }
                       
   tr {
-    background-color: lightgrey;
     border-bottom: 3px solid #ddd;
     display: block;
+  }
+
+  th {
+    cursor: pointer;
   }
                       
   td {
