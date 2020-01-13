@@ -70,6 +70,10 @@ html, body {
   text-decoration: none;
 }
 
+.pagination li a:active {
+  background-color: crimson;
+}
+
 @media screen and (max-width: 600px) {
   .databaseList-table {
     border: 0;

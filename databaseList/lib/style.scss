@@ -61,6 +61,9 @@ html, body{
     a {
       color: black;
       text-decoration: none;
+      &:active {
+        background-color: crimson;
+      }
     }
   }
 }
