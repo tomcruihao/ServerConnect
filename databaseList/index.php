@@ -123,10 +123,3 @@
     cityField.val('');
   }
 </script>
-<style type="text/css">
-  .pagination li {
-    display:inline-block;
-    padding:5px;
-  }
-</style>
-
