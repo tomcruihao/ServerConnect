@@ -16,6 +16,7 @@
 }
 
 .databaseList-table {
+  width: 100%;
   border: 1px solid #aaaaaa;
 }
 
@@ -32,6 +33,7 @@
 }
 
 .databaseList-table td {
+  max-width: 300px;
   border-bottom: 1px solid #ddd;
   font-size: 1rem;
   overflow: hidden;
