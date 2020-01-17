@@ -81,9 +81,8 @@
       let anchor = document.createElement('a');
       let alphabet = String.fromCharCode(65 + loop);
       let anchorText = document.createTextNode(alphabet);
-      // let alphabetQuery = `JN+${alphabet}*+OR+JN+THE+${alphabet}*+OR+JN+DER+${alphabet}*+OR+JN+DIE+${alphabet}*+OR+JN+DAS+${alphabet}*+OR+JN+LAS+${alphabet}*+OR+JN+LOS+${alphabet}*+OR+JN+LES+${alphabet}*+OR+JN+EL+${alphabet}*+OR+JN+IL+${alphabet}*+OR+JN+LA+${alphabet}*+OR+JN+LE+${alphabet}*`
       let alphabetQuery = `${alphabet}*`;
-      anchor.setAttribute('href', `${basicUrl}&bquery=${alphabetQuery}`);
+      // anchor.setAttribute('href', `${basicUrl}&bquery=${alphabetQuery}`);
       anchor.appendChild(anchorText);
       linkWrap.appendChild(anchor);
     }
