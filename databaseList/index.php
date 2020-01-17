@@ -72,7 +72,7 @@
     let numberQuery = 'JN+0*+OR+JN+1*+OR+JN+2*+OR+JN+3*+OR+JN+4*+OR+JN+5*+OR+JN+6*+OR+JN+7*+OR+JN+8*+OR+JN+9*';
     let numberAnchor = document.createElement('a');
     let numberAnchorText = document.createTextNode('0 - 9');
-    // numberAnchor.setAttribute('href', `${basicUrl}&bquery=${numberQuery}`);
+    numberAnchor.setAttribute('href', `#`);
     numberAnchor.appendChild(numberAnchorText);
     linkWrap.appendChild(numberAnchor);
 
@@ -81,8 +81,7 @@
       let anchor = document.createElement('a');
       let alphabet = String.fromCharCode(65 + loop);
       let anchorText = document.createTextNode(alphabet);
-      let alphabetQuery = `${alphabet}*`;
-      // anchor.setAttribute('href', `${basicUrl}&bquery=${alphabetQuery}`);
+      anchor.setAttribute('href', `#`);
       anchor.appendChild(anchorText);
       linkWrap.appendChild(anchor);
     }
