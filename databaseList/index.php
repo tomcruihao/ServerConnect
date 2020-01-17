@@ -72,7 +72,7 @@
     let numberQuery = 'JN+0*+OR+JN+1*+OR+JN+2*+OR+JN+3*+OR+JN+4*+OR+JN+5*+OR+JN+6*+OR+JN+7*+OR+JN+8*+OR+JN+9*';
     let numberAnchor = document.createElement('a');
     let numberAnchorText = document.createTextNode('0 - 9');
-    numberAnchor.setAttribute('href', `${basicUrl}&bquery=${numberQuery}`);
+    // numberAnchor.setAttribute('href', `${basicUrl}&bquery=${numberQuery}`);
     numberAnchor.appendChild(numberAnchorText);
     linkWrap.appendChild(numberAnchor);
 
