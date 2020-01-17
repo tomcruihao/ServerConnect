@@ -20,6 +20,7 @@
           <input type="text" class="search" placeholder="搜尋" />
         </div>
       </div>
+      <div id="atozField"></div>
       <table class="databaseList-table">
         <thead>
           <tr>
@@ -55,16 +56,70 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
   function init() {
-    console.log('test');
+    // create hyper link of a to z
+    let englishAnchor = createEnglishAnchor();
+    document.getElementById("atozField").appendChild(englishAnchor);
   }
   var options = {
     valueNames: [ 'id', 'name', 'type', 'city' ],
     page: 10,
     pagination: true
   };
+  function createEnglishAnchor() {
+    let linkWrap = document.createElement('div')
+    linkWrap.className = 'link-field';
 
+    let numberQuery = 'JN+0*+OR+JN+1*+OR+JN+2*+OR+JN+3*+OR+JN+4*+OR+JN+5*+OR+JN+6*+OR+JN+7*+OR+JN+8*+OR+JN+9*';
+    let numberAnchor = document.createElement('a');
+    let numberAnchorText = document.createTextNode('0 - 9');
+    numberAnchor.setAttribute('href', `${basicUrl}&bquery=${numberQuery}`);
+    numberAnchor.appendChild(numberAnchorText);
+    linkWrap.appendChild(numberAnchor);
+
+    // for char A to Z
+    for(let loop = 0; loop < 26; loop++) {
+      let anchor = document.createElement('a');
+      let alphabet = String.fromCharCode(65 + loop);
+      let anchorText = document.createTextNode(alphabet);
+      // let alphabetQuery = `JN+${alphabet}*+OR+JN+THE+${alphabet}*+OR+JN+DER+${alphabet}*+OR+JN+DIE+${alphabet}*+OR+JN+DAS+${alphabet}*+OR+JN+LAS+${alphabet}*+OR+JN+LOS+${alphabet}*+OR+JN+LES+${alphabet}*+OR+JN+EL+${alphabet}*+OR+JN+IL+${alphabet}*+OR+JN+LA+${alphabet}*+OR+JN+LE+${alphabet}*`
+      let alphabetQuery = `${alphabet}*`;
+      anchor.setAttribute('href', `${basicUrl}&bquery=${alphabetQuery}`);
+      anchor.appendChild(anchorText);
+      linkWrap.appendChild(anchor);
+    }
+
+    let totalAnchor = document.createElement('a');
+    let totalAnchorText = document.createTextNode('全部');
+    totalAnchor.setAttribute('href', '#');
+    totalAnchor.appendChild(totalAnchorText);
+    linkWrap.appendChild(totalAnchor);
+
+    return linkWrap
+  }
   // Init list
   var contactList = new List('databaseList', options);
+//   .on("updated", function(list) {
+//   var isFirst = list.i == 1;
+//   var isLast = list.i > list.matchingItems.length - list.page;
+
+//   // make the Prev and Nex buttons disabled on first and last pages accordingly
+//   $(".pagination-prev.disabled, .pagination-next.disabled").removeClass(
+//     "disabled"
+//   );
+//   if (isFirst) {
+//     $(".pagination-prev").addClass("disabled");
+//   }
+//   if (isLast) {
+//     $(".pagination-next").addClass("disabled");
+//   }
+
+//   // hide pagination if there one or less pages to show
+//   if (list.matchingItems.length <= perPage) {
+//     $(".pagination-wrap").hide();
+//   } else {
+//     $(".pagination-wrap").show();
+//   }
+// });
 
   var idField = $('#id-field'),
       nameField = $('#name-field'),
