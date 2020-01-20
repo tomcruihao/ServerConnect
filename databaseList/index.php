@@ -73,7 +73,7 @@
           <ul class="subject-list">
             <h3>主題</h3>
             <li>
-              <a href="javascript:searchBy('中文','city');">test</a>
+              <a href="javascript:test();">test</a>
             </li>
           </ul>
         </aside>
@@ -113,6 +113,9 @@
       }
     });
   }
+  function test() {
+    contactList.hide('city');
+  }
   function searchBy(term, field) {
     contactList.search(term, [field]);
   }
@@ -123,10 +126,6 @@
 
     element.classList.remove("mystyle");
   }
-  var options = {
-    valueNames: [ 'id', 'name', 'type', 'city' ],
-    page: 500
-  };
   function createEnglishAnchor() {
     return new Promise((resolve, reject) => {
       let linkWrap = document.createElement('div')
@@ -162,6 +161,10 @@
     })
   }
   // Init list
+  var options = {
+    valueNames: [ 'id', 'name', 'type', 'city' ],
+    page: 500
+  };
   var contactList = new List('databaseList', options);
 //   .on("updated", function(list) {
 //   var isFirst = list.i == 1;
