@@ -17,7 +17,7 @@
     <div id="databaseList">
       <div class="search-wrap">
         <div class="search-frame">
-          <input type="text" class="search" placeholder="搜尋" />
+          <input type="text" class="search" placeholder="搜尋資源" />
         </div>
       </div>
       <div class="atoz-wrap">
