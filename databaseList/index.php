@@ -88,7 +88,7 @@
   }
   var options = {
     valueNames: [ 'id', 'name', 'type', 'city' ],
-    page: 10,
+    page: 500,
     pagination: true
   };
   function createEnglishAnchor() {
@@ -103,7 +103,7 @@
       totalAnchor.addEventListener('click', searchAll, false);
       totalAnchor.appendChild(totalAnchorText);
       linkWrap.appendChild(totalAnchor);
-      
+
       // let numberQuery = 'JN+0*+OR+JN+1*+OR+JN+2*+OR+JN+3*+OR+JN+4*+OR+JN+5*+OR+JN+6*+OR+JN+7*+OR+JN+8*+OR+JN+9*';
       // let numberAnchor = document.createElement('a');
       // let numberAnchorText = document.createTextNode('0 - 9');
