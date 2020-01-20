@@ -133,9 +133,20 @@ ul {
   width: 100vw;
   height: 100vh;
   position: fixed;
+  display: flex;
   background-color: #000000;
   opacity: 0.3;
+  top: 0;
+  left: 0;
   z-index: 1000;
+
+  .dialogue-frame {
+    width: 94%;
+    min-height: 90%;
+    max-width: 600px;
+    position: absolute;
+    background-color: #ffffff;
+  }
 }
 
 @media screen and (max-width: 600px) {

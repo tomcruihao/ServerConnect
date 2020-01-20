@@ -81,7 +81,11 @@
     </div>
   </section>
   <div class="mask">
-    test
+    <div class="dialogue-frame">
+      <div class="dialogue-content">
+
+      </div>
+    </div>
   </div>
 </body>
 </html>
