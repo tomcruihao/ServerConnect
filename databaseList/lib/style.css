@@ -28,12 +28,9 @@ html, body {
 }
 
 .atoz-wrap .atoz-field .link-field a {
-  width: 30px;
-  height: 30px;
+  padding: 5px;
   margin: 5px 5px 0;
   display: inline-block;
-  line-height: 30px;
-  text-align: center;
   color: blue;
 }
 
