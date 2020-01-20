@@ -53,18 +53,21 @@
         </table>
         <aside>
           <ul class="subject-list">
-            <h3>適用系所</h3>
+            <h3>類型</h3>
             <li>
-              <a href="javascript:searchBy('中文','city');">test</a>
+              <a href="javascript:searchBy('全文資料庫','type');">全文資料庫</a>
             </li>
             <li>
-              <a href="javascript:searchBy('中文','city');">test</a>
+              <a href="javascript:searchBy('索摘資料庫','type');">索摘資料庫</a>
             </li>
             <li>
-              <a href="javascript:searchBy('中文','city');">test</a>
+              <a href="javascript:searchBy('博碩士論文','type');">博碩士論文</a>
             </li>
             <li>
-              <a href="javascript:searchBy('中文','city');">test</a>
+              <a href="javascript:searchBy('電子期刊','type');">電子期刊</a>
+            </li>
+            <li>
+              <a href="javascript:searchBy('電子書','type');">電子書</a>
             </li>
           </ul>
           <ul class="subject-list">
