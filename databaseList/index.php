@@ -55,10 +55,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
-  function init() {
+  async function init() {
     // create hyper link of a to z
-    let englishAnchor = createEnglishAnchor();
+    let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
+    Anchor.addEventListener('click', testAlert, false);
+  }
+  function testAlert() {
+    console.log('test');
   }
   var options = {
     valueNames: [ 'id', 'name', 'type', 'city' ],
@@ -66,33 +70,35 @@
     pagination: true
   };
   function createEnglishAnchor() {
-    let linkWrap = document.createElement('div')
-    linkWrap.className = 'link-field';
+    return new Promise((resolve, reject) => {
+      let linkWrap = document.createElement('div')
+      linkWrap.className = 'link-field';
 
-    let numberQuery = 'JN+0*+OR+JN+1*+OR+JN+2*+OR+JN+3*+OR+JN+4*+OR+JN+5*+OR+JN+6*+OR+JN+7*+OR+JN+8*+OR+JN+9*';
-    let numberAnchor = document.createElement('a');
-    let numberAnchorText = document.createTextNode('0 - 9');
-    numberAnchor.setAttribute('href', `#`);
-    numberAnchor.appendChild(numberAnchorText);
-    linkWrap.appendChild(numberAnchor);
+      let numberQuery = 'JN+0*+OR+JN+1*+OR+JN+2*+OR+JN+3*+OR+JN+4*+OR+JN+5*+OR+JN+6*+OR+JN+7*+OR+JN+8*+OR+JN+9*';
+      let numberAnchor = document.createElement('a');
+      let numberAnchorText = document.createTextNode('0 - 9');
+      numberAnchor.setAttribute('href', `#`);
+      numberAnchor.appendChild(numberAnchorText);
+      linkWrap.appendChild(numberAnchor);
 
-    // for char A to Z
-    for(let loop = 0; loop < 26; loop++) {
-      let anchor = document.createElement('a');
-      let alphabet = String.fromCharCode(65 + loop);
-      let anchorText = document.createTextNode(alphabet);
-      anchor.setAttribute('href', `#`);
-      anchor.appendChild(anchorText);
-      linkWrap.appendChild(anchor);
-    }
+      // for char A to Z
+      for(let loop = 0; loop < 26; loop++) {
+        let anchor = document.createElement('a');
+        let alphabet = String.fromCharCode(65 + loop);
+        let anchorText = document.createTextNode(alphabet);
+        anchor.setAttribute('href', `#`);
+        anchor.appendChild(anchorText);
+        linkWrap.appendChild(anchor);
+      }
 
-    let totalAnchor = document.createElement('a');
-    let totalAnchorText = document.createTextNode('全部');
-    totalAnchor.setAttribute('href', '#');
-    totalAnchor.appendChild(totalAnchorText);
-    linkWrap.appendChild(totalAnchor);
+      let totalAnchor = document.createElement('a');
+      let totalAnchorText = document.createTextNode('全部');
+      totalAnchor.setAttribute('href', '#');
+      totalAnchor.appendChild(totalAnchorText);
+      linkWrap.appendChild(totalAnchor);
 
-    return linkWrap
+      resolve(linkWrap)
+    })
   }
   // Init list
   var contactList = new List('databaseList', options);
