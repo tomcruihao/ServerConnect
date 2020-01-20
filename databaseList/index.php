@@ -60,7 +60,8 @@
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
   }
-  function searchAtoZ(character) {
+  function searchAtoZ(upperCharacter) {
+    let lowCharater = upperCharacter.toLowerCase();
     // console.log(param);
     // contactList.search(param);
     contactList.filter(function(item) {
@@ -68,7 +69,7 @@
       var regex = /(<([^>]+)>)/ig;
       removeTagResult = item.values().name.replace(regex, "").trim();
       console.log(removeTagResult);
-      if (removeTagResult.charAt(0) === character) {
+      if (removeTagResult.charAt(0) === upperCharacter || removeTagResult.charAt(0) === lowCharater) {
         return true;
       } else {
         return false;
