@@ -70,7 +70,9 @@
     document.getElementById("atozField").appendChild(englishAnchor);
   }
   function searchBy(term, field) {
+    console.log(`${term} and ${field}`)
     contactList.search(term, [field]);
+    // contactList.search(param);
   }
   function searchAtoZ(upperCharacter) {
     let lowCharater = upperCharacter.toLowerCase();
