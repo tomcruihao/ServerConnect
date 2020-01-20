@@ -21,10 +21,17 @@ html, body{
   }
 }
 .atoz-wrap {
+  display: flex;
+
   .atoz-title {
+    width: 100px;
+    display: flex;
     color: blue;
+    align-items: center;
+    justify-content: center;
   }
   .atoz-field {
+    flex: 1;
     .link-field {
       a {
         padding: 5px;
