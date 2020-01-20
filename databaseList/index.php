@@ -64,6 +64,7 @@
     // console.log(param);
     // contactList.search(param);
     contactList.filter(function(item) {
+      console.log(item.values().name);
       if (item.values().name.indexof(param) === 0) {
         return true;
       } else {
