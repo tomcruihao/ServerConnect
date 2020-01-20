@@ -75,6 +75,9 @@
       }
     });
   }
+  function searchAll() {
+    contactList.filter();
+  }
   var options = {
     valueNames: [ 'id', 'name', 'type', 'city' ],
     page: 10,
