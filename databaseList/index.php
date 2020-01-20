@@ -35,23 +35,22 @@
             </tr>
           </thead>
           <tbody class="list" id="databaseList">
-  <?php
-    foreach ($decodeJsonData['rows'] as $row) {
-      echo '<tr>
-              <td class="id" data-label="編號">'.$row['id'].'</td>
-              <td class="name" data-label="資源名稱">
-                <a href="'.$row['url'].'">'
-                  .$row['resourceName'].
-                '</a>
-              </td>
-              <td class="type" data-label="類型">'.$row['type'].'</td>
-              <td class="city" data-label="語文">'.$row['language'].'</td>
-            </tr>';
-    }
-  ?>
+<?php
+  foreach ($decodeJsonData['rows'] as $row) {
+    echo '<tr>
+            <td class="id" data-label="編號">'.$row['id'].'</td>
+            <td class="name" data-label="資源名稱">
+              <a href="'.$row['url'].'">'
+                .$row['resourceName'].
+              '</a>
+            </td>
+            <td class="type" data-label="類型">'.$row['type'].'</td>
+            <td class="city" data-label="語文">'.$row['language'].'</td>
+          </tr>';
+  }
+?>
           </tbody>
         </table>
-        <ul class="pagination"></ul>
       </div>
     </div>
   </section>
@@ -90,8 +89,7 @@
   }
   var options = {
     valueNames: [ 'id', 'name', 'type', 'city' ],
-    page: 500,
-    pagination: true
+    page: 500
   };
   function createEnglishAnchor() {
     return new Promise((resolve, reject) => {
