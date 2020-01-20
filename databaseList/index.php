@@ -51,6 +51,11 @@
 ?>
           </tbody>
         </table>
+        <aside>
+          <ul>
+          <a href="javascript:searchBy('test','test');">test</a>
+          </ul>
+        </aside>
       </div>
     </div>
   </section>
@@ -79,6 +84,9 @@
         return false;
       }
     });
+  }
+  function searchBy(term, field) {
+    console.log(term);
   }
   function searchAll() {
     contactList.filter();
