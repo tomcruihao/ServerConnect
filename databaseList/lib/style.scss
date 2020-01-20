@@ -73,6 +73,13 @@ ul {
     th {
       cursor: pointer;
       text-align: left;
+
+      &.asc {
+        background-color: red;
+      }
+      &.desc {
+        background-color: green;
+      }
     }
 
     td {

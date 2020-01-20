@@ -95,6 +95,14 @@ ul li {
   text-align: left;
 }
 
+.content-field .databaseList-table th.asc {
+  background-color: red;
+}
+
+.content-field .databaseList-table th.desc {
+  background-color: green;
+}
+
 .content-field .databaseList-table td {
   max-width: 300px;
   border-bottom: 1px solid #ddd;

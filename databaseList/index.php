@@ -31,7 +31,7 @@
               <th class="sort" data-sort="id">編號</th>
               <th class="sort" data-sort="name">資源名稱</th>
               <th class="sort" data-sort="type">類型</th>
-              <th class="sort" data-sort="city">語文</th>
+              <th class="sort" data-sort="lang">語文</th>
             </tr>
           </thead>
           <tbody class="list" id="databaseList">
@@ -45,7 +45,7 @@
               '</a>
             </td>
             <td class="type" data-label="類型">'.$row['type'].'</td>
-            <td class="city" data-label="語文">'.$row['language'].'</td>
+            <td class="lang" data-label="語文">'.$row['language'].'</td>
           </tr>';
   }
 ?>
@@ -162,7 +162,7 @@
   }
   // Init list
   var options = {
-    valueNames: [ 'id', 'name', 'type', 'city' ],
+    valueNames: [ 'id', 'name', 'type', 'lang' ],
     page: 500
   };
   var contactList = new List('databaseList', options);
@@ -192,7 +192,7 @@
   var idField = $('#id-field'),
       nameField = $('#name-field'),
       typeField = $('#type-field'),
-      cityField = $('#city-field'),
+      langField = $('#lang-field'),
       addBtn = $('#add-btn'),
       editBtn = $('#edit-btn').hide();
 
@@ -204,7 +204,7 @@
       id: Math.floor(Math.random()*110000),
       name: nameField.val(),
       type: typeField.val(),
-      city: cityField.val()
+      lang: langField.val()
     });
     clearFields();
     // refreshCallbacks();
@@ -216,7 +216,7 @@
       id:idField.val(),
       name: nameField.val(),
       type: typeField.val(),
-      city: cityField.val()
+      lang: langField.val()
     });
     clearFields();
     editBtn.hide();
@@ -233,7 +233,7 @@
   //     idField.val(itemValues.id);
   //     nameField.val(itemValues.name);
   //     ageField.val(itemValues.age);
-  //     cityField.val(itemValues.city);
+  //     langField.val(itemValues.lang);
       
   //     editBtn.show();
   //     addBtn.hide();
@@ -243,6 +243,6 @@
   function clearFields() {
     nameField.val('');
     typeField.val('');
-    cityField.val('');
+    langField.val('');
   }
 </script>
