@@ -32,6 +32,7 @@ html, body {
   margin: 5px 5px 0;
   display: inline-block;
   color: blue;
+  text-decoration: none;
 }
 
 .atoz-wrap .atoz-field .link-field a:active {
