@@ -60,8 +60,8 @@
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
   }
-  function testAlert() {
-    console.log('test');
+  function searchAtoZ(param) {
+    console.log(param);
   }
   var options = {
     valueNames: [ 'id', 'name', 'type', 'city' ],
@@ -86,7 +86,7 @@
         let alphabet = String.fromCharCode(65 + loop);
         let anchorText = document.createTextNode(alphabet);
         anchor.setAttribute('href', `#`);
-        anchor.addEventListener('click', testAlert, false);
+        anchor.addEventListener('click', searchAtoZ(`${alphabet}`), false);
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
       }
