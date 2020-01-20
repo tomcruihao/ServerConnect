@@ -53,7 +53,7 @@
         </table>
         <aside>
           <ul class="sub-list">
-            <a href="javascript:searchBy('city', '中文');"></a>
+            <a href="javascript:searchBy('city', '中文');">test</a>
           </ul>
         </aside>
       </div>
