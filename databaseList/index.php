@@ -114,7 +114,7 @@
     });
   }
   function test() {
-    contactList.hide('city');
+    contactList.hide();
   }
   function searchBy(term, field) {
     contactList.search(term, [field]);
