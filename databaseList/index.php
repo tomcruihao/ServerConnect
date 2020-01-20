@@ -24,17 +24,16 @@
         <div class="atoz-title">A to Z:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
-      <div class="content-field">
-        <table class="databaseList-table">
-          <thead>
-            <tr>
-              <th class="sort" data-sort="id">編號</th>
-              <th class="sort" data-sort="name">資源名稱</th>
-              <th class="sort" data-sort="type">類型</th>
-              <th class="sort" data-sort="city">語文</th>
-            </tr>
-          </thead>
-          <tbody class="list" id="databaseList">
+      <table class="databaseList-table">
+        <thead>
+          <tr>
+            <th class="sort" data-sort="id">編號</th>
+            <th class="sort" data-sort="name">資源名稱</th>
+            <th class="sort" data-sort="type">類型</th>
+            <th class="sort" data-sort="city">語文</th>
+          </tr>
+        </thead>
+        <tbody class="list" id="databaseList">
 <?php
   foreach ($decodeJsonData['rows'] as $row) {
     echo '<tr>
@@ -49,14 +48,9 @@
           </tr>';
   }
 ?>
-          </tbody>
-        </table>
-        <aside>
-          <ul class="sub-list">
-            <a href="javascript:searchBy('city', '中文');">test</a>
-          </ul>
-        </aside>
-      </div>
+        </tbody>
+      </table>
+      <ul class="pagination"></ul>
     </div>
   </section>
 </body>
@@ -69,19 +63,15 @@
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
   }
-  function searchBy(term, field) {
-    console.log(`${term} and ${field}`)
-    console.log(contactList);
-    contactList.search(term, [field]);
-    // contactList.search(param);
-  }
   function searchAtoZ(upperCharacter) {
     let lowCharater = upperCharacter.toLowerCase();
+    // console.log(param);
     // contactList.search(param);
     contactList.filter(function(item) {
       // the item includes html tag to impact the result
       var regex = /(<([^>]+)>)/ig;
       removeTagResult = item.values().name.replace(regex, "").trim();
+      console.log(removeTagResult);
       if (removeTagResult.charAt(0) === upperCharacter || removeTagResult.charAt(0) === lowCharater) {
         return true;
       } else {
@@ -93,6 +83,7 @@
     contactList.filter();
   }
   function removeClickedClass() {
+
     element.classList.remove("mystyle");
   }
   var options = {
