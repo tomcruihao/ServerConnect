@@ -24,11 +24,10 @@ html, body{
   display: flex;
 
   .atoz-title {
-    width: 100px;
+    width: 80px;
     display: flex;
     font-weight: bold;
     align-items: center;
-    justify-content: center;
   }
   .atoz-field {
     flex: 1;
@@ -39,7 +38,6 @@ html, body{
         display: inline-block;
         color: blue;
         text-decoration: none;
-        border: 1px solid #cccccc;
 
         &.clicked {
           background-color: cornflowerblue;

@@ -30,7 +30,7 @@ html, body {
 }
 
 .atoz-wrap .atoz-title {
-  width: 100px;
+  width: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,9 +38,6 @@ html, body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .atoz-wrap .atoz-field {
@@ -55,7 +52,6 @@ html, body {
   display: inline-block;
   color: blue;
   text-decoration: none;
-  border: 1px solid #cccccc;
 }
 
 .atoz-wrap .atoz-field .link-field a.clicked {
