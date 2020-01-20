@@ -71,6 +71,7 @@
   }
   function searchBy(term, field) {
     console.log(`${term} and ${field}`)
+    console.log(contactList);
     contactList.search(term, [field]);
     // contactList.search(param);
   }
