@@ -53,7 +53,7 @@
         </table>
         <aside>
           <ul>
-          <a href="javascript:searchBy('test','test');">test</a>
+          <a href="javascript:searchBy('中文','city');">test</a>
           </ul>
         </aside>
       </div>
@@ -86,7 +86,7 @@
     });
   }
   function searchBy(term, field) {
-    console.log(term);
+    contactList.search(term, [field]);
   }
   function searchAll() {
     contactList.filter();
