@@ -26,7 +26,7 @@ html, body{
   .atoz-title {
     width: 100px;
     display: flex;
-    color: blue;
+    font-weight: bold;
     align-items: center;
     justify-content: center;
   }
@@ -39,7 +39,8 @@ html, body{
         display: inline-block;
         color: blue;
         text-decoration: none;
-        
+        border: 1px solid #cccccc;
+
         &.clicked {
           background-color: cornflowerblue;
           color: #ffffff;

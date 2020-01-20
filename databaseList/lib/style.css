@@ -34,7 +34,7 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: blue;
+  font-weight: bold;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -55,6 +55,7 @@ html, body {
   display: inline-block;
   color: blue;
   text-decoration: none;
+  border: 1px solid #cccccc;
 }
 
 .atoz-wrap .atoz-field .link-field a.clicked {
