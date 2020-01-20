@@ -91,6 +91,7 @@ ul li {
 }
 
 .content-field .databaseList-table th {
+  padding-right: 10px;
   position: relative;
   cursor: pointer;
   text-align: left;
@@ -102,11 +103,11 @@ ul li {
   height: 8px;
   border-right: 2px solid #333333;
   border-bottom: 2px solid #333333;
-  -webkit-transform: rotate(315deg);
-          transform: rotate(315deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
 }
 
 .content-field .databaseList-table th.desc:after {
@@ -115,11 +116,11 @@ ul li {
   height: 8px;
   border-right: 2px solid #333333;
   border-bottom: 2px solid #333333;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: 5px;
 }
 
 .content-field .databaseList-table td {

@@ -71,6 +71,7 @@ ul {
     }
 
     th {
+      padding-right: 10px;
       position: relative;
       cursor: pointer;
       text-align: left;
@@ -82,10 +83,10 @@ ul {
           height: 8px;
           border-right: 2px solid #333333;
           border-bottom: 2px solid #333333;
-          transform: rotate(315deg);
+          transform: rotate(45deg);
           position: absolute;
-          top: 0;
-          right: 0;
+          top: 5px;
+          right: 5px;
         }
       }
       &.desc {
@@ -95,10 +96,10 @@ ul {
           height: 8px;
           border-right: 2px solid #333333;
           border-bottom: 2px solid #333333;
-          transform: rotate(135deg);
+          transform: rotate(225deg);
           position: absolute;
-          top: 0;
-          right: 0;
+          top: 5px;
+          right: 5px;
         }
       }
     }
