@@ -62,6 +62,7 @@
   }
   function searchAtoZ(param) {
     console.log(param);
+    contactList.search(param);
   }
   var options = {
     valueNames: [ 'id', 'name', 'type', 'city' ],
