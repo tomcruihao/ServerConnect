@@ -53,7 +53,7 @@
         </table>
         <aside>
           <ul class="sub-list">
-            test
+            <a href="javascript:searchBy('city', '中文');"></a>
           </ul>
         </aside>
       </div>
@@ -69,15 +69,16 @@
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
   }
+  function searchBy(term, field) {
+    contactList.search(term, [field]);
+  }
   function searchAtoZ(upperCharacter) {
     let lowCharater = upperCharacter.toLowerCase();
-    // console.log(param);
     // contactList.search(param);
     contactList.filter(function(item) {
       // the item includes html tag to impact the result
       var regex = /(<([^>]+)>)/ig;
       removeTagResult = item.values().name.replace(regex, "").trim();
-      console.log(removeTagResult);
       if (removeTagResult.charAt(0) === upperCharacter || removeTagResult.charAt(0) === lowCharater) {
         return true;
       } else {
@@ -89,7 +90,6 @@
     contactList.filter();
   }
   function removeClickedClass() {
-
     element.classList.remove("mystyle");
   }
   var options = {
