@@ -61,8 +61,15 @@
     document.getElementById("atozField").appendChild(englishAnchor);
   }
   function searchAtoZ(param) {
-    console.log(param);
-    contactList.search(param);
+    // console.log(param);
+    // contactList.search(param);
+    contactList.filter(function(item) {
+      if (item.values().name.indexof(param) === 0) {
+        return true;
+      } else {
+        return false;
+      }
+    });
   }
   var options = {
     valueNames: [ 'id', 'name', 'type', 'city' ],
