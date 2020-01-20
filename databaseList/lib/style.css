@@ -118,6 +118,15 @@ ul li {
   padding: 5px;
 }
 
+.content-field aside .subject-list h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.content-field aside .subject-list li {
+  border-bottom: 1px solid #cccccc;
+}
+
 .pagination {
   text-align: center;
 }
