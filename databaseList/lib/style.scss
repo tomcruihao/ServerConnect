@@ -71,11 +71,20 @@ ul {
     }
 
     th {
+      position: relative;
       cursor: pointer;
       text-align: left;
 
       &.asc {
-        background-color: red;
+        &:after{
+          content: " ";
+          width: 8px;
+          height: 8px;
+          border: 2px solid #000000;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
       }
       &.desc {
         background-color: green;
