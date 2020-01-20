@@ -57,7 +57,7 @@ ul li {
 
 .atoz-wrap .atoz-field .link-field a {
   padding: 5px;
-  margin: 5px 5px 0;
+  margin: 0px 5px;
   display: inline-block;
   color: blue;
   text-decoration: none;
@@ -116,6 +116,7 @@ ul li {
 
 .content-field aside .subject-list {
   border: 1px dotted #cccccc;
+  border-radius: 10px;
   padding: 5px;
 }
 
@@ -129,6 +130,7 @@ ul li {
 }
 
 .content-field aside .subject-list li a {
+  font-size: 20px;
   text-decoration: none;
   color: blue;
 }

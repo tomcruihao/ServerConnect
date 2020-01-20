@@ -41,7 +41,7 @@ ul {
     .link-field {
       a {
         padding: 5px;
-        margin: 5px 5px 0;
+        margin: 0px 5px;
         display: inline-block;
         color: blue;
         text-decoration: none;
@@ -95,6 +95,7 @@ ul {
 
     .subject-list {
       border: 1px dotted #cccccc;
+      border-radius: 10px;
       padding: 5px;
       h3 {
         margin: 0;
@@ -103,6 +104,7 @@ ul {
       li {
         border-bottom: 1px solid #cccccc;
         a {
+          font-size: 20px;
           text-decoration: none;
           color: blue;
         }
