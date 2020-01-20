@@ -80,14 +80,26 @@ ul {
           content: " ";
           width: 8px;
           height: 8px;
-          border: 2px solid #000000;
+          border-right: 2px solid #333333;
+          border-bottom: 2px solid #333333;
+          transform: rotate(315deg);
           position: absolute;
           top: 0;
           right: 0;
         }
       }
       &.desc {
-        background-color: green;
+        &:after{
+          content: " ";
+          width: 8px;
+          height: 8px;
+          border-right: 2px solid #333333;
+          border-bottom: 2px solid #333333;
+          transform: rotate(135deg);
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
       }
     }
 

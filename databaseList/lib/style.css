@@ -100,14 +100,26 @@ ul li {
   content: " ";
   width: 8px;
   height: 8px;
-  border: 2px solid #000000;
+  border-right: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.content-field .databaseList-table th.desc {
-  background-color: green;
+.content-field .databaseList-table th.desc:after {
+  content: " ";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .content-field .databaseList-table td {
