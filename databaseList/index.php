@@ -59,7 +59,6 @@
     // create hyper link of a to z
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
-    Anchor.addEventListener('click', testAlert, false);
   }
   function testAlert() {
     console.log('test');
@@ -87,6 +86,7 @@
         let alphabet = String.fromCharCode(65 + loop);
         let anchorText = document.createTextNode(alphabet);
         anchor.setAttribute('href', `#`);
+        anchor.addEventListener('click', testAlert, false);
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
       }
