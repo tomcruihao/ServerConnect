@@ -80,8 +80,8 @@
       </div>
     </div>
   </section>
-  <div class="mask">
-    <div class="dialogue-frame" style="display: none;">
+  <div class="mask" style="display: none;">
+    <div class="dialogue-frame">
       <div class="dialogue-content">
 
       </div>
