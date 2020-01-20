@@ -109,6 +109,7 @@
       let totalAnchor = document.createElement('a');
       let totalAnchorText = document.createTextNode('全部');
       totalAnchor.setAttribute('href', '#');
+      totalAnchor.addEventListener('click', searchAll, false);
       totalAnchor.appendChild(totalAnchorText);
       linkWrap.appendChild(totalAnchor);
 
