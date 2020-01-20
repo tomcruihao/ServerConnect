@@ -39,9 +39,10 @@ html, body{
         display: inline-block;
         color: blue;
         text-decoration: none;
-
-        &:active {
-          color: red;
+        
+        &.clicked {
+          background-color: cornflowerblue;
+          color: #ffffff;
         }
       }
     }

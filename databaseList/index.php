@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="atoz-wrap">
-        <div class="atoz-title">A to Z</div>
+        <div class="atoz-title">A to Z:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
       <table class="databaseList-table">
@@ -82,6 +82,10 @@
   function searchAll() {
     contactList.filter();
   }
+  function removeClickedClass() {
+
+    element.classList.remove("mystyle");
+  }
   var options = {
     valueNames: [ 'id', 'name', 'type', 'city' ],
     page: 10,
@@ -92,6 +96,14 @@
       let linkWrap = document.createElement('div')
       linkWrap.className = 'link-field';
 
+      let totalAnchor = document.createElement('a');
+      let totalAnchorText = document.createTextNode('全部');
+      totalAnchor.setAttribute('href', '#');
+      totalAnchor.className = 'clicked';
+      totalAnchor.addEventListener('click', searchAll, false);
+      totalAnchor.appendChild(totalAnchorText);
+      linkWrap.appendChild(totalAnchor);
+      
       // let numberQuery = 'JN+0*+OR+JN+1*+OR+JN+2*+OR+JN+3*+OR+JN+4*+OR+JN+5*+OR+JN+6*+OR+JN+7*+OR+JN+8*+OR+JN+9*';
       // let numberAnchor = document.createElement('a');
       // let numberAnchorText = document.createTextNode('0 - 9');
@@ -109,13 +121,6 @@
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
       }
-
-      let totalAnchor = document.createElement('a');
-      let totalAnchorText = document.createTextNode('全部');
-      totalAnchor.setAttribute('href', '#');
-      totalAnchor.addEventListener('click', searchAll, false);
-      totalAnchor.appendChild(totalAnchorText);
-      linkWrap.appendChild(totalAnchor);
 
       resolve(linkWrap)
     })

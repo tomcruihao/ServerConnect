@@ -57,8 +57,9 @@ html, body {
   text-decoration: none;
 }
 
-.atoz-wrap .atoz-field .link-field a:active {
-  color: red;
+.atoz-wrap .atoz-field .link-field a.clicked {
+  background-color: cornflowerblue;
+  color: #ffffff;
 }
 
 .databaseList-table {
