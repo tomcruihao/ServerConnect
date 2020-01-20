@@ -20,7 +20,10 @@
           <input type="text" class="search" placeholder="搜尋" />
         </div>
       </div>
-      <div id="atozField"></div>
+      <div class="atoz-wrap">
+        <div class="atoz-title">A to Z</div>
+        <div id="atozField" class="atoz-field"></div>
+      </div>
       <table class="databaseList-table">
         <thead>
           <tr>
