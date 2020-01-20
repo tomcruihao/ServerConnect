@@ -24,16 +24,17 @@
         <div class="atoz-title">A to Z:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
-      <table class="databaseList-table">
-        <thead>
-          <tr>
-            <th class="sort" data-sort="id">編號</th>
-            <th class="sort" data-sort="name">資源名稱</th>
-            <th class="sort" data-sort="type">類型</th>
-            <th class="sort" data-sort="city">語文</th>
-          </tr>
-        </thead>
-        <tbody class="list" id="databaseList">
+      <div class="content-field">
+        <table class="databaseList-table">
+          <thead>
+            <tr>
+              <th class="sort" data-sort="id">編號</th>
+              <th class="sort" data-sort="name">資源名稱</th>
+              <th class="sort" data-sort="type">類型</th>
+              <th class="sort" data-sort="city">語文</th>
+            </tr>
+          </thead>
+          <tbody class="list" id="databaseList">
 <?php
   foreach ($decodeJsonData['rows'] as $row) {
     echo '<tr>
@@ -48,9 +49,14 @@
           </tr>';
   }
 ?>
-        </tbody>
-      </table>
-      <ul class="pagination"></ul>
+          </tbody>
+        </table>
+        <aside>
+          <ul class="sub-list">
+            test
+          </ul>
+        </aside>
+      </div>
     </div>
   </section>
 </body>

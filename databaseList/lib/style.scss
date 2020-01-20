@@ -47,36 +47,43 @@ html, body{
     }
   }
 }
-.databaseList-table {
-  width: 100%;
-  margin-top: 20px;
-  border: 1px solid #aaaaaa;
-                      
-  caption {
-    font-size: 1.3em;
-  }
-                      
-  tr {
-    border-bottom: 3px solid #ddd;
-  }
+.content-field {
+  display: flex;
 
-  th {
-    cursor: pointer;
-    text-align: left;
-  }
-
-  td {
-    max-width: 300px;
-    border-bottom: 1px solid #ddd;
-    font-size: 1rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-
-    a {
-      color: blue;
-      text-decoration: none;
+  .databaseList-table {
+    flex: 1;
+    margin-top: 20px;
+    border: 1px solid #aaaaaa;
+                        
+    caption {
+      font-size: 1.3em;
     }
+                        
+    tr {
+      border-bottom: 3px solid #ddd;
+    }
+
+    th {
+      cursor: pointer;
+      text-align: left;
+    }
+
+    td {
+      max-width: 300px;
+      border-bottom: 1px solid #ddd;
+      font-size: 1rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      a {
+        color: blue;
+        text-decoration: none;
+      }
+    }
+  }
+  aside {
+    width: 200px;
   }
 }
 .pagination {

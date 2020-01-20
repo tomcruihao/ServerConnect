@@ -59,26 +59,34 @@ html, body {
   color: #ffffff;
 }
 
-.databaseList-table {
-  width: 100%;
+.content-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content-field .databaseList-table {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin-top: 20px;
   border: 1px solid #aaaaaa;
 }
 
-.databaseList-table caption {
+.content-field .databaseList-table caption {
   font-size: 1.3em;
 }
 
-.databaseList-table tr {
+.content-field .databaseList-table tr {
   border-bottom: 3px solid #ddd;
 }
 
-.databaseList-table th {
+.content-field .databaseList-table th {
   cursor: pointer;
   text-align: left;
 }
 
-.databaseList-table td {
+.content-field .databaseList-table td {
   max-width: 300px;
   border-bottom: 1px solid #ddd;
   font-size: 1rem;
@@ -87,9 +95,13 @@ html, body {
   white-space: nowrap;
 }
 
-.databaseList-table td a {
+.content-field .databaseList-table td a {
   color: blue;
   text-decoration: none;
+}
+
+.content-field aside {
+  width: 200px;
 }
 
 .pagination {
