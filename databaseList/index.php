@@ -86,7 +86,7 @@
         let alphabet = String.fromCharCode(65 + loop);
         let anchorText = document.createTextNode(alphabet);
         anchor.setAttribute('href', `#`);
-        anchor.addEventListener('click', searchAtoZ(`${alphabet}`), false);
+        anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`); }, false);
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
       }
