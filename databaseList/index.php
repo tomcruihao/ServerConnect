@@ -64,8 +64,11 @@
     // console.log(param);
     // contactList.search(param);
     contactList.filter(function(item) {
-      console.log(item.values().name.innerText);
-      if (item.values().name.indexof(param) === 0) {
+      // the item includes html tag to impact the result
+      var regex = /(<([^>]+)>)/ig;
+      removeTagResult = item.values().name.replace(regex, "");
+      console.log(removeTagResult);
+      if (removeTagResult.indexof(param) === 0) {
         return true;
       } else {
         return false;
