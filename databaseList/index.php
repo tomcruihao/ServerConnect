@@ -60,15 +60,15 @@
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
   }
-  function searchAtoZ(param) {
+  function searchAtoZ(character) {
     // console.log(param);
     // contactList.search(param);
     contactList.filter(function(item) {
       // the item includes html tag to impact the result
       var regex = /(<([^>]+)>)/ig;
-      removeTagResult = item.values().name.replace(regex, "");
+      removeTagResult = item.values().name.replace(regex, "").trim();
       console.log(removeTagResult);
-      if (removeTagResult.indexof(param) === 0) {
+      if (removeTagResult.charAt(0) === character) {
         return true;
       } else {
         return false;
