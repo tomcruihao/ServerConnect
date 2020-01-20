@@ -54,11 +54,11 @@ ul {
   }
 }
 .content-field {
+  margin-top: 20px;
   display: flex;
 
   .databaseList-table {
     flex: 1;
-    margin-top: 20px;
     border: 1px solid #aaaaaa;
                         
     caption {
@@ -91,6 +91,11 @@ ul {
   aside {
     width: 200px;
     margin-left: 15px;
+
+    .subject-list {
+      border: 1px dotted #cccccc;
+      padding: 5px;
+    }
   }
 }
 .pagination {

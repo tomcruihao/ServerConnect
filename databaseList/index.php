@@ -52,13 +52,13 @@
           </tbody>
         </table>
         <aside>
-          <ul>
+          <ul class="subject-list">
             <h3>適用系所</h3>
             <li>
               <a href="javascript:searchBy('中文','city');">test</a>
             </li>
           </ul>
-          <ul>
+          <ul class="subject-list">
             <h3>主題</h3>
             <li>
               <a href="javascript:searchBy('中文','city');">test</a>

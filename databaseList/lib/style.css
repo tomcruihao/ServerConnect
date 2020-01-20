@@ -68,6 +68,7 @@ ul li {
 }
 
 .content-field {
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,7 +78,6 @@ ul li {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  margin-top: 20px;
   border: 1px solid #aaaaaa;
 }
 
@@ -111,6 +111,11 @@ ul li {
 .content-field aside {
   width: 200px;
   margin-left: 15px;
+}
+
+.content-field aside .subject-list {
+  border: 1px dotted #cccccc;
+  padding: 5px;
 }
 
 .pagination {
