@@ -24,33 +24,35 @@
         <div class="atoz-title">A to Z:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
-      <table class="databaseList-table">
-        <thead>
-          <tr>
-            <th class="sort" data-sort="id">編號</th>
-            <th class="sort" data-sort="name">資源名稱</th>
-            <th class="sort" data-sort="type">類型</th>
-            <th class="sort" data-sort="city">語文</th>
-          </tr>
-        </thead>
-        <tbody class="list" id="databaseList">
-<?php
-  foreach ($decodeJsonData['rows'] as $row) {
-    echo '<tr>
-            <td class="id" data-label="編號">'.$row['id'].'</td>
-            <td class="name" data-label="資源名稱">
-              <a href="'.$row['url'].'">'
-                .$row['resourceName'].
-              '</a>
-            </td>
-            <td class="type" data-label="類型">'.$row['type'].'</td>
-            <td class="city" data-label="語文">'.$row['language'].'</td>
-          </tr>';
-  }
-?>
-        </tbody>
-      </table>
-      <ul class="pagination"></ul>
+      <div class="content-field">
+        <table class="databaseList-table">
+          <thead>
+            <tr>
+              <th class="sort" data-sort="id">編號</th>
+              <th class="sort" data-sort="name">資源名稱</th>
+              <th class="sort" data-sort="type">類型</th>
+              <th class="sort" data-sort="city">語文</th>
+            </tr>
+          </thead>
+          <tbody class="list" id="databaseList">
+  <?php
+    foreach ($decodeJsonData['rows'] as $row) {
+      echo '<tr>
+              <td class="id" data-label="編號">'.$row['id'].'</td>
+              <td class="name" data-label="資源名稱">
+                <a href="'.$row['url'].'">'
+                  .$row['resourceName'].
+                '</a>
+              </td>
+              <td class="type" data-label="類型">'.$row['type'].'</td>
+              <td class="city" data-label="語文">'.$row['language'].'</td>
+            </tr>';
+    }
+  ?>
+          </tbody>
+        </table>
+        <ul class="pagination"></ul>
+      </div>
     </div>
   </section>
 </body>
