@@ -23,6 +23,16 @@ html, body {
   border: none;
 }
 
+.atoz-wrap .atoz-title {
+  color: blue;
+}
+
+.atoz-wrap .atoz-field .link-field a {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
 .databaseList-table {
   width: 100%;
   margin-top: 20px;
