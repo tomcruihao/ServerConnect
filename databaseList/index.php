@@ -53,13 +53,13 @@
         </table>
         <aside>
           <ul>
-            <h3>適用系所<h3>
+            <h3>適用系所</h3>
             <li>
               <a href="javascript:searchBy('中文','city');">test</a>
             </li>
           </ul>
           <ul>
-            <h3>主題<h3>
+            <h3>主題</h3>
             <li>
               <a href="javascript:searchBy('中文','city');">test</a>
             </li>
