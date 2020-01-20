@@ -129,6 +129,14 @@ ul {
     }
   }
 }
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #000000;
+  opacity: 0.3;
+  z-index: 1000;
+}
 
 @media screen and (max-width: 600px) {
   .databaseList-table {
