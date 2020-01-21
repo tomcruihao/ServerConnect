@@ -63,7 +63,7 @@
         </table>
         <aside>
           <ul class="subject-list">
-            <h3>類型</h3>
+            <h3>主題</h3>
             <li>
               <a href="javascript:searchBy('全文資料庫','subject');">全文資料庫</a>
             </li>
@@ -81,9 +81,12 @@
             </li>
           </ul>
           <ul class="subject-list">
-            <h3>主題</h3>
+            <h3>適用學院</h3>
             <li>
-              <a href="javascript:test();">test</a>
+              <a href="javascript:searchBy('文學院','faculty');">文學院</a>
+            </li>
+            <li>
+              <a href="javascript:searchBy('藝術學院','faculty');">藝術學院</a>
             </li>
           </ul>
         </aside>
@@ -111,6 +114,7 @@
         <label>
           <input type="checkbox" name="tags" value="lang">語文
         </label>
+        <button onclick="fieldDisplay()">test</button>
       </div>
     </div>
   </div>
@@ -163,9 +167,6 @@
         return false;
       }
     });
-  }
-  function test() {
-    contactList.hide();
   }
   function searchBy(term, field) {
     contactList.search(term, [field]);
