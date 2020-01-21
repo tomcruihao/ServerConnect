@@ -94,10 +94,10 @@
     <div class="dialogue-frame">
       <div class="dialogue-content">
         <label>
-          <input type="checkbox" name="tags" value="resourceName">資源名稱
+          <input type="checkbox" name="tags" value="resourceName" checked>資源名稱
         </label>
         <label>
-          <input type="checkbox" name="tags" value="subject">主題
+          <input type="checkbox" name="tags" value="subject" checked>主題
         </label>
         <label>
           <input type="checkbox" name="tags" value="resourceType">資源類型
@@ -123,6 +123,12 @@
     // create hyper link of a to z
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
+
+    // get checked list
+    let checkList = document.getElementById("fieldDisplay");
+    checkList.querySelectorAll('input[type=checkbox]').forEach(res => {
+      console.log(res);
+    })
   }
   function searchAtoZ(upperCharacter) {
     let lowCharater = upperCharacter.toLowerCase();
