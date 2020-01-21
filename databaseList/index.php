@@ -127,7 +127,13 @@
     // get checked list
     let checkList = document.getElementById("fieldDisplay");
     checkList.querySelectorAll('input[type=checkbox]').forEach(res => {
-      console.log(res);
+      if(res.checked) {
+        console.log(res);
+        console.log('checked');
+      } else {
+        console.log(res);
+        console.log('not checked');
+      }
     })
   }
   function searchAtoZ(upperCharacter) {
