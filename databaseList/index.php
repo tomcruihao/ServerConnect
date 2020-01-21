@@ -127,17 +127,16 @@
     // get checked list
     let checkList = document.getElementById("fieldDisplay");
     checkList.querySelectorAll('input[type=checkbox]').forEach(res => {
-      if(res.checked) {
-        console.log(res);
-        console.log('checked');
-      } else {
-        console.log(res.value);
-        console.log('not checked');
-        let tempClassname = `.${res.value}`;
-        document.querySelectorAll(tempClassname).forEach(column => {
-          console.log(column);
-        })
+      // if not checked, hide the column
+      if(!res.checked) {
+        hideColumn(res.value);
       }
+    })
+  }
+  function hideColumn(colName) {
+    let tempClassname = `.${colName}`;
+    document.querySelectorAll(tempClassname).forEach(column => {
+      column.setAttribute('style', 'display: none;');
     })
   }
   function searchAtoZ(upperCharacter) {
