@@ -196,7 +196,7 @@
     console.log(dataList);
     let dataListRow = dataList.rows;
     for(index in dataListRow) {
-      if(dataListRow.id === id) {
+      if(dataListRow[index].id === id) {
         console.log(dataListRow);
         break;
       }
