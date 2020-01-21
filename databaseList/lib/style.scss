@@ -184,13 +184,14 @@ button {
     padding: 15px;
     position: absolute;
     background-color: #ffffff;
+    box-sizing: border-box;
 
     .dialogue-content {
       label {
         width: 100%;
         padding: 10px 5px;
         display: block;
-        border-bottom: 1px solid ;
+        border-bottom: 1px solid $button_color;
       }
     }
 
