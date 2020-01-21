@@ -194,9 +194,12 @@
   }
   function displayDetail(id) {
     console.log(dataList);
-    let dataListRow = dataList.row;
+    let dataListRow = dataList.rows;
     for(index in dataListRow) {
-      console.log(dataListRow[index]);
+      if(dataListRow.id === id) {
+        console.log(dataListRow);
+        break;
+      }
     }
   }
   function searchAll() {
