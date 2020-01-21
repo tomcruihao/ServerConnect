@@ -124,14 +124,23 @@
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
 
+    // get unchecked list and hide columns
+    let uncheckList = getUnCheckedlist();
+    for(let index in uncheckList) {
+      hideColumn(uncheckList[index]);
+    }
+  }
+  function getUnCheckedlist() {
     // get checked list
+    let result = [];
     let checkList = document.getElementById("fieldDisplay");
     checkList.querySelectorAll('input[type=checkbox]').forEach(res => {
       // if not checked, hide the column
       if(!res.checked) {
-        hideColumn(res.value);
+        result.push(res.value);
       }
     })
+    return result;
   }
   function hideColumn(colName) {
     let tempClassname = `.${colName}`;
