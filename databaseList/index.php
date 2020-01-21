@@ -24,8 +24,10 @@
         <div class="atoz-title">A to Z:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
-      <div class="content-field">
+      <div class="btn-wrap">
         <button onclick="fieldToggle()">test</button>
+      </div>
+      <div class="content-field">
         <table class="databaseList-table">
           <thead>
             <tr>

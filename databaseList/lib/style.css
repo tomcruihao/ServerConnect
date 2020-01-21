@@ -74,6 +74,20 @@ button {
   color: #ffffff;
 }
 
+.btn-wrap {
+  width: 100%;
+  margin-top: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.btn-wrap button {
+  width: 150px;
+  height: 38px;
+  background-color: #4CAF50;
+  color: #ffffff;
+}
+
 .content-field {
   margin-top: 20px;
   display: -webkit-box;

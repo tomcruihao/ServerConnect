@@ -62,6 +62,18 @@ button {
     }
   }
 }
+.btn-wrap {
+  width: 100%;
+  margin-top: 15px;
+  box-sizing: border-box;
+
+  button {
+    width: 150px;
+    height: 38px;
+    background-color: $button_color;
+    color: #ffffff;
+  }
+}
 .content-field {
   margin-top: 20px;
   display: flex;
