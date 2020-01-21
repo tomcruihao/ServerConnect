@@ -215,11 +215,15 @@ button {
 
 .mask .dialogue-frame .dialogue-content label {
   width: 100%;
+  padding: 10px 5px;
+  display: block;
+  border-bottom: 1px solid;
 }
 
 .mask .dialogue-frame button {
   width: 150px;
   height: 38px;
+  margin: 0 auto;
   background-color: #4CAF50;
   color: #ffffff;
 }
