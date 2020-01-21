@@ -28,7 +28,7 @@
         <table class="databaseList-table">
           <thead>
             <tr>
-              <th class="sort" data-sort="name">資源名稱</th>
+              <th class="sort resourceName" data-sort="resourceName">資源名稱</th>
               <th class="sort" data-sort="type">類型</th>
               <th class="sort" data-sort="lang">語文</th>
             </tr>
@@ -37,7 +37,7 @@
 <?php
   foreach ($decodeJsonData['rows'] as $row) {
     echo '<tr>
-            <td class="name" data-label="資源名稱">
+            <td class="resourceName" data-label="資源名稱">
               <a href="'.$row['url'].'">'
                 .$row['resourceName'].
               '</a>
@@ -102,7 +102,7 @@
     contactList.filter(function(item) {
       // the item includes html tag to impact the result
       var regex = /(<([^>]+)>)/ig;
-      removeTagResult = item.values().name.replace(regex, "").trim();
+      removeTagResult = item.values().resourceName.replace(regex, "").trim();
       console.log(removeTagResult);
       if (removeTagResult.charAt(0) === upperCharacter || removeTagResult.charAt(0) === lowCharater) {
         return true;
@@ -160,7 +160,7 @@
   }
   // Init list
   var options = {
-    valueNames: [ 'name', 'type', 'lang' ],
+    valueNames: [ 'resourceName', 'type', 'lang' ],
     page: 500
   };
   var contactList = new List('databaseList', options);
