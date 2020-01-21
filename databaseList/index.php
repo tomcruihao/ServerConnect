@@ -195,6 +195,10 @@
   function displayDetail(id) {
     console.log(id);
   }
+  function searchAll() {
+    // remove all conditions
+    contactList.filter();
+  }
   function createEnglishAnchor() {
     return new Promise((resolve, reject) => {
       let linkWrap = document.createElement('div')
