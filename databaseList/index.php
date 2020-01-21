@@ -140,6 +140,18 @@
       hideColumn(uncheckList[index]);
     }
   }
+  function showField() {
+    // init all columns
+    document.querySelectorAll('td').forEach(res => {
+      res.removeAttribute("style");
+    });
+
+    // get unchecked list and hide columns
+    let uncheckList = getUnCheckedlist();
+    for(let index in uncheckList) {
+      hideColumn(uncheckList[index]);
+    }
+  }
   function getUnCheckedlist() {
     // get checked list
     let result = [];
