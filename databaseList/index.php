@@ -131,8 +131,12 @@
         console.log(res);
         console.log('checked');
       } else {
-        console.log(res);
+        console.log(res.value);
         console.log('not checked');
+        let tempClassname = `.${res.value}`;
+        document.querySelectorAll(tempClassname).forEach(column => {
+          console.log(column);
+        })
       }
     })
   }
