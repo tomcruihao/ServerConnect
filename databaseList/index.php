@@ -130,7 +130,7 @@
 
       </div>
       <div class="btn-frame">
-        <button onclick="detailInfoToggle('detailInfo')">關閉</button>
+        <button onclick="fieldToggle('detailInfo')">關閉</button>
       </div>
     </div>
   </div>
