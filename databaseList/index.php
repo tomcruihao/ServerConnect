@@ -26,10 +26,10 @@
       </div>
       <div class="content-field">
         <article>
+          <button class="burger-button" onclick="fieldToggle()">
+            <img src="img/list.svg"/>
+          </button>
           <table class="databaseList-table">
-            <div class="btn-frame">
-              <button onclick="fieldToggle()">test</button>
-            </div>
             <thead>
               <tr>
                 <th class="sort resourceName" data-sort="resourceName">資源名稱</th>
