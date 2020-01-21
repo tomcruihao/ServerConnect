@@ -30,12 +30,15 @@
             <tr>
               <th class="sort resourceName" data-sort="resourceName">資源名稱</th>
               <th class="sort" data-sort="type">類型</th>
+              <th class="sort resourceType" data-sort="resourceType">資源類型</th>
+              <th class="sort faculty" data-sort="faculty">學院</th>
               <th class="sort" data-sort="lang">語文</th>
             </tr>
           </thead>
           <tbody class="list" id="databaseList">
 <?php
   foreach ($decodeJsonData['rows'] as $row) {
+    // the data-label is for RWD title
     echo '<tr>
             <td class="resourceName" data-label="資源名稱">
               <a href="'.$row['url'].'">'
@@ -43,6 +46,8 @@
               '</a>
             </td>
             <td class="type" data-label="類型">'.$row['type'].'</td>
+            <td class="resourceType" data-label="資源類型">'.$row['resourceType'].'</td>
+            <td class="faculty" data-label="學院">'.$row['faculty'].'</td>
             <td class="lang" data-label="語文">'.$row['language'].'</td>
           </tr>';
   }
@@ -137,13 +142,6 @@
       totalAnchor.appendChild(totalAnchorText);
       linkWrap.appendChild(totalAnchor);
 
-      // let numberQuery = 'JN+0*+OR+JN+1*+OR+JN+2*+OR+JN+3*+OR+JN+4*+OR+JN+5*+OR+JN+6*+OR+JN+7*+OR+JN+8*+OR+JN+9*';
-      // let numberAnchor = document.createElement('a');
-      // let numberAnchorText = document.createTextNode('0 - 9');
-      // numberAnchor.setAttribute('href', `#`);
-      // numberAnchor.appendChild(numberAnchorText);
-      // linkWrap.appendChild(numberAnchor);
-
       // for char A to Z
       for(let loop = 0; loop < 26; loop++) {
         let anchor = document.createElement('a');
@@ -160,7 +158,7 @@
   }
   // Init list
   var options = {
-    valueNames: [ 'resourceName', 'type', 'lang' ],
+    valueNames: [ 'resourceName', 'type', 'resourceType', 'faculty', 'lang' ],
     page: 500
   };
   var contactList = new List('databaseList', options);
