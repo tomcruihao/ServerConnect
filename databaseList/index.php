@@ -129,7 +129,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
-  var datalist = <?php echo $getJsonData; ?>;
+  var dataList = <?php echo $getJsonData; ?>;
   async function init() {
     // create hyper link of a to z
     let englishAnchor = await createEnglishAnchor();
@@ -193,7 +193,11 @@
     contactList.search(term, [field]);
   }
   function displayDetail(id) {
-    console.log(id);
+    console.log(dataList);
+    let dataListRow = dataList.row;
+    for(index in dataListRow) {
+      console.log(dataListRow[index]);
+    }
   }
   function searchAll() {
     // remove all conditions
