@@ -120,7 +120,7 @@
         </label>
       </div>
       <div class="btn-frame">
-        <button onclick="fieldToggle()">確認</button>
+        <button onclick="showField()">確認</button>
       <div>
     </div>
   </div>
@@ -151,6 +151,9 @@
     for(let index in uncheckList) {
       hideColumn(uncheckList[index]);
     }
+
+    // close the dialogue
+    fieldToggle();
   }
   function getUnCheckedlist() {
     // get checked list
