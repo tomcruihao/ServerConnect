@@ -26,7 +26,7 @@
       </div>
       <div class="content-field">
         <article>
-          <button class="burger-button" onclick="fieldToggle()">
+          <button class="burger-button" onclick="fieldToggle('fieldDisplay')">
             <img src="img/list.svg"/>
           </button>
           <table class="databaseList-table">
@@ -124,6 +124,16 @@
       <div>
     </div>
   </div>
+  <div class="mask" id="detailInfo">
+    <div class="dialogue-frame">
+      <div class="dialogue-content">
+
+      </div>
+      <div class="btn-frame">
+        <button onclick="detailInfoToggle('detailInfo')">關閉</button>
+      <div>
+    </div>
+  </div>
 </body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -154,7 +164,15 @@
     }
 
     // close the dialogue
-    fieldToggle();
+    fieldToggle('fieldDisplay');
+  }
+  function fieldToggle(DOM_id) {
+    let element = document.getElementById(DOM_id);
+    element.classList.toggle("show");
+  }
+  function showDetail() {
+    // show the dialogue
+    fieldToggle('detailInfo');
   }
   function getUnCheckedlist() {
     // get checked list
@@ -197,7 +215,7 @@
     let dataListRow = dataList.rows;
     for(index in dataListRow) {
       if(dataListRow[index].id === id) {
-        console.log(dataListRow[index]);
+        showDetail(dataListRow[index]);
         break;
       }
     }
@@ -232,10 +250,6 @@
 
       resolve(linkWrap)
     })
-  }
-  function fieldToggle() {
-    let element = document.getElementById("fieldDisplay");
-    element.classList.toggle("show");
   }
 
   // Init list
