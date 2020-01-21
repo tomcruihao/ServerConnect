@@ -67,76 +67,78 @@ button {
   margin-top: 20px;
   display: flex;
 
-  .databaseList-table {
+  article{
     flex: 1;
-    border: 1px solid #aaaaaa;
-
-    .btn-frame {
-      width: 100%;
-      margin-top: 15px;
-      box-sizing: border-box;
-    
-      button {
-        width: 150px;
-        height: 38px;
-        background-color: $button_color;
-        color: #ffffff;
-      }
-    }
-                        
-    caption {
-      font-size: 1.3em;
-    }
-                        
-    tr {
-      border-bottom: 3px solid #ddd;
-    }
-
-    th {
-      padding-right: 10px;
-      position: relative;
-      cursor: pointer;
-      text-align: left;
-
-      &.asc {
-        &:after{
-          content: " ";
-          width: 8px;
-          height: 8px;
-          border-right: 2px solid #333333;
-          border-bottom: 2px solid #333333;
-          transform: rotate(45deg);
-          position: absolute;
-          top: 5px;
-          right: 5px;
+    .databaseList-table {
+      border: 1px solid #aaaaaa;
+  
+      .btn-frame {
+        width: 100%;
+        margin-top: 15px;
+        box-sizing: border-box;
+      
+        button {
+          width: 150px;
+          height: 38px;
+          background-color: $button_color;
+          color: #ffffff;
         }
       }
-      &.desc {
-        &:after{
-          content: " ";
-          width: 8px;
-          height: 8px;
-          border-right: 2px solid #333333;
-          border-bottom: 2px solid #333333;
-          transform: rotate(225deg);
-          position: absolute;
-          top: 10px;
-          right: 5px;
+                          
+      caption {
+        font-size: 1.3em;
+      }
+                          
+      tr {
+        border-bottom: 3px solid #ddd;
+      }
+  
+      th {
+        padding-right: 10px;
+        position: relative;
+        cursor: pointer;
+        text-align: left;
+  
+        &.asc {
+          &:after{
+            content: " ";
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid #333333;
+            border-bottom: 2px solid #333333;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 5px;
+            right: 5px;
+          }
+        }
+        &.desc {
+          &:after{
+            content: " ";
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid #333333;
+            border-bottom: 2px solid #333333;
+            transform: rotate(225deg);
+            position: absolute;
+            top: 10px;
+            right: 5px;
+          }
         }
       }
-    }
-
-    td {
-      max-width: 300px;
-      border-bottom: 1px solid #ddd;
-      font-size: 1rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      a {
-        color: blue;
-        text-decoration: none;
+  
+      td {
+        max-width: 300px;
+        border-bottom: 1px solid #ddd;
+        font-size: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+  
+        a {
+          color: blue;
+          text-decoration: none;
+        }
       }
     }
   }

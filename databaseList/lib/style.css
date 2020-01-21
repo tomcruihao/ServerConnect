@@ -81,43 +81,46 @@ button {
   display: flex;
 }
 
-.content-field .databaseList-table {
+.content-field article {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.content-field article .databaseList-table {
   border: 1px solid #aaaaaa;
 }
 
-.content-field .databaseList-table .btn-frame {
+.content-field article .databaseList-table .btn-frame {
   width: 100%;
   margin-top: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.content-field .databaseList-table .btn-frame button {
+.content-field article .databaseList-table .btn-frame button {
   width: 150px;
   height: 38px;
   background-color: #4CAF50;
   color: #ffffff;
 }
 
-.content-field .databaseList-table caption {
+.content-field article .databaseList-table caption {
   font-size: 1.3em;
 }
 
-.content-field .databaseList-table tr {
+.content-field article .databaseList-table tr {
   border-bottom: 3px solid #ddd;
 }
 
-.content-field .databaseList-table th {
+.content-field article .databaseList-table th {
   padding-right: 10px;
   position: relative;
   cursor: pointer;
   text-align: left;
 }
 
-.content-field .databaseList-table th.asc:after {
+.content-field article .databaseList-table th.asc:after {
   content: " ";
   width: 8px;
   height: 8px;
@@ -130,7 +133,7 @@ button {
   right: 5px;
 }
 
-.content-field .databaseList-table th.desc:after {
+.content-field article .databaseList-table th.desc:after {
   content: " ";
   width: 8px;
   height: 8px;
@@ -143,7 +146,7 @@ button {
   right: 5px;
 }
 
-.content-field .databaseList-table td {
+.content-field article .databaseList-table td {
   max-width: 300px;
   border-bottom: 1px solid #ddd;
   font-size: 1rem;
@@ -152,7 +155,7 @@ button {
   white-space: nowrap;
 }
 
-.content-field .databaseList-table td a {
+.content-field article .databaseList-table td a {
   color: blue;
   text-decoration: none;
 }
