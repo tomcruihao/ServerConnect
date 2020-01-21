@@ -115,7 +115,9 @@
           <input type="checkbox" name="tags" value="lang">語文
         </label>
       </div>
-      <button onclick="fieldToggle()">確認</button>
+      <div class="btn-frame">
+        <button onclick="fieldToggle()">確認</button>
+      <div>
     </div>
   </div>
 </body>

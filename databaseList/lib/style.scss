@@ -191,16 +191,22 @@ button {
         width: 100%;
         padding: 10px 5px;
         display: block;
-        border-bottom: 1px solid $button_color;
+        border-bottom: 1px solid $border_color;
+        box-sizing: border-box;
       }
     }
-
-    button {
-      width: 150px;
-      height: 38px;
-      margin: 0 auto;
-      background-color: $button_color;
-      color: #ffffff;
+    .btn-frame {
+      width: 100%;
+      margin-top: 15px;
+      box-sizing: border-box;
+      
+      button {
+        width: 150px;
+        height: 38px;
+        margin: 0 auto;
+        background-color: $button_color;
+        color: #ffffff;
+      }
     }
   }
   &.show{

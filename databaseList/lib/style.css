@@ -219,10 +219,19 @@ button {
   width: 100%;
   padding: 10px 5px;
   display: block;
-  border-bottom: 1px solid #4CAF50;
+  border-bottom: 1px solid #cccccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.mask .dialogue-frame button {
+.mask .dialogue-frame .btn-frame {
+  width: 100%;
+  margin-top: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mask .dialogue-frame .btn-frame button {
   width: 150px;
   height: 38px;
   margin: 0 auto;
