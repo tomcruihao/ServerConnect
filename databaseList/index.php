@@ -32,6 +32,7 @@
               <th class="sort subject" data-sort="subject">主題</th>
               <th class="sort resourceType" data-sort="resourceType">資源類型</th>
               <th class="sort faculty" data-sort="faculty">適用學院</th>
+              <th class="sort publisher" data-sort="publisher">出版商/代理商</th>
               <th class="sort" data-sort="lang">語文</th>
             </tr>
           </thead>
@@ -48,6 +49,7 @@
             <td class="subject" data-label="主題">'.$row['type'].'</td>
             <td class="resourceType" data-label="資源類型">'.$row['resourceType'].'</td>
             <td class="faculty" data-label="適用學院">'.$row['faculty'].'</td>
+            <td class="publisher" data-label="出版商/代理商">'.$row['publisher'].'</td>
             <td class="lang" data-label="語文">'.$row['language'].'</td>
           </tr>';
   }
