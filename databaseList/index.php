@@ -127,7 +127,18 @@
   <div class="mask" id="detailInfo">
     <div class="dialogue-frame">
       <div class="dialogue-content">
-
+        <div class="row">
+          <div class="title">資源名稱</div>
+          <div class="content" id="detail_resourceName"></div>
+        </div>
+        <div class="row">
+          <div class="title">主題</div>
+          <div class="content" id="detail_subject"></div>
+        </div>
+        <div class="row">
+          <div class="title">資源類型</div>
+          <div class="content" id="detail_resourceType"></div>
+        </div>
       </div>
       <div class="btn-frame">
         <button onclick="fieldToggle('detailInfo')">關閉</button>
@@ -172,6 +183,7 @@
   }
   function showDetail(info) {
     // show the dialogue
+    document.getElementById("detail_resourceName").innerHTML = info.resourceName;
     console.log(info);
     fieldToggle('detailInfo');
   }
