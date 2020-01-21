@@ -70,6 +70,7 @@ button {
   article{
     flex: 1;
     position: relative;
+    overflow-x: scroll;
 
     .burger-button {
       padding: 5px;
@@ -95,21 +96,21 @@ button {
           color: #ffffff;
         }
       }
-                          
+
       caption {
         font-size: 1.3em;
       }
-                          
+
       tr {
         border-bottom: 3px solid #ddd;
       }
-  
+
       th {
         padding-right: 10px;
         position: relative;
         cursor: pointer;
         text-align: left;
-  
+
         &.asc {
           &:after{
             content: " ";
@@ -123,6 +124,7 @@ button {
             right: 5px;
           }
         }
+
         &.desc {
           &:after{
             content: " ";
@@ -137,7 +139,7 @@ button {
           }
         }
       }
-  
+
       td {
         max-width: 300px;
         border-bottom: 1px solid #ddd;

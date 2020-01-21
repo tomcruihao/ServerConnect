@@ -86,6 +86,7 @@ button {
       -ms-flex: 1;
           flex: 1;
   position: relative;
+  overflow-x: scroll;
 }
 
 .content-field article .burger-button {
