@@ -164,7 +164,7 @@
   }
   // Init list
   var options = {
-    valueNames: [ 'resourceName', 'subject', 'resourceType', 'faculty', 'lang' ],
+    valueNames: [ 'resourceName', 'subject', 'resourceType', 'faculty', 'publisher', 'lang' ],
     page: 500
   };
   var contactList = new List('databaseList', options);
