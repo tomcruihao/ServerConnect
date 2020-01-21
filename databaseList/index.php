@@ -57,7 +57,7 @@
             <td class="publisher" data-label="出版商/代理商">'.$row['publisher'].'</td>
             <td class="lang" data-label="語文">'.$row['language'].'</td>
             <td>
-              <a href="javascript:searchBy('.$row['id'].');">點我查看</a>
+              <a href="javascript:displayDetail('.$row['id'].');">點我查看</a>
             </td>
           </tr>';
   }
@@ -192,12 +192,8 @@
   function searchBy(term, field) {
     contactList.search(term, [field]);
   }
-  function searchAll() {
-    contactList.filter();
-  }
-  function removeClickedClass() {
-
-    element.classList.remove("mystyle");
+  function displayDetail(id) {
+    console.log(id);
   }
   function createEnglishAnchor() {
     return new Promise((resolve, reject) => {
