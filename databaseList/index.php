@@ -52,7 +52,7 @@
             <td class="faculty" data-label="適用學院">'.$row['faculty'].'</td>
             <td class="publisher" data-label="出版商/代理商">'.$row['publisher'].'</td>
             <td class="lang" data-label="語文">'.$row['language'].'</td>
-            <td class="resourceName" data-label="資源名稱">
+            <td>
               <a href="javascript:searchBy('.$row['id'].');">點我查看</a>
             </td>
           </tr>';
@@ -89,10 +89,27 @@
       </div>
     </div>
   </section>
-  <div class="mask" style="display: none;">
+  <div class="mask">
     <div class="dialogue-frame">
       <div class="dialogue-content">
-
+        <label>
+          <input type="checkbox" name="tags" value="resourceName">資源名稱
+        </label>
+        <label>
+          <input type="checkbox" name="tags" value="subject">主題
+        </label>
+        <label>
+          <input type="checkbox" name="tags" value="resourceType">資源類型
+        </label>
+        <label>
+          <input type="checkbox" name="tags" value="faculty">適用學院
+        </label>
+        <label>
+          <input type="checkbox" name="tags" value="publisher">出版商/代理商
+        </label>
+        <label>
+          <input type="checkbox" name="tags" value="lang">語文
+        </label>
       </div>
     </div>
   </div>
