@@ -16,6 +16,9 @@ button {
   height: 38px;
   background-color: #4CAF50;
   color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .search-wrap .search-frame {
