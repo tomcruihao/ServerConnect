@@ -29,9 +29,9 @@
           <thead>
             <tr>
               <th class="sort resourceName" data-sort="resourceName">資源名稱</th>
-              <th class="sort" data-sort="type">類型</th>
+              <th class="sort subject" data-sort="subject">主題</th>
               <th class="sort resourceType" data-sort="resourceType">資源類型</th>
-              <th class="sort faculty" data-sort="faculty">學院</th>
+              <th class="sort faculty" data-sort="faculty">適用學院</th>
               <th class="sort" data-sort="lang">語文</th>
             </tr>
           </thead>
@@ -45,9 +45,9 @@
                 .$row['resourceName'].
               '</a>
             </td>
-            <td class="type" data-label="類型">'.$row['type'].'</td>
+            <td class="subject" data-label="主題">'.$row['type'].'</td>
             <td class="resourceType" data-label="資源類型">'.$row['resourceType'].'</td>
-            <td class="faculty" data-label="學院">'.$row['faculty'].'</td>
+            <td class="faculty" data-label="適用學院">'.$row['faculty'].'</td>
             <td class="lang" data-label="語文">'.$row['language'].'</td>
           </tr>';
   }
@@ -58,19 +58,19 @@
           <ul class="subject-list">
             <h3>類型</h3>
             <li>
-              <a href="javascript:searchBy('全文資料庫','type');">全文資料庫</a>
+              <a href="javascript:searchBy('全文資料庫','subject');">全文資料庫</a>
             </li>
             <li>
-              <a href="javascript:searchBy('索摘資料庫','type');">索摘資料庫</a>
+              <a href="javascript:searchBy('索摘資料庫','subject');">索摘資料庫</a>
             </li>
             <li>
-              <a href="javascript:searchBy('博碩士論文','type');">博碩士論文</a>
+              <a href="javascript:searchBy('博碩士論文','subject');">博碩士論文</a>
             </li>
             <li>
-              <a href="javascript:searchBy('電子期刊','type');">電子期刊</a>
+              <a href="javascript:searchBy('電子期刊','subject');">電子期刊</a>
             </li>
             <li>
-              <a href="javascript:searchBy('電子書','type');">電子書</a>
+              <a href="javascript:searchBy('電子書','subject');">電子書</a>
             </li>
           </ul>
           <ul class="subject-list">
@@ -158,7 +158,7 @@
   }
   // Init list
   var options = {
-    valueNames: [ 'resourceName', 'type', 'resourceType', 'faculty', 'lang' ],
+    valueNames: [ 'resourceName', 'subject', 'resourceType', 'faculty', 'lang' ],
     page: 500
   };
   var contactList = new List('databaseList', options);
