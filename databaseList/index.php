@@ -170,8 +170,9 @@
     let element = document.getElementById(DOM_id);
     element.classList.toggle("show");
   }
-  function showDetail() {
+  function showDetail(info) {
     // show the dialogue
+    console.log(info);
     fieldToggle('detailInfo');
   }
   function getUnCheckedlist() {
@@ -211,7 +212,6 @@
     contactList.search(term, [field]);
   }
   function displayDetail(id) {
-    console.log(dataList);
     let dataListRow = dataList.rows;
     for(index in dataListRow) {
       if(dataListRow[index].id === id) {
