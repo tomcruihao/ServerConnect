@@ -101,22 +101,22 @@
     <div class="dialogue-frame">
       <div class="dialogue-content">
         <label>
-          <input type="checkbox" name="tags" value="resourceName" checked>資源名稱
+          <input type="checkbox" name="tags" value="resourceName" checked> 資源名稱
         </label>
         <label>
-          <input type="checkbox" name="tags" value="subject" checked>主題
+          <input type="checkbox" name="tags" value="subject" checked> 主題
         </label>
         <label>
-          <input type="checkbox" name="tags" value="resourceType">資源類型
+          <input type="checkbox" name="tags" value="resourceType"> 資源類型
         </label>
         <label>
-          <input type="checkbox" name="tags" value="faculty">適用學院
+          <input type="checkbox" name="tags" value="faculty"> 適用學院
         </label>
         <label>
-          <input type="checkbox" name="tags" value="publisher">出版商/代理商
+          <input type="checkbox" name="tags" value="publisher"> 出版商/代理商
         </label>
         <label>
-          <input type="checkbox" name="tags" value="lang">語文
+          <input type="checkbox" name="tags" value="lang"> 語文
         </label>
       </div>
       <div class="btn-frame">
@@ -237,89 +237,11 @@
     let element = document.getElementById("fieldDisplay");
     element.classList.toggle("show");
   }
+
   // Init list
   var options = {
     valueNames: [ 'resourceName', 'subject', 'resourceType', 'faculty', 'publisher', 'lang' ],
     page: 500
   };
   var contactList = new List('databaseList', options);
-//   .on("updated", function(list) {
-//   var isFirst = list.i == 1;
-//   var isLast = list.i > list.matchingItems.length - list.page;
-
-//   // make the Prev and Nex buttons disabled on first and last pages accordingly
-//   $(".pagination-prev.disabled, .pagination-next.disabled").removeClass(
-//     "disabled"
-//   );
-//   if (isFirst) {
-//     $(".pagination-prev").addClass("disabled");
-//   }
-//   if (isLast) {
-//     $(".pagination-next").addClass("disabled");
-//   }
-
-//   // hide pagination if there one or less pages to show
-//   if (list.matchingItems.length <= perPage) {
-//     $(".pagination-wrap").hide();
-//   } else {
-//     $(".pagination-wrap").show();
-//   }
-// });
-
-  var idField = $('#id-field'),
-      nameField = $('#name-field'),
-      typeField = $('#type-field'),
-      langField = $('#lang-field'),
-      addBtn = $('#add-btn'),
-      editBtn = $('#edit-btn').hide();
-
-  // Sets callbacks to the buttons in the list
-  // refreshCallbacks();
-
-  addBtn.click(function() {
-    contactList.add({
-      id: Math.floor(Math.random()*110000),
-      name: nameField.val(),
-      type: typeField.val(),
-      lang: langField.val()
-    });
-    clearFields();
-    // refreshCallbacks();
-  });
-
-  editBtn.click(function() {
-    var item = contactList.get('id', idField.val())[0];
-    item.values({
-      id:idField.val(),
-      name: nameField.val(),
-      type: typeField.val(),
-      lang: langField.val()
-    });
-    clearFields();
-    editBtn.hide();
-    addBtn.show();
-  });
-
-  // function refreshCallbacks() {
-  //   // Needed to add new buttons to jQuery-extended object
-  //   editBtns = $(editBtns.selector);
-    
-  //   editBtns.click(function() {
-  //     var itemId = $(this).closest('tr').find('.id').text();
-  //     var itemValues = contactList.get('id', itemId)[0].values();
-  //     idField.val(itemValues.id);
-  //     nameField.val(itemValues.name);
-  //     ageField.val(itemValues.age);
-  //     langField.val(itemValues.lang);
-      
-  //     editBtn.show();
-  //     addBtn.hide();
-  //   });
-  // }
-
-  function clearFields() {
-    nameField.val('');
-    typeField.val('');
-    langField.val('');
-  }
 </script>
