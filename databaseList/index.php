@@ -33,7 +33,8 @@
               <th class="sort resourceType" data-sort="resourceType">資源類型</th>
               <th class="sort faculty" data-sort="faculty">適用學院</th>
               <th class="sort publisher" data-sort="publisher">出版商/代理商</th>
-              <th class="sort" data-sort="lang">語文</th>
+              <th class="sort lang" data-sort="lang">語文</th>
+              <th>詳細資訊</th>
             </tr>
           </thead>
           <tbody class="list" id="databaseList">
@@ -51,6 +52,9 @@
             <td class="faculty" data-label="適用學院">'.$row['faculty'].'</td>
             <td class="publisher" data-label="出版商/代理商">'.$row['publisher'].'</td>
             <td class="lang" data-label="語文">'.$row['language'].'</td>
+            <td class="resourceName" data-label="資源名稱">
+              <a href="javascript:searchBy('.$row['id'].');">點我查看</a>
+            </td>
           </tr>';
   }
 ?>
