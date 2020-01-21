@@ -72,23 +72,11 @@ button {
     position: relative;
 
     .burger-button {
-      width: 30px;
-      height: 30px;
+      padding: 5px;
+      border: 1px solid $border_color;
       position: absolute;
       top: 0;
       right: 0;
-
-      &:after{
-        content: " ";
-        width: 8px;
-        height: 8px;
-        border-right: 2px solid #333333;
-        border-bottom: 2px solid #333333;
-        transform: rotate(45deg);
-        position: absolute;
-        top: 5px;
-        right: 5px;
-      }
     }
     .databaseList-table {
       border: 1px solid #aaaaaa;
