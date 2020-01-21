@@ -25,6 +25,7 @@
         <div id="atozField" class="atoz-field"></div>
       </div>
       <div class="content-field">
+        <button onclick="fieldDisplay()">test</button>
         <table class="databaseList-table">
           <thead>
             <tr>
@@ -89,7 +90,7 @@
       </div>
     </div>
   </section>
-  <div class="mask">
+  <div class="mask" id="fieldDisplay">
     <div class="dialogue-frame">
       <div class="dialogue-content">
         <label>
@@ -178,6 +179,10 @@
 
       resolve(linkWrap)
     })
+  }
+  function fieldDisplay() {
+    let element = document.getElementById("fieldDisplay");
+    element.classList.toggle("show");
   }
   // Init list
   var options = {
