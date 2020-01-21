@@ -199,11 +199,12 @@ button {
       width: 100%;
       margin-top: 15px;
       box-sizing: border-box;
-      
+      display: flex;
+      justify-content: center;
+
       button {
         width: 150px;
         height: 38px;
-        margin: 0 auto;
         background-color: $button_color;
         color: #ffffff;
       }

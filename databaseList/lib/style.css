@@ -229,12 +229,17 @@ button {
   margin-top: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .mask .dialogue-frame .btn-frame button {
   width: 150px;
   height: 38px;
-  margin: 0 auto;
   background-color: #4CAF50;
   color: #ffffff;
 }
