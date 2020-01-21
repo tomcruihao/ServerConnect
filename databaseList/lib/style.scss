@@ -1,3 +1,5 @@
+$button_color: #4CAF50;
+
 html, body{
   font-family: 'Microsoft JhengHei', 'sans-serif';
 }
@@ -7,6 +9,12 @@ ul {
   li {
     list-style-type: none;
   }
+}
+button {
+  width: 150px;
+  height: 38px;
+  background-color: $button_color;
+  color: #ffffff;
 }
 .search-wrap {
   .search-frame {
@@ -172,7 +180,6 @@ ul {
 
   .dialogue-frame {
     width: 94%;
-    min-height: 90%;
     max-width: 600px;
     position: absolute;
     background-color: #ffffff;

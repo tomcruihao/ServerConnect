@@ -25,7 +25,7 @@
         <div id="atozField" class="atoz-field"></div>
       </div>
       <div class="content-field">
-        <button onclick="fieldDisplay()">test</button>
+        <button onclick="fieldToggle()">test</button>
         <table class="databaseList-table">
           <thead>
             <tr>
@@ -114,8 +114,8 @@
         <label>
           <input type="checkbox" name="tags" value="lang">語文
         </label>
-        <button onclick="fieldDisplay()">test</button>
       </div>
+      <button onclick="fieldToggle()">確認</button>
     </div>
   </div>
 </body>
@@ -205,7 +205,7 @@
       resolve(linkWrap)
     })
   }
-  function fieldDisplay() {
+  function fieldToggle() {
     let element = document.getElementById("fieldDisplay");
     element.classList.toggle("show");
   }

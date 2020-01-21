@@ -11,6 +11,13 @@ ul li {
   list-style-type: none;
 }
 
+button {
+  width: 150px;
+  height: 38px;
+  background-color: #4CAF50;
+  color: #ffffff;
+}
+
 .search-wrap .search-frame {
   width: 100%;
   max-width: 500px;
@@ -201,7 +208,6 @@ ul li {
 
 .mask .dialogue-frame {
   width: 94%;
-  min-height: 90%;
   max-width: 600px;
   position: absolute;
   background-color: #ffffff;
