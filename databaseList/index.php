@@ -28,7 +28,6 @@
         <table class="databaseList-table">
           <thead>
             <tr>
-              <th class="sort" data-sort="id">編號</th>
               <th class="sort" data-sort="name">資源名稱</th>
               <th class="sort" data-sort="type">類型</th>
               <th class="sort" data-sort="lang">語文</th>
@@ -38,7 +37,6 @@
 <?php
   foreach ($decodeJsonData['rows'] as $row) {
     echo '<tr>
-            <td class="id" data-label="編號">'.$row['id'].'</td>
             <td class="name" data-label="資源名稱">
               <a href="'.$row['url'].'">'
                 .$row['resourceName'].
@@ -162,7 +160,7 @@
   }
   // Init list
   var options = {
-    valueNames: [ 'id', 'name', 'type', 'lang' ],
+    valueNames: [ 'name', 'type', 'lang' ],
     page: 500
   };
   var contactList = new List('databaseList', options);
