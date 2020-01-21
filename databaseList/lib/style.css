@@ -12,10 +12,6 @@ ul li {
 }
 
 button {
-  width: 150px;
-  height: 38px;
-  background-color: #4CAF50;
-  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -212,8 +208,20 @@ button {
 .mask .dialogue-frame {
   width: 94%;
   max-width: 600px;
+  padding: 15px;
   position: absolute;
   background-color: #ffffff;
+}
+
+.mask .dialogue-frame .dialogue-content label {
+  width: 100%;
+}
+
+.mask .dialogue-frame button {
+  width: 150px;
+  height: 38px;
+  background-color: #4CAF50;
+  color: #ffffff;
 }
 
 .mask.show {

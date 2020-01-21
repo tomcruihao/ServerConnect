@@ -11,10 +11,6 @@ ul {
   }
 }
 button {
-  width: 150px;
-  height: 38px;
-  background-color: $button_color;
-  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -184,8 +180,22 @@ button {
   .dialogue-frame {
     width: 94%;
     max-width: 600px;
+    padding: 15px;
     position: absolute;
     background-color: #ffffff;
+
+    .dialogue-content {
+      label {
+        width: 100%;
+      }
+    }
+
+    button {
+      width: 150px;
+      height: 38px;
+      background-color: $button_color;
+      color: #ffffff;
+    }
   }
   &.show{
     display: flex;
