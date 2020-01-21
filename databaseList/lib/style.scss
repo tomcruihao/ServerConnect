@@ -162,7 +162,7 @@ ul {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  display: flex;
+  display: none;
   background-color: rgba(0, 0, 0, 0.3);
   top: 0;
   left: 0;
@@ -176,6 +176,9 @@ ul {
     max-width: 600px;
     position: absolute;
     background-color: #ffffff;
+  }
+  &.show{
+    display: flex;
   }
 }
 
