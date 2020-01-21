@@ -25,42 +25,46 @@
         <div id="atozField" class="atoz-field"></div>
       </div>
       <div class="content-field">
-        <table class="databaseList-table">
-          <thead>
-            <tr>
-              <th class="sort resourceName" data-sort="resourceName">資源名稱</th>
-              <th class="sort subject" data-sort="subject">主題</th>
-              <th class="sort resourceType" data-sort="resourceType">資源類型</th>
-              <th class="sort faculty" data-sort="faculty">適用學院</th>
-              <th class="sort publisher" data-sort="publisher">出版商/代理商</th>
-              <th class="sort lang" data-sort="lang">語文</th>
-              <th>詳細資訊</th>
-            </tr>
-            <button onclick="fieldToggle()">test</button>
-          </thead>
-          <tbody class="list" id="databaseList">
-<?php
-  foreach ($decodeJsonData['rows'] as $row) {
-    // the data-label is for RWD title
-    echo '<tr>
-            <td class="resourceName" data-label="資源名稱">
-              <a href="'.$row['url'].'">'
-                .$row['resourceName'].
-              '</a>
-            </td>
-            <td class="subject" data-label="主題">'.$row['type'].'</td>
-            <td class="resourceType" data-label="資源類型">'.$row['resourceType'].'</td>
-            <td class="faculty" data-label="適用學院">'.$row['faculty'].'</td>
-            <td class="publisher" data-label="出版商/代理商">'.$row['publisher'].'</td>
-            <td class="lang" data-label="語文">'.$row['language'].'</td>
-            <td>
-              <a href="javascript:searchBy('.$row['id'].');">點我查看</a>
-            </td>
-          </tr>';
-  }
-?>
-          </tbody>
-        </table>
+        <article>
+          <table class="databaseList-table">
+            <div class="btn-frame">
+              <button onclick="fieldToggle()">test</button>
+            </div>
+            <thead>
+              <tr>
+                <th class="sort resourceName" data-sort="resourceName">資源名稱</th>
+                <th class="sort subject" data-sort="subject">主題</th>
+                <th class="sort resourceType" data-sort="resourceType">資源類型</th>
+                <th class="sort faculty" data-sort="faculty">適用學院</th>
+                <th class="sort publisher" data-sort="publisher">出版商/代理商</th>
+                <th class="sort lang" data-sort="lang">語文</th>
+                <th>詳細資訊</th>
+              </tr>
+            </thead>
+            <tbody class="list" id="databaseList">
+  <?php
+    foreach ($decodeJsonData['rows'] as $row) {
+      // the data-label is for RWD title
+      echo '<tr>
+              <td class="resourceName" data-label="資源名稱">
+                <a href="'.$row['url'].'">'
+                  .$row['resourceName'].
+                '</a>
+              </td>
+              <td class="subject" data-label="主題">'.$row['type'].'</td>
+              <td class="resourceType" data-label="資源類型">'.$row['resourceType'].'</td>
+              <td class="faculty" data-label="適用學院">'.$row['faculty'].'</td>
+              <td class="publisher" data-label="出版商/代理商">'.$row['publisher'].'</td>
+              <td class="lang" data-label="語文">'.$row['language'].'</td>
+              <td>
+                <a href="javascript:searchBy('.$row['id'].');">點我查看</a>
+              </td>
+            </tr>';
+    }
+  ?>
+            </tbody>
+          </table>
+        </article>
         <aside>
           <ul class="subject-list">
             <h3>主題</h3>
