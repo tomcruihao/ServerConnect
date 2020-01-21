@@ -26,9 +26,6 @@
       </div>
       <div class="content-field">
         <table class="databaseList-table">
-          <div class="btn-frame">
-            <button onclick="fieldToggle()">test</button>
-          </div>
           <thead>
             <tr>
               <th class="sort resourceName" data-sort="resourceName">資源名稱</th>
@@ -39,6 +36,7 @@
               <th class="sort lang" data-sort="lang">語文</th>
               <th>詳細資訊</th>
             </tr>
+            <button onclick="fieldToggle()">test</button>
           </thead>
           <tbody class="list" id="databaseList">
 <?php
