@@ -24,11 +24,11 @@
         <div class="atoz-title">A to Z:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
-      <div class="btn-wrap">
-        <button onclick="fieldToggle()">test</button>
-      </div>
       <div class="content-field">
         <table class="databaseList-table">
+          <div class="btn-frame">
+            <button onclick="fieldToggle()">test</button>
+          </div>
           <thead>
             <tr>
               <th class="sort resourceName" data-sort="resourceName">資源名稱</th>
