@@ -121,7 +121,7 @@
       </div>
       <div class="btn-frame">
         <button onclick="showField()">確認</button>
-      <div>
+      </div>
     </div>
   </div>
   <div class="mask" id="detailInfo">
@@ -131,7 +131,7 @@
       </div>
       <div class="btn-frame">
         <button onclick="detailInfoToggle('detailInfo')">關閉</button>
-      <div>
+      </div>
     </div>
   </div>
 </body>
