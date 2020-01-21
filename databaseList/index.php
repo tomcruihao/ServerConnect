@@ -42,26 +42,26 @@
               </tr>
             </thead>
             <tbody class="list" id="databaseList">
-  <?php
-    foreach ($decodeJsonData['rows'] as $row) {
-      // the data-label is for RWD title
-      echo '<tr>
-              <td class="resourceName" data-label="資源名稱">
-                <a href="'.$row['url'].'">'
-                  .$row['resourceName'].
-                '</a>
-              </td>
-              <td class="subject" data-label="主題">'.$row['type'].'</td>
-              <td class="resourceType" data-label="資源類型">'.$row['resourceType'].'</td>
-              <td class="faculty" data-label="適用學院">'.$row['faculty'].'</td>
-              <td class="publisher" data-label="出版商/代理商">'.$row['publisher'].'</td>
-              <td class="lang" data-label="語文">'.$row['language'].'</td>
-              <td>
-                <a href="javascript:searchBy('.$row['id'].');">點我查看</a>
-              </td>
-            </tr>';
-    }
-  ?>
+<?php
+  foreach ($decodeJsonData['rows'] as $row) {
+    // the data-label is for RWD title
+    echo '<tr>
+            <td class="resourceName" data-label="資源名稱">
+              <a href="'.$row['url'].'">'
+                .$row['resourceName'].
+              '</a>
+            </td>
+            <td class="subject" data-label="主題">'.$row['type'].'</td>
+            <td class="resourceType" data-label="資源類型">'.$row['resourceType'].'</td>
+            <td class="faculty" data-label="適用學院">'.$row['faculty'].'</td>
+            <td class="publisher" data-label="出版商/代理商">'.$row['publisher'].'</td>
+            <td class="lang" data-label="語文">'.$row['language'].'</td>
+            <td>
+              <a href="javascript:searchBy('.$row['id'].');">點我查看</a>
+            </td>
+          </tr>';
+  }
+?>
             </tbody>
           </table>
         </article>
@@ -142,7 +142,7 @@
   }
   function showField() {
     // init all columns
-    document.querySelectorAll('td').forEach(res => {
+    document.querySelectorAll('td, th').forEach(res => {
       res.removeAttribute("style");
     });
 
@@ -175,7 +175,6 @@
   }
   function searchAtoZ(upperCharacter) {
     let lowCharater = upperCharacter.toLowerCase();
-    // console.log(param);
     // contactList.search(param);
     contactList.filter(function(item) {
       // the item includes html tag to impact the result
