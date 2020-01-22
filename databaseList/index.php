@@ -208,7 +208,7 @@
     document.getElementById("detail_resourceDescribe").innerHTML = info.resourceDescribe;
 
     if(info.relevanceUrlDescribe !== '') {
-      document.getElementById("detail_relevanceUrlDescribe").innerHTML = `<a href="${info.relevanceUrl !== info.relevanceUrl ? : 'javascript:errorMsg(1);'}" target="_blank">${info.relevanceUrlDescribe}</a>`;
+      document.getElementById("detail_relevanceUrlDescribe").innerHTML = `<a href="${info.relevanceUrl !== '' ? info.relevanceUrl : 'javascript:errorMsg(1);'}" target="_blank">${info.relevanceUrlDescribe}</a>`;
     }
 
     fieldToggle('detailInfo');
