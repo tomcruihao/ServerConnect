@@ -132,12 +132,48 @@
           <div class="content" id="detail_resourceName"></div>
         </div>
         <div class="row">
+          <div class="title">試用/免費註記</div>
+          <div class="content" id="detail_resourceType"></div>
+        </div>
+        <div class="row">
+          <div class="title">起訂日期</div>
+          <div class="content" id="detail_startDate"></div>
+        </div>
+        <div class="row">
+          <div class="title">迄訂日期</div>
+          <div class="content" id="detail_expireDate"></div>
+        </div>
+        <div class="row">
+          <div class="title">適用學院</div>
+          <div class="content" id="detail_faculty"></div>
+        </div>
+        <div class="row">
           <div class="title">主題</div>
           <div class="content" id="detail_subject"></div>
         </div>
         <div class="row">
-          <div class="title">資源類型</div>
-          <div class="content" id="detail_resourceType"></div>
+          <div class="title">分類</div>
+          <div class="content" id="detail_category"></div>
+        </div>
+        <div class="row">
+          <div class="title">類型</div>
+          <div class="content" id="detail_type"></div>
+        </div>
+        <div class="row">
+          <div class="title">資料庫代理商/出版商</div>
+          <div class="content" id="detail_publisher"></div>
+        </div>
+        <div class="row">
+          <div class="title">語言</div>
+          <div class="content" id="detail_language"></div>
+        </div>
+        <div class="row">
+          <div class="title">資源簡述(摘要)</div>
+          <div class="content" id="detail_resourceDescribe"></div>
+        </div>
+        <div class="row">
+          <div class="title">相關URL</div>
+          <div class="content" id="detail_relevanceUrlDescribe"></div>
         </div>
       </div>
       <div class="btn-frame">
@@ -151,6 +187,41 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
+  function showDetail(info) {
+    // show the dialogue
+    
+    if(info.url !== '') {
+      document.getElementById("detail_resourceName").innerHTML = `<a href="${info.relevanceUrl}" target="_blank">${info.resourceName}</a>`;
+    } else {
+      document.getElementById("detail_resourceName").innerHTML = info.resourceName;
+    }
+    
+    document.getElementById("detail_resourceType").innerHTML = info.resourceType;
+    document.getElementById("detail_startDate").innerHTML = info.startDate;
+    document.getElementById("detail_expireDate").innerHTML = info.expireDate;
+    document.getElementById("detail_faculty").innerHTML = info.faculty;
+    document.getElementById("detail_subject").innerHTML = info.subject;
+    document.getElementById("detail_category").innerHTML = info.category;
+    document.getElementById("detail_type").innerHTML = info.type;
+    document.getElementById("detail_publisher").innerHTML = info.publisher;
+    document.getElementById("detail_language").innerHTML = info.language;
+    document.getElementById("detail_resourceDescribe").innerHTML = info.resourceDescribe;
+
+    if(info.relevanceUrlDescribe !== '') {
+      document.getElementById("detail_relevanceUrlDescribe").innerHTML = `<a href="${info.relevanceUrl !== info.relevanceUrl ? : 'javascript:errorMsg(1);'}" target="_blank">${info.relevanceUrlDescribe}</a>`;
+    }
+
+    fieldToggle('detailInfo');
+  }
+  function errorMsg (code) {
+    switch (code) {
+      case 1:
+        alert('沒有該連結喔!');
+        break;
+      default:
+        alert('未知訊息');
+    }
+  }
   async function init() {
     // create hyper link of a to z
     let englishAnchor = await createEnglishAnchor();
@@ -180,12 +251,6 @@
   function fieldToggle(DOM_id) {
     let element = document.getElementById(DOM_id);
     element.classList.toggle("show");
-  }
-  function showDetail(info) {
-    // show the dialogue
-    document.getElementById("detail_resourceName").innerHTML = info.resourceName;
-    console.log(info);
-    fieldToggle('detailInfo');
   }
   function getUnCheckedlist() {
     // get checked list
