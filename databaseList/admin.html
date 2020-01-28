@@ -68,7 +68,10 @@
       </div>
       <div class="row">
         <div class="title">test</div>
-        <div class="content"><button @click="modifyResource"></button></div>
+        <div class="content">
+          <button @click="modifyResource(database)">修改</button>
+          <button @click="deleteResource">刪除</button>
+        </div>
       </div>
     </div>
   </div>
@@ -156,9 +159,8 @@
             }
           });
         },
-        modifyResource: function() {
-          console.log('modify');
-          modifyForm.setDisplayForm();
+        modifyResource: function(database) {
+          modifyForm.setDisplayForm('modify',database);
         },
         addResource: function() {
             // $.ajax({
@@ -184,7 +186,7 @@
             //   }
             // });
         },
-        removeResource: function() {
+        deleteResource: function() {
             // $.ajax({
             //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/huiwen/add.php',
             //   type: 'POST',
@@ -221,8 +223,9 @@
         }
       },
       methods:{
-        setDisplayForm: function() {
+        setDisplayForm: function(type,database) {
           this.show = true;
+          console.log(database);
         },
         closeForm: function() {
           this.show = false;
