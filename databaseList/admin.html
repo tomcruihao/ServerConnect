@@ -80,11 +80,15 @@
       <div class="dialogue-content">
         <div class="row">
           <div class="title">資源名稱</div>
-          <div class="content"></div>
+          <div class="content">
+            <input id="date" type="date" v-model="resource.resourceName">
+          </div>
         </div>
         <div class="row">
           <div class="title">試用/免費註記</div>
-          <div class="content" id="detail_resourceType"></div>
+          <div class="content">
+            <input id="date" type="date" v-model="resource.resourceType">
+          </div>
         </div>
         <div class="row">
           <div class="title">起訂日期</div>
@@ -100,35 +104,57 @@
         </div>
         <div class="row">
           <div class="title">適用學院</div>
-          <div class="content" id="detail_faculty"></div>
+          <div class="content">
+            <input type="text" v-model="resource.faculty">
+          </div>
         </div>
         <div class="row">
           <div class="title">主題</div>
-          <div class="content" id="detail_subject"></div>
+          <div class="content">
+            <input type="text" v-model="resource.subject">
+          </div>
         </div>
         <div class="row">
           <div class="title">分類</div>
-          <div class="content" id="detail_category"></div>
+          <div class="content">
+            <input type="text" v-model="resource.category">
+          </div>
         </div>
         <div class="row">
           <div class="title">類型</div>
-          <div class="content" id="detail_type"></div>
+          <div class="content">
+            <input type="text" v-model="resource.type">
+          </div>
         </div>
         <div class="row">
           <div class="title">資料庫代理商/出版商</div>
-          <div class="content" id="detail_publisher"></div>
+          <div class="content">
+            <input type="text" v-model="resource.publisher">
+          </div>
         </div>
         <div class="row">
           <div class="title">語言</div>
-          <div class="content" id="detail_language"></div>
+          <div class="content">
+            <input type="text" v-model="resource.language">
+          </div>
         </div>
         <div class="row">
           <div class="title">資源簡述(摘要)</div>
-          <div class="content" id="detail_resourceDescribe"></div>
+          <div class="content">
+            <textarea v-model="resource.resourceDescribe"/></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">相關URL描述</div>
+          <div class="content">
+            <input type="text" v-model="resource.relevanceUrlDescribe">
+          </div>
         </div>
         <div class="row">
           <div class="title">相關URL</div>
-          <div class="content" id="detail_relevanceUrlDescribe"></div>
+          <div class="content">
+            <input type="text" v-model="resource.relevanceUrl">
+          </div>
         </div>
       </div>
       <div class="btn-frame">
@@ -225,14 +251,14 @@
       },
       methods:{
         setDisplayForm: function(type, database) {
-          // replace the slash if the time formate have
+          // check the time formate
           if(database.startDate.trim() !== '') {
             database.startDate = this.processDateFormate(database.startDate);
           }
           if(database.expireDate.trim() !== '') {
             database.expireDate = this.processDateFormate(database.expireDate);
           }
-          console.log(database);
+
           this.show = true;
           this.sendType = type
           this.resource = database;
