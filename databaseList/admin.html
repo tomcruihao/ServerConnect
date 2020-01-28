@@ -72,7 +72,7 @@
       </div>
     </div>
   </div>
-  <div class="mask" id="modifyForm">
+  <div class="mask" id="modifyForm" v-if="show">
     <div class="dialogue-frame">
       <div class="dialogue-content">
         <div class="row">
@@ -125,7 +125,7 @@
         </div>
       </div>
       <div class="btn-frame">
-        <button onclick="fieldToggle('detailInfo')">關閉</button>
+        <button @click="closeForm">關閉</button>
       </div>
     </div>
   </div>
@@ -158,7 +158,7 @@
         },
         modifyResource: function() {
           console.log('modify');
-          modifyForm.displayForm();
+          modifyForm.setDisplayForm();
         },
         addResource: function() {
             // $.ajax({
@@ -213,12 +213,19 @@
     var modifyForm = new Vue({
       el:'#modifyForm',
       data: {
-        resourceName: '',
-        type: ''
+        show: false,
+        sendType: 1,
+        resource: {
+          resourceName: '',
+          type: ''
+        }
       },
       methods:{
-        displayForm: function() {
-          console.log('test');
+        setDisplayForm: function() {
+          this.show = true;
+        }.
+        closeForm: function() {
+          this.show = false;
         }
       }
     });
