@@ -17,9 +17,28 @@
   <script src="../lib/jquery.js"></script>
   <script type="text/javascript">
     var dataList = new Vue({
-      el:'#addNewUniv',
+      el:'#listField',
       data: {
         datalists: [],
+      },
+      created: function() {
+        $.ajax({
+          url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getList.php',
+          type: 'GET',
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(res) {
+            console.log(res);
+            if(res.result) {
+              self.result = res.msg;
+            } else {
+              self.result = res.msg;
+            }
+          }
+        });
       },
       beforeMount: function() {
         // add one book in booklist
@@ -27,31 +46,28 @@
       },
       methods:{
         sentToServer: function() {
-          if (this.sid !== '' && this.appKey !== '' && this.appID !== '' && this.connectUrl !== '') {
-            let self = this
-            $.ajax({
-              url: 'https://gss.ebscohost.com/chchang/ServerConnect/huiwen/add.php',
-              type: 'POST',
-              data: {
-                sid: this.sid,
-                appKey: this.appKey,
-                appID: this.appID,
-                connectUrl: this.connectUrl + '/api/itemgo.php'
-              },
-              error: function(jqXHR, exception) {
-                //use url variable here
-                console.log(jqXHR);
-                console.log(exception);
-              },
-              success: function(res) {
-                if(res.result) {
-                  self.result = res.msg;
-                } else {
-                  self.result = res.msg;
-                }
-              }
-            });
-          }
+            // $.ajax({
+            //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/huiwen/add.php',
+            //   type: 'POST',
+            //   data: {
+            //     sid: this.sid,
+            //     appKey: this.appKey,
+            //     appID: this.appID,
+            //     connectUrl: this.connectUrl + '/api/itemgo.php'
+            //   },
+            //   error: function(jqXHR, exception) {
+            //     //use url variable here
+            //     console.log(jqXHR);
+            //     console.log(exception);
+            //   },
+            //   success: function(res) {
+            //     if(res.result) {
+            //       self.result = res.msg;
+            //     } else {
+            //       self.result = res.msg;
+            //     }
+            //   }
+            // });
         }
       }
     });
