@@ -220,13 +220,14 @@
       el:'#modifyForm',
       data: {
         show: false,
-        sendType: 1,
+        sendType: '',
         resource: ''
       },
       methods:{
-        setDisplayForm: function(type,database) {
+        setDisplayForm: function(type, database) {
           this.show = true;
-          resource = database;
+          this.sendType = type
+          this.resource = database;
         },
         closeForm: function() {
           this.show = false;
