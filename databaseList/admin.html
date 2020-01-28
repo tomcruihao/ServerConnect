@@ -226,12 +226,23 @@
       methods:{
         setDisplayForm: function(type, database) {
           // replace the slash if the time formate have
-          database.startDate = database.startDate.replace(/\//g, '-');
-          database.expireDate = database.expireDate.replace(/\//g, '-');
+          database.startDate = this.processDateFormate(database.startDate);
+          database.expireDate = this.processDateFormate(database.expireDate);
           console.log(database);
           this.show = true;
           this.sendType = type
           this.resource = database;
+        },
+        processDateFormate(date) {
+          date.replace(/\//g, '-');
+          let temp = date.split("-");
+          if(temp[1].length < 2) {
+            temp[1] = `0${temp[1]}`;
+          }
+          if(temp[2].length < 2) {
+            temp[2] = `0${temp[2]}`;
+          }
+          return `${temp[0]}-${temp[1]}-${temp[2]}`;
         },
         closeForm: function() {
           this.show = false;
