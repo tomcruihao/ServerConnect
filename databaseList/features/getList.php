@@ -4,5 +4,6 @@
 
   $getJsonData = file_get_contents('./eResourceList.json');
   echo $getJsonData;
-  // $decodeJsonData = json_decode($getJsonData, true);
+  $decodeJsonData = json_decode($getJsonData, true);
+  echo $decodeJsonData;
 ?>
