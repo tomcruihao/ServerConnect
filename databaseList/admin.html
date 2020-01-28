@@ -158,6 +158,7 @@
         },
         modifyResource: function() {
           console.log('modify');
+          modifyForm.$refs.methods.displayForm();
         },
         addResource: function() {
             // $.ajax({
@@ -209,7 +210,7 @@
         }
       }
     });
-    var dataList = new Vue({
+    var modifyForm = new Vue({
       el:'#modifyForm',
       data: {
         resourceName: '',
