@@ -234,7 +234,9 @@
           this.resource = database;
         },
         processDateFormate(date) {
-          date.replace(/\//g, '-');
+          console.log(date);
+          date = date.replace(/\//g, '-');
+          console.log(date);
           let temp = date.split("-");
           console.log(temp);
           if(temp[1].length < 2) {
