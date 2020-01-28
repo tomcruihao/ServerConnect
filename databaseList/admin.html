@@ -225,6 +225,9 @@
       },
       methods:{
         setDisplayForm: function(type, database) {
+          // replace the slash if the time formate have
+          database.startDate.replace(/\//g, '-');
+          database.expireDate.replace(/\//g, '-');
           this.show = true;
           this.sendType = type
           this.resource = database;
