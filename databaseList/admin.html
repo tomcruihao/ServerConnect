@@ -9,8 +9,8 @@
 <body>
   <div id="listField">
     <h1>Database List</h1>
-    <div>
-      
+    <div v-for="(database, index) in databaseList">
+      <h3>{{database.resourceName}}</h3>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
@@ -19,7 +19,7 @@
     var dataList = new Vue({
       el:'#listField',
       data: {
-        datalists: [],
+        databaseList: [],
       },
       created: function() {
         this.getDatabaseList();
@@ -36,8 +36,7 @@
               console.log(exception);
             },
             success: function(res) {
-              self.datalists = res.rows;
-              console.log(self.datalists);
+              self.databaseList = res.rows;
             }
           });
         },
