@@ -80,7 +80,7 @@
       <div class="dialogue-content">
         <div class="row">
           <div class="title">資源名稱</div>
-          <div class="content" id="detail_resourceName"></div>
+          <div class="content"></div>
         </div>
         <div class="row">
           <div class="title">試用/免費註記</div>
@@ -88,11 +88,15 @@
         </div>
         <div class="row">
           <div class="title">起訂日期</div>
-          <div class="content" id="detail_startDate"></div>
+          <div class="content">
+            <input id="date" type="date" v-model="resource.startDate">
+          </div>
         </div>
         <div class="row">
           <div class="title">迄訂日期</div>
-          <div class="content" id="detail_expireDate"></div>
+          <div class="content">
+            <input id="date" type="date" v-model="resource.endDate">
+          </div>
         </div>
         <div class="row">
           <div class="title">適用學院</div>
@@ -217,15 +221,12 @@
       data: {
         show: false,
         sendType: 1,
-        resource: {
-          resourceName: '',
-          type: ''
-        }
+        resource: ''
       },
       methods:{
         setDisplayForm: function(type,database) {
           this.show = true;
-          console.log(database);
+          resource = database;
         },
         closeForm: function() {
           this.show = false;
