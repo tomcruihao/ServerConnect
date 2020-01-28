@@ -236,6 +236,7 @@
         processDateFormate(date) {
           date.replace(/\//g, '-');
           let temp = date.split("-");
+          console.log(temp);
           if(temp[1].length < 2) {
             temp[1] = `0${temp[1]}`;
           }
