@@ -3,7 +3,7 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
-  $getJsonData = file_get_contents('./eResourceList.json');
+  $getJsonData = file_get_contents('../eResourceList.json');
   echo $getJsonData;
   $decodeJsonData = json_decode($getJsonData, true);
   echo $decodeJsonData;
