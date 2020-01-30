@@ -9,7 +9,7 @@
   $decodeJsonData = json_decode($getJsonData, true);
 
   // get the latest item ID
-  $latstResource = end($decodeJsonData);
+  $latstResource = end($decodeJsonData.rows);
   print_r($latstResource);
 
   // // create an obj and attend to original json
