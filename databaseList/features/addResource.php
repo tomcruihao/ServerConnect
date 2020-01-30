@@ -5,6 +5,7 @@
 
   $newResource = $_POST["resource"];
   echo $newResource;
+  echo $_POST["name"];
 
   $getJsonData = file_get_contents('../eResourceList.json');
   $resourceInfo = json_decode($getJsonData, true);
