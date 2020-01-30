@@ -9,7 +9,8 @@
   $decodeJsonData = json_decode($getJsonData, true);
 
   // get the latest item ID
-  echo end($decodeJsonData);
+  $latstResource = end($decodeJsonData);
+  print_r($latstResource);
 
   // // create an obj and attend to original json
   // $aryLength = count($decodeJsonData);
