@@ -6,11 +6,16 @@
   $sid = $_POST['sid'];
 
   $getJsonData = file_get_contents('../eResourceList.json');
-  $decodeJsonData = json_decode($getJsonData, true);
+  $resourceInfo = json_decode($getJsonData, true);
 
-  // get the latest item ID
-  $latstResource = end($decodeJsonData['rows']);
-  print_r($latstResource);
+  // get the latest ID
+  $latestResource = end($resourceInfo['rows']);
+  $newItemID = $latestResource.id + 1;
+  echo $newItemID;
+
+
+  // update resource info and write back
+  count($resourceInfo);
 
   // // create an obj and attend to original json
   // $aryLength = count($decodeJsonData);
