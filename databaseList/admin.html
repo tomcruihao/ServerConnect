@@ -4,16 +4,34 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>資料庫</title>
-    <!-- <link rel="stylesheet" type="text/css" href="lib/style.css"/> -->
+    <link rel="stylesheet" type="text/css" href="lib/admin.css"/>
   </head>
 <body>
-  <div id="listField">
-    <h1>Database List</h1>
+  <header>
+    <div>
+      <h1>Database Resource Management</h1>
+    </div>
+    <div class="top-right">
+      <a href="javascript:addNew();">Add New</a>
+    </div>
+  </header>
+  <div id="listField" class="list-field">
+    <div class="search-wrap">
+      <div class="search-frame">
+        <input type="text" class="search" placeholder="搜尋資源" disabled/>
+      </div>
+    </div>
     <div v-for="(database, index) in databaseList" class="resource-wrap">
       <h3>{{database.resourceName}}</h3>
+      <div class="button-wrap">
+        <button @click="modifyResource(database)"><img src="img/edit.svg"/></button>
+        <button @click="deleteResource"><img src="img/delete.svg"/></button>
+      </div>
       <div class="row">
         <div class="title">資源連結</div>
-        <div class="content">{{database.url}}</div>
+        <div class="content over">
+          <a :href="database.url" target="_blank">{{database.url}}</a>
+        </div>
       </div>
       <div class="row">
         <div class="title">試用/免費註記</div>
@@ -58,7 +76,7 @@
       <div class="row">
         <div class="title">相關URL</div>
         <div class="content">
-          <a href="database.relevanceUrl" v-if="database.relevanceUrlDescribe !== ''">
+          <a :href="database.relevanceUrl" target="_blank" v-if="database.relevanceUrlDescribe !== ''">
             {{database.relevanceUrlDescribe}}
           </a>
           <div v-else>
@@ -66,17 +84,11 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="title">test</div>
-        <div class="content">
-          <button @click="modifyResource(database)">修改</button>
-          <button @click="deleteResource">刪除</button>
-        </div>
-      </div>
     </div>
   </div>
   <div class="mask" id="modifyForm" v-if="show">
     <div class="dialogue-frame">
+      <img src="img/close.svg"/ class="close" @click="closeForm">
       <div class="dialogue-content">
         <div class="row">
           <div class="title">資源名稱</div>
@@ -158,13 +170,16 @@
         </div>
       </div>
       <div class="btn-frame">
-        <button @click="closeForm">關閉</button>
+        <button @click="sendForm">關閉</button>
       </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="lib/jquery.js"></script>
   <script type="text/javascript">
+    function addNew() {
+      fillForm.setDisplayForm('add', '');
+    }
     var dataList = new Vue({
       el:'#listField',
       data: {
@@ -190,31 +205,7 @@
           });
         },
         modifyResource: function(database) {
-          modifyForm.setDisplayForm('modify',database);
-        },
-        addResource: function() {
-            // $.ajax({
-            //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/huiwen/add.php',
-            //   type: 'POST',
-            //   data: {
-            //     sid: this.sid,
-            //     appKey: this.appKey,
-            //     appID: this.appID,
-            //     connectUrl: this.connectUrl + '/api/itemgo.php'
-            //   },
-            //   error: function(jqXHR, exception) {
-            //     //use url variable here
-            //     console.log(jqXHR);
-            //     console.log(exception);
-            //   },
-            //   success: function(res) {
-            //     if(res.result) {
-            //       self.result = res.msg;
-            //     } else {
-            //       self.result = res.msg;
-            //     }
-            //   }
-            // });
+          fillForm.setDisplayForm('modify',database);
         },
         deleteResource: function() {
             // $.ajax({
@@ -242,7 +233,7 @@
         }
       }
     });
-    var modifyForm = new Vue({
+    var fillForm = new Vue({
       el:'#modifyForm',
       data: {
         show: false,
@@ -251,17 +242,35 @@
       },
       methods:{
         setDisplayForm: function(type, database) {
-          // check the time formate
-          if(database.startDate.trim() !== '') {
-            database.startDate = this.processDateFormate(database.startDate);
+          if(type === 'modify') {
+            // check the time formate
+            if(database.startDate.trim() !== '') {
+              database.startDate = this.processDateFormate(database.startDate);
+            }
+            if(database.expireDate.trim() !== '') {
+              database.expireDate = this.processDateFormate(database.expireDate);
+            }
+            this.resource = database;
+          } else if(type === 'add') {
+            this.resource = {
+              'resourceName': '',
+              'url': '',
+              'resourceType': '',
+              'startDate': '',
+              'expireDate': '',
+              'faculty': '',
+              'subject': '',
+              'category': '',
+              'type': '',
+              'publisher': '',
+              'language': '',
+              'resourceDescribe': '',
+              'relevanceUrlDescribe': '',
+              'relevanceUrl': ''
+            }
           }
-          if(database.expireDate.trim() !== '') {
-            database.expireDate = this.processDateFormate(database.expireDate);
-          }
-
+          this.sendType = type;
           this.show = true;
-          this.sendType = type
-          this.resource = database;
         },
         processDateFormate(date) {
           console.log(date);
@@ -277,6 +286,11 @@
           }
           return `${temp[0]}-${temp[1]}-${temp[2]}`;
         },
+        sendForm: function() {
+          console.log(this.sendType);
+          console.log(this.resource);
+          this.closeForm();
+        },
         closeForm: function() {
           this.show = false;
         }
@@ -284,21 +298,6 @@
     });
   </script>
   <style>
-    h3 {
-      color: #0000ff;
-    }
-    h4 {
-      color: #ff0000;
-    }
-    input[type="text"] {
-      width: 300px;
-      height: 30px;
-      border-radius: 10px;
-      border: 2px solid #cccccc;
-    }
-    input:focus, textarea:focus, select:focus, button {
-      outline: none;
-    }
     button {
       width: 80px;
       height: 30px;
