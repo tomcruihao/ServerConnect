@@ -10,7 +10,7 @@
 
   // get the latest ID
   $latestResource = end($resourceInfo['rows']);
-  $newItemID = $latestResource.id + 1;
+  $newItemID = strval($latestResource['id']) + 1;
   echo $newItemID;
 
 
