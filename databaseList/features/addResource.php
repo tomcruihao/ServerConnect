@@ -3,7 +3,7 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
-  $newResource = $_GET['resource'];
+  $newResource = $_POST['resource'];
   echo $newResource;
 
   $getJsonData = file_get_contents('../eResourceList.json');
