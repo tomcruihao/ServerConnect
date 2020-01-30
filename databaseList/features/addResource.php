@@ -3,7 +3,8 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
-  $sid = $_POST['sid'];
+  $newResource = $_POST['resource'];
+  echo $newResource;
 
   $getJsonData = file_get_contents('../eResourceList.json');
   $resourceInfo = json_decode($getJsonData, true);
@@ -11,7 +12,8 @@
   // get the latest ID
   $latestResource = end($resourceInfo['rows']);
   $newItemID = strval($latestResource['id']) + 1;
-  echo $newItemID;
+
+
 
 
   // update resource info and write back
