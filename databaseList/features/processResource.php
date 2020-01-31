@@ -38,10 +38,11 @@ error_reporting(E_ALL);
   } else if($type === 'modify') {
     foreach($resourceList['rows'] as $row) {
       if(strcasecmp($row['id'], $resource['id']) == 0) {
-        print_r($row);
+        $row = $resource;
         break;
       }
     }
+    print_r($resourceList['rows']);
   }
 
 
