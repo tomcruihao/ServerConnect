@@ -3,13 +3,11 @@ ini_set("display_errors", 1);
 ini_set("track_errors", 1);
 ini_set("html_errors", 1);
 error_reporting(E_ALL);
-// set_error_handler("var_dump");
 
   header("Access-Control-Allow-Origin: *");
   header("Content-Security-Policy: upgrade-insecure-requests");
   // header("Content-Type:text/html;charset=utf-8");
   header('Content-Type: application/json');
-
 
   // parameters
   $type = $_POST["type"];
@@ -39,11 +37,10 @@ error_reporting(E_ALL);
     // echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
   } else if($type === 'modify') {
     foreach($resourceList['rows'] as $row) {
-      echo $row['id'];
-      // if(strcasecmp($univ['id'], $sid) == 0) {
-      //   $checkExist = true;
-      //   break;
-      // }
+      if(strcasecmp($row['id'], $resource['id']) == 0) {
+        echo $row;
+        break;
+      }
     }
   }
 
