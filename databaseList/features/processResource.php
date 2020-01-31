@@ -23,7 +23,7 @@ set_error_handler("var_dump");
     // get the latest ID
     $latestResource = end($resourceList['rows']);
     $newItemID = strval($latestResource['id']) + 1;
-    $resource['id'] = $newItemIDㄤ
+    $resource['id'] = $newItemID;
 
     // update resource info and write back
     $total = count($resourceList);
