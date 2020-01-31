@@ -33,7 +33,7 @@ error_reporting(E_ALL);
     $resourceList['totalNotFiltered'] = $total;
 
     // write back
-    // file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+    file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
     response(1, 'success');
     // echo json_encode($resource, JSON_NUMERIC_CHECK);
     // echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
