@@ -28,7 +28,7 @@ error_reporting(E_ALL);
     array_push($resourceList['rows'], $resource);
 
     // update resource info and write back
-    $total = count($resourceList);
+    $total = count($resourceList['rows']);
     $resourceList['total'] = $total;
     $resourceList['totalNotFiltered'] = $total;
 
