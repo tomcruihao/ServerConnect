@@ -34,6 +34,7 @@ error_reporting(E_ALL);
 
     // write back
     file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+    response(1, 'success');
     // echo json_encode($resource, JSON_NUMERIC_CHECK);
     // echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
   } else if($type === 'modify') {
@@ -41,7 +42,10 @@ error_reporting(E_ALL);
   }
 
 
-
+  function response(errorType, message) {
+    $res = array('type' => errorType, 'mesage' => message);
+    echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  }
 
 
   // // create an obj and attend to original json
