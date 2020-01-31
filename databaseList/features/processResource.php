@@ -7,7 +7,8 @@
 
   // parameters
   $type = $_POST["type"];
-  $resource = json_decode($_POST["resource"], true);
+  $resource = $_POST["resource"];
+  // $resource = json_decode($_POST["resource"], true);
   echo $resource;
 
   // // get resource list
