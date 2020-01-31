@@ -27,17 +27,18 @@ error_reporting(E_ALL);
     $resource['id'] = $newItemID;
     array_push($resourceList['rows'], $resource);
 
-    // update resource info and write back
+    // update resource info
     $total = count($resourceList['rows']);
     $resourceList['total'] = $total;
     $resourceList['totalNotFiltered'] = $total;
 
+    // write back
+    file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
     // echo json_encode($resource, JSON_NUMERIC_CHECK);
-    echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
+    // echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
+  } else if($type === 'modify') {
+    echo 'modify';
   }
-   // else if($type === 'modify') {
-  //   echo 'modify';
-  // }
 
 
 
