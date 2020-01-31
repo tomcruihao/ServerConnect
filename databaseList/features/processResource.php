@@ -18,12 +18,12 @@
 
   if ($type === 'add') {
     // get the latest ID
-    $latestResource = end($resourceInfo['rows']);
+    $latestResource = end($resourceList['rows']);
     $newItemID = strval($latestResource['id']) + 1;
     $resource['id'] = $newItemID
 
     // update resource info and write back
-    $total = count($resourceInfo);
+    $total = count($resourceList);
 
     echo json_encode($resource, JSON_NUMERIC_CHECK);
   }
