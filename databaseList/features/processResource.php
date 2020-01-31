@@ -7,8 +7,8 @@ error_reporting(E_ALL);
 
   header("Access-Control-Allow-Origin: *");
   header("Content-Security-Policy: upgrade-insecure-requests");
-  header("Content-Type:text/html;charset=utf-8");
-  // header('Content-Type: application/json');
+  // header("Content-Type:text/html;charset=utf-8");
+  header('Content-Type: application/json');
 
 
   // parameters
@@ -21,16 +21,19 @@ error_reporting(E_ALL);
   $resourceList = json_decode($getResourceListJsonData, true);
 
   if ($type === 'add') {
-    // get the latest ID
+    // get the latest ID and add in resource list
     $latestResource = end($resourceList['rows']);
     $newItemID = strval($latestResource['id']) + 1;
     $resource['id'] = $newItemID;
+    array_push($resourceList['rows'], $resource);
 
     // update resource info and write back
     $total = count($resourceList);
+    $resourceList['total'] = $total;
+    $resourceList['totalNotFiltered'] = $total;
 
     // echo json_encode($resource, JSON_NUMERIC_CHECK);
-    echo json_encode($resource, JSON_UNESCAPED_UNICODE);
+    echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
   }
    // else if($type === 'modify') {
   //   echo 'modify';
