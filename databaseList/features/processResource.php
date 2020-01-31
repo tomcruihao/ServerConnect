@@ -38,7 +38,13 @@ error_reporting(E_ALL);
     // echo json_encode($resource, JSON_NUMERIC_CHECK);
     // echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
   } else if($type === 'modify') {
-    echo 'modify';
+    foreach($resourceList['rows'] as $key => $value) {
+      echo $key;
+      // if(strcasecmp($univ['id'], $sid) == 0) {
+      //   $checkExist = true;
+      //   break;
+      // }
+    }
   }
 
 
