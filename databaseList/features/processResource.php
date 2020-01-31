@@ -3,6 +3,7 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
+  $type = $_POST["type"];
   $newResource = $_POST["resource"];
   echo $newResource;
 
@@ -17,7 +18,7 @@
 
 
   // update resource info and write back
-  count($resourceInfo);
+  $total = count($resourceInfo);
 
   // // create an obj and attend to original json
   // $aryLength = count($decodeJsonData);

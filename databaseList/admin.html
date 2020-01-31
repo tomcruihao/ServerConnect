@@ -287,9 +287,26 @@
           return `${temp[0]}-${temp[1]}-${temp[2]}`;
         },
         sendForm: function() {
-          console.log(this.sendType);
-          console.log(this.resource);
-          this.closeForm();
+          // console.log(this.sendType);
+          // console.log(this.resource);
+          let self = this;
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getList.php',
+            type: 'POST',
+            data: {
+              type: self.sendType,
+              resource: self.resource,
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              console.log(res);
+              self.closeForm();
+            }
+          });
         },
         closeForm: function() {
           this.show = false;
