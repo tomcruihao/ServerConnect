@@ -13,9 +13,9 @@ error_reporting(E_ALL);
 
   // parameters
   $type = $_POST["type"];
-  $resource = $_POST["resource"];
-  // $resource = json_decode($_POST["resource"], true);
-  // print_r($resource);
+  // $resource = $_POST["resource"];
+  $resource = json_decode($_POST["resource"], true);
+  print_r($resource);
 
   // get resource list
   $getResourceListJsonData = file_get_contents('../eResourceList.json');
@@ -32,17 +32,9 @@ error_reporting(E_ALL);
 
     echo json_encode($resource, JSON_NUMERIC_CHECK);
   }
-   else if($type === 'modify') {
-    // get the latest ID
-    $latestResource = end($resourceList['rows']);
-    $newItemID = strval($latestResource['id']) + 1;
-    $resource['id'] = $newItemID;
-
-    // update resource info and write back
-    $total = count($resourceList);
-
-    echo json_encode($resource, JSON_NUMERIC_CHECK);
-  }
+   // else if($type === 'modify') {
+  //   echo 'modify';
+  // }
 
 
 
