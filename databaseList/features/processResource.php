@@ -20,12 +20,12 @@
     // get the latest ID
     $latestResource = end($resourceList['rows']);
     $newItemID = strval($latestResource['id']) + 1;
-    $resource['id'] = $newItemID
+    // $resource['id'] = $newItemID
 
-    // update resource info and write back
-    $total = count($resourceList);
+    // // update resource info and write back
+    // $total = count($resourceList);
 
-    echo json_encode($resource, JSON_NUMERIC_CHECK);
+    // echo json_encode($resource, JSON_NUMERIC_CHECK);
   }
    // else if($type === 'modify') {
   //   echo 'modify';
