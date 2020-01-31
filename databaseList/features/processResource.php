@@ -8,24 +8,25 @@
   // parameters
   $type = $_POST["type"];
   $resource = json_decode($_POST["resource"], true);
+  echo $resource;
 
-  // get resource list
-  $getResourceListJsonData = file_get_contents('../eResourceList.json');
-  $resourceList = json_decode($getResourceListJsonData, true);
+  // // get resource list
+  // $getResourceListJsonData = file_get_contents('../eResourceList.json');
+  // $resourceList = json_decode($getResourceListJsonData, true);
 
-  if ($type === 'add') {
-    // get the latest ID
-    $latestResource = end($resourceInfo['rows']);
-    $newItemID = strval($latestResource['id']) + 1;
-    $resource['id'] = $newItemID
+  // if ($type === 'add') {
+  //   // get the latest ID
+  //   $latestResource = end($resourceInfo['rows']);
+  //   $newItemID = strval($latestResource['id']) + 1;
+  //   $resource['id'] = $newItemID
 
-    // update resource info and write back
-    $total = count($resourceInfo);
+  //   // update resource info and write back
+  //   $total = count($resourceInfo);
 
-    echo json_encode($resource, JSON_NUMERIC_CHECK);
-  } else if($type === 'modify') {
+  //   echo json_encode($resource, JSON_NUMERIC_CHECK);
+  // } else if($type === 'modify') {
 
-  }
+  // }
 
 
 
