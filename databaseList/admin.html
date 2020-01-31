@@ -9,10 +9,10 @@
 <body>
   <header>
     <div>
-      <h1>Database Resource Management</h1>
+      <h1>資源管理</h1>
     </div>
     <div class="top-right">
-      <a href="javascript:addNew();">Add New</a>
+      <a href="javascript:addNew();">新增</a>
     </div>
   </header>
   <div id="listField" class="list-field">
@@ -170,7 +170,7 @@
         </div>
       </div>
       <div class="btn-frame">
-        <button @click="sendForm">關閉</button>
+        <button @click="sendForm">{{btnName}}</button>
       </div>
     </div>
   </div>
@@ -237,6 +237,7 @@
       el:'#modifyForm',
       data: {
         show: false,
+        btnName: '',
         sendType: '',
         resource: ''
       },
@@ -250,8 +251,10 @@
             if(database.expireDate.trim() !== '') {
               database.expireDate = this.processDateFormate(database.expireDate);
             }
+            this.btnName = '修改';
             this.resource = database;
           } else if(type === 'add') {
+            this.btnName = '新增';
             this.resource = {
               'resourceName': '',
               'url': '',
@@ -289,13 +292,14 @@
         sendForm: function() {
           // console.log(this.sendType);
           // console.log(this.resource);
+          let resourceData = JSON.stringify(this.resource);
           let self = this;
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getList.php',
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
             type: 'POST',
             data: {
               type: self.sendType,
-              resource: self.resource,
+              resource: resourceData
             },
             error: function(jqXHR, exception) {
               //use url variable here

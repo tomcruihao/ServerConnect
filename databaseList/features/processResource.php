@@ -3,22 +3,31 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
+  // parameters
   $type = $_POST["type"];
-  $newResource = $_POST["resource"];
-  echo $newResource;
+  $resource = json_decode($_POST["resource"], true);
 
-  $getJsonData = file_get_contents('../eResourceList.json');
-  $resourceInfo = json_decode($getJsonData, true);
+  // get resource list
+  $getResourceListJsonData = file_get_contents('../eResourceList.json');
+  $resourceList = json_decode($getResourceListJsonData, true);
 
-  // get the latest ID
-  $latestResource = end($resourceInfo['rows']);
-  $newItemID = strval($latestResource['id']) + 1;
+  if ($type === 'add') {
+    // get the latest ID
+    $latestResource = end($resourceInfo['rows']);
+    $newItemID = strval($latestResource['id']) + 1;
+    $resource['id'] = $newItemID
+
+    // update resource info and write back
+    $total = count($resourceInfo);
+
+    echo json_encode($resource, JSON_NUMERIC_CHECK);
+  } else if($type === 'modify') {
+
+  }
 
 
 
 
-  // update resource info and write back
-  $total = count($resourceInfo);
 
   // // create an obj and attend to original json
   // $aryLength = count($decodeJsonData);
