@@ -15,7 +15,6 @@ error_reporting(E_ALL);
   $type = $_POST["type"];
   // $resource = $_POST["resource"];
   $resource = json_decode($_POST["resource"], true);
-  print_r($resource);
 
   // get resource list
   $getResourceListJsonData = file_get_contents('../eResourceList.json');
@@ -30,7 +29,8 @@ error_reporting(E_ALL);
     // update resource info and write back
     $total = count($resourceList);
 
-    echo json_encode($resource, JSON_NUMERIC_CHECK);
+    // echo json_encode($resource, JSON_NUMERIC_CHECK);
+    echo json_encode($resource, JSON_UNESCAPED_UNICODE);
   }
    // else if($type === 'modify') {
   //   echo 'modify';
