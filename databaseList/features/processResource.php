@@ -36,9 +36,9 @@ error_reporting(E_ALL);
     // echo json_encode($resource, JSON_NUMERIC_CHECK);
     // echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
   } else if($type === 'modify') {
-    foreach($resourceList['rows'] as $row) {
+    foreach($resourceList['rows'] as $key => $row) {
       if(strcasecmp($row['id'], $resource['id']) == 0) {
-        $row = $resource;
+        $resourceList['rows'][$key] = $resource;
         break;
       }
     }
