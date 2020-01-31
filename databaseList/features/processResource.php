@@ -3,6 +3,9 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
+  error_reporting(-1);
+  ini_set('display_errors', 'On');
+  
   // parameters
   $type = $_POST["type"];
   $resource = json_decode($_POST["resource"], true);
