@@ -7,7 +7,8 @@ error_reporting(E_ALL);
 
   header("Access-Control-Allow-Origin: *");
   header("Content-Security-Policy: upgrade-insecure-requests");
-  header('Content-Type: application/json');
+  header("Content-Type:text/html;charset=utf-8");
+  // header('Content-Type: application/json');
 
 
   // parameters
