@@ -2,7 +2,8 @@
   header("Access-Control-Allow-Origin: *");
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
-  ini_set('display_errors', 'On');
+  ini_set("display_errors", "On");
+  error_reporting(E_ALL | E_STRICT);
 
   // parameters
   $type = $_POST["type"];
