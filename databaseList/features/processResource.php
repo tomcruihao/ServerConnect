@@ -13,8 +13,9 @@ error_reporting(E_ALL);
 
   // parameters
   $type = $_POST["type"];
-  $resource = $_POST["resource"];
+  // $resource = $_POST["resource"];
   $resource = json_decode($_POST["resource"], true);
+  print_r($resource);
 
   // get resource list
   $getResourceListJsonData = file_get_contents('../eResourceList.json');
