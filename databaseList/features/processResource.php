@@ -3,7 +3,7 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
   ini_set("display_errors", "On");
-  error_reporting(E_ALL | E_STRICT);
+  error_reporting(E_ALL & ~E_NOTICE);
 
   // parameters
   $type = $_POST["type"];
