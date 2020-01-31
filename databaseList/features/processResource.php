@@ -32,7 +32,7 @@ error_reporting(E_ALL);
 
     // write back
     file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
-    response(1, 'success');
+    response('success', 'success');
     // echo json_encode($resource, JSON_NUMERIC_CHECK);
     // echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
   } else if($type === 'modify') {
@@ -42,7 +42,10 @@ error_reporting(E_ALL);
         break;
       }
     }
-    print_r($resourceList['rows']);
+
+    // write back
+    file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+    response('success', 'success');
   }
 
 
