@@ -1,8 +1,10 @@
 $border_color: #cccccc;
 $button_color: #4CAF50;
 
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
 html, body{
-  font-family: 'Helvetica', 'Microsoft JhengHei', 'sans-serif';
+  font-family: 'Noto Sans TC', 'Helvetica', 'Microsoft JhengHei', 'sans-serif';
 }
 
 h3 {
