@@ -17,6 +17,10 @@ button {
   cursor: pointer;
 }
 
+section {
+  margin-top: 62px;
+}
+
 headerFlex, header {
   display: -webkit-box;
   display: -ms-flexbox;
