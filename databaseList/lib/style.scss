@@ -60,6 +60,8 @@ header{
 }
 
 .search-wrap {
+  padding-top: 20px;
+
   .search-frame {
     width: 100%;
     max-width: 500px;
@@ -79,6 +81,7 @@ header{
   }
 }
 .atoz-wrap {
+  margin-top: 20px;
   display: flex;
 
   .atoz-title {
@@ -260,12 +263,41 @@ header{
     box-sizing: border-box;
 
     .dialogue-content {
-      label {
-        width: 100%;
-        padding: 10px 5px;
-        display: block;
-        border-bottom: 1px solid $border_color;
+      // label {
+      //   width: 100%;
+      //   padding: 10px 5px;
+      //   display: block;
+      //   border-bottom: 1px solid $border_color;
+      //   box-sizing: border-box;
+      // }
+      .row {
+        margin-bottom: 15px;
         box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+    
+        .title {
+          width: 200px;
+          font-weight: bold;
+        }
+    
+        .content {
+          flex: 1;
+
+          textarea {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            border: 2px solid #cccccc;
+            box-sizing: border-box;
+          }
+
+          &.over {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
       }
     }
     .btn-frame {
