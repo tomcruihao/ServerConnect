@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>資料庫</title>
     <link rel="stylesheet" type="text/css" href="lib/admin.css"/>
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
   </head>
 <body>
   <header>
@@ -18,10 +19,10 @@
   <div id="listField" class="list-field">
     <div class="search-wrap">
       <div class="search-frame">
-        <input type="text" class="search" placeholder="搜尋資源" disabled/>
+        <input type="text" class="search" placeholder="搜尋資源" v-model="searchKeyword" />
       </div>
     </div>
-    <div v-for="(database, index) in databaseList" class="resource-wrap">
+    <div v-for="(database, index) in databaseList" class="resource-wrap" v-if="database.resourceName.match(searchKeyword)!=null">
       <h3>{{database.resourceName}}</h3>
       <div class="button-wrap">
         <button @click="modifyResource(database)"><img src="img/edit.svg"/></button>
@@ -153,7 +154,7 @@
         <div class="row">
           <div class="title">資源簡述(摘要)</div>
           <div class="content">
-            <textarea v-model="resource.resourceDescribe"/></textarea>
+            <textarea v-model="resource.resourceDescribe" name="editor1"></textarea>
           </div>
         </div>
         <div class="row">
@@ -201,9 +202,19 @@
     function addNew() {
       fillForm.setDisplayForm('add', '');
     }
+    function replaceCKEditor() {
+      console.log('test ckeditor')
+      setTimeout(()=>{
+        CKEDITOR.replace( 'editor1' );
+      }, 1000);
+    }
+    function getEditorData() {
+      return CKEDITOR.instances.editor1.getData();
+    }
     var dataList = new Vue({
       el:'#listField',
       data: {
+        searchKeyword: '',
         databaseList: [],
       },
       created: function() {
@@ -274,6 +285,7 @@
           }
           this.sendType = type;
           this.show = true;
+          replaceCKEditor();
         },
         processDateFormate(date) {
           date = date.replace(/\//g, '-');
@@ -287,6 +299,10 @@
           return `${temp[0]}-${temp[1]}-${temp[2]}`;
         },
         sendForm: function() {
+          // get the CKEditor data
+          let editorData = getEditorData();
+          this.resource.resourceDescribe = editorData;
+          
           let resourceData = JSON.stringify(this.resource);
           let self = this;
           $.ajax({
@@ -322,17 +338,18 @@
         type: '',
         title: '測試標題',
         message: '測試內容',
-        resourceName: ''
+        resourceName: '',
+        resource: ''
       },
       methods:{
         setDialogue: function(type, database = '') {
-          console.log(type);
           this.type = type;
           switch (type) {
             case 'deleteResource':
               this.title = '注意';
               this.message = `您確定要刪除`;
               this.resourceName = database.resourceName;
+              this.resource = JSON.stringify(database);
               break;
             case 'add_success':
               this.title = '訊息';
@@ -342,11 +359,32 @@
               this.title = '訊息';
               this.message = '修改成功';
               break;
+            case 'delete_success':
+              this.title = '訊息';
+              this.message = '刪除成功';
+              break;
           }
           this.show = true;
         },
         deleteResource: function() {
-
+          let self = this;
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
+            type: 'POST',
+            data: {
+              type: 'delete',
+              resource: self.resource
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              dataList.getDatabaseList();
+              self.setDialogue('delete_success');
+            }
+          });
         },
         closeDialogue: function() {
           this.show = false;

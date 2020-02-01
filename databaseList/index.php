@@ -12,6 +12,14 @@
   <link rel="stylesheet" type="text/css" href="lib/style.css"/>
 </head>
 <body onload="init();">
+  <header>
+    <div>
+      <h1>資源管理</h1>
+    </div>
+    <div class="top-right">
+      <a href="javascript:addNew();">新增</a>
+    </div>
+  </header>
   <section>
     <h1>資料庫列表</h1>
     <div id="databaseList">

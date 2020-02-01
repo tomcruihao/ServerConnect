@@ -320,6 +320,7 @@ header .top-right a:hover {
   height: 38px;
   background-color: #4CAF50;
   color: #ffffff;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 600px) {
