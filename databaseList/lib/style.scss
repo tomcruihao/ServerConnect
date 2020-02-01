@@ -1,5 +1,6 @@
 $button_color: #4CAF50;
 $border_color: #cccccc;
+$bulletin_header_bgcolor: #ffa701;
 
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
@@ -211,7 +212,7 @@ header{
       h3 {
         width: 100%;
         box-sizing: border-box;
-        background-color: #00B0ED;
+        background-color: $bulletin_header_bgcolor;
         border-radius: 10px 10px 0px 0px;
         margin: 0;
         padding: 5px;
