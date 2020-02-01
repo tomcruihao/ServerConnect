@@ -207,24 +207,34 @@ header{
     width: 200px;
     margin-left: 15px;
 
-    .subject-list {
-      padding: 5px;
-      margin-bottom: 10px;
-      border: 1px dotted $border_color;
-      border-radius: 10px;
-
+    .bulletin-board-frame {
       h3 {
-        margin: 0 0 5px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #00B0ED;
+        border-radius: 10px 10px 0px 0px;
+        margin: 0;
+        padding: 5px;
         text-align: center;
       }
-      li {
-        border-bottom: 1px solid $border_color;
-        a {
-          font-size: 18px;
-          text-decoration: none;
-          color: blue;
+      ul {
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px dotted $border_color;
+        border-radius: 10px;
+
+        li {
+          border-bottom: 1px solid $border_color;
+          a {
+            font-size: 18px;
+            text-decoration: none;
+            color: blue;
+          }
         }
       }
+    }
+    .subject-list {
+
     }
   }
 }

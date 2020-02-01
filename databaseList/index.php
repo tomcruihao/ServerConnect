@@ -73,33 +73,37 @@
           </table>
         </article>
         <aside>
-          <ul class="subject-list">
+          <div class="bulletin-board-frame">
             <h3>主題</h3>
-            <li>
-              <a href="javascript:searchBy('全文資料庫','subject');">全文資料庫</a>
-            </li>
-            <li>
-              <a href="javascript:searchBy('索摘資料庫','subject');">索摘資料庫</a>
-            </li>
-            <li>
-              <a href="javascript:searchBy('博碩士論文','subject');">博碩士論文</a>
-            </li>
-            <li>
-              <a href="javascript:searchBy('電子期刊','subject');">電子期刊</a>
-            </li>
-            <li>
-              <a href="javascript:searchBy('電子書','subject');">電子書</a>
-            </li>
-          </ul>
-          <ul class="subject-list">
+            <ul>
+              <li>
+                <a href="javascript:searchBy('全文資料庫','subject');">全文資料庫</a>
+              </li>
+              <li>
+                <a href="javascript:searchBy('索摘資料庫','subject');">索摘資料庫</a>
+              </li>
+              <li>
+                <a href="javascript:searchBy('博碩士論文','subject');">博碩士論文</a>
+              </li>
+              <li>
+                <a href="javascript:searchBy('電子期刊','subject');">電子期刊</a>
+              </li>
+              <li>
+                <a href="javascript:searchBy('電子書','subject');">電子書</a>
+              </li>
+            </ul>
+          </div>
+          <div class="bulletin-board-frame">
             <h3>適用學院</h3>
-            <li>
-              <a href="javascript:searchBy('文學院','faculty');">文學院</a>
-            </li>
-            <li>
-              <a href="javascript:searchBy('藝術學院','faculty');">藝術學院</a>
-            </li>
-          </ul>
+            <ul class="subject-list">
+              <li>
+                <a href="javascript:searchBy('文學院','faculty');">文學院</a>
+              </li>
+              <li>
+                <a href="javascript:searchBy('藝術學院','faculty');">藝術學院</a>
+              </li>
+            </ul>
+          </div>
         </aside>
       </div>
     </div>
