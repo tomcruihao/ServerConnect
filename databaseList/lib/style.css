@@ -241,23 +241,29 @@ header .top-right a:hover {
   margin-left: 15px;
 }
 
-.content-field aside .subject-list {
+.content-field aside .bulletin-board-frame h3 {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #00B0ED;
+  border-radius: 10px 10px 0px 0px;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+
+.content-field aside .bulletin-board-frame ul {
   padding: 5px;
   margin-bottom: 10px;
   border: 1px dotted #cccccc;
   border-radius: 10px;
 }
 
-.content-field aside .subject-list h3 {
-  margin: 0 0 5px;
-  text-align: center;
-}
-
-.content-field aside .subject-list li {
+.content-field aside .bulletin-board-frame ul li {
   border-bottom: 1px solid #cccccc;
 }
 
-.content-field aside .subject-list li a {
+.content-field aside .bulletin-board-frame ul li a {
   font-size: 18px;
   text-decoration: none;
   color: blue;
