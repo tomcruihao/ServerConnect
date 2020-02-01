@@ -46,6 +46,17 @@ error_reporting(E_ALL);
     // write back
     file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
+  } else if ($type === 'delete') {
+    foreach($resourceList['rows'] as $key => $row) {
+      if(strcasecmp($row['id'], $resource['id']) == 0) {
+        unset($resourceList['rows'][$key]);
+        break;
+      }
+    }
+
+    // write back
+    file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+    response('success', 'success');
   }
 
 
@@ -53,17 +64,4 @@ error_reporting(E_ALL);
     $res = array('type' => $errorType, 'mesage' => $message);
     echo json_encode($res, JSON_UNESCAPED_UNICODE);
   }
-
-
-  // // create an obj and attend to original json
-  // $aryLength = count($decodeJsonData);
-  // $newItem = array('id' => strval($sid),'appKey' => strval($appKey), 'appID' => strval($appID), 'connectingUrl' => strval($connectUrl));
-  // array_push($decodeJsonData, $newItem);
-
-  // // rewrite the file
-  // file_put_contents('./univ.json', json_encode($decodeJsonData, JSON_NUMERIC_CHECK));
-
-  // // return result
-  // $data = array('result' => true, 'msg' => 'success');
-  // echo json_encode($data, JSON_NUMERIC_CHECK);
 ?>

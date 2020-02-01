@@ -25,7 +25,7 @@
       <h3>{{database.resourceName}}</h3>
       <div class="button-wrap">
         <button @click="modifyResource(database)"><img src="img/edit.svg"/></button>
-        <button @click="deleteResource"><img src="img/delete.svg"/></button>
+        <button @click="deleteResource(database)"><img src="img/delete.svg"/></button>
       </div>
       <div class="row">
         <div class="title">資源連結</div>
@@ -174,6 +174,27 @@
       </div>
     </div>
   </div>
+  <div class="mask" id="dialogue" v-if="show">
+    <div class="dialogue-message-frame">
+      <div class="dialogue-head">
+        <h4>{{title}}</h4>
+        <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body" v-if="type === 'deleteResource'">
+        {{message}} <span class="resource-name">{{resourceName}}</span>?
+        <div class="btn-frame">
+          <button @click="deleteResource">確定</button>
+          <button @click="closeDialogue">取消</button>
+        </div>
+      </div>
+      <div class="dialogue-body" v-else>
+        {{message}}
+        <div class="btn-frame">
+          <button @click="closeDialogue">確定</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="lib/jquery.js"></script>
   <script type="text/javascript">
@@ -207,29 +228,8 @@
         modifyResource: function(database) {
           fillForm.setDisplayForm('modify',database);
         },
-        deleteResource: function() {
-            // $.ajax({
-            //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/huiwen/add.php',
-            //   type: 'POST',
-            //   data: {
-            //     sid: this.sid,
-            //     appKey: this.appKey,
-            //     appID: this.appID,
-            //     connectUrl: this.connectUrl + '/api/itemgo.php'
-            //   },
-            //   error: function(jqXHR, exception) {
-            //     //use url variable here
-            //     console.log(jqXHR);
-            //     console.log(exception);
-            //   },
-            //   success: function(res) {
-            //     if(res.result) {
-            //       self.result = res.msg;
-            //     } else {
-            //       self.result = res.msg;
-            //     }
-            //   }
-            // });
+        deleteResource: function(database) {
+          dialogue.setDialogue('deleteResource', database);
         }
       }
     });
@@ -276,11 +276,8 @@
           this.show = true;
         },
         processDateFormate(date) {
-          console.log(date);
           date = date.replace(/\//g, '-');
-          console.log(date);
           let temp = date.split("-");
-          console.log(temp);
           if(temp[1].length < 2) {
             temp[1] = `0${temp[1]}`;
           }
@@ -290,8 +287,6 @@
           return `${temp[0]}-${temp[1]}-${temp[2]}`;
         },
         sendForm: function() {
-          // console.log(this.sendType);
-          // console.log(this.resource);
           let resourceData = JSON.stringify(this.resource);
           let self = this;
           $.ajax({
@@ -310,6 +305,8 @@
               console.log(res);
               dataList.getDatabaseList();
               self.closeForm();
+              let dialogueType = `${self.sendType}_success`
+              dialogue.setDialogue(dialogueType);
             }
           });
         },
@@ -318,26 +315,44 @@
         }
       }
     });
+    var dialogue = new Vue({
+      el:'#dialogue',
+      data: {
+        show: false,
+        type: '',
+        title: '測試標題',
+        message: '測試內容',
+        resourceName: ''
+      },
+      methods:{
+        setDialogue: function(type, database = '') {
+          console.log(type);
+          this.type = type;
+          switch (type) {
+            case 'deleteResource':
+              this.title = '注意';
+              this.message = `您確定要刪除`;
+              this.resourceName = database.resourceName;
+              break;
+            case 'add_success':
+              this.title = '訊息';
+              this.message = '新增成功';
+              break;
+            case 'modify_success':
+              this.title = '訊息';
+              this.message = '修改成功';
+              break;
+          }
+          this.show = true;
+        },
+        deleteResource: function() {
+
+        },
+        closeDialogue: function() {
+          this.show = false;
+        }
+      }
+    });
   </script>
-  <style>
-    button {
-      width: 80px;
-      height: 30px;
-      border-radius: 10px;
-      background-color: #4e73df;
-      color: #ffffff;
-    }
-    .row {
-      padding: 5px 0px;
-      display: flex;
-      align-items: center;
-    }
-    .row > .title {
-      width: 250px;
-    }
-    .row > .msg {
-      width: 470px;
-    }
-  </style>
 </body>
 </html>
