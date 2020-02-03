@@ -381,7 +381,7 @@ header{
               text-align: right;
 
               &.resourceName {
-                display: block;
+                justify-content: flex-end;
   
                 .resourceName-title {
                   max-width: 250px;

@@ -434,7 +434,9 @@ header .top-right a:hover {
     text-align: right;
   }
   .content-field article .databaseList-wrap .databaseList-table tr td.resourceName {
-    display: block;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
   .content-field article .databaseList-wrap .databaseList-table tr td.resourceName .resourceName-title {
     max-width: 250px;
