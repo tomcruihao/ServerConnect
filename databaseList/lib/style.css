@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
-html, body {
+body {
+  margin: 0;
+  padding: 0 15px 50px;
   font-family: 'Noto Sans TC', 'Helvetica', 'Microsoft JhengHei', 'sans-serif';
 }
 
