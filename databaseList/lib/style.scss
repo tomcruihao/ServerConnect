@@ -198,7 +198,7 @@ header{
         text-overflow: ellipsis;
         white-space: nowrap;
   
-        direction {
+        .direction {
           width: 24px;
           height: 24px;
           background-color: $direction_bgcolor;

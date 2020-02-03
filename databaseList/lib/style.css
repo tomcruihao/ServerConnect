@@ -231,14 +231,14 @@ header .top-right a:hover {
   white-space: nowrap;
 }
 
-.content-field article .databaseList-table td direction {
+.content-field article .databaseList-table td .direction {
   width: 24px;
   height: 24px;
   background-color: #ffa701;
   cursor: pointer;
 }
 
-.content-field article .databaseList-table td direction img {
+.content-field article .databaseList-table td .direction img {
   width: 16px;
   height: 16px;
 }
