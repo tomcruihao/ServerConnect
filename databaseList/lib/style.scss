@@ -124,13 +124,16 @@ header{
     position: relative;
     overflow-x: scroll;
 
-    .burger-button {
-      padding: 5px;
-      border: 1px solid $border_color;
-      position: absolute;
-      top: 0;
-      right: 0;
+    .burger-button-wrap {
+      width: 100%;
+      box-sizing: border-box;
+      text-align: right;
+      .burger-button {
+        padding: 5px;
+        border: 1px solid $border_color;
+      }
     }
+
     .databaseList-table {
       min-width: 100%;
       margin-top: 40px;

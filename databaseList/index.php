@@ -33,9 +33,11 @@
       </div>
       <div class="content-field">
         <article>
-          <button class="burger-button" onclick="fieldToggle('fieldDisplay')">
-            <img src="img/list.svg"/>
-          </button>
+          <div class="burger-button-wrap">
+            <button class="burger-button" onclick="fieldToggle('fieldDisplay')">
+              <img src="img/list.svg"/>
+            </button>
+          </div>
           <table class="databaseList-table">
             <thead>
               <tr>

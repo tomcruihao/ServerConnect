@@ -155,12 +155,16 @@ header .top-right a:hover {
   overflow-x: scroll;
 }
 
-.content-field article .burger-button {
+.content-field article .burger-button-wrap {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: right;
+}
+
+.content-field article .burger-button-wrap .burger-button {
   padding: 5px;
   border: 1px solid #cccccc;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .content-field article .databaseList-table {
