@@ -177,7 +177,6 @@ header .top-right a:hover {
 }
 
 .content-field article .databaseList-wrap .databaseList-table {
-  min-width: 100%;
   margin-top: 20px;
   border: 1px solid #aaaaaa;
 }
@@ -222,9 +221,6 @@ header .top-right a:hover {
 }
 
 .content-field article .databaseList-wrap .databaseList-table tr td.resourceName {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
