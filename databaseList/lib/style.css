@@ -187,7 +187,6 @@ header .top-right a:hover {
 }
 
 .content-field article .databaseList-wrap .databaseList-table tr {
-  border-collapse: collapse;
   border-bottom: 3px solid #ddd;
 }
 
