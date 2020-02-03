@@ -183,9 +183,9 @@ header{
           td {
             max-width: 300px;
             padding: 10px 5px;
-            box-sizing: border-box;
     
             &.resourceName {
+              display: flex;
               justify-content: space-between;
               align-items: center;
 

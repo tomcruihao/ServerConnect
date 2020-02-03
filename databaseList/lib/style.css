@@ -217,11 +217,12 @@ header .top-right a:hover {
 .content-field article .databaseList-wrap .databaseList-table tr td {
   max-width: 300px;
   padding: 10px 5px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 .content-field article .databaseList-wrap .databaseList-table tr td.resourceName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
