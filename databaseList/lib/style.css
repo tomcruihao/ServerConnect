@@ -223,7 +223,7 @@ header .top-right a:hover {
   padding: 10px 5px;
 }
 
-.content-field article .databaseList-wrap .databaseList-table tr td.resource-wrap {
+.content-field article .databaseList-wrap .databaseList-table tr td.resourceName {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,7 +235,7 @@ header .top-right a:hover {
           align-items: center;
 }
 
-.content-field article .databaseList-wrap .databaseList-table tr td.resource-wrap .resourceName {
+.content-field article .databaseList-wrap .databaseList-table tr td.resourceName .resourceName-title {
   max-width: calc( 100% - 40px);
   font-size: 1rem;
   text-overflow: ellipsis;

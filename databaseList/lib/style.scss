@@ -185,12 +185,12 @@ header{
           td {
             padding: 10px 5px;
     
-            &.resource-wrap {
+            &.resourceName {
               display: flex;
               justify-content: space-between;
               align-items: center;
 
-              .resourceName {
+              .resourceName-title {
                 max-width: calc( 100% - 40px );
                 font-size: 1rem;
                 text-overflow: ellipsis;
