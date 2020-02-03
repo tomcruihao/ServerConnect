@@ -423,7 +423,7 @@ header .top-right a:hover {
     display: block;
     margin-bottom: .625em;
   }
-  .content-field article .databaseList-wrap .databaseList-table td {
+  .content-field article .databaseList-wrap .databaseList-table tr td {
     width: 100%;
     min-width: none;
     max-width: none;
@@ -433,14 +433,14 @@ header .top-right a:hover {
     font-size: 1rem;
     text-align: right;
   }
-  .content-field article .databaseList-wrap .databaseList-table td:before {
+  .content-field article .databaseList-wrap .databaseList-table tr td:before {
     color: black;
     content: attr(data-label);
     float: left;
     font-weight: bold;
     text-transform: uppercase;
   }
-  .content-field article .databaseList-wrap .databaseList-table td:last-child {
+  .content-field article .databaseList-wrap .databaseList-table tr td:last-child {
     border-bottom: 0;
   }
   .content-field aside {
