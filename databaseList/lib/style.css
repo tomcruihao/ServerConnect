@@ -223,6 +223,7 @@ header .top-right a:hover {
 }
 
 .content-field article .databaseList-table td {
+  max-width: 300px;
   border-bottom: 1px solid #ddd;
 }
 
