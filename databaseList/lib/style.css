@@ -386,13 +386,13 @@ header .top-right a:hover {
 }
 
 @media screen and (max-width: 600px) {
-  .databaseList-table {
+  article .databaseList-table {
     border: 0;
   }
-  .databaseList-table article caption {
+  article .databaseList-table caption {
     font-size: 1.3em;
   }
-  .databaseList-table article thead {
+  article .databaseList-table thead {
     border: none;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -402,13 +402,13 @@ header .top-right a:hover {
     position: absolute;
     width: 1px;
   }
-  .databaseList-table article tr {
+  article .databaseList-table tr {
     background-color: lightgrey;
     border-bottom: 3px solid #ddd;
     display: block;
     margin-bottom: .625em;
   }
-  .databaseList-table article td {
+  article .databaseList-table td {
     max-width: 1000px;
     color: #D20B2A;
     border-bottom: 1px solid #ddd;
@@ -416,14 +416,14 @@ header .top-right a:hover {
     font-size: .8em;
     text-align: right;
   }
-  .databaseList-table article td:before {
+  article .databaseList-table td:before {
     color: black;
     content: attr(data-label);
     float: left;
     font-weight: bold;
     text-transform: uppercase;
   }
-  .databaseList-table article td:last-child {
+  article .databaseList-table td:last-child {
     border-bottom: 0;
   }
 }
