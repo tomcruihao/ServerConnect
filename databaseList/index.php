@@ -85,7 +85,7 @@
                 <a class="latest-title" href="#">{{latestNews.title}}</a>
                 <div>{{latestNews.publishDate}}</div>
               </li>
-              <li class="more" v-if="latestNewsList.length > 5">
+              <li class="more" v-if="latestNewsList.length > 10">
                 <a href="#">更多...</a>
               </li>
             </ul>
