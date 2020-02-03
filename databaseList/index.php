@@ -257,7 +257,7 @@
     // show the dialogue
     
     if(info.url !== '') {
-      document.getElementById("detail_resourceName").innerHTML = `<a href="${info.relevanceUrl}" target="_blank">${info.resourceName}</a>`;
+      document.getElementById("detail_resourceName").innerHTML = `<a href="${info.url}" target="_blank">${info.resourceName}</a>`;
     } else {
       document.getElementById("detail_resourceName").innerHTML = info.resourceName;
     }
