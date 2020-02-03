@@ -53,7 +53,7 @@
   foreach ($decodeJsonData['rows'] as $row) {
     // the data-label is for RWD title
     echo '<tr>
-            <td data-label="資源名稱">
+            <td class="resource-wrap" data-label="資源名稱">
               <span class="resourceName">'.$row['resourceName'].'</span>
               <button class="direction" onclick="directTo('.$row['url'].')">
                 <img src="img/direction.svg"/>
