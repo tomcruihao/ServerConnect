@@ -152,9 +152,7 @@ header .top-right a:hover {
 }
 
 .content-field article {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 0px;
-          flex: 1 1 0;
+  width: 70%;
 }
 
 .content-field article .burger-button-wrap {
@@ -261,7 +259,7 @@ header .top-right a:hover {
 }
 
 .content-field aside {
-  width: 200px;
+  width: 30%;
   margin-left: 15px;
 }
 

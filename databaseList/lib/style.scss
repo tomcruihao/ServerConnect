@@ -122,7 +122,7 @@ header{
   justify-content: space-between;
 
   article{
-    flex: 1 1 0;
+    width: 70%;
 
     .burger-button-wrap {
       width: 100%;
@@ -220,7 +220,7 @@ header{
     }
   }
   aside {
-    width: 200px;
+    width: 30%;
     margin-left: 15px;
 
     .bulletin-board-frame {
