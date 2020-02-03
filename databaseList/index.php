@@ -79,22 +79,10 @@
         </article>
         <aside>
           <div class="bulletin-board-frame" id="latestNews">
-            <h3>主題</h3>
+            <h3>{{bulletinTitle}}</h3>
             <ul>
-              <li>
-                <a href="javascript:searchBy('全文資料庫','subject');">全文資料庫</a>
-              </li>
-              <li>
-                <a href="javascript:searchBy('索摘資料庫','subject');">索摘資料庫</a>
-              </li>
-              <li>
-                <a href="javascript:searchBy('博碩士論文','subject');">博碩士論文</a>
-              </li>
-              <li>
-                <a href="javascript:searchBy('電子期刊','subject');">電子期刊</a>
-              </li>
-              <li>
-                <a href="javascript:searchBy('電子書','subject');">電子書</a>
+              <li v-for="(latestNews, index) in latestNewsList">
+                <a href="#">{{latestNews}}</a>
               </li>
             </ul>
           </div>
