@@ -246,8 +246,15 @@ header{
             text-decoration: none;
             color: blue;
           }
-          .&latest-news {
+          &.latest-news {
             display: flex;
+            align-items: center;
+            
+            .latest-title {
+              flex: 1;
+              display: block;
+            }
+
             .datetime {
               width: 150px;
             }

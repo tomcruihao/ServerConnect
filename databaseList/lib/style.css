@@ -291,6 +291,26 @@ header .top-right a:hover {
   color: blue;
 }
 
+.content-field aside .bulletin-board-frame ul li.latest-news {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-field aside .bulletin-board-frame ul li.latest-news .latest-title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: block;
+}
+
+.content-field aside .bulletin-board-frame ul li.latest-news .datetime {
+  width: 150px;
+}
+
 .pagination {
   text-align: center;
 }

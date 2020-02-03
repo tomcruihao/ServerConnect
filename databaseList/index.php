@@ -82,7 +82,7 @@
             <h3>{{bulletinTitle}}</h3>
             <ul>
               <li v-for="(latestNews, index) in latestNewsList.slice(0, 5)" class="latest-news">
-                <a href="#">{{latestNews.title}}</a>
+                <a class="latest-title" href="#">{{latestNews.title}}</a>
                 <div>{{latestNews.publishDate}}</div>
               </li>
             </ul>
@@ -126,7 +126,7 @@
     <div class="dialogue-frame">
       <div class="dialogue-content">
         <label>
-          <input type="checkbox" name="tags" value="resourceName" checked> 資源名稱
+          <input type="checkbox" name="tags" value="resourceName" checked disabled> 資源名稱
         </label>
         <label>
           <input type="checkbox" name="tags" value="subject" checked> 主題
