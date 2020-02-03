@@ -81,11 +81,11 @@
           <div class="bulletin-board-frame" id="latestNews">
             <h3>{{bulletinTitle}}</h3>
             <ul>
-              <li v-for="(latestNews, index) in latestNewsList.slice(0, 5)" class="latest-news">
+              <li v-for="(latestNews, index) in latestNewsList.slice(0, displayNumber)" class="latest-news">
                 <a class="latest-title" href="#">{{latestNews.title}}</a>
                 <div>{{latestNews.publishDate}}</div>
               </li>
-              <li class="more" v-if="latestNewsList.length > 10">
+              <li class="more" v-if="latestNewsList.length > displayNumber">
                 <a href="#">更多...</a>
               </li>
             </ul>
@@ -221,6 +221,7 @@
     el:'#latestNews',
     data: {
       bulletinTitle: '',
+      displayNumber: 0,
       latestNewsList: []
     },
     created: function() {
@@ -236,6 +237,7 @@
         success: function(res) {
           self.bulletinTitle = res.bulletinTitle;
           self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          self.displayNumber = res.displayNumber;
           console.log(self.latestNewsList);
         }
       });

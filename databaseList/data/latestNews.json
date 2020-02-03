@@ -1,5 +1,6 @@
 {
   "bulletinTitle": "最新消息",
+  "displayNumber": 5,
   "newsList": [
     {
       "uuid": "de8f99dc-4661-11ea-b77f-2e728ce88125",
