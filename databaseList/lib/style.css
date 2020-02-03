@@ -226,8 +226,8 @@ header .top-right a:hover {
 }
 
 .content-field article .databaseList-table td {
+  padding: 10px 5px;
   max-width: 300px;
-  border-bottom: 1px solid #ddd;
 }
 
 .content-field article .databaseList-table td.resource-wrap {
@@ -254,6 +254,12 @@ header .top-right a:hover {
   width: 24px;
   height: 24px;
   background-color: #ffa701;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   cursor: pointer;
 }
 

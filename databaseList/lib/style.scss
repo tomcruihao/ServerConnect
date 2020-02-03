@@ -194,8 +194,8 @@ header{
       }
 
       td {
+        padding: 10px 5px;
         max-width: 300px;
-        border-bottom: 1px solid #ddd;
 
         &.resource-wrap {
           display: flex;
@@ -214,7 +214,10 @@ header{
           width: 24px;
           height: 24px;
           background-color: $direction_bgcolor;
+          display: flex;
+          justify-content: center;
           cursor: pointer;
+
           img {
             width: 16px;
             height: 16px;
