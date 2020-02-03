@@ -54,8 +54,8 @@
     // the data-label is for RWD title
     echo '<tr>
             <td class="resourceName" data-label="資源名稱">
-              .$row['resourceName'].
-              <button onclick="directTo(.$row['url'].)">
+              '.$row['resourceName'].'
+              <button onclick="directTo('.$row['url'].')">
                 <img src="img/edit.svg"/>
               </button>
             </td>
