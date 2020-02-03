@@ -372,7 +372,8 @@ header{
 
             td {
               width: 100%;
-              max-width: none;
+              display: block;
+              max-width: unset;
               color: #D20B2A;
               border-bottom: 1px solid #ddd;
               display: block;
@@ -380,8 +381,7 @@ header{
               text-align: right;
 
               &.resourceName {
-                justify-content: flex-end;
-                align-items: center;
+                display: block;
   
                 .resourceName-title {
                   max-width: calc( 100% - 40px );

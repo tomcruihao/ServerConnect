@@ -425,7 +425,8 @@ header .top-right a:hover {
   }
   .content-field article .databaseList-wrap .databaseList-table tr td {
     width: 100%;
-    max-width: none;
+    display: block;
+    max-width: unset;
     color: #D20B2A;
     border-bottom: 1px solid #ddd;
     display: block;
@@ -433,12 +434,7 @@ header .top-right a:hover {
     text-align: right;
   }
   .content-field article .databaseList-wrap .databaseList-table tr td.resourceName {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    display: block;
   }
   .content-field article .databaseList-wrap .databaseList-table tr td.resourceName .resourceName-title {
     max-width: calc( 100% - 40px);
