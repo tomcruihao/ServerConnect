@@ -232,7 +232,7 @@
         },
         success: function(res) {
           self.bulletinTitle = res.bulletinTitle;
-          self.latestNewsList = res.newsList.slice().sort((a, b) => a.publishDate - b.publishDate);
+          self.latestNewsList = res.newsList.slice().sort((a, b) => b.publishDate - a.publishDate);
           console.log(self.latestNewsList);
         }
       });
