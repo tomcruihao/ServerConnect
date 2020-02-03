@@ -166,7 +166,7 @@ header .top-right a:hover {
 }
 
 .content-field article .databaseList-wrap {
-  widows: 100%;
+  width: 100%;
   overflow-x: scroll;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
