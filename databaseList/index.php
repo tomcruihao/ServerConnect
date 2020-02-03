@@ -85,6 +85,9 @@
                 <a class="latest-title" href="#">{{latestNews.title}}</a>
                 <div>{{latestNews.publishDate}}</div>
               </li>
+              <li class="mores">
+                <a href="#">更多...</a>
+              </li>
             </ul>
           </div>
           <div class="bulletin-board-frame">

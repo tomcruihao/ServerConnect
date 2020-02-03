@@ -313,6 +313,10 @@ header .top-right a:hover {
   width: 150px;
 }
 
+.content-field aside .bulletin-board-frame ul li.more {
+  text-align: right;
+}
+
 .pagination {
   text-align: center;
 }
