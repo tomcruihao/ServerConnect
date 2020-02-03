@@ -136,13 +136,13 @@ header{
 
     .databaseList-wrap {
       width: 100%;
-      overflow: scroll;
+      overflow-x: scroll;
       box-sizing: border-box;
 
       .databaseList-table {
         min-width: 100%;
         margin-top: 20px;
-        overflow: auto;
+        overflow-x: scroll;
         border: 1px solid #aaaaaa;
 
         tr {

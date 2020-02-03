@@ -171,7 +171,7 @@ header .top-right a:hover {
 
 .content-field article .databaseList-wrap {
   width: 100%;
-  overflow: scroll;
+  overflow-x: scroll;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -179,7 +179,7 @@ header .top-right a:hover {
 .content-field article .databaseList-wrap .databaseList-table {
   min-width: 100%;
   margin-top: 20px;
-  overflow: auto;
+  overflow-x: scroll;
   border: 1px solid #aaaaaa;
 }
 
