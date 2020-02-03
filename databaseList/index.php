@@ -59,7 +59,7 @@
               <td class="resource-wrap" data-label="資源名稱">
                 <span class="resourceName">'.$row['resourceName'].'</span>
                 <button class="direction" onclick="directTo('.$row['url'].')">
-                  <img src="img/direction.svg"/>
+                  <img src="img/direction.svg" alt="點我開啟" title="點我開啟"/>
                 </button>
               </td>
               <td class="subject" data-label="主題">'.$row['type'].'</td>
