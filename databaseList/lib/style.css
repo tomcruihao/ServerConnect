@@ -191,6 +191,8 @@ header .top-right a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .content-field article .databaseList-table th {
