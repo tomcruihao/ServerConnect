@@ -379,6 +379,7 @@ header{
               display: block;
               font-size: 1rem;
               text-align: right;
+              box-sizing: border-box;
 
               &.resourceName {
                 justify-content: flex-end;
