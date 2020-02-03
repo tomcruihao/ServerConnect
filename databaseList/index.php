@@ -81,7 +81,7 @@
           <div class="bulletin-board-frame" id="latestNews">
             <h3>{{bulletinTitle}}</h3>
             <ul>
-              <li v-for="(latestNews, index) in latestNewsList" class="latest-news">
+              <li v-for="(latestNews, index) in latestNewsList.slice(0, 5)" class="latest-news">
                 <a href="#">{{latestNews.title}}</a>
                 <div>{{latestNews.publishDate}}</div>
               </li>
