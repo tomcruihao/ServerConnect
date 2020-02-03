@@ -437,7 +437,7 @@ header .top-right a:hover {
     display: block;
   }
   .content-field article .databaseList-wrap .databaseList-table tr td.resourceName .resourceName-title {
-    max-width: calc( 100% - 40px);
+    max-width: 250px;
     font-size: 1rem;
     text-overflow: ellipsis;
     overflow: hidden;
