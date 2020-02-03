@@ -55,8 +55,8 @@
     echo '<tr>
             <td class="resourceName" data-label="資源名稱">
               '.$row['resourceName'].'
-              <button onclick="directTo('.$row['url'].')">
-                <img src="img/edit.svg"/>
+              <button class="direction" onclick="directTo('.$row['url'].')">
+                <img src="img/direction.svg"/>
               </button>
             </td>
             <td class="subject" data-label="主題">'.$row['type'].'</td>

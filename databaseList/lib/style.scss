@@ -1,6 +1,7 @@
 $button_color: #4CAF50;
 $border_color: #cccccc;
 $bulletin_header_bgcolor: #ffa701;
+$direction_bgcolor: #ffa701;
 
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
@@ -197,10 +198,13 @@ header{
         text-overflow: ellipsis;
         white-space: nowrap;
   
-        a {
-          color: blue;
-          text-decoration: none;
+        direction {
+          width: 36px;
+          height: 36px;
+          background-color: $direction_bgcolor;
+          cursor: pointer;
         }
+
       }
     }
   }

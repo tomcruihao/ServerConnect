@@ -231,9 +231,11 @@ header .top-right a:hover {
   white-space: nowrap;
 }
 
-.content-field article .databaseList-table td a {
-  color: blue;
-  text-decoration: none;
+.content-field article .databaseList-table td direction {
+  width: 36px;
+  height: 36px;
+  background-color: #ffa701;
+  cursor: pointer;
 }
 
 .content-field aside {
