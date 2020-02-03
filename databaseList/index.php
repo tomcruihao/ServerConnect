@@ -81,8 +81,9 @@
           <div class="bulletin-board-frame" id="latestNews">
             <h3>{{bulletinTitle}}</h3>
             <ul>
-              <li v-for="(latestNews, index) in latestNewsList">
-                <a href="#">{{latestNews}}</a>
+              <li v-for="(latestNews, index) in latestNewsList.sort((a, b) => b.publishDate - a.publishDate)" class="latest-news">
+                <a href="#">{{latestNews.title}}</a>
+                <div>{{latestNews.publishDate}}</div>
               </li>
             </ul>
           </div>

@@ -246,6 +246,12 @@ header{
             text-decoration: none;
             color: blue;
           }
+          .&latest-news {
+            display: flex;
+            .datetime {
+              width: 150px;
+            }
+          }
         }
       }
     }

@@ -2,18 +2,21 @@
   "bulletinTitle": "最新消息",
   "newsList": [
     {
+      "uuid": "de8f99dc-4661-11ea-b77f-2e728ce88125",
       "title": "test1",
-      "publishDate": "test1",
+      "publishDate": "2020-02-01",
       "content": "test1"
     },
     {
+      "id": "de8f9d24-4661-11ea-b77f-2e728ce88125",
       "title": "test2",
-      "publishDate": "test2",
+      "publishDate": "2020-02-02",
       "content": "test2"
     },
     {
+      "id": "de8f9e96-4661-11ea-b77f-2e728ce88125",
       "title": "test3",
-      "publishDate": "test3",
+      "publishDate": "2020-02-03",
       "content": "test3"
     }
   ]
