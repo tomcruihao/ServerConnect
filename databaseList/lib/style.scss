@@ -350,10 +350,6 @@ header{
     article {
       .databaseList-table {
         border: 0;
-
-        caption {
-          font-size: 1.3em;
-        }
                             
         thead {
           border: none;
@@ -372,13 +368,15 @@ header{
           display: block;
           margin-bottom: .625em;
         }
-                            
+
         td {
-          max-width: 1000px;
+          width: 100%;
+          min-width: none;
+          max-width: none;
           color: #D20B2A;
           border-bottom: 1px solid #ddd;
           display: block;
-          font-size: .8em;
+          font-size: 1rem;
           text-align: right;
         }
                             
