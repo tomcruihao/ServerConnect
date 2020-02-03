@@ -233,7 +233,7 @@
         success: function(res) {
           console.log(res);
           self.bulletinTitle = res.bulletinTitle;
-          self.latestNewsList = res.newsList.sort((a, b) => b.publishDate - a.publishDate);
+          self.latestNewsList = res.newsList.sort((a, b) => a.publishDate - b.publishDate);
         }
       });
     },
