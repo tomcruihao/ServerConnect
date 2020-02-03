@@ -386,11 +386,12 @@ header{
                 justify-content: flex-end;
   
                 .resourceName-title {
-                  max-width: 250px;
-                  font-size: 1rem;
+                  max-width: 300px;
+                  font-size: 1.2rem;
                   text-overflow: ellipsis;
                   overflow: hidden;
                   white-space: nowrap;
+                  font-weight: bold;
                 }
               }
             }
