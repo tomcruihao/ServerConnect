@@ -426,7 +426,7 @@ header .top-right a:hover {
   }
   .content-field article .databaseList-wrap .databaseList-table tr td {
     width: 100% !important;
-    padding: 0;
+    padding: 10px;
     display: block;
     max-width: unset;
     color: #D20B2A;
@@ -442,7 +442,9 @@ header .top-right a:hover {
             justify-content: flex-end;
   }
   .content-field article .databaseList-wrap .databaseList-table tr td.resourceName .resourceName-title {
+    color: #333333;
     max-width: 300px;
+    margin-right: 10px;
     font-size: 1.2rem;
     text-overflow: ellipsis;
     overflow: hidden;
