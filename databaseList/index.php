@@ -231,6 +231,8 @@
         },
         success: function(res) {
           console.log(res);
+          self.bulletinTitle = res.bulletinTitle;
+          self.latestNewsList = res.newsList;
         }
       });
     },
