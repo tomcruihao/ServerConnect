@@ -319,6 +319,7 @@ header{
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
     
         .title {
           width: 200px;
@@ -334,6 +335,10 @@ header{
             border-radius: 10px;
             border: 2px solid #cccccc;
             box-sizing: border-box;
+          }
+
+          a {
+            text-decoration: none;
           }
 
           &.over {

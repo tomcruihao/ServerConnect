@@ -382,6 +382,9 @@ header .top-right a:hover {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mask .dialogue-frame .dialogue-content .row .title {
@@ -402,6 +405,10 @@ header .top-right a:hover {
   border: 2px solid #cccccc;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.mask .dialogue-frame .dialogue-content .row .content a {
+  text-decoration: none;
 }
 
 .mask .dialogue-frame .dialogue-content .row .content.over {
