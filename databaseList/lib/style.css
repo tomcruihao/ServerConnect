@@ -404,10 +404,10 @@ header .top-right a:hover {
   .content-field article {
     width: 100%;
   }
-  .content-field article .databaseList-table {
+  .content-field article .databaseList-wrap .databaseList-table {
     border: 0;
   }
-  .content-field article .databaseList-table thead {
+  .content-field article .databaseList-wrap .databaseList-table thead {
     border: none;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -417,13 +417,13 @@ header .top-right a:hover {
     position: absolute;
     width: 1px;
   }
-  .content-field article .databaseList-table tr {
+  .content-field article .databaseList-wrap .databaseList-table tr {
     background-color: lightgrey;
     border-bottom: 3px solid #ddd;
     display: block;
     margin-bottom: .625em;
   }
-  .content-field article .databaseList-table td {
+  .content-field article .databaseList-wrap .databaseList-table td {
     width: 100%;
     min-width: none;
     max-width: none;
@@ -433,14 +433,14 @@ header .top-right a:hover {
     font-size: 1rem;
     text-align: right;
   }
-  .content-field article .databaseList-table td:before {
+  .content-field article .databaseList-wrap .databaseList-table td:before {
     color: black;
     content: attr(data-label);
     float: left;
     font-weight: bold;
     text-transform: uppercase;
   }
-  .content-field article .databaseList-table td:last-child {
+  .content-field article .databaseList-wrap .databaseList-table td:last-child {
     border-bottom: 0;
   }
   .content-field aside {
