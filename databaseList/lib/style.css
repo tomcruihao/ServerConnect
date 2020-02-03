@@ -314,7 +314,7 @@ header .top-right a:hover {
 }
 
 .content-field aside .bulletin-board-frame ul li.more {
-  text-align: right;
+  text-align: end;
 }
 
 .pagination {
