@@ -141,10 +141,14 @@ header .top-right a:hover {
 }
 
 .content-field {
+  width: 100%;
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .content-field article {

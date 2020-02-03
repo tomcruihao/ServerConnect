@@ -116,8 +116,10 @@ header{
 }
 
 .content-field {
+  width: 100%;
   margin-top: 20px;
   display: flex;
+  justify-content: space-between;
 
   article{
     flex: 1;
