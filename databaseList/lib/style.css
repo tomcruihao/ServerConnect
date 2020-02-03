@@ -151,8 +151,6 @@ header .top-right a:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  position: relative;
-  overflow-x: scroll;
 }
 
 .content-field article .burger-button-wrap {
@@ -165,6 +163,13 @@ header .top-right a:hover {
 .content-field article .burger-button-wrap .burger-button {
   padding: 5px;
   border: 1px solid #cccccc;
+}
+
+.content-field article .databaseList-wrap {
+  widows: 100%;
+  overflow-x: scroll;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .content-field article .databaseList-wrap .databaseList-table {

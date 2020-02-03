@@ -121,8 +121,6 @@ header{
 
   article{
     flex: 1;
-    position: relative;
-    overflow-x: scroll;
 
     .burger-button-wrap {
       width: 100%;
@@ -135,6 +133,10 @@ header{
     }
 
     .databaseList-wrap {
+      widows: 100%;
+      overflow-x: scroll;
+      box-sizing: border-box;
+
       .databaseList-table {
         min-width: 100%;
         margin-top: 40px;
