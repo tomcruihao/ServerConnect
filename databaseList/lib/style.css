@@ -311,6 +311,7 @@ header .top-right a:hover {
 
 .content-field aside .bulletin-board-frame ul li.latest-news .datetime {
   width: 150px;
+  margin-left: 10px;
 }
 
 .content-field aside .bulletin-board-frame ul li.more {
