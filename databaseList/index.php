@@ -54,9 +54,10 @@
     // the data-label is for RWD title
     echo '<tr>
             <td class="resourceName" data-label="資源名稱">
-              <a href="'.$row['url'].'">'
-                .$row['resourceName'].
-              '</a>
+              .$row['resourceName'].
+              <button onclick="directTo(.$row['url'].)">
+                <img src="img/edit.svg"/>
+              </button>
             </td>
             <td class="subject" data-label="主題">'.$row['type'].'</td>
             <td class="resourceType" data-label="資源類型">'.$row['resourceType'].'</td>
@@ -198,6 +199,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
+  function directTo(url) {
+    console.log(url);
+  }
   function showDetail(info) {
     // show the dialogue
     
