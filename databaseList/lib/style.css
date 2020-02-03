@@ -305,6 +305,7 @@ header .top-right a:hover {
       -ms-flex: 1;
           flex: 1;
   display: block;
+  word-break: break-all;
 }
 
 .content-field aside .bulletin-board-frame ul li.latest-news .datetime {

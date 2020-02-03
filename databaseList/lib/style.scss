@@ -249,10 +249,11 @@ header{
           &.latest-news {
             display: flex;
             align-items: center;
-            
+
             .latest-title {
               flex: 1;
               display: block;
+              word-break: break-all;
             }
 
             .datetime {
