@@ -348,6 +348,7 @@ header{
 @media screen and (max-width: 600px) {
   .content-field {
     article {
+      width: 100%;
       .databaseList-table {
         border: 0;
                             
@@ -392,6 +393,9 @@ header{
           border-bottom: 0;
         }
       }
+    }
+    aside {
+      display: none;
     }
   }
 }

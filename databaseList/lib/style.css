@@ -401,6 +401,9 @@ header .top-right a:hover {
 }
 
 @media screen and (max-width: 600px) {
+  .content-field article {
+    width: 100%;
+  }
   .content-field article .databaseList-table {
     border: 0;
   }
@@ -439,6 +442,9 @@ header .top-right a:hover {
   }
   .content-field article .databaseList-table td:last-child {
     border-bottom: 0;
+  }
+  .content-field aside {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
