@@ -363,6 +363,11 @@ header .top-right a:hover {
           box-sizing: border-box;
 }
 
+.mask .dialogue-frame .dialogue-content {
+  max-height: 550px;
+  overflow-y: scroll;
+}
+
 .mask .dialogue-frame .dialogue-content label {
   width: 100%;
   padding: 10px 5px;

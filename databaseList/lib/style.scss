@@ -306,6 +306,9 @@ header{
     box-sizing: border-box;
 
     .dialogue-content {
+      max-height: 550px;
+      overflow-y: scroll;
+      
       label {
         width: 100%;
         padding: 10px 5px;
