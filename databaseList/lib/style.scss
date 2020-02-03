@@ -199,10 +199,14 @@ header{
         white-space: nowrap;
   
         direction {
-          width: 36px;
-          height: 36px;
+          width: 24px;
+          height: 24px;
           background-color: $direction_bgcolor;
           cursor: pointer;
+          img {
+            width: 16px;
+            height: 16px;
+          }
         }
 
       }
