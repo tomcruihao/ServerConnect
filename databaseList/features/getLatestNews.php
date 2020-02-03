@@ -3,6 +3,6 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
-  $getJsonData = file_get_contents('../data/latestNews.json.json');
+  $getJsonData = file_get_contents('../data/latestNews.json');
   echo $getJsonData;
 ?>
