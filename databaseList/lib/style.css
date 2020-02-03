@@ -363,6 +363,16 @@ header .top-right a:hover {
           box-sizing: border-box;
 }
 
+.mask .dialogue-frame .dialogue-content label {
+  width: 100%;
+  padding: 10px 5px;
+  display: block;
+  border-bottom: 1px solid #cccccc;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .mask .dialogue-frame .dialogue-content .row {
   margin-bottom: 15px;
   -webkit-box-sizing: border-box;

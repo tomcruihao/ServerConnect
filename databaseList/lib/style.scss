@@ -306,13 +306,14 @@ header{
     box-sizing: border-box;
 
     .dialogue-content {
-      // label {
-      //   width: 100%;
-      //   padding: 10px 5px;
-      //   display: block;
-      //   border-bottom: 1px solid $border_color;
-      //   box-sizing: border-box;
-      // }
+      label {
+        width: 100%;
+        padding: 10px 5px;
+        display: block;
+        border-bottom: 1px solid $border_color;
+        cursor: pointer;
+        box-sizing: border-box;
+      }
       .row {
         margin-bottom: 15px;
         box-sizing: border-box;
