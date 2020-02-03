@@ -221,7 +221,6 @@ header .top-right a:hover {
 
 .content-field article .databaseList-wrap .databaseList-table tr td {
   padding: 10px 5px;
-  max-width: 300px;
 }
 
 .content-field article .databaseList-wrap .databaseList-table tr td.resource-wrap {
