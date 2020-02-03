@@ -183,7 +183,8 @@ header{
           }
 
           td {
-            max-width: 300px;
+            min-width: 300px;
+            max-width: 400px;
             padding: 10px 5px;
     
             &.resourceName {
