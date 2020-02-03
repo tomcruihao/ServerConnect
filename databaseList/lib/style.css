@@ -282,6 +282,7 @@ header .top-right a:hover {
 }
 
 .content-field aside .bulletin-board-frame ul li {
+  padding: 10px 0px;
   border-bottom: 1px solid #cccccc;
 }
 
