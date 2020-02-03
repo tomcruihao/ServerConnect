@@ -167,43 +167,43 @@ header .top-right a:hover {
   border: 1px solid #cccccc;
 }
 
-.content-field article .databaseList-table {
+.content-field article .databaseList-wrap .databaseList-table {
   min-width: 100%;
   margin-top: 40px;
   border: 1px solid #aaaaaa;
 }
 
-.content-field article .databaseList-table .btn-frame {
+.content-field article .databaseList-wrap .databaseList-table .btn-frame {
   width: 100%;
   margin-top: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.content-field article .databaseList-table .btn-frame button {
+.content-field article .databaseList-wrap .databaseList-table .btn-frame button {
   width: 150px;
   height: 38px;
   background-color: #4CAF50;
   color: #ffffff;
 }
 
-.content-field article .databaseList-table caption {
+.content-field article .databaseList-wrap .databaseList-table caption {
   font-size: 1.3em;
 }
 
-.content-field article .databaseList-table tr {
+.content-field article .databaseList-wrap .databaseList-table tr {
   border-collapse: collapse;
   border-bottom: 3px solid #ddd;
 }
 
-.content-field article .databaseList-table th {
+.content-field article .databaseList-wrap .databaseList-table th {
   padding-right: 10px;
   position: relative;
   cursor: pointer;
   text-align: left;
 }
 
-.content-field article .databaseList-table th.asc:after {
+.content-field article .databaseList-wrap .databaseList-table th.asc:after {
   content: " ";
   width: 8px;
   height: 8px;
@@ -216,7 +216,7 @@ header .top-right a:hover {
   right: 5px;
 }
 
-.content-field article .databaseList-table th.desc:after {
+.content-field article .databaseList-wrap .databaseList-table th.desc:after {
   content: " ";
   width: 8px;
   height: 8px;
@@ -229,12 +229,12 @@ header .top-right a:hover {
   right: 5px;
 }
 
-.content-field article .databaseList-table td {
+.content-field article .databaseList-wrap .databaseList-table td {
   padding: 10px 5px;
   max-width: 300px;
 }
 
-.content-field article .databaseList-table td.resource-wrap {
+.content-field article .databaseList-wrap .databaseList-table td.resource-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,7 +246,7 @@ header .top-right a:hover {
           align-items: center;
 }
 
-.content-field article .databaseList-table td .resourceName {
+.content-field article .databaseList-wrap .databaseList-table td .resourceName {
   max-width: calc( 100% - 40px);
   font-size: 1rem;
   text-overflow: ellipsis;
@@ -254,7 +254,7 @@ header .top-right a:hover {
   white-space: nowrap;
 }
 
-.content-field article .databaseList-table td .direction {
+.content-field article .databaseList-wrap .databaseList-table td .direction {
   width: 24px;
   height: 24px;
   background-color: #ffa701;
@@ -267,7 +267,7 @@ header .top-right a:hover {
   cursor: pointer;
 }
 
-.content-field article .databaseList-table td .direction img {
+.content-field article .databaseList-wrap .databaseList-table td .direction img {
   width: 16px;
   height: 16px;
 }
