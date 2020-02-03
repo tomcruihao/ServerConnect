@@ -218,6 +218,7 @@ header .top-right a:hover {
 .content-field article .databaseList-wrap .databaseList-table tr td {
   max-width: 300px;
   padding: 10px 5px;
+  display: inline-block;
 }
 
 .content-field article .databaseList-wrap .databaseList-table tr td.resourceName {
