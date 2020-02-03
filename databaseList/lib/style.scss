@@ -369,16 +369,28 @@ header{
             border-bottom: 3px solid #ddd;
             display: block;
             margin-bottom: .625em;
-            
+
             td {
               width: 100%;
-              min-width: none;
               max-width: none;
               color: #D20B2A;
               border-bottom: 1px solid #ddd;
               display: block;
               font-size: 1rem;
               text-align: right;
+
+              &.resourceName {
+                justify-content: flex-end;
+                align-items: center;
+  
+                .resourceName-title {
+                  max-width: calc( 100% - 40px );
+                  font-size: 1rem;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                }
+              }
             }
                                 
             td:before {
