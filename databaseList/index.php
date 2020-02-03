@@ -58,7 +58,7 @@
       echo '<tr>
               <td class="resourceName">
                 <div class="resourceName-title">'.$row['resourceName'].'</div>
-                <button class="direction" onclick="directTo('.$row['url'].')">
+                <button class="direction" onclick="directTo(\''.$row['url'].'\')">
                   <img src="img/direction.svg" alt="點我開啟" title="點我開啟"/>
                 </button>
               </td>

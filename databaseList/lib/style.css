@@ -443,7 +443,7 @@ header .top-right a:hover {
   }
   .content-field article .databaseList-wrap .databaseList-table tr td.resourceName .resourceName-title {
     color: #333333;
-    max-width: 300px;
+    max-width: 250px;
     margin-right: 10px;
     font-size: 1.2rem;
     text-overflow: ellipsis;
