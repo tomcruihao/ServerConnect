@@ -141,21 +141,8 @@ header{
 
       .databaseList-table {
         min-width: 100%;
-        margin-top: 40px;
+        margin-top: 20px;
         border: 1px solid #aaaaaa;
-    
-        .btn-frame {
-          width: 100%;
-          margin-top: 15px;
-          box-sizing: border-box;
-        
-          button {
-            width: 150px;
-            height: 38px;
-            background-color: $button_color;
-            color: #ffffff;
-          }
-        }
   
         caption {
           font-size: 1.3em;
@@ -204,18 +191,20 @@ header{
         td {
           padding: 10px 5px;
           max-width: 300px;
+          box-sizing: border-box;
   
           &.resource-wrap {
             display: flex;
             justify-content: space-between;
             align-items: center;
-          }
-          .resourceName {
-            max-width: calc( 100% - 40px );
-            font-size: 1rem;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
+
+            .resourceName {
+              max-width: calc( 100% - 40px );
+              font-size: 1rem;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+            }
           }
     
           .direction {
