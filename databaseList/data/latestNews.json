@@ -1,0 +1,20 @@
+{
+  "bulletinTitle": "最新消息",
+  "newsList": [
+    {
+      "title": "test1",
+      "publishDate": "test1",
+      "content": "test1"
+    },
+    {
+      "title": "test2",
+      "publishDate": "test2",
+      "content": "test2"
+    },
+    {
+      "title": "test3",
+      "publishDate": "test3",
+      "content": "test3"
+    }
+  ]
+}

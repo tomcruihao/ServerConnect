@@ -78,6 +78,26 @@
           </div>
         </article>
         <aside>
+          <div class="bulletin-board-frame" id="latestNews">
+            <h3>主題</h3>
+            <ul>
+              <li>
+                <a href="javascript:searchBy('全文資料庫','subject');">全文資料庫</a>
+              </li>
+              <li>
+                <a href="javascript:searchBy('索摘資料庫','subject');">索摘資料庫</a>
+              </li>
+              <li>
+                <a href="javascript:searchBy('博碩士論文','subject');">博碩士論文</a>
+              </li>
+              <li>
+                <a href="javascript:searchBy('電子期刊','subject');">電子期刊</a>
+              </li>
+              <li>
+                <a href="javascript:searchBy('電子書','subject');">電子書</a>
+              </li>
+            </ul>
+          </div>
           <div class="bulletin-board-frame">
             <h3>主題</h3>
             <ul>
@@ -199,10 +219,40 @@
   </div>
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
+
+  var latestNews = new Vue({
+    el:'#latestNews',
+    data: {
+      bulletinTitle: '',
+      latestNewsList: []
+    },
+    created: function() {
+      let self = this;
+      $.ajax({
+        url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          console.log(res);
+        }
+      });
+    },
+    methods:{
+      closeDialogue: function() {
+        this.show = false;
+      }
+    }
+  });
+
   function directTo(id, url) {
     window.open(url, '_blank');
     
