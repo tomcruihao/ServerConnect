@@ -193,10 +193,17 @@ header{
       td {
         max-width: 300px;
         border-bottom: 1px solid #ddd;
-        font-size: 1rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .resourceName {
+          flex: 1;
+          font-size: 1rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
   
         .direction {
           width: 24px;
@@ -344,7 +351,6 @@ header{
       .databaseList-table {
         border: 0;
 
-        article{}
         caption {
           font-size: 1.3em;
         }
