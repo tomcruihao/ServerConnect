@@ -191,15 +191,15 @@ header{
       }
 
       td {
-        max-width: 300px;
         border-bottom: 1px solid #ddd;
+        display: flex;
 
         &.resource-wrap {
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
-        
+
         .resourceName {
           flex: 1;
           font-size: 1rem;
