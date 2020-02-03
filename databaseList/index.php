@@ -81,7 +81,7 @@
           <div class="bulletin-board-frame" id="latestNews">
             <h3>{{bulletinTitle}}</h3>
             <ul>
-              <li v-for="(latestNews, index) in latestNewsList.sort((a, b) => b.publishDate - a.publishDate)" class="latest-news">
+              <li v-for="(latestNews, index) in latestNewsList" class="latest-news">
                 <a href="#">{{latestNews.title}}</a>
                 <div>{{latestNews.publishDate}}</div>
               </li>
@@ -233,7 +233,7 @@
         success: function(res) {
           console.log(res);
           self.bulletinTitle = res.bulletinTitle;
-          self.latestNewsList = res.newsList;
+          self.latestNewsList = res.newsList.sort((a, b) => b.publishDate - a.publishDate);
         }
       });
     },
