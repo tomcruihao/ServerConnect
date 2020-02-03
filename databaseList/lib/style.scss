@@ -352,6 +352,7 @@ header{
       .databaseList-wrap {
         .databaseList-table {
           border: 0;
+          table-layout: fixed;
                               
           thead {
             border: none;

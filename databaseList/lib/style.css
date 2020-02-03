@@ -406,6 +406,7 @@ header .top-right a:hover {
   }
   .content-field article .databaseList-wrap .databaseList-table {
     border: 0;
+    table-layout: fixed;
   }
   .content-field article .databaseList-wrap .databaseList-table thead {
     border: none;
