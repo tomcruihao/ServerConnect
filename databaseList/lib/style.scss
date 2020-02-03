@@ -152,10 +152,7 @@ header{
       }
 
       tr {
-        width: 100%;
         border-bottom: 3px solid #ddd;
-        display: flex;
-        flex-wrap: wrap;
       }
 
       th {
@@ -194,18 +191,15 @@ header{
       }
 
       td {
-        flex: 1;
         border-bottom: 1px solid #ddd;
-        display: flex;
 
         &.resource-wrap {
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
-
         .resourceName {
-          flex: 1;
+          max-width: calc( 100% - 40px );
           font-size: 1rem;
           text-overflow: ellipsis;
           overflow: hidden;
