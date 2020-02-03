@@ -424,7 +424,7 @@ header .top-right a:hover {
     margin-bottom: .625em;
   }
   .content-field article .databaseList-wrap .databaseList-table tr td {
-    width: 100%;
+    width: 100% !important;
     display: block;
     max-width: unset;
     color: #D20B2A;
