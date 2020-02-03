@@ -203,7 +203,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
-  function directTo(url) {
+  function directTo(id, url) {
     window.open(url, '_blank');
     
   }
