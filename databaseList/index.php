@@ -234,7 +234,7 @@
     created: function() {
       let self = this;
       $.ajax({
-        url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here
