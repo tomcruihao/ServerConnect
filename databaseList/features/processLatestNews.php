@@ -15,8 +15,6 @@ error_reporting(E_ALL);
   // $resource = $_POST["resource"];
   $receivedData = json_decode($_POST["processData"], true);
 
-  echo $type;
-
   // get news list
   $getLatestNewsJsonData = file_get_contents('../data/latestNews.json');
   $latestNewsData = json_decode($getLatestNewsJsonData, true);
@@ -50,7 +48,8 @@ error_reporting(E_ALL);
   } else if ($type === 'deleteNews') {
     foreach($latestNewsData['newsList'] as $key => $row) {
       if(strcasecmp($row['uuid'], $receivedData['uuid']) == 0) {
-        unset($latestNewsData['newsList'][$key]);
+        // unset($latestNewsData['newsList'][$key]);
+        array_splice($latestNewsData['newsList'], $key, 1);
         break;
       }
     }
