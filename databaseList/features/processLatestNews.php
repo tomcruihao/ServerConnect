@@ -12,7 +12,7 @@ error_reporting(E_ALL);
   // parameters
   $type = $_POST["type"];
   // $resource = $_POST["resource"];
-  $receivedData = json_decode($_POST["news"], true);
+  $receivedData = json_decode($_POST["processData"], true);
 
   // get news list
   $getLatestNewsJsonData = file_get_contents('../data/latestNews.json');

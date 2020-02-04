@@ -122,7 +122,7 @@
     function replaceCKEditor() {
       setTimeout(() => {
         CKEDITOR.replace( 'editor1' );
-      }, 1000);
+      }, 500);
     }
     function getEditorData() {
       return CKEDITOR.instances.editor1.getData();
@@ -203,7 +203,25 @@
           replaceCKEditor();
         },
         sendFieldForm: function() {
-
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            type: 'POST',
+            data: {
+              type: self.sendType,
+              processData: newsField
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              dataList.getLatestNewsListInfo();
+              self.closeForm();
+              let dialogueType = `${self.sendType}_success`;
+              dialogue.setDialogue(dialogueType);
+            }
+          });
         },
         sendForm: function() {
           // get the CKEditor data
@@ -219,7 +237,7 @@
             type: 'POST',
             data: {
               type: self.sendType,
-              news: newsData
+              processData: newsData
             },
             error: function(jqXHR, exception) {
               //use url variable here
@@ -268,6 +286,10 @@
               this.title = '訊息';
               this.message = '修改成功';
               break;
+            case 'updateNewsField_success':
+              this.title = '訊息';
+              this.message = '修改成功';
+              break;
             case 'deleteNews_success':
               this.title = '訊息';
               this.message = '刪除成功';
@@ -282,7 +304,7 @@
             type: 'POST',
             data: {
               type: 'deleteNews',
-              news: self.news
+              processData: self.news
             },
             error: function(jqXHR, exception) {
               //use url variable here
