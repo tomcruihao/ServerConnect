@@ -34,7 +34,7 @@ error_reporting(E_ALL);
 
   } else if($type === 'updateNews') {
     // search the news
-    foreach($latestNewsList['newsList'] as $key => $row) {
+    foreach($latestNewsData['newsList'] as $key => $row) {
       if(strcasecmp($row['uuid'], $receivedNews['uuid']) == 0) {
         $latestNewsData['newsList'][$key] = $receivedNews;
         break;
