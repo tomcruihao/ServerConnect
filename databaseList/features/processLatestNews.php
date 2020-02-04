@@ -53,11 +53,10 @@ error_reporting(E_ALL);
         break;
       }
     }
-    print_r(json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
 
     // write back
-    // file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
-    // response('success', 'success');
+    file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+    response('success', 'success');
   } else if($type === 'updateNewsField') {
     $latestNewsData['bulletinTitle'] = $receivedData['bulletinTitle'];
     $latestNewsData['displayNumber'] = $receivedData['displayNumber'];
