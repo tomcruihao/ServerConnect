@@ -37,7 +37,7 @@
     <div v-for="(latestNews, index) in latestNewsList" class="latestNews-wrap">
       <h3>{{latestNews.title}}</h3>
       <div class="button-wrap">
-        <button @click="modifyResource(latestNews)"><img src="img/edit.svg"/></button>
+        <button @click="updateNews(latestNews)"><img src="img/edit.svg"/></button>
         <button @click="deleteResource(latestNews)"><img src="img/delete.svg"/></button>
       </div>
       <div class="row">
@@ -160,20 +160,13 @@
       },
       methods:{
         setDisplayForm: function(type, news = '') {
-          if(type === 'modify') {
-            // check the time formate
-            if(database.startDate.trim() !== '') {
-              database.startDate = this.processDateFormate(database.startDate);
-            }
-            if(database.expireDate.trim() !== '') {
-              database.expireDate = this.processDateFormate(database.expireDate);
-            }
+          if(type === 'updateNews') {
             this.btnName = '修改';
-            this.resource = database;
+            this.headTitle = '修改內容';
+            this.news = news;
           } else if(type === 'addNews') {
             this.btnName = '新增';
             this.headTitle = '新增最新消息';
-            this.sendType = type;
             this.news = {
               "title": "",
               "content": ""
@@ -182,17 +175,6 @@
           this.sendType = type;
           this.show = true;
           replaceCKEditor();
-        },
-        processDateFormate(date) {
-          date = date.replace(/\//g, '-');
-          let temp = date.split("-");
-          if(temp[1].length < 2) {
-            temp[1] = `0${temp[1]}`;
-          }
-          if(temp[2].length < 2) {
-            temp[2] = `0${temp[2]}`;
-          }
-          return `${temp[0]}-${temp[1]}-${temp[2]}`;
         },
         sendForm: function() {
           // get the CKEditor data
