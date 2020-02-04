@@ -9,10 +9,13 @@ error_reporting(E_ALL);
   header('Content-Type: application/json');
   date_default_timezone_set('Asia/Taipei');
 
+
   // parameters
   $type = $_POST["type"];
   // $resource = $_POST["resource"];
   $receivedData = json_decode($_POST["processData"], true);
+
+  echo $type;
 
   // get news list
   $getLatestNewsJsonData = file_get_contents('../data/latestNews.json');
@@ -54,8 +57,8 @@ error_reporting(E_ALL);
     print_r($latestNewsData);
 
     // write back
-    file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    // file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+    // response('success', 'success');
   } else if($type === 'updateNewsField') {
     $latestNewsData['bulletinTitle'] = $receivedData['bulletinTitle'];
     $latestNewsData['displayNumber'] = $receivedData['displayNumber'];

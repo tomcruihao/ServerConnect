@@ -316,6 +316,7 @@
               console.log(exception);
             },
             success: function(res) {
+              console.log(res);
               dataList.getLatestNewsListInfo();
               self.setDialogue('deleteNews_success');
             }
