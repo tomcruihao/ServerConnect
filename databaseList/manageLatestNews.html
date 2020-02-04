@@ -186,6 +186,7 @@
             this.btnName = '修改';
             this.headTitle = '修改內容';
             this.news = data;
+            replaceCKEditor();
           } else if(type === 'addNews') {
             this.btnName = '新增';
             this.headTitle = '新增最新消息';
@@ -193,6 +194,7 @@
               "title": "",
               "content": ""
             }
+            replaceCKEditor();
           } else if (type === 'updateNewsField') {
             this.btnName = '修改';
             this.headTitle = '修改內容';
@@ -200,15 +202,17 @@
           }
           this.sendType = type;
           this.show = true;
-          replaceCKEditor();
         },
         sendFieldForm: function() {
+          let self = this;
+          let sentData = JSON.stringify(self.newsField);
+
           $.ajax({
             url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
             data: {
               type: self.sendType,
-              processData: newsField
+              processData: sentData
             },
             error: function(jqXHR, exception) {
               //use url variable here

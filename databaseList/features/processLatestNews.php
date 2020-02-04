@@ -51,6 +51,7 @@ error_reporting(E_ALL);
         break;
       }
     }
+    print_r($latestNewsData);
 
     // write back
     file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
