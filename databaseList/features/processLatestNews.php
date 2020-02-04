@@ -45,15 +45,15 @@ error_reporting(E_ALL);
     file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   } else if ($type === 'deleteNews') {
-    foreach($resourceList['rows'] as $key => $row) {
-      if(strcasecmp($row['uuid'], $resource['uuid']) == 0) {
-        unset($latestNewsList['newsList'][$key]);
+    foreach($latestNewsData['rows'] as $key => $row) {
+      if(strcasecmp($row['uuid'], $receivedNews['uuid']) == 0) {
+        unset($latestNewsData['newsList'][$key]);
         break;
       }
     }
 
     // write back
-    file_put_contents('../data/latestNews.json', json_encode($latestNewsList, JSON_UNESCAPED_UNICODE));
+    file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   } else if($type === 'modifyTitle') {
 

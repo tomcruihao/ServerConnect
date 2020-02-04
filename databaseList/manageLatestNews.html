@@ -218,28 +218,28 @@
         type: '',
         title: '測試標題',
         message: '測試內容',
-        resourceName: '',
-        resource: ''
+        newsTitle: '',
+        news: ''
       },
       methods:{
-        setDialogue: function(type, database = '') {
+        setDialogue: function(type, news = '') {
           this.type = type;
           switch (type) {
-            case 'deleteResource':
+            case 'deleteNews':
               this.title = '注意';
               this.message = `您確定要刪除`;
-              this.resourceName = database.resourceName;
-              this.resource = JSON.stringify(database);
+              this.newsTitle = news.title;
+              this.news = JSON.stringify(news);
               break;
             case 'addNews_success':
               this.title = '訊息';
               this.message = '新增成功';
               break;
-            case 'modify_success':
+            case 'updateNews_success':
               this.title = '訊息';
               this.message = '修改成功';
               break;
-            case 'delete_success':
+            case 'deleteNews_success':
               this.title = '訊息';
               this.message = '刪除成功';
               break;
@@ -249,11 +249,11 @@
         deleteResource: function() {
           let self = this;
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
             data: {
-              type: 'delete',
-              resource: self.resource
+              type: 'deleteNews',
+              resource: self.news
             },
             error: function(jqXHR, exception) {
               //use url variable here
@@ -261,8 +261,8 @@
               console.log(exception);
             },
             success: function(res) {
-              dataList.getDatabaseList();
-              self.setDialogue('delete_success');
+              dataList.getLatestNewsListInfo();
+              self.setDialogue('deleteNews_success');
             }
           });
         },
