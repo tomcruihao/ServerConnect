@@ -49,7 +49,8 @@ error_reporting(E_ALL);
   } else if ($type === 'delete') {
     foreach($resourceList['rows'] as $key => $row) {
       if(strcasecmp($row['id'], $resource['id']) == 0) {
-        unset($resourceList['rows'][$key]);
+        // unset($resourceList['rows'][$key]);
+        array_splice($resourceList['rows'], $key, 1);
         break;
       }
     }
