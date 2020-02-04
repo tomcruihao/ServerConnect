@@ -13,160 +13,65 @@
       <h1>最新消息管理</h1>
     </div>
     <div class="top-right">
-      <a href="javascript:addNew();">新增</a>
+      <a href="index.php">資源管理</a>
     </div>
   </header>
-  <div id="latestNewsListField" class="list-field">
-    <div v-for="(database, index) in databaseList" class="resource-wrap" v-if="database.resourceName.match(searchKeyword)!=null">
-      <h3>{{database.resourceName}}</h3>
+  <button class="add-new-button" onclick="addNews()">
+    <img src="img/add.svg"/>
+  </button>
+  <div id="latestNewsListField" class="latestNews-wrap">
+    <div class="latestNews-wrap form-setting">
+      <h3>表格設定</h3>
       <div class="button-wrap">
-        <button @click="modifyResource(database)"><img src="img/edit.svg"/></button>
-        <button @click="deleteResource(database)"><img src="img/delete.svg"/></button>
+        <button @click="updateNewsField()"><img src="img/edit.svg"/></button>
       </div>
       <div class="row">
-        <div class="title">資源連結</div>
-        <div class="content over">
-          <a :href="database.url" target="_blank">{{database.url}}</a>
-        </div>
+        <div class="title">表格名稱</div>
+        <div class="content">{{title}}</div>
       </div>
       <div class="row">
-        <div class="title">試用/免費註記</div>
-        <div class="content">{{database.resourceType}}</div>
+        <div class="title">顯示筆數</div>
+        <div class="content">{{displayNumber}}</div>
+      </div>
+    </div>
+    <div v-for="(latestNews, index) in latestNewsList" class="latestNews-wrap">
+      <h3>{{latestNews.title}}</h3>
+      <div class="button-wrap">
+        <button @click="modifyResource(latestNews)"><img src="img/edit.svg"/></button>
+        <button @click="deleteResource(latestNews)"><img src="img/delete.svg"/></button>
       </div>
       <div class="row">
-        <div class="title">起訂日期</div>
-        <div class="content">{{database.startDate}}</div>
+        <div class="title">發佈日期</div>
+        <div class="content">{{latestNews.publishDate}}</div>
       </div>
       <div class="row">
-        <div class="title">迄訂日期</div>
-        <div class="content">{{database.expireDate}}</div>
-      </div>
-      <div class="row">
-        <div class="title">適用學院</div>
-        <div class="content">{{database.faculty}}</div>
-      </div>
-      <div class="row">
-        <div class="title">主題</div>
-        <div class="content">{{database.subject}}</div>
-      </div>
-      <div class="row">
-        <div class="title">分類</div>
-        <div class="content">{{database.category}}</div>
-      </div>
-      <div class="row">
-        <div class="title">類型</div>
-        <div class="content">{{database.type}}</div>
-      </div>
-      <div class="row">
-        <div class="title">資料庫代理商/出版商</div>
-        <div class="content">{{database.publisher}}</div>
-      </div>
-      <div class="row">
-        <div class="title">語言</div>
-        <div class="content">{{database.language}}</div>
-      </div>
-      <div class="row">
-        <div class="title">資源簡述(摘要)</div>
-        <div class="content">{{database.resourceDescribe}}</div>
-      </div>
-      <div class="row">
-        <div class="title">相關URL</div>
-        <div class="content">
-          <a :href="database.relevanceUrl" target="_blank" v-if="database.relevanceUrlDescribe !== ''">
-            {{database.relevanceUrlDescribe}}
-          </a>
-          <div v-else>
-            N/A
-          </div>
-        </div>
+        <div class="title">內容</div>
+        <div class="content">{{latestNews.content}}</div>
       </div>
     </div>
   </div>
-  <div class="mask" id="modifyForm" v-if="show">
-    <div class="dialogue-frame">
-      <img src="img/close.svg"/ class="close" @click="closeForm">
-      <div class="dialogue-content">
-        <div class="row">
-          <div class="title">資源名稱</div>
-          <div class="content">
-            <input type="text" v-model="resource.resourceName">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">試用/免費註記</div>
-          <div class="content">
-            <input type="text" v-model="resource.resourceType">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">起訂日期</div>
-          <div class="content">
-            <input type="date" v-model="resource.startDate">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">迄訂日期</div>
-          <div class="content">
-            <input type="date" v-model="resource.expireDate">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">適用學院</div>
-          <div class="content">
-            <input type="text" v-model="resource.faculty">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">主題</div>
-          <div class="content">
-            <input type="text" v-model="resource.subject">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">分類</div>
-          <div class="content">
-            <input type="text" v-model="resource.category">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">類型</div>
-          <div class="content">
-            <input type="text" v-model="resource.type">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">資料庫代理商/出版商</div>
-          <div class="content">
-            <input type="text" v-model="resource.publisher">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">語言</div>
-          <div class="content">
-            <input type="text" v-model="resource.language">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">資源簡述(摘要)</div>
-          <div class="content">
-            <textarea v-model="resource.resourceDescribe" name="editor1"></textarea>
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">相關URL描述</div>
-          <div class="content">
-            <input type="text" v-model="resource.relevanceUrlDescribe">
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">相關URL</div>
-          <div class="content">
-            <input type="text" v-model="resource.relevanceUrl">
-          </div>
-        </div>
+  <div class="mask" id="fillForm" v-if="show">
+    <div class="dialogue-message-frame">
+      <div class="dialogue-head">
+        <h4>{{headTitle}}</h4>
+        <img src="img/closeWhite.svg"/ class="close" @click="closeForm">
       </div>
-      <div class="btn-frame">
-        <button @click="sendForm">{{btnName}}</button>
+      <div class="dialogue-body">
+        <div class="row">
+          <div class="title">標題</div>
+          <div class="content">
+            <input type="text" v-model="news.title">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">內容</div>
+          <div class="content">
+            <textarea v-model="news.content" name="editor1"></textarea>
+          </div>
+        </div>
+        <div class="btn-frame">
+          <button @click="sendForm">{{btnName}}</button>
+        </div>
       </div>
     </div>
   </div>
@@ -194,8 +99,8 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="lib/jquery.js"></script>
   <script type="text/javascript">
-    function addNew() {
-      fillForm.setDisplayForm('add', '');
+    function addNews() {
+      fillForm.setDisplayForm('addNews');
     }
     function replaceCKEditor() {
       setTimeout(() => {
@@ -245,15 +150,16 @@
       }
     });
     var fillForm = new Vue({
-      el:'#modifyForm',
+      el:'#fillForm',
       data: {
         show: false,
+        headTitle: '',
         btnName: '',
         sendType: '',
-        resource: ''
+        news: ''
       },
       methods:{
-        setDisplayForm: function(type, database) {
+        setDisplayForm: function(type, news = '') {
           if(type === 'modify') {
             // check the time formate
             if(database.startDate.trim() !== '') {
@@ -264,23 +170,13 @@
             }
             this.btnName = '修改';
             this.resource = database;
-          } else if(type === 'add') {
+          } else if(type === 'addNews') {
             this.btnName = '新增';
-            this.resource = {
-              'resourceName': '',
-              'url': '',
-              'resourceType': '',
-              'startDate': '',
-              'expireDate': '',
-              'faculty': '',
-              'subject': '',
-              'category': '',
-              'type': '',
-              'publisher': '',
-              'language': '',
-              'resourceDescribe': '',
-              'relevanceUrlDescribe': '',
-              'relevanceUrl': ''
+            this.headTitle = '新增最新消息';
+            this.sendType = type;
+            this.news = {
+              "title": "",
+              "content": ""
             }
           }
           this.sendType = type;
@@ -301,16 +197,18 @@
         sendForm: function() {
           // get the CKEditor data
           let editorData = getEditorData();
-          this.resource.resourceDescribe = editorData;
+          this.news.content = editorData;
           
-          let resourceData = JSON.stringify(this.resource);
+          let newsData = JSON.stringify(this.news);
           let self = this;
+          console.log(newsData);
+
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
             data: {
               type: self.sendType,
-              resource: resourceData
+              news: newsData
             },
             error: function(jqXHR, exception) {
               //use url variable here
@@ -319,9 +217,9 @@
             },
             success: function(res) {
               console.log(res);
-              dataList.getDatabaseList();
+              dataList.getLatestNewsListInfo();
               self.closeForm();
-              let dialogueType = `${self.sendType}_success`
+              let dialogueType = `${self.sendType}_success`;
               dialogue.setDialogue(dialogueType);
             }
           });
@@ -351,7 +249,7 @@
               this.resourceName = database.resourceName;
               this.resource = JSON.stringify(database);
               break;
-            case 'add_success':
+            case 'addNews_success':
               this.title = '訊息';
               this.message = '新增成功';
               break;

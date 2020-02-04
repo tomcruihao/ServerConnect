@@ -9,37 +9,37 @@
       "content": "test1"
     },
     {
-      "id": "de8f9d24-4661-11ea-b77f-2e728ce88125",
+      "uuid": "de8f9d24-4661-11ea-b77f-2e728ce88125",
       "title": "test2",
       "publishDate": "2020-02-02",
       "content": "test2"
     },
     {
-      "id": "de8f9e96-4661-11ea-b77f-2e728ce88125",
+      "uuid": "de8f9e96-4661-11ea-b77f-2e728ce88125",
       "title": "test3",
       "publishDate": "2020-02-03",
       "content": "test3"
     },
     {
-      "id": "19d95f9c-4666-11ea-b77f-2e728ce88125",
+      "uuid": "19d95f9c-4666-11ea-b77f-2e728ce88125",
       "title": "test4",
       "publishDate": "2020-02-04",
       "content": "test4"
     },
     {
-      "id": "19d9633e-4666-11ea-b77f-2e728ce88125",
+      "uuid": "19d9633e-4666-11ea-b77f-2e728ce88125",
       "title": "test5",
       "publishDate": "2020-02-05",
       "content": "test5"
     },
     {
-      "id": "19d9649c-4666-11ea-b77f-2e728ce88125",
+      "uuid": "19d9649c-4666-11ea-b77f-2e728ce88125",
       "title": "test6",
       "publishDate": "2020-02-06",
       "content": "test6"
     },
     {
-      "id": "19d965d2-4666-11ea-b77f-2e728ce88125",
+      "uuid": "19d965d2-4666-11ea-b77f-2e728ce88125",
       "title": "test longggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
       "publishDate": "2020-02-07",
       "content": "test longggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"

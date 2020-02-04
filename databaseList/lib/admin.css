@@ -85,7 +85,9 @@ header .top-right a:hover {
 }
 
 .list-field {
-  margin-top: 100px;
+  width: 100%;
+  max-width: 960px;
+  margin: 100px auto 0;
 }
 
 .list-field .search-wrap .search-frame {
@@ -113,7 +115,7 @@ header .top-right a:hover {
   padding: 15px;
   margin-top: 15px;
   border-radius: 10px;
-  background-color: #d1ecf1;
+  background-color: #ccdffc;
   position: relative;
 }
 

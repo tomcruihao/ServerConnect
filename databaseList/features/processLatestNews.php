@@ -16,20 +16,20 @@ error_reporting(E_ALL);
 
   // get news list
   $getLatestNewsJsonData = file_get_contents('../data/latestNews.json');
-  $latestNewsList = json_decode($getLatestNewsJsonData, true);
+  $latestNewsData = json_decode($getLatestNewsJsonData, true);
 
   if ($type === 'addNews') {
-    // get the latest ID and add in resource list
-    $latestNewsList = end($latestNewsList['newsList']);
+    // generate uuid
     $newItemID = uniqid();
     $receivedNews['uuid'] = $newItemID;
-    array_push($latestNewsList['newsList'], $receivedNews);
 
-    // update resource info
-    $total = count($latestNewsList['newsList']);
+    // get date
+    $receivedNews['publishDate'] = date("Y-m-d");
+
+    array_push($latestNewsData['newsList'], $receivedNews);
 
     // write back
-    file_put_contents('../data/latestNews.json', json_encode($latestNewsList, JSON_UNESCAPED_UNICODE));
+    file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
 
   } else if($type === 'modifyNews') {

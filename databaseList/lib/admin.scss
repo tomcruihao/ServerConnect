@@ -1,6 +1,6 @@
 $border_color: #cccccc;
 $button_color: #4CAF50;
-$resource_field_bgcolor: #d1ecf1;
+$resource_field_bgcolor: #ccdffc;
 
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
@@ -69,7 +69,9 @@ header{
   }
 }
 .list-field {
-  margin-top: 100px;
+  width: 100%;
+  max-width: 960px;
+  margin: 100px auto 0;
 
   .search-wrap {
 
