@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>最新消息</title>
+    <link rel="stylesheet" type="text/css" href="lib/latestNews.css"/>
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+  </head>
+<body>
+  <header>
+    <div>
+      <h1>最新消息管理</h1>
+    </div>
+    <div class="top-right">
+      <a href="javascript:addNew();">新增</a>
+    </div>
+  </header>
+  <div id="latestNewsListField" class="list-field">
+    <div v-for="(database, index) in databaseList" class="resource-wrap" v-if="database.resourceName.match(searchKeyword)!=null">
+      <h3>{{database.resourceName}}</h3>
+      <div class="button-wrap">
+        <button @click="modifyResource(database)"><img src="img/edit.svg"/></button>
+        <button @click="deleteResource(database)"><img src="img/delete.svg"/></button>
+      </div>
+      <div class="row">
+        <div class="title">資源連結</div>
+        <div class="content over">
+          <a :href="database.url" target="_blank">{{database.url}}</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">試用/免費註記</div>
+        <div class="content">{{database.resourceType}}</div>
+      </div>
+      <div class="row">
+        <div class="title">起訂日期</div>
+        <div class="content">{{database.startDate}}</div>
+      </div>
+      <div class="row">
+        <div class="title">迄訂日期</div>
+        <div class="content">{{database.expireDate}}</div>
+      </div>
+      <div class="row">
+        <div class="title">適用學院</div>
+        <div class="content">{{database.faculty}}</div>
+      </div>
+      <div class="row">
+        <div class="title">主題</div>
+        <div class="content">{{database.subject}}</div>
+      </div>
+      <div class="row">
+        <div class="title">分類</div>
+        <div class="content">{{database.category}}</div>
+      </div>
+      <div class="row">
+        <div class="title">類型</div>
+        <div class="content">{{database.type}}</div>
+      </div>
+      <div class="row">
+        <div class="title">資料庫代理商/出版商</div>
+        <div class="content">{{database.publisher}}</div>
+      </div>
+      <div class="row">
+        <div class="title">語言</div>
+        <div class="content">{{database.language}}</div>
+      </div>
+      <div class="row">
+        <div class="title">資源簡述(摘要)</div>
+        <div class="content">{{database.resourceDescribe}}</div>
+      </div>
+      <div class="row">
+        <div class="title">相關URL</div>
+        <div class="content">
+          <a :href="database.relevanceUrl" target="_blank" v-if="database.relevanceUrlDescribe !== ''">
+            {{database.relevanceUrlDescribe}}
+          </a>
+          <div v-else>
+            N/A
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mask" id="modifyForm" v-if="show">
+    <div class="dialogue-frame">
+      <img src="img/close.svg"/ class="close" @click="closeForm">
+      <div class="dialogue-content">
+        <div class="row">
+          <div class="title">資源名稱</div>
+          <div class="content">
+            <input type="text" v-model="resource.resourceName">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">試用/免費註記</div>
+          <div class="content">
+            <input type="text" v-model="resource.resourceType">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">起訂日期</div>
+          <div class="content">
+            <input type="date" v-model="resource.startDate">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">迄訂日期</div>
+          <div class="content">
+            <input type="date" v-model="resource.expireDate">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">適用學院</div>
+          <div class="content">
+            <input type="text" v-model="resource.faculty">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">主題</div>
+          <div class="content">
+            <input type="text" v-model="resource.subject">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">分類</div>
+          <div class="content">
+            <input type="text" v-model="resource.category">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">類型</div>
+          <div class="content">
+            <input type="text" v-model="resource.type">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">資料庫代理商/出版商</div>
+          <div class="content">
+            <input type="text" v-model="resource.publisher">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">語言</div>
+          <div class="content">
+            <input type="text" v-model="resource.language">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">資源簡述(摘要)</div>
+          <div class="content">
+            <textarea v-model="resource.resourceDescribe" name="editor1"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">相關URL描述</div>
+          <div class="content">
+            <input type="text" v-model="resource.relevanceUrlDescribe">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">相關URL</div>
+          <div class="content">
+            <input type="text" v-model="resource.relevanceUrl">
+          </div>
+        </div>
+      </div>
+      <div class="btn-frame">
+        <button @click="sendForm">{{btnName}}</button>
+      </div>
+    </div>
+  </div>
+  <div class="mask" id="dialogue" v-if="show">
+    <div class="dialogue-message-frame">
+      <div class="dialogue-head">
+        <h4>{{title}}</h4>
+        <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body" v-if="type === 'deleteResource'">
+        {{message}} <span class="resource-name">{{resourceName}}</span>?
+        <div class="btn-frame">
+          <button @click="deleteResource">確定</button>
+          <button @click="closeDialogue">取消</button>
+        </div>
+      </div>
+      <div class="dialogue-body" v-else>
+        {{message}}
+        <div class="btn-frame">
+          <button @click="closeDialogue">確定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script type="text/javascript">
+    function addNew() {
+      fillForm.setDisplayForm('add', '');
+    }
+    function replaceCKEditor() {
+      setTimeout(() => {
+        CKEDITOR.replace( 'editor1' );
+      }, 1000);
+    }
+    function getEditorData() {
+      return CKEDITOR.instances.editor1.getData();
+    }
+    var dataList = new Vue({
+      el:'#latestNewsListField',
+      data: {
+        title: '',
+        displayNumber: 0,
+        latestNewsList: []
+      },
+      created: function() {
+        this.getLatestNewsListInfo();
+      },
+      methods:{
+        getLatestNewsListInfo: function() {
+          let self = this;
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
+            type: 'GET',
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              self.title = res.bulletinTitle;
+              self.displayNumber = res.displayNumber;
+              self.latestNewsList = res.newsList;
+            }
+          });
+        },
+        updateNewsField: function(newsFieldInfo) {
+          fillForm.setDisplayForm('updateNewsField', newsFieldInfo);
+        },
+        updateNews: function(news) {
+          fillForm.setDisplayForm('updateNews', news);
+        },
+        deleteResource: function(news) {
+          dialogue.setDialogue('deleteResource', news);
+        }
+      }
+    });
+    var fillForm = new Vue({
+      el:'#modifyForm',
+      data: {
+        show: false,
+        btnName: '',
+        sendType: '',
+        resource: ''
+      },
+      methods:{
+        setDisplayForm: function(type, database) {
+          if(type === 'modify') {
+            // check the time formate
+            if(database.startDate.trim() !== '') {
+              database.startDate = this.processDateFormate(database.startDate);
+            }
+            if(database.expireDate.trim() !== '') {
+              database.expireDate = this.processDateFormate(database.expireDate);
+            }
+            this.btnName = '修改';
+            this.resource = database;
+          } else if(type === 'add') {
+            this.btnName = '新增';
+            this.resource = {
+              'resourceName': '',
+              'url': '',
+              'resourceType': '',
+              'startDate': '',
+              'expireDate': '',
+              'faculty': '',
+              'subject': '',
+              'category': '',
+              'type': '',
+              'publisher': '',
+              'language': '',
+              'resourceDescribe': '',
+              'relevanceUrlDescribe': '',
+              'relevanceUrl': ''
+            }
+          }
+          this.sendType = type;
+          this.show = true;
+          replaceCKEditor();
+        },
+        processDateFormate(date) {
+          date = date.replace(/\//g, '-');
+          let temp = date.split("-");
+          if(temp[1].length < 2) {
+            temp[1] = `0${temp[1]}`;
+          }
+          if(temp[2].length < 2) {
+            temp[2] = `0${temp[2]}`;
+          }
+          return `${temp[0]}-${temp[1]}-${temp[2]}`;
+        },
+        sendForm: function() {
+          // get the CKEditor data
+          let editorData = getEditorData();
+          this.resource.resourceDescribe = editorData;
+          
+          let resourceData = JSON.stringify(this.resource);
+          let self = this;
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
+            type: 'POST',
+            data: {
+              type: self.sendType,
+              resource: resourceData
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              console.log(res);
+              dataList.getDatabaseList();
+              self.closeForm();
+              let dialogueType = `${self.sendType}_success`
+              dialogue.setDialogue(dialogueType);
+            }
+          });
+        },
+        closeForm: function() {
+          this.show = false;
+        }
+      }
+    });
+    var dialogue = new Vue({
+      el:'#dialogue',
+      data: {
+        show: false,
+        type: '',
+        title: '測試標題',
+        message: '測試內容',
+        resourceName: '',
+        resource: ''
+      },
+      methods:{
+        setDialogue: function(type, database = '') {
+          this.type = type;
+          switch (type) {
+            case 'deleteResource':
+              this.title = '注意';
+              this.message = `您確定要刪除`;
+              this.resourceName = database.resourceName;
+              this.resource = JSON.stringify(database);
+              break;
+            case 'add_success':
+              this.title = '訊息';
+              this.message = '新增成功';
+              break;
+            case 'modify_success':
+              this.title = '訊息';
+              this.message = '修改成功';
+              break;
+            case 'delete_success':
+              this.title = '訊息';
+              this.message = '刪除成功';
+              break;
+          }
+          this.show = true;
+        },
+        deleteResource: function() {
+          let self = this;
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
+            type: 'POST',
+            data: {
+              type: 'delete',
+              resource: self.resource
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              dataList.getDatabaseList();
+              self.setDialogue('delete_success');
+            }
+          });
+        },
+        closeDialogue: function() {
+          this.show = false;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
