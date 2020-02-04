@@ -12,7 +12,7 @@ error_reporting(E_ALL);
   // parameters
   $type = $_POST["type"];
   // $resource = $_POST["resource"];
-  $receivedNews = json_decode($_POST["news"], true);
+  $receivedData = json_decode($_POST["news"], true);
 
   // get news list
   $getLatestNewsJsonData = file_get_contents('../data/latestNews.json');
@@ -21,12 +21,12 @@ error_reporting(E_ALL);
   if ($type === 'addNews') {
     // generate uuid
     $newItemID = gen_uuid();
-    $receivedNews['uuid'] = $newItemID;
+    $receivedData['uuid'] = $newItemID;
 
     // get date
-    $receivedNews['publishDate'] = date("Y-m-d");
+    $receivedData['publishDate'] = date("Y-m-d");
 
-    array_push($latestNewsData['newsList'], $receivedNews);
+    array_push($latestNewsData['newsList'], $receivedData);
 
     // write back
     file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
@@ -35,8 +35,8 @@ error_reporting(E_ALL);
   } else if($type === 'updateNews') {
     // search the news
     foreach($latestNewsData['newsList'] as $key => $row) {
-      if(strcasecmp($row['uuid'], $receivedNews['uuid']) == 0) {
-        $latestNewsData['newsList'][$key] = $receivedNews;
+      if(strcasecmp($row['uuid'], $receivedData['uuid']) == 0) {
+        $latestNewsData['newsList'][$key] = $receivedData;
         break;
       }
     }
@@ -46,7 +46,7 @@ error_reporting(E_ALL);
     response('success', 'success');
   } else if ($type === 'deleteNews') {
     foreach($latestNewsData['newsList'] as $key => $row) {
-      if(strcasecmp($row['uuid'], $receivedNews['uuid']) == 0) {
+      if(strcasecmp($row['uuid'], $receivedData['uuid']) == 0) {
         unset($latestNewsData['newsList'][$key]);
         break;
       }
@@ -55,8 +55,13 @@ error_reporting(E_ALL);
     // write back
     file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
-  } else if($type === 'modifyTitle') {
+  } else if($type === 'updateNewsField') {
+    $latestNewsData['bulletinTitle'] = $receivedData['bulletinTitle'];
+    $latestNewsData['displayNumber'] = $receivedData['displayNumber'];
 
+    // write back
+    file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+    response('success', 'success');
   }
 
 

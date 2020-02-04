@@ -56,7 +56,24 @@
         <h4>{{headTitle}}</h4>
         <img src="img/closeWhite.svg"/ class="close" @click="closeForm">
       </div>
-      <div class="dialogue-body">
+      <div class="dialogue-body" v-if="sendType === 'updateNewsField'">
+        <div class="row">
+          <div class="title">標題</div>
+          <div class="content">
+            <input type="text" v-model="newsField.bulletinTitle">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">呈現筆數</div>
+          <div class="content">
+            <input type="number" v-model="newsField.displayNumber" min="1">
+          </div>
+        </div>
+        <div class="btn-frame">
+          <button @click="sendFieldForm">{{btnName}}</button>
+        </div>
+      </div>
+      <div class="dialogue-body" v-else>
         <div class="row">
           <div class="title">標題</div>
           <div class="content">
@@ -138,8 +155,12 @@
             }
           });
         },
-        updateNewsField: function(newsFieldInfo) {
-          fillForm.setDisplayForm('updateNewsField', newsFieldInfo);
+        updateNewsField: function() {
+          let newsFieldData = {
+            'bulletinTitle': this.title,
+            'displayNumber': this.displayNumber
+          }
+          fillForm.setDisplayForm('updateNewsField', newsFieldData);
         },
         updateNews: function(news) {
           fillForm.setDisplayForm('updateNews', news);
@@ -156,14 +177,15 @@
         headTitle: '',
         btnName: '',
         sendType: '',
-        news: ''
+        news: '',
+        newsField: ''
       },
       methods:{
-        setDisplayForm: function(type, news = '') {
+        setDisplayForm: function(type, data = '') {
           if(type === 'updateNews') {
             this.btnName = '修改';
             this.headTitle = '修改內容';
-            this.news = news;
+            this.news = data;
           } else if(type === 'addNews') {
             this.btnName = '新增';
             this.headTitle = '新增最新消息';
@@ -171,10 +193,17 @@
               "title": "",
               "content": ""
             }
+          } else if (type === 'updateNewsField') {
+            this.btnName = '修改';
+            this.headTitle = '修改內容';
+            this.newsField = data
           }
           this.sendType = type;
           this.show = true;
           replaceCKEditor();
+        },
+        sendFieldForm: function() {
+
         },
         sendForm: function() {
           // get the CKEditor data

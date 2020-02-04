@@ -279,7 +279,7 @@ header .top-right a:hover {
   padding: 5px;
   margin-bottom: 10px;
   border: 1px dotted #cccccc;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
 }
 
 .content-field aside .bulletin-board-frame ul li {
