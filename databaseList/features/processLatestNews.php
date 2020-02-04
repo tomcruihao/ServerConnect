@@ -45,7 +45,7 @@ error_reporting(E_ALL);
     file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   } else if ($type === 'deleteNews') {
-    foreach($latestNewsData['rows'] as $key => $row) {
+    foreach($latestNewsData['newsList'] as $key => $row) {
       if(strcasecmp($row['uuid'], $receivedNews['uuid']) == 0) {
         unset($latestNewsData['newsList'][$key]);
         break;

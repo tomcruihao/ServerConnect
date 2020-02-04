@@ -38,7 +38,7 @@
       <h3>{{latestNews.title}}</h3>
       <div class="button-wrap">
         <button @click="updateNews(latestNews)"><img src="img/edit.svg"/></button>
-        <button @click="deleteResource(latestNews)"><img src="img/delete.svg"/></button>
+        <button @click="deleteNews(latestNews)"><img src="img/delete.svg"/></button>
       </div>
       <div class="row">
         <div class="title">發佈日期</div>
@@ -81,10 +81,10 @@
         <h4>{{title}}</h4>
         <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
       </div>
-      <div class="dialogue-body" v-if="type === 'deleteResource'">
-        {{message}} <span class="resource-name">{{resourceName}}</span>?
+      <div class="dialogue-body" v-if="type === 'deleteNews'">
+        {{message}} <span class="resource-name">{{newsTitle}}</span>?
         <div class="btn-frame">
-          <button @click="deleteResource">確定</button>
+          <button @click="deleteNews">確定</button>
           <button @click="closeDialogue">取消</button>
         </div>
       </div>
@@ -144,8 +144,8 @@
         updateNews: function(news) {
           fillForm.setDisplayForm('updateNews', news);
         },
-        deleteResource: function(news) {
-          dialogue.setDialogue('deleteResource', news);
+        deleteNews: function(news) {
+          dialogue.setDialogue('deleteNews', news);
         }
       }
     });
@@ -246,14 +246,14 @@
           }
           this.show = true;
         },
-        deleteResource: function() {
+        deleteNews: function() {
           let self = this;
           $.ajax({
             url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
             data: {
               type: 'deleteNews',
-              resource: self.news
+              news: self.news
             },
             error: function(jqXHR, exception) {
               //use url variable here
