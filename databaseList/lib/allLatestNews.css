@@ -1,0 +1,178 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+body {
+  margin: 0;
+  padding: 0 15px 50px;
+  font-family: 'Noto Sans TC', 'Helvetica', 'Microsoft JhengHei', 'sans-serif';
+  font-size: 16px;
+  background: #f2f2f2;
+}
+
+body headerFlex, body .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+body .header {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  position: fixed;
+  height: 62px;
+  padding: 0px 0px 0px 10px;
+  z-index: 100;
+  color: white;
+  background-color: black;
+  -webkit-box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.9);
+          box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.9);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .header .top-right {
+  height: 100%;
+}
+
+body .header .top-right a {
+  height: 100%;
+  padding: 0 15px;
+  color: #ffffff;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .header .top-right a:hover {
+  background-color: #aaaaaa;
+}
+
+body .accordion {
+  width: 100%;
+  max-width: ˊㄢ 0px;
+  margin: 100px auto 0;
+}
+
+body .accordion input {
+  display: none;
+}
+
+body .accordion .box {
+  position: relative;
+  background: white;
+  height: 64px;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+body .accordion .box.title {
+  background: #ffa701;
+  z-index: 100;
+  cursor: initial;
+}
+
+body .accordion .box:before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+header .box-title {
+  margin: 0;
+  font-weight: normal;
+  font-size: 16pt;
+  color: white;
+  cursor: initial;
+}
+
+.box-title {
+  width: calc(100% - 40px);
+  line-height: 64px;
+  padding: 0 20px;
+  display: inline-block;
+  word-break: break-all;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.box-content {
+  width: calc(100% - 40px);
+  padding: 30px 20px;
+  font-size: 11pt;
+  color: rgba(0, 0, 0, 0.54);
+  word-break: break-all;
+  display: none;
+}
+
+.box-close {
+  position: absolute;
+  height: 64px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  display: none;
+}
+
+input:checked + .box {
+  height: auto;
+  margin: 16px 0;
+}
+
+input:checked + .box .box-title {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+input:checked + .box .box-content,
+input:checked + .box .box-close {
+  display: inline-block;
+}
+
+.arrows section .box-title {
+  padding-left: 44px;
+  width: calc(100% - 64px);
+}
+
+.arrows section .box-title:before {
+  position: absolute;
+  display: block;
+  content: '\203a';
+  font-size: 18pt;
+  left: 20px;
+  top: -2px;
+  -webkit-transition: -webkit-transform .15s ease-in-out;
+  transition: -webkit-transform .15s ease-in-out;
+  transition: transform .15s ease-in-out;
+  transition: transform .15s ease-in-out, -webkit-transform .15s ease-in-out;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+input:checked + section.box .box-title:before {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+/*# sourceMappingURL=allLatestNews.css.map */

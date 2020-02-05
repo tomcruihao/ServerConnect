@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>最新消息</title>
+    <link rel="stylesheet" type="text/css" href="lib/allLatestNews.css"/>
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <h1>學校logo</h1>
+      </div>
+      <div class="top-right">
+        <a href="index.php">回上頁</a>
+      </div>
+    </header>
+    <section class="accordion arrows" id="latestNews">
+      <div class="box title">
+        <label for="acc-close" class="box-title">{{bulletinTitle}}</label>
+      </div>
+      <div v-for="(latestNews, index) in latestNewsListData">
+        <input type="radio" name="accordion" v-bind:id="latestNews.uuid" />
+        <section class="box">
+          <label class="box-title" :for="latestNews.uuid">{{latestNews.title}}</label>
+          <label class="box-close" for="acc-close"></label>
+          <div class="box-content" v-html="latestNews.content"></div>
+        </section>
+      </div>
+      <input type="radio" name="accordion" id="acc-close" />
+    </section>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script type="text/javascript">
+    var latestNews = new Vue({
+      el:'#latestNews',
+      data: {
+        bulletinTitle: '',
+        latestNewsList: []
+      },
+      created: function() {
+        let self = this;
+        $.ajax({
+          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
+          type: 'GET',
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(res) {
+            self.bulletinTitle = res.bulletinTitle;
+            self.latestNewsList = res.newsList;
+          }
+        });
+      },
+      computed: {
+        latestNewsListData: {
+          get: function () {
+            return this.latestNewsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          }
+        }
+      },
+      methods:{
+        closeDialogue: function() {
+          this.show = false;
+        },
+        showContent: function(latestNews) {
+          let message = {
+            'title': latestNews.title,
+            'content': latestNews.content
+          }
+          dialogue.setDialogue('latestNews', message);
+        }
+      }
+    });
+  </script>
+</html>

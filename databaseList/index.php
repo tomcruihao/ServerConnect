@@ -295,7 +295,6 @@
           self.bulletinTitle = res.bulletinTitle;
           self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
-          console.log(self.latestNewsList);
         }
       });
     },
@@ -315,7 +314,6 @@
 
   function directTo(id, url) {
     window.open(url, '_blank');
-    
   }
   function showDetail(info) {
     // show the dialogue
@@ -325,7 +323,7 @@
     } else {
       document.getElementById("detail_resourceName").innerHTML = info.resourceName;
     }
-    
+
     document.getElementById("detail_resourceType").innerHTML = info.resourceType;
     document.getElementById("detail_startDate").innerHTML = info.startDate;
     document.getElementById("detail_expireDate").innerHTML = info.expireDate;
