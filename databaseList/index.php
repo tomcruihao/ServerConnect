@@ -86,7 +86,7 @@
                 <div class="datetime">{{latestNews.publishDate}}</div>
               </li>
               <li class="more" v-if="latestNewsList.length > displayNumber">
-                <a href="#">更多...</a>
+                <a href="allLatestNews.html">更多...</a>
               </li>
             </ul>
           </div>
