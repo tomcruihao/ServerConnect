@@ -13,7 +13,7 @@
   $log['clickedDateTime'] = date("Y-m-d h:i:s");
   $log['ip'] = getUserIpAddr();
 
-  array_push($logData, $log);
+  array_push($logData['log'], $log);
   // write back
   file_put_contents('../data/logUserCountClick.json', json_encode($logData, JSON_UNESCAPED_UNICODE));
   response('success', 'success');
