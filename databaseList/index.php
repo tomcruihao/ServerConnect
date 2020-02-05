@@ -125,7 +125,7 @@
       </div>
     </div>
   </section>
-  <div class="mask" id="fieldDisplay">
+  <div class="mask" id="fieldDisplay" style="display: none;">
     <div class="dialogue-frame">
       <div class="dialogue-content">
         <label>
