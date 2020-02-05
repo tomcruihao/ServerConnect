@@ -265,10 +265,10 @@
         this.show = true;
         switch (type) {
           case 'latestNews':
-            this.dialogHead_title: '公告'
+            this.dialogHead_title = '公告';
             break;
           default:
-            this.dialogHead_title: ' '
+            this.dialogHead_title = ' ';
             break;
         }
       },
