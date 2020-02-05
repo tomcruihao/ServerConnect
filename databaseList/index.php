@@ -125,7 +125,7 @@
       </div>
     </div>
   </section>
-  <div class="mask" id="fieldDisplay" style="display: none;">
+  <div class="mask" id="fieldDisplay">
     <div class="dialogue-frame">
       <div class="dialogue-content">
         <label>
@@ -152,7 +152,7 @@
       </div>
     </div>
   </div>
-  <div class="mask" id="detailInfo" style="display: none;">
+  <div class="mask" id="detailInfo">
     <div class="dialogue-frame">
       <div class="dialogue-content">
         <div class="row">
@@ -209,7 +209,7 @@
       </div>
     </div>
   </div>
-  <div class="mask" id="dialogue" v-if="show">
+  <div class="mask-dia" id="dialogue" v-if="show">
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
