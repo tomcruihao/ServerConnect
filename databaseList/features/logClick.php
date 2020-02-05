@@ -11,6 +11,6 @@
     }
     return $ip;
   }
-
+  echo 'date time - '.date("Y-m-d h:i:s");
   echo 'User Real IP - '.getUserIpAddr();
 ?>
