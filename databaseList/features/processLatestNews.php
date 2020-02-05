@@ -71,6 +71,8 @@ error_reporting(E_ALL);
     $res = array('type' => $errorType, 'mesage' => $message);
     echo json_encode($res, JSON_UNESCAPED_UNICODE);
   }
+
+  // uuid V4
   function gen_uuid() {
     return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
       // 32 bits for "time_low"
