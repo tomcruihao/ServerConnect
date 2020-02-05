@@ -213,7 +213,7 @@
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{dialogHead_title}}</h4>
-        <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
+        <img src="img/closeWhite.svg" class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body">
         <div class="row">
@@ -263,6 +263,14 @@
         this.type = type;
         this.message = messageInfo;
         this.show = true;
+        switch (type) {
+          case 'latestNews':
+            this.dialogHead_title: '公告'
+            break;
+          default:
+            this.dialogHead_title: ' '
+            break;
+        }
       },
       closeDialogue: function() {
         this.show = false;
