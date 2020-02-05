@@ -214,7 +214,7 @@
       <div class="dialogue-head">
         <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
       </div>
-      <div class="dialogue-body" v-else>
+      <div class="dialogue-body">
         {{dialogueMessage}}
         <div class="btn-frame">
           <button @click="closeDialogue">確定</button>
