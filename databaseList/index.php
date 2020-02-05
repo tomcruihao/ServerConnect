@@ -82,7 +82,7 @@
             <h3>{{bulletinTitle}}</h3>
             <ul>
               <li v-for="(latestNews, index) in latestNewsList.slice(0, displayNumber)" class="latest-news">
-                <a class="latest-title" href="#">{{latestNews.title}}</a>
+                <a class="latest-title" href="#" :click="showContent(latestNews)">{{latestNews.title}}</a>
                 <div class="datetime">{{latestNews.publishDate}}</div>
               </li>
               <li class="more" v-if="latestNewsList.length > displayNumber">
@@ -237,8 +237,8 @@
       show: false,
       type: '',
       message: {
-        title: 'test',
-        content: 'test1'
+        title: '',
+        content: ''
       }
     },
     computed: {
@@ -251,28 +251,9 @@
       }
     },
     methods:{
-      setDialogue: function(type, database = '') {
+      setDialogue: function(type, messageInfo) {
         this.type = type;
-        switch (type) {
-          case 'deleteResource':
-            this.title = '注意';
-            this.message = `您確定要刪除`;
-            this.resourceName = database.resourceName;
-            this.resource = JSON.stringify(database);
-            break;
-          case 'add_success':
-            this.title = '訊息';
-            this.message = '新增成功';
-            break;
-          case 'modify_success':
-            this.title = '訊息';
-            this.message = '修改成功';
-            break;
-          case 'delete_success':
-            this.title = '訊息';
-            this.message = '刪除成功';
-            break;
-        }
+        this.message = messageInfo;
         this.show = true;
       },
       closeDialogue: function() {
@@ -308,6 +289,10 @@
     methods:{
       closeDialogue: function() {
         this.show = false;
+      },
+      showContent: function(latestNews) {
+        console.log(latestNews);
+        // dialogue.setDialogue(dialogueType);
       }
     }
   });
