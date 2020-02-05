@@ -15,8 +15,7 @@
 
   array_push($logData['log'], $log);
   // write back
-  // file_put_contents('../data/logUserCountClick.json', json_encode($logData, JSON_UNESCAPED_UNICODE));
-  // response('success', 'success');
+  file_put_contents('../data/logUserCountClick.json', json_encode($logData, JSON_UNESCAPED_UNICODE));
 
   function getUserIpAddr(){
     if(!empty($_SERVER['HTTP_CLIENT_IP'])) {
