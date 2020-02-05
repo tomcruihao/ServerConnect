@@ -175,12 +175,12 @@ header .top-right a:hover {
   overflow-x: scroll;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #ffffff;
 }
 
 .content-field article .databaseList-wrap .databaseList-table {
   min-width: 100%;
   margin-top: 20px;
+  background-color: #ffffff;
   overflow-x: scroll;
   border: 1px solid #aaaaaa;
 }
