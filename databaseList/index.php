@@ -82,7 +82,7 @@
             <h3>{{bulletinTitle}}</h3>
             <ul>
               <li v-for="(latestNews, index) in latestNewsList.slice(0, displayNumber)" class="latest-news">
-                <a class="latest-title" href="#" :click="showContent(latestNews)">{{latestNews.title}}</a>
+                <a class="latest-title" href="#" @click="showContent(latestNews)">{{latestNews.title}}</a>
                 <div class="datetime">{{latestNews.publishDate}}</div>
               </li>
               <li class="more" v-if="latestNewsList.length > displayNumber">
