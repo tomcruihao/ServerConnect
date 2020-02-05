@@ -209,6 +209,19 @@
       </div>
     </div>
   </div>
+  <div class="mask" id="dialogue">
+    <div class="dialogue-message-frame">
+      <div class="dialogue-head">
+        <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body" v-else>
+        {{dialogueMessage}}
+        <div class="btn-frame">
+          <button @click="closeDialogue">確定</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
@@ -217,6 +230,55 @@
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
 
+  var dialogue = new Vue({
+    el:'#dialogue',
+    data: {
+      show: false,
+      type: '',
+      message: {
+        title: 'test',
+        content: 'test1'
+      }
+    },
+    computed: {
+      dialogueMessage: {
+        get: function () {
+          return this.message;
+        }
+        // ,set: function () {
+        // }
+      }
+    },
+    methods:{
+      setDialogue: function(type, database = '') {
+        this.type = type;
+        switch (type) {
+          case 'deleteResource':
+            this.title = '注意';
+            this.message = `您確定要刪除`;
+            this.resourceName = database.resourceName;
+            this.resource = JSON.stringify(database);
+            break;
+          case 'add_success':
+            this.title = '訊息';
+            this.message = '新增成功';
+            break;
+          case 'modify_success':
+            this.title = '訊息';
+            this.message = '修改成功';
+            break;
+          case 'delete_success':
+            this.title = '訊息';
+            this.message = '刪除成功';
+            break;
+        }
+        this.show = true;
+      },
+      closeDialogue: function() {
+        this.show = false;
+      }
+    }
+  });
   var latestNews = new Vue({
     el:'#latestNews',
     data: {
