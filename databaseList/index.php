@@ -152,7 +152,7 @@
       </div>
     </div>
   </div>
-  <div class="mask" id="detailInfo">
+  <div class="mask" id="detailInfo" style="display: none;">
     <div class="dialogue-frame">
       <div class="dialogue-content">
         <div class="row">
