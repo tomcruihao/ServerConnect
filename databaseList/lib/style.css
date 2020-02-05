@@ -323,7 +323,7 @@ header .top-right a:hover {
 .content-field aside .bulletin-board-frame ul li.more {
   font-size: 1rem;
   text-align: end;
-  border-bottom: none;
+  border: none;
 }
 
 .pagination {
