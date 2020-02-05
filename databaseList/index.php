@@ -209,7 +209,7 @@
       </div>
     </div>
   </div>
-  <div class="mask" id="dialogue" style="display: block;">
+  <div class="mask" id="dialogue" v-if="show">
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
