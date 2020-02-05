@@ -240,7 +240,7 @@ header{
         text-align: center;
       }
       ul {
-        padding: 5px;
+        padding: 10px;
         margin-bottom: 10px;
         border: 1px dotted $border_color;
         border-radius: 0 0 10px 10px;
@@ -270,7 +270,9 @@ header{
             }
           }
           &.more {
+            font-size: 1rem;
             text-align: end;
+            border-bottom: none;
           }
         }
       }

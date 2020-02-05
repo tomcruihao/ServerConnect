@@ -280,7 +280,7 @@ header .top-right a:hover {
 }
 
 .content-field aside .bulletin-board-frame ul {
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 10px;
   border: 1px dotted #cccccc;
   border-radius: 0 0 10px 10px;
@@ -321,7 +321,9 @@ header .top-right a:hover {
 }
 
 .content-field aside .bulletin-board-frame ul li.more {
+  font-size: 1rem;
   text-align: end;
+  border-bottom: none;
 }
 
 .pagination {
