@@ -1,4 +1,20 @@
 <?php
+  header("Access-Control-Allow-Origin: *");
+  header("Content-Security-Policy: upgrade-insecure-requests");
+  header('Content-Type: application/json');
+  date_default_timezone_set('Asia/Taipei');
+
+  $getLogData = file_get_contents('../data/logUserCount.json');
+  $logData = json_decode($getLogData, true);
+
+  // $receivedData = json_decode($_POST["directionData"], true);
+
+  $log = [];
+  $log['clickedDateTime'] = date("Y-m-d h:i:s");
+  $log['ip'] = getUserIpAddr();
+
+  print_r($log);
+
   function getUserIpAddr(){
     if(!empty($_SERVER['HTTP_CLIENT_IP'])){
         //ip from share internet
@@ -11,6 +27,4 @@
     }
     return $ip;
   }
-  echo 'date time - '.date("Y-m-d h:i:s");
-  echo 'User Real IP - '.getUserIpAddr();
 ?>
