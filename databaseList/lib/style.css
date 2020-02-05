@@ -88,6 +88,7 @@ header .top-right a:hover {
   width: 100%;
   max-width: 500px;
   height: 40px;
+  background-color: #ffffff;
   padding: 7px;
   border: 2px solid #cccccc;
   border-radius: 30px;
@@ -174,6 +175,7 @@ header .top-right a:hover {
   overflow-x: scroll;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background-color: #ffffff;
 }
 
 .content-field article .databaseList-wrap .databaseList-table {
@@ -184,6 +186,7 @@ header .top-right a:hover {
 }
 
 .content-field article .databaseList-wrap .databaseList-table tr th {
+  font-size: 1.2rem;
   padding-right: 10px;
   position: relative;
   cursor: pointer;
@@ -281,6 +284,7 @@ header .top-right a:hover {
   margin-bottom: 10px;
   border: 1px dotted #cccccc;
   border-radius: 0 0 10px 10px;
+  background-color: #ffffff;
 }
 
 .content-field aside .bulletin-board-frame ul li {
