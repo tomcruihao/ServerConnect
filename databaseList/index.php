@@ -215,10 +215,16 @@
         <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body">
-        {{dialogueMessage.title}}
-        {{dialogueMessage.content}}
+        <div class="row">
+          <div class="title">標題</div>
+          <div class="content">{{dialogueMessage.title}}</div>
+        </div>
+        <div class="row">
+          <div class="title">相關URL</div>
+          <div class="content">{{dialogueMessage.content}}</div>
+        </div>
         <div class="btn-frame">
-          <button @click="closeDialogue">確定</button>
+          <button @click="closeDialogue">關閉</button>
         </div>
       </div>
     </div>
@@ -291,8 +297,11 @@
         this.show = false;
       },
       showContent: function(latestNews) {
-        console.log(latestNews);
-        // dialogue.setDialogue(dialogueType);
+        let message = {
+          'title': latestNews.title,
+          'content': latestNews.content
+        }
+        dialogue.setDialogue('latestNews', message);
       }
     }
   });
