@@ -358,7 +358,7 @@ header .top-right a:hover {
 
 .mask-dia .dialogue-message-frame {
   width: 94%;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .mask-dia .dialogue-message-frame .dialogue-head {
@@ -392,8 +392,20 @@ header .top-right a:hover {
   position: relative;
 }
 
+.mask-dia .dialogue-message-frame .dialogue-body .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .mask-dia .dialogue-message-frame .dialogue-body .row .title {
-  padding: 10px 0;
+  width: 100px;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .row .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .mask-dia .dialogue-message-frame .dialogue-body .btn-frame {

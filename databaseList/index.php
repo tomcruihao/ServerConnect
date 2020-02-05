@@ -221,7 +221,7 @@
         </div>
         <div class="row">
           <div class="title">相關URL</div>
-          <div class="content">{{dialogueMessage.content}}</div>
+          <div class="content" v-html="dialogueMessage.content"></div>
         </div>
         <div class="btn-frame">
           <button @click="closeDialogue">關閉</button>

@@ -301,7 +301,7 @@ header{
   
   .dialogue-message-frame {
     width: 94%;
-    max-width: 600px;
+    max-width: 700px;
 
     .dialogue-head {
       width: 100%;
@@ -333,8 +333,14 @@ header{
       position: relative;
 
       .row {
+        display: flex;
+
         .title {
-          padding: 10px 0;
+          width: 100px;
+        }
+
+        .content {
+          flex: 1;
         }
       }
 
