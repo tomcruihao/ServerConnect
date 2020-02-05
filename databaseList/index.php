@@ -212,6 +212,7 @@
   <div class="mask-dia" id="dialogue" v-if="show">
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
+        <h4>{{dialogHead_title}}</h4>
         <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body">
@@ -242,6 +243,7 @@
     data: {
       show: false,
       type: '',
+      dialogHead_title: '',
       message: {
         title: '',
         content: ''
