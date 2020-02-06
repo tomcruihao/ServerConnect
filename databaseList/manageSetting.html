@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>設定</title>
+    <link rel="stylesheet" type="text/css" href="lib/latestNews.css"/>
+  </head>
+<body>
+  <header>
+    <div>
+      <h1>LOGO</h1>
+    </div>
+    <div class="top-right">
+      <a href="index.php">資源管理</a>
+    </div>
+  </header>
+  <div id="setting" class="latestNews-wrap">
+    <div class="latestNews-wrap form-setting">
+      <h3>設定</h3>
+      <div class="row">
+        <div class="title">proxy</div>
+        <div class="content">
+          <input type="text" v-model="">
+        </div>
+      </div>
+    </div>
+    <div class="button-wrap">
+      <button @click="updateSettings()"></button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script type="text/javascript">
+    var settings = new Vue({
+      el:'#latestNewsListField',
+      data: {
+        settings: {
+          proxy: ''
+        },
+        settings_backup: {
+          proxy: ''
+        }
+      },
+      created: function() {
+        this.getSettings();
+      },
+      computed: {
+        restoreData: {
+          get: function () {
+            return Object.is(this.settings, this.settings_backup);
+          }
+        }
+      },
+      methods:{
+        updateSettings: function() {
+          let self = this;
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSetting.php',
+            type: 'GET',
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              self.settings = res;
+            }
+          });
+        },
+        updateNews: function(news) {
+          fillForm.setDisplayForm('updateNews', news);
+        },
+        deleteNews: function(news) {
+          dialogue.setDialogue('deleteNews', news);
+        }
+      }
+    });
+    var fillForm = new Vue({
+      el:'#fillForm',
+      data: {
+        show: false,
+        headTitle: '',
+        btnName: '',
+        sendType: '',
+        news: '',
+        newsField: ''
+      },
+      methods:{
+        setDisplayForm: function(type, data = '') {
+          if(type === 'updateNews') {
+            this.btnName = '修改';
+            this.headTitle = '修改內容';
+            this.news = data;
+            replaceCKEditor();
+          } else if(type === 'addNews') {
+            this.btnName = '新增';
+            this.headTitle = '新增最新消息';
+            this.news = {
+              "title": "",
+              "content": ""
+            }
+            replaceCKEditor();
+          } else if (type === 'updateNewsField') {
+            this.btnName = '修改';
+            this.headTitle = '修改內容';
+            this.newsField = data
+          }
+          this.sendType = type;
+          this.show = true;
+        },
+        sendFieldForm: function() {
+          let self = this;
+          let sentData = JSON.stringify(self.newsField);
+
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            type: 'POST',
+            data: {
+              type: self.sendType,
+              processData: sentData
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              dataList.getLatestNewsListInfo();
+              self.closeForm();
+              let dialogueType = `${self.sendType}_success`;
+              dialogue.setDialogue(dialogueType);
+            }
+          });
+        },
+        sendForm: function() {
+          // get the CKEditor data
+          let editorData = getEditorData();
+          this.news.content = editorData;
+          
+          let newsData = JSON.stringify(this.news);
+          let self = this;
+          console.log(newsData);
+
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            type: 'POST',
+            data: {
+              type: self.sendType,
+              processData: newsData
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              console.log(res);
+              dataList.getLatestNewsListInfo();
+              self.closeForm();
+              let dialogueType = `${self.sendType}_success`;
+              dialogue.setDialogue(dialogueType);
+            }
+          });
+        },
+        closeForm: function() {
+          this.show = false;
+        }
+      }
+    });
+    var dialogue = new Vue({
+      el:'#dialogue',
+      data: {
+        show: false,
+        type: '',
+        title: '測試標題',
+        message: '測試內容',
+        newsTitle: '',
+        news: ''
+      },
+      methods:{
+        setDialogue: function(type, news = '') {
+          this.type = type;
+          switch (type) {
+            case 'deleteNews':
+              this.title = '注意';
+              this.message = `您確定要刪除`;
+              this.newsTitle = news.title;
+              this.news = JSON.stringify(news);
+              break;
+            case 'addNews_success':
+              this.title = '訊息';
+              this.message = '新增成功';
+              break;
+            case 'updateNews_success':
+              this.title = '訊息';
+              this.message = '修改成功';
+              break;
+            case 'updateNewsField_success':
+              this.title = '訊息';
+              this.message = '修改成功';
+              break;
+            case 'deleteNews_success':
+              this.title = '訊息';
+              this.message = '刪除成功';
+              break;
+          }
+          this.show = true;
+        },
+        deleteNews: function() {
+          let self = this;
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            type: 'POST',
+            data: {
+              type: 'deleteNews',
+              processData: self.news
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              console.log(res);
+              dataList.getLatestNewsListInfo();
+              self.setDialogue('deleteNews_success');
+            }
+          });
+        },
+        closeDialogue: function() {
+          this.show = false;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -314,6 +314,20 @@
 
   function directTo(id, url) {
     window.open(url, '_blank');
+    $.ajax({
+      url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLogClick.php',
+      type: 'POST',
+      error: function(jqXHR, exception) {
+        //use url variable here
+        console.log(jqXHR);
+        console.log(exception);
+      },
+      success: function(res) {
+        self.bulletinTitle = res.bulletinTitle;
+        self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+        self.displayNumber = res.displayNumber;
+      }
+    });
   }
   function showDetail(info) {
     // show the dialogue

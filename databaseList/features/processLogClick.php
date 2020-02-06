@@ -7,7 +7,7 @@
   $getLogData = file_get_contents('../data/logUserCountClick.json');
   $logData = json_decode($getLogData, true);
 
-  // $receivedData = json_decode($_POST["directionData"], true);
+  $receivedData = json_decode($_POST["directionID"], true);
 
   $log = [];
   $log['clickedDateTime'] = date("Y-m-d h:i:s");
