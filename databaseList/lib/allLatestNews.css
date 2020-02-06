@@ -83,6 +83,9 @@ body .accordion .box.title {
   background: #ffa701;
   z-index: 100;
   cursor: initial;
+  padding: 18px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body .accordion .box:before {
