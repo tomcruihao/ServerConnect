@@ -4,45 +4,45 @@
   "newsList": [
     {
       "uuid": "a5f8e96a-8dee-40a7-80c3-9c828bfefbbd",
-      "title": "test1",
+      "title": "公告消息1",
       "publishDate": "2020-02-01",
-      "content": "test1"
+      "content": "公告消息1"
     },
     {
       "uuid": "6310b7b7-1b07-4bd8-af9b-2b7552e56aed",
-      "title": "test2",
+      "title": "公告消息2",
       "publishDate": "2020-02-02",
-      "content": "test2"
+      "content": "公告消息2"
     },
     {
       "uuid": "20e412d0-52e7-4619-a8ff-299253e5903a",
-      "title": "test3",
+      "title": "公告消息3",
       "publishDate": "2020-02-03",
-      "content": "test3"
+      "content": "公告消息3"
     },
     {
       "uuid": "62c9c9a1-cc51-46f5-b9f5-5f32de6fcba3",
-      "title": "test4",
+      "title": "公告消息4",
       "publishDate": "2020-02-04",
-      "content": "test4"
+      "content": "公告消息4"
     },
     {
       "uuid": "c7d00202-ab8d-4428-b547-5fd10756451c",
-      "title": "test5",
+      "title": "公告消息5",
       "publishDate": "2020-02-05",
-      "content": "test5"
+      "content": "公告消息5"
     },
     {
       "uuid": "47e411e4-06b2-4a3d-9556-71a79706d37f",
-      "title": "test6",
+      "title": "公告消息6",
       "publishDate": "2020-02-06",
-      "content": "test6"
+      "content": "公告消息6"
     },
     {
       "uuid": "cf8d87d4-eda6-4a77-84a1-25de80c04efd",
-      "title": "test longggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+      "title": "公告消息7",
       "publishDate": "2020-02-07",
-      "content": "test longggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+      "content": "公告消息7"
     }
   ]
 }
