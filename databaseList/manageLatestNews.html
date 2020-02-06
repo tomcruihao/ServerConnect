@@ -21,7 +21,7 @@
   </button>
   <div id="latestNewsListField" class="latestNews-wrap">
     <div class="latestNews-wrap form-setting">
-      <h3>表格設定</h3>
+      <h3><img src="img/settings.svg"/>表格設定</h3>
       <div class="button-wrap">
         <button @click="updateNewsField()"><img src="img/edit.svg"/></button>
       </div>
@@ -125,7 +125,15 @@
       }, 500);
     }
     function getEditorData() {
-      return CKEDITOR.instances.editor1.getData();
+      // remove script tags
+      const pattern = /<script([\S\s]*?)>([\S\s]*?)<\/script>/ig;
+      const regExp = new RegExp(pattern, 'i');
+
+      let editorData = CKEDITOR.instances.editor1.getData();
+      let processData = editorData.replace(pattern, "");
+      console.log(processData);
+
+      return processData;
     }
     var dataList = new Vue({
       el:'#latestNewsListField',

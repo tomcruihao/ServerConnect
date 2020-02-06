@@ -1,0 +1,675 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+body {
+  margin: 0;
+  padding: 0 15px 50px;
+  font-family: 'Noto Sans TC', 'Helvetica', 'Microsoft JhengHei', 'sans-serif';
+  font-size: 16px;
+  background: #f2f2f2;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+section {
+  margin-top: 70px;
+}
+
+headerFlex, header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+header {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  position: fixed;
+  height: 62px;
+  padding: 0px 0px 0px 10px;
+  z-index: 100;
+  color: white;
+  background-color: black;
+  -webkit-box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.9);
+          box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.9);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .top-right {
+  height: 100%;
+}
+
+header .top-right a {
+  height: 100%;
+  padding: 0 15px;
+  color: #ffffff;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .top-right a:hover {
+  background-color: #aaaaaa;
+}
+
+.search-wrap {
+  padding-top: 20px;
+}
+
+.search-wrap .search-frame {
+  width: 100%;
+  max-width: 500px;
+  height: 40px;
+  background-color: #ffffff;
+  padding: 7px;
+  border: 2px solid #cccccc;
+  border-radius: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.search-wrap .search-frame .search {
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+.atoz-wrap {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.atoz-wrap .atoz-title {
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: bold;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.atoz-wrap .atoz-field {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.atoz-wrap .atoz-field .link-field a {
+  padding: 5px;
+  margin: 0px 5px;
+  display: inline-block;
+  color: blue;
+  text-decoration: none;
+}
+
+.atoz-wrap .atoz-field .link-field a.clicked {
+  background-color: cornflowerblue;
+  color: #ffffff;
+}
+
+.content-field {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content-field article {
+  width: 70%;
+}
+
+.content-field article .burger-button-wrap {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: right;
+}
+
+.content-field article .burger-button-wrap .burger-button {
+  padding: 5px;
+  border: 1px solid #cccccc;
+}
+
+.content-field article .databaseList-wrap {
+  max-width: 100%;
+  overflow-x: scroll;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.content-field article .databaseList-wrap .databaseList-table {
+  min-width: 100%;
+  margin-top: 20px;
+  background-color: #ffffff;
+  overflow-x: scroll;
+  border: 1px solid #aaaaaa;
+}
+
+.content-field article .databaseList-wrap .databaseList-table tr th {
+  font-size: 1.2rem;
+  padding-right: 10px;
+  position: relative;
+  cursor: pointer;
+  text-align: left;
+}
+
+.content-field article .databaseList-wrap .databaseList-table tr th.asc:after {
+  content: " ";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.content-field article .databaseList-wrap .databaseList-table tr th.desc:after {
+  content: " ";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+.content-field article .databaseList-wrap .databaseList-table tr td {
+  min-width: 300px;
+  max-width: 310px;
+  padding: 10px 5px;
+}
+
+.content-field article .databaseList-wrap .databaseList-table tr td.resourceName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-field article .databaseList-wrap .databaseList-table tr td.resourceName .resourceName-title {
+  max-width: calc( 100% - 40px);
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.content-field article .databaseList-wrap .databaseList-table tr td .direction {
+  width: 24px;
+  height: 24px;
+  background-color: #ffa701;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.content-field article .databaseList-wrap .databaseList-table tr td .direction img {
+  width: 16px;
+  height: 16px;
+}
+
+.content-field aside {
+  width: 30%;
+  margin-left: 15px;
+}
+
+.content-field aside .bulletin-board-frame h3 {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #ffa701;
+  border-radius: 10px 10px 0px 0px;
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+
+.content-field aside .bulletin-board-frame ul {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px dotted #cccccc;
+  border-radius: 0 0 10px 10px;
+  background-color: #ffffff;
+}
+
+.content-field aside .bulletin-board-frame ul li {
+  padding: 10px 0px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.content-field aside .bulletin-board-frame ul li a {
+  font-size: 18px;
+  text-decoration: none;
+  color: blue;
+}
+
+.content-field aside .bulletin-board-frame ul li.latest-news {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-field aside .bulletin-board-frame ul li.latest-news .latest-title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: block;
+  word-break: break-all;
+}
+
+.content-field aside .bulletin-board-frame ul li.latest-news .datetime {
+  width: 90px;
+  margin-left: 5px;
+}
+
+.content-field aside .bulletin-board-frame ul li.more {
+  font-size: 1rem;
+  text-align: end;
+  border: none;
+}
+
+.pagination {
+  text-align: center;
+}
+
+.pagination li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.pagination li a {
+  color: black;
+  text-decoration: none;
+}
+
+.pagination li a:active {
+  background-color: crimson;
+}
+
+.mask-dia {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mask-dia .dialogue-message-frame {
+  width: 94%;
+  max-width: 700px;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-head {
+  width: 100%;
+  padding: 5px 15px;
+  font-size: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #00B0ED;
+  border-radius: 10px 10px 0px 0px;
+  position: relative;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-head h4 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-head .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body {
+  min-height: 150px;
+  padding: 15px 15px 80px;
+  background-color: #ffffff;
+  border-radius: 0px 0px 10px 10px;
+  position: relative;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .row .title {
+  width: 100px;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .row .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  word-break: break-all;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .btn-frame {
+  width: 100%;
+  height: 50px;
+  padding: 15px 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .btn-frame button {
+  width: 80px;
+  height: 38px;
+  margin-left: 15px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #ffa701;
+  border-radius: 5px;
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mask .dialogue-message-frame {
+  width: 94%;
+  max-width: 600px;
+}
+
+.mask .dialogue-message-frame .dialogue-head {
+  width: 100%;
+  padding: 5px 15px;
+  font-size: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #00B0ED;
+  border-radius: 10px 10px 0px 0px;
+  position: relative;
+}
+
+.mask .dialogue-message-frame .dialogue-head h4 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.mask .dialogue-message-frame .dialogue-head .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.mask .dialogue-message-frame .dialogue-body {
+  min-height: 150px;
+  padding: 15px 15px 80px;
+  background-color: #ffffff;
+  border-radius: 0px 0px 10px 10px;
+  position: relative;
+}
+
+.mask .dialogue-message-frame .dialogue-body .row .title {
+  padding: 10px 0;
+}
+
+.mask .dialogue-message-frame .dialogue-body .btn-frame {
+  width: 100%;
+  height: 50px;
+  padding: 15px 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.mask .dialogue-message-frame .dialogue-body .btn-frame button {
+  width: 80px;
+  height: 38px;
+  margin-left: 15px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #ffa701;
+  border-radius: 5px;
+}
+
+.mask .dialogue-frame {
+  width: 94%;
+  max-width: 600px;
+  padding: 15px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mask .dialogue-frame .dialogue-content {
+  max-height: 550px;
+  overflow-y: scroll;
+}
+
+.mask .dialogue-frame .dialogue-content label {
+  width: 100%;
+  padding: 10px 5px;
+  display: block;
+  border-bottom: 1px solid #cccccc;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mask .dialogue-frame .dialogue-content .row {
+  margin-bottom: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mask .dialogue-frame .dialogue-content .row .title {
+  width: 200px;
+  font-weight: bold;
+}
+
+.mask .dialogue-frame .dialogue-content .row .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.mask .dialogue-frame .dialogue-content .row .content textarea {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  border: 2px solid #cccccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mask .dialogue-frame .dialogue-content .row .content a {
+  text-decoration: none;
+}
+
+.mask .dialogue-frame .dialogue-content .row .content.over {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mask .dialogue-frame .btn-frame {
+  width: 100%;
+  margin-top: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mask .dialogue-frame .btn-frame button {
+  width: 150px;
+  height: 38px;
+  background-color: #4CAF50;
+  color: #ffffff;
+}
+
+.mask.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .content-field article {
+    width: 100%;
+  }
+  .content-field article .databaseList-wrap .databaseList-table {
+    border: 0;
+    table-layout: fixed;
+  }
+  .content-field article .databaseList-wrap .databaseList-table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .content-field article .databaseList-wrap .databaseList-table tr {
+    background-color: lightgrey;
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  .content-field article .databaseList-wrap .databaseList-table tr td {
+    width: 100% !important;
+    padding: 10px;
+    display: block;
+    max-width: unset;
+    color: #D20B2A;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    text-align: right;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .content-field article .databaseList-wrap .databaseList-table tr td.resourceName {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .content-field article .databaseList-wrap .databaseList-table tr td.resourceName .resourceName-title {
+    color: #333333;
+    max-width: 250px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+  .content-field article .databaseList-wrap .databaseList-table tr td:before {
+    color: black;
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .content-field article .databaseList-wrap .databaseList-table tr td:last-child {
+    border-bottom: 0;
+  }
+  .content-field aside {
+    display: none;
+  }
+}
+/*# sourceMappingURL=index.css.map */
