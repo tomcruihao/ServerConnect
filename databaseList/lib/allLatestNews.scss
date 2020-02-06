@@ -92,7 +92,7 @@ header .box-title {
 .box-title {
 	width: calc(100% - 40px);
 	// height: 64px;
-	line-height: 64px;
+	// line-height: 64px;
 	padding: 0 20px;
   display: inline-block;
   word-break: break-all;
@@ -129,7 +129,7 @@ input:checked + .box .box-close {
 	display: inline-block;
 }
 .arrows section .box-title {
-	padding-left: 44px;
+	padding: 15px 0px 15px 44px;
 	width: calc(100% - 64px);
 }
 .arrows section .box-title:before {
@@ -138,7 +138,7 @@ input:checked + .box .box-close {
 	content: '\203a';
 	font-size: 18pt;
 	left: 20px;
-	top: -2px;
+	top: 8px;
 	transition: transform .15s ease-in-out;
 	color: rgba(0,0,0,.54);
 }

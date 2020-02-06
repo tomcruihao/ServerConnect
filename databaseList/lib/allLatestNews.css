@@ -106,7 +106,6 @@ header .box-title {
 
 .box-title {
   width: calc(100% - 40px);
-  line-height: 64px;
   padding: 0 20px;
   display: inline-block;
   word-break: break-all;
@@ -152,7 +151,7 @@ input:checked + .box .box-close {
 }
 
 .arrows section .box-title {
-  padding-left: 44px;
+  padding: 15px 0px 15px 44px;
   width: calc(100% - 64px);
 }
 
@@ -162,7 +161,7 @@ input:checked + .box .box-close {
   content: '\203a';
   font-size: 18pt;
   left: 20px;
-  top: -2px;
+  top: 8px;
   -webkit-transition: -webkit-transform .15s ease-in-out;
   transition: -webkit-transform .15s ease-in-out;
   transition: transform .15s ease-in-out;
