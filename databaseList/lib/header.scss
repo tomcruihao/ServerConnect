@@ -112,6 +112,8 @@ header {
       ul {
         width: 100vw;
         height: 0;
+        overflow: hidden;
+        background-color: $header_bhcolor;
         display: block;
         position: absolute;
         right: 0;
