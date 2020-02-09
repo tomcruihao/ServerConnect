@@ -175,6 +175,7 @@ header .top-right a:hover {
 
 .content-field article ul li input:checked + .box {
   height: auto;
+  margin-top: 10px;
 }
 
 .content-field article ul li .box {
