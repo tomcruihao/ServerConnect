@@ -2,8 +2,8 @@ $button_color: #4CAF50;
 $border_color: #cccccc;
 $bulletin_header_bgcolor: #ffa701;
 $direction_bgcolor: #ffa701;
-$resource_field_bgcolor_1: #ccdffc;
-$resource_field_bgcolor_2: #ffffff;
+$resource_odd_field_bgcolor_1: #ccdffc;
+$resource_even_field_bgcolor_2: #ffffff;
 
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
@@ -137,6 +137,10 @@ header{
         border-radius: 10px;
         background-color: #ffffff;
 
+        label {
+          cursor: pointer;
+        }
+
         input {
           display: none;
 
@@ -168,10 +172,10 @@ header{
             }
 
             &:nth-of-type(2n-1) {
-              background-color: $resource_field_bgcolor_1;
+              background-color: $resource_odd_field_bgcolor_1;
             }
             &:nth-of-type(2n) {
-              background-color: $resource_field_bgcolor_2;
+              background-color: $resource_even_field_bgcolor_2;
             }
           }
         }
