@@ -2,6 +2,7 @@ $button_color: #4CAF50;
 $border_color: #cccccc;
 $bulletin_header_bgcolor: #ffa701;
 $direction_bgcolor: #ffa701;
+$sorting_btn_bgcolor: #2B78FE;
 $resource_odd_field_bgcolor_1: #ccdffc;
 $resource_even_field_bgcolor_2: #ffffff;
 
@@ -14,7 +15,7 @@ body{
   font-size: 16px;
   background: #f2f2f2;
 }
-ul {
+ol, ul {
   padding: 0;
   margin: 0;
   li {
@@ -130,6 +131,17 @@ header{
   article{
     width: 70%;
 
+    ol {
+      display: flex;
+      align-items: center;
+
+      li {
+        padding: 10px 15px;
+        border-radius: 30px;
+        background-color: $sorting_btn_bgcolor;
+      }
+    }
+
     ul {
       li {
         margin-top: 15px;
@@ -180,15 +192,6 @@ header{
             }
           }
         }
-      }
-    }
-    .burger-button-wrap {
-      width: 100%;
-      box-sizing: border-box;
-      text-align: right;
-      .burger-button {
-        padding: 5px;
-        border: 1px solid $border_color;
       }
     }
 
@@ -246,20 +249,6 @@ header{
             min-width: 300px;
             max-width: 310px;
             padding: 10px 5px;
-
-            &.resourceName {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-
-              .resourceName-title {
-                max-width: calc( 100% - 40px );
-                font-size: 1rem;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-              }
-            }
       
             .direction {
               width: 24px;

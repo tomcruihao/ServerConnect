@@ -33,13 +33,10 @@
       </div>
       <div class="content-field">
         <article>
-        <ol id="filter">
+          <ol id="filter">
             <li class="sort" data-sort="resourceName">資源名稱</li>
             <li class="sort" data-sort="date">Date </li>
             <li class="sort desc" data-sort="views">Popular </li>
-            <li> 
-            <input class="search" type="text" placeholder="Search...">
-            </li>
           </ol>
           <ul class="list" id="resourceList">
 <?php
