@@ -1,6 +1,8 @@
 $header_height: 60px;
 $header_bhcolor: #333333;
 
+$mobile_header_height: 40px;
+
 header {
   height: $header_height;
   background-color: $header_bhcolor;
@@ -8,14 +10,18 @@ header {
   justify-content: space-between;
 
   .logo {
-    height: 100%;
+    height: $header_height;
     
     img {
-      height: 100%;
+      height: $header_height;
     }
   }
   nav {
     height: $header_height;
+
+    input {
+      display: none;
+    }
 
     .mobile-btn-frame {
       display: none;
@@ -32,10 +38,6 @@ header {
         box-sizing: border-box;
         display: flex;
         align-items: center;
-
-        input {
-          display: none;
-        }
 
         .nav-tag {
           width: 100%;
@@ -81,8 +83,34 @@ header {
 }
 @media screen and (max-width: 600px) {
   header {
+    height: $mobile_header_height;
+
+    .logo {
+      height: $mobile_header_height;
+      
+      img {
+        height: $mobile_header_height;
+      }
+    }
     nav {
+      height: 0;
+      
       .mobile-btn-frame {
+        display: block;
+        width: ($mobile_header_height - 10px);
+        height: ($mobile_header_height - 10px);
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+      }
+
+      input {
+        &:checked + ul {
+          height: auto;
+        }
+      }
+
+      ul {
+        width: 100vw;
         display: block;
       }
     }

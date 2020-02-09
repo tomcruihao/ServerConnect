@@ -10,15 +10,19 @@ header {
 }
 
 header .logo {
-  height: 100%;
+  height: 60px;
 }
 
 header .logo img {
-  height: 100%;
+  height: 60px;
 }
 
 header nav {
   height: 60px;
+}
+
+header nav input {
+  display: none;
 }
 
 header nav .mobile-btn-frame {
@@ -44,10 +48,6 @@ header nav .nav-list li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-header nav .nav-list li input {
-  display: none;
 }
 
 header nav .nav-list li .nav-tag {
@@ -91,7 +91,30 @@ header nav .nav-list li.multi:before {
 }
 
 @media screen and (max-width: 600px) {
+  header {
+    height: 40px;
+  }
+  header .logo {
+    height: 40px;
+  }
+  header .logo img {
+    height: 40px;
+  }
+  header nav {
+    height: 0;
+  }
   header nav .mobile-btn-frame {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+  }
+  header nav input:checked + ul {
+    height: auto;
+  }
+  header nav ul {
+    width: 100vw;
     display: block;
   }
 }
