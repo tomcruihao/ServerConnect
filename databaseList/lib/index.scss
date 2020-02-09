@@ -2,6 +2,7 @@ $button_color: #4CAF50;
 $border_color: #cccccc;
 $bulletin_header_bgcolor: #ffa701;
 $direction_bgcolor: #ffa701;
+$resource_field_bgcolor_1: #ccdffc;
 
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
@@ -128,6 +129,41 @@ header{
   article{
     width: 70%;
 
+    ul {
+      li {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #ffffff;
+
+        &:first-of-type {
+          display: none;
+        }
+
+        .row {
+          padding: 10px 5px;
+          display: flex;
+
+          div {
+            &:nth-of-type(2) {
+              flex: 1
+            }
+          }
+
+          .title {
+            width: 120px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+          }
+
+          &:nth-of-type(2n) {
+            background-color: $resource_field_bgcolor_1;
+          }
+        }
+      }
+    }
     .burger-button-wrap {
       width: 100%;
       box-sizing: border-box;

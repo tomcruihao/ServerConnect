@@ -1,5 +1,9 @@
 <!DOCTYPE xtml PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
+<?php
+  $getJsonData = file_get_contents('eResourceList.json');
+  $decodeJsonData = json_decode($getJsonData, true);
+?>
 <html>
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -27,9 +31,9 @@
         <div class="atoz-title">A to Z:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
-      <label class="content-field">
+      <div class="content-field">
         <article>
-          <ol id="filter">
+        <ol id="filter">
             <li class="sort" data-sort="resourceName">資源名稱</li>
             <li class="sort" data-sort="date">Date </li>
             <li class="sort desc" data-sort="views">Popular </li>
@@ -38,58 +42,64 @@
             </li>
           </ol>
           <ul class="list" id="resourceList">
-            <li>
-              <label class="row">
-                <div class="resourceName"></div>
-              </label>
-              <input type="checkbox">
-              <div class="box">
-                <div class="row">
-                  <div class="title">資源類型</div class="title">
-                  <div class="resourceType"></div>
-                </div>
-                <div class="row">
-                  <div class="title">起訂日期</div class="title">
-                  <div class="startDate"></div>
-                </div>
-                <div class="row">
-                  <div class="title">迄訂日期</div class="title">
-                  <div class="expireDate"></div>
-                </div>
-                <div class="row">
-                  <div class="title">適用學院</div class="title">
-                  <div class="faculty"></div>
-                </div>
-                <div class="row">
-                  <div class="title">主題</div class="title">
-                  <div class="subject"></div>
-                </div>
-                <div class="row">
-                  <div class="title">分類</div class="title">
-                  <div class="category"></div>
-                </div>
-                <div class="row">
-                  <div class="title">類型</div class="title">
-                  <div class="type"></div>
-                </div>
-                <div class="row">
-                  <div class="title">資料庫代理商/出版商</div class="title">
-                  <div class="publisher"></div>
-                </div>
-                <div class="row">
-                  <div class="title">語言</div class="title">
-                  <div class="language"></div>
-                </div>
-                <div class="row">
-                  <div class="title">資源簡述(摘要)</div class="title">
-                  <div class="resourceDescribe"></div>
-                </div>
-                <div class="row">
-                  <div class="title">相關URL</div class="title">
-                  <div class="relevanceUrlDescribe"></div>
-                </div>
-              </div>
-            </li>
+<?php
+  foreach ($decodeJsonData['rows'] as $row) {
+    // the data-label is for RWD title
+    echo '
+      <li>
+        <label class="row" for="'.'resource_'.$row['id'].'">
+          <div class="resourceName">'.$row['resourceName'].'</div>
+        </label>
+        <input type="checkbox" id="'.'resource_'.$row['id'].'">
+        <div class="box">
+          <div class="row">
+            <div class="title">資源類型</div class="title">
+            <div class="resourceType">'.$row['resourceType'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">起訂日期</div class="title">
+            <div class="startDate">'.$row['startDate'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">迄訂日期</div class="title">
+            <div class="expireDate">'.$row['expireDate'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">適用學院</div class="title">
+            <div class="faculty">'.$row['faculty'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">主題</div class="title">
+            <div class="subject">'.$row['subject'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">分類</div class="title">
+            <div class="category">'.$row['category'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">類型</div class="title">
+            <div class="type">'.$row['type'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">資料庫代理商/出版商</div class="title">
+            <div class="publisher">'.$row['publisher'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">語言</div class="title">
+            <div class="language">'.$row['language'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">資源簡述(摘要)</div class="title">
+            <div class="resourceDescribe">'.$row['resourceDescribe'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">相關URL</div class="title">
+            <div class="relevanceUrlDescribe">'.$row['relevanceUrlDescribe'].'</div>
+          </div>
+        </div>
+      </li>';
+  }
+?>
           </ul>
         </article>
         <aside>
@@ -248,91 +258,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
-//   var dataList = <?php echo $getJsonData; ?>;
-  var options = {
-    valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'relevanceUrlDescribe' ],
-    page: 500
-  };
-  var resourceList = new List('databaseList', options);
-  async function genResourceList() {
-    return new Promise(function(resolve, reject) {
-      $.ajax({
-        url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getList.php',
-        type: 'GET',
-        error: function(jqXHR, exception) {
-          //use url variable here
-          console.log(jqXHR);
-          console.log(exception);
-        },
-        success: function(res) {
-          // databaseInfo = res;
-          tempRows = res.rows;
-          for(index in tempRows) {
-
-            // check external link
-            let relevanceUrlDescribe = 'N/A';
-            if(tempRows[index].relevanceUrlDescribe !== '') {
-              relevanceUrlDescribe = `<a href="${tempRows[index].relevanceUrl}" target="_blank">${tempRows[index].relevanceUrlDescribe}</a>`
-            }
-
-            let listObj = {
-              resourceName: tempRows[index].resourceName,
-              resourceType: tempRows[index].resourceType,
-              startDate: tempRows[index].startDate,
-              expireDate: tempRows[index].expireDate,
-              faculty: tempRows[index].faculty,
-              subject: tempRows[index].subject,
-              category: tempRows[index].category,
-              type: tempRows[index].type,
-              publisher: tempRows[index].publisher,
-              language: tempRows[index].language,
-              resourceDescribe: tempRows[index].resourceDescribe,
-              relevanceUrlDescribe: relevanceUrlDescribe
-            }
-            resourceList.add(listObj);
-            // let li = document.createElement('li');
-            // li.setAttribute('id','test');
-
-            // let div_resourceName = document.createElement('div');
-            // div_resourceName.className = 'resourceName';
-            // div_resourceName.innerHTML = tempRows[index].resourceName;
-
-            // li.appendChild(div_resourceName);
-            // ul.appendChild(li);
-          }
-          resolve();
-        }
-      });
-    });
-  }
-
-  async function addAccordion() {
-    return new Promise(function(resolve, reject) {
-      document.querySelectorAll("#resourceList").forEach(res => {
-        console.log(res);
-      })
-
-        // let newLabel = document.createElement('label');
-        // newLabel.setAttribute("for", 'checkbox_' + index);
-        // let newCheckBox = document.createElement('input');
-        // newCheckBox.type = 'checkbox';
-        // newCheckBox.className = 'collapse-checkbox';
-        // newCheckBox.id = 'checkbox_' + index;
-
-        // // note: please add checkbox above the label html
-        // menu.insertBefore(newLabel, menu.firstChild);
-        // menu.insertBefore(newCheckBox, menu.firstChild);
-
-      resolve();
-    });
-
-  }
-
-  document.addEventListener("DOMContentLoaded", async function(event) { 
-    console.log('gen');
-    await genResourceList();
-    await addAccordion();
-  });
+  var dataList = <?php echo $getJsonData; ?>;
 
   var dialogue = new Vue({
     el:'#dialogue',
@@ -529,15 +455,15 @@
   function searchBy(term, field) {
     contactList.search(term, [field]);
   }
-  // function displayDetail(id) {
-  //   let dataListRow = dataList.rows;
-  //   for(index in dataListRow) {
-  //     if(dataListRow[index].id === id) {
-  //       showDetail(dataListRow[index]);
-  //       break;
-  //     }
-  //   }
-  // }
+  function displayDetail(id) {
+    let dataListRow = dataList.rows;
+    for(index in dataListRow) {
+      if(dataListRow[index].id === id) {
+        showDetail(dataListRow[index]);
+        break;
+      }
+    }
+  }
   function searchAll() {
     // remove all conditions
     contactList.filter();
@@ -570,6 +496,10 @@
     })
   }
 
-
-
+  // Init list
+  var options = {
+    valueNames: [ 'resourceName', 'subject', 'resourceType', 'faculty', 'publisher', 'lang' ],
+    page: 500
+  };
+  var contactList = new List('databaseList', options);
 </script>
