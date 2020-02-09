@@ -125,7 +125,7 @@ header nav .nav-list li.multi:before {
     height: 40px;
   }
   header nav {
-    height: 0;
+    position: relative;
   }
   header nav .mobile-btn-frame {
     display: block;
@@ -139,7 +139,11 @@ header nav .nav-list li.multi:before {
   }
   header nav ul {
     width: 100vw;
+    height: 0;
     display: block;
+    position: absolute;
+    right: 0;
+    top: 40px;
   }
 }
 

@@ -93,8 +93,8 @@ header {
       }
     }
     nav {
-      height: 0;
-      
+      position: relative;
+
       .mobile-btn-frame {
         display: block;
         width: ($mobile_header_height - 10px);
@@ -111,7 +111,11 @@ header {
 
       ul {
         width: 100vw;
+        height: 0;
         display: block;
+        position: absolute;
+        right: 0;
+        top: $mobile_header_height;
       }
     }
   }
