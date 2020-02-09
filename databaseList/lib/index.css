@@ -176,6 +176,7 @@ header .top-right a:hover {
 
 .content-field article ul li .box {
   height: 0;
+  overflow: hidden;
 }
 
 .content-field article ul li .box .row {

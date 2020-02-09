@@ -146,6 +146,8 @@ header{
         }
         .box {
           height: 0;
+          overflow: hidden;
+          
           .row {
             padding: 10px 5px;
             display: flex;
