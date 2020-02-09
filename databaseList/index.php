@@ -12,13 +12,26 @@
   <link rel="stylesheet" type="text/css" href="lib/index.css"/>
 </head>
 <body onload="init();">
-  <header>
-    <div>
+  <header class="topnav" id="myTopnav">
+    <div class="logo">
       <h1>資料庫列表</h1>
     </div>
-    <div class="top-right">
-      <a href="javascript:addNew();">新增</a>
-    </div>
+    <nav>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+      <a href="#about">About</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </nav>
   </header>
   <section>
     <div id="databaseList">
