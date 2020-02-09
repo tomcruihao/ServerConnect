@@ -139,6 +139,9 @@ header{
         label {
           padding: 15px;
         }
+        input {
+          display: none;
+        }
 
         input:checked + .box {
           height: auto;
@@ -147,7 +150,7 @@ header{
         .box {
           height: 0;
           overflow: hidden;
-          
+
           .row {
             padding: 10px 5px;
             display: flex;

@@ -169,6 +169,10 @@ header .top-right a:hover {
   padding: 15px;
 }
 
+.content-field article ul li input {
+  display: none;
+}
+
 .content-field article ul li input:checked + .box {
   height: auto;
   margin: 16px 0;
