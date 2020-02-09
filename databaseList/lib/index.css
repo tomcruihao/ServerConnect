@@ -22,29 +22,9 @@ button {
   cursor: pointer;
 }
 
-section {
-  margin-top: 70px;
-  padding: 0 15px;
-}
-
 header {
   overflow: hidden;
   background-color: #333;
-}
-
-header a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-header a:hover {
-  background-color: #555;
-  color: white;
 }
 
 header .icon {
@@ -98,6 +78,11 @@ header .dropdown:hover .dropbtn {
 
 header .dropdown:hover .dropdown-content {
   display: block;
+}
+
+section {
+  margin-top: 70px;
+  padding: 0 15px;
 }
 
 .search-wrap {

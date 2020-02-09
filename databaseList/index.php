@@ -12,25 +12,30 @@
   <link rel="stylesheet" type="text/css" href="lib/index.css"/>
 </head>
 <body onload="init();">
-  <header class="topnav" id="myTopnav">
+  <header id="header">
     <div class="logo">
       <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
     </div>
     <nav>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-        <div class="dropdown">
-          <button class="dropbtn">Dropdown 
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
-      <a href="#about">About</a>
-      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      <ul>
+        <li>
+          <a href="#">link 1</a>
+        </li>
+        <li>
+          <label for="link2">link 1</label>
+          <input type="checkbox" id="link2">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">link 3</a>
+        </li>
+      </ul>
     </nav>
   </header>
   <section>

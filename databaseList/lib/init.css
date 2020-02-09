@@ -1,21 +1,24 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
-
-body{
+body {
   margin: 0;
   padding: 0 0 50px;
   font-family: 'Noto Sans TC', 'Helvetica', 'Microsoft JhengHei', 'sans-serif';
   font-size: 16px;
   background: #f2f2f2;
 }
+
 ol, ul {
   padding: 0;
   margin: 0;
-  li {
-    list-style-type: none;
-  }
 }
+
+ol li, ul li {
+  list-style-type: none;
+}
+
 button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
+/*# sourceMappingURL=init.css.map */

@@ -1,0 +1,16 @@
+header {
+  height: 60px;
+  background-color: #333333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .logo {
+  height: 100%;
+}
+
+header .logo img {
+  width: 100%;
+}
+/*# sourceMappingURL=header.css.map */
