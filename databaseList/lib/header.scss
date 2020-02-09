@@ -21,8 +21,11 @@ header {
       display: flex;
 
       li {
+        width: 150px;
         height: $header_height;
         position: relative;
+        display: flex;
+        align-items: center;
 
         label, a {
           display: block;
@@ -34,6 +37,10 @@ header {
           li {
             height: $header_height;
           }
+        }
+
+        &:hover {
+          background-color: #aaaaaa;
         }
       }
     }

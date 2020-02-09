@@ -53,8 +53,15 @@ header nav ul {
 }
 
 header nav ul li {
+  width: 150px;
   height: 60px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header nav ul li label, header nav ul li a {
@@ -69,6 +76,10 @@ header nav ul li ul {
 
 header nav ul li ul li {
   height: 60px;
+}
+
+header nav ul li:hover {
+  background-color: #aaaaaa;
 }
 
 section {
