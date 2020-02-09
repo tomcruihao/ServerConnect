@@ -283,21 +283,6 @@
     // create hyper link of a to z
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
-
-    // get unchecked list and hide columns
-    let uncheckList = getUnCheckedlist();
-  }
-  function showField() {
-    // init all columns
-    document.querySelectorAll('td, th').forEach(res => {
-      res.removeAttribute("style");
-    });
-
-    // get unchecked list and hide columns
-    let uncheckList = getUnCheckedlist();
-
-    // close the dialogue
-    fieldToggle('fieldDisplay');
   }
   function searchAtoZ(upperCharacter) {
     let lowCharater = upperCharacter.toLowerCase();
@@ -316,15 +301,6 @@
   }
   function searchBy(term, field) {
     contactList.search(term, [field]);
-  }
-  function displayDetail(id) {
-    let dataListRow = dataList.rows;
-    for(index in dataListRow) {
-      if(dataListRow[index].id === id) {
-        showDetail(dataListRow[index]);
-        break;
-      }
-    }
   }
   function searchAll() {
     // remove all conditions
@@ -360,7 +336,7 @@
 
   // Init list
   var options = {
-    valueNames: [ 'resourceName', 'subject', 'resourceType', 'faculty', 'publisher', 'lang' ],
+    valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'relevanceUrlDescribe' ],
     page: 500
   };
   var contactList = new List('databaseList', options);
