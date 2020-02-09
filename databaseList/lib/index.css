@@ -139,7 +139,7 @@ header nav .nav-list li.multi:before {
   }
   header nav ul {
     width: 100vw;
-    height: 0;
+    height: 0 !important;
     overflow: hidden;
     background-color: #333333;
     display: block;

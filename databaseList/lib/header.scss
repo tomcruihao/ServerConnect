@@ -111,7 +111,7 @@ header {
 
       ul {
         width: 100vw;
-        height: 0;
+        height: 0 !important;
         overflow: hidden;
         background-color: $header_bhcolor;
         display: block;
