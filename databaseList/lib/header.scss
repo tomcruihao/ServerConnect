@@ -32,7 +32,10 @@ header {
           width: 100%;
           display: block;
           box-sizing: border-box;
+          color: #ffffff;
+          text-decoration: none;
         }
+
         ul {
           position: absolute;
           top: $header_height;
@@ -43,7 +46,7 @@ header {
         }
 
         &:hover {
-          background-color: #aaaaaa;
+          background-color: #777777;
         }
       }
     }

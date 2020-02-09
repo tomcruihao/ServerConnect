@@ -71,6 +71,8 @@ header nav .nav-list li label, header nav .nav-list li a {
   display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 header nav .nav-list li ul {
@@ -84,7 +86,7 @@ header nav .nav-list li ul li {
 }
 
 header nav .nav-list li:hover {
-  background-color: #aaaaaa;
+  background-color: #777777;
 }
 
 section {
