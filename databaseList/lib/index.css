@@ -165,10 +165,6 @@ header .top-right a:hover {
   background-color: #ffffff;
 }
 
-.content-field article ul li:first-of-type {
-  display: none;
-}
-
 .content-field article ul li .row {
   padding: 10px 5px;
   display: -webkit-box;
