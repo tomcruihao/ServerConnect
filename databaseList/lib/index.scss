@@ -136,11 +136,16 @@ header{
       align-items: center;
 
       li {
-        padding: 10px 30px 10px 15px;
+        padding: 10px 30px;
+        margin-left: 15px;
         border-radius: 30px;
         background-color: $sorting_btn_bgcolor;
         color: #ffffff;
         position: relative;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
 
         &.asc {
           &:after{

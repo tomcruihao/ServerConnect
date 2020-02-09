@@ -168,11 +168,16 @@ header .top-right a:hover {
 }
 
 .content-field article ol li {
-  padding: 10px 30px 10px 15px;
+  padding: 10px 30px;
+  margin-left: 15px;
   border-radius: 30px;
   background-color: #2B78FE;
   color: #ffffff;
   position: relative;
+}
+
+.content-field article ol li:first-of-type {
+  margin-left: 0;
 }
 
 .content-field article ol li.asc:after {
