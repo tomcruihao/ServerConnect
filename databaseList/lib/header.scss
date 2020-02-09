@@ -1,8 +1,9 @@
 $header_height: 60px;
+$header_bhcolor: #333333;
 
 header {
   height: $header_height;
-  background-color: #333333;
+  background-color: $header_bhcolor;
   display: flex;
   justify-content: space-between;
 
@@ -27,7 +28,7 @@ header {
         box-sizing: border-box;
         display: flex;
         align-items: center;
-        
+
         input {
           display: none;
         }
@@ -42,6 +43,8 @@ header {
         }
 
         ul {
+          display: none;
+          background-color: $header_bhcolor;
           position: absolute;
           top: $header_height;
           right: 0;
@@ -52,6 +55,10 @@ header {
 
         &:hover {
           background-color: #777777;
+
+          ul {
+            display: block;
+          }
         }
       }
     }

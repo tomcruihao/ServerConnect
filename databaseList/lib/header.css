@@ -57,6 +57,8 @@ header nav .nav-list li label, header nav .nav-list li a {
 }
 
 header nav .nav-list li ul {
+  display: none;
+  background-color: #333333;
   position: absolute;
   top: 60px;
   right: 0;
@@ -68,5 +70,9 @@ header nav .nav-list li ul li {
 
 header nav .nav-list li:hover {
   background-color: #777777;
+}
+
+header nav .nav-list li:hover ul {
+  display: block;
 }
 /*# sourceMappingURL=header.css.map */
