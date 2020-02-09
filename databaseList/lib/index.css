@@ -168,7 +168,7 @@ header .top-right a:hover {
 }
 
 .content-field article ol li {
-  padding: 10px 25px 10px 15px;
+  padding: 10px 30px 10px 15px;
   border-radius: 30px;
   background-color: #2B78FE;
   color: #ffffff;
@@ -179,26 +179,26 @@ header .top-right a:hover {
   content: " ";
   width: 8px;
   height: 8px;
-  border-right: 2px solid #333333;
-  border-bottom: 2px solid #333333;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 15px;
+  right: 10px;
 }
 
 .content-field article ol li.desc:after {
   content: " ";
   width: 8px;
   height: 8px;
-  border-right: 2px solid #333333;
-  border-bottom: 2px solid #333333;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
   -webkit-transform: rotate(225deg);
           transform: rotate(225deg);
   position: absolute;
-  top: 10px;
-  right: 5px;
+  top: 20px;
+  right: 10px;
 }
 
 .content-field article ul li {
