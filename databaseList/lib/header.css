@@ -23,9 +23,21 @@ header nav {
 
 header nav ul {
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 header nav ul li {
   height: 100%;
+  position: relative;
+}
+
+header nav ul li label, header nav ul li a {
+  display: block;
+}
+
+header nav ul li ul {
+  position: absolute;
 }
 /*# sourceMappingURL=header.css.map */
