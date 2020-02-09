@@ -1,12 +1,6 @@
-$button_color: #4CAF50;
-$border_color: #cccccc;
-$bulletin_header_bgcolor: #ffa701;
-$direction_bgcolor: #ffa701;
-$sorting_btn_bgcolor: #2B78FE;
-$resource_odd_field_bgcolor_1: #ccdffc;
-$resource_even_field_bgcolor_2: #ffffff;
-
+@import "variables";
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
 
 body{
   margin: 0;
