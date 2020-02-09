@@ -134,12 +134,12 @@ header nav .nav-list li.multi:before {
     border: 1px solid #ffffff;
     border-radius: 5px;
   }
-  header nav input:checked + ul {
+  header nav input:checked + .nav-list {
     height: auto;
   }
-  header nav ul {
+  header nav .nav-list {
     width: 100vw;
-    height: 0 !important;
+    height: 0;
     overflow: hidden;
     background-color: #333333;
     display: block;

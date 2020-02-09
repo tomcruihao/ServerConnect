@@ -104,14 +104,14 @@ header {
       }
 
       input {
-        &:checked + ul {
+        &:checked + .nav-list {
           height: auto;
         }
       }
 
-      ul {
+      .nav-list {
         width: 100vw;
-        height: 0 !important;
+        height: 0;
         overflow: hidden;
         background-color: $header_bhcolor;
         display: block;
