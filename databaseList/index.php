@@ -17,19 +17,26 @@
       <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
     </div>
     <nav>
-      <ul>
+      <ul class="nav-list">
         <li>
           <a href="#">link 1</a>
         </li>
         <li>
-          <label for="link2">link 1</label>
+          <label for="link2">link 2</label>
           <input type="checkbox" id="link2">
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>
+              <a href="#">link 2-1</a>
+            </li>
+            <li>
+              <a href="#">link 2-2</a>
+            </li>
+            <li>
+              <a href="#">link 2-3</a>
+            </li>
+            <li>
+              <a href="#">link 2-4</a>
+            </li>
           </ul>
         </li>
         <li>

@@ -45,17 +45,19 @@ header nav {
   height: 60px;
 }
 
-header nav ul {
+header nav .nav-list {
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-header nav ul li {
+header nav .nav-list li {
   width: 150px;
   height: 60px;
   position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,21 +66,24 @@ header nav ul li {
           align-items: center;
 }
 
-header nav ul li label, header nav ul li a {
+header nav .nav-list li label, header nav .nav-list li a {
+  width: 100%;
   display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-header nav ul li ul {
+header nav .nav-list li ul {
   position: absolute;
   top: 60px;
   right: 0;
 }
 
-header nav ul li ul li {
+header nav .nav-list li ul li {
   height: 60px;
 }
 
-header nav ul li:hover {
+header nav .nav-list li:hover {
   background-color: #aaaaaa;
 }
 

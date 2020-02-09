@@ -16,7 +16,7 @@ header {
   nav {
     height: $header_height;
 
-    ul {
+    .nav-list {
       height: $header_height;
       display: flex;
 
@@ -24,11 +24,14 @@ header {
         width: 150px;
         height: $header_height;
         position: relative;
+        box-sizing: border-box;
         display: flex;
         align-items: center;
 
         label, a {
+          width: 100%;
           display: block;
+          box-sizing: border-box;
         }
         ul {
           position: absolute;
