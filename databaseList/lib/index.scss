@@ -131,22 +131,20 @@ header{
 
     ul {
       li {
-        margin-top: 20px;
+        margin-top: 15px;
         padding: 15px;
         border-radius: 10px;
         background-color: #ffffff;
 
-        label {
-          padding: 15px;
-        }
         input {
           display: none;
+
+          &:checked + .box {
+            height: auto;
+            margin: 16px 0;
+          }
         }
 
-        input:checked + .box {
-          height: auto;
-          margin: 16px 0;
-        }
         .box {
           height: 0;
           overflow: hidden;

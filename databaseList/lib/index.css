@@ -159,14 +159,10 @@ header .top-right a:hover {
 }
 
 .content-field article ul li {
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 15px;
   border-radius: 10px;
   background-color: #ffffff;
-}
-
-.content-field article ul li label {
-  padding: 15px;
 }
 
 .content-field article ul li input {
