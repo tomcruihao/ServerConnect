@@ -9,7 +9,7 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>資料庫</title>
-  <link rel="stylesheet" type="text/css" href="lib/style.css"/>
+  <link rel="stylesheet" type="text/css" href="lib/index.css"/>
 </head>
 <body onload="init();">
   <header>
@@ -33,49 +33,71 @@
       </div>
       <div class="content-field">
         <article>
-          <div class="burger-button-wrap">
-            <button class="burger-button" onclick="fieldToggle('fieldDisplay')">
-              <img src="img/list.svg"/>
-            </button>
+          <ol id="filter">
+            <li class="sort" data-sort="resourceName">資源名稱</li>
+            <li class="sort" data-sort="date">Date </li>
+            <li class="sort desc" data-sort="views">Popular </li>
+          </ol>
+          <ul class="list" id="resourceList">
+<?php
+  foreach ($decodeJsonData['rows'] as $row) {
+    // the data-label is for RWD title
+    echo '
+      <li>
+        <label for="'.'resource_'.$row['id'].'">
+          <div class="resourceName">'.$row['resourceName'].'</div>
+        </label>
+        <input type="checkbox" id="'.'resource_'.$row['id'].'">
+        <div class="box">
+          <div class="row">
+            <div class="title">資源類型</div class="title">
+            <div class="resourceType">'.$row['resourceType'].'</div>
           </div>
-          <div class="databaseList-wrap">
-            <table class="databaseList-table">
-              <thead>
-                <tr>
-                  <th class="sort resourceName" data-sort="resourceName">資源名稱</th>
-                  <th class="sort subject" data-sort="subject">主題</th>
-                  <th class="sort resourceType" data-sort="resourceType">資源類型</th>
-                  <th class="sort faculty" data-sort="faculty">適用學院</th>
-                  <th class="sort publisher" data-sort="publisher">出版商/代理商</th>
-                  <th class="sort lang" data-sort="lang">語文</th>
-                  <th>詳細資訊</th>
-                </tr>
-              </thead>
-              <tbody class="list" id="databaseList">
-  <?php
-    foreach ($decodeJsonData['rows'] as $row) {
-      // the data-label is for RWD title
-      echo '<tr>
-              <td class="resourceName">
-                <div class="resourceName-title">'.$row['resourceName'].'</div>
-                <button class="direction" onclick="directTo('.$row['id'].', \''.$row['url'].'\')">
-                  <img src="img/direction.svg" alt="點我開啟" title="點我開啟"/>
-                </button>
-              </td>
-              <td class="subject" data-label="主題">'.$row['type'].'</td>
-              <td class="resourceType" data-label="資源類型">'.$row['resourceType'].'</td>
-              <td class="faculty" data-label="適用學院">'.$row['faculty'].'</td>
-              <td class="publisher" data-label="出版商/代理商">'.$row['publisher'].'</td>
-              <td class="lang" data-label="語文">'.$row['language'].'</td>
-              <td>
-                <a href="javascript:displayDetail('.$row['id'].');">點我查看</a>
-              </td>
-            </tr>';
-    }
-  ?>
-              </tbody>
-            </table>
+          <div class="row">
+            <div class="title">起訂日期</div class="title">
+            <div class="startDate">'.$row['startDate'].'</div>
           </div>
+          <div class="row">
+            <div class="title">迄訂日期</div class="title">
+            <div class="expireDate">'.$row['expireDate'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">適用學院</div class="title">
+            <div class="faculty">'.$row['faculty'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">主題</div class="title">
+            <div class="subject">'.$row['subject'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">分類</div class="title">
+            <div class="category">'.$row['category'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">類型</div class="title">
+            <div class="type">'.$row['type'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">資料庫代理商/出版商</div class="title">
+            <div class="publisher">'.$row['publisher'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">語言</div class="title">
+            <div class="language">'.$row['language'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">資源簡述(摘要)</div class="title">
+            <div class="resourceDescribe">'.$row['resourceDescribe'].'</div>
+          </div>
+          <div class="row">
+            <div class="title">相關URL</div class="title">
+            <div class="relevanceUrlDescribe">'.$row['relevanceUrlDescribe'].'</div>
+          </div>
+        </div>
+      </li>';
+  }
+?>
+          </ul>
         </article>
         <aside>
           <div class="bulletin-board-frame" id="latestNews">
@@ -125,90 +147,6 @@
       </div>
     </div>
   </section>
-  <div class="mask" id="fieldDisplay">
-    <div class="dialogue-frame">
-      <div class="dialogue-content">
-        <label>
-          <input type="checkbox" name="tags" value="resourceName" checked disabled> 資源名稱
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="subject" checked> 主題
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="resourceType"> 資源類型
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="faculty"> 適用學院
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="publisher"> 出版商/代理商
-        </label>
-        <label>
-          <input type="checkbox" name="tags" value="lang"> 語文
-        </label>
-      </div>
-      <div class="btn-frame">
-        <button onclick="showField()">確認</button>
-      </div>
-    </div>
-  </div>
-  <div class="mask" id="detailInfo">
-    <div class="dialogue-frame">
-      <div class="dialogue-content">
-        <div class="row">
-          <div class="title">資源名稱</div>
-          <div class="content" id="detail_resourceName"></div>
-        </div>
-        <div class="row">
-          <div class="title">試用/免費註記</div>
-          <div class="content" id="detail_resourceType"></div>
-        </div>
-        <div class="row">
-          <div class="title">起訂日期</div>
-          <div class="content" id="detail_startDate"></div>
-        </div>
-        <div class="row">
-          <div class="title">迄訂日期</div>
-          <div class="content" id="detail_expireDate"></div>
-        </div>
-        <div class="row">
-          <div class="title">適用學院</div>
-          <div class="content" id="detail_faculty"></div>
-        </div>
-        <div class="row">
-          <div class="title">主題</div>
-          <div class="content" id="detail_subject"></div>
-        </div>
-        <div class="row">
-          <div class="title">分類</div>
-          <div class="content" id="detail_category"></div>
-        </div>
-        <div class="row">
-          <div class="title">類型</div>
-          <div class="content" id="detail_type"></div>
-        </div>
-        <div class="row">
-          <div class="title">資料庫代理商/出版商</div>
-          <div class="content" id="detail_publisher"></div>
-        </div>
-        <div class="row">
-          <div class="title">語言</div>
-          <div class="content" id="detail_language"></div>
-        </div>
-        <div class="row">
-          <div class="title">資源簡述(摘要)</div>
-          <div class="content" id="detail_resourceDescribe"></div>
-        </div>
-        <div class="row">
-          <div class="title">相關URL</div>
-          <div class="content" id="detail_relevanceUrlDescribe"></div>
-        </div>
-      </div>
-      <div class="btn-frame">
-        <button onclick="fieldToggle('detailInfo')">關閉</button>
-      </div>
-    </div>
-  </div>
   <div class="mask-dia" id="dialogue" v-if="show">
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
@@ -329,32 +267,6 @@
       }
     });
   }
-  function showDetail(info) {
-    // show the dialogue
-    
-    if(info.url !== '') {
-      document.getElementById("detail_resourceName").innerHTML = `<a href="${info.url}" target="_blank">${info.resourceName}</a>`;
-    } else {
-      document.getElementById("detail_resourceName").innerHTML = info.resourceName;
-    }
-
-    document.getElementById("detail_resourceType").innerHTML = info.resourceType;
-    document.getElementById("detail_startDate").innerHTML = info.startDate;
-    document.getElementById("detail_expireDate").innerHTML = info.expireDate;
-    document.getElementById("detail_faculty").innerHTML = info.faculty;
-    document.getElementById("detail_subject").innerHTML = info.subject;
-    document.getElementById("detail_category").innerHTML = info.category;
-    document.getElementById("detail_type").innerHTML = info.type;
-    document.getElementById("detail_publisher").innerHTML = info.publisher;
-    document.getElementById("detail_language").innerHTML = info.language;
-    document.getElementById("detail_resourceDescribe").innerHTML = info.resourceDescribe;
-
-    if(info.relevanceUrlDescribe !== '') {
-      document.getElementById("detail_relevanceUrlDescribe").innerHTML = `<a href="${info.relevanceUrl !== '' ? info.relevanceUrl : 'javascript:errorMsg(1);'}" target="_blank">${info.relevanceUrlDescribe}</a>`;
-    }
-
-    fieldToggle('detailInfo');
-  }
   function errorMsg (code) {
     switch (code) {
       case 1:
@@ -368,49 +280,6 @@
     // create hyper link of a to z
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
-
-    // get unchecked list and hide columns
-    let uncheckList = getUnCheckedlist();
-    for(let index in uncheckList) {
-      hideColumn(uncheckList[index]);
-    }
-  }
-  function showField() {
-    // init all columns
-    document.querySelectorAll('td, th').forEach(res => {
-      res.removeAttribute("style");
-    });
-
-    // get unchecked list and hide columns
-    let uncheckList = getUnCheckedlist();
-    for(let index in uncheckList) {
-      hideColumn(uncheckList[index]);
-    }
-
-    // close the dialogue
-    fieldToggle('fieldDisplay');
-  }
-  function fieldToggle(DOM_id) {
-    let element = document.getElementById(DOM_id);
-    element.classList.toggle("show");
-  }
-  function getUnCheckedlist() {
-    // get checked list
-    let result = [];
-    let checkList = document.getElementById("fieldDisplay");
-    checkList.querySelectorAll('input[type=checkbox]').forEach(res => {
-      // if not checked, hide the column
-      if(!res.checked) {
-        result.push(res.value);
-      }
-    })
-    return result;
-  }
-  function hideColumn(colName) {
-    let tempClassname = `.${colName}`;
-    document.querySelectorAll(tempClassname).forEach(column => {
-      column.setAttribute('style', 'display: none;');
-    })
   }
   function searchAtoZ(upperCharacter) {
     let lowCharater = upperCharacter.toLowerCase();
@@ -429,15 +298,6 @@
   }
   function searchBy(term, field) {
     contactList.search(term, [field]);
-  }
-  function displayDetail(id) {
-    let dataListRow = dataList.rows;
-    for(index in dataListRow) {
-      if(dataListRow[index].id === id) {
-        showDetail(dataListRow[index]);
-        break;
-      }
-    }
   }
   function searchAll() {
     // remove all conditions
@@ -473,7 +333,7 @@
 
   // Init list
   var options = {
-    valueNames: [ 'resourceName', 'subject', 'resourceType', 'faculty', 'publisher', 'lang' ],
+    valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'relevanceUrlDescribe' ],
     page: 500
   };
   var contactList = new List('databaseList', options);
