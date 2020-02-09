@@ -18,7 +18,7 @@
     </div>
     <nav>
       <label for="mobile_btn" class="mobile-btn-frame">
-        <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
+        <img src="img/list.svg"/>
       </label>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
