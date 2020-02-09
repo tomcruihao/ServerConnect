@@ -203,8 +203,12 @@ header .top-right a:hover {
           align-items: center;
 }
 
-.content-field article ul li .box .row:nth-of-type(2n) {
+.content-field article ul li .box .row:nth-of-type(2n-1) {
   background-color: #ccdffc;
+}
+
+.content-field article ul li .box .row:nth-of-type(2n) {
+  background-color: #ffffff;
 }
 
 .content-field article .burger-button-wrap {
