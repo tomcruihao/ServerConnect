@@ -1,5 +1,7 @@
+$header_height: 60px;
+
 header {
-  height: 60px;
+  height: $header_height;
   background-color: #333333;
   display: flex;
   justify-content: space-between;
@@ -12,14 +14,14 @@ header {
     }
   }
   nav {
-    height: 100%;
+    height: $header_height;
 
     ul {
-      height: 100%;
+      height: $header_height;
       display: flex;
 
       li {
-        height: 100%;
+        height: $header_height;
         position: relative;
 
         label, a {
@@ -27,8 +29,10 @@ header {
         }
         ul {
           position: absolute;
+          top: $header_height;
+          right: 0;
           li {
-
+            height: $header_height;
           }
         }
       }
