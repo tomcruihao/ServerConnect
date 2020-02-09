@@ -21,6 +21,10 @@ header nav {
   height: 60px;
 }
 
+header nav .mobile-btn-frame {
+  display: none;
+}
+
 header nav .nav-list {
   height: 60px;
   display: -webkit-box;
@@ -46,7 +50,7 @@ header nav .nav-list li input {
   display: none;
 }
 
-header nav .nav-list li label, header nav .nav-list li a {
+header nav .nav-list li .nav-tag {
   width: 100%;
   display: block;
   -webkit-box-sizing: border-box;
@@ -84,5 +88,11 @@ header nav .nav-list li.multi:before {
   position: absolute;
   top: 24px;
   right: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  header nav .mobile-btn-frame {
+    display: block;
+  }
 }
 /*# sourceMappingURL=header.css.map */

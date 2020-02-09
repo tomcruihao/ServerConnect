@@ -546,63 +546,6 @@ section {
         .databaseList-table {
           border: 0;
           table-layout: fixed;
-                              
-          thead {
-            border: none;
-            clip: rect(0 0 0 0);
-            height: 1px;
-            margin: -1px;
-            overflow: hidden;
-            padding: 0;
-            position: absolute;
-            width: 1px;
-          }
-                              
-          tr {
-            background-color: lightgrey;
-            border-bottom: 3px solid #ddd;
-            display: block;
-            margin-bottom: .625em;
-
-            td {
-              width: 100% !important;
-              padding: 10px;
-              display: block;
-              max-width: unset;
-              color: #D20B2A;
-              border-bottom: 1px solid #ddd;
-              font-size: 1rem;
-              text-align: right;
-              box-sizing: border-box;
-
-              &.resourceName {
-                justify-content: flex-end;
-  
-                .resourceName-title {
-                  color: #333333;
-                  max-width: 250px;
-                  margin-right: 10px;
-                  font-size: 1.2rem;
-                  text-overflow: ellipsis;
-                  overflow: hidden;
-                  white-space: nowrap;
-                  font-weight: bold;
-                }
-              }
-            }
-                                
-            td:before {
-              color: black;
-              content: attr(data-label);
-              float: left;
-              font-weight: bold;
-              text-transform: uppercase;
-            }
-                                
-            td:last-child {
-              border-bottom: 0;
-            }
-          }
         }
       }
     }

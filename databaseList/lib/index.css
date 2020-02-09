@@ -45,6 +45,10 @@ header nav {
   height: 60px;
 }
 
+header nav .mobile-btn-frame {
+  display: none;
+}
+
 header nav .nav-list {
   height: 60px;
   display: -webkit-box;
@@ -70,7 +74,7 @@ header nav .nav-list li input {
   display: none;
 }
 
-header nav .nav-list li label, header nav .nav-list li a {
+header nav .nav-list li .nav-tag {
   width: 100%;
   display: block;
   -webkit-box-sizing: border-box;
@@ -108,6 +112,12 @@ header nav .nav-list li.multi:before {
   position: absolute;
   top: 24px;
   right: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  header nav .mobile-btn-frame {
+    display: block;
+  }
 }
 
 section {
@@ -723,59 +733,6 @@ section {
   .content-field article .databaseList-wrap .databaseList-table {
     border: 0;
     table-layout: fixed;
-  }
-  .content-field article .databaseList-wrap .databaseList-table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  .content-field article .databaseList-wrap .databaseList-table tr {
-    background-color: lightgrey;
-    border-bottom: 3px solid #ddd;
-    display: block;
-    margin-bottom: .625em;
-  }
-  .content-field article .databaseList-wrap .databaseList-table tr td {
-    width: 100% !important;
-    padding: 10px;
-    display: block;
-    max-width: unset;
-    color: #D20B2A;
-    border-bottom: 1px solid #ddd;
-    font-size: 1rem;
-    text-align: right;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  .content-field article .databaseList-wrap .databaseList-table tr td.resourceName {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-  .content-field article .databaseList-wrap .databaseList-table tr td.resourceName .resourceName-title {
-    color: #333333;
-    max-width: 250px;
-    margin-right: 10px;
-    font-size: 1.2rem;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    font-weight: bold;
-  }
-  .content-field article .databaseList-wrap .databaseList-table tr td:before {
-    color: black;
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  .content-field article .databaseList-wrap .databaseList-table tr td:last-child {
-    border-bottom: 0;
   }
   .content-field aside {
     display: none;

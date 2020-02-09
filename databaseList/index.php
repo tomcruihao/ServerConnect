@@ -17,13 +17,16 @@
       <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
     </div>
     <nav>
+      <label for="mobile_btn" class="mobile-btn-frame">
+        <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
+      </label>
+      <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
         <li>
-          <a href="#">link 1</a>
+          <a href="#" class="nav-tag">link 1</a>
         </li>
-        <li>
-          <label for="link2">link 2</label>
-          <input type="checkbox" id="link2">
+        <li class="multi">
+          <div class="nav-tag">link 2</div>
           <ul>
             <li>
               <a href="#">link 2-1</a>
@@ -40,7 +43,7 @@
           </ul>
         </li>
         <li>
-          <a href="#">link 3</a>
+          <a href="#" class="nav-tag">link 3</a>
         </li>
       </ul>
     </nav>

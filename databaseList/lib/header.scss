@@ -17,6 +17,10 @@ header {
   nav {
     height: $header_height;
 
+    .mobile-btn-frame {
+      display: none;
+    }
+
     .nav-list {
       height: $header_height;
       display: flex;
@@ -33,7 +37,7 @@ header {
           display: none;
         }
 
-        label, a {
+        .nav-tag {
           width: 100%;
           display: block;
           box-sizing: border-box;
@@ -71,6 +75,15 @@ header {
             right: 5px;
           }
         }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  header {
+    nav {
+      .mobile-btn-frame {
+        display: block;
       }
     }
   }
