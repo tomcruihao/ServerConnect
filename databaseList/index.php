@@ -14,7 +14,7 @@
 <body onload="init();">
   <header class="topnav" id="myTopnav">
     <div class="logo">
-      <h1>資料庫列表</h1>
+      <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
     </div>
     <nav>
       <a href="#news">News</a>
