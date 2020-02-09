@@ -47,7 +47,7 @@
     // the data-label is for RWD title
     echo '
       <li>
-        <label class="row" for="'.'resource_'.$row['id'].'">
+        <label for="'.'resource_'.$row['id'].'">
           <div class="resourceName">'.$row['resourceName'].'</div>
         </label>
         <input type="checkbox" id="'.'resource_'.$row['id'].'">

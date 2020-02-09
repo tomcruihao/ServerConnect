@@ -136,26 +136,37 @@ header{
         border-radius: 10px;
         background-color: #ffffff;
 
-        .row {
-          padding: 10px 5px;
-          display: flex;
+        label {
+          padding: 15px;
+        }
 
-          div {
-            &:nth-of-type(2) {
-              flex: 1
-            }
-          }
-
-          .title {
-            width: 120px;
-            font-size: 0.8rem;
-            font-weight: bold;
+        input:checked + .box {
+          height: auto;
+          margin: 16px 0;
+        }
+        .box {
+          height: 0;
+          .row {
+            padding: 10px 5px;
             display: flex;
-            align-items: center;
-          }
 
-          &:nth-of-type(2n) {
-            background-color: $resource_field_bgcolor_1;
+            div {
+              &:nth-of-type(2) {
+                flex: 1
+              }
+            }
+
+            .title {
+              width: 120px;
+              font-size: 0.8rem;
+              font-weight: bold;
+              display: flex;
+              align-items: center;
+            }
+
+            &:nth-of-type(2n) {
+              background-color: $resource_field_bgcolor_1;
+            }
           }
         }
       }
