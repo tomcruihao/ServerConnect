@@ -21,18 +21,23 @@ header {
       display: flex;
 
       li {
-        width: 150px;
+        width: 120px;
         height: $header_height;
         position: relative;
         box-sizing: border-box;
         display: flex;
         align-items: center;
+        
+        input {
+          display: none;
+        }
 
         label, a {
           width: 100%;
           display: block;
           box-sizing: border-box;
           color: #ffffff;
+          text-align: center;
           text-decoration: none;
         }
 
