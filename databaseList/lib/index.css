@@ -22,6 +22,10 @@ button {
   cursor: pointer;
 }
 
+input:focus, textarea:focus, select:focus, button {
+  outline: none;
+}
+
 header {
   height: 60px;
   background-color: #333333;

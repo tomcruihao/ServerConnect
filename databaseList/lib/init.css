@@ -21,4 +21,8 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+input:focus, textarea:focus, select:focus, button {
+  outline: none;
+}
 /*# sourceMappingURL=init.css.map */
