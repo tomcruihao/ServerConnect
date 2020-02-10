@@ -1,4 +1,6 @@
 <?php
+  header("Content-Type:text/html;charset=utf-8");
+  
   // get resource list
   $getResourceListJsonData = file_get_contents('../data/eResourceList.json');
   $resourceList = json_decode($getResourceListJsonData, true);
