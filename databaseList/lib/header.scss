@@ -134,6 +134,7 @@ header {
         position: absolute;
         right: 0;
         top: $mobile_header_height;
+        z-index: 1;
 
         li {
           width: 100vw;

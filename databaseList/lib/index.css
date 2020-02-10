@@ -168,6 +168,7 @@ header nav .nav-list li.multi:before {
     position: absolute;
     right: 0;
     top: 40px;
+    z-index: 1;
   }
   header nav .nav-list li {
     width: 100vw;

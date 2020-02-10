@@ -26,7 +26,8 @@
           <a href="#" class="nav-tag">link 1</a>
         </li>
         <li class="multi">
-          <div class="nav-tag">link 2</div>
+          <label class="nav-tag" for="tag1">link 2</label>
+          <input type="checkbox" id="tag1">
           <ul>
             <li>
               <a href="#">link 2-1</a>
