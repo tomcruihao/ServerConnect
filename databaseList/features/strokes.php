@@ -7,5 +7,11 @@
   $getStrokesJsonData = file_get_contents('../data/UniHanO.json');
   $strokes = json_decode($getStrokesJsonData, true);
 
-  print_r($strokes);
+  foreach($resourceList['rows'] as $key => $row) {
+    echo substr($row['resourceName'], 0, 1);
+    // if(strcasecmp($row['id'], $resource['id']) == 0) {
+    //   $resourceList['rows'][$key] = $resource;
+    //   break;
+    // }
+  }
 ?>
