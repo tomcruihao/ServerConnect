@@ -162,6 +162,7 @@ header nav .nav-list li.multi:before {
   }
   header nav .nav-list li ul {
     height: 0;
+    overflow: hidden;
     display: block;
     background-color: #777777;
     position: unset;
