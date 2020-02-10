@@ -158,6 +158,8 @@ header nav .nav-list li.multi:before {
     line-height: 40px;
   }
   header nav .nav-list li ul {
+    height: 0;
+    display: block;
     background-color: #777777;
     position: unset;
   }

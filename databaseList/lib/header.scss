@@ -148,6 +148,8 @@ header {
           }
 
           ul {
+            height: 0;
+            display: block;
             background-color: #777777;
             position: unset;
   
