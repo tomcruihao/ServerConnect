@@ -55,8 +55,16 @@ header {
           position: absolute;
           top: $header_height;
           right: 0;
+
           li {
             height: $header_height;
+            display: flex;
+            justify-content: center;
+
+            a {
+              color: #ffffff;
+              text-decoration: none;
+            }
           }
         }
 

@@ -94,6 +94,17 @@ header nav .nav-list li ul {
 
 header nav .nav-list li ul li {
   height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav .nav-list li ul li a {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 header nav .nav-list li:hover {
