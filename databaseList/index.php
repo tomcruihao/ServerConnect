@@ -61,12 +61,13 @@
         <div id="atozField" class="atoz-field"></div>
       </div>
       <div class="sort-wrap">
-      <ol class="sort-wrap">
-        <li class="sort" data-sort="resourceName">資源名稱</li>
-        <li class="sort" data-sort="subject">主題</li>
-        <li class="sort" data-sort="category">分類</li>
-        <li class="sort" data-sort="type">類型</li>
-      </ol>
+        <div class="sort-title">排序:</div>
+        <ol class="sort-field">
+          <li class="sort" data-sort="resourceName">資源名稱</li>
+          <li class="sort" data-sort="subject">主題</li>
+          <li class="sort" data-sort="category">分類</li>
+          <li class="sort" data-sort="type">類型</li>
+        </ol>
       </div>
       <div class="content-field">
         <article>
