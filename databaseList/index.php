@@ -60,13 +60,14 @@
         <div class="atoz-title">A to Z:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
+      <div class="sort-wrap">
+      <ol class="sort-wrap">
+        <li class="sort" data-sort="resourceName">資源名稱</li>
+        <li class="sort" data-sort="date">Date </li>
+      </ol>
+      </div>
       <div class="content-field">
         <article>
-          <ol id="filter">
-            <li class="sort" data-sort="resourceName">資源名稱</li>
-            <li class="sort" data-sort="date">Date </li>
-            <li class="sort desc" data-sort="views">Popular </li>
-          </ol>
           <ul class="list" id="resourceList">
 <?php
   foreach ($decodeJsonData['rows'] as $row) {

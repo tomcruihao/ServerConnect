@@ -3,7 +3,7 @@
 @import "header";
 
 section {
-  margin-top: 70px;
+  margin-top: 20px;
   padding: 0 15px;
 }
 
@@ -44,7 +44,7 @@ section {
     flex: 1;
     .link-field {
       a {
-        padding: 5px;
+        padding: 5px 10px;
         margin: 0px 5px;
         display: inline-block;
         color: blue;
@@ -59,6 +59,52 @@ section {
   }
 }
 
+.sort-wrap {
+  display: flex;
+  align-items: center;
+
+  li {
+    padding: 10px 30px;
+    margin-left: 15px;
+    border-radius: 30px;
+    background-color: $sorting_btn_bgcolor;
+    color: #ffffff;
+    position: relative;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    &.asc {
+      &:after{
+        content: " ";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 15px;
+        right: 10px;
+      }
+    }
+
+    &.desc {
+      &:after{
+        content: " ";
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid #ffffff;
+        border-bottom: 2px solid #ffffff;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 20px;
+        right: 10px;
+      }
+    }
+  }
+}
+
 .content-field {
   width: 100%;
   margin-top: 20px;
@@ -67,52 +113,6 @@ section {
 
   article{
     width: 70%;
-
-    ol {
-      display: flex;
-      align-items: center;
-
-      li {
-        padding: 10px 30px;
-        margin-left: 15px;
-        border-radius: 30px;
-        background-color: $sorting_btn_bgcolor;
-        color: #ffffff;
-        position: relative;
-
-        &:first-of-type {
-          margin-left: 0;
-        }
-
-        &.asc {
-          &:after{
-            content: " ";
-            width: 8px;
-            height: 8px;
-            border-right: 2px solid #ffffff;
-            border-bottom: 2px solid #ffffff;
-            transform: rotate(45deg);
-            position: absolute;
-            top: 15px;
-            right: 10px;
-          }
-        }
-
-        &.desc {
-          &:after{
-            content: " ";
-            width: 8px;
-            height: 8px;
-            border-right: 2px solid #ffffff;
-            border-bottom: 2px solid #ffffff;
-            transform: rotate(225deg);
-            position: absolute;
-            top: 20px;
-            right: 10px;
-          }
-        }
-      }
-    }
 
     ul {
       li {

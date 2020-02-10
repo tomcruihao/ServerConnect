@@ -82,6 +82,7 @@ header nav .nav-list li .nav-tag {
   color: #ffffff;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
 }
 
 header nav .nav-list li ul {
@@ -200,7 +201,7 @@ header nav .nav-list li.multi:before {
 }
 
 section {
-  margin-top: 70px;
+  margin-top: 20px;
   padding: 0 15px;
 }
 
@@ -255,7 +256,7 @@ section {
 }
 
 .atoz-wrap .atoz-field .link-field a {
-  padding: 5px;
+  padding: 5px 10px;
   margin: 0px 5px;
   display: inline-block;
   color: blue;
@@ -265,6 +266,54 @@ section {
 .atoz-wrap .atoz-field .link-field a.clicked {
   background-color: cornflowerblue;
   color: #ffffff;
+}
+
+.sort-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sort-wrap li {
+  padding: 10px 30px;
+  margin-left: 15px;
+  border-radius: 30px;
+  background-color: #2B78FE;
+  color: #ffffff;
+  position: relative;
+}
+
+.sort-wrap li:first-of-type {
+  margin-left: 0;
+}
+
+.sort-wrap li.asc:after {
+  content: " ";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+.sort-wrap li.desc:after {
+  content: " ";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+  position: absolute;
+  top: 20px;
+  right: 10px;
 }
 
 .content-field {
@@ -280,54 +329,6 @@ section {
 
 .content-field article {
   width: 70%;
-}
-
-.content-field article ol {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.content-field article ol li {
-  padding: 10px 30px;
-  margin-left: 15px;
-  border-radius: 30px;
-  background-color: #2B78FE;
-  color: #ffffff;
-  position: relative;
-}
-
-.content-field article ol li:first-of-type {
-  margin-left: 0;
-}
-
-.content-field article ol li.asc:after {
-  content: " ";
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  position: absolute;
-  top: 15px;
-  right: 10px;
-}
-
-.content-field article ol li.desc:after {
-  content: " ";
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
-  -webkit-transform: rotate(225deg);
-          transform: rotate(225deg);
-  position: absolute;
-  top: 20px;
-  right: 10px;
 }
 
 .content-field article ul li {

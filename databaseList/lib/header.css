@@ -58,6 +58,7 @@ header nav .nav-list li .nav-tag {
   color: #ffffff;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
 }
 
 header nav .nav-list li ul {
