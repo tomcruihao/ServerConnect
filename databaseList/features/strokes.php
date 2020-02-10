@@ -15,14 +15,18 @@
   // }
 
   foreach($resourceList['rows'] as $key => $row) {
+    // get first char
     $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
     $firstChar = $chars[0];
-    echo $firstChar.' '.mb_detect_encoding($firstChar).'<br>';
-    // $firstChar = substr($row['resourceName'], 0, 1);
+    $result = '';
 
-    // if(mb_detect_encoding($firstChar) === 'UTF-8') {
-    //   echo $firstChar;
-    // }
+    foreach($strokes as $stroke) {
+      if(strcasecmp($firstChar, $stroke['char']) == 0) {
+        print_r($stroke);
+        break;
+      }
+    }
+
     // $newChar = iconv(mb_detect_encoding($firstChar), "big5", $firstChar);
 
     // echo $newChar;
