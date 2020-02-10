@@ -97,7 +97,7 @@ header nav .nav-list li.multi:before {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   position: absolute;
-  top: 24px;
+  top: 27px;
   right: 5px;
 }
 
@@ -144,6 +144,16 @@ header nav .nav-list li.multi:before {
     position: absolute;
     right: 0;
     top: 40px;
+  }
+  header nav .nav-list li {
+    width: 100vw;
+    height: auto;
+    min-height: 40px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header nav .nav-list li.multi:before {
+    top: 17px;
   }
 }
 /*# sourceMappingURL=header.css.map */

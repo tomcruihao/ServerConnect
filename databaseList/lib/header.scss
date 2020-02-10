@@ -1,6 +1,8 @@
 $header_height: 60px;
 $header_bhcolor: #333333;
 
+$triangle_sign_width: 6px;
+
 $mobile_header_height: 40px;
 $mobile_header_padding: 5px;
 
@@ -78,11 +80,11 @@ header {
         &.multi {
           &:before {
             content: " ";
-            border-top: 6px solid #ffffff;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
+            border-top: $triangle_sign_width solid #ffffff;
+            border-left: $triangle_sign_width solid transparent;
+            border-right: $triangle_sign_width solid transparent;
             position: absolute;
-            top: ($header_height / 2 - 6px);
+            top: ($header_height / 2 - ($triangle_sign_width / 2));
             right: 5px;
           }
         }
@@ -132,6 +134,19 @@ header {
         position: absolute;
         right: 0;
         top: $mobile_header_height;
+
+        li {
+          width: 100vw;
+          height: auto;
+          min-height: $mobile_header_height;
+          flex-wrap: wrap;
+
+          &.multi {
+            &:before {
+              top: ($mobile_header_height / 2 - ($triangle_sign_width / 2));
+            }
+          }
+        }
       }
     }
   }
