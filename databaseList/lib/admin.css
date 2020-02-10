@@ -227,60 +227,6 @@ input[type="text"], input[type="date"] {
           box-sizing: border-box;
 }
 
-headerFlex, header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
-header {
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  position: fixed;
-  height: 62px;
-  padding: 0px 0px 0px 10px;
-  z-index: 100;
-  color: white;
-  background-color: black;
-  -webkit-box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.9);
-          box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.9);
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-header .top-right {
-  height: 100%;
-}
-
-header .top-right a {
-  height: 100%;
-  padding: 0 15px;
-  color: #ffffff;
-  text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-header .top-right a:hover {
-  background-color: #aaaaaa;
-}
-
 .add-new-button {
   text-decoration: none;
   text-align: center;
@@ -302,8 +248,11 @@ header .top-right a:hover {
 
 .list-field {
   width: 100%;
+  padding: 0 15px;
   max-width: 960px;
   margin: 100px auto 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .list-field .search-wrap .search-frame {
