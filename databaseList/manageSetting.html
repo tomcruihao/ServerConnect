@@ -96,7 +96,7 @@
         getSettings: function() {
           let self = this;
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSetting.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSetting.php',
             type: 'GET',
             error: function(jqXHR, exception) {
               //use url variable here
@@ -115,7 +115,7 @@
         },
         updateSettings: function(news) {
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
             data: {
               type: self.sendType,
