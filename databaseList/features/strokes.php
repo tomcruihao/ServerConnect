@@ -8,7 +8,9 @@
   $strokes = json_decode($getStrokesJsonData, true);
 
   foreach($resourceList['rows'] as $key => $row) {
-    echo substr($row['resourceName'], 0, 1);
+    $firstChar = substr($row['resourceName'], 0, 1);
+    $newChar = iconv(mb_detect_encoding($firstChar), "UTF-8", $firstChar);
+
     // if(strcasecmp($row['id'], $resource['id']) == 0) {
     //   $resourceList['rows'][$key] = $resource;
     //   break;
