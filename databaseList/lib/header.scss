@@ -120,7 +120,7 @@ header {
       }
 
       input {
-        &:checked + .nav-list {
+        &:checked + .nav-list, &:checked + ul {
           height: auto;
         }
       }
