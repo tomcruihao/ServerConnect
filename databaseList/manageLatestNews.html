@@ -178,7 +178,7 @@
         getLatestNewsListInfo: function() {
           let self = this;
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
             type: 'GET',
             error: function(jqXHR, exception) {
               //use url variable here
@@ -245,7 +245,7 @@
           let sentData = JSON.stringify(self.newsField);
 
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
             data: {
               type: self.sendType,
@@ -274,7 +274,7 @@
           console.log(newsData);
 
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
             data: {
               type: self.sendType,
@@ -341,7 +341,7 @@
         deleteNews: function() {
           let self = this;
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
             data: {
               type: 'deleteNews',
