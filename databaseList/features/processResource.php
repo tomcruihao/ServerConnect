@@ -23,7 +23,7 @@ error_reporting(E_ALL);
     $latestResource = end($resourceList['rows']);
     $newItemID = strval($latestResource['id']) + 1;
     $resource['id'] = $newItemID;
-    $getStroke = getStrokeInfo();
+    $getStroke = getStrokeInfo($resource['resourceName']);
     $resource['strokes'] = $getStroke['strokes'];
     $resource['zhuyin'] = $getStroke['zhuyin'];
     print_r($resource);
