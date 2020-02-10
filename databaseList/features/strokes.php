@@ -1,6 +1,6 @@
 <?php
   header("Content-Type:text/html;charset=utf-8");
-  
+
   // get resource list
   $getResourceListJsonData = file_get_contents('../data/eResourceList.json');
   $resourceList = json_decode($getResourceListJsonData, true);
@@ -15,11 +15,14 @@
   // }
 
   foreach($resourceList['rows'] as $key => $row) {
-    $firstChar = substr($row['resourceName'], 0, 1);
+    $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
+    $firstChar = $chars[0];
+    echo $firstChar.' '.mb_detect_encoding($firstChar).'<br>';
+    // $firstChar = substr($row['resourceName'], 0, 1);
 
-    if(mb_detect_encoding($firstChar) === 'UTF-8') {
-      echo $firstChar;
-    }
+    // if(mb_detect_encoding($firstChar) === 'UTF-8') {
+    //   echo $firstChar;
+    // }
     // $newChar = iconv(mb_detect_encoding($firstChar), "big5", $firstChar);
 
     // echo $newChar;
