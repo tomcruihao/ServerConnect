@@ -94,6 +94,7 @@ header {
       }
     }
     nav {
+      height: $mobile_header_height;
       position: relative;
       padding: $mobile_header_padding;
 
@@ -105,6 +106,7 @@ header {
         border: 1px solid #ffffff;
         border-radius: 5px;
         align-items: center;
+        justify-content: center;
       }
 
       input {
