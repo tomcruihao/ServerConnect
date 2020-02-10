@@ -278,9 +278,11 @@ section {
 }
 
 .sort-wrap li {
+  height: 36px;
   padding: 5px 20px;
+  line-height: 36px;
   margin-left: 15px;
-  border-radius: 30px;
+  border-radius: 36px;
   background-color: #2B78FE;
   color: #ffffff;
   position: relative;
@@ -297,7 +299,7 @@ section {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   position: absolute;
-  top: 27px;
+  top: 15px;
   right: 5px;
 }
 
@@ -307,7 +309,7 @@ section {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   position: absolute;
-  top: 27px;
+  top: 15px;
   right: 5px;
 }
 

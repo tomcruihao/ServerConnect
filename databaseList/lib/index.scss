@@ -65,9 +65,11 @@ section {
   align-items: center;
 
   li {
+    height: 36px;
     padding: 5px 20px;
+    line-height: 36px;
     margin-left: 15px;
-    border-radius: 30px;
+    border-radius: 36px;
     background-color: $sorting_btn_bgcolor;
     color: #ffffff;
     position: relative;
@@ -84,7 +86,7 @@ section {
         border-left: $triangle_sign_width solid transparent;
         border-right: $triangle_sign_width solid transparent;
         position: absolute;
-        top: ($header_height / 2 - ($triangle_sign_width / 2));
+        top: (36px / 2 - ($triangle_sign_width / 2));
         right: 5px;
       }
     }
@@ -96,7 +98,7 @@ section {
         border-left: $triangle_sign_width solid transparent;
         border-right: $triangle_sign_width solid transparent;
         position: absolute;
-        top: ($header_height / 2 - ($triangle_sign_width / 2));
+        top: (36px / 2 - ($triangle_sign_width / 2));
         right: 5px;
       }
     }
