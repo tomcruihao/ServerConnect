@@ -83,6 +83,12 @@
         <input type="checkbox" id="'.'resource_'.$row['id'].'">
         <div class="box">
           <div class="row">
+            <div class="title">連結</div class="title">
+            <div class="resourceUrl">
+              <a href="'.$row['resourceType'].'">點我連結</a>
+            </div>
+          </div>
+          <div class="row">
             <div class="title">資源類型</div class="title">
             <div class="resourceType">'.$row['resourceType'].'</div>
           </div>
