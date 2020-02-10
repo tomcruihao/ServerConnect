@@ -23,10 +23,11 @@ error_reporting(E_ALL);
     $latestResource = end($resourceList['rows']);
     $newItemID = strval($latestResource['id']) + 1;
     $resource['id'] = $newItemID;
+
+    // get stroke and zhuyin info
     $getStroke = getStrokeInfo($resource['resourceName']);
-    $resource['strokes'] = $getStroke['strokes'];
+    $resource['stroke'] = $getStroke['strokes'];
     $resource['zhuyin'] = $getStroke['zhuyin'];
-    print_r($resource);
 
     array_push($resourceList['rows'], $resource);
 
@@ -35,11 +36,9 @@ error_reporting(E_ALL);
     $resourceList['total'] = $total;
     $resourceList['totalNotFiltered'] = $total;
 
-    
-
     // write back
-    // file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
-    // response('success', 'success');
+    file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+    response('success', 'success');
   } else if($type === 'modify') {
     foreach($resourceList['rows'] as $key => $row) {
       if(strcasecmp($row['id'], $resource['id']) == 0) {

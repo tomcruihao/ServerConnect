@@ -31,4 +31,5 @@
 
     // echo $newChar;
   }
+  echo 'execute success!';
 ?>
