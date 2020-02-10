@@ -7,14 +7,18 @@
   $getStrokesJsonData = file_get_contents('../data/UniHanO.json');
   $strokes = json_decode($getStrokesJsonData, true);
 
-  foreach($resourceList['rows'] as $key => $row) {
-    $firstChar = substr($row['resourceName'], 0, 1);
-    $newChar = iconv(mb_detect_encoding($firstChar), "big5", $firstChar);
+  foreach($strokes as $key => $row) {
+    $firstChar = $row['char'];
+    echo mb_detect_encoding($firstChar);
+    // $newChar = iconv(mb_detect_encoding($firstChar), "big5", $firstChar);
 
-    echo $newChar;
-    // if(strcasecmp($row['id'], $resource['id']) == 0) {
-    //   $resourceList['rows'][$key] = $resource;
-    //   break;
-    // }
+    // echo $newChar;
   }
+
+  // foreach($resourceList['rows'] as $key => $row) {
+  //   $firstChar = substr($row['resourceName'], 0, 1);
+  //   $newChar = iconv(mb_detect_encoding($firstChar), "big5", $firstChar);
+
+  //   echo $newChar;
+  // }
 ?>
