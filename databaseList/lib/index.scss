@@ -74,6 +74,7 @@ section {
   .sort-field {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 
     li {
       height: 36px;
