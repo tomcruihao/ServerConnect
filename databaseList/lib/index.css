@@ -176,6 +176,22 @@ header nav .nav-list li.multi:before {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+  header nav .nav-list li .nav-tag {
+    height: 40px;
+  }
+  header nav .nav-list li ul {
+    background-color: #333333;
+    position: unset;
+  }
+  header nav .nav-list li ul li {
+    height: 40px;
+  }
+  header nav .nav-list li:hover {
+    background-color: #777777;
+  }
+  header nav .nav-list li:hover ul {
+    display: block;
+  }
   header nav .nav-list li.multi:before {
     top: 17px;
   }

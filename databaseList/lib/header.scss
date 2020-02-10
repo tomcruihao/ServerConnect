@@ -141,6 +141,27 @@ header {
           min-height: $mobile_header_height;
           flex-wrap: wrap;
 
+          .nav-tag {
+            height: $mobile_header_height;
+          }
+
+          ul {
+            background-color: $header_bhcolor;
+            position: unset;
+  
+            li {
+              height: $mobile_header_height;
+            }
+          }
+  
+          &:hover {
+            background-color: #777777;
+  
+            ul {
+              display: block;
+            }
+          }
+
           &.multi {
             &:before {
               top: ($mobile_header_height / 2 - ($triangle_sign_width / 2));
