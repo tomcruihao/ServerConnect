@@ -71,6 +71,7 @@ section {
     background-color: $sorting_btn_bgcolor;
     color: #ffffff;
     position: relative;
+    cursor: pointer;
 
     &:first-of-type {
       margin-left: 0;
@@ -79,28 +80,24 @@ section {
     &.asc {
       &:after{
         content: " ";
-        width: 8px;
-        height: 8px;
-        border-right: 2px solid #ffffff;
-        border-bottom: 2px solid #ffffff;
-        transform: rotate(45deg);
+        border-top: $triangle_sign_width solid #ffffff;
+        border-left: $triangle_sign_width solid transparent;
+        border-right: $triangle_sign_width solid transparent;
         position: absolute;
-        top: 15px;
-        right: 10px;
+        top: ($header_height / 2 - ($triangle_sign_width / 2));
+        right: 5px;
       }
     }
 
     &.desc {
       &:after{
         content: " ";
-        width: 8px;
-        height: 8px;
-        border-right: 2px solid #ffffff;
-        border-bottom: 2px solid #ffffff;
-        transform: rotate(225deg);
+        border-bottom: $triangle_sign_width solid #ffffff;
+        border-left: $triangle_sign_width solid transparent;
+        border-right: $triangle_sign_width solid transparent;
         position: absolute;
-        top: 20px;
-        right: 10px;
+        top: ($header_height / 2 - ($triangle_sign_width / 2));
+        right: 5px;
       }
     }
   }
