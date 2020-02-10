@@ -30,6 +30,7 @@ section {
     }
   }
 }
+
 .atoz-wrap {
   margin-top: 20px;
   display: flex;
@@ -64,7 +65,7 @@ section {
   align-items: center;
 
   li {
-    padding: 10px 30px;
+    padding: 5px 20px;
     margin-left: 15px;
     border-radius: 30px;
     background-color: $sorting_btn_bgcolor;
