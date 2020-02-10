@@ -23,6 +23,11 @@ error_reporting(E_ALL);
     $latestResource = end($resourceList['rows']);
     $newItemID = strval($latestResource['id']) + 1;
     $resource['id'] = $newItemID;
+    $getStroke = getStrokeInfo();
+    $resource['strokes'] = $getStroke['strokes'];
+    $resource['zhuyin'] = $getStroke['zhuyin'];
+    print_r($resource);
+
     array_push($resourceList['rows'], $resource);
 
     // update resource info
@@ -30,11 +35,11 @@ error_reporting(E_ALL);
     $resourceList['total'] = $total;
     $resourceList['totalNotFiltered'] = $total;
 
+    
+
     // write back
-    file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
-    // echo json_encode($resource, JSON_NUMERIC_CHECK);
-    // echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
+    // file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+    // response('success', 'success');
   } else if($type === 'modify') {
     foreach($resourceList['rows'] as $key => $row) {
       if(strcasecmp($row['id'], $resource['id']) == 0) {
@@ -60,6 +65,24 @@ error_reporting(E_ALL);
     response('success', 'success');
   }
 
+  function getStrokeInfo($str_resourName) {
+    $getStrokesJsonData = file_get_contents('../data/UniHanO.json');
+    $strokes = json_decode($getStrokesJsonData, true);
+
+    // get first char
+    $chars = preg_split('/(?<!^)(?!$)/u', $str_resourName);
+    $firstChar = $chars[0];
+    $result = [];
+
+    foreach($strokes as $stroke) {
+      if(strcasecmp($firstChar, $stroke['char']) == 0) {
+        $result = $stroke;
+        break;
+      }
+    }
+
+    return $result;
+  }
 
   function response($errorType, $message) {
     $res = array('type' => $errorType, 'mesage' => $message);
