@@ -310,7 +310,7 @@
           let resourceData = JSON.stringify(this.resource);
           let self = this;
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
             type: 'POST',
             data: {
               type: self.sendType,
@@ -373,7 +373,7 @@
         deleteResource: function() {
           let self = this;
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
             type: 'POST',
             data: {
               type: 'delete',
