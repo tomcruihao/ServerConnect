@@ -63,7 +63,9 @@
       <div class="sort-wrap">
       <ol class="sort-wrap">
         <li class="sort" data-sort="resourceName">資源名稱</li>
-        <li class="sort" data-sort="date">Date </li>
+        <li class="sort" data-sort="subject">主題</li>
+        <li class="sort" data-sort="category">分類</li>
+        <li class="sort" data-sort="type">類型</li>
       </ol>
       </div>
       <div class="content-field">
