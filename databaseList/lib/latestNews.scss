@@ -47,7 +47,9 @@ input[type="text"], input[type="date"], input[type="number"] {
 .latestNews-wrap {
   width: 100%;
   max-width: 960px;
-  margin: 100px auto 0;
+  margin: 20px auto;
+  padding: 0 15px;
+  box-sizing: border-box;
 
   .latestNews-wrap {
     padding: 15px;
