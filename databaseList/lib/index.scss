@@ -52,7 +52,7 @@ section {
         text-decoration: none;
 
         &.clicked {
-          background-color: cornflowerblue;
+          background-color: $atoz_btn_bgcolor;
           color: #ffffff;
         }
       }
