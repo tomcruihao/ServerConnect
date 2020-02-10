@@ -258,6 +258,7 @@ section {
 .atoz-wrap .atoz-field .link-field a {
   padding: 5px 10px;
   margin: 0px 5px;
+  border-radius: 10px;
   display: inline-block;
   color: blue;
   text-decoration: none;
@@ -301,6 +302,7 @@ section {
   height: 36px;
   padding: 5px 20px;
   margin-left: 15px;
+  margin-bottom: 10px;
   border-radius: 36px;
   background-color: #2B78FE;
   color: #ffffff;
