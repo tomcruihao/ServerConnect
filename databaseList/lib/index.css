@@ -126,6 +126,7 @@ header nav .nav-list li.multi:before {
   }
   header nav {
     position: relative;
+    padding: 5px;
   }
   header nav .mobile-btn-frame {
     line-height: 40px;

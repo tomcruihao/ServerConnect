@@ -2,6 +2,7 @@ $header_height: 60px;
 $header_bhcolor: #333333;
 
 $mobile_header_height: 40px;
+$mobile_header_padding: 5px;
 
 header {
   height: $header_height;
@@ -94,12 +95,13 @@ header {
     }
     nav {
       position: relative;
+      padding: $mobile_header_padding;
 
       .mobile-btn-frame {
         line-height: $mobile_header_height;
         display: flex;
-        width: ($mobile_header_height - 10px);
-        height: ($mobile_header_height - 10px);
+        width: ($mobile_header_height - ($mobile_header_padding * 2));
+        height: ($mobile_header_height - ($mobile_header_padding * 2));
         border: 1px solid #ffffff;
         border-radius: 5px;
         align-items: center;
