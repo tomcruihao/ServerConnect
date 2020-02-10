@@ -280,12 +280,13 @@ section {
 .sort-wrap li {
   height: 36px;
   padding: 5px 20px;
-  line-height: 36px;
   margin-left: 15px;
   border-radius: 36px;
   background-color: #2B78FE;
   color: #ffffff;
   position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   cursor: pointer;
 }
 

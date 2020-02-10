@@ -67,12 +67,12 @@ section {
   li {
     height: 36px;
     padding: 5px 20px;
-    line-height: 36px;
     margin-left: 15px;
     border-radius: 36px;
     background-color: $sorting_btn_bgcolor;
     color: #ffffff;
     position: relative;
+    box-sizing: border-box;
     cursor: pointer;
 
     &:first-of-type {
