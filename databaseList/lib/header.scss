@@ -120,7 +120,7 @@ header {
       }
 
       input {
-        &:checked + .nav-list, &:checked + ul {
+        &:checked + .nav-list {
           height: auto;
         }
       }
@@ -147,6 +147,12 @@ header {
             line-height: $mobile_header_height;
           }
 
+          input {
+            &:checked + ul {
+              height: auto;
+            }
+          }
+          
           ul {
             height: 0;
             display: block;

@@ -156,7 +156,7 @@ header nav .nav-list li.multi:before {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  header nav input:checked + .nav-list, header nav input:checked + ul {
+  header nav input:checked + .nav-list {
     height: auto;
   }
   header nav .nav-list {
@@ -180,6 +180,9 @@ header nav .nav-list li.multi:before {
   header nav .nav-list li .nav-tag {
     height: 40px;
     line-height: 40px;
+  }
+  header nav .nav-list li input:checked + ul {
+    height: auto;
   }
   header nav .nav-list li ul {
     height: 0;
