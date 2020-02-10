@@ -9,7 +9,7 @@
 
   foreach($resourceList['rows'] as $key => $row) {
     $firstChar = substr($row['resourceName'], 0, 1);
-    $newChar = iconv(mb_detect_encoding($firstChar), "UTF-8", $firstChar);
+    $newChar = iconv(mb_detect_encoding($firstChar), "big5", $firstChar);
 
     echo $newChar;
     // if(strcasecmp($row['id'], $resource['id']) == 0) {
