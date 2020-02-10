@@ -56,6 +56,7 @@ header {
           position: absolute;
           top: $header_height;
           right: 0;
+          z-index: 1;
 
           li {
             height: $header_height;
