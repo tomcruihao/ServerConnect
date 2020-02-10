@@ -128,11 +128,17 @@ header nav .nav-list li.multi:before {
     position: relative;
   }
   header nav .mobile-btn-frame {
-    display: block;
+    line-height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     width: 30px;
     height: 30px;
     border: 1px solid #ffffff;
     border-radius: 5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   header nav input:checked + .nav-list {
     height: auto;

@@ -96,11 +96,13 @@ header {
       position: relative;
 
       .mobile-btn-frame {
-        display: block;
+        line-height: $mobile_header_height;
+        display: flex;
         width: ($mobile_header_height - 10px);
         height: ($mobile_header_height - 10px);
         border: 1px solid #ffffff;
         border-radius: 5px;
+        align-items: center;
       }
 
       input {
