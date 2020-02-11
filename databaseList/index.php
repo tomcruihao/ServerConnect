@@ -520,7 +520,9 @@
     var options = {
       valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'relevanceUrlDescribe' ],
       page: 20,
-      pagination: true
+      pagination: true,
+      innerWindow: 2,
+      outerWindow: 1
     };
     var contactList = new List('databaseList', options);
   });
