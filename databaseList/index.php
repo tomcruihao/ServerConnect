@@ -1,7 +1,7 @@
 <!DOCTYPE xtml PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
 <?php
-  $getJsonData = file_get_contents('eResourceList.json');
+  $getJsonData = file_get_contents('data/eResourceList.json');
   $decodeJsonData = json_decode($getJsonData, true);
 ?>
 <html>
