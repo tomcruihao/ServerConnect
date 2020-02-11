@@ -73,7 +73,7 @@
         <article>
           <ul class="list" id="resourceList">
 <?php
-  foreach ($decodeJsonData['rows'] as $key => $row) {
+  foreach ($decodeJsonData['rows'] as $row) {
     // the data-label is for RWD title
     echo '
       <li>
@@ -134,7 +134,6 @@
           </div>
         </div>
       </li>';
-      if ( $key >= 20 ) break;
   }
 ?>
           </ul>
