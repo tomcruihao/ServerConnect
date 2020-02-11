@@ -521,7 +521,7 @@
       valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'relevanceUrlDescribe' ],
       page: 20,
       pagination: {
-        innerWindow: 2,
+        innerWindow: 1,
         outerWindow: 1
       }
     };
