@@ -217,22 +217,24 @@
     console.log(ul_Dom);
 
     // create li and append to ul
-    dataList.rows.forEach(res => {
-      console.log(res);
+    dataList.rows.forEach((res, index) => {
+      let li_dom = document.createElement('li');
+
+      let newLabel = document.createElement('label');
+      newLabel.setAttribute("for", 'checkbox_' + index);
+      newLabel.innerHTML = `<div class="resourceName">${res.resourceName}</div>`;
+
+      let newCheckBox = document.createElement('input');
+      newCheckBox.type = 'checkbox';
+      newCheckBox.className = 'collapse-checkbox';
+      newCheckBox.id = 'checkbox_' + index;
+
+      li_dom.appendChild(newLabel);
+      li_dom.appendChild(newCheckBox);
+      console.log(li_dom);
     });
     // for(let index in dataList.rows) {
-    //   let li_dom = document.createElement('li');
 
-    //   let newLabel = document.createElement('label');
-    //   newLabel.setAttribute("for", 'checkbox_' + index);
-    //   newLabel.innerHTML = `<div class="resourceName">${dataList.rows[index]['resourceName']}</div>`;
-
-    //   let resourceName_div_dom
-
-    //   let newCheckBox = document.createElement('input');
-    //   newCheckBox.type = 'checkbox';
-    //   newCheckBox.className = 'collapse-checkbox';
-    //   newCheckBox.id = 'checkbox_' + index;
     // }
 
     
