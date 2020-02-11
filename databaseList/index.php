@@ -370,10 +370,12 @@
     })
   }
 
-  // Init list
-  var options = {
-    valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'relevanceUrlDescribe' ],
-    page: 500
-  };
-  var contactList = new List('databaseList', options);
+  document.addEventListener("DOMContentLoaded", function(event) { 
+    // Init list
+    var options = {
+      valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'relevanceUrlDescribe' ],
+      page: 500
+    };
+    var contactList = new List('databaseList', options);
+  });
 </script>
