@@ -73,68 +73,68 @@
         <article>
           <ul class="list" id="resourceList">
 <?php
-  foreach ($decodeJsonData['rows'] as $row) {
-    // the data-label is for RWD title
-    echo '
-      <li>
-        <label for="'.'resource_'.$row['id'].'">
-          <div class="resourceName">'.$row['resourceName'].'</div>
-        </label>
-        <input type="checkbox" id="'.'resource_'.$row['id'].'">
-        <div class="box">
-          <div class="row">
-            <div class="title">連結</div class="title">
-            <div class="resourceUrl">
-              <a href="'.$row['resourceType'].'">點我連結</a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="title">資源類型</div class="title">
-            <div class="resourceType">'.$row['resourceType'].'</div>
-          </div>
-          <div class="row">
-            <div class="title">起訂日期</div class="title">
-            <div class="startDate">'.$row['startDate'].'</div>
-          </div>
-          <div class="row">
-            <div class="title">迄訂日期</div class="title">
-            <div class="expireDate">'.$row['expireDate'].'</div>
-          </div>
-          <div class="row">
-            <div class="title">適用學院</div class="title">
-            <div class="faculty">'.$row['faculty'].'</div>
-          </div>
-          <div class="row">
-            <div class="title">主題</div class="title">
-            <div class="subject">'.$row['subject'].'</div>
-          </div>
-          <div class="row">
-            <div class="title">分類</div class="title">
-            <div class="category">'.$row['category'].'</div>
-          </div>
-          <div class="row">
-            <div class="title">類型</div class="title">
-            <div class="type">'.$row['type'].'</div>
-          </div>
-          <div class="row">
-            <div class="title">資料庫代理商/出版商</div class="title">
-            <div class="publisher">'.$row['publisher'].'</div>
-          </div>
-          <div class="row">
-            <div class="title">語言</div class="title">
-            <div class="language">'.$row['language'].'</div>
-          </div>
-          <div class="row">
-            <div class="title">資源簡述(摘要)</div class="title">
-            <div class="resourceDescribe">'.$row['resourceDescribe'].'</div>
-          </div>
-          <div class="row">
-            <div class="title">相關URL</div class="title">
-            <div class="relevanceUrlDescribe">'.$row['relevanceUrlDescribe'].'</div>
-          </div>
-        </div>
-      </li>';
-  }
+  // foreach ($decodeJsonData['rows'] as $row) {
+  //   // the data-label is for RWD title
+  //   echo '
+  //     <li>
+  //       <label for="'.'resource_'.$row['id'].'">
+  //         <div class="resourceName">'.$row['resourceName'].'</div>
+  //       </label>
+  //       <input type="checkbox" id="'.'resource_'.$row['id'].'">
+  //       <div class="box">
+  //         <div class="row">
+  //           <div class="title">連結</div class="title">
+  //           <div class="resourceUrl">
+  //             <a href="'.$row['resourceType'].'">點我連結</a>
+  //           </div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">資源類型</div class="title">
+  //           <div class="resourceType">'.$row['resourceType'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">起訂日期</div class="title">
+  //           <div class="startDate">'.$row['startDate'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">迄訂日期</div class="title">
+  //           <div class="expireDate">'.$row['expireDate'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">適用學院</div class="title">
+  //           <div class="faculty">'.$row['faculty'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">主題</div class="title">
+  //           <div class="subject">'.$row['subject'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">分類</div class="title">
+  //           <div class="category">'.$row['category'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">類型</div class="title">
+  //           <div class="type">'.$row['type'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">資料庫代理商/出版商</div class="title">
+  //           <div class="publisher">'.$row['publisher'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">語言</div class="title">
+  //           <div class="language">'.$row['language'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">資源簡述(摘要)</div class="title">
+  //           <div class="resourceDescribe">'.$row['resourceDescribe'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">相關URL</div class="title">
+  //           <div class="relevanceUrlDescribe">'.$row['relevanceUrlDescribe'].'</div>
+  //         </div>
+  //       </div>
+  //     </li>';
+  // }
 ?>
           </ul>
         </article>
@@ -210,6 +210,71 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
+  var dataList = <?php echo $getJsonData; ?>;
+
+  function genDatalistStructure() {
+    console.log(dataList.rows);
+  //     <li>
+  //       <label for="'.'resource_'.$row['id'].'">
+  //         <div class="resourceName">'.$row['resourceName'].'</div>
+  //       </label>
+  //       <input type="checkbox" id="'.'resource_'.$row['id'].'">
+  //       <div class="box">
+  //         <div class="row">
+  //           <div class="title">連結</div class="title">
+  //           <div class="resourceUrl">
+  //             <a href="'.$row['resourceType'].'">點我連結</a>
+  //           </div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">資源類型</div class="title">
+  //           <div class="resourceType">'.$row['resourceType'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">起訂日期</div class="title">
+  //           <div class="startDate">'.$row['startDate'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">迄訂日期</div class="title">
+  //           <div class="expireDate">'.$row['expireDate'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">適用學院</div class="title">
+  //           <div class="faculty">'.$row['faculty'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">主題</div class="title">
+  //           <div class="subject">'.$row['subject'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">分類</div class="title">
+  //           <div class="category">'.$row['category'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">類型</div class="title">
+  //           <div class="type">'.$row['type'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">資料庫代理商/出版商</div class="title">
+  //           <div class="publisher">'.$row['publisher'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">語言</div class="title">
+  //           <div class="language">'.$row['language'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">資源簡述(摘要)</div class="title">
+  //           <div class="resourceDescribe">'.$row['resourceDescribe'].'</div>
+  //         </div>
+  //         <div class="row">
+  //           <div class="title">相關URL</div class="title">
+  //           <div class="relevanceUrlDescribe">'.$row['relevanceUrlDescribe'].'</div>
+  //         </div>
+  //       </div>
+  //     </li>';
+  }
+  genDatalistStructure();
+
   var dialogue = new Vue({
     el:'#dialogue',
     data: {
@@ -314,6 +379,7 @@
     }
   }
   async function init() {
+
     // create hyper link of a to z
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
