@@ -229,9 +229,63 @@
       newCheckBox.className = 'collapse-checkbox';
       newCheckBox.id = 'checkbox_' + index;
 
+      let box_div_dom = document.createElement('div');
+      box_div_dom.className = 'box';
+      box_div_dom.innerHTML = `<div class="row">\
+                                <div class="title">連結</div>\
+                                <div class="resourceUrl">\
+                                  <a href="${res.resourceType}">點我連結</a>\
+                                </div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">資源類型</div>\
+                                <div class="resourceType">${res.resourceType}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">起訂日期</div>\
+                                <div class="startDate">${res.startDate}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">迄訂日期</div>\
+                                <div class="expireDate">${res.expireDate}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">適用學院</div>\
+                                <div class="faculty">${res.faculty}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">主題</div>\
+                                <div class="subject">${res.subject}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">分類</div>\
+                                <div class="category">${res.category}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">類型</div class="title">\
+                                <div class="type">${res.type}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">資料庫代理商/出版商</div class="title">\
+                                <div class="publisher">${res.publisher}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">語言</div class="title">\
+                                <div class="language">${res.language}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">資源簡述(摘要)</div class="title">\
+                                <div class="resourceDescribe">${res.resourceDescribe}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">相關URL</div class="title">\
+                                <div class="relevanceUrlDescribe">${res.relevanceUrlDescribe}</div>\
+                              </div>`;
+
       li_dom.appendChild(newLabel);
       li_dom.appendChild(newCheckBox);
-      console.log(li_dom);
+      li_dom.appendChild(box_div_dom);
+      ul_Dom.appendChild(li_dom);
     });
     // for(let index in dataList.rows) {
 
@@ -247,33 +301,33 @@
   //       <input type="checkbox" id="'.'resource_'.$row['id'].'">
   //       <div class="box">
   //         <div class="row">
-  //           <div class="title">連結</div class="title">
+  //           <div class="title">連結</div>
   //           <div class="resourceUrl">
   //             <a href="'.$row['resourceType'].'">點我連結</a>
   //           </div>
   //         </div>
   //         <div class="row">
-  //           <div class="title">資源類型</div class="title">
+  //           <div class="title">資源類型</div>
   //           <div class="resourceType">'.$row['resourceType'].'</div>
   //         </div>
   //         <div class="row">
-  //           <div class="title">起訂日期</div class="title">
+  //           <div class="title">起訂日期</div>
   //           <div class="startDate">'.$row['startDate'].'</div>
   //         </div>
   //         <div class="row">
-  //           <div class="title">迄訂日期</div class="title">
+  //           <div class="title">迄訂日期</div>
   //           <div class="expireDate">'.$row['expireDate'].'</div>
   //         </div>
   //         <div class="row">
-  //           <div class="title">適用學院</div class="title">
+  //           <div class="title">適用學院</div>
   //           <div class="faculty">'.$row['faculty'].'</div>
   //         </div>
   //         <div class="row">
-  //           <div class="title">主題</div class="title">
+  //           <div class="title">主題</div>
   //           <div class="subject">'.$row['subject'].'</div>
   //         </div>
   //         <div class="row">
-  //           <div class="title">分類</div class="title">
+  //           <div class="title">分類</div>
   //           <div class="category">'.$row['category'].'</div>
   //         </div>
   //         <div class="row">
