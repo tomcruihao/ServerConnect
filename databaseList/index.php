@@ -210,8 +210,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
-  var dataList = <?php echo $getJsonData; ?>;
-
   var dialogue = new Vue({
     el:'#dialogue',
     data: {
