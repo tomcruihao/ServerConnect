@@ -137,6 +137,7 @@
   // }
 ?>
           </ul>
+          <ul class="pagination"></ul>
         </article>
         <aside>
           <div class="bulletin-board-frame" id="latestNews">
@@ -518,7 +519,9 @@
     // Init list
     var options = {
       valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'relevanceUrlDescribe' ],
-      page: 500
+      page: 20,
+      page: 3,
+      pagination: true
     };
     var contactList = new List('databaseList', options);
   });
