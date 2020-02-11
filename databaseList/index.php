@@ -213,7 +213,31 @@
   var dataList = <?php echo $getJsonData; ?>;
 
   function genDatalistStructure() {
-    console.log(dataList.rows);
+    let ul_Dom = document.getElementById("resourceList");
+    console.log(ul_Dom);
+
+    // create li and append to ul
+    dataList.rows.forEach(res => {
+      console.log(res);
+    });
+    // for(let index in dataList.rows) {
+    //   let li_dom = document.createElement('li');
+
+    //   let newLabel = document.createElement('label');
+    //   newLabel.setAttribute("for", 'checkbox_' + index);
+    //   newLabel.innerHTML = `<div class="resourceName">${dataList.rows[index]['resourceName']}</div>`;
+
+    //   let resourceName_div_dom
+
+    //   let newCheckBox = document.createElement('input');
+    //   newCheckBox.type = 'checkbox';
+    //   newCheckBox.className = 'collapse-checkbox';
+    //   newCheckBox.id = 'checkbox_' + index;
+    // }
+
+    
+
+
   //     <li>
   //       <label for="'.'resource_'.$row['id'].'">
   //         <div class="resourceName">'.$row['resourceName'].'</div>
