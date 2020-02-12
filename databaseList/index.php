@@ -389,11 +389,11 @@
     // Init list
     var options = {
       valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language']
-      // page: 20,
-      // pagination: {
-      //   innerWindow: 1,
-      //   outerWindow: 1
-      // }
+      page: 20,
+      pagination: {
+        innerWindow: 1,
+        outerWindow: 1
+      }
     };
     var contactList = new List('databaseList', options);
   });
