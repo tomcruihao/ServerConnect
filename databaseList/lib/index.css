@@ -582,6 +582,11 @@ section {
   color: #ffffff;
 }
 
+.pagination li.disabled a {
+  color: #aaaaaa;
+  cursor: text;
+}
+
 .mask-dia {
   width: 100vw;
   height: 100vh;

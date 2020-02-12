@@ -335,6 +335,13 @@ section {
         color: #ffffff;
       }
     }
+
+    &.disabled {
+      a {
+        color: #aaaaaa;
+        cursor: text;
+      }
+    }
   }
 }
 
