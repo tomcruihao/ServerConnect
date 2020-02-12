@@ -19,6 +19,8 @@ section {
     border: 2px solid $border_color;
     border-radius: 30px;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
 
     .search {
       width: 100%;
