@@ -2,6 +2,8 @@
 @import "variables";
 @import "header";
 
+$pagination_btn_active_bgcolor: #2B78FE;
+
 section {
   margin-top: 20px;
   padding: 0 15px;
@@ -316,11 +318,17 @@ section {
   li {
     display:inline-block;
     padding:5px;
+    margin: 0 5px;
+
     a {
       color: black;
       text-decoration: none;
-      &:active {
-        background-color: crimson;
+    }
+    &.active {
+      background-color: $pagination_btn_active_bgcolor;
+
+      a {
+        color: #ffffff;
       }
     }
   }

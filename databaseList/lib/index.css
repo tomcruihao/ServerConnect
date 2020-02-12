@@ -562,6 +562,7 @@ section {
 .pagination li {
   display: inline-block;
   padding: 5px;
+  margin: 0 5px;
 }
 
 .pagination li a {
@@ -569,8 +570,12 @@ section {
   text-decoration: none;
 }
 
-.pagination li a:active {
-  background-color: crimson;
+.pagination li.active {
+  background-color: #2B78FE;
+}
+
+.pagination li.active a {
+  color: #ffffff;
 }
 
 .mask-dia {
