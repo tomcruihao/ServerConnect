@@ -72,70 +72,6 @@
       <div class="content-field">
         <article>
           <ul class="list" id="resourceList">
-<?php
-  // foreach ($decodeJsonData['rows'] as $row) {
-  //   // the data-label is for RWD title
-  //   echo '
-  //     <li>
-  //       <label for="'.'resource_'.$row['id'].'">
-  //         <div class="resourceName">'.$row['resourceName'].'</div>
-  //       </label>
-  //       <input type="checkbox" id="'.'resource_'.$row['id'].'">
-  //       <div class="box">
-  //         <div class="row">
-  //           <div class="title">連結</div class="title">
-  //           <div class="resourceUrl">
-  //             <a href="'.$row['resourceType'].'">點我連結</a>
-  //           </div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">資源類型</div class="title">
-  //           <div class="resourceType">'.$row['resourceType'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">起訂日期</div class="title">
-  //           <div class="startDate">'.$row['startDate'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">迄訂日期</div class="title">
-  //           <div class="expireDate">'.$row['expireDate'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">適用學院</div class="title">
-  //           <div class="faculty">'.$row['faculty'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">主題</div class="title">
-  //           <div class="subject">'.$row['subject'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">分類</div class="title">
-  //           <div class="category">'.$row['category'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">類型</div class="title">
-  //           <div class="type">'.$row['type'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">資料庫代理商/出版商</div class="title">
-  //           <div class="publisher">'.$row['publisher'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">語言</div class="title">
-  //           <div class="language">'.$row['language'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">資源簡述(摘要)</div class="title">
-  //           <div class="resourceDescribe">'.$row['resourceDescribe'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">相關URL</div class="title">
-  //           <div class="relevanceUrlDescribe">'.$row['relevanceUrlDescribe'].'</div>
-  //         </div>
-  //       </div>
-  //     </li>';
-  // }
-?>
           </ul>
           <ul class="pagination"></ul>
         </article>
@@ -215,7 +151,6 @@
 
   function genDatalistStructure() {
     let ul_Dom = document.getElementById("resourceList");
-    console.log(ul_Dom);
 
     // create li and append to ul
     dataList.rows.forEach((res, index) => {
@@ -288,71 +223,6 @@
       li_dom.appendChild(box_div_dom);
       ul_Dom.appendChild(li_dom);
     });
-    // for(let index in dataList.rows) {
-
-    // }
-
-    
-
-
-  //     <li>
-  //       <label for="'.'resource_'.$row['id'].'">
-  //         <div class="resourceName">'.$row['resourceName'].'</div>
-  //       </label>
-  //       <input type="checkbox" id="'.'resource_'.$row['id'].'">
-  //       <div class="box">
-  //         <div class="row">
-  //           <div class="title">連結</div>
-  //           <div class="resourceUrl">
-  //             <a href="'.$row['resourceType'].'">點我連結</a>
-  //           </div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">資源類型</div>
-  //           <div class="resourceType">'.$row['resourceType'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">起訂日期</div>
-  //           <div class="startDate">'.$row['startDate'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">迄訂日期</div>
-  //           <div class="expireDate">'.$row['expireDate'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">適用學院</div>
-  //           <div class="faculty">'.$row['faculty'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">主題</div>
-  //           <div class="subject">'.$row['subject'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">分類</div>
-  //           <div class="category">'.$row['category'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">類型</div class="title">
-  //           <div class="type">'.$row['type'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">資料庫代理商/出版商</div class="title">
-  //           <div class="publisher">'.$row['publisher'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">語言</div class="title">
-  //           <div class="language">'.$row['language'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">資源簡述(摘要)</div class="title">
-  //           <div class="resourceDescribe">'.$row['resourceDescribe'].'</div>
-  //         </div>
-  //         <div class="row">
-  //           <div class="title">相關URL</div class="title">
-  //           <div class="relevanceUrlDescribe">'.$row['relevanceUrlDescribe'].'</div>
-  //         </div>
-  //       </div>
-  //     </li>';
   }
   genDatalistStructure();
 
@@ -518,12 +388,12 @@
   document.addEventListener("DOMContentLoaded", function(event) { 
     // Init list
     var options = {
-      valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'relevanceUrlDescribe' ],
-      page: 20,
-      pagination: {
-        innerWindow: 1,
-        outerWindow: 1
-      }
+      valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language']
+      // page: 20,
+      // pagination: {
+      //   innerWindow: 1,
+      //   outerWindow: 1
+      // }
     };
     var contactList = new List('databaseList', options);
   });
