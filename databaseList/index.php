@@ -388,7 +388,7 @@
   document.addEventListener("DOMContentLoaded", function(event) { 
     // Init list
     var options = {
-      valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language']
+      valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language'],
       page: 20,
       pagination: {
         innerWindow: 1,
