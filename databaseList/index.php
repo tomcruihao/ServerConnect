@@ -148,6 +148,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
+  var contactList
 
   function genDatalistStructure() {
     let ul_Dom = document.getElementById("resourceList");
@@ -385,7 +386,7 @@
     })
   }
 
-  document.addEventListener("DOMContentLoaded", function(event) { 
+  document.addEventListener("DOMContentLoaded", function(event) {
     // Init list
     var options = {
       valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language'],
@@ -395,6 +396,6 @@
         outerWindow: 1
       }
     };
-    var contactList = new List('databaseList', options);
+    contactList = new List('databaseList', options);
   });
 </script>
