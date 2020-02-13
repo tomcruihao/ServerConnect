@@ -28,7 +28,11 @@
         // echo '<br>';
 
         $resourceList['rows'][$key]['zhuyin'] = $stroke['zhuyin'];
-        $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];    
+        $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
+        print_r($resourceList['rows'][$key]);
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
         break;
       }
     }
@@ -37,9 +41,8 @@
 
     // echo $newChar;
   }
-  print_r($resourceList);
   // write back
-  file_put_contents('..data/eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  file_put_contents('../data/eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
   echo 'execute success!';
 ?>
