@@ -338,8 +338,11 @@
   }
 
   function initAndAddClickedClass(anchor) {
-    document.querySelectorAll('.link-field > a').foreach(res => {
+    document.querySelectorAll('.link-field > a').forEach(res => {
       console.log(res);
+      res.classList.remove("clicked");
+
+      anchor.addClass("clicked");
     });
   }
 
