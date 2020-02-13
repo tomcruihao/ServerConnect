@@ -210,6 +210,8 @@ section {
   max-width: 1080px;
   margin: 20px auto;
   padding: 0 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .search-wrap {
