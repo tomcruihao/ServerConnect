@@ -44,13 +44,14 @@ input[type="text"], input[type="date"], input[type="number"] {
       flex-wrap: wrap;
   
       .title {
-        width: 100px;
+        width: 120px;
         font-weight: bold;
       }
   
       .content {
         flex: 1;
         word-break: break-all;
+        text-align: end;
 
         &.over {
           overflow: hidden;

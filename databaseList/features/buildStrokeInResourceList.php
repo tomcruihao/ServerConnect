@@ -22,7 +22,10 @@
 
     foreach($strokes as $stroke) {
       if(strcasecmp($firstChar, $stroke['char']) == 0) {
-        print_r($stroke);
+        // print_r($stroke);
+
+        $resourceList['rows'][$key]['char'] = $stroke['char'];
+        $resourceList['rows'][$key]['stroke'] = $stroke['strokes'];
         break;
       }
     }
@@ -31,5 +34,8 @@
 
     // echo $newChar;
   }
+  // write back
+  file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+
   echo 'execute success!';
 ?>

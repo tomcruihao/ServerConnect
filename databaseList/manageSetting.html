@@ -60,6 +60,20 @@
     </div>
   </div>
 
+  <div id="toolsField" class="settings-wrap">
+    <h1>小工具區</h1>
+    <div class="setting-wrap">
+      <div class="row">
+        <div class="title">
+          <span>建立注音與比劃</span>
+        </div>
+        <div class="content">
+          <button onclick="buildStrokes()" disabled>執行</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="lib/jquery.js"></script>
   <script type="text/javascript">
@@ -137,6 +151,20 @@
         }
       }
     });
+    function buildStrokes() {
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildStrokeInResourceList.php',
+        type: 'POST',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          console.log(res);
+        }
+      });
+    }
   </script>
 </body>
 </html>

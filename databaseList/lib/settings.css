@@ -253,7 +253,7 @@ input[type="text"], input[type="date"], input[type="number"] {
 }
 
 .settings-wrap .setting-wrap .row .title {
-  width: 100px;
+  width: 120px;
   font-weight: bold;
 }
 
@@ -262,6 +262,7 @@ input[type="text"], input[type="date"], input[type="number"] {
       -ms-flex: 1;
           flex: 1;
   word-break: break-all;
+  text-align: end;
 }
 
 .settings-wrap .setting-wrap .row .content.over {
