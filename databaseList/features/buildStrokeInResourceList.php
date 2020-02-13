@@ -38,7 +38,7 @@
     // echo $newChar;
   }
   // write back
-  file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  file_put_contents('..data/eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
   echo 'execute success!';
 ?>
