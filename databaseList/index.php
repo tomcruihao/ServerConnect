@@ -336,7 +336,8 @@
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
   }
-  function searchAtoZ(upperCharacter) {
+  function searchAtoZ(upperCharacter, anchor) {
+    console.log(anchor);
     let lowCharater = upperCharacter.toLowerCase();
     // contactList.search(param);
     contactList.filter(function(item) {
@@ -377,7 +378,7 @@
         let alphabet = String.fromCharCode(65 + loop);
         let anchorText = document.createTextNode(alphabet);
         anchor.setAttribute('href', `#`);
-        anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`); }, false);
+        anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
       }
