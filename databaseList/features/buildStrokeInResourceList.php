@@ -29,6 +29,7 @@
 
         $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
         $firstZhuyin = $zhuyin[0];
+        echo $firstZhuyin;
         $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
         $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
         break;
