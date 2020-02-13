@@ -342,7 +342,7 @@
       console.log(res);
       res.classList.remove("clicked");
 
-      anchor.addClass("clicked");
+      anchor.className = 'clicked';
     });
   }
 
