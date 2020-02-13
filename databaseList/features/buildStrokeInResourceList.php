@@ -27,12 +27,10 @@
         // echo $stroke['strokes'];
         // echo '<br>';
 
-        $resourceList['rows'][$key]['zhuyin'] = $stroke['zhuyin'];
+        $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
+        $firstZhuyin = $zhuyin[0];
+        $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
         $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
-        print_r($resourceList['rows'][$key]);
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
         break;
       }
     }
