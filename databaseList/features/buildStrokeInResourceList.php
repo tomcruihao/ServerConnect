@@ -22,7 +22,7 @@
 
     foreach($strokes as $stroke) {
       if(strcasecmp($firstChar, $stroke['char']) == 0) {
-        echo $resourceList['rows'][$key];
+        print_r($resourceList['rows'][$key]);
         echo $stroke['char'];
         echo $stroke['strokes'];
         echo '<br>';
