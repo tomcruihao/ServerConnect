@@ -5,7 +5,9 @@
 $pagination_btn_active_bgcolor: #2B78FE;
 
 section {
-  margin-top: 20px;
+  width: 100%;
+  max-width: 1080px;
+  margin: 20px auto;
   padding: 0 15px;
 }
 
@@ -295,6 +297,8 @@ section {
               flex: 1;
               display: block;
               word-break: break-all;
+              color: $anchor_color;
+              cursor: pointer;
             }
 
             .datetime {
