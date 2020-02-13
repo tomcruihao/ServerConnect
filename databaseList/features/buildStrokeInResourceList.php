@@ -34,6 +34,7 @@
 
     // echo $newChar;
   }
+  print_r($resourceList);
   // write back
   file_put_contents('../eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
