@@ -336,15 +336,23 @@
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
   }
+
+  function initAndAddClickedClass(anchor) {
+    document.querySelectorAll('.link-field > a').foreach(res => {
+      console.log(res);
+    });
+  }
+
   function searchAtoZ(upperCharacter, anchor) {
-    console.log(anchor);
+    initAndAddClickedClass(anchor);
+  
     let lowCharater = upperCharacter.toLowerCase();
     // contactList.search(param);
     contactList.filter(function(item) {
       // the item includes html tag to impact the result
       var regex = /(<([^>]+)>)/ig;
       removeTagResult = item.values().resourceName.replace(regex, "").trim();
-      console.log(removeTagResult);
+
       if (removeTagResult.charAt(0) === upperCharacter || removeTagResult.charAt(0) === lowCharater) {
         return true;
       } else {
