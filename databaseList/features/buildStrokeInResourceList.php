@@ -22,7 +22,10 @@
 
     foreach($strokes as $stroke) {
       if(strcasecmp($firstChar, $stroke['char']) == 0) {
-        print_r($stroke);
+        echo $resourceList['rows'][$key];
+        echo $stroke['char'];
+        echo $stroke['strokes'];
+        echo '<br>';
 
         $resourceList['rows'][$key]['char'] = $stroke['char'];
         $resourceList['rows'][$key]['stroke'] = $stroke['strokes'];
