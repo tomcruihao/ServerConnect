@@ -22,13 +22,13 @@
 
     foreach($strokes as $stroke) {
       if(strcasecmp($firstChar, $stroke['char']) == 0) {
-        print_r($resourceList['rows'][$key]);
-        echo $stroke['char'];
-        echo $stroke['strokes'];
-        echo '<br>';
+        // print_r($resourceList['rows'][$key]);
+        // echo $stroke['char'];
+        // echo $stroke['strokes'];
+        // echo '<br>';
 
-        $resourceList['rows'][$key]['char'] = $stroke['char'];
-        $resourceList['rows'][$key]['stroke'] = $stroke['strokes'];
+        $resourceList['rows'][$key]['zhuyin'] = $stroke['zhuyin'];
+        $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];    
         break;
       }
     }
