@@ -366,7 +366,9 @@
   function searchBy(term, field) {
     contactList.search(term, [field]);
   }
-  function searchAll() {
+  function searchAll(anchor) {
+    initAndAddClickedClass(anchor);
+
     // remove all conditions
     contactList.filter();
   }
@@ -379,7 +381,7 @@
       let totalAnchorText = document.createTextNode('全部');
       totalAnchor.setAttribute('href', '#');
       totalAnchor.className = 'clicked';
-      totalAnchor.addEventListener('click', searchAll, false);
+      totalAnchor.addEventListener('click', function(){ searchAll(totalAnchor); }, false);
       totalAnchor.appendChild(totalAnchorText);
       linkWrap.appendChild(totalAnchor);
 
