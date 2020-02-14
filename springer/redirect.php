@@ -7,7 +7,7 @@
 
   function process_isbn($isbn) {
     // 3-1-3-5-1
-    $temp = substr_replace($temp, '-', 11, 0);
+    $temp = substr_replace($isbn, '-', 11, 0);
     $temp = substr_replace($temp, '-', 6, 0);
     $temp = substr_replace($temp, '-', 3, 0);
     $temp = substr_replace($temp, '-', 2, 0);
