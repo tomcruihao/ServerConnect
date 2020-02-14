@@ -3,6 +3,7 @@
   header("Content-Type:text/html; charset=utf-8");
 
   $isbn = $_GET['isbn'];
+  echo $isbn;
   $postProcess_isbn = process_isbn($isbn);
 
   function process_isbn($isbn) {
