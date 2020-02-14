@@ -3,8 +3,7 @@
   header("Content-Type:text/html; charset=utf-8");
 
   $isbn = $_GET['isbn'];
-  echo $isbn;
-  $postProcess_isbn = process_isbn($isbn);
+  $postProcess_isbn = process_isbn(strval($isbn));
 
   function process_isbn($isbn) {
     // 3-1-3-5-1
