@@ -358,7 +358,7 @@
 
     // create hyper link of strokes
     let strokesAnchor = await createStrokesAnchor();
-    document.getElementById("strokesField").appendChild(zhuYinAnchor);
+    document.getElementById("strokesField").appendChild(strokesAnchor);
     console.log('test');
   }
 
