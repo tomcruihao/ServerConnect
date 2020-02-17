@@ -601,9 +601,7 @@ section {
   top: 0;
   left: 0;
   z-index: 1000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

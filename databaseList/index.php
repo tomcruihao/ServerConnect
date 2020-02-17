@@ -499,6 +499,9 @@
   }
 
   document.addEventListener("DOMContentLoaded", function(event) {
+    // change the style of the dialogue
+    document.getElementByID('dialogue').setAttribute('style', 'display: flex;');
+
     // Init list
     var options = {
       valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes'],
