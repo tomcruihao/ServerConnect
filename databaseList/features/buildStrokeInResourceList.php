@@ -18,7 +18,7 @@
     // get first char
     $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
     $firstChar = $chars[0];
-    $result = '';
+    $resultExist = false;
 
     foreach($strokes as $stroke) {
       if(strcasecmp($firstChar, $stroke['char']) == 0) {
@@ -31,8 +31,14 @@
         $firstZhuyin = $zhuyin[0];
         $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
         $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
+        $resultExist = true;
         break;
       }
+    }
+
+    if(!$resultExist) {
+      $resourceList['rows'][$key]['zhuyin'] = '';
+      $resourceList['rows'][$key]['strokes'] = '0';
     }
 
     // $newChar = iconv(mb_detect_encoding($firstChar), "big5", $firstChar);
