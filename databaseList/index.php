@@ -226,11 +226,11 @@
                                 <div class="title">相關URL</div class="title">\
                                 <div class="relevanceUrlDescribe">${res.relevanceUrlDescribe}</div>\
                               </div>\
-                              <div class="row">\
+                              <div class="row hide">\
                                 <div class="title">注音</div class="title">\
                                 <div class="zhuyin">${res.zhuyin}</div>\
                               </div>\
-                              <div class="row">\
+                              <div class="row hide">\
                                 <div class="title">筆劃</div class="title">\
                                 <div class="strokes">${res.strokes}</div>\
                               </div>`;
@@ -347,7 +347,6 @@
     }
   }
   async function init() {
-
     // create hyper link of a to z
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
@@ -391,34 +390,12 @@
     initAndAddClickedClass(anchor);
   
     contactList.search(zhuYinChar, ['zhuyin']);
-    // contactList.filter(function(item) {
-    //   // the item includes html tag to impact the result
-    //   var regex = /(<([^>]+)>)/ig;
-    //   removeTagResult = item.values().resourceName.replace(regex, "").trim();
-
-    //   if (removeTagResult.charAt(0) === zhuYinChar) {
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // });
   }
 
   function searchStrokes(stroke, anchor) {
     initAndAddClickedClass(anchor);
   
     contactList.search(stroke, ['strokes']);
-    // contactList.filter(function(item) {
-    //   // the item includes html tag to impact the result
-    //   var regex = /(<([^>]+)>)/ig;
-    //   removeTagResult = item.values().resourceName.replace(regex, "").trim();
-
-    //   if (removeTagResult.charAt(0) === zhuYinChar) {
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // });
   }
   function searchBy(term, field) {
     contactList.search(term, [field]);

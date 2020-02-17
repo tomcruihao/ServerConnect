@@ -403,6 +403,10 @@ section {
           flex: 1;
 }
 
+.content-field article .list li .box .row.hide {
+  display: hidden;
+}
+
 .content-field article .list li .box .row .title {
   width: 120px;
   font-size: 0.8rem;

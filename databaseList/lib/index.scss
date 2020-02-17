@@ -169,6 +169,9 @@ section {
               }
             }
 
+            &.hide {
+              display: hidden;
+            }
             .title {
               width: 120px;
               font-size: 0.8rem;
