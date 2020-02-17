@@ -379,6 +379,22 @@
       }
     });
   }
+  function searchZhuYin(zhuYinChar, anchor) {
+    // initAndAddClickedClass(anchor);
+  
+    contactList.search(zhuYinChar, ['zhuyin']);
+    // contactList.filter(function(item) {
+    //   // the item includes html tag to impact the result
+    //   var regex = /(<([^>]+)>)/ig;
+    //   removeTagResult = item.values().resourceName.replace(regex, "").trim();
+
+    //   if (removeTagResult.charAt(0) === zhuYinChar) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // });
+  }
   function searchBy(term, field) {
     contactList.search(term, [field]);
   }
