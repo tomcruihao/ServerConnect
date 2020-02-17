@@ -42,12 +42,12 @@ input[type="text"], input[type="date"], input[type="number"] {
     .row {
       display: flex;
       flex-wrap: wrap;
-  
+
       .title {
         width: 120px;
         font-weight: bold;
       }
-  
+
       .content {
         flex: 1;
         word-break: break-all;

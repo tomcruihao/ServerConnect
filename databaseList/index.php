@@ -60,6 +60,10 @@
         <div class="atoz-title">A to Z:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
+      <div class="atoz-wrap">
+        <div class="atoz-title">注音:</div>
+        <div id="zhuYinField" class="atoz-field"></div>
+      </div>
       <div class="sort-wrap">
         <div class="sort-title">排序:</div>
         <ol class="sort-field">
@@ -335,6 +339,10 @@
     // create hyper link of a to z
     let englishAnchor = await createEnglishAnchor();
     document.getElementById("atozField").appendChild(englishAnchor);
+
+    // create hyper link of ZhuYin
+    let zhuYinAnchor = await createZhuYinAnchor();
+    document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
   }
 
   function initAndAddClickedClass(anchor) {
@@ -389,6 +397,26 @@
       for(let loop = 0; loop < 26; loop++) {
         let anchor = document.createElement('a');
         let alphabet = String.fromCharCode(65 + loop);
+        let anchorText = document.createTextNode(alphabet);
+        anchor.setAttribute('href', `#`);
+        anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
+        anchor.appendChild(anchorText);
+        linkWrap.appendChild(anchor);
+      }
+
+      resolve(linkWrap)
+    })
+  }
+
+  function createZhuYinAnchor() {
+    return new Promise((resolve, reject) => {
+      let linkWrap = document.createElement('div')
+      linkWrap.className = 'link-field';
+
+      // for char A to Z
+      for(let loop = 0; loop < 26; loop++) {
+        let anchor = document.createElement('a');
+        let alphabet = String.fromCharCode(\u3105 + loop);
         let anchorText = document.createTextNode(alphabet);
         anchor.setAttribute('href', `#`);
         anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
