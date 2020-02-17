@@ -395,6 +395,23 @@
     //   }
     // });
   }
+
+  function searchStrokes(stroke, anchor) {
+    // initAndAddClickedClass(anchor);
+  
+    contactList.search(stroke, ['strokes']);
+    // contactList.filter(function(item) {
+    //   // the item includes html tag to impact the result
+    //   var regex = /(<([^>]+)>)/ig;
+    //   removeTagResult = item.values().resourceName.replace(regex, "").trim();
+
+    //   if (removeTagResult.charAt(0) === zhuYinChar) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // });
+  }
   function searchBy(term, field) {
     contactList.search(term, [field]);
   }
@@ -448,6 +465,25 @@
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
       })
+
+      resolve(linkWrap)
+    })
+  }
+
+  function createStrokesAnchor() {
+    return new Promise((resolve, reject) => {
+      let linkWrap = document.createElement('div')
+      linkWrap.className = 'link-field';
+
+      for(let index = 1; index < 25; index++) {
+        let anchor = document.createElement('a');
+        let alphabet = index;
+        let anchorText = document.createTextNode(alphabet);
+        anchor.setAttribute('href', `#`);
+        anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
+        anchor.appendChild(anchorText);
+        linkWrap.appendChild(anchor);
+      }
 
       resolve(linkWrap)
     })
