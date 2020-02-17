@@ -364,6 +364,10 @@ section {
   display: none;
   align-items: center;
   justify-content: center;
+
+  &.show {
+    display: flex;
+  }
   
   .dialogue-message-frame {
     width: 94%;
