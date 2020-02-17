@@ -410,18 +410,20 @@
 
   function createZhuYinAnchor() {
     return new Promise((resolve, reject) => {
+      var allZhiYin = 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ'.split('');
+
       let linkWrap = document.createElement('div')
       linkWrap.className = 'link-field';
 
-      for(let loop = 0; loop < 26; loop++) {
+      allZhiYin.forEach(res => {
         let anchor = document.createElement('a');
-        let alphabet = String.fromCharCode(\u{3105 + loop});
+        let alphabet = res;
         let anchorText = document.createTextNode(alphabet);
         anchor.setAttribute('href', `#`);
-        anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
+        anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
-      }
+      })
 
       resolve(linkWrap)
     })
