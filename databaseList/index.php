@@ -221,6 +221,14 @@
                               <div class="row">\
                                 <div class="title">相關URL</div class="title">\
                                 <div class="relevanceUrlDescribe">${res.relevanceUrlDescribe}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">注音</div class="title">\
+                                <div class="zhuyin">${res.zhuyin}</div>\
+                              </div>\
+                              <div class="row">\
+                                <div class="title">筆劃</div class="title">\
+                                <div class="strokes">${res.strokes}</div>\
                               </div>`;
 
       li_dom.appendChild(newLabel);
@@ -432,7 +440,7 @@
   document.addEventListener("DOMContentLoaded", function(event) {
     // Init list
     var options = {
-      valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language'],
+      valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes'],
       page: 20,
       pagination: {
         innerWindow: 1,
