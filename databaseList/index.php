@@ -388,7 +388,7 @@
     });
   }
   function searchZhuYin(zhuYinChar, anchor) {
-    // initAndAddClickedClass(anchor);
+    initAndAddClickedClass(anchor);
   
     contactList.search(zhuYinChar, ['zhuyin']);
     // contactList.filter(function(item) {
@@ -405,7 +405,7 @@
   }
 
   function searchStrokes(stroke, anchor) {
-    // initAndAddClickedClass(anchor);
+    initAndAddClickedClass(anchor);
   
     contactList.search(stroke, ['strokes']);
     // contactList.filter(function(item) {
