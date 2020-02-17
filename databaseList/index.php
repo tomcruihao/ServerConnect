@@ -465,7 +465,12 @@
 
       for(let index = 1; index < 25; index++) {
         let anchor = document.createElement('a');
-        let alphabet = index;
+        let alphabet;
+        if(index <= 9) {
+          alphabet = `0${index}`;
+        } else {
+          alphabet = index;
+        }
         let anchorText = document.createTextNode(alphabet);
         anchor.setAttribute('href', `javascript:void(0);`);
         anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
