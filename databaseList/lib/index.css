@@ -404,7 +404,7 @@ section {
 }
 
 .content-field article .list li .box .row.hide {
-  display: hidden;
+  display: none;
 }
 
 .content-field article .list li .box .row .title {

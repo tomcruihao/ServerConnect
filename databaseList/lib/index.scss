@@ -170,8 +170,9 @@ section {
             }
 
             &.hide {
-              display: hidden;
+              display: none;
             }
+
             .title {
               width: 120px;
               font-size: 0.8rem;
