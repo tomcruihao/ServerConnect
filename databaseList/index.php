@@ -359,7 +359,6 @@
     // create hyper link of strokes
     let strokesAnchor = await createStrokesAnchor();
     document.getElementById("strokesField").appendChild(strokesAnchor);
-    console.log('test');
   }
 
   function initAndAddClickedClass(anchor) {
@@ -426,6 +425,9 @@
   }
   function searchAll(anchor) {
     initAndAddClickedClass(anchor);
+
+    // remove all search
+    contactList.clear();
 
     // remove all conditions
     contactList.filter();
