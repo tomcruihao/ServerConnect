@@ -64,6 +64,10 @@
         <div class="atoz-title">注音:</div>
         <div id="zhuYinField" class="atoz-field"></div>
       </div>
+      <div class="atoz-wrap">
+        <div class="atoz-title">筆劃:</div>
+        <div id="strokesField" class="atoz-field"></div>
+      </div>
       <div class="sort-wrap">
         <div class="sort-title">排序:</div>
         <ol class="sort-field">
@@ -351,6 +355,11 @@
     // create hyper link of ZhuYin
     let zhuYinAnchor = await createZhuYinAnchor();
     document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
+
+    // create hyper link of strokes
+    let strokesAnchor = await createStrokesAnchor();
+    document.getElementById("strokesField").appendChild(zhuYinAnchor);
+    console.log('test');
   }
 
   function initAndAddClickedClass(anchor) {
