@@ -415,7 +415,7 @@
 
       for(let loop = 0; loop < 26; loop++) {
         let anchor = document.createElement('a');
-        let alphabet = String.fromCharCode(`\u${3105 + loop}`);
+        let alphabet = String.fromCharCode(\u{3105 + loop});
         let anchorText = document.createTextNode(alphabet);
         anchor.setAttribute('href', `#`);
         anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
