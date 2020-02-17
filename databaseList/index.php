@@ -394,7 +394,7 @@
 
   function searchStrokes(stroke, anchor) {
     initAndAddClickedClass(anchor);
-  
+    console.log(stroke);
     contactList.search(stroke, ['strokes']);
   }
   function searchBy(term, field) {
