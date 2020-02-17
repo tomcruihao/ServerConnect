@@ -30,7 +30,12 @@
         $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
         $firstZhuyin = $zhuyin[0];
         $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
-        $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
+
+        if(strlen(strval($stroke['strokes'])) < 2) {
+          $resourceList['rows'][$key]['strokes'] = '0'.$stroke['strokes'];
+        } else {
+          $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
+        }
         $resultExist = true;
         break;
       }
