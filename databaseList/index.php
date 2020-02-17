@@ -416,7 +416,7 @@
 
       let totalAnchor = document.createElement('a');
       let totalAnchorText = document.createTextNode('全部');
-      totalAnchor.setAttribute('href', '#');
+      totalAnchor.setAttribute('href', 'javascript:void(0);');
       totalAnchor.className = 'clicked';
       totalAnchor.addEventListener('click', function(){ searchAll(totalAnchor); }, false);
       totalAnchor.appendChild(totalAnchorText);
@@ -427,7 +427,7 @@
         let anchor = document.createElement('a');
         let alphabet = String.fromCharCode(65 + loop);
         let anchorText = document.createTextNode(alphabet);
-        anchor.setAttribute('href', `#`);
+        anchor.setAttribute('href', `javascript:void(0);`);
         anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
@@ -448,7 +448,7 @@
         let anchor = document.createElement('a');
         let alphabet = res;
         let anchorText = document.createTextNode(alphabet);
-        anchor.setAttribute('href', `#`);
+        anchor.setAttribute('href', `javascript:void(0);`);
         anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
@@ -467,7 +467,7 @@
         let anchor = document.createElement('a');
         let alphabet = index;
         let anchorText = document.createTextNode(alphabet);
-        anchor.setAttribute('href', `#`);
+        anchor.setAttribute('href', `javascript:void(0);`);
         anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
