@@ -42,7 +42,12 @@ error_reporting(E_ALL);
   } else if($type === 'modify') {
     foreach($resourceList['rows'] as $key => $row) {
       if(strcasecmp($row['id'], $resource['id']) == 0) {
+        // get stroke and zhuyin info
+        $getStroke = getStrokeInfo($resource['resourceName']);
+
         $resourceList['rows'][$key] = $resource;
+        $resourceList['rows'][$key]['stroke'] = $getStroke['strokes'];
+        $resourceList['rows'][$key]['zhuyin'] = $getStroke['zhuyin'];
         break;
       }
     }
