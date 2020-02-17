@@ -426,10 +426,10 @@
   function searchAll(anchor) {
     initAndAddClickedClass(anchor);
 
-    // remove all search
-    contactList.clear();
+    // remove all condition of search
+    contactList.search();
 
-    // remove all conditions
+    // remove all conditions of filter
     contactList.filter();
   }
   function createEnglishAnchor() {
