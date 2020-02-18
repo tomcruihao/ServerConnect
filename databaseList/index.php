@@ -219,6 +219,7 @@
         } else if(obj.options.order === 'desc') {
           obj.options.order = 'asc';
         }
+        sortBy(obj.sortName, obj.options);
       },
       initAllBtn() {
         this.buttons.forEach((res, index) => {
