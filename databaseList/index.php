@@ -77,12 +77,10 @@
           <li class="sort" data-sort="type">類型</li>
         </ol>
       </div>
-      <div class="sort-wrap" id="sortField">
+      <div id="sortField" class="sort-wrap">
         <div class="sort-title">排序:</div>
-        <div class="sort-content">
-          <div class="button-wrap">
-            <button v-for="(buttonInfo, index) in buttons" @click="processSort(this)">{{buttonInfo.btnName}}</button>
-          </div>
+        <div class="btn-wrap">
+          <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)">{{buttonInfo.btnName}}</button>
         </div>
       </div>
       <div class="content-field">
@@ -139,7 +137,7 @@
       </div>
     </div>
   </section>
-  <div class="mask-dia" id="dialogue" :class="{ show: show }">
+  <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{dialogHead_title}}</h4>
@@ -166,16 +164,6 @@
   var dataList = <?php echo $getJsonData; ?>;
   var contactList
 
-  function sortBy(sortName, optionsObj) {
-    contactList.sort(sortName, optionsObj);
-    // optionsObj template
-    // {
-    //   order: 'desc'
-    //   alphabet: "ABCDEFGHIJKLMNOPQRSTUVXYZÅÄÖabcdefghijklmnopqrstuvxyzåäö",
-    //   insensitive: true,
-    //   sortFunction: undefined
-    // }
-  }
   var sortField = new Vue({
     el:'#sortField',
     data: {
@@ -213,46 +201,6 @@
     methods:{
       processSort: function(obj) {
         console.log(obj);
-      }
-    }
-  });
-
-  var dialogue = new Vue({
-    el:'#dialogue',
-    data: {
-      show: false,
-      type: '',
-      dialogHead_title: '',
-      message: {
-        title: '',
-        content: ''
-      }
-    },
-    computed: {
-      dialogueMessage: {
-        get: function () {
-          return this.message;
-        }
-        // ,set: function () {
-        // }
-      }
-    },
-    methods:{
-      setDialogue: function(type, messageInfo) {
-        this.type = type;
-        this.message = messageInfo;
-        this.show = true;
-        switch (type) {
-          case 'latestNews':
-            this.dialogHead_title = '公告';
-            break;
-          default:
-            this.dialogHead_title = ' ';
-            break;
-        }
-      },
-      closeDialogue: function() {
-        this.show = false;
       }
     }
   });
