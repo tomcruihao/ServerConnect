@@ -166,7 +166,7 @@
 
   function addSortResultAfterTitle(sortObj) {
     document.querySelectorAll('#resourceList > li').forEach(res => {
-      let sortFieldVal = res.querySelector(`.${sortName}`).innerHTML;
+      let sortFieldVal = res.querySelector(`.${sortObj.sortName}`).innerHTML;
       let tagResult = '';
       switch(sortObj.sortName) {
         case 'resourceName':
