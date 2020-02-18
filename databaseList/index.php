@@ -77,6 +77,7 @@
           <li class="sort" data-sort="type">類型</li>
         </ol>
       </div>
+      <button onclick="sortBy('resourceName')">testSort</button>
       <div class="content-field">
         <article>
           <ul class="list" id="resourceList">
@@ -158,6 +159,15 @@
   var dataList = <?php echo $getJsonData; ?>;
   var contactList
 
+  function sortBy(sortName) {
+    contactList.sort(sortName, {
+      order: 'desc'
+      // alphabet: undefined,
+      // insensitive: true,
+      // sortFunction: undefined
+    })
+  }
+
   function genDatalistStructure() {
     let ul_Dom = document.getElementById("resourceList");
 
@@ -167,7 +177,7 @@
 
       let newLabel = document.createElement('label');
       newLabel.setAttribute("for", 'checkbox_' + index);
-      newLabel.innerHTML = `<div class="resourceName">${res.resourceName}</div>`;
+      newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
 
       let newCheckBox = document.createElement('input');
       newCheckBox.type = 'checkbox';
@@ -362,7 +372,6 @@
 
   function initAndAddClickedClass(anchor) {
     document.querySelectorAll('.link-field > a').forEach(res => {
-      console.log(res);
       res.classList.remove("clicked");
 
       anchor.className = 'clicked';
