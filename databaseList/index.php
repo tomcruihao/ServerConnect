@@ -164,6 +164,13 @@
   var dataList = <?php echo $getJsonData; ?>;
   var contactList
 
+  function addSortResultAfterTitle(sortName) {
+    document.querySelectorAll('#resourceList > li').forEach(res => {
+      console.log(res);
+      res.querySelector(`.${sortName}`);
+    })
+  }
+
   function sortBy(sortName, options) {
     contactList.sort(sortName, options);
     // sort template
@@ -220,6 +227,7 @@
           obj.options.order = 'asc';
         }
         sortBy(obj.sortName, obj.options);
+        addSortResultAfterTitle(obj.sortName);
       },
       initAllBtn() {
         this.buttons.forEach((res, index) => {
