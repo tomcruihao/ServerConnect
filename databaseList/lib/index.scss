@@ -248,7 +248,7 @@ section {
             min-width: 300px;
             max-width: 310px;
             padding: 10px 5px;
-      
+
             .direction {
               width: 24px;
               height: 24px;
@@ -295,7 +295,7 @@ section {
           a {
             font-size: 1.1rem;
             text-decoration: none;
-            color: blue;
+            color: $anchor_color;
           }
 
           &.latest-news {
