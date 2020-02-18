@@ -107,7 +107,7 @@
               <h3>{{subjectInfo.subjectTitle}}</h3>
               <ul>
                 <li v-for="(subject, index) in subjectInfo.subjectList">
-                  <span @click="search(subject.name, subject.className)">{subject.name}}</span>
+                  <span @click="search(subject.name, subject.className)">{{subject.name}}</span>
                 </li>
               </ul>
             </div>
