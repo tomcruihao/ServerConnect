@@ -44,6 +44,7 @@ error_reporting(E_ALL);
       if(strcasecmp($row['id'], $resource['id']) == 0) {
         // get stroke and zhuyin info
         $getStroke = getStrokeInfo($resource['resourceName']);
+        echo $getStroke;
 
         $resourceList['rows'][$key] = $resource;
         $resourceList['rows'][$key]['stroke'] = $getStroke['strokes'];
