@@ -205,8 +205,8 @@
       });
     },
     methods:{
-      search: function() {
-        console.log();
+      search: function(subject, className) {
+        console.log(`${subject}, ${className}`);
       }
     }
   });
