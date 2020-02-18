@@ -161,7 +161,7 @@
 
   function sortBy(sortName) {
     contactList.sort(sortName, {
-      order: 'desc'
+      // order: 'desc'
       // alphabet: undefined,
       // insensitive: true,
       // sortFunction: undefined
