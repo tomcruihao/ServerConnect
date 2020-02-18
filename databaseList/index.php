@@ -80,7 +80,7 @@
       <div id="sortField" class="sort-wrap">
         <div class="sort-title">排序:</div>
         <div class="btn-wrap">
-          <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)" v-class="{buttonInfo.options.order !== '': buttonInfo.options.order ? ''}">{{buttonInfo.btnName}}</button>
+          <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)" v-class="buttonInfo.options.order">{{buttonInfo.btnName}}</button>
         </div>
       </div>
       <div class="content-field">
