@@ -43,8 +43,8 @@ error_reporting(E_ALL);
     foreach($resourceList['rows'] as $key => $row) {
       if(strcasecmp($row['id'], $resource['id']) == 0) {
         // get stroke and zhuyin info
+        echo $resource['resourceName'];
         $getStroke = getStrokeInfo($resource['resourceName']);
-        print_r($getStroke);
 
         $resourceList['rows'][$key] = $resource;
         $resourceList['rows'][$key]['stroke'] = $getStroke['strokes'];
@@ -81,6 +81,7 @@ error_reporting(E_ALL);
 
     foreach($strokes as $stroke) {
       if(strcasecmp($firstChar, $stroke['char']) == 0) {
+        print_r($stroke);
         $result = $stroke;
         break;
       }
