@@ -79,6 +79,48 @@ section {
     align-items: center;
   }
 
+  .btn-wrap {
+    button {
+      height: 36px;
+      padding: 5px 20px;
+      margin: 5px 0 5px 15px;
+      border-radius: 36px;
+      background-color: $sorting_btn_bgcolor;
+      color: #ffffff;
+      position: relative;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &.asc {
+        &:after{
+          content: " ";
+          border-top: $triangle_sign_width solid #ffffff;
+          border-left: $triangle_sign_width solid transparent;
+          border-right: $triangle_sign_width solid transparent;
+          position: absolute;
+          top: (36px / 2 - ($triangle_sign_width / 2));
+          right: 5px;
+        }
+      }
+
+      &.desc {
+        &:after{
+          content: " ";
+          border-bottom: $triangle_sign_width solid #ffffff;
+          border-left: $triangle_sign_width solid transparent;
+          border-right: $triangle_sign_width solid transparent;
+          position: absolute;
+          top: (36px / 2 - ($triangle_sign_width / 2));
+          right: 5px;
+        }
+      }
+    }
+  }
+
   .sort-field {
     display: flex;
     align-items: center;

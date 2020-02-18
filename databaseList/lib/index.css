@@ -302,6 +302,43 @@ section {
           align-items: center;
 }
 
+.sort-wrap .btn-wrap button {
+  height: 36px;
+  padding: 5px 20px;
+  margin: 5px 0 5px 15px;
+  border-radius: 36px;
+  background-color: #2B78FE;
+  color: #ffffff;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
+
+.sort-wrap .btn-wrap button:first-of-type {
+  margin-left: 0;
+}
+
+.sort-wrap .btn-wrap button.asc:after {
+  content: " ";
+  border-top: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+}
+
+.sort-wrap .btn-wrap button.desc:after {
+  content: " ";
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+}
+
 .sort-wrap .sort-field {
   display: -webkit-box;
   display: -ms-flexbox;
