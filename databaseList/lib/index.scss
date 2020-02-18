@@ -3,6 +3,7 @@
 @import "header";
 
 $pagination_btn_active_bgcolor: #2B78FE;
+$sort_subject_color: #721c24;
 
 section {
   width: 100%;
@@ -143,6 +144,7 @@ section {
           cursor: pointer;
           .sort_tag {
             font-weight: bold;
+            color: $sort_subject_color;
           }
         }
 

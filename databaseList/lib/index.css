@@ -368,6 +368,7 @@ section {
 
 .content-field article .list li label .sort_tag {
   font-weight: bold;
+  color: #721c24;
 }
 
 .content-field article .list li input {
