@@ -302,10 +302,6 @@ section {
           align-items: center;
 }
 
-.sort-wrap .btn-wrap {
-  padding: 80px;
-}
-
 .sort-wrap .btn-wrap button {
   height: 36px;
   padding: 5px 20px;
@@ -313,6 +309,7 @@ section {
   border-radius: 36px;
   background-color: #2B78FE;
   color: #ffffff;
+  font-size: 1rem;
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -334,54 +331,6 @@ section {
 }
 
 .sort-wrap .btn-wrap button.desc:after {
-  content: " ";
-  border-bottom: 6px solid #ffffff;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  position: absolute;
-  top: 15px;
-  right: 5px;
-}
-
-.sort-wrap .sort-field {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.sort-wrap .sort-field li {
-  height: 36px;
-  padding: 5px 20px;
-  margin: 5px 0 5px 15px;
-  border-radius: 36px;
-  background-color: #2B78FE;
-  color: #ffffff;
-  position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  cursor: pointer;
-}
-
-.sort-wrap .sort-field li:first-of-type {
-  margin-left: 0;
-}
-
-.sort-wrap .sort-field li.asc:after {
-  content: " ";
-  border-top: 6px solid #ffffff;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  position: absolute;
-  top: 15px;
-  right: 5px;
-}
-
-.sort-wrap .sort-field li.desc:after {
   content: " ";
   border-bottom: 6px solid #ffffff;
   border-left: 6px solid transparent;

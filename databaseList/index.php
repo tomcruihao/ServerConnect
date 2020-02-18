@@ -68,7 +68,7 @@
         <div class="atoz-title">筆劃:</div>
         <div id="strokesField" class="atoz-field"></div>
       </div>
-      <div class="sort-wrap">
+      <!-- <div class="sort-wrap">
         <div class="sort-title">排序:</div>
         <ol class="sort-field">
           <li class="sort" data-sort="resourceName">資源名稱</li>
@@ -76,7 +76,7 @@
           <li class="sort" data-sort="category">分類</li>
           <li class="sort" data-sort="type">類型</li>
         </ol>
-      </div>
+      </div> -->
       <div id="sortField" class="sort-wrap">
         <div class="sort-title">排序:</div>
         <div class="btn-wrap">
