@@ -27,7 +27,7 @@
     },
     {
       "subjectTitle": "適用學院",
-      "subjects": [
+      "subjectList": [
         {
           "name": "文學院",
           "className": "faculty"
