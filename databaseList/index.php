@@ -102,26 +102,29 @@
               </li>
             </ul>
           </div>
-          <div class="bulletin-board-frame">
-            <h3>主題</h3>
-            <ul>
-              <li>
-                <a href="javascript:searchBy('全文資料庫','subject');">全文資料庫</a>
-              </li>
-              <li>
-                <a href="javascript:searchBy('索摘資料庫','subject');">索摘資料庫</a>
-              </li>
-              <li>
-                <a href="javascript:searchBy('博碩士論文','subject');">博碩士論文</a>
-              </li>
-              <li>
-                <a href="javascript:searchBy('電子期刊','subject');">電子期刊</a>
-              </li>
-              <li>
-                <a href="javascript:searchBy('電子書','subject');">電子書</a>
-              </li>
-            </ul>
+          <div id="subjectField">
+            <div class="bulletin-board-frame">
+              <h3>主題</h3>
+              <ul>
+                <li>
+                  <a href="javascript:searchBy('全文資料庫','subject');">全文資料庫</a>
+                </li>
+                <li>
+                  <a href="javascript:searchBy('索摘資料庫','subject');">索摘資料庫</a>
+                </li>
+                <li>
+                  <a href="javascript:searchBy('博碩士論文','subject');">博碩士論文</a>
+                </li>
+                <li>
+                  <a href="javascript:searchBy('電子期刊','subject');">電子期刊</a>
+                </li>
+                <li>
+                  <a href="javascript:searchBy('電子書','subject');">電子書</a>
+                </li>
+              </ul>
+            </div>
           </div>
+<!-- 
           <div class="bulletin-board-frame">
             <h3>適用學院</h3>
             <ul class="subject-list">
@@ -132,7 +135,7 @@
                 <a href="javascript:searchBy('藝術學院','faculty');">藝術學院</a>
               </li>
             </ul>
-          </div>
+          </div> -->
         </aside>
       </div>
     </div>
@@ -191,6 +194,40 @@
     //   sortFunction: undefined
     // })
   }
+
+  var subjectField = new Vue({
+    el:'#subjectField',
+    data: {
+      subjects: ''
+    },
+    created: function() {
+      let self = this;
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          self.subjects = res.subjects;
+        }
+      });
+    },
+    methods:{
+      closeDialogue: function() {
+        this.show = false;
+      },
+      showContent: function(latestNews) {
+        let message = {
+          'title': latestNews.title,
+          'content': latestNews.content
+        }
+        dialogue.setDialogue('latestNews', message);
+      }
+    }
+  });
 
   var sortField = new Vue({
     el:'#sortField',
@@ -371,6 +408,7 @@
       }
     }
   });
+
   var latestNews = new Vue({
     el:'#latestNews',
     data: {

@@ -1,0 +1,42 @@
+{
+  "subjects": [
+    {
+      "subjectTitle": "全文資料庫",
+      "subjects": [
+        {
+          "name": "全文資料庫",
+          "className": "subject"
+        },
+        {
+          "name": "索摘資料庫",
+          "className": "subject"
+        },
+        {
+          "name": "博碩士論文",
+          "className": "subject"
+        },
+        {
+          "name": "電子期刊",
+          "className": "subject"
+        },
+        {
+          "name": "電子書",
+          "className": "subject"
+        }
+      ]
+    },
+    {
+      "subjectTitle": "適用學院",
+      "subjects": [
+        {
+          "name": "文學院",
+          "className": "faculty"
+        },
+        {
+          "name": "藝術學院",
+          "className": "faculty"
+        }
+      ]
+    }
+  ]
+}
