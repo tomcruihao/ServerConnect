@@ -77,7 +77,14 @@
           <li class="sort" data-sort="type">類型</li>
         </ol>
       </div>
-      <button onclick="sortBy('resourceName')">testSort</button>
+      <div class="sort-wrap" id="sortField">
+        <div class="sort-title">排序:</div>
+        <div class="sort-content">
+          <div class="button-wrap">
+            <button v-for="(buttonInfo, index) in buttons" @click="processSort(this)">{{buttonInfo.btnName}}</button>
+          </div>
+        </div>
+      </div>
       <div class="content-field">
         <article>
           <ul class="list" id="resourceList">
@@ -159,14 +166,96 @@
   var dataList = <?php echo $getJsonData; ?>;
   var contactList
 
-  function sortBy(sortName) {
-    contactList.sort(sortName, {
-      // order: 'desc'
-      // alphabet: undefined,
-      // insensitive: true,
-      // sortFunction: undefined
-    })
+  function sortBy(sortName, optionsObj) {
+    contactList.sort(sortName, optionsObj);
+    // optionsObj template
+    // {
+    //   order: 'desc'
+    //   alphabet: "ABCDEFGHIJKLMNOPQRSTUVXYZÅÄÖabcdefghijklmnopqrstuvxyzåäö",
+    //   insensitive: true,
+    //   sortFunction: undefined
+    // }
   }
+  var sortField = new Vue({
+    el:'#sortField',
+    data: {
+      buttons: [
+        {
+          btnName: '資源名稱',
+          sortName: 'resourceName',
+          options: {
+            order: ''
+          }
+        },
+        {
+          btnName: '主題',
+          sortName: 'subject',
+          options: {
+            order: ''
+          }
+        },
+        {
+          btnName: '分類',
+          sortName: 'category',
+          options: {
+            order: ''
+          }
+        },
+        {
+          btnName: '類型',
+          sortName: 'type',
+          options: {
+            order: ''
+          }
+        }
+      ]
+    },
+    methods:{
+      processSort: function(obj) {
+        console.log(obj);
+      }
+    }
+  });
+
+  var dialogue = new Vue({
+    el:'#dialogue',
+    data: {
+      show: false,
+      type: '',
+      dialogHead_title: '',
+      message: {
+        title: '',
+        content: ''
+      }
+    },
+    computed: {
+      dialogueMessage: {
+        get: function () {
+          return this.message;
+        }
+        // ,set: function () {
+        // }
+      }
+    },
+    methods:{
+      setDialogue: function(type, messageInfo) {
+        this.type = type;
+        this.message = messageInfo;
+        this.show = true;
+        switch (type) {
+          case 'latestNews':
+            this.dialogHead_title = '公告';
+            break;
+          default:
+            this.dialogHead_title = ' ';
+            break;
+        }
+      },
+      closeDialogue: function() {
+        this.show = false;
+      }
+    }
+  });
 
   function genDatalistStructure() {
     let ul_Dom = document.getElementById("resourceList");
