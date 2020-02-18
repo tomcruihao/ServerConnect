@@ -366,6 +366,10 @@ section {
   cursor: pointer;
 }
 
+.content-field article .list li label .sort_tag {
+  font-weight: bold;
+}
+
 .content-field article .list li input {
   display: none;
 }

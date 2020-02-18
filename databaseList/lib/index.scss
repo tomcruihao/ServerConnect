@@ -141,6 +141,9 @@ section {
 
         label {
           cursor: pointer;
+          .sort_tag {
+            font-weight: bold;
+          }
         }
 
         input {
