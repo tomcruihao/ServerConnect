@@ -73,6 +73,7 @@ error_reporting(E_ALL);
   function getStrokeInfo($str_resourName) {
     $getStrokesJsonData = file_get_contents('../data/UniHanO.json');
     $strokes = json_decode($getStrokesJsonData, true);
+    $resultExist = false;
 
     // get first char
     $chars = preg_split('/(?<!^)(?!$)/u', $str_resourName);
@@ -81,10 +82,15 @@ error_reporting(E_ALL);
 
     foreach($strokes as $stroke) {
       if(strcasecmp($firstChar, $stroke['char']) == 0) {
-        print_r($stroke);
         $result = $stroke;
+        $resultExist = true;
         break;
       }
+    }
+
+    if(!$resultExist) {
+      $result['zhuyin'] = '';
+      $result['strokes'] = '0';
     }
 
     return $result;
