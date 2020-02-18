@@ -106,20 +106,8 @@
             <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects">
               <h3>{{subjectInfo.subjectTitle}}</h3>
               <ul>
-                <li>
-                  <a href="javascript:searchBy('全文資料庫','subject');">全文資料庫</a>
-                </li>
-                <li>
-                  <a href="javascript:searchBy('索摘資料庫','subject');">索摘資料庫</a>
-                </li>
-                <li>
-                  <a href="javascript:searchBy('博碩士論文','subject');">博碩士論文</a>
-                </li>
-                <li>
-                  <a href="javascript:searchBy('電子期刊','subject');">電子期刊</a>
-                </li>
-                <li>
-                  <a href="javascript:searchBy('電子書','subject');">電子書</a>
+                <li v-for="(subject, index) in subjectInfo.subjectList">
+                  <span @click="search(subject.name, subject.className)">{subject.name}}</span>
                 </li>
               </ul>
             </div>
@@ -217,15 +205,8 @@
       });
     },
     methods:{
-      closeDialogue: function() {
-        this.show = false;
-      },
-      showContent: function(latestNews) {
-        let message = {
-          'title': latestNews.title,
-          'content': latestNews.content
-        }
-        dialogue.setDialogue('latestNews', message);
+      search: function() {
+        console.log();
       }
     }
   });

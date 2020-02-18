@@ -2,7 +2,7 @@
   "subjects": [
     {
       "subjectTitle": "全文資料庫",
-      "subjects": [
+      "subjectList": [
         {
           "name": "全文資料庫",
           "className": "subject"
