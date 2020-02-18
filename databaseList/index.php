@@ -104,7 +104,7 @@
           </div>
           <div id="subjectField">
             <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects">
-              <h3>{{subjects.subjectTitle}}</h3>
+              <h3>{{subjectInfo.subjectTitle}}</h3>
               <ul>
                 <li>
                   <a href="javascript:searchBy('全文資料庫','subject');">全文資料庫</a>
@@ -212,6 +212,7 @@
         },
         success: function(res) {
           self.subjects = res.subjects;
+          console.log(res.subjects)
         }
       });
     },
