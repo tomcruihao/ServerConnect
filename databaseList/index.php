@@ -164,6 +164,17 @@
   var dataList = <?php echo $getJsonData; ?>;
   var contactList
 
+  function sortBy(sortName, options) {
+    contactList.sort(sortName, options);
+    // sort template
+    // sort(valueName, {
+    //   order: 'desc',
+    //   alphabet: undefined,
+    //   insensitive: true,
+    //   sortFunction: undefined
+    // })
+  }
+
   var sortField = new Vue({
     el:'#sortField',
     data: {
@@ -200,7 +211,19 @@
     },
     methods:{
       processSort: function(obj) {
-        console.log(obj);
+        if(obj.options.order === '') {
+          thus.initAllBtn();
+          obj.options.order = 'asc';
+        } else if(obj.options.order === 'asc') {
+          obj.options.order = 'desc';
+        } else if(obj.options.order === 'desc') {
+          obj.options.order = 'asc';
+        }
+      },
+      initAllBtn() {
+        this.buttons.forEach((res, index) => {
+          res.options.order = '';
+        })
       }
     }
   });
