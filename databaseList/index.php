@@ -103,7 +103,7 @@
             </ul>
           </div>
           <div id="subjectField">
-            <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects)">
+            <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects">
               <h3>{{subjects.subjectTitle}}</h3>
               <ul>
                 <li>
