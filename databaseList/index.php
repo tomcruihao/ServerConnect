@@ -212,7 +212,7 @@
     methods:{
       processSort: function(obj) {
         if(obj.options.order === '') {
-          thus.initAllBtn();
+          this.initAllBtn();
           obj.options.order = 'asc';
         } else if(obj.options.order === 'asc') {
           obj.options.order = 'desc';
