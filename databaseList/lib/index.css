@@ -302,6 +302,10 @@ section {
           align-items: center;
 }
 
+.sort-wrap .btn-wrap {
+  padding: 80px;
+}
+
 .sort-wrap .btn-wrap button {
   height: 36px;
   padding: 5px 20px;
