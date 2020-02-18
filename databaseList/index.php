@@ -164,10 +164,20 @@
   var dataList = <?php echo $getJsonData; ?>;
   var contactList
 
-  function addSortResultAfterTitle(sortName) {
+  function addSortResultAfterTitle(sortObj) {
     document.querySelectorAll('#resourceList > li').forEach(res => {
-      let sortFieldVal = res.querySelector(`.${sortName}`);
-      console.log(sortFieldVal);
+      let sortFieldVal = res.querySelector(`.${sortName}`).innerHTML;
+      let tagResult = '';
+      switch(sortObj.sortName) {
+        case 'resourceName':
+          tagResult = `${sortObj.btnName}`;
+          break;
+        default:
+          tagResult = `${sortObj.btnName} - ${sortFieldVal}`;
+          break;
+      }
+      console.log(tagResult);
+      res.querySelector(`.sort_tag`).innerHTML = tagResult;
     })
   }
 
@@ -227,7 +237,7 @@
           obj.options.order = 'asc';
         }
         sortBy(obj.sortName, obj.options);
-        addSortResultAfterTitle(obj.sortName);
+        addSortResultAfterTitle(obj);
       },
       initAllBtn() {
         this.buttons.forEach((res, index) => {
