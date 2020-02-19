@@ -86,7 +86,7 @@
           <button class="btn-edit" onclick="updateList()">
             <img src="img/edit.svg"/>更新
           </button>
-          <button class="btn-add" @click="addNewSubject(subjects.subjectList[index])">
+          <button class="btn-add" @click="addNewSubject(subjectInfo.subjectID)">
             <img src="img/add.svg"/>新增檢索主題
           </button>
         </div>
@@ -191,11 +191,6 @@
           });
         },
         addNewSubjectBlock: function() {
-          // let newObj = {
-          //   "subjectTitle": "",
-          //   "subjectList": []
-          // }
-          // this.subjects.push(newObj);
           let self = this;
           $.ajax({
             url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
@@ -210,29 +205,16 @@
             },
             success: function(res) {
               console.log(res);
+              self.updateSubjectList();
             }
           });
+          
         },
         updateList: function(subject, className) {
           console.log(`${subject}, ${className}`);
         },
-        addNewSubject: function(subject) {
-          let self = this;
-          $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
-            type: 'POST',
-            data: {
-              type: 'add',
-            },
-            error: function(jqXHR, exception) {
-              //use url variable here
-              console.log(jqXHR);
-              console.log(exception);
-            },
-            success: function(res) {
-              console.log(res);
-            }
-          });
+        addNewSubject: function(subjectID) {
+          console.log(subjectID);
         }
       }
     });
