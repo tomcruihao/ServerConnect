@@ -32,11 +32,9 @@ error_reporting(E_ALL);
 
     array_push($subjectList['subjects'], $newSubject);
 
-    print_r($subjectList);
-
     // write back
-    // file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
-    // response('success', 'success');
+    file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
+    response('success', 'success');
   }
 
   function response($errorType, $message) {
