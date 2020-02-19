@@ -17,7 +17,7 @@ error_reporting(E_ALL);
   // parameters
   $type = $_POST["type"];
   // $resource = $_POST["resource"];
-  $subjectList = json_decode($_POST["subject"], true);
+  // $subjectList = json_decode($_POST["subject"], true);
 
   if ($type === 'add') {
     // new object

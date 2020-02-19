@@ -191,11 +191,27 @@
           });
         },
         addNewSubjectBlock: function() {
-          let newObj = {
-            "subjectTitle": "",
-            "subjectList": []
-          }
-          this.subjects.push(newObj);
+          // let newObj = {
+          //   "subjectTitle": "",
+          //   "subjectList": []
+          // }
+          // this.subjects.push(newObj);
+          let self = this;
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
+            type: 'POST',
+            data: {
+              type: 'add',
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              console.log(res);
+            }
+          });
         },
         updateList: function(subject, className) {
           console.log(`${subject}, ${className}`);
@@ -217,25 +233,6 @@
               console.log(res);
             }
           });
-          // console.log(subject);
-          // let newObj = {
-          //   "name": "",
-          //   "className": "default",
-          // }
-          // subject.subjectList.push(newObj);
-          // // $.ajax({
-          // //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
-          // //   type: 'GET',
-          // //   error: function(jqXHR, exception) {
-          // //     //use url variable here
-          // //     console.log(jqXHR);
-          // //     console.log(exception);
-          // //   },
-          // //   success: function(res) {
-          // //     self.subjects = res.subjects;
-          // //     console.log(res.subjects)
-          // //   }
-          // // });
         }
       }
     });
