@@ -1,6 +1,7 @@
 {
   "subjects": [
     {
+      "subjectID": "d11b19fc-4c6e-416e-b201-9ff9d9cc4bdd",
       "subjectTitle": "全文資料庫",
       "subjectList": [
         {
@@ -26,6 +27,7 @@
       ]
     },
     {
+      "subjectID": "7b51a6eb-ec64-49de-a053-b6f6be5c1894",
       "subjectTitle": "適用學院",
       "subjectList": [
         {

@@ -6,25 +6,15 @@
 $resource_field_bgcolor: #ccdffc;
 $resource_setting_bgcolor: #cceee1;
 
-h3 {
-  font-size: 1.4rem;
-  color: #0000ff;
-  word-break: break-all;
-}
+$subject_block_bgcolor: #d4edda;
+$subject_btn_delete_subjectBlock_bgcolor: #155724;
+$subject_btn_add_new_subject_block_bgcolor: #007bff;
+
 h4 {
   color: #ff0000;
 }
 
-input[type="text"], input[type="date"], input[type="number"] {
-  width: 100%;
-  height: 30px;
-  padding-left: 5px;
-  border-radius: 10px;
-  border: 2px solid #cccccc;
-  box-sizing: border-box;
-}
-
-.settings-wrap {
+.content {
   width: 100%;
   max-width: 960px;
   margin: 20px auto;
@@ -39,9 +29,85 @@ input[type="text"], input[type="date"], input[type="number"] {
     position: relative;
     box-sizing: border-box;
 
+    .subject-frame {
+      background-color: $subject_block_bgcolor;
+      padding: 30px 15px 15px;
+      margin-top: 20px;
+      border-radius: 10px;
+      position: relative;
+
+      .delete-subject-block {
+        width: 24px;
+        height: 24px;
+        padding: 2px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: $subject_btn_delete_subjectBlock_bgcolor;
+        
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      .subject-header {
+        display: flex;
+
+        .title {
+          width: 120px;
+        }
+      }
+
+      ul {
+        li {
+          padding: 5px 40px 5px 5px;
+          display: flex;
+          align-items: center;
+          position: relative;
+
+          .btn-icon {
+            position: absolute;
+            top: 5px;
+            right: 0px;
+          }
+
+          .title {
+            width: 100px;
+          }
+          .subject-class {
+            width: 120px;
+            height: 34px;
+          }
+        }
+      }
+
+      // .btn-wrap {
+      //   margin-top: 20px;
+      //   display: flex;
+      //   justify-content: center;
+
+      //   button {
+      //     display: flex;
+      //     align-items: center;
+      //     color: #ffffff;
+      //     padding: 5px 10px;
+      //     font-size: 1rem;
+      //     margin: 0 5px;
+
+
+      //   }
+      // }
+    }
+
     .row {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
 
       .title {
         width: 120px;
@@ -69,12 +135,12 @@ input[type="text"], input[type="date"], input[type="number"] {
     justify-content: center;
 
     button {
-      width: 150px;
-      height: 38px;
+      min-height: 38px;
+      padding: 5px 15px;
       margin-left: 15px;
-      background-color: $button_color;
+      background-color: $button_update_bgcolor;
       color: #ffffff;
-      font-size: 1.2rem;
+      font-size: 1rem;
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -83,9 +149,19 @@ input[type="text"], input[type="date"], input[type="number"] {
       &:first-of-type {
         margin-left: 0;
       }
+      &.btn-edit {
+        background-color: $button_update_bgcolor;
+      }
+      &.btn-add {
+        background-color: $button_add_bgcolor;
+      }
+      &.btn-add-subject-block {
+        background-color: $subject_btn_add_new_subject_block_bgcolor;
+      }
     }
   }
 }
+
 
   @media screen and (max-width: 600px) {
     .databaseList-table {

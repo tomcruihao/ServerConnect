@@ -47,31 +47,87 @@
       </ul>
     </nav>
   </header>
-  <div id="settingsField" class="settings-wrap">
+  <div class="content">
     <h1>設定</h1>
-    <div class="setting-wrap">
-      <div class="row">
-        <div class="title">proxy</div>
-        <div class="content">
-          <input type="text" v-model="settings.proxy">
+    <section id="generalSetting" class="setting-wrap">
+      <div>
+        <h2>一般設定</h2>
+        <div class="row">
+          <div class="title">proxy</div>
+          <div class="content">
+            <input type="text" v-model="settings.proxy">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="button-wrap">
-      <button @click="updateSettings()">更新</button>
-      <button v-if="btn_recovery.show" @click="recoverySettings()">{{btn_recovery.name}}</button>
-    </div>
-  </div>
-
-  <div id="toolsField" class="settings-wrap">
-    <h1>小工具區</h1>
-    <div class="setting-wrap">
-      <div class="row">
-        <div class="title">
-          <span>建立注音與比劃</span>
+      <div class="button-wrap">
+        <button @click="updateSettings()"><img src="img/edit.svg"/>更新</button>
+        <button v-if="btn_recovery.show" @click="recoverySettings()">{{btn_recovery.name}}</button>
+      </div>
+    </section>
+    <section id="subjectSetField" class="setting-wrap">
+      <h2>主題設定</h2>
+      <div class="subject-frame" v-for="(subjectInfo, index) in subjects">
+        <button @click="deleteSubject(database)" class="btn-icon delete-subject-block" name="刪除整個主題區" title="刪除整個主題區"><img src="img/delete.svg"/></button>
+        <h3 class="subject-header">
+          <div class="title">主題標題</div>
+          <input type="text" v-model="subjectInfo.subjectTitle">
+        </h3>
+        <ul>
+          <li v-for="(subject, index) in subjectInfo.subjectList">
+            <div class="title">主題名</div>
+            <input type="text" v-model="subject.name">
+            <select v-model="subject.className" class="subject-class">
+              <option v-for="option in subjectOptions" :value="option.className">{{option.displayName}}
+            </select>
+            <button @click="deleteSubject(database)" class="btn-icon" name="刪除這項主題" title="刪除這項主題"><img src="img/delete.svg"/></button>
+          </li>
+        </ul>
+        <div class="button-wrap">
+          <button class="btn-edit" onclick="updateList()">
+            <img src="img/edit.svg"/>更新
+          </button>
+          <button class="btn-add" @click="addNewSubject(subjects.subjectList[index])">
+            <img src="img/add.svg"/>新增檢索主題
+          </button>
         </div>
-        <div class="content">
-          <button onclick="buildStrokes()" disabled>執行</button>
+      </div>
+      <div class="button-wrap">
+        <button class="btn-add-subject-block" @click="addNewSubjectBlock">
+          <img src="img/add.svg"/>新增主題
+        </button>
+      </div>
+    </section>
+    <section id="toolsField" class="setting-wrap">
+      <h1>小工具區</h1>
+      <div class="setting-wrap">
+        <div class="row">
+          <div class="title">
+            <span>建立注音與比劃</span>
+          </div>
+          <div class="content">
+            <button onclick="buildStrokes()" disabled>執行</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="mask" id="dialogue" v-if="show">
+    <div class="dialogue-message-frame">
+      <div class="dialogue-head">
+        <h4>{{title}}</h4>
+        <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body" v-if="type === 'deleteResource'">
+        {{message}} <span class="resource-name">{{resourceName}}</span>?
+        <div class="btn-frame">
+          <button @click="deleteResource">確定</button>
+          <button @click="closeDialogue">取消</button>
+        </div>
+      </div>
+      <div class="dialogue-body" v-else>
+        {{message}}
+        <div class="btn-frame">
+          <button @click="closeDialogue">確定</button>
         </div>
       </div>
     </div>
@@ -80,8 +136,112 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="lib/jquery.js"></script>
   <script type="text/javascript">
+    var subjectField = new Vue({
+      el:'#subjectSetField',
+      data: {
+        subjects: '',
+        subjectOptions: [
+          {
+            className: 'resourceType',
+            displayName: '資源類型'
+          },
+          {
+            className: 'faculty',
+            displayName: '適用學院'
+          },
+          {
+            className: 'subject',
+            displayName: '主題'
+          },
+          {
+            className: 'category',
+            displayName: '分類'
+          },
+          {
+            className: 'type',
+            displayName: '類型'
+          },
+          {
+            className: 'publisher',
+            displayName: '出版商'
+          },
+          {
+            className: 'default',
+            displayName: '請選擇主題對應欄位'
+          }
+        ]
+      },
+      created: function() {
+        this.updateSubjectList();
+      },
+      methods:{
+        updateSubjectList: function () {
+          let self = this;
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
+            type: 'GET',
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              self.subjects = res.subjects;
+            }
+          });
+        },
+        addNewSubjectBlock: function() {
+          let newObj = {
+            "subjectTitle": "",
+            "subjectList": []
+          }
+          this.subjects.push(newObj);
+        },
+        updateList: function(subject, className) {
+          console.log(`${subject}, ${className}`);
+        },
+        addNewSubject: function(subject) {
+          let self = this;
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
+            type: 'POST',
+            data: {
+              type: 'add',
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              console.log(res);
+            }
+          });
+          // console.log(subject);
+          // let newObj = {
+          //   "name": "",
+          //   "className": "default",
+          // }
+          // subject.subjectList.push(newObj);
+          // // $.ajax({
+          // //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
+          // //   type: 'GET',
+          // //   error: function(jqXHR, exception) {
+          // //     //use url variable here
+          // //     console.log(jqXHR);
+          // //     console.log(exception);
+          // //   },
+          // //   success: function(res) {
+          // //     self.subjects = res.subjects;
+          // //     console.log(res.subjects)
+          // //   }
+          // // });
+        }
+      }
+    });
+
     var settings = new Vue({
-      el:'#settingsField',
+      el:'#generalSetting',
       data: {
         settings: {
           proxy: ''
@@ -151,6 +311,45 @@
               dialogue.setDialogue(dialogueType);
             }
           });
+        }
+      }
+    });
+    var dialogue = new Vue({
+      el:'#dialogue',
+      data: {
+        show: false,
+        type: '',
+        title: '測試標題',
+        message: '測試內容',
+        resourceName: '',
+        resource: ''
+      },
+      methods:{
+        setDialogue: function(type, message) {
+
+        },
+        deleteResource: function() {
+          let self = this;
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
+            type: 'POST',
+            data: {
+              type: 'delete',
+              resource: self.resource
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              dataList.getDatabaseList();
+              self.setDialogue('delete_success');
+            }
+          });
+        },
+        closeDialogue: function() {
+          this.show = false;
         }
       }
     });
