@@ -46,7 +46,7 @@ error_reporting(E_ALL);
     }
 
     // write back
-    file_put_contents('../data/eResourceList.json', json_encode($subjectList, JSON_UNESCAPED_UNICODE));
+    file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   }
 
