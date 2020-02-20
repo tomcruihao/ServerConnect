@@ -93,7 +93,7 @@
           <button class="btn-accordion" onclick="aside('open')">公佈欄</button>
           <div class="aside-mobile-header">
             <div class="title">公佈欄</div>
-            <img src="img/clear.svg" class="close" >
+            <img src="img/clear.svg" class="close" onclick="aside('close')">
           </div>
           <div class="aside-content">
             <div class="bulletin-board-frame" id="latestNews">
