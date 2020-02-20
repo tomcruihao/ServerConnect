@@ -310,7 +310,7 @@
       box_div_dom.innerHTML = `<div class="row">\
                                 <div class="title">連結</div>\
                                 <div class="resourceUrl">\
-                                  <a href="javascript:directTo(${res.id}, ${res.url})">點我連結</a>\
+                                  <a href="javascript:directTo(${res.id}, '${res.url}')">點我連結</a>\
                                 </div>\
                               </div>\
                               <div class="row">\
