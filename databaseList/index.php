@@ -459,7 +459,7 @@
       type: 'POST',
       data: {
         directionID: id
-      }
+      },
       error: function(jqXHR, exception) {
         //use url variable here
         console.log(jqXHR);
