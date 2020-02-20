@@ -623,10 +623,12 @@ section {
       position: fixed;
       top: 0;
       right: -90%;
+      transition: right 1s;
 
       &.show {
-        transition: right 0;
+        right: 0;
       }
+      
       .btn-accordion {
         width: 36px;
         height: 100px;

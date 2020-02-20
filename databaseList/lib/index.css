@@ -918,10 +918,11 @@ section {
     position: fixed;
     top: 0;
     right: -90%;
+    -webkit-transition: right 1s;
+    transition: right 1s;
   }
   .content-field aside.show {
-    -webkit-transition: right 0;
-    transition: right 0;
+    right: 0;
   }
   .content-field aside .btn-accordion {
     width: 36px;
