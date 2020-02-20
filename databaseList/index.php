@@ -166,7 +166,10 @@
     let aside = document.getElementById('aside');
     switch(status) {
       case 'open':
-        console.log('test');
+        aside.classList.add("show");
+        break;
+      case 'close':
+        aside.classList.remove("show");
         break;
       default:
         break;
