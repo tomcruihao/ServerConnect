@@ -912,12 +912,12 @@ section {
     table-layout: fixed;
   }
   .content-field aside {
-    width: 90%;
+    width: 100%;
     height: 100vh;
     display: block;
     position: fixed;
     top: 0;
-    right: -90%;
+    right: -100%;
     -webkit-transition: right 1s;
     transition: right 1s;
   }
