@@ -629,12 +629,13 @@ section {
       }
       .btn-accordion {
         width: 36px;
-        height: 36px;
+        height: 50px;
         background-color: #ffa701;
         position: absolute;
         left: -36px;
         top: 100px;
         display: block;
+        writing-mode: vertical-lr;
       }
       .aside-mobile-header {
         width: 100%;
