@@ -1,5 +1,7 @@
 <?php
-  header("Content-Type:text/html;charset=utf-8");
+  header("Access-Control-Allow-Origin: *");
+  header("Content-Security-Policy: upgrade-insecure-requests");
+  header('Content-Type: application/json');
 
   $jsonFile_direct = '../data/eResourceList.json';
 
@@ -55,5 +57,6 @@
   // write back
   file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
-  echo 'execute success!';
+  $res = array('type' => 'success', 'mesage' => 'success');
+  echo json_encode($res, JSON_UNESCAPED_UNICODE);
 ?>

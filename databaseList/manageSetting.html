@@ -105,7 +105,7 @@
             <span>建立注音與比劃</span>
           </div>
           <div class="content">
-            <button onclick="buildStrokes()" disabled>執行</button>
+            <button onclick="buildStrokes()">執行</button>
           </div>
         </div>
       </div>
@@ -119,12 +119,10 @@
       </div>
       <div class="dialogue-body">
         <div class="row">
-          <div class="title">標題</div>
-          <div class="content">{{dialogueMessage.title}}</div>
+          <div class="content">{{message.content}}</div>
         </div>
-        <div class="row">
-          <div class="title">相關URL</div>
-          <div class="content" v-html="dialogueMessage.content"></div>
+        <div class="btn-frame">
+          <button @click="closeDialogue">確定</button>
         </div>
       </div>
     </div>
@@ -180,7 +178,7 @@
               this.dialogHead_title = '注意';
               break;
             default:
-              this.dialogHead_title = ' ';
+              this.dialogHead_title = '訊息';
               break;
           }
         },
@@ -283,7 +281,12 @@
               console.log(exception);
             },
             success: function(res) {
-              console.log(res);
+              let messageInfo = {
+                title: '',
+                content: '更新成功',
+                warning: ''
+              }
+              dialogue.setDialogue('message', messageInfo);
               self.updateSubjectList();
             }
           });
@@ -420,7 +423,12 @@
           console.log(exception);
         },
         success: function(res) {
-          console.log(res);
+          let messageInfo = {
+            title: '',
+            content: '建立成功',
+            warning: ''
+          }
+          dialogue.setDialogue('message', messageInfo);
         }
       });
     }
