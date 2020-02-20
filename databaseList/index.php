@@ -463,9 +463,10 @@
         console.log(exception);
       },
       success: function(res) {
-        self.bulletinTitle = res.bulletinTitle;
-        self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-        self.displayNumber = res.displayNumber;
+        console.log(res);
+        // self.bulletinTitle = res.bulletinTitle;
+        // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+        // self.displayNumber = res.displayNumber;
       }
     });
   }
