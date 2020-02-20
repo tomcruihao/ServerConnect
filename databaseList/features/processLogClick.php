@@ -7,11 +7,13 @@
   $getLogData = file_get_contents('../data/logUserCountClick.json');
   $logData = json_decode($getLogData, true);
 
-  $receivedData = json_decode($_POST["directionID"], true);
+  // $receivedData = json_decode($_POST["directionID"], true);
+  $resourceID = $_POST["directionID"];
 
   $log = [];
   $log['clickedDateTime'] = date("Y-m-d h:i:s");
   $log['ip'] = getUserIpAddr();
+  $log['id'] = $resourceID;
 
   array_push($logData['log'], $log);
   // write back

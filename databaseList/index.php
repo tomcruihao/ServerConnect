@@ -457,6 +457,9 @@
     $.ajax({
       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLogClick.php',
       type: 'POST',
+      data: {
+        directionID: id
+      }
       error: function(jqXHR, exception) {
         //use url variable here
         console.log(jqXHR);
