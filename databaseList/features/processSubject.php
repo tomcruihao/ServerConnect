@@ -16,8 +16,10 @@ error_reporting(E_ALL);
 
   // parameters
   $type = $_POST["type"];
-  // $resource = $_POST["resource"];
-  // $subjectList = json_decode($_POST["subject"], true);
+  $received_subject = '';
+  if(isset($_POST['subject'])) {
+    $subjectList = json_decode($_POST["subject"], true);
+  }
 
   if ($type === 'add') {
     // new object
@@ -34,6 +36,17 @@ error_reporting(E_ALL);
 
     // write back
     file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
+    response('success', 'success');
+  } else if($type === 'modify') {
+    foreach($subjectList['subjects'] as $key => $row) {
+      if(strcasecmp($row['subjectID'], $received_subject['subjectID']) == 0) {
+        $subjectList['subjects'][$key] = $received_subject;
+        break;
+      }
+    }
+
+    // write back
+    file_put_contents('../data/eResourceList.json', json_encode($subjectList, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   }
 

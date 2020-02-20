@@ -67,19 +67,19 @@
     <section id="subjectSetField" class="setting-wrap">
       <h2>主題設定</h2>
       <div class="subject-frame" v-for="(subjectInfo, index) in subjects">
-        <button @click="deleteSubject(database)" class="btn-icon delete-subject-block" name="刪除整個主題區" title="刪除整個主題區"><img src="img/delete.svg"/></button>
+        <button class="btn-icon delete-subject-block" name="刪除整個主題區" title="刪除整個主題區" @click="deleteSubjectBlock(subjectInfo)"><img src="img/delete.svg"/></button>
         <h3 class="subject-header">
           <div class="title">主題標題</div>
           <input type="text" v-model="subjectInfo.subjectTitle">
         </h3>
         <ul>
-          <li v-for="(subject, index) in subjectInfo.subjectList">
+          <li v-for="(subject, subject_index) in subjectInfo.subjectList">
             <div class="title">主題名</div>
             <input type="text" v-model="subject.name">
             <select v-model="subject.className" class="subject-class">
               <option v-for="option in subjectOptions" :value="option.className">{{option.displayName}}
             </select>
-            <button @click="deleteSubject(database)" class="btn-icon" name="刪除這項主題" title="刪除這項主題"><img src="img/delete.svg"/></button>
+            <button @click="deleteSubject(index, subject)" class="btn-icon" name="刪除這項主題" title="刪除這項主題"><img src="img/delete.svg"/></button>
           </li>
         </ul>
         <div class="button-wrap">
@@ -167,7 +167,7 @@
           },
           {
             className: 'default',
-            displayName: '請選擇主題對應欄位'
+            displayName: '請選擇欄位'
           }
         ]
       },
@@ -214,7 +214,21 @@
           console.log(`${subject}, ${className}`);
         },
         addNewSubject: function(subjectID) {
-          console.log(subjectID);
+          this.subjects.forEach(res => {
+            if(res.subjectID === subjectID) {
+              let object = {
+                "name": "",
+                "className": "default"
+              }
+              res.subjectList.push(object);
+            }
+          })
+        },
+        deleteSubject: function(index, subject) {
+          this.subjects[index].subjectList.splice(this.subjects[index].subjectList.indexOf(subject), 1);
+        },
+        deleteSubjectBlock: function(subjectBlock) {
+          this.subjects.splice(this.subjects.indexOf(subjectBlock), 1);
         }
       }
     });
