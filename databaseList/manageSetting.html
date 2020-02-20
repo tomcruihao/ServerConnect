@@ -83,7 +83,7 @@
           </li>
         </ul>
         <div class="button-wrap">
-          <button class="btn-edit" onclick="updateList()">
+          <button class="btn-edit" @click="updateList(subjectInfo)">
             <img src="img/edit.svg"/>更新
           </button>
           <button class="btn-add" @click="addNewSubject(subjectInfo.subjectID)">
@@ -208,10 +208,27 @@
               self.updateSubjectList();
             }
           });
-          
         },
-        updateList: function(subject, className) {
-          console.log(`${subject}, ${className}`);
+        updateList: function(subject) {
+          let self = this;
+          let post_subject = JSON.stringify(subject);
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
+            type: 'POST',
+            data: {
+              type: 'modify',
+              subject: post_subject
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              console.log(res);
+              self.updateSubjectList();
+            }
+          });
         },
         addNewSubject: function(subjectID) {
           this.subjects.forEach(res => {

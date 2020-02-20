@@ -18,7 +18,7 @@ error_reporting(E_ALL);
   $type = $_POST["type"];
   $received_subject = '';
   if(isset($_POST['subject'])) {
-    $subjectList = json_decode($_POST["subject"], true);
+    $received_subject = json_decode($_POST["subject"], true);
   }
 
   if ($type === 'add') {
