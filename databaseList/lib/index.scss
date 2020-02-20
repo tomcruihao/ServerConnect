@@ -629,7 +629,7 @@ section {
       }
       .btn-accordion {
         width: 36px;
-        height: 50px;
+        height: 100px;
         background-color: #ffa701;
         position: absolute;
         left: -36px;
@@ -646,7 +646,7 @@ section {
         justify-content: space-around;
       }
       .aside-content {
-        height: 100%;
+        height: calc(100% - 60px);
         overflow-y: scroll;
         background-color: rgba(0, 0, 0, 0.3);
         padding: 15px;
