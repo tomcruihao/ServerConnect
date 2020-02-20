@@ -918,8 +918,8 @@ section {
     position: fixed;
     top: 0;
     right: -100%;
-    -webkit-transition: right 1s;
-    transition: right 1s;
+    -webkit-transition: right 0.5s;
+    transition: right 0.5s;
   }
   .content-field aside.show {
     right: 0;

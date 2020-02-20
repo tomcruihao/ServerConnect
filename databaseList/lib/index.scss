@@ -623,7 +623,7 @@ section {
       position: fixed;
       top: 0;
       right: -100%;
-      transition: right 1s;
+      transition: right 0.5s;
 
       &.show {
         right: 0;
