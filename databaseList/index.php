@@ -91,6 +91,10 @@
         </article>
         <aside>
           <button class="btn-accordion">test</button>
+          <div class="aside-mobile-header">
+            <div class="title">公佈欄</div>
+            <img src="img/clear.svg" class="close" >
+          </div>
           <div class="aside-content">
             <div class="bulletin-board-frame" id="latestNews">
               <h3>{{bulletinTitle}}</h3>
