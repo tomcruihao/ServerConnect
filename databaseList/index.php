@@ -227,7 +227,9 @@
     },
     methods:{
       search: function(subject, className) {
-        console.log(`${subject}, ${className}`);
+        searchBy(subject, className);
+        aside('close');
+        // console.log(`${subject}, ${className}`);
       }
     }
   });
