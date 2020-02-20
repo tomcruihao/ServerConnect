@@ -628,7 +628,7 @@ section {
       &.show {
         right: 0;
       }
-      
+
       .btn-accordion {
         width: 36px;
         height: 100px;
@@ -646,6 +646,15 @@ section {
         background-color: #333333;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        .title {
+          color: #ffffff;
+          font-size: 1rem;
+        }
+        .close {
+          margin-right: 10px;
+        }
       }
       .aside-content {
         height: calc(100% - 70px);
