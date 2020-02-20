@@ -9,6 +9,7 @@ error_reporting(E_ALL);
   header('Content-Type: application/json');
   date_default_timezone_set('Asia/Taipei');
 
+  $jsonFile_direct = '../data/latestNews.json';
 
   // parameters
   $type = $_POST["type"];
@@ -16,7 +17,7 @@ error_reporting(E_ALL);
   $receivedData = json_decode($_POST["processData"], true);
 
   // get news list
-  $getLatestNewsJsonData = file_get_contents('../data/latestNews.json');
+  $getLatestNewsJsonData = file_get_contents($jsonFile_direct);
   $latestNewsData = json_decode($getLatestNewsJsonData, true);
 
   if ($type === 'addNews') {
@@ -30,7 +31,7 @@ error_reporting(E_ALL);
     array_push($latestNewsData['newsList'], $receivedData);
 
     // write back
-    file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
 
   } else if($type === 'updateNews') {
@@ -43,7 +44,7 @@ error_reporting(E_ALL);
     }
 
     // write back
-    file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   } else if ($type === 'deleteNews') {
     foreach($latestNewsData['newsList'] as $key => $row) {
@@ -55,14 +56,14 @@ error_reporting(E_ALL);
     }
 
     // write back
-    file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   } else if($type === 'updateNewsField') {
     $latestNewsData['bulletinTitle'] = $receivedData['bulletinTitle'];
     $latestNewsData['displayNumber'] = $receivedData['displayNumber'];
 
     // write back
-    file_put_contents('../data/latestNews.json', json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   }
 

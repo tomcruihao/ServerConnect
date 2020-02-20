@@ -111,23 +111,36 @@
       </div>
     </section>
   </div>
-  <div class="mask" id="dialogue" v-if="show">
-    <div class="dialogue-message-frame">
+  <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
+    <div class="dialogue-message-frame" v-if="type === 'message'">
       <div class="dialogue-head">
-        <h4>{{title}}</h4>
-        <img src="img/closeWhite.svg"/ class="close" @click="closeDialogue">
+        <h4>{{dialogHead_title}}</h4>
+        <img src="img/closeWhite.svg" class="close" @click="closeDialogue">
       </div>
-      <div class="dialogue-body" v-if="type === 'deleteResource'">
-        {{message}} <span class="resource-name">{{resourceName}}</span>?
-        <div class="btn-frame">
-          <button @click="deleteResource">確定</button>
-          <button @click="closeDialogue">取消</button>
+      <div class="dialogue-body">
+        <div class="row">
+          <div class="title">標題</div>
+          <div class="content">{{dialogueMessage.title}}</div>
+        </div>
+        <div class="row">
+          <div class="title">相關URL</div>
+          <div class="content" v-html="dialogueMessage.content"></div>
         </div>
       </div>
-      <div class="dialogue-body" v-else>
-        {{message}}
+    </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'deleteSubjectBlock'">
+      <div class="dialogue-head">
+        <h4>{{dialogHead_title}}</h4>
+        <img src="img/closeWhite.svg" class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body">
+        <div class="row">
+          <div class="warning" v-if="message.warning !== ''">{{message.warning}}</div>
+          <div class="content" v-else>{{message.content}}</div>
+        </div>
         <div class="btn-frame">
-          <button @click="closeDialogue">確定</button>
+          <button @click="deleteSubjectBlock">確定</button>
+          <button @click="closeDialogue">取消</button>
         </div>
       </div>
     </div>
@@ -136,6 +149,50 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="lib/jquery.js"></script>
   <script type="text/javascript">
+    var dialogue = new Vue({
+      el:'#dialogue',
+      data: {
+        show: false,
+        type: '',
+        dialogHead_title: '',
+        message: {
+          title: '',
+          content: '',
+          warning: ''
+        }
+      },
+      computed: {
+        dialogueMessage: {
+          get: function () {
+            return this.message;
+          }
+          // ,set: function () {
+          // }
+        }
+      },
+      methods:{
+        setDialogue: function(type, messageInfo) {
+          this.type = type;
+          this.message = messageInfo;
+          this.show = true;
+          switch (type) {
+            case 'deleteSubjectBlock':
+              this.dialogHead_title = '注意';
+              break;
+            default:
+              this.dialogHead_title = ' ';
+              break;
+          }
+        },
+        closeDialogue: function() {
+          this.show = false;
+        },
+        deleteSubjectBlock: function() {
+          subjectField.set_deleteSubjectBlock();
+          this.show = false;
+        }
+      }
+    });
     var subjectField = new Vue({
       el:'#subjectSetField',
       data: {
@@ -169,7 +226,8 @@
             className: 'default',
             displayName: '請選擇欄位'
           }
-        ]
+        ],
+        delete_tempSubject: ''
       },
       created: function() {
         this.updateSubjectList();
@@ -245,8 +303,18 @@
           this.subjects[index].subjectList.splice(this.subjects[index].subjectList.indexOf(subject), 1);
         },
         deleteSubjectBlock: function(subjectBlock) {
+          this.delete_tempSubject = subjectBlock;
+          let messageInfo = {
+            title: '',
+            content: '',
+            warning: `您確定要刪除${subjectBlock.subjectTitle}嗎?`
+          }
+          dialogue.setDialogue('deleteSubjectBlock', messageInfo);
+          // this.subjects.splice(this.subjects.indexOf(subjectBlock), 1);
+        },
+        set_deleteSubjectBlock: function() {
           let self = this;
-          let post_subjectBlock = JSON.stringify(subjectBlock);
+          let post_subjectBlock = JSON.stringify(this.delete_tempSubject);
           $.ajax({
             url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
             type: 'POST',
@@ -264,10 +332,6 @@
               self.updateSubjectList();
             }
           });
-          // this.subjects.splice(this.subjects.indexOf(subjectBlock), 1);
-        },
-        set_deleteSubjectBlock: function(subjectBlock) {
-
         }
       }
     });
@@ -323,65 +387,26 @@
           Object.assign(this.settings, this.settings_backup);
         },
         updateSettings: function(news) {
-          $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
-            type: 'POST',
-            data: {
-              type: self.sendType,
-              processData: newsData
-            },
-            error: function(jqXHR, exception) {
-              //use url variable here
-              console.log(jqXHR);
-              console.log(exception);
-            },
-            success: function(res) {
-              console.log(res);
-              dataList.getLatestNewsListInfo();
-              self.closeForm();
-              let dialogueType = `${self.sendType}_success`;
-              dialogue.setDialogue(dialogueType);
-            }
-          });
-        }
-      }
-    });
-    var dialogue = new Vue({
-      el:'#dialogue',
-      data: {
-        show: false,
-        type: '',
-        title: '測試標題',
-        message: '測試內容',
-        resourceName: '',
-        resource: ''
-      },
-      methods:{
-        setDialogue: function(type, message) {
-
-        },
-        deleteResource: function() {
-          let self = this;
-          $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
-            type: 'POST',
-            data: {
-              type: 'delete',
-              resource: self.resource
-            },
-            error: function(jqXHR, exception) {
-              //use url variable here
-              console.log(jqXHR);
-              console.log(exception);
-            },
-            success: function(res) {
-              dataList.getDatabaseList();
-              self.setDialogue('delete_success');
-            }
-          });
-        },
-        closeDialogue: function() {
-          this.show = false;
+          // $.ajax({
+          //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+          //   type: 'POST',
+          //   data: {
+          //     type: self.sendType,
+          //     processData: newsData
+          //   },
+          //   error: function(jqXHR, exception) {
+          //     //use url variable here
+          //     console.log(jqXHR);
+          //     console.log(exception);
+          //   },
+          //   success: function(res) {
+          //     console.log(res);
+          //     dataList.getLatestNewsListInfo();
+          //     self.closeForm();
+          //     let dialogueType = `${self.sendType}_success`;
+          //     dialogue.setDialogue(dialogueType);
+          //   }
+          // });
         }
       }
     });

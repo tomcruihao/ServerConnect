@@ -90,6 +90,7 @@
           <ul class="pagination"></ul>
         </article>
         <aside>
+          <button class="btn-accordion">test</button>
           <div class="bulletin-board-frame" id="latestNews">
             <h3>{{bulletinTitle}}</h3>
             <ul>

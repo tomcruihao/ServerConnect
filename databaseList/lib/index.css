@@ -537,6 +537,10 @@ section {
   margin-left: 15px;
 }
 
+.content-field aside .btn-accordion {
+  display: none;
+}
+
 .content-field aside .bulletin-board-frame h3 {
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -904,7 +908,22 @@ section {
     table-layout: fixed;
   }
   .content-field aside {
-    display: none;
+    width: 80%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  .content-field aside .btn-accordion {
+    width: 36px;
+    height: 36px;
+    background-color: #ffa701;
+    position: absolute;
+    left: -36px;
+    top: 100px;
+    display: block;
   }
 }
 /*# sourceMappingURL=index.css.map */

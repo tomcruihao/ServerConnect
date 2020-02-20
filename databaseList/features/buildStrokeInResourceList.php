@@ -1,6 +1,8 @@
 <?php
   header("Content-Type:text/html;charset=utf-8");
 
+  $jsonFile_direct = '../data/eResourceList.json';
+
   // get resource list
   $getResourceListJsonData = file_get_contents('../data/eResourceList.json');
   $resourceList = json_decode($getResourceListJsonData, true);
@@ -51,7 +53,7 @@
     // echo $newChar;
   }
   // write back
-  file_put_contents('../data/eResourceList.json', json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
   echo 'execute success!';
 ?>
