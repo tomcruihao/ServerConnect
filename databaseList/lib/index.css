@@ -933,6 +933,7 @@ section {
     -webkit-writing-mode: vertical-lr;
         -ms-writing-mode: tb-lr;
             writing-mode: vertical-lr;
+    font-size: 1rem;
   }
   .content-field aside .aside-mobile-header {
     width: 100%;

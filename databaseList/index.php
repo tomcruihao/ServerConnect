@@ -89,8 +89,8 @@
           </ul>
           <ul class="pagination"></ul>
         </article>
-        <aside>
-          <button class="btn-accordion">test</button>
+        <aside id="aside">
+          <button class="btn-accordion" onclick="aside('open')">公佈欄</button>
           <div class="aside-mobile-header">
             <div class="title">公佈欄</div>
             <img src="img/clear.svg" class="close" >
@@ -161,6 +161,17 @@
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
   var contactList
+
+  function aside(status) {
+    let aside = document.getElementById('aside');
+    switch(status) {
+      case 'open':
+        console.log('test');
+        break;
+      default:
+        break;
+    }
+  }
 
   function addSortResultAfterTitle(sortObj) {
     document.querySelectorAll('#resourceList > li').forEach(res => {
