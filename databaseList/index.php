@@ -91,26 +91,28 @@
         </article>
         <aside>
           <button class="btn-accordion">test</button>
-          <div class="bulletin-board-frame" id="latestNews">
-            <h3>{{bulletinTitle}}</h3>
-            <ul>
-              <li v-for="(latestNews, index) in latestNewsList.slice(0, displayNumber)" class="latest-news">
-                <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
-                <div class="datetime">{{latestNews.publishDate}}</div>
-              </li>
-              <li class="more" v-if="latestNewsList.length > displayNumber">
-                <a href="allLatestNews.html">更多...</a>
-              </li>
-            </ul>
-          </div>
-          <div id="subjectField">
-            <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects">
-              <h3>{{subjectInfo.subjectTitle}}</h3>
+          <div class="aside-content">
+            <div class="bulletin-board-frame" id="latestNews">
+              <h3>{{bulletinTitle}}</h3>
               <ul>
-                <li v-for="(subject, index) in subjectInfo.subjectList">
-                  <span @click="search(subject.name, subject.className)">{{subject.name}}</span>
+                <li v-for="(latestNews, index) in latestNewsList.slice(0, displayNumber)" class="latest-news">
+                  <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
+                  <div class="datetime">{{latestNews.publishDate}}</div>
+                </li>
+                <li class="more" v-if="latestNewsList.length > displayNumber">
+                  <a href="allLatestNews.html">更多...</a>
                 </li>
               </ul>
+            </div>
+            <div id="subjectField">
+              <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects">
+                <h3>{{subjectInfo.subjectTitle}}</h3>
+                <ul>
+                  <li v-for="(subject, index) in subjectInfo.subjectList">
+                    <span @click="search(subject.name, subject.className)">{{subject.name}}</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 <!-- 

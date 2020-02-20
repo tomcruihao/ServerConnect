@@ -275,53 +275,55 @@ section {
       display: none;
     }
 
-    .bulletin-board-frame {
-      h3 {
-        width: 100%;
-        box-sizing: border-box;
-        background-color: $bulletin_header_bgcolor;
-        border-radius: 10px 10px 0px 0px;
-        margin: 0;
-        padding: 5px;
-        text-align: center;
-      }
-      ul {
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px dotted $border_color;
-        border-radius: 0 0 10px 10px;
-        background-color: #ffffff;
+    .aside-content {
+      .bulletin-board-frame {
+        h3 {
+          width: 100%;
+          box-sizing: border-box;
+          background-color: $bulletin_header_bgcolor;
+          border-radius: 10px 10px 0px 0px;
+          margin: 0;
+          padding: 5px;
+          text-align: center;
+        }
+        ul {
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px dotted $border_color;
+          border-radius: 0 0 10px 10px;
+          background-color: #ffffff;
 
-        li {
-          padding: 8px 0px;
-          border-bottom: 1px solid $border_color;
+          li {
+            padding: 8px 0px;
+            border-bottom: 1px solid $border_color;
 
-          a {
-            text-decoration: none;
-            color: $anchor_color;
-          }
-
-          &.latest-news {
-            display: flex;
-            align-items: center;
-
-            .latest-title {
-              flex: 1;
-              display: block;
-              word-break: break-all;
+            a {
+              text-decoration: none;
               color: $anchor_color;
-              cursor: pointer;
             }
 
-            .datetime {
-              width: 90px;
-              margin-left: 5px;
+            &.latest-news {
+              display: flex;
+              align-items: center;
+
+              .latest-title {
+                flex: 1;
+                display: block;
+                word-break: break-all;
+                color: $anchor_color;
+                cursor: pointer;
+              }
+
+              .datetime {
+                width: 90px;
+                margin-left: 5px;
+              }
             }
-          }
-          &.more {
-            font-size: 1rem;
-            text-align: end;
-            border: none;
+            &.more {
+              font-size: 1rem;
+              text-align: end;
+              border: none;
+            }
           }
         }
       }

@@ -541,7 +541,7 @@ section {
   display: none;
 }
 
-.content-field aside .bulletin-board-frame h3 {
+.content-field aside .aside-content .bulletin-board-frame h3 {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -552,7 +552,7 @@ section {
   text-align: center;
 }
 
-.content-field aside .bulletin-board-frame ul {
+.content-field aside .aside-content .bulletin-board-frame ul {
   padding: 10px;
   margin-bottom: 10px;
   border: 1px dotted #cccccc;
@@ -560,17 +560,17 @@ section {
   background-color: #ffffff;
 }
 
-.content-field aside .bulletin-board-frame ul li {
+.content-field aside .aside-content .bulletin-board-frame ul li {
   padding: 8px 0px;
   border-bottom: 1px solid #cccccc;
 }
 
-.content-field aside .bulletin-board-frame ul li a {
+.content-field aside .aside-content .bulletin-board-frame ul li a {
   text-decoration: none;
   color: #3333ff;
 }
 
-.content-field aside .bulletin-board-frame ul li.latest-news {
+.content-field aside .aside-content .bulletin-board-frame ul li.latest-news {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -579,7 +579,7 @@ section {
           align-items: center;
 }
 
-.content-field aside .bulletin-board-frame ul li.latest-news .latest-title {
+.content-field aside .aside-content .bulletin-board-frame ul li.latest-news .latest-title {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -589,12 +589,12 @@ section {
   cursor: pointer;
 }
 
-.content-field aside .bulletin-board-frame ul li.latest-news .datetime {
+.content-field aside .aside-content .bulletin-board-frame ul li.latest-news .datetime {
   width: 90px;
   margin-left: 5px;
 }
 
-.content-field aside .bulletin-board-frame ul li.more {
+.content-field aside .aside-content .bulletin-board-frame ul li.more {
   font-size: 1rem;
   text-align: end;
   border: none;
