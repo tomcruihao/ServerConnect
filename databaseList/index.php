@@ -188,7 +188,6 @@
           tagResult = `${sortObj.btnName} - ${sortFieldVal}`;
           break;
       }
-      console.log(tagResult);
       res.querySelector(`.sort_tag`).innerHTML = tagResult;
     })
   }
@@ -229,7 +228,6 @@
       search: function(subject, className) {
         searchBy(subject, className);
         aside('close');
-        // console.log(`${subject}, ${className}`);
       }
     }
   });
@@ -529,7 +527,6 @@
 
   function searchStrokes(stroke, anchor) {
     initAndAddClickedClass(anchor);
-    console.log(stroke);
     contactList.search(stroke, ['strokes']);
   }
   function searchBy(term, field) {

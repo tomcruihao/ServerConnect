@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>最新消息</title>
+    <link rel="stylesheet" type="text/css" href="../lib/clickReport.css"/>
+  </head>
+<body>
+  <header id="header">
+    <div class="logo">
+      <img src="../img/logo.png" alt="EBSCO" title="EBSCO"/>
+    </div>
+    <nav>
+      <label for="mobile_btn" class="mobile-btn-frame">
+        <img src="../img/dehaze.svg"/>
+      </label>
+      <input type="checkbox" id="mobile_btn">
+      <ul class="nav-list">
+        <li>
+          <a href="../admin.html" class="nav-tag">資源管理</a>
+        </li>
+        <li>
+          <a href="../manageLatestNews.html" class="nav-tag">最新消息管理</a>
+        </li>
+        <li>
+          <a href="../manageSetting.html" class="nav-tag">設定</a>
+        </li>
+        <li class="multi">
+          <label class="nav-tag" for="tag1">link 2</label>
+          <input type="checkbox" id="tag1">
+          <ul>
+            <li>
+              <a href="#">link 2-1</a>
+            </li>
+            <li>
+              <a href="#">link 2-2</a>
+            </li>
+            <li>
+              <a href="#">link 2-3</a>
+            </li>
+            <li>
+              <a href="#">link 2-4</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section id="reportTable">
+    <div class="search-wrap">
+      <div>
+        <div>年:</div>
+        <select v-model="searchRange.year">
+          <option v-for="year in selector_years" :value="year">{{year}}
+        </select>
+      </div>
+      <div>
+        <div>月:</div>
+        <select v-model="searchRange.month">
+          <option v-for="month in selector_months" :value="month.value">{{month.displayName}}
+        </select>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="../lib/jquery.js"></script>
+  <script type="text/javascript">
+    var reportTable = new Vue({
+      el:'#reportTable',
+      data: {
+        searchRange: {
+          year: 2020,
+          month: 1,
+          startYear: 2020,
+          rangeYears: 20
+        }
+      },
+      computed: {
+        selector_years: {
+          get: function () {
+            let array_year = [];
+            for(let index = 0; index < this.searchRange.rangeYears; index++) {
+              let year = index + this.searchRange.startYear;
+              array_year.push(year);
+            }
+            return array_year;
+          }
+          // ,set: function () {
+          // }
+        },
+        selector_months: {
+          get: function () {
+            let array_month = [
+              {
+                'value': 1,
+                'displayName': '一月'
+              },              {
+                'value': 2,
+                'displayName': '二月'
+              },              {
+                'value': 3,
+                'displayName': '三月'
+              },              {
+                'value': 4,
+                'displayName': '四月'
+              },              {
+                'value': 5,
+                'displayName': '五月'
+              },              {
+                'value': 6,
+                'displayName': '六月'
+              },              {
+                'value': 7,
+                'displayName': '七月'
+              },              {
+                'value': 8,
+                'displayName': '八月'
+              },              {
+                'value': 9,
+                'displayName': '九月'
+              },              {
+                'value': 10,
+                'displayName': '十月'
+              },              {
+                'value': 11,
+                'displayName': '十一月'
+              },              {
+                'value': 12,
+                'displayName': '十二月'
+              }
+            ];
+            return array_month;
+          }
+          // ,set: function () {
+          // }
+        }
+      },
+      methods:{
+        setDialogue: function(type, messageInfo) {
+          this.type = type;
+          this.message = messageInfo;
+          this.show = true;
+          switch (type) {
+            case 'deleteSubjectBlock':
+              this.dialogHead_title = '注意';
+              break;
+            default:
+              this.dialogHead_title = '訊息';
+              break;
+          }
+        },
+        closeDialogue: function() {
+          this.show = false;
+        },
+        deleteSubjectBlock: function() {
+          subjectField.set_deleteSubjectBlock();
+          this.show = false;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
