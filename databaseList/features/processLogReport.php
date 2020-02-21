@@ -16,7 +16,7 @@
     $resourceIdArray[$resource['id']] = $resource['resourceName'];
   }
   // print_r($resourceIdArray);
-  
+
   // create log counting array
   $clickCountingAry = [];
   foreach($logData['log'] as $log) {

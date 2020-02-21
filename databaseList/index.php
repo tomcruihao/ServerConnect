@@ -85,8 +85,8 @@
       </div>
       <div class="content-field">
         <article>
-          <ul class="list" id="resourceList">
-          </ul>
+          <ol class="list" id="resourceList">
+          </ol>
           <ul class="pagination"></ul>
         </article>
         <aside id="aside">
