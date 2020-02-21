@@ -17,7 +17,19 @@
   }
   // print_r($resourceIdArray);
   
+  // create log counting array
+  $clickCountingAry = [];
   foreach($logData['log'] as $log) {
-    echo $resourceIdArray[$log['id']].' IP: '.$log['ip'];
+    // echo $resourceIdArray[$log['id']].' IP: '.$log['ip'];
+    if (array_key_exists($log['id'], $clickCountingAry)) {
+      $clickCountingAry[$log['id']]['clickTimes']++;
+    }
+    else {
+      $clickCountingAry[$log['id']]['name'] = $resourceIdArray[$log['id']];
+      $clickCountingAry[$log['id']]['clickTimes'] = 1;
+    }
   }
+
+  print_r($clickCountingAry);
+
 ?>
