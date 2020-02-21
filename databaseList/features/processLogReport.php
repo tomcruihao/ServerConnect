@@ -15,10 +15,10 @@
   foreach($resourceData['rows'] as $resource) {
     $resourceIdArray["'".$resource['id']."'"] = $resource['resourceName'];
   }
-  
+  // print_r($resourceIdArray);
   
   foreach($logData['log'] as $log) {
-    echo $resourceData[$log['id']].' IP: '.$log['ip'];
+    echo $resourceIdArray[$log['id']].' IP: '.$log['ip'];
     // $resourceIdArray[$resource['id']] = $resource['resourceName'];
   }
 ?>
