@@ -11,6 +11,9 @@
   $logData = json_decode($getLogJsonData, true);
 
   $resourceIdArray = [];
+  print_r($resourceData);
+  echo '<br><br><br><br>';
+  print_r($resourceData.rows);
   foreach($resourceData.rows as $value) {
     $resourceIdArray[$value.id] = $value.resourceName;
   }
