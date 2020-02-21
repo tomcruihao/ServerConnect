@@ -13,12 +13,11 @@
   // create map
   $resourceIdArray = [];
   foreach($resourceData['rows'] as $resource) {
-    $resourceIdArray["'".$resource['id']."'"] = $resource['resourceName'];
+    $resourceIdArray[$resource['id']] = $resource['resourceName'];
   }
-  print_r($resourceIdArray);
+  // print_r($resourceIdArray);
   
-  // foreach($logData['log'] as $log) {
-  //   echo $resourceIdArray[$log['id']].' IP: '.$log['ip'];
-  //   $resourceIdArray[$resource['id']] = $resource['resourceName'];
-  // }
+  foreach($logData['log'] as $log) {
+    echo $resourceIdArray[$log['id']].' IP: '.$log['ip'];
+  }
 ?>
