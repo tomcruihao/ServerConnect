@@ -164,10 +164,22 @@
   var contactList
 
   function showItems() {
-    console.log(contactList);
+    // console.log(contactList);
     contactList.items.forEach(item => {
-      console.log(item['found']);
-    })
+        // console.log(item['found']);
+        console.log(item['_values']);
+      })
+    let count = 1;
+    // if (contactList.searched && ontactList.filtered) {
+
+
+    // } else if (contactList.searched) {
+
+    // } else if (contactList.filtered) {
+
+    // } else {
+
+    // }
   }
   function aside(status) {
     let aside = document.getElementById('aside');
