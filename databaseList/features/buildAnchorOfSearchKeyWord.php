@@ -14,12 +14,13 @@
   $zhuyin_map = [];
 
   foreach($zhuYins as $key => $row) {
-    $zhuyin_map[$row] = false;
+    $zhuyin_map[$row] = 0;
   }
-  print_r($zhuyin_map);
 
-  // foreach($resourceList['rows'] as $key => $row) {
-  //   if($row['zhuyin'] !== '') {
+  foreach($resourceList['rows'] as $key => $row) {
+    if($row['zhuyin'] !== '') {
+      $zhuyin_map[$row['zhuyin']] = 1;
+    }
 
   //   }
   //   $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
@@ -47,7 +48,8 @@
   //     $resourceList['rows'][$key]['zhuyin'] = '';
   //     $resourceList['rows'][$key]['strokes'] = '0';
   //   }
-  // }
+  }
+  print_r($zhuyin_map);
   // write back
   // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
