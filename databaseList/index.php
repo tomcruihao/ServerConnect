@@ -165,11 +165,14 @@
 
   function showItems() {
     // console.log(contactList);
-    contactList.items.forEach(item => {
-        // console.log(item['found']);
-        console.log(item['_values']);
-      })
     let count = 1;
+    contactList.items.forEach(item => {
+      // console.log(item['found']);
+      console.log(item['_values']);
+      let tempObj = Object.assign({}, item['_values']);
+      tempObj[numberning] = count;
+      count++;
+    })
     // if (contactList.searched && ontactList.filtered) {
 
 
