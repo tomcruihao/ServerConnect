@@ -164,16 +164,17 @@
   var contactList
 
   function showItems() {
-    // console.log(contactList);
+    console.log(contactList);
     let count = 1;
     contactList.items.forEach(item => {
       // console.log(item['found']);
+      // if(contactList.searched === item.found && contactList.filtered === )
       let tempObj = Object.assign({}, item['_values']);
       tempObj['numbering'] = count;
       item.values(tempObj);
       count++;
     })
-    // if (contactList.searched && ontactList.filtered) {
+    // if (contactList.searched && contactList.filtered) {
 
 
     // } else if (contactList.searched) {
