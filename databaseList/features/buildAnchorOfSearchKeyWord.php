@@ -11,11 +11,12 @@
 
   $allZhuYin = 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ';
   $zhuYins = preg_split('/(?<!^)(?!$)/u', $allZhuYin);
+  $zhuyin_map = [];
 
   foreach($zhuYins as $key => $row) {
-    $row = true;
+    $zhuyin_map[$row] = false;
   }
-  print_r($zhuYins);
+  print_r($zhuyin_map);
 
   // foreach($resourceList['rows'] as $key => $row) {
   //   if($row['zhuyin'] !== '') {
