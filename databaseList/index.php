@@ -296,7 +296,19 @@
 
       let newLabel = document.createElement('label');
       newLabel.setAttribute("for", 'checkbox_' + index);
-      newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
+      // newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
+      newLabel.innerHTML = `<div >\
+                              <div class="title">資源類型</div>\
+                              <div class="resourceName">${res.resourceName}</div>\
+                            </div>\
+                            <div class="row">\
+                              <div class="title">資源類型</div>\
+                              <div class="resourceType">${res.resourceType}</div>\
+                            </div>\
+                            <div class="row">\
+                              <div class="title">主題</div>\
+                              <div class="subject">${res.subject}</div>\
+                            </div>`;
 
       let newCheckBox = document.createElement('input');
       newCheckBox.type = 'checkbox';
@@ -312,10 +324,6 @@
                                 </div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">資源類型</div>\
-                                <div class="resourceType">${res.resourceType}</div>\
-                              </div>\
-                              <div class="row">\
                                 <div class="title">起訂日期</div>\
                                 <div class="startDate">${res.startDate}</div>\
                               </div>\
@@ -326,10 +334,6 @@
                               <div class="row">\
                                 <div class="title">適用學院</div>\
                                 <div class="faculty">${res.faculty}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">主題</div>\
-                                <div class="subject">${res.subject}</div>\
                               </div>\
                               <div class="row">\
                                 <div class="title">分類</div>\
