@@ -16,7 +16,6 @@
     <div class="logo">
       <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
     </div>
-    <button onclick="showItems()">testtttttt</button>
     <nav>
       <label for="mobile_btn" class="mobile-btn-frame">
         <img src="img/dehaze.svg"/>
@@ -163,7 +162,7 @@
   var dataList = <?php echo $getJsonData; ?>;
   var contactList
 
-  function showItems() {
+  function resetNumbering() {
     console.log(contactList);
     let count = 1;
     contactList.items.forEach(item => {
@@ -175,16 +174,6 @@
         count++;
       }
     })
-    // if (contactList.searched && contactList.filtered) {
-
-
-    // } else if (contactList.searched) {
-
-    // } else if (contactList.filtered) {
-
-    // } else {
-
-    // }
   }
   function aside(status) {
     let aside = document.getElementById('aside');
@@ -218,6 +207,7 @@
 
   function sortBy(sortName, options) {
     contactList.sort(sortName, options);
+    resetNumbering();
     // sort template
     // sort(valueName, {
     //   order: 'desc',
@@ -552,14 +542,17 @@
     initAndAddClickedClass(anchor);
   
     contactList.search(zhuYinChar, ['zhuyin']);
+    resetNumbering();
   }
 
   function searchStrokes(stroke, anchor) {
     initAndAddClickedClass(anchor);
     contactList.search(stroke, ['strokes']);
+    resetNumbering();
   }
   function searchBy(term, field) {
     contactList.search(term, [field]);
+    resetNumbering();
   }
   function searchAll(anchor) {
     initAndAddClickedClass(anchor);
@@ -569,6 +562,7 @@
 
     // remove all conditions of filter
     contactList.filter();
+    resetNumbering();
   }
   function createEnglishAnchor() {
     return new Promise((resolve, reject) => {
