@@ -16,6 +16,7 @@
     <div class="logo">
       <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
     </div>
+    <button onclick="showItems()">testtttttt</button>
     <nav>
       <label for="mobile_btn" class="mobile-btn-frame">
         <img src="img/dehaze.svg"/>
@@ -162,6 +163,9 @@
   var dataList = <?php echo $getJsonData; ?>;
   var contactList
 
+  function showItems() {
+    console.log(contactList);
+  }
   function aside(status) {
     let aside = document.getElementById('aside');
     switch(status) {
@@ -626,8 +630,8 @@
       pagination: {
         innerWindow: 1,
         outerWindow: 1
-      },
-      indexAsync: true
+      }
+      // indexAsync: true
     };
     contactList = new List('databaseList', options);
   });
