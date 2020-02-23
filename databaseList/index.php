@@ -168,9 +168,9 @@
     let count = 1;
     contactList.items.forEach(item => {
       // console.log(item['found']);
-      console.log(item['_values']);
       let tempObj = Object.assign({}, item['_values']);
       tempObj['numbering'] = count;
+      item.values(tempObj);
       count++;
     })
     // if (contactList.searched && ontactList.filtered) {
