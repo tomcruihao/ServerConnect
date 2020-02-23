@@ -168,11 +168,12 @@
     let count = 1;
     contactList.items.forEach(item => {
       // console.log(item['found']);
-      // if(contactList.searched === item.found && contactList.filtered === )
-      let tempObj = Object.assign({}, item['_values']);
-      tempObj['numbering'] = count;
-      item.values(tempObj);
-      count++;
+      if(contactList.searched === item.found && contactList.filtered === item.filtered) {
+        let tempObj = Object.assign({}, item['_values']);
+        tempObj['numbering'] = count;
+        item.values(tempObj);
+        count++;
+      }
     })
     // if (contactList.searched && contactList.filtered) {
 
