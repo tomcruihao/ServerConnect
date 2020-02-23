@@ -12,9 +12,15 @@
   $allZhuYin = 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ';
   $zhuYins = preg_split('/(?<!^)(?!$)/u', $allZhuYin);
 
+  foreach($zhuYins as $key => $row) {
+    $row = true;
+  }
   print_r($zhuYins);
 
   // foreach($resourceList['rows'] as $key => $row) {
+  //   if($row['zhuyin'] !== '') {
+
+  //   }
   //   $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
   //   $firstChar = $chars[0];
   //   $resultExist = false;
@@ -41,7 +47,7 @@
   //     $resourceList['rows'][$key]['strokes'] = '0';
   //   }
   // }
-  // // write back
+  // write back
   // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
   // $res = array('type' => 'success', 'mesage' => 'success');
