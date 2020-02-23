@@ -164,7 +164,7 @@
   var contactList
 
   function showItems() {
-    console.log(contactList);
+    console.log(contactList.items);
   }
   function aside(status) {
     let aside = document.getElementById('aside');
@@ -301,7 +301,7 @@
       let newLabel = document.createElement('label');
       newLabel.setAttribute("for", 'checkbox_' + index);
       // newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
-      newLabel.innerHTML = `<div class="numbering">${index}</div>
+      newLabel.innerHTML = `<div class="numbering">${index + 1}</div>
                             <div class="row">\
                               <div class="title">資源類型</div>\
                               <div class="resourceName">${res.resourceName}</div>\
