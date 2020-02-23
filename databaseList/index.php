@@ -301,7 +301,8 @@
       let newLabel = document.createElement('label');
       newLabel.setAttribute("for", 'checkbox_' + index);
       // newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
-      newLabel.innerHTML = `<div class="row">\
+      newLabel.innerHTML = `<div class="numbering">${index}</div>
+                            <div class="row">\
                               <div class="title">資源類型</div>\
                               <div class="resourceName">${res.resourceName}</div>\
                             </div>\
@@ -625,7 +626,7 @@
   document.addEventListener("DOMContentLoaded", function(event) {
     // Init list
     var options = {
-      valueNames: [ 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes'],
+      valueNames: ['numbering', 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes'],
       page: 20,
       pagination: {
         innerWindow: 1,
