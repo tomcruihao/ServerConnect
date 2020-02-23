@@ -308,6 +308,12 @@
                             <div class="row">\
                               <div class="title">主題</div>\
                               <div class="subject">${res.subject}</div>\
+                            </div>
+                            <div class="row">\
+                              <div class="title">連結</div>\
+                              <div class="resourceUrl">\
+                                <a href="javascript:directTo(${res.id}, '${res.url}')">點我連結</a>\
+                              </div>\
                             </div>`;
 
       let newCheckBox = document.createElement('input');
@@ -318,12 +324,6 @@
       let box_div_dom = document.createElement('div');
       box_div_dom.className = 'box';
       box_div_dom.innerHTML = `<div class="row">\
-                                <div class="title">連結</div>\
-                                <div class="resourceUrl">\
-                                  <a href="javascript:directTo(${res.id}, '${res.url}')">點我連結</a>\
-                                </div>\
-                              </div>\
-                              <div class="row">\
                                 <div class="title">起訂日期</div>\
                                 <div class="startDate">${res.startDate}</div>\
                               </div>\
