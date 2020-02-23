@@ -163,7 +163,6 @@
   var contactList
 
   function resetNumbering() {
-    console.log(contactList);
     let count = 1;
     contactList.items.forEach(item => {
       // console.log(item['found']);
