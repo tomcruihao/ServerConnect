@@ -626,7 +626,8 @@
       pagination: {
         innerWindow: 1,
         outerWindow: 1
-      }
+      },
+      indexAsync: true
     };
     contactList = new List('databaseList', options);
   });
