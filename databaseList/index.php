@@ -164,7 +164,7 @@
   var contactList
 
   function showItems() {
-    console.log(contactList.items);
+    console.log(contactList);
     contactList.items.forEach(item => {
       console.log(item['found']);
     })
