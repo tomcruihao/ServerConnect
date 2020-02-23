@@ -277,7 +277,7 @@
           obj.options.order = 'asc';
         }
         sortBy(obj.sortName, obj.options);
-        addSortResultAfterTitle(obj);
+        // addSortResultAfterTitle(obj);
       },
       initAllBtn() {
         this.buttons.forEach((res, index) => {

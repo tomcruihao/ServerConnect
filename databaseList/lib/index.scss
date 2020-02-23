@@ -142,9 +142,35 @@ section {
 
         label {
           cursor: pointer;
-          .sort_tag {
-            font-weight: bold;
-            color: $sort_subject_color;
+          
+          .row {
+            padding: 10px 5px;
+            display: flex;
+
+            div {
+              &:nth-of-type(2) {
+                flex: 1
+              }
+            }
+
+            &.hide {
+              display: none;
+            }
+
+            .title {
+              width: 120px;
+              font-size: 0.8rem;
+              font-weight: bold;
+              display: flex;
+              align-items: center;
+            }
+
+            &:nth-of-type(2n-1) {
+              background-color: $resource_odd_field_bgcolor_1;
+            }
+            &:nth-of-type(2n) {
+              background-color: $resource_even_field_bgcolor_2;
+            }
           }
         }
 
