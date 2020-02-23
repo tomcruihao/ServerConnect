@@ -404,7 +404,7 @@ section {
 }
 
 .content-field article .list li label .row {
-  padding: 10px 5px;
+  padding: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
