@@ -501,9 +501,6 @@
         alert('未知訊息');
     }
   }
-  function init() {
-    createAlphabetAnchor();
-  }
 
   function initAndAddClickedClass(anchor) {
     document.querySelectorAll('.link-field > a').forEach(res => {
@@ -695,6 +692,6 @@
     };
     contactList = new List('databaseList', options);
 
-    init();
+    createAlphabetAnchor();
   });
 </script>
