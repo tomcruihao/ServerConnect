@@ -11,7 +11,7 @@
   <title>資料庫</title>
   <link rel="stylesheet" type="text/css" href="lib/index.css"/>
 </head>
-<body onload="init();">
+<body>
   <header id="header">
     <div class="logo">
       <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
@@ -501,7 +501,7 @@
         alert('未知訊息');
     }
   }
-  async function init() {
+  function init() {
     createAlphabetAnchor();
   }
 
@@ -694,5 +694,7 @@
       // indexAsync: true
     };
     contactList = new List('databaseList', options);
+
+    init();
   });
 </script>
