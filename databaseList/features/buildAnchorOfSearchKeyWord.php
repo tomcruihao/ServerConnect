@@ -27,7 +27,11 @@
   }
 
   for($loop = 1; $loop < 70; $loop++) {
-    $strokes_map[strval($loop)] = false;
+    if($loop < 10) {
+      $strokes_map['0'.strval($loop)] = false;
+    } else {
+      $strokes_map[strval($loop)] = false;
+    }
   }
 
   // $strokes_map = array_fill(1,70, false);
