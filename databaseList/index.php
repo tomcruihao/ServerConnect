@@ -571,8 +571,8 @@
         // console.log(res.strokes);
 
         // create hyper link of a to z
+        console.log(res.englishAlphabet);
         let englishAnchor = createAnchor('english', res.englishAlphabet);
-        console.log(englishAnchor);
         document.getElementById("atozField").appendChild(englishAnchor);
 
         // create hyper link of ZhuYin
@@ -587,7 +587,6 @@
   }
 
   function createAnchor(type, rows) {
-    console.log('create anchor');
     let linkWrap = document.createElement('div')
     linkWrap.className = 'link-field';
     rows.forEach(res => {
@@ -605,7 +604,7 @@
       anchor.appendChild(anchorText);
       linkWrap.appendChild(anchor);
     })
-    console.log('finish anchor');
+    console.log(linkWrap);
   }
   // function createEnglishAnchor() {
   //   return new Promise((resolve, reject) => {
