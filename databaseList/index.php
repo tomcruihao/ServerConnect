@@ -57,7 +57,11 @@
         </div>
       </div>
       <div class="atoz-wrap">
-        <div id="atozField" class="atoz-field"></div>
+        <div class="atoz-field">
+          <div class="link-field">
+            <a href="javascript:searchAll()" id="searchTotal">全部</a>
+          </div>
+        </div>
       </div>
       <div class="atoz-wrap">
         <div class="atoz-title">A to Z:</div>
@@ -502,11 +506,15 @@
     }
   }
 
-  function initAndAddClickedClass(anchor) {
+  function initAndAddClickedClass(anchor = null) {
     document.querySelectorAll('.link-field > a').forEach(res => {
       res.classList.remove("clicked");
 
-      anchor.className = 'clicked';
+      if (anchor !== null) {
+        anchor.className = 'clicked';
+      } else {
+        document.getElementById('searchTotal').className = 'clicked';
+      }
     });
   }
 
@@ -544,7 +552,7 @@
     resetNumbering();
   }
   function searchAll(anchor) {
-    initAndAddClickedClass(anchor);
+    initAndAddClickedClass();
 
     // remove all condition of search
     contactList.search();
@@ -558,14 +566,12 @@
     $.ajax({
       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getStrokes.php',
       type: 'GET',
-      async: false,
       error: function(jqXHR, exception) {
         //use url variable here
         console.log(jqXHR);
         console.log(exception);
       },
       success: function(res) {
-        console.log('success');
         fillAnchor(res);
       }
     });
