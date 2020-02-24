@@ -555,35 +555,36 @@
   }
 
   function createAlphabetAnchor() {
-    console.log('going');
     $.ajax({
       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getStrokes.php',
       type: 'GET',
+      async: false,
       error: function(jqXHR, exception) {
         //use url variable here
         console.log(jqXHR);
         console.log(exception);
       },
-      success: async function(res) {
+      success: function(res) {
         console.log('success');
-        // console.log(res.zhuyin);
-        // console.log(res.englishAlphabet);
-        // console.log(res.strokes);
-
-        // create hyper link of a to z
-        let englishAnchor = await createAnchor('english', res.englishAlphabet);
-        console.log(englishAnchor);
-        document.getElementById("atozField").appendChild(englishAnchor);
-
-        // create hyper link of ZhuYin
-        let zhuYinAnchor = await createAnchor('zhuyin', res.zhuyin);
-        document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
-
-        // create hyper link of strokes
-        let strokesAnchor = await createAnchor('strokes', res.strokes);
-        document.getElementById("strokesField").appendChild(strokesAnchor);
+        fillAnchor(res);
       }
     });
+  }
+
+  async function fillAnchor(allAnchor) {
+    console.log('fill');
+    // create hyper link of a to z
+    let englishAnchor = await createAnchor('english', allAnchor.englishAlphabet);
+    console.log(englishAnchor);
+    document.getElementById("atozField").appendChild(englishAnchor);
+
+    // create hyper link of ZhuYin
+    let zhuYinAnchor = await createAnchor('zhuyin', allAnchor.zhuyin);
+    document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
+
+    // create hyper link of strokes
+    let strokesAnchor = await createAnchor('strokes', allAnchor.strokes);
+    document.getElementById("strokesField").appendChild(strokesAnchor);
   }
 
   function createAnchor(type, rows) {
