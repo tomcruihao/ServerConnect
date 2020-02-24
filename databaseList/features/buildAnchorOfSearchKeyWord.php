@@ -10,18 +10,26 @@
   $resourceList = json_decode($getResourceListJsonData, true);
 
   $allZhuYin = 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ';
+  $allEnglishAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   $zhuYins = preg_split('/(?<!^)(?!$)/u', $allZhuYin);
+  $englishAlphabets = str_split($allEnglishAlphabet);
   $zhuyin_map = [];
+  $englishAlphabet_map = [];
 
   foreach($zhuYins as $key => $row) {
-    $zhuyin_map[$row] = 0;
+    $zhuyin_map[$row] = false;
+  }
+  foreach($englishAlphabets as $key => $row) {
+    $englishAlphabet_map[$row] = false;
   }
 
   foreach($resourceList['rows'] as $key => $row) {
     if($row['zhuyin'] !== '') {
-      $zhuyin_map[$row['zhuyin']] = 1;
+      $zhuyin_map[$row['zhuyin']] = true;
+    } else if(preg_match("/^[a-zA-Z]$/", $row['englishAlphabet'])) {
+      $char_uppercase = strtoupper($row['englishAlphabet']);
+      $englishAlphabet_map[$char_uppercase] = true;
     }
-
   //   }
   //   $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
   //   $firstChar = $chars[0];
@@ -50,6 +58,7 @@
   //   }
   }
   print_r($zhuyin_map);
+  print_r($englishAlphabet_map);
   // write back
   // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
