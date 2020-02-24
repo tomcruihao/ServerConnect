@@ -564,7 +564,7 @@
         console.log(jqXHR);
         console.log(exception);
       },
-      success: async function(res) {
+      success: function(res) {
         console.log('success');
         // console.log(res.zhuyin);
         // console.log(res.englishAlphabet);
