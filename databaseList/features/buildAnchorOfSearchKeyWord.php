@@ -15,14 +15,24 @@
   $englishAlphabets = str_split($allEnglishAlphabet);
   $zhuyin_map = [];
   $englishAlphabet_map = [];
+  $strokes_map = [];
 
+  // init map
   foreach($zhuYins as $key => $row) {
     $zhuyin_map[$row] = false;
   }
+
   foreach($englishAlphabets as $key => $row) {
     $englishAlphabet_map[$row] = false;
   }
 
+  for($loop = 1; $loop < 70; $loop++) {
+    $strokes_map[strval($loop)] = false;
+  }
+
+  // $strokes_map = array_fill(1,70, false);
+
+  // match with the map
   foreach($resourceList['rows'] as $key => $row) {
     if($row['zhuyin'] !== '') {
       $zhuyin_map[$row['zhuyin']] = true;
@@ -30,7 +40,9 @@
       $char_uppercase = strtoupper($row['englishAlphabet']);
       $englishAlphabet_map[$char_uppercase] = true;
     }
-  //   }
+    if($row['strokes'] !== '0') {
+      $strokes_map[$row['strokes']] = true;
+    }
   //   $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
   //   $firstChar = $chars[0];
   //   $resultExist = false;
@@ -59,6 +71,7 @@
   }
   print_r($zhuyin_map);
   print_r($englishAlphabet_map);
+  print_r($strokes_map);
   // write back
   // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
