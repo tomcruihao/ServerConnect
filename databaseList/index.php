@@ -513,6 +513,7 @@
     // create hyper link of strokes
     // let strokesAnchor = await createStrokesAnchor();
     // document.getElementById("strokesField").appendChild(strokesAnchor);
+    createAlphabetAnchor();
   }
 
   function initAndAddClickedClass(anchor) {
