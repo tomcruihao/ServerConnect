@@ -3,7 +3,7 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
-  $jsonFile_direct = '../data/eResourceList.json';
+  $jsonFile_direct = '../data/strokeList.json';
 
   // get resource list
   $getResourceListJsonData = file_get_contents('../data/eResourceList.json');
@@ -26,7 +26,7 @@
     $englishAlphabet_map[$row] = false;
   }
 
-  for($loop = 1; $loop < 70; $loop++) {
+  for($loop = 1; $loop < 50; $loop++) {
     if($loop < 10) {
       $strokes_map['0'.strval($loop)] = false;
     } else {
@@ -47,38 +47,13 @@
     if($row['strokes'] !== '0') {
       $strokes_map[$row['strokes']] = true;
     }
-  //   $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
-  //   $firstChar = $chars[0];
-  //   $resultExist = false;
-
-  //   foreach($strokes as $stroke) {
-  //     if(strcasecmp($firstChar, $stroke['char']) == 0) {
-
-  //       $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
-  //       $firstZhuyin = $zhuyin[0];
-  //       $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
-
-  //       if(strlen(strval($stroke['strokes'])) < 2) {
-  //         $resourceList['rows'][$key]['strokes'] = '0'.$stroke['strokes'];
-  //       } else {
-  //         $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
-  //       }
-  //       $resultExist = true;
-  //       break;
-  //     }
-  //   }
-
-  //   if(!$resultExist) {
-  //     $resourceList['rows'][$key]['zhuyin'] = '';
-  //     $resourceList['rows'][$key]['strokes'] = '0';
-  //   }
   }
-  print_r($zhuyin_map);
-  print_r($englishAlphabet_map);
-  print_r($strokes_map);
+  $result = [];
+  $result['zhuyin'] = $zhuyin_map;
+  $result['englishAlphabet'] = $englishAlphabet_map;
+  $result['strokes'] = $strokes_map;
+  
   // write back
-  // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
-
-  // $res = array('type' => 'success', 'mesage' => 'success');
-  // echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  file_put_contents($jsonFile_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
+  $res = array('type' => 'success', 'mesage' => 'success');
 ?>
