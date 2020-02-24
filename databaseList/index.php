@@ -57,6 +57,9 @@
         </div>
       </div>
       <div class="atoz-wrap">
+        <div id="atozField" class="atoz-field"></div>
+      </div>
+      <div class="atoz-wrap">
         <div class="atoz-title">A to Z:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
@@ -310,7 +313,7 @@
       let newLabel = document.createElement('label');
       newLabel.setAttribute("for", 'checkbox_' + index);
       // newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
-      newLabel.innerHTML = `<div class="numbering">${index + 1}</div>
+      newLabel.innerHTML = `<div class="numbering">${index + 1}</div>\
                             <div class="row">\
                               <div class="title">資源類型</div>\
                               <div class="resourceName">${res.resourceName}</div>\
@@ -322,7 +325,7 @@
                             <div class="row">\
                               <div class="title">主題</div>\
                               <div class="subject">${res.subject}</div>\
-                            </div>
+                            </div>\
                             <div class="row">\
                               <div class="title">連結</div>\
                               <div class="resourceUrl">\
@@ -563,78 +566,103 @@
     contactList.filter();
     resetNumbering();
   }
-  function createEnglishAnchor() {
+
+  function createAlphabetAnchor() {
     return new Promise((resolve, reject) => {
-      let linkWrap = document.createElement('div')
-      linkWrap.className = 'link-field';
-
-      let totalAnchor = document.createElement('a');
-      let totalAnchorText = document.createTextNode('全部');
-      totalAnchor.setAttribute('href', 'javascript:void(0);');
-      totalAnchor.className = 'clicked';
-      totalAnchor.addEventListener('click', function(){ searchAll(totalAnchor); }, false);
-      totalAnchor.appendChild(totalAnchorText);
-      linkWrap.appendChild(totalAnchor);
-
-      // for char A to Z
-      for(let loop = 0; loop < 26; loop++) {
-        let anchor = document.createElement('a');
-        let alphabet = String.fromCharCode(65 + loop);
-        let anchorText = document.createTextNode(alphabet);
-        anchor.setAttribute('href', `javascript:void(0);`);
-        anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
-        anchor.appendChild(anchorText);
-        linkWrap.appendChild(anchor);
-      }
-
-      resolve(linkWrap)
-    })
-  }
-
-  function createZhuYinAnchor() {
-    return new Promise((resolve, reject) => {
-      var allZhiYin = 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ'.split('');
-
-      let linkWrap = document.createElement('div')
-      linkWrap.className = 'link-field';
-
-      allZhiYin.forEach(res => {
-        let anchor = document.createElement('a');
-        let alphabet = res;
-        let anchorText = document.createTextNode(alphabet);
-        anchor.setAttribute('href', `javascript:void(0);`);
-        anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
-        anchor.appendChild(anchorText);
-        linkWrap.appendChild(anchor);
-      })
-
-      resolve(linkWrap)
-    })
-  }
-
-  function createStrokesAnchor() {
-    return new Promise((resolve, reject) => {
-      let linkWrap = document.createElement('div')
-      linkWrap.className = 'link-field';
-
-      for(let index = 1; index < 25; index++) {
-        let anchor = document.createElement('a');
-        let alphabet;
-        if(index <= 9) {
-          alphabet = `0${index}`;
-        } else {
-          alphabet = index;
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getStrokes.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          console.log(res.zhuyin);
+          console.log(res.englishAlphabet);
+          console.log(res.strokes);
+          // createAnchor()
         }
-        let anchorText = document.createTextNode(alphabet);
-        anchor.setAttribute('href', `javascript:void(0);`);
-        anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
-        anchor.appendChild(anchorText);
-        linkWrap.appendChild(anchor);
-      }
-
+      });
       resolve(linkWrap)
     })
   }
+
+  function createAnchor(id_name, rows) {
+
+  }
+  // function createEnglishAnchor() {
+  //   return new Promise((resolve, reject) => {
+  //     let linkWrap = document.createElement('div')
+  //     linkWrap.className = 'link-field';
+
+  //     let totalAnchor = document.createElement('a');
+  //     let totalAnchorText = document.createTextNode('全部');
+  //     totalAnchor.setAttribute('href', 'javascript:void(0);');
+  //     totalAnchor.className = 'clicked';
+  //     totalAnchor.addEventListener('click', function(){ searchAll(totalAnchor); }, false);
+  //     totalAnchor.appendChild(totalAnchorText);
+  //     linkWrap.appendChild(totalAnchor);
+
+  //     // for char A to Z
+  //     for(let loop = 0; loop < 26; loop++) {
+  //       let anchor = document.createElement('a');
+  //       let alphabet = String.fromCharCode(65 + loop);
+  //       let anchorText = document.createTextNode(alphabet);
+  //       anchor.setAttribute('href', `javascript:void(0);`);
+  //       anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
+  //       anchor.appendChild(anchorText);
+  //       linkWrap.appendChild(anchor);
+  //     }
+
+  //     resolve(linkWrap)
+  //   })
+  // }
+
+  // function createZhuYinAnchor() {
+  //   return new Promise((resolve, reject) => {
+  //     var allZhiYin = 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ'.split('');
+
+  //     let linkWrap = document.createElement('div')
+  //     linkWrap.className = 'link-field';
+
+  //     allZhiYin.forEach(res => {
+  //       let anchor = document.createElement('a');
+  //       let alphabet = res;
+  //       let anchorText = document.createTextNode(alphabet);
+  //       anchor.setAttribute('href', `javascript:void(0);`);
+  //       anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
+  //       anchor.appendChild(anchorText);
+  //       linkWrap.appendChild(anchor);
+  //     })
+
+  //     resolve(linkWrap)
+  //   })
+  // }
+
+  // function createStrokesAnchor() {
+  //   return new Promise((resolve, reject) => {
+  //     let linkWrap = document.createElement('div')
+  //     linkWrap.className = 'link-field';
+
+  //     for(let index = 1; index < 25; index++) {
+  //       let anchor = document.createElement('a');
+  //       let alphabet;
+  //       if(index <= 9) {
+  //         alphabet = `0${index}`;
+  //       } else {
+  //         alphabet = index;
+  //       }
+  //       let anchorText = document.createTextNode(alphabet);
+  //       anchor.setAttribute('href', `javascript:void(0);`);
+  //       anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
+  //       anchor.appendChild(anchorText);
+  //       linkWrap.appendChild(anchor);
+  //     }
+
+  //     resolve(linkWrap)
+  //   })
+  // }
 
   document.addEventListener("DOMContentLoaded", function(event) {
     // Init list
