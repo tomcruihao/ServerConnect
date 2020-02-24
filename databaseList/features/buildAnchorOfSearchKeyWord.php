@@ -48,13 +48,34 @@
       $strokes_map[$row['strokes']] = true;
     }
   }
+
+  // create the list
   $result = [];
-  $result['zhuyin'] = $zhuyin_map;
-  $result['englishAlphabet'] = $englishAlphabet_map;
-  $result['strokes'] = $strokes_map;
+  $result['zhuyin'] = [];
+  $result['englishAlphabet'] = [];
+  $result['strokes'] = [];
+
+  foreach($zhuyin_map as $key => $row) {
+    if($row) {
+      array_push($result['zhuyin'], $key);
+    }
+  }
+
+  foreach($englishAlphabet_map as $key => $row) {
+    if($row) {
+      array_push($result['englishAlphabet'], $key);
+    }
+  }
+
+  foreach($strokes_map as $key => $row) {
+    if($row) {
+      array_push($result['strokes'], $key);
+    }
+  }
   
+  print_r($result);
   // write back
   file_put_contents($jsonFile_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
   $res = array('type' => 'success', 'mesage' => 'success');
-  echo $res;
+  // echo $res;
 ?>
