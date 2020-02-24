@@ -606,7 +606,7 @@
         linkWrap.appendChild(anchor);
       })
       resolve(linkWrap)
-    }
+    })
   }
   // function createEnglishAnchor() {
   //   return new Promise((resolve, reject) => {
