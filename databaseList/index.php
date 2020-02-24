@@ -503,16 +503,16 @@
   }
   async function init() {
     // create hyper link of a to z
-    let englishAnchor = await createEnglishAnchor();
-    document.getElementById("atozField").appendChild(englishAnchor);
+    // let englishAnchor = await createEnglishAnchor();
+    // document.getElementById("atozField").appendChild(englishAnchor);
 
     // create hyper link of ZhuYin
-    let zhuYinAnchor = await createZhuYinAnchor();
-    document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
+    // let zhuYinAnchor = await createZhuYinAnchor();
+    // document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
 
     // create hyper link of strokes
-    let strokesAnchor = await createStrokesAnchor();
-    document.getElementById("strokesField").appendChild(strokesAnchor);
+    // let strokesAnchor = await createStrokesAnchor();
+    // document.getElementById("strokesField").appendChild(strokesAnchor);
   }
 
   function initAndAddClickedClass(anchor) {
