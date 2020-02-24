@@ -555,6 +555,7 @@
   }
 
   function createAlphabetAnchor() {
+    console.log('going');
     $.ajax({
       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getStrokes.php',
       type: 'GET',
@@ -564,6 +565,7 @@
         console.log(exception);
       },
       success: async function(res) {
+        console.log('success');
         // console.log(res.zhuyin);
         // console.log(res.englishAlphabet);
         // console.log(res.strokes);
@@ -586,6 +588,7 @@
 
   function createAnchor(type, rows) {
     return new Promise((resolve, reject) => {
+      console.log('create anchor');
       let linkWrap = document.createElement('div')
       linkWrap.className = 'link-field';
       rows.forEach(res => {
@@ -603,6 +606,7 @@
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
       })
+      console.log('finish anchor');
       resolve(linkWrap)
     })
   }
