@@ -571,44 +571,41 @@
         // console.log(res.strokes);
 
         // create hyper link of a to z
-        let englishAnchor = await createAnchor('english', res.englishAlphabet);
+        let englishAnchor = createAnchor('english', res.englishAlphabet);
         console.log(englishAnchor);
         document.getElementById("atozField").appendChild(englishAnchor);
 
         // create hyper link of ZhuYin
-        let zhuYinAnchor = await createAnchor('zhuyin', res.zhuyin);
+        let zhuYinAnchor = createAnchor('zhuyin', res.zhuyin);
         document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
 
         // create hyper link of strokes
-        let strokesAnchor = await createAnchor('strokes', res.strokes);
+        let strokesAnchor = createAnchor('strokes', res.strokes);
         document.getElementById("strokesField").appendChild(strokesAnchor);
       }
     });
   }
 
   function createAnchor(type, rows) {
-    return new Promise((resolve, reject) => {
-      console.log('create anchor');
-      let linkWrap = document.createElement('div')
-      linkWrap.className = 'link-field';
-      rows.forEach(res => {
-        let anchor = document.createElement('a');
-        let alphabet = res;
-        let anchorText = document.createTextNode(alphabet);
-        anchor.setAttribute('href', `javascript:void(0);`);
-        if(type === 'zhuyin') {
-          anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
-        } else if (type === 'english') {
-          anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
-        } else if (type === 'strokes') {
-          anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
-        }
-        anchor.appendChild(anchorText);
-        linkWrap.appendChild(anchor);
-      })
-      console.log('finish anchor');
-      resolve(linkWrap)
+    console.log('create anchor');
+    let linkWrap = document.createElement('div')
+    linkWrap.className = 'link-field';
+    rows.forEach(res => {
+      let anchor = document.createElement('a');
+      let alphabet = res;
+      let anchorText = document.createTextNode(alphabet);
+      anchor.setAttribute('href', `javascript:void(0);`);
+      if(type === 'zhuyin') {
+        anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
+      } else if (type === 'english') {
+        anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
+      } else if (type === 'strokes') {
+        anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
+      }
+      anchor.appendChild(anchorText);
+      linkWrap.appendChild(anchor);
     })
+    console.log('finish anchor');
   }
   // function createEnglishAnchor() {
   //   return new Promise((resolve, reject) => {
