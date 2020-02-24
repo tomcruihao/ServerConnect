@@ -26,14 +26,10 @@
 
     foreach($strokes as $stroke) {
       if(strcasecmp($firstChar, $stroke['char']) == 0) {
-        // print_r($resourceList['rows'][$key]);
-        // echo $stroke['char'];
-        // echo $stroke['strokes'];
-        // echo '<br>';
-
         $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
         $firstZhuyin = $zhuyin[0];
         $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
+        $resourceList['rows'][$key]['englishAlphabet'] = '';
 
         if(strlen(strval($stroke['strokes'])) < 2) {
           $resourceList['rows'][$key]['strokes'] = '0'.$stroke['strokes'];
@@ -46,6 +42,7 @@
     }
 
     if(!$resultExist) {
+      $resourceList['rows'][$key]['englishAlphabet'] = $firstChar;
       $resourceList['rows'][$key]['zhuyin'] = '';
       $resourceList['rows'][$key]['strokes'] = '0';
     }
