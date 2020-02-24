@@ -59,7 +59,10 @@
       <div class="atoz-wrap">
         <div class="atoz-field">
           <div class="link-field">
-            <a href="javascript:searchAll()" id="searchTotal">全部</a>
+            <div class="atoz-title">全部:</div>
+            <div class="atoz-field">注音:</div>
+              <a href="javascript:searchAll()" id="searchTotal">全部</a>
+            </div>
           </div>
         </div>
       </div>
