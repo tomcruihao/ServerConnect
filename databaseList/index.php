@@ -60,7 +60,7 @@
         <div class="atoz-title">全部:</div>
         <div class="atoz-field">
           <div class="link-field">
-            <a href="javascript:searchAll()" id="searchTotal">全部</a>
+            <a href="javascript:searchAll()" id="searchTotal" class="clicked">全部</a>
           </div>
         </div>
       </div>
@@ -388,6 +388,10 @@
                               <div class="row hide">\
                                 <div class="title">筆劃</div class="title">\
                                 <div class="strokes">${res.strokes}</div>\
+                              </div>\
+                              <div class="row hide">\
+                                <div class="title">英文</div class="title">\
+                                <div class="englishAlphabet">${res.englishAlphabet}</div>\
                               </div>`;
 
       li_dom.appendChild(newLabel);
@@ -519,23 +523,30 @@
     });
   }
 
-  function searchAtoZ(upperCharacter, anchor) {
+  // function searchAtoZ(upperCharacter, anchor) {
+  //   initAndAddClickedClass(anchor);
+  
+  //   let lowCharater = upperCharacter.toLowerCase();
+  //   // contactList.search(param);
+  //   contactList.filter(function(item) {
+  //     // the item includes html tag to impact the result
+  //     var regex = /(<([^>]+)>)/ig;
+  //     removeTagResult = item.values().resourceName.replace(regex, "").trim();
+
+  //     if (removeTagResult.charAt(0) === upperCharacter || removeTagResult.charAt(0) === lowCharater) {
+  //       return true;
+  //     } else {
+  //       return false;
+  //     }
+  //   });
+  // }
+  function searchZhuYin(zhuYinChar, anchor) {
     initAndAddClickedClass(anchor);
   
-    let lowCharater = upperCharacter.toLowerCase();
-    // contactList.search(param);
-    contactList.filter(function(item) {
-      // the item includes html tag to impact the result
-      var regex = /(<([^>]+)>)/ig;
-      removeTagResult = item.values().resourceName.replace(regex, "").trim();
-
-      if (removeTagResult.charAt(0) === upperCharacter || removeTagResult.charAt(0) === lowCharater) {
-        return true;
-      } else {
-        return false;
-      }
-    });
+    contactList.search(zhuYinChar, ['zhuyin']);
+    resetNumbering();
   }
+
   function searchZhuYin(zhuYinChar, anchor) {
     initAndAddClickedClass(anchor);
   
@@ -579,10 +590,8 @@
   }
 
   async function fillAnchor(allAnchor) {
-    console.log('fill');
     // create hyper link of a to z
     let englishAnchor = await createAnchor('english', allAnchor.englishAlphabet);
-    console.log(englishAnchor);
     document.getElementById("atozField").appendChild(englishAnchor);
 
     // create hyper link of ZhuYin
@@ -596,7 +605,6 @@
 
   function createAnchor(type, rows) {
     return new Promise((resolve, reject) => {
-      console.log('create anchor');
       let linkWrap = document.createElement('div')
       linkWrap.className = 'link-field';
       rows.forEach(res => {
@@ -614,87 +622,14 @@
         anchor.appendChild(anchorText);
         linkWrap.appendChild(anchor);
       })
-      console.log(linkWrap);
       resolve(linkWrap);
     })
   }
-  // function createEnglishAnchor() {
-  //   return new Promise((resolve, reject) => {
-  //     let linkWrap = document.createElement('div')
-  //     linkWrap.className = 'link-field';
-
-  //     let totalAnchor = document.createElement('a');
-  //     let totalAnchorText = document.createTextNode('全部');
-  //     totalAnchor.setAttribute('href', 'javascript:void(0);');
-  //     totalAnchor.className = 'clicked';
-  //     totalAnchor.addEventListener('click', function(){ searchAll(totalAnchor); }, false);
-  //     totalAnchor.appendChild(totalAnchorText);
-  //     linkWrap.appendChild(totalAnchor);
-
-  //     // for char A to Z
-  //     for(let loop = 0; loop < 26; loop++) {
-  //       let anchor = document.createElement('a');
-  //       let alphabet = String.fromCharCode(65 + loop);
-  //       let anchorText = document.createTextNode(alphabet);
-  //       anchor.setAttribute('href', `javascript:void(0);`);
-  //       anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
-  //       anchor.appendChild(anchorText);
-  //       linkWrap.appendChild(anchor);
-  //     }
-
-  //     resolve(linkWrap)
-  //   })
-  // }
-
-  // function createZhuYinAnchor() {
-  //   return new Promise((resolve, reject) => {
-  //     var allZhiYin = 'ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦ'.split('');
-
-  //     let linkWrap = document.createElement('div')
-  //     linkWrap.className = 'link-field';
-
-  //     allZhiYin.forEach(res => {
-  //       let anchor = document.createElement('a');
-  //       let alphabet = res;
-  //       let anchorText = document.createTextNode(alphabet);
-  //       anchor.setAttribute('href', `javascript:void(0);`);
-  //       anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
-  //       anchor.appendChild(anchorText);
-  //       linkWrap.appendChild(anchor);
-  //     })
-
-  //     resolve(linkWrap)
-  //   })
-  // }
-
-  // function createStrokesAnchor() {
-  //   return new Promise((resolve, reject) => {
-  //     let linkWrap = document.createElement('div')
-  //     linkWrap.className = 'link-field';
-
-  //     for(let index = 1; index < 25; index++) {
-  //       let anchor = document.createElement('a');
-  //       let alphabet;
-  //       if(index <= 9) {
-  //         alphabet = `0${index}`;
-  //       } else {
-  //         alphabet = index;
-  //       }
-  //       let anchorText = document.createTextNode(alphabet);
-  //       anchor.setAttribute('href', `javascript:void(0);`);
-  //       anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
-  //       anchor.appendChild(anchorText);
-  //       linkWrap.appendChild(anchor);
-  //     }
-
-  //     resolve(linkWrap)
-  //   })
-  // }
 
   document.addEventListener("DOMContentLoaded", function(event) {
     // Init list
     var options = {
-      valueNames: ['numbering', 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes'],
+      valueNames: ['numbering', 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes', 'englishAlphabet'],
       page: 20,
       pagination: {
         innerWindow: 1,
