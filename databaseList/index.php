@@ -573,6 +573,7 @@
 
         // create hyper link of a to z
         let englishAnchor = await createAnchor('english', res.englishAlphabet);
+        console.log(englishAnchor);
         document.getElementById("atozField").appendChild(englishAnchor);
 
         // create hyper link of ZhuYin
