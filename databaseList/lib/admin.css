@@ -340,6 +340,7 @@ input:focus, textarea:focus, select:focus, button {
 }
 
 .list-field .resource-wrap .row {
+  padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
