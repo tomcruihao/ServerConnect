@@ -105,6 +105,12 @@ input:focus, textarea:focus, select:focus, button {
           white-space: nowrap;
         }
       }
+      &:nth-of-type(2n-1) {
+        background-color: $resource_odd_field_bgcolor_1;
+      }
+      &:nth-of-type(2n) {
+        background-color: $resource_even_field_bgcolor_2;
+      }
     }
   }
 }
