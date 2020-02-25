@@ -15,13 +15,9 @@ error_reporting(E_ALL);
   $logData = json_decode($getLogJsonData, true);
 
   $dateRange = json_decode($_GET["searchRange"], true);
-
-  $startTime = strtotime($dateRange["startDate"]);
-  $endTime = strtotime($dateRange["endDate"]);
-
-  // $startTime = new DateTime('2020-02-01');
-  // $endTime = new DateTime('2020-02-23');
-  // $endTime = date_modify($endTime, '+1 day');
+  $startTime = new DateTime($dateRange["startDate"]);
+  $endTime = new DateTime($dateRange["endDate"]);
+  $endTime = date_modify($endTime, '+1 day');
 
   // filter the log data
   $clickedData_filtered_by_date = [];
