@@ -19,9 +19,6 @@ error_reporting(E_ALL);
   $endTime = new DateTime($dateRange["endDate"]);
   $endTime = date_modify($endTime, '+1 day');
 
-  echo $startTime;
-  echo $endTime;
-
   // filter the log data
   $clickedData_filtered_by_date = [];
   foreach($logData['log'] as $log) {
