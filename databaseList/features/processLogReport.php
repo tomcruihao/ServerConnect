@@ -11,7 +11,7 @@
 
   // $startData = json_decode($_GET["startDate"], true);
   $startTime = strtotime('2020-02-01');
-  $endTime = strtotime('2020-02-28');
+  $endTime = strtotime('2020-02-23');
 
   // filter the log data
   $clickedData_filtered_by_date = [];
