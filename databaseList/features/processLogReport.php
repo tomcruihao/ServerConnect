@@ -23,11 +23,12 @@ error_reporting(E_ALL);
   $clickedData_filtered_by_date = [];
   foreach($logData['log'] as $log) {
     $logDateTime = strtotime($log['clickedDateTime']);
-    echo strtotime($startTime->format('Y-m-d')).strtotime($endTime->format('Y-m-d')).'<br>';
     if(strtotime($logDateTime) >= strtotime($startTime->format('Y-m-d')) && strtotime($logDateTime) <= strtotime($endTime->format('Y-m-d'))) {
       array_push($clickedData_filtered_by_date, $log);
     }
   }
+
+  print_r($clickedData_filtered_by_date);
 
   // create map
   $resourceIdArray = [];
