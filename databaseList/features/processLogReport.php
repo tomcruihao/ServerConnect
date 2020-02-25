@@ -41,6 +41,7 @@ error_reporting(E_ALL);
   foreach ($period as $key => $value) {
     $report_date[$value->format('Y-m-d')] = [];
   }
+  print_r($report_date);
 
 
   // create log counting array
