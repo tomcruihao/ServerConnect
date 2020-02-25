@@ -17,6 +17,7 @@ error_reporting(E_ALL);
   // $startData = json_decode($_GET["startDate"], true);
   $startTime = strtotime('2020-02-01');
   $endTime = strtotime('2020-02-23');
+  echo $endTime;
   $endTime = date_modify($endTime, '+1 day');
 
   // filter the log data
