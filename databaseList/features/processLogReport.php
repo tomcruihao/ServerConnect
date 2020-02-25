@@ -28,6 +28,8 @@ error_reporting(E_ALL);
     }
   }
 
+  print_r($clickedData_filtered_by_date);
+
   // create map
   $resourceIdArray = [];
   foreach($resourceData['rows'] as $resource) {
