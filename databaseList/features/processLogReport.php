@@ -19,7 +19,7 @@ error_reporting(E_ALL);
   $startTime = $dateRange["startDate"];
   $endTime = $dateRange["endDate"];
 
-  $res = array('type' => $startData, 'mesage' => $endData);
+  $res = array('type' => $startTime, 'mesage' => $endTime);
   echo json_encode($res, JSON_UNESCAPED_UNICODE);
   // $startTime = new DateTime('2020-02-01');
   // $endTime = new DateTime('2020-02-23');

@@ -145,8 +145,7 @@
               url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLogReport.php',
               type: 'GET',
               data: {
-                'startDate': String(self.searchRange.startDate),
-                'endDate': String(self.searchRange.endDate)
+                'searchRange': JSON.stringify(self.searchRange)
               },
               error: function(jqXHR, exception) {
                 //use url variable here
