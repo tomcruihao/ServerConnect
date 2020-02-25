@@ -41,19 +41,20 @@ error_reporting(E_ALL);
   foreach ($period as $key => $value) {
     $report_date[$value->format('Y-m-d')] = [];
   }
-  print_r($report_date);
-
 
   // create log counting array
-  $clickCountingAry = [];
+  // $clickCountingAry = [];
   foreach($clickedData_filtered_by_date as $log) {
-    // echo $resourceIdArray[$log['id']].' IP: '.$log['ip'];
-    if (array_key_exists($log['id'], $clickCountingAry)) {
-      $clickCountingAry[$log['id']]['clickTimes']++;
+    $ary_tempDate = explode(" ", $log['clickedDateTime']);
+    $date = $ary_tempDate[0];
+
+    if (array_key_exists($log['id'], $report_date[$date])) {
+      $report_date[$date][$log['id']]['clickTimes']++;
     }
     else {
-      $clickCountingAry[$log['id']]['name'] = $resourceIdArray[$log['id']];
-      $clickCountingAry[$log['id']]['clickTimes'] = 1;
+      $report_date[$date][$log['id']]['name'] = $resourceIdArray[$log['id']];
+      $report_date[$date][$log['id']]['clickTimes'] = 1;
     }
   }
+  print_r($report_date);
 ?>

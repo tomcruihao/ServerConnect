@@ -29,6 +29,22 @@
         margin-right: 20px;
         display: flex;
         align-items: center;
+
+        .title {
+          width: 120px;
+        }
+      }
+
+      button {
+        height: 36px;
+        padding: 5px 20px;
+        border-radius: 10px;
+        background-color: $sorting_btn_bgcolor;
+        color: #ffffff;
+        font-size: 1rem;;
+        position: relative;
+        box-sizing: border-box;
+        cursor: pointer;
       }
     }
   }

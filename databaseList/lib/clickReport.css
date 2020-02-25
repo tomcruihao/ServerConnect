@@ -286,4 +286,21 @@ header nav .nav-list li.multi:before {
       -ms-flex-align: center;
           align-items: center;
 }
+
+.content .report-wrap .search-wrap .date-wrap .title {
+  width: 120px;
+}
+
+.content .report-wrap .search-wrap button {
+  height: 36px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  background-color: #2B78FE;
+  color: #ffffff;
+  font-size: 1rem;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+}
 /*# sourceMappingURL=clickReport.css.map */
