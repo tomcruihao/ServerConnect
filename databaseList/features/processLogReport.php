@@ -35,11 +35,13 @@ error_reporting(E_ALL);
   }
 
   // create period of date
+  $report_date = [];
   $interval = new DateInterval('P1D');
   $period = new DatePeriod($startTime, $interval, $endTime);
   foreach ($period as $key => $value) {
-    echo $value->format('Y-m-d');
+    $report_date[$value->format('Y-m-d')] = [];
   }
+  print_r($report_date);
 
 
   // create log counting array
