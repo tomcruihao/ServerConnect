@@ -59,5 +59,5 @@ error_reporting(E_ALL);
       $report_date[$date][$log['id']]['clickTimes'] = 1;
     }
   }
-  print_r($report_date);
+  echo json_encode($report_date, JSON_UNESCAPED_UNICODE);
 ?>
