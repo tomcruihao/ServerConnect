@@ -23,7 +23,7 @@ error_reporting(E_ALL);
   $clickedData_filtered_by_date = [];
   foreach($logData['log'] as $log) {
     $logDateTime = strtotime($log['clickedDateTime']);
-    if($logDateTime >= $startTime && $logDateTime <= $endTime) {
+    if(strtotime($logDateTime) >= $startTime && $logDateTime <= strtotime($endTime)) {
       array_push($clickedData_filtered_by_date, $log);
     }
   }
