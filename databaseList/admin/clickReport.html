@@ -60,6 +60,20 @@
         </div>
         <button @click="search()">搜尋</button>
       </div>
+      <div class="report-list">
+        <div class="row" v-for="(data, index) in reportData">
+          <div class="title">{{data.date}}</div>
+          <div class="content" v-if="data.clickedList.length > 0">
+            <div v-for="(item, index) in data.clickedList" class="row">
+              <div class="title">{{item.name}}</div>
+              <div class="content">{{item.clickTimes}}</div>
+            </div>
+          </div>
+          <div class="content" v-else>
+            N/A
+          </div>
+        </div>
+      </div>
     </section>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
@@ -71,7 +85,8 @@
         searchRange: {
           startDate: '',
           endDate: ''
-        }
+        },
+        reportData: []
       },
       computed: {
         selector_years: {
@@ -153,7 +168,19 @@
                 console.log(exception);
               },
               success: function(res) {
-                console.log(res);
+                Object.keys(res).forEach(function(key){
+                  let tempReportData = {
+                    date: key,
+                    clickedList: []
+                  }
+
+                  if(!Array.isArray(res[key])){
+                    Object.keys(res[key]).forEach(function(item){
+                      tempReportData.clickedList.push(res[key][item]);
+                    })
+                  }
+                  self.reportData.push(tempReportData);
+                });
               }
             });
           } else {

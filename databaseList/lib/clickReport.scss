@@ -47,5 +47,34 @@
         cursor: pointer;
       }
     }
+    .report-list {
+      .row {
+        display: flex;
+        .title {
+          width: 120px;
+        }
+        .content {
+          flex: 1;
+
+          .row {
+            display: flex;
+            
+            .title {
+              flex: 1
+            }
+            .content {
+              width: 30px;
+            }
+
+            &:nth-of-type(2n-1) {
+              background-color: $resource_odd_field_bgcolor_1;
+            }
+            &:nth-of-type(2n) {
+              background-color: $resource_even_field_bgcolor_2;
+            }
+          }
+        }
+      }
+    }
   }
 }
