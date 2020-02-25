@@ -23,11 +23,13 @@ error_reporting(E_ALL);
   $clickedData_filtered_by_date = [];
   foreach($logData['log'] as $log) {
     $logDateTime = strtotime($log['clickedDateTime']);
-    if($logDateTime >= strtotime($startTime->format('Y-m-d')) && $logDateTime <= strtotime($endTime->format('Y-m-d'))) {
+    $processedStartTime = strtotime($startTime->format('Y-m-d'));
+    $processedEndTime = strtotime($endTime->format('Y-m-d'));
+
+    if($logDateTime >= $processedStartTime && $logDateTime <= $processedEndTime) {
       array_push($clickedData_filtered_by_date, $log);
     }
   }
-
   print_r($clickedData_filtered_by_date);
 
   // create map
