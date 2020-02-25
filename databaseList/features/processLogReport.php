@@ -46,6 +46,8 @@ error_reporting(E_ALL);
     $report_date[$value->format('Y-m-d')] = [];
   }
 
+  print_r($report_date);
+
   // create log counting array
   // $clickCountingAry = [];
   foreach($clickedData_filtered_by_date as $log) {
