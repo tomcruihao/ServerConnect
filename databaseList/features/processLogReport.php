@@ -17,7 +17,7 @@ error_reporting(E_ALL);
   // $startData = json_decode($_GET["startDate"], true);
   $startTime = strtotime('2020-02-01');
   $endTime = strtotime('2020-02-23');
-  $endTime = $endTime->modify( '+1 day' );
+  $endTime = date_modify($endTime, '+1 day');
 
   // filter the log data
   $clickedData_filtered_by_date = [];
@@ -35,7 +35,8 @@ error_reporting(E_ALL);
   }
 
   // create period of date
-  $period = new DatePeriod($startTime, new DateInterval('P1D'), $endTime);
+  $interval = new DateInterval('P1D');
+  $period = new DatePeriod($startTime, $interval, $endTime);
   foreach ($period as $key => $value) {
     echo $value->format('Y-m-d');
   }
