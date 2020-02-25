@@ -24,7 +24,7 @@ error_reporting(E_ALL);
   foreach($logData['log'] as $log) {
     $logDateTime = strtotime($log['clickedDateTime']);
     echo strtotime($logDateTime);
-    echo strtotime(strtotime($startTime->format('Y-m-d'))).'<br>';
+    echo strtotime($startTime->format('Y-m-d')).'<br>';
     if(strtotime($logDateTime) >= strtotime($startTime->format('Y-m-d')) && strtotime($logDateTime) <= strtotime($endTime->format('Y-m-d'))) {
       array_push($clickedData_filtered_by_date, $log);
     }
