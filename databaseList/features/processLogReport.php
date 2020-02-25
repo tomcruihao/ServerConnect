@@ -30,7 +30,6 @@ error_reporting(E_ALL);
       array_push($clickedData_filtered_by_date, $log);
     }
   }
-  print_r($clickedData_filtered_by_date);
 
   // create map
   $resourceIdArray = [];
@@ -45,8 +44,6 @@ error_reporting(E_ALL);
   foreach ($period as $key => $value) {
     $report_date[$value->format('Y-m-d')] = [];
   }
-
-  print_r($report_date);
 
   // create log counting array
   // $clickCountingAry = [];
