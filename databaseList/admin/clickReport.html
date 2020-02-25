@@ -47,22 +47,21 @@
       </ul>
     </nav>
   </header>
-  <section id="reportTable">
-    <div class="search-wrap">
-      <div>
-        <div>年:</div>
-        <select v-model="searchRange.year">
-          <option v-for="year in selector_years" :value="year">{{year}}
-        </select>
+  <div class="content">
+    <section id="reportTable" class="report-wrap">
+      <div class="search-wrap">
+        <div class="date-wrap">
+          <div>起始時間: </div>
+          <input type="date" v-model="searchRange.startDate">
+        </div>
+        <div class="date-wrap">
+          <div>結束時間: </div>
+          <input type="date" v-model="searchRange.endDate">
+        </div>
+        <button @click="search()">搜尋</button>
       </div>
-      <div>
-        <div>月:</div>
-        <select v-model="searchRange.month">
-          <option v-for="month in selector_months" :value="month.value">{{month.displayName}}
-        </select>
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="../lib/jquery.js"></script>
   <script type="text/javascript">
@@ -70,19 +69,21 @@
       el:'#reportTable',
       data: {
         searchRange: {
-          year: 2020,
-          month: 1,
-          startYear: 2020,
-          rangeYears: 20
+          startDate: '',
+          endDate: ''
         }
       },
       computed: {
         selector_years: {
           get: function () {
+            let startYear = 1990;
             let array_year = [];
-            for(let index = 0; index < this.searchRange.rangeYears; index++) {
-              let year = index + this.searchRange.startYear;
-              array_year.push(year);
+
+            let currentDate = new Date();
+            let currentYear = currentDate.getFullYear();
+
+            for(startYear; startYear <= currentYear; startYear++) {
+              array_year.push(startYear);
             }
             return array_year;
           }
@@ -137,25 +138,28 @@
         }
       },
       methods:{
-        setDialogue: function(type, messageInfo) {
-          this.type = type;
-          this.message = messageInfo;
-          this.show = true;
-          switch (type) {
-            case 'deleteSubjectBlock':
-              this.dialogHead_title = '注意';
-              break;
-            default:
-              this.dialogHead_title = '訊息';
-              break;
+        search: function() {
+          if(this.searchRange.startDate !== '' && this.searchRange.endDate !== '') {
+            let self = this;
+            $.ajax({
+              url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLogReport.php',
+              type: 'GET',
+              data: {
+                startDate: self.searchRange.startDate,
+                endDate: self.searchRange.endDate
+              },
+              error: function(jqXHR, exception) {
+                //use url variable here
+                console.log(jqXHR);
+                console.log(exception);
+              },
+              success: function(res) {
+                console.log(res);
+              }
+            });
+          } else {
+            // error
           }
-        },
-        closeDialogue: function() {
-          this.show = false;
-        },
-        deleteSubjectBlock: function() {
-          subjectField.set_deleteSubjectBlock();
-          this.show = false;
         }
       }
     });

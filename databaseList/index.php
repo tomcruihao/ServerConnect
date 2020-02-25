@@ -525,7 +525,7 @@
 
   // function searchAtoZ(upperCharacter, anchor) {
   //   initAndAddClickedClass(anchor);
-  
+
   //   let lowCharater = upperCharacter.toLowerCase();
   //   // contactList.search(param);
   //   contactList.filter(function(item) {
@@ -540,7 +540,7 @@
   //     }
   //   });
   // }
-  
+
   function searchAtoZ(upperCharacter, anchor) {
     initAndAddClickedClass(anchor);
   

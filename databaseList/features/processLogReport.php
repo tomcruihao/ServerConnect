@@ -14,10 +14,14 @@ error_reporting(E_ALL);
   $getLogJsonData = file_get_contents('../data/logUserCountClick.json');
   $logData = json_decode($getLogJsonData, true);
 
-  // $startData = json_decode($_GET["startDate"], true);
-  $startTime = new DateTime('2020-02-01');
-  $endTime = new DateTime('2020-02-23');
-  $endTime = date_modify($endTime, '+1 day');
+  $startData = json_decode($_GET["startDate"], true);
+  $endData = json_decode($_GET["endDate"], true);
+
+  $res = array('type' => $startData, 'mesage' => $endData);
+  echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  // $startTime = new DateTime('2020-02-01');
+  // $endTime = new DateTime('2020-02-23');
+  // $endTime = date_modify($endTime, '+1 day');
 
   // filter the log data
   $clickedData_filtered_by_date = [];
@@ -41,7 +45,6 @@ error_reporting(E_ALL);
   foreach ($period as $key => $value) {
     $report_date[$value->format('Y-m-d')] = [];
   }
-  print_r($report_date);
 
 
   // create log counting array
