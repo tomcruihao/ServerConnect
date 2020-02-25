@@ -12,6 +12,7 @@
   // $startData = json_decode($_GET["startDate"], true);
   $startTime = strtotime('2020-02-01');
   $endTime = strtotime('2020-02-23');
+  $endTime = $endTime->modify( '+1 day' );
 
   // filter the log data
   $clickedData_filtered_by_date = [];
@@ -27,7 +28,13 @@
   foreach($resourceData['rows'] as $resource) {
     $resourceIdArray[$resource['id']] = $resource['resourceName'];
   }
-  // print_r($resourceIdArray);
+
+  // create period of date
+  $period = new DatePeriod($startTime, new DateInterval('P1D'), $endTime);
+  foreach ($period as $key => $value) {
+    echo $value->format('Y-m-d');
+  }
+
 
   // create log counting array
   $clickCountingAry = [];
@@ -41,7 +48,4 @@
       $clickCountingAry[$log['id']]['clickTimes'] = 1;
     }
   }
-
-  print_r($clickCountingAry);
-
 ?>
