@@ -540,16 +540,11 @@
   //     }
   //   });
   // }
+  
   function searchAtoZ(upperCharacter, anchor) {
     initAndAddClickedClass(anchor);
   
     contactList.search(upperCharacter, ['englishAlphabet']);
-    resetNumbering();
-  }
-  function searchZhuYin(zhuYinChar, anchor) {
-    initAndAddClickedClass(anchor);
-  
-    contactList.search(zhuYinChar, ['zhuyin']);
     resetNumbering();
   }
 

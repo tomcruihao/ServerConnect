@@ -308,8 +308,9 @@ input:focus, textarea:focus, select:focus, button {
 .list-field .resource-wrap {
   padding: 15px;
   margin-top: 15px;
-  border-radius: 10px;
-  background-color: #ccdffc;
+  background-color: #ffffff;
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
   position: relative;
 }
 
