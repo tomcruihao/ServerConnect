@@ -14,8 +14,10 @@ error_reporting(E_ALL);
   $getLogJsonData = file_get_contents('../data/logUserCountClick.json');
   $logData = json_decode($getLogJsonData, true);
 
-  $startData = json_decode($_GET["startDate"], true);
-  $endData = json_decode($_GET["endDate"], true);
+  $dateRange = json_decode($_GET["searchRange"], true);
+
+  $startTime = $dateRange["startDate"];
+  $endTime = $dateRange["endDate"];
 
   $res = array('type' => $startData, 'mesage' => $endData);
   echo json_encode($res, JSON_UNESCAPED_UNICODE);
