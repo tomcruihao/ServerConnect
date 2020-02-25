@@ -16,11 +16,9 @@ error_reporting(E_ALL);
 
   $dateRange = json_decode($_GET["searchRange"], true);
 
-  $startTime = $dateRange["startDate"];
-  $endTime = $dateRange["endDate"];
+  $startTime = strtotime($dateRange["startDate"]);
+  $endTime = strtotime($dateRange["endDate"]);
 
-  $res = array('type' => $startTime, 'mesage' => $endTime);
-  echo json_encode($res, JSON_UNESCAPED_UNICODE);
   // $startTime = new DateTime('2020-02-01');
   // $endTime = new DateTime('2020-02-23');
   // $endTime = date_modify($endTime, '+1 day');
