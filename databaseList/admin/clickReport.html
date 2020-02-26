@@ -67,20 +67,23 @@
         </div>
         <button @click="search()">搜尋</button>
       </div>
-      <div class="report-list">
+      <div class="report-list-wrap">
         <div class="loading-frame" v-if="searching">
           <img src="../img/Spinner.svg" alt="loading" title="loading" class="icon-loading"/>
         </div>
-        <div class="row" v-for="(data, index) in reportData">
-          <div class="title">{{data.date}}</div>
-          <div class="content" v-if="data.clickedList.length > 0">
-            <div v-for="(item, index) in data.clickedList" class="list-frame">
-              <div class="list-title">{{item.name}}</div>
-              <div class="list-content">{{item.clickTimes}}</div>
+        <div class="report-list" v-if="reportData.length !== 0">
+          <a :href="csvData" target="_blank" download="test.csv">test csv</a>
+          <div class="row" v-for="(data, index) in reportData">
+            <div class="title">{{data.date}}</div>
+            <div class="content" v-if="data.clickedList.length > 0">
+              <div v-for="(item, index) in data.clickedList" class="list-frame">
+                <div class="list-title">{{item.name}}</div>
+                <div class="list-content">{{item.clickTimes}}</div>
+              </div>
             </div>
-          </div>
-          <div class="content" v-else>
-            N/A
+            <div class="content" v-else>
+              N/A
+            </div>
           </div>
         </div>
       </div>
@@ -101,6 +104,22 @@
         reportData: []
       },
       computed: {
+        csvData: {
+          get: function () {
+            let prefix = 'data:text/csv;charset=utf-8,';
+            let csv = 'Name,Title\n';
+            let data = [
+              ['Foo', 'programmer'],
+              ['Bar', 'bus driver'],
+              ['Moo', 'Reindeer Hunter']
+            ];
+            data.forEach(row => {
+              csv += row.join(',');
+              csv += "\n";
+            });
+            return prefix + encodeURI(csv);
+          }
+        },
         selector_years: {
           get: function () {
             let startYear = 1990;

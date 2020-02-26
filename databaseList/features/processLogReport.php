@@ -33,10 +33,15 @@ error_reporting(E_ALL);
     }
   }
 
-  // create map
-  $resourceIdArray = [];
+  // create map and countable template
+  // $resourceIdArray = [];
+  $template = [];
   foreach($resourceData['rows'] as $resource) {
-    $resourceIdArray[$resource['id']] = $resource['resourceName'];
+    // $resourceIdArray[$resource['id']] = $resource['resourceName'];
+    $template[$resource['id']] = array(
+      "name" => $resource['resourceName'],
+      "clickTimes" => 0,
+    );
   }
 
   if($generateType === 'month') {
@@ -49,6 +54,11 @@ error_reporting(E_ALL);
 
   // create an array which the key is period of date/month
   $report = array_period($interval, $dateFormat, $startTime, $endTime);
+  foreach($report as $rep) {
+    $rep = new ArrayObject($template);
+  }
+
+  print_r($report);
 
   // create log counting array
   foreach($clickedData_filtered_by_date as $log) {
@@ -59,8 +69,7 @@ error_reporting(E_ALL);
 
     if (array_key_exists($log['id'], $report[$string_time])) {
       $report[$string_time][$log['id']]['clickTimes']++;
-    }
-    else {
+    } else {
       $report[$string_time][$log['id']]['name'] = $resourceIdArray[$log['id']];
       $report[$string_time][$log['id']]['clickTimes'] = 1;
     }

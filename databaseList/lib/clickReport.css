@@ -296,11 +296,11 @@ header nav .nav-list li.multi:before {
   cursor: pointer;
 }
 
-.content .report-wrap .report-list {
+.content .report-wrap .report-list-wrap {
   padding: 15px;
 }
 
-.content .report-wrap .report-list .loading-frame {
+.content .report-wrap .report-list-wrap .loading-frame {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -309,12 +309,12 @@ header nav .nav-list li.multi:before {
           justify-content: center;
 }
 
-.content .report-wrap .report-list .loading-frame .icon-loading {
+.content .report-wrap .report-list-wrap .loading-frame .icon-loading {
   width: 100px;
   height: 100px;
 }
 
-.content .report-wrap .report-list .row {
+.content .report-wrap .report-list-wrap .report-list .row {
   padding: 15px;
   margin-top: 20px;
   background-color: #ffffff;
@@ -325,40 +325,40 @@ header nav .nav-list li.multi:before {
           box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.content .report-wrap .report-list .row .title {
+.content .report-wrap .report-list-wrap .report-list .row .title {
   width: 120px;
 }
 
-.content .report-wrap .report-list .row .content {
+.content .report-wrap .report-list-wrap .report-list .row .content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.content .report-wrap .report-list .row .content .list-frame {
+.content .report-wrap .report-list-wrap .report-list .row .content .list-frame {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.content .report-wrap .report-list .row .content .list-frame .list-title {
+.content .report-wrap .report-list-wrap .report-list .row .content .list-frame .list-title {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   padding: 5px 10px;
 }
 
-.content .report-wrap .report-list .row .content .list-frame .list-content {
+.content .report-wrap .report-list-wrap .report-list .row .content .list-frame .list-content {
   width: 50px;
   padding: 5px 10px;
   text-align: center;
 }
 
-.content .report-wrap .report-list .row .content .list-frame:nth-of-type(2n-1) {
+.content .report-wrap .report-list-wrap .report-list .row .content .list-frame:nth-of-type(2n-1) {
   background-color: #ccdffc;
 }
 
-.content .report-wrap .report-list .row .content .list-frame:nth-of-type(2n) {
+.content .report-wrap .report-list-wrap .report-list .row .content .list-frame:nth-of-type(2n) {
   background-color: #ffffff;
 }
 /*# sourceMappingURL=clickReport.css.map */
