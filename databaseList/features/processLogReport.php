@@ -48,10 +48,10 @@ error_reporting(E_ALL);
   }
 
   // create an array which the key is period of date/month
-  $report_date = array_period($interval, $dateFormat);
+  $report_date = array_period($interval, $dateFormat, $startTime, $endTime);
   print_r($report_date);
 
-  function array_period($interval, $dateFormat) {
+  function array_period($interval, $dateFormat, $startTime, $endTime) {
     $array_result = [];
     $period = new DatePeriod($startTime, $interval, $endTime);
 
