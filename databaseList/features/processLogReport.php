@@ -58,7 +58,7 @@ error_reporting(E_ALL);
     // $date = $ary_tempDate[0];
 
     if (array_key_exists($log['id'], $report[$string_time])) {
-      $report[$date][$log['id']]['clickTimes']++;
+      $report[$string_time][$log['id']]['clickTimes']++;
     }
     else {
       $report[$string_time][$log['id']]['name'] = $resourceIdArray[$log['id']];
