@@ -41,17 +41,27 @@ error_reporting(E_ALL);
 
   if($generateType === 'month') {
     $interval= new DateInterval('P1D');
+    $dateFormat = 'Y-m';
   } else if('day') {
     $interval= new DateInterval('P1M');
+    $dateFormat = 'Y-m-d';
   }
 
-  // create period of date
-  $report_date = [];
-  $period = new DatePeriod($startTime, $interval, $endTime);
-  foreach ($period as $key => $value) {
-    $report_date[$value->format('Y-m')] = [];
-  }
+  // create an array which the key is period of date/month
+  $report_date = array_period($interval, $dateFormat);
   print_r($report_date);
+
+  function array_period($interval, $dateFormat) {
+    $array_result = [];
+    $period = new DatePeriod($startTime, $interval, $endTime);
+
+    foreach ($period as $key => $value) {
+      $result[$value->format($dateFormat)] = [];
+    }
+    return $array_result;
+  }
+  
+
 
   // create log counting array
   foreach($clickedData_filtered_by_date as $log) {
