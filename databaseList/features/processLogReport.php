@@ -49,21 +49,20 @@ error_reporting(E_ALL);
 
   // create an array which the key is period of date/month
   $report = array_period($interval, $dateFormat, $startTime, $endTime);
-  print_r($report);
-  
-
 
   // create log counting array
   foreach($clickedData_filtered_by_date as $log) {
-    $ary_tempDate = explode(" ", $log['clickedDateTime']);
-    $date = $ary_tempDate[0];
+    $logDateTime = new DateTime($log['clickedDateTime']);
+    $string_time = $logDateTime->format($dateFormat);
+    // $ary_tempDate = explode(" ", $log['clickedDateTime']);
+    // $date = $ary_tempDate[0];
 
-    if (array_key_exists($log['id'], $report[$date])) {
+    if (array_key_exists($log['id'], $report[$string_time])) {
       $report[$date][$log['id']]['clickTimes']++;
     }
     else {
-      $report[$date][$log['id']]['name'] = $resourceIdArray[$log['id']];
-      $report[$date][$log['id']]['clickTimes'] = 1;
+      $report[$string_time][$log['id']]['name'] = $resourceIdArray[$log['id']];
+      $report[$string_time][$log['id']]['clickTimes'] = 1;
     }
   }
   echo json_encode($report, JSON_UNESCAPED_UNICODE);
