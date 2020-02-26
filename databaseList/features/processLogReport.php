@@ -19,6 +19,10 @@ error_reporting(E_ALL);
   $endTime = new DateTime($dateRange["endDate"]);
   $endTime = date_modify($endTime, '+1 day');
 
+  $generateType = json_decode($_GET["type"], true);
+
+  echo $generateType;
+
   // filter the log data
   $clickedData_filtered_by_date = [];
   foreach($logData['log'] as $log) {
@@ -46,7 +50,6 @@ error_reporting(E_ALL);
   }
 
   // create log counting array
-  // $clickCountingAry = [];
   foreach($clickedData_filtered_by_date as $log) {
     $ary_tempDate = explode(" ", $log['clickedDateTime']);
     $date = $ary_tempDate[0];

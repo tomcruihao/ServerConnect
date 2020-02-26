@@ -10,20 +10,11 @@
     padding: 0 15px;
     box-sizing: border-box;
 
-    .type-wrap {
-      display: flex;
-      
-      label {
-        display: flex;
-        align-items: center;
-        margin-right: 10px;
-      }
-    }
-
     .search-wrap {
       margin-top: 20px;
       display: flex;
       align-items: center;
+      justify-content: center;
 
       .date-wrap {
         margin-right: 20px;
@@ -31,7 +22,11 @@
         align-items: center;
 
         .title {
-          width: 120px;
+          min-width: 90px;
+        }
+        select {
+          height: 32px;
+          border: 2px solid #cccccc;
         }
       }
 
@@ -48,22 +43,42 @@
       }
     }
     .report-list {
-      .row {
+      padding: 15px;
+      .loading-frame {
         display: flex;
+        justify-content: center;
+
+        .icon-loading {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .row {
+        padding: 15px;
+        margin-top: 20px;
+        background-color: #ffffff;
+        display: flex;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+
         .title {
           width: 120px;
         }
         .content {
           flex: 1;
 
-          .row {
+          .list-frame {
             display: flex;
             
-            .title {
-              flex: 1
+            .list-title {
+              flex: 1;
+              padding: 5px 10px;
             }
-            .content {
-              width: 30px;
+
+            .list-content {
+              width: 50px;
+              padding: 5px 10px;
+              text-align: center;
             }
 
             &:nth-of-type(2n-1) {

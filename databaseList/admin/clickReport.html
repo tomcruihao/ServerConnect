@@ -58,15 +58,25 @@
           <div class="title">結束時間: </div>
           <input type="date" v-model="searchRange.endDate">
         </div>
+        <div class="date-wrap">
+          <div class="title">顯示方式: </div>
+          <select v-model="searchRange.type">
+            <option value="day">日</option>
+            <option value="month">月</option>
+          </select>
+        </div>
         <button @click="search()">搜尋</button>
       </div>
       <div class="report-list">
+        <div class="loading-frame" v-if="searching">
+          <img src="../img/Spinner.svg" alt="loading" title="loading" class="icon-loading"/>
+        </div>
         <div class="row" v-for="(data, index) in reportData">
           <div class="title">{{data.date}}</div>
           <div class="content" v-if="data.clickedList.length > 0">
-            <div v-for="(item, index) in data.clickedList" class="row">
-              <div class="title">{{item.name}}</div>
-              <div class="content">{{item.clickTimes}}</div>
+            <div v-for="(item, index) in data.clickedList" class="list-frame">
+              <div class="list-title">{{item.name}}</div>
+              <div class="list-content">{{item.clickTimes}}</div>
             </div>
           </div>
           <div class="content" v-else>
@@ -82,7 +92,9 @@
     var reportTable = new Vue({
       el:'#reportTable',
       data: {
+        searching: false,
         searchRange: {
+          type: 'day',
           startDate: '',
           endDate: ''
         },
@@ -154,6 +166,9 @@
       },
       methods:{
         search: function() {
+          this.reportData = [];
+          this.searching = true;
+          console.log(this.searchRange);
           if(this.searchRange.startDate !== '' && this.searchRange.endDate !== '') {
             let self = this;
             $.ajax({
@@ -166,6 +181,7 @@
                 //use url variable here
                 console.log(jqXHR);
                 console.log(exception);
+                self.searching = false;
               },
               success: function(res) {
                 Object.keys(res).forEach(function(key){
@@ -181,10 +197,11 @@
                   }
                   self.reportData.push(tempReportData);
                 });
+                self.searching = false;
               }
             });
           } else {
-            // error
+            this.searching = false;
           }
         }
       }
