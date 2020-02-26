@@ -42,6 +42,7 @@ error_reporting(E_ALL);
       "name" => $resource['resourceName'],
       "clickTimes" => 0,
     );
+    $template['total'] = 0;
   }
 
   if($generateType === 'month') {
@@ -65,12 +66,14 @@ error_reporting(E_ALL);
     // $ary_tempDate = explode(" ", $log['clickedDateTime']);
     // $date = $ary_tempDate[0];
 
-    if (array_key_exists($log['id'], $report[$string_time])) {
-      $report[$string_time][$log['id']]['clickTimes']++;
-    } else {
-      $report[$string_time][$log['id']]['name'] = $resourceIdArray[$log['id']];
-      $report[$string_time][$log['id']]['clickTimes'] = 1;
-    }
+    $report[$string_time][$log['id']]['clickTimes']++;
+    $report[$string_time]['total']++;
+    // if (array_key_exists($log['id'], $report[$string_time])) {
+    //   $report[$string_time][$log['id']]['clickTimes']++;
+    // } else {
+    //   $report[$string_time][$log['id']]['name'] = $resourceIdArray[$log['id']];
+    //   $report[$string_time][$log['id']]['clickTimes'] = 1;
+    // }
   }
   echo json_encode($report, JSON_UNESCAPED_UNICODE);
 

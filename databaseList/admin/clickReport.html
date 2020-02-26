@@ -76,7 +76,7 @@
           <div class="row" v-for="(data, index) in reportData">
             <div class="title">{{data.date}}</div>
             <div class="content" v-if="data.clickedList.length > 0">
-              <div v-for="(item, index) in data.clickedList" class="list-frame">
+              <div v-for="(item, index) in data.clickedList" class="list-frame" v-if="item.clickTimes > 0">
                 <div class="list-title">{{item.name}}</div>
                 <div class="list-content">{{item.clickTimes}}</div>
               </div>
