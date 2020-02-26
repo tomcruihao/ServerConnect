@@ -56,8 +56,7 @@ error_reporting(E_ALL);
     $period = new DatePeriod($startTime, $interval, $endTime);
 
     foreach ($period as $key => $value) {
-      echo $value->format($dateFormat);
-      $result[$value->format($dateFormat)] = [];
+      $array_result[$value->format($dateFormat)] = [];
     }
     return $array_result;
   }
