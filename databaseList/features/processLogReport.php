@@ -49,7 +49,7 @@ error_reporting(E_ALL);
   $report_date = [];
   $period = new DatePeriod($startTime, $interval, $endTime);
   foreach ($period as $key => $value) {
-    $report_date[$value->format('Y-m-d')] = [];
+    $report_date[$value->format('Y-m')] = [];
   }
   print_r($report_date);
 
