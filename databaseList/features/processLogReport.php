@@ -21,7 +21,7 @@ error_reporting(E_ALL);
 
   $generateType = $dateRange["type"];
 
-  echo $generateType;
+  echo $dateRange["type"];
 
   // filter the log data
   $clickedData_filtered_by_date = [];
