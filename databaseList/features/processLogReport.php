@@ -42,7 +42,7 @@ error_reporting(E_ALL);
   if($generateType === 'month') {
     $interval= new DateInterval('P1D');
     $dateFormat = 'Y-m';
-  } else if('day') {
+  } else if($generateType === 'day') {
     $interval= new DateInterval('P1M');
     $dateFormat = 'Y-m-d';
   }
