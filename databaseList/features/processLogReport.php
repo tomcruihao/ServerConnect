@@ -19,7 +19,7 @@ error_reporting(E_ALL);
   $endTime = new DateTime($dateRange["endDate"]);
   $endTime = date_modify($endTime, '+1 day');
 
-  $generateType = json_decode($_GET["type"], true);
+  $generateType = $dateRange["type"];
 
   echo $generateType;
 
