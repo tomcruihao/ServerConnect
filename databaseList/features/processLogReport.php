@@ -21,8 +21,6 @@ error_reporting(E_ALL);
 
   $generateType = $dateRange["type"];
 
-  echo $dateRange["type"];
-
   // filter the log data
   $clickedData_filtered_by_date = [];
   foreach($logData['log'] as $log) {
@@ -41,13 +39,19 @@ error_reporting(E_ALL);
     $resourceIdArray[$resource['id']] = $resource['resourceName'];
   }
 
+  if($generateType === 'month') {
+    $interval= new DateInterval('P1D');
+  } else if('day') {
+    $interval= new DateInterval('P1M');
+  }
+
   // create period of date
   $report_date = [];
-  $interval = new DateInterval('P1D');
   $period = new DatePeriod($startTime, $interval, $endTime);
   foreach ($period as $key => $value) {
     $report_date[$value->format('Y-m-d')] = [];
   }
+  print_r($report_date);
 
   // create log counting array
   foreach($clickedData_filtered_by_date as $log) {
