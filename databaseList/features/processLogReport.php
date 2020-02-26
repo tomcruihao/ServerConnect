@@ -40,16 +40,33 @@ error_reporting(E_ALL);
   }
 
   if($generateType === 'month') {
-    $interval= new DateInterval('P1D');
+    $interval= new DateInterval('P1M');
     $dateFormat = 'Y-m';
   } else if($generateType === 'day') {
-    $interval= new DateInterval('P1M');
+    $interval= new DateInterval('P1D');
     $dateFormat = 'Y-m-d';
   }
 
   // create an array which the key is period of date/month
-  $report_date = array_period($interval, $dateFormat, $startTime, $endTime);
-  print_r($report_date);
+  $report = array_period($interval, $dateFormat, $startTime, $endTime);
+  print_r($report);
+  
+
+
+  // create log counting array
+  foreach($clickedData_filtered_by_date as $log) {
+    $ary_tempDate = explode(" ", $log['clickedDateTime']);
+    $date = $ary_tempDate[0];
+
+    if (array_key_exists($log['id'], $report[$date])) {
+      $report[$date][$log['id']]['clickTimes']++;
+    }
+    else {
+      $report[$date][$log['id']]['name'] = $resourceIdArray[$log['id']];
+      $report[$date][$log['id']]['clickTimes'] = 1;
+    }
+  }
+  echo json_encode($report, JSON_UNESCAPED_UNICODE);
 
   function array_period($interval, $dateFormat, $startTime, $endTime) {
     $array_result = [];
@@ -60,21 +77,4 @@ error_reporting(E_ALL);
     }
     return $array_result;
   }
-  
-
-
-  // create log counting array
-  foreach($clickedData_filtered_by_date as $log) {
-    $ary_tempDate = explode(" ", $log['clickedDateTime']);
-    $date = $ary_tempDate[0];
-
-    if (array_key_exists($log['id'], $report_date[$date])) {
-      $report_date[$date][$log['id']]['clickTimes']++;
-    }
-    else {
-      $report_date[$date][$log['id']]['name'] = $resourceIdArray[$log['id']];
-      $report_date[$date][$log['id']]['clickTimes'] = 1;
-    }
-  }
-  echo json_encode($report_date, JSON_UNESCAPED_UNICODE);
 ?>
