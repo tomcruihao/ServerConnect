@@ -58,8 +58,6 @@ error_reporting(E_ALL);
     $report[$key] = new ArrayObject($template);
   }
 
-  print_r($report);
-
   // create log counting array
   foreach($clickedData_filtered_by_date as $log) {
     $logDateTime = new DateTime($log['clickedDateTime']);
