@@ -54,8 +54,8 @@ error_reporting(E_ALL);
 
   // create an array which the key is period of date/month
   $report = array_period($interval, $dateFormat, $startTime, $endTime);
-  foreach($report as $rep) {
-    $rep = new ArrayObject($template);
+  foreach($report as $key => $field) {
+    $report[$key] = new ArrayObject($template);
   }
 
   print_r($report);
