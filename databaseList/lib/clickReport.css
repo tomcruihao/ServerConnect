@@ -42,7 +42,7 @@ input[type="text"], input[type="date"], input[type="number"] {
   width: 100%;
   height: 36px;
   padding-left: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 2px solid #cccccc;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -279,14 +279,13 @@ header nav .nav-list li.multi:before {
 }
 
 .content .report-wrap .search-wrap .date-wrap select {
-  height: 32px;
+  height: 36px;
   border: 2px solid #cccccc;
 }
 
 .content .report-wrap .search-wrap button {
   height: 36px;
   padding: 5px 20px;
-  border-radius: 10px;
   background-color: #2B78FE;
   color: #ffffff;
   font-size: 1rem;
@@ -312,6 +311,18 @@ header nav .nav-list li.multi:before {
 .content .report-wrap .report-list-wrap .loading-frame .icon-loading {
   width: 100px;
   height: 100px;
+}
+
+.content .report-wrap .report-list-wrap .report-list .btn-report-wrap {
+  text-align: center;
+}
+
+.content .report-wrap .report-list-wrap .report-list .btn-report-wrap button {
+  width: 120px;
+  height: 36px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-size: 1rem;
 }
 
 .content .report-wrap .report-list-wrap .report-list .row {

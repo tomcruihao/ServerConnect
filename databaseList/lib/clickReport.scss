@@ -25,7 +25,7 @@
           min-width: 90px;
         }
         select {
-          height: 32px;
+          height: 36px;
           border: 2px solid #cccccc;
         }
       }
@@ -33,7 +33,6 @@
       button {
         height: 36px;
         padding: 5px 20px;
-        border-radius: 10px;
         background-color: $sorting_btn_bgcolor;
         color: #ffffff;
         font-size: 1rem;;
@@ -56,6 +55,18 @@
       }
 
       .report-list {
+        .btn-report-wrap {
+          text-align: center;
+
+          button {
+            width: 120px;
+            height: 36px;
+            background-color: $button_download_color;
+            color: #ffffff;
+            font-size: 1rem;
+          }
+        }
+
         .row {
           padding: 15px;
           margin-top: 20px;

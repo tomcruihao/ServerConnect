@@ -72,17 +72,16 @@
           <img src="../img/Spinner.svg" alt="loading" title="loading" class="icon-loading"/>
         </div>
         <div class="report-list" v-if="reportData.length !== 0">
-          <a :href="csvData" target="_blank" download="test.csv">test csv</a>
-          <div class="row" v-for="(data, index) in reportData">
+          <div class="btn-report-wrap">
+            <button @click="generateCsvFile">下載報表</button>
+          </div>
+          <div class="row" v-for="(data, index) in reportData" v-if="data.total > 0">
             <div class="title">{{data.date}}</div>
-            <div class="content" v-if="data.clickedList.length > 0">
+            <div class="content">
               <div v-for="(item, index) in data.clickedList" class="list-frame" v-if="item.clickTimes > 0">
                 <div class="list-title">{{item.name}}</div>
                 <div class="list-content">{{item.clickTimes}}</div>
               </div>
-            </div>
-            <div class="content" v-else>
-              N/A
             </div>
           </div>
         </div>
@@ -104,22 +103,6 @@
         reportData: []
       },
       computed: {
-        csvData: {
-          get: function () {
-            let prefix = 'data:text/csv;charset=utf-8,';
-            let csv = 'Name,Title\n';
-            let data = [
-              ['Foo', 'programmer'],
-              ['Bar', 'bus driver'],
-              ['Moo', 'Reindeer Hunter']
-            ];
-            data.forEach(row => {
-              csv += row.join(',');
-              csv += "\n";
-            });
-            return prefix + encodeURI(csv);
-          }
-        },
         selector_years: {
           get: function () {
             let startYear = 1990;
@@ -135,55 +118,52 @@
           }
           // ,set: function () {
           // }
-        },
-        selector_months: {
-          get: function () {
-            let array_month = [
-              {
-                'value': 1,
-                'displayName': '一月'
-              },              {
-                'value': 2,
-                'displayName': '二月'
-              },              {
-                'value': 3,
-                'displayName': '三月'
-              },              {
-                'value': 4,
-                'displayName': '四月'
-              },              {
-                'value': 5,
-                'displayName': '五月'
-              },              {
-                'value': 6,
-                'displayName': '六月'
-              },              {
-                'value': 7,
-                'displayName': '七月'
-              },              {
-                'value': 8,
-                'displayName': '八月'
-              },              {
-                'value': 9,
-                'displayName': '九月'
-              },              {
-                'value': 10,
-                'displayName': '十月'
-              },              {
-                'value': 11,
-                'displayName': '十一月'
-              },              {
-                'value': 12,
-                'displayName': '十二月'
-              }
-            ];
-            return array_month;
-          }
-          // ,set: function () {
-          // }
         }
       },
       methods:{
+        generateCsvFile() {
+          let prefix = 'data:text/csv;charset=utf-8,';
+          let ary_date = [];
+          let ary_row = [];
+          let string_metadata = " "; // first cell empty
+          let string_content = "";
+          let universalBOM = "\uFEFF";
+
+          let now = new Date();
+          let fileName = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()} Report`;
+
+          // create data array and metadata.
+          this.reportData.forEach(row => {
+            string_metadata = `${string_metadata},${row.date}`;
+            ary_date.push(row.date);
+            row['clickedList'].forEach(list => {
+              if(list.name in ary_row) {
+                ary_row[list.name][row.date] = list.clickTimes;
+              } else {
+                ary_row[list.name] = [];
+                ary_row[list.name][row.date] = list.clickTimes;
+              }
+            })
+          });
+          string_metadata = `${string_metadata}\n`;
+
+          Object.keys(ary_row).forEach(key => {
+            let string_row = key;
+            ary_date.forEach(date => {
+              string_row = `${string_row},${ary_row[key][date]}`;
+            })
+            string_content = `${string_content}${string_row}\n`;
+          })
+          
+          const csv = `${string_metadata}${string_content}`;
+
+          // create hidden anchor and click it
+          let hiddenElement = document.createElement('a');
+          hiddenElement.href = prefix + encodeURIComponent(universalBOM+csv);
+          hiddenElement.target = '_blank';
+          hiddenElement.download = `${fileName}.csv`;
+          hiddenElement.click();
+        },
         search: function() {
           this.reportData = [];
           this.searching = true;
@@ -206,7 +186,8 @@
                 Object.keys(res).forEach(function(key){
                   let tempReportData = {
                     date: key,
-                    clickedList: []
+                    clickedList: [],
+                    total: res[key].total
                   }
 
                   if(!Array.isArray(res[key])){
