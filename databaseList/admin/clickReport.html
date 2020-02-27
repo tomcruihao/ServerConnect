@@ -130,7 +130,15 @@
           let universalBOM = "\uFEFF";
 
           let now = new Date();
-          let fileName = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()} Report`;
+
+          let reportType = '';
+          if(this.searchRange.type === 'day') {
+            reportType = 'Daily';
+          } else {
+            reportType = 'Monthly';
+          }
+
+          let fileName = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} ${reportType} Report`;
 
           // create data array and metadata.
           this.reportData.forEach(row => {
@@ -159,7 +167,7 @@
 
           // create hidden anchor and click it
           let hiddenElement = document.createElement('a');
-          hiddenElement.href = prefix + encodeURIComponent(universalBOM+csv);
+          hiddenElement.href = prefix + encodeURIComponent(universalBOM+csv.replace(/,/g, ""));
           hiddenElement.target = '_blank';
           hiddenElement.download = `${fileName}.csv`;
           hiddenElement.click();
