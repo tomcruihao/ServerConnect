@@ -242,6 +242,27 @@ header nav .nav-list li.multi:before {
   }
 }
 
+.mainTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainTitle .lang-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 h4 {
   color: #ff0000;
 }
@@ -299,7 +320,7 @@ h4 {
 }
 
 .content .setting-wrap .subject-frame .subject-header .title {
-  width: 120px;
+  width: 150px;
 }
 
 .content .setting-wrap .subject-frame ul li {
@@ -320,7 +341,7 @@ h4 {
 }
 
 .content .setting-wrap .subject-frame ul li .title {
-  width: 100px;
+  width: 150px;
 }
 
 .content .setting-wrap .subject-frame ul li .subject-class {

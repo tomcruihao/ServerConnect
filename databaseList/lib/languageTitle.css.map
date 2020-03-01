@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,aAAa;CAM/B;;AATD,AAKE,UALQ,CAKR,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;CACpB",
+    "sources": [
+        "languageTitle.scss"
+    ],
+    "names": [],
+    "file": "languageTitle.css"
+}

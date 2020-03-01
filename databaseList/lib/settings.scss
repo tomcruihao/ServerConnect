@@ -1,6 +1,7 @@
 @import "init.scss";
 @import "variables";
 @import "header";
+@import "languageTitle";
 
 
 $resource_field_bgcolor: #ccdffc;
@@ -59,7 +60,7 @@ h4 {
         display: flex;
 
         .title {
-          width: 120px;
+          width: 150px;
         }
       }
 
@@ -77,7 +78,7 @@ h4 {
           }
 
           .title {
-            width: 100px;
+            width: 150px;
           }
           .subject-class {
             width: 120px;
