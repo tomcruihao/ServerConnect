@@ -112,7 +112,7 @@
           </div>
           <div class="aside-content">
             <div class="bulletin-board-frame" id="latestNews">
-              <h3>{{bulletinTitle}}</h3>
+              <!-- <h3>{{bulletinTitle}}</h3> -->
               <ul v-if="lang === 'en'">
                 <li v-for="(latestNews, index) in latestNewsList['en'].slice(0, displayNumber)" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
@@ -133,7 +133,6 @@
               </ul>
             </div>
             <div id="subjectField">
-              {{lang}}
               <div v-if="lang === 'en'">
                 <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects['en']">
                   <h3>{{subjectInfo.subjectTitle}}</h3>
