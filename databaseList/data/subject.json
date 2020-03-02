@@ -2,43 +2,87 @@
   "subjects": [
     {
       "subjectID": "d11b19fc-4c6e-416e-b201-9ff9d9cc4bdd",
-      "subjectTitle": "全文資料庫",
-      "subjectList": [
-        {
-          "name": "全文資料庫",
-          "className": "subject"
-        },
-        {
-          "name": "索摘資料庫",
-          "className": "subject"
-        },
-        {
-          "name": "博碩士論文",
-          "className": "subject"
-        },
-        {
-          "name": "電子期刊",
-          "className": "subject"
-        },
-        {
-          "name": "電子書",
-          "className": "subject"
+      "en": {
+        "subjectTitle": "全文資料庫",
+        "subjectList": [
+          {
+            "name": "全文資料庫",
+            "className": "subject"
+          },
+          {
+            "name": "索摘資料庫",
+            "className": "subject"
+          },
+          {
+            "name": "博碩士論文",
+            "className": "subject"
+          },
+          {
+            "name": "電子期刊",
+            "className": "subject"
+          },
+          {
+            "name": "電子書",
+            "className": "subject"
+          }
+        ]
+      },
+      "tw": {
+        "subjectTitle": "全文資料庫",
+        "en": {
+          "subjectList": [
+            {
+              "name": "全文資料庫",
+              "className": "subject"
+            },
+            {
+              "name": "索摘資料庫",
+              "className": "subject"
+            },
+            {
+              "name": "博碩士論文",
+              "className": "subject"
+            },
+            {
+              "name": "電子期刊",
+              "className": "subject"
+            },
+            {
+              "name": "電子書",
+              "className": "subject"
+            }
+          ]
         }
-      ]
+      }
     },
     {
       "subjectID": "7b51a6eb-ec64-49de-a053-b6f6be5c1894",
-      "subjectTitle": "適用學院",
-      "subjectList": [
-        {
-          "name": "文學院",
-          "className": "faculty"
-        },
-        {
-          "name": "藝術學院",
-          "className": "faculty"
-        }
-      ]
+      "en": {
+        "subjectTitle": "適用學院",
+        "subjectList": [
+          {
+            "name": "文學院",
+            "className": "faculty"
+          },
+          {
+            "name": "藝術學院",
+            "className": "faculty"
+          }
+        ]
+      },
+      "tw": {
+        "subjectTitle": "適用學院",
+        "subjectList": [
+          {
+            "name": "文學院",
+            "className": "faculty"
+          },
+          {
+            "name": "藝術學院",
+            "className": "faculty"
+          }
+        ]
+      }
     }
   ]
 }
