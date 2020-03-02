@@ -193,7 +193,7 @@
 
   var contactList
 
-  function change() {
+  function changeEsourceListLanguage() {
     contactList.clear();
     let ary_lang
     if("lang" in localStorage) {
@@ -273,6 +273,7 @@
       setLang(event) {
         i18n.locale = event.target.value;
         localStorage.setItem('lang', event.target.value);
+        changeEsourceListLanguage();
       }
     }
   })
