@@ -203,7 +203,7 @@
     }
     ary_dataList[ary_lang].forEach((res, index) => {
       contactList.add(res);
-    }
+    })
   }
 
   function resetNumbering() {
