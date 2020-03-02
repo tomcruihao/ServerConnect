@@ -112,7 +112,7 @@
           </div>
           <div class="aside-content">
             <div class="bulletin-board-frame" id="latestNews">
-              <h3>{{bulletinTitle[lang]}}</h3>
+              <h3>{{bulletinTitle}}</h3>
               <ul v-if="lang === 'en'">
                 <li v-for="(latestNews, index) in latestNewsList['en'].slice(0, displayNumber)" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
@@ -337,7 +337,7 @@
     el:'#subjectField',
     i18n,
     data: {
-      subjects: ''
+      subjects: []
     },
     created: function() {
       let self = this;
@@ -351,7 +351,6 @@
         },
         success: function(res) {
           self.subjects = res.subjects;
-          console.log(res.subjects)
         }
       });
     },
