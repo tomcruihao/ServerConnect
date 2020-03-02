@@ -164,10 +164,23 @@
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+<script src="lang/lang.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
+
+  var dataList_en = [];
+  var dataList_tw = [];
+
+  dataList.rows.forEach(item => {
+    dataList_en.push(item['en']);
+    dataList_tw.push(item['tw']);
+  })
+  console.log(dataList_en);
+  console.log(dataList_tw);
+
   var contactList
 
   function resetNumbering() {
