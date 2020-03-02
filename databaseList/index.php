@@ -60,7 +60,7 @@
         </select>
       </div>
     </div>
-    <div id="databaseList">
+    <div>
       <div class="search-wrap">
         <div class="search-frame">
           <input type="text" class="search" placeholder="搜尋資源" />
@@ -101,7 +101,7 @@
           <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)" v-bind:class="buttonInfo.options.order">{{buttonInfo.btnName}}</button>
         </div>
       </div>
-      <div class="content-field">
+      <div class="content-field" id="databaseList">
         <article>
           <ol class="list" id="resourceList">
           </ol>
