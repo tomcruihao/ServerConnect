@@ -87,7 +87,7 @@
           <div class="atoz-title">{{$t('message.index_strokes')}}:</div>
           <div id="strokesField" class="atoz-field"></div>
         </div>
-        <div id="sortField" class="sort-wrap">
+        <div class="sort-wrap">
           <div class="sort-title">{{$t('message.index_sort')}}:</div>
           <div class="btn-wrap">
             <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)" v-bind:class="buttonInfo.options.order">{{buttonInfo.btnName}}</button>
@@ -229,22 +229,6 @@
     }
   }
 
-  function addSortResultAfterTitle(sortObj) {
-    document.querySelectorAll('#resourceList > li').forEach(res => {
-      let sortFieldVal = res.querySelector(`.${sortObj.sortName}`).innerHTML;
-      let tagResult = '';
-      switch(sortObj.sortName) {
-        case 'resourceName':
-          tagResult = `${sortObj.btnName}`;
-          break;
-        default:
-          tagResult = `${sortObj.btnName} - ${sortFieldVal}`;
-          break;
-      }
-      res.querySelector(`.sort_tag`).innerHTML = tagResult;
-    })
-  }
-
   function sortBy(sortName, options) {
     contactList.sort(sortName, options);
     resetNumbering();
@@ -280,55 +264,6 @@
     el:'#filterField',
     i18n,
     data: {
-      selector_lang: ''
-    },
-    mounted: function() {
-      console.log(i18n.locale)
-      this.selector_lang = i18n.locale;
-    },
-    methods: {
-      setLang(event) {
-        i18n.locale = event.target.value;
-        localStorage.setItem('lang', event.target.value);
-        changeEsourceListLanguage();
-      }
-    }
-  })
-
-  var subjectField = new Vue({
-    el:'#subjectField',
-    i18n,
-    data: {
-      subjects: ''
-    },
-    created: function() {
-      let self = this;
-      $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
-        type: 'GET',
-        error: function(jqXHR, exception) {
-          //use url variable here
-          console.log(jqXHR);
-          console.log(exception);
-        },
-        success: function(res) {
-          self.subjects = res.subjects;
-          console.log(res.subjects)
-        }
-      });
-    },
-    methods:{
-      search: function(subject, className) {
-        searchBy(subject, className);
-        aside('close');
-      }
-    }
-  });
-
-  var sortField = new Vue({
-    el:'#sortField',
-    i18n,
-    data: {
       buttons: [
         {
           btnName: '資源名稱',
@@ -360,7 +295,9 @@
         }
       ]
     },
-    methods:{
+    mounted: function() {
+    },
+    methods: {
       processSort: function(obj) {
         if(obj.options.order === '') {
           this.initAllBtn();
@@ -377,6 +314,36 @@
         this.buttons.forEach((res, index) => {
           res.options.order = '';
         })
+      }
+    }
+  })
+
+  var subjectField = new Vue({
+    el:'#subjectField',
+    i18n,
+    data: {
+      subjects: ''
+    },
+    created: function() {
+      let self = this;
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          self.subjects = res.subjects;
+          console.log(res.subjects)
+        }
+      });
+    },
+    methods:{
+      search: function(subject, className) {
+        searchBy(subject, className);
+        aside('close');
       }
     }
   });
