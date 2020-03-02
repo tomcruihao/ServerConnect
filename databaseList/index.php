@@ -171,7 +171,9 @@
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
 
-  var ary_dataList = ['en':[], 'tw':[]];
+  var ary_dataList;
+  ary_dataList['en'] = [];
+  ary_dataList['tw'] = [];
 
   dataList.rows.forEach(item => {
     ary_dataList['en'].push(item['en']);
