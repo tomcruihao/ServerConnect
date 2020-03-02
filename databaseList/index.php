@@ -171,7 +171,7 @@
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
 
-  var ary_dataList;
+  var ary_dataList = new Array();
   ary_dataList['en'] = [];
   ary_dataList['tw'] = [];
 
