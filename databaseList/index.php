@@ -114,7 +114,7 @@
             <div class="bulletin-board-frame" id="latestNews">
               <!-- <h3>{{bulletinTitle}}</h3> -->
               <ul v-if="lang === 'en'">
-                <li v-for="(latestNews, index) in latestNewsList['en'].slice(0, displayNumber)" class="latest-news">
+                <li v-for="(latestNews, index) in latestNewsList['en']" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
@@ -123,7 +123,7 @@
                 </li>
               </ul>
               <ul v-else-if="lang === 'tw'">
-                <li v-for="(latestNews, index) in latestNewsList['tw'].slice(0, displayNumber)" class="latest-news">
+                <li v-for="(latestNews, index) in latestNewsList['tw']" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
@@ -567,6 +567,9 @@
           console.log(self.latestNewsList);
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
+
+          self.latestNewsList['en'] = self.latestNewsList['en'].slice(0, displayNumber);
+          self.latestNewsList['tw'] = self.latestNewsList['tw'].slice(0, displayNumber);
         }
       });
     },
