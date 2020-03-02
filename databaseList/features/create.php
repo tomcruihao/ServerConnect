@@ -26,6 +26,7 @@
     $resourceList['rows'][$key]['id'] = $id;
     $resourceList['rows'][$key]['en'] = $en;
     $resourceList['rows'][$key]['tw'] = $tw;
-    print_r($resourceList['rows'][$key]);
   }
+
+  file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 ?>
