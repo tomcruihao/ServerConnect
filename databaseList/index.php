@@ -528,7 +528,7 @@
           
           self.latestNewsList['en'] = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.latestNewsList['tw'] = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-          console.log(self.latestNewsLis);
+          console.log(self.latestNewsList);
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
         }
