@@ -1,6 +1,6 @@
 {
   "displayNumber": 5,
-  "en": {
+  "tw": {
     "bulletinTitle": "最新消息",
     "newsList": [
       {
@@ -47,7 +47,7 @@
       }
     ]
   },
-  "tw": {
+  "en": {
     "bulletinTitle": "Latest News",
     "newsList": [
       {
