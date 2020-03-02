@@ -178,7 +178,8 @@
     dataList_en.push(item['en']);
     dataList_tw.push(item['tw']);
   })
-
+  console.log(dataList_en);
+  console.log(dataList_tw);
 
   var contactList
 
