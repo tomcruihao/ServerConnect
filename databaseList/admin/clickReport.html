@@ -47,7 +47,17 @@
       </ul>
     </nav>
   </header>
-  <div class="content">
+  <div class="app-content">
+    <div id="mainTitle" class="mainTitle">
+      <h1 v-text="$t('message.h1_clickingReport')"></h1>
+      <div class="lang-wrap">
+        <div>{{$t('message.chooseLanguage')}}:</div>
+        <select v-model="selector_lang" @change="setLang($event)">
+          <option value="en">English</option>
+          <option value="tw">中文</option>
+        </select>
+      </div>
+    </div>
     <section id="reportTable" class="report-wrap">
       <div class="search-wrap">
         <div class="date-wrap">
@@ -65,7 +75,7 @@
             <option value="month">月</option>
           </select>
         </div>
-        <button @click="search()">搜尋</button>
+        <button @click="search()">{{$t('message.btn_search')}}</button>
       </div>
       <div class="report-list-wrap">
         <div class="loading-frame" v-if="searching">
@@ -89,10 +99,30 @@
     </section>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+  <script src="../lang/lang.js"></script>
   <script src="../lib/jquery.js"></script>
   <script type="text/javascript">
+    var mainTitle = new Vue({
+      el:'#mainTitle',
+      i18n,
+      data: {
+        selector_lang: ''
+      },
+      mounted: function() {
+        console.log(i18n.locale)
+        this.selector_lang = i18n.locale;
+      },
+      methods: {
+        setLang(event) {
+          i18n.locale = event.target.value;
+          localStorage.setItem('lang', event.target.value);
+        }
+      }
+    })
     var reportTable = new Vue({
       el:'#reportTable',
+      i18n,
       data: {
         searching: false,
         searchRange: {

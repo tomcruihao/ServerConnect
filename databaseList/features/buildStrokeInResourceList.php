@@ -36,6 +36,7 @@
         } else {
           $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
         }
+
         $resultExist = true;
         break;
       }

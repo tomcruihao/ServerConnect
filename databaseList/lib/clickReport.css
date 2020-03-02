@@ -242,7 +242,28 @@ header nav .nav-list li.multi:before {
   }
 }
 
-.content .report-wrap {
+.mainTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainTitle .lang-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-content {
   width: 100%;
   max-width: 960px;
   margin: 20px auto;
@@ -251,7 +272,7 @@ header nav .nav-list li.multi:before {
           box-sizing: border-box;
 }
 
-.content .report-wrap .search-wrap {
+.app-content .report-wrap .search-wrap {
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -264,7 +285,7 @@ header nav .nav-list li.multi:before {
           justify-content: center;
 }
 
-.content .report-wrap .search-wrap .date-wrap {
+.app-content .report-wrap .search-wrap .date-wrap {
   margin-right: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -274,16 +295,16 @@ header nav .nav-list li.multi:before {
           align-items: center;
 }
 
-.content .report-wrap .search-wrap .date-wrap .title {
+.app-content .report-wrap .search-wrap .date-wrap .title {
   min-width: 90px;
 }
 
-.content .report-wrap .search-wrap .date-wrap select {
+.app-content .report-wrap .search-wrap .date-wrap select {
   height: 36px;
   border: 2px solid #cccccc;
 }
 
-.content .report-wrap .search-wrap button {
+.app-content .report-wrap .search-wrap button {
   height: 36px;
   padding: 5px 20px;
   background-color: #2B78FE;
@@ -295,11 +316,11 @@ header nav .nav-list li.multi:before {
   cursor: pointer;
 }
 
-.content .report-wrap .report-list-wrap {
+.app-content .report-wrap .report-list-wrap {
   padding: 15px;
 }
 
-.content .report-wrap .report-list-wrap .loading-frame {
+.app-content .report-wrap .report-list-wrap .loading-frame {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -308,16 +329,16 @@ header nav .nav-list li.multi:before {
           justify-content: center;
 }
 
-.content .report-wrap .report-list-wrap .loading-frame .icon-loading {
+.app-content .report-wrap .report-list-wrap .loading-frame .icon-loading {
   width: 100px;
   height: 100px;
 }
 
-.content .report-wrap .report-list-wrap .report-list .btn-report-wrap {
+.app-content .report-wrap .report-list-wrap .report-list .btn-report-wrap {
   text-align: center;
 }
 
-.content .report-wrap .report-list-wrap .report-list .btn-report-wrap button {
+.app-content .report-wrap .report-list-wrap .report-list .btn-report-wrap button {
   width: 120px;
   height: 36px;
   background-color: #4CAF50;
@@ -325,7 +346,7 @@ header nav .nav-list li.multi:before {
   font-size: 1rem;
 }
 
-.content .report-wrap .report-list-wrap .report-list .row {
+.app-content .report-wrap .report-list-wrap .report-list .row {
   padding: 15px;
   margin-top: 20px;
   background-color: #ffffff;
@@ -336,40 +357,40 @@ header nav .nav-list li.multi:before {
           box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.content .report-wrap .report-list-wrap .report-list .row .title {
+.app-content .report-wrap .report-list-wrap .report-list .row .title {
   width: 120px;
 }
 
-.content .report-wrap .report-list-wrap .report-list .row .content {
+.app-content .report-wrap .report-list-wrap .report-list .row .content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.content .report-wrap .report-list-wrap .report-list .row .content .list-frame {
+.app-content .report-wrap .report-list-wrap .report-list .row .content .list-frame {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.content .report-wrap .report-list-wrap .report-list .row .content .list-frame .list-title {
+.app-content .report-wrap .report-list-wrap .report-list .row .content .list-frame .list-title {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   padding: 5px 10px;
 }
 
-.content .report-wrap .report-list-wrap .report-list .row .content .list-frame .list-content {
+.app-content .report-wrap .report-list-wrap .report-list .row .content .list-frame .list-content {
   width: 50px;
   padding: 5px 10px;
   text-align: center;
 }
 
-.content .report-wrap .report-list-wrap .report-list .row .content .list-frame:nth-of-type(2n-1) {
+.app-content .report-wrap .report-list-wrap .report-list .row .content .list-frame:nth-of-type(2n-1) {
   background-color: #ccdffc;
 }
 
-.content .report-wrap .report-list-wrap .report-list .row .content .list-frame:nth-of-type(2n) {
+.app-content .report-wrap .report-list-wrap .report-list .row .content .list-frame:nth-of-type(2n) {
   background-color: #ffffff;
 }
 /*# sourceMappingURL=clickReport.css.map */
