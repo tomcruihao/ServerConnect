@@ -133,6 +133,7 @@
               </ul>
             </div>
             <div id="subjectField">
+              {{lang}}
               <div v-if="lang === 'en'">
                 <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects['en']">
                   <h3>{{subjectInfo.subjectTitle}}</h3>
