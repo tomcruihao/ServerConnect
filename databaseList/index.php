@@ -61,44 +61,37 @@
       </div>
     </div>
     <div>
-      <div class="search-wrap">
-        <div class="search-frame">
-          <input type="text" class="search" placeholder="搜尋資源" />
-        </div>
-      </div>
-      <div class="atoz-wrap">
-        <div class="atoz-title">{{$t('message.index_total')}}:</div>
-        <div class="atoz-field">
-          <div class="link-field">
-            <a href="javascript:searchAll()" id="searchTotal" class="clicked">{{$t('message.index_total')}}</a>
+      <div id="filterField">
+        <div class="search-wrap">
+          <div class="search-frame">
+            <input type="text" class="search" placeholder="搜尋資源" />
           </div>
         </div>
-      </div>
-      <div class="atoz-wrap">
-        <div class="atoz-title">{{$t('message.index_atoz')}}:</div>
-        <div id="atozField" class="atoz-field"></div>
-      </div>
-      <div class="atoz-wrap">
-        <div class="atoz-title">{{$t('message.index_zhuyin')}}:</div>
-        <div id="zhuYinField" class="atoz-field"></div>
-      </div>
-      <div class="atoz-wrap">
-        <div class="atoz-title">{{$t('message.index_strokes')}}:</div>
-        <div id="strokesField" class="atoz-field"></div>
-      </div>
-      <!-- <div class="sort-wrap">
-        <div class="sort-title">排序:</div>
-        <ol class="sort-field">
-          <li class="sort" data-sort="resourceName">資源名稱</li>
-          <li class="sort" data-sort="subject">主題</li>
-          <li class="sort" data-sort="category">分類</li>
-          <li class="sort" data-sort="type">類型</li>
-        </ol>
-      </div> -->
-      <div id="sortField" class="sort-wrap">
-        <div class="sort-title">{{$t('message.index_sort')}}:</div>
-        <div class="btn-wrap">
-          <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)" v-bind:class="buttonInfo.options.order">{{buttonInfo.btnName}}</button>
+        <div class="atoz-wrap">
+          <div class="atoz-title">{{$t('message.index_total')}}:</div>
+          <div class="atoz-field">
+            <div class="link-field">
+              <a href="javascript:searchAll()" id="searchTotal" class="clicked">{{$t('message.index_total')}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="atoz-wrap">
+          <div class="atoz-title">{{$t('message.index_atoz')}}:</div>
+          <div id="atozField" class="atoz-field"></div>
+        </div>
+        <div class="atoz-wrap">
+          <div class="atoz-title">{{$t('message.index_zhuyin')}}:</div>
+          <div id="zhuYinField" class="atoz-field"></div>
+        </div>
+        <div class="atoz-wrap">
+          <div class="atoz-title">{{$t('message.index_strokes')}}:</div>
+          <div id="strokesField" class="atoz-field"></div>
+        </div>
+        <div id="sortField" class="sort-wrap">
+          <div class="sort-title">{{$t('message.index_sort')}}:</div>
+          <div class="btn-wrap">
+            <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)" v-bind:class="buttonInfo.options.order">{{buttonInfo.btnName}}</button>
+          </div>
         </div>
       </div>
       <div class="content-field" id="databaseList">
@@ -266,6 +259,25 @@
 
   var mainTitle = new Vue({
     el:'#mainTitle',
+    i18n,
+    data: {
+      selector_lang: ''
+    },
+    mounted: function() {
+      console.log(i18n.locale)
+      this.selector_lang = i18n.locale;
+    },
+    methods: {
+      setLang(event) {
+        i18n.locale = event.target.value;
+        localStorage.setItem('lang', event.target.value);
+        changeEsourceListLanguage();
+      }
+    }
+  })
+
+  var filterField = new Vue({
+    el:'#filterField',
     i18n,
     data: {
       selector_lang: ''
