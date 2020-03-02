@@ -114,7 +114,7 @@
             <div class="bulletin-board-frame" id="latestNews">
               <h3>{{bulletinTitle}}</h3>
               <ul>
-                <li v-for="(latestNews, index) in latestNewsList.slice(0, displayNumber)" class="latest-news">
+                <li v-for="(latestNews, index) in latestNewsList[lang].slice(0, displayNumber)" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
@@ -498,6 +498,7 @@
     el:'#latestNews',
     i18n,
     data: {
+      lang: '',
       bulletinTitle: '',
       displayNumber: 0,
       latestNewsList: []
@@ -514,11 +515,20 @@
         },
         success: function(res) {
           self.bulletinTitle = res.bulletinTitle;
-          self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          self.latestNewsList['en'] = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          self.latestNewsList['tw'] = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
         }
       });
     },
+    mounted: function() {
+      if("lang" in localStorage) {
+        this.lang = localStorage.getItem('lang');
+      } else {
+        this.lang = 'tw';
+      }
+    }
     methods:{
       closeDialogue: function() {
         this.show = false;
@@ -529,6 +539,9 @@
           'content': latestNews.content
         }
         dialogue.setDialogue('latestNews', message);
+      },
+      setLocale: function(language) {
+        this.lang = language;
       }
     }
   });
