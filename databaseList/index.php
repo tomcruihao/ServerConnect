@@ -196,12 +196,18 @@
   function changeEsourceListLanguage() {
     contactList.clear();
     let ary_lang
+
+    // check the language type
     if("lang" in localStorage) {
       ary_lang = localStorage.getItem('lang');
     } else {
       ary_lang = 'tw';
     }
+
+    let index_numbering = 1;
     ary_dataList[ary_lang].forEach((res, index) => {
+      res['numbering'] = index_numbering;
+      index_numbering++;
       contactList.add(res);
     })
   }
