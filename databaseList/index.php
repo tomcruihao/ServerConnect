@@ -114,20 +114,19 @@
             <div class="bulletin-board-frame" id="latestNews">
               <h3>{{bulletinTitle}}</h3>
               <ul v-if="lang === 'en'">
-                <!-- <li v-for="(latestNews, index) in latestNewsList['en'].slice(0, displayNumber)" class="latest-news">
+                <li v-for="(latestNews, index) in latestNewsList['en'].slice(0, displayNumber)" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
-                </li> -->
+                </li>
                 <li class="more" v-if="latestNewsList['en'].length > displayNumber">
                   <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
                 </li>
               </ul>
               <ul v-else-if="lang === 'tw'">
-                {{latestNewsList['tw']}}
-                <!-- <li v-for="(latestNews, index) in latestNewsList['tw'].slice(0, displayNumber)" class="latest-news">
+                <li v-for="(latestNews, index) in latestNewsList['tw'].slice(0, displayNumber)" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
-                </li> -->
+                </li>
                 <li class="more" v-if="latestNewsList['tw'].length > displayNumber">
                   <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
                 </li>
