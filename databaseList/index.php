@@ -195,6 +195,15 @@
 
   function change() {
     contactList.clear();
+    let ary_lang
+    if("lang" in localStorage) {
+      ary_lang = localStorage.getItem('lang');
+    } else {
+      ary_lang = 'tw';
+    }
+    ary_dataList[ary_lang].forEach((res, index) => {
+      contactList.add(res);
+    }
   }
 
   function resetNumbering() {
