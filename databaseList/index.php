@@ -377,8 +377,11 @@
       });
     },
     mounted: function() {
-      console.log(i18n.locale)
-      this.selector_lang = i18n.locale;
+      if("lang" in localStorage) {
+        this.lang = localStorage.getItem('lang');
+      } else {
+        this.lang = 'tw';
+      }
     },
     methods:{
       search: function(subject, className) {
