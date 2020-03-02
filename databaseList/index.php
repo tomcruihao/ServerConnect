@@ -117,10 +117,11 @@
                 <!-- <li v-for="(latestNews, index) in latestNewsList[lang].slice(0, displayNumber)" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
-                </li>
+                </li> -->
+                {{latestNewsList[lang]}}
                 <li class="more" v-if="latestNewsList.length > displayNumber">
                   <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
-                </li> -->
+                </li>
               </ul>
             </div>
             <div id="subjectField">
