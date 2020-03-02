@@ -133,13 +133,25 @@
               </ul>
             </div>
             <div id="subjectField">
-              <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects">
-                <h3>{{subjectInfo.subjectTitle}}</h3>
-                <ul>
-                  <li v-for="(subject, index) in subjectInfo.subjectList">
-                    <span @click="search(subject.name, subject.className)">{{subject.name}}</span>
-                  </li>
-                </ul>
+              <div v-if="lang === 'en'">
+                <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects['en']">
+                  <h3>{{subjectInfo.subjectTitle}}</h3>
+                  <ul>
+                    <li v-for="(subject, index) in subjectInfo.subjectList">
+                      <span @click="search(subject.name, subject.className)">{{subject.name}}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div v-else-if="lang === 'tw'">
+                <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects['tw']">
+                  <h3>{{subjectInfo.subjectTitle}}</h3>
+                  <ul>
+                    <li v-for="(subject, index) in subjectInfo.subjectList">
+                      <span @click="search(subject.name, subject.className)">{{subject.name}}</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -271,6 +283,7 @@
         changeEsourceListLanguage();
 
         latestNews.setLocale(i18n.locale);
+        subjectField.setLocale(i18n.locale);
       }
     }
   })
@@ -337,7 +350,8 @@
     el:'#subjectField',
     i18n,
     data: {
-      subjects: []
+      subjects: [],
+      lang: ''
     },
     created: function() {
       let self = this;
@@ -350,14 +364,33 @@
           console.log(exception);
         },
         success: function(res) {
-          self.subjects = res.subjects;
+          Object.keys(res.subjects).forEach(key => {
+            self.subjects[key] = res.subjects[key];
+            // let string_row = key;
+            // ary_date.forEach(date => {
+            //   string_row = `${string_row},${ary_row[key][date]}`;
+            // })
+            // string_content = `${string_content}${string_row}\n`;
+          })
+          // self.subjects = res.subjects;
         }
       });
+    },
+    mounted: function() {
+      console.log(i18n.locale)
+      this.selector_lang = i18n.locale;
     },
     methods:{
       search: function(subject, className) {
         searchBy(subject, className);
         aside('close');
+      },
+      setLang(event) {
+        i18n.locale = event.target.value;
+        localStorage.setItem('lang', event.target.value);
+        changeEsourceListLanguage();
+
+        latestNews.setLocale(i18n.locale);
       }
     }
   });
