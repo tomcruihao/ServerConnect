@@ -171,15 +171,12 @@
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
 
-  var dataList_en = [];
-  var dataList_tw = [];
+  var ary_dataList = ['en':[], 'tw':[]];
 
   dataList.rows.forEach(item => {
-    dataList_en.push(item['en']);
-    dataList_tw.push(item['tw']);
+    ary_dataList['en'].push(item['en']);
+    ary_dataList['tw'].push(item['tw']);
   })
-  console.log(dataList_en);
-  console.log(dataList_tw);
 
   var contactList
 
@@ -324,8 +321,15 @@
   function genDatalistStructure() {
     let ul_Dom = document.getElementById("resourceList");
 
+    let ary_lang
+    if("lang" in localStorage) {
+      ary_lang = localStorage.getItem('lang');
+    } else {
+      ary_lang = 'tw';
+    }
+  
     // create li and append to ul
-    dataList.rows.forEach((res, index) => {
+    ary_dataList[ary_lang].forEach((res, index) => {
       let li_dom = document.createElement('li');
 
       let newLabel = document.createElement('label');
