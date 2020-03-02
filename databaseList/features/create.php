@@ -18,14 +18,14 @@
   foreach($resourceList['rows'] as $key => $row) {
     // clone ID and array
     $id = $resourceList['rows'][$key]['id'];
-    $en = clone $resourceList['rows'][$key];
-    $en = clone $resourceList['rows'][$key];
+    $en = clone $row[$key];
+    $tw = clone $row[$key];
 
     // clear array
     $resourceList['rows'][$key] = array();
     $resourceList['rows'][$key]['id'] = $id;
     $resourceList['rows'][$key]['en'] = $en;
-    $resourceList['rows'][$key]['tw'] = $en;
+    $resourceList['rows'][$key]['tw'] = $tw;
     print_r($resourceList['rows'][$key]);
   }
 ?>
