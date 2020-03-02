@@ -17,7 +17,7 @@ error_reporting(E_ALL);
   $resource = json_decode($_POST["resource"], true);
 
   // get resource list
-  $getResourceListJsonData = file_get_contents('../data/eResourceList.json');
+  $getResourceListJsonData = file_get_contents($jsonFile_direct);
   $resourceList = json_decode($getResourceListJsonData, true);
 
   if ($type === 'add') {
