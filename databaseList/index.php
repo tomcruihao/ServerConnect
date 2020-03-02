@@ -51,7 +51,7 @@
   </header>
   <section>
     <div id="mainTitle" class="mainTitle">
-      <h1 v-text="$t('message.h1_latestNews')"></h1>
+      <h1 v-text="$t('message.h1_resource_list')"></h1>
       <div class="lang-wrap">
         <div>{{$t('message.chooseLanguage')}}:</div>
         <select v-model="selector_lang" @change="setLang($event)">
@@ -67,23 +67,23 @@
         </div>
       </div>
       <div class="atoz-wrap">
-        <div class="atoz-title">全部:</div>
+        <div class="atoz-title">{{$t('message.index_total')}}:</div>
         <div class="atoz-field">
           <div class="link-field">
-            <a href="javascript:searchAll()" id="searchTotal" class="clicked">全部</a>
+            <a href="javascript:searchAll()" id="searchTotal" class="clicked">{{$t('message.index_total')}}</a>
           </div>
         </div>
       </div>
       <div class="atoz-wrap">
-        <div class="atoz-title">A to Z:</div>
+        <div class="atoz-title">{{$t('message.index_atoz')}}:</div>
         <div id="atozField" class="atoz-field"></div>
       </div>
       <div class="atoz-wrap">
-        <div class="atoz-title">注音:</div>
+        <div class="atoz-title">{{$t('message.index_zhuyin')}}:</div>
         <div id="zhuYinField" class="atoz-field"></div>
       </div>
       <div class="atoz-wrap">
-        <div class="atoz-title">筆劃:</div>
+        <div class="atoz-title">{{$t('message.index_strokes')}}:</div>
         <div id="strokesField" class="atoz-field"></div>
       </div>
       <!-- <div class="sort-wrap">
@@ -96,7 +96,7 @@
         </ol>
       </div> -->
       <div id="sortField" class="sort-wrap">
-        <div class="sort-title">排序:</div>
+        <div class="sort-title">{{$t('message.index_sort')}}:</div>
         <div class="btn-wrap">
           <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)" v-bind:class="buttonInfo.options.order">{{buttonInfo.btnName}}</button>
         </div>
@@ -108,9 +108,9 @@
           <ul class="pagination"></ul>
         </article>
         <aside id="aside">
-          <button class="btn-accordion" onclick="aside('open')">公佈欄</button>
+          <button class="btn-accordion" onclick="aside('open')">{{$t('message.index_bulletin')}}</button>
           <div class="aside-mobile-header">
-            <div class="title">公佈欄</div>
+            <div class="title">{{$t('message.index_bulletin')}}</div>
             <img src="img/clear.svg" class="close" onclick="aside('close')">
           </div>
           <div class="aside-content">
@@ -122,7 +122,7 @@
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
                 <li class="more" v-if="latestNewsList.length > displayNumber">
-                  <a href="allLatestNews.html">更多...</a>
+                  <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
                 </li>
               </ul>
             </div>

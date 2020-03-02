@@ -2,6 +2,15 @@ const messages = {
   en: {
     message: {
       chooseLanguage:'Language',
+      // index page
+      h1_resource_list: 'e-Resource List',
+      index_total: 'Total',
+      index_atoz: 'A to Z',
+      index_zhuyin: 'Zhu Yin',
+      index_strokes: 'Strokes',
+      index_sort: 'Sort',
+      index_bulletin: 'Bulletin',
+      index_more: 'More',
       // setting page
       h1_settings: 'Setting',
       generalSetting: 'General Setting',
@@ -36,6 +45,15 @@ const messages = {
   tw: {
     message: {
       chooseLanguage:'選擇語言',
+      // index page
+      h1_resource_list: '電子資源',
+      index_total: '全部',
+      index_atoz: 'A to Z',
+      index_zhuyin: '注音',
+      index_strokes: '筆劃',
+      index_sort: '排序',
+      index_bulletin: '公佈欄',
+      index_more: '更多',
       // setting page
       h1_settings: '設定',
       generalSetting: '一般設定',
