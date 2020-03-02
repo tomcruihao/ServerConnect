@@ -114,13 +114,13 @@
             <div class="bulletin-board-frame" id="latestNews">
               <h3>{{bulletinTitle}}</h3>
               <ul>
-                <li v-for="(latestNews, index) in latestNewsList[lang].slice(0, displayNumber)" class="latest-news">
+                <!-- <li v-for="(latestNews, index) in latestNewsList[lang].slice(0, displayNumber)" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
                 <li class="more" v-if="latestNewsList.length > displayNumber">
                   <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
-                </li>
+                </li> -->
               </ul>
             </div>
             <div id="subjectField">
@@ -516,8 +516,8 @@
         success: function(res) {
           self.bulletinTitle = res.bulletinTitle;
           console.log(res.en.newsList);
-          // self.latestNewsList['en'] = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-          // self.latestNewsList['tw'] = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          self.latestNewsList['en'] = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          self.latestNewsList['tw'] = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
         }
