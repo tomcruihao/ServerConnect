@@ -269,6 +269,8 @@
         i18n.locale = event.target.value;
         localStorage.setItem('lang', event.target.value);
         changeEsourceListLanguage();
+
+        latestNews.setLocale(i18n.locale);
       }
     }
   })
