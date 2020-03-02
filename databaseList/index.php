@@ -50,6 +50,7 @@
     </nav>
   </header>
   <section>
+    <button onclick="change()">test</button>
     <div id="mainTitle" class="mainTitle">
       <h1 v-text="$t('message.h1_latestNews')"></h1>
       <div class="lang-wrap">
@@ -191,6 +192,10 @@
   })
 
   var contactList
+
+  function change() {
+    contactList.clear();
+  }
 
   function resetNumbering() {
     let count = 1;
