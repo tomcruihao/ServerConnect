@@ -39,7 +39,11 @@ const messages = {
       btn_confirm: 'Confirm',
       btn_cancel: 'Cancel',
       btn_search: 'Search',
-      btn_download_report: 'Download Report'
+      btn_download_report: 'Download Report',
+      btn_resource_name: 'Resource Name',
+      btn_resource_subject: 'Subject',
+      btn_resource_catalog: 'Catalog',
+      btn_resource_type: 'Type'
     }
   },
   tw: {
@@ -82,7 +86,11 @@ const messages = {
       btn_confirm: '確定',
       btn_cancel: '取消',
       btn_search: '搜尋',
-      btn_download_report: '下載報表'
+      btn_download_report: '下載報表',
+      btn_resource_name: '資源名稱',
+      btn_resource_subject: '主題',
+      btn_resource_catalog: '分類',
+      btn_resource_type: '類型'
     }
   }
 }
