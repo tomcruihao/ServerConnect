@@ -90,7 +90,11 @@
         <div class="sort-wrap">
           <div class="sort-title">{{$t('message.index_sort')}}:</div>
           <div class="btn-wrap">
-            <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)" v-bind:class="buttonInfo.options.order">{{buttonInfo.btnName}}</button>
+            <button @click="processSort(buttons[0])" v-bind:class="buttons[0].options.order">{{buttons[0].btnName}}</button>
+            <button @click="processSort(buttons[1])" v-bind:class="buttons[1].options.order">{{buttons[1].btnName}}</button>
+            <button @click="processSort(buttons[2])" v-bind:class="buttons[2].options.order">{{buttons[2].btnName}}</button>
+            <button @click="processSort(buttons[3])" v-bind:class="buttons[3].options.order">{{buttons[3].btnName}}</button>
+            <!-- <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)" v-bind:class="buttonInfo.options.order">{{buttonInfo.btnName}}</button> -->
           </div>
         </div>
       </div>
