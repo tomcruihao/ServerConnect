@@ -17,7 +17,7 @@
 
   foreach($resourceList['rows'] as $key => $row) {
     // clone ID and array
-    $id = clone $resourceList['rows'][$key]['id'];
+    $id = $resourceList['rows'][$key]['id'];
     $en = clone $resourceList['rows'][$key];
     $en = clone $resourceList['rows'][$key];
 
