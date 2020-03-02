@@ -474,7 +474,7 @@
         // }
       }
     },
-    methods:{
+    methods: {
       setDialogue: function(type, messageInfo) {
         this.type = type;
         this.message = messageInfo;
@@ -528,8 +528,8 @@
       } else {
         this.lang = 'tw';
       }
-    }
-    methods:{
+    },
+    methods: {
       closeDialogue: function() {
         this.show = false;
       },
