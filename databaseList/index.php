@@ -568,8 +568,8 @@
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
 
-          self.latestNewsList['en'] = self.latestNewsList['en'].slice(0, displayNumber);
-          self.latestNewsList['tw'] = self.latestNewsList['tw'].slice(0, displayNumber);
+          self.latestNewsList['en'] = self.latestNewsList['en'].slice(0, self.displayNumber);
+          self.latestNewsList['tw'] = self.latestNewsList['tw'].slice(0, self.displayNumber);
         }
       });
     },
