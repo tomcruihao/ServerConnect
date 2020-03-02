@@ -50,6 +50,16 @@
     </nav>
   </header>
   <section>
+    <div id="mainTitle" class="mainTitle">
+      <h1 v-text="$t('message.h1_latestNews')"></h1>
+      <div class="lang-wrap">
+        <div>{{$t('message.chooseLanguage')}}:</div>
+        <select v-model="selector_lang" @change="setLang($event)">
+          <option value="en">English</option>
+          <option value="tw">中文</option>
+        </select>
+      </div>
+    </div>
     <div id="databaseList">
       <div class="search-wrap">
         <div class="search-frame">
@@ -185,7 +195,6 @@
   function resetNumbering() {
     let count = 1;
     contactList.items.forEach(item => {
-      // console.log(item['found']);
       if(contactList.searched === item.found && contactList.filtered === item.filtered) {
         let tempObj = Object.assign({}, item['_values']);
         tempObj['numbering'] = count;
@@ -236,8 +245,27 @@
     // })
   }
 
+  var mainTitle = new Vue({
+    el:'#mainTitle',
+    i18n,
+    data: {
+      selector_lang: ''
+    },
+    mounted: function() {
+      console.log(i18n.locale)
+      this.selector_lang = i18n.locale;
+    },
+    methods: {
+      setLang(event) {
+        i18n.locale = event.target.value;
+        localStorage.setItem('lang', event.target.value);
+      }
+    }
+  })
+
   var subjectField = new Vue({
     el:'#subjectField',
+    i18n,
     data: {
       subjects: ''
     },
@@ -267,6 +295,7 @@
 
   var sortField = new Vue({
     el:'#sortField',
+    i18n,
     data: {
       buttons: [
         {
@@ -423,6 +452,7 @@
 
   var dialogue = new Vue({
     el:'#dialogue',
+    i18n,
     data: {
       show: false,
       type: '',
@@ -463,6 +493,7 @@
 
   var latestNews = new Vue({
     el:'#latestNews',
+    i18n,
     data: {
       bulletinTitle: '',
       displayNumber: 0,
