@@ -367,12 +367,8 @@
         success: function(res) {
           Object.keys(res.subjects).forEach(key => {
             self.subjects[key] = res.subjects[key];
-            // let string_row = key;
-            // ary_date.forEach(date => {
-            //   string_row = `${string_row},${ary_row[key][date]}`;
-            // })
-            // string_content = `${string_content}${string_row}\n`;
           })
+          console.log('subjects');
           console.log(self.subjects);
           // self.subjects = res.subjects;
         }
