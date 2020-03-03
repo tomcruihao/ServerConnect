@@ -507,7 +507,7 @@
           console.log(exception);
         },
         success: function(res) {
-          Object.keys(res.subjects).forEach(key => {
+          Object.keys(res).forEach(key => {
             self.eResource[key] = res[key];
           })
           console.log(self.eResource[key] = res[key]);
