@@ -502,7 +502,7 @@
       lang: '',
       eResource: []
     },
-    created: function() {
+    mounted: function() {
       let self = this;
       $.ajax({
         url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getList.php',
