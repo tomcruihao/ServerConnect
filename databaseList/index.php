@@ -543,8 +543,10 @@
       ul_Dom.appendChild(li_dom);
     });
     if(local){
-      contactList.update();
-      contactList.reIndex();
+      window.setTimeout(( () => {
+        contactList.update();
+        contactList.reIndex();
+      } ), 1000);
     }
   }
   genDatalistStructure();
