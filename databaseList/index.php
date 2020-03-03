@@ -544,7 +544,7 @@
     });
     if(local){
       window.setTimeout(( () => {
-        contactList.update();
+        // contactList.update();
         contactList.reIndex();
       } ), 1000);
     }
