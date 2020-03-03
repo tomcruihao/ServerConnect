@@ -112,6 +112,10 @@
           </div>
           <div class="aside-content">
             <div class="bulletin-board-frame" id="latestNews">
+              <div>
+                <h3 v-if="lang === 'en'">{{bulletinTitle.en}}</h3>
+                <h3 v-else-if="lang === 'tw'">{{bulletinTitle.tw}}</h3>
+              </div>
               <!-- <h3>{{bulletinTitle}}</h3> -->
               <ul v-if="lang === 'en'">
                 <li v-for="(latestNews, index) in latestNewsList.en" class="latest-news">
@@ -541,7 +545,10 @@
     i18n,
     data: {
       lang: '',
-      bulletinTitle: [],
+      bulletinTitle: {
+        'en': '',
+        'tw': ''
+      },
       displayNumber: 0,
       latestNewsList: {
         'en': [],
@@ -559,8 +566,8 @@
           console.log(exception);
         },
         success: function(res) {
-          self.bulletinTitle['en'] = res.en.bulletinTitle;
-          self.bulletinTitle['tw'] = res.tw.bulletinTitle;
+          self.bulletinTitle.en = res.en.bulletinTitle;
+          self.bulletinTitle.tw = res.tw.bulletinTitle;
           self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           console.log(self.latestNewsList);
