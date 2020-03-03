@@ -445,8 +445,6 @@
         ul_Dom.innerHTML = '';
       }
 
-      let ul_Dom = document.getElementById("resourceList");
-
       let ary_lang
       if("lang" in localStorage) {
         ary_lang = localStorage.getItem('lang');
