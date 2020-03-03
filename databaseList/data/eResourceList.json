@@ -16,8 +16,11 @@
       "publisher": "檔案管理局",
       "language": "中文",
       "resourceDescribe": "test",
-      "relevanceDescribe": "test",
-      "relevanceUrl": "test"
+      "relevanceUrlDescribe": "test",
+      "relevanceUrl": "test",
+      "zhuyin":"",
+      "strokes":"0",
+      "englishAlphabet":"R"
     },
     {
       "uuid": "8e48671d-cce5-4730-a3fe-9fb79c18e061",
@@ -35,8 +38,11 @@
       "publisher": "檔案管理局",
       "language": "中文",
       "resourceDescribe": "test",
-      "relevanceDescribe": "test",
-      "relevanceUrl": "test"
+      "relevanceUrlDescribe": "test",
+      "relevanceUrl": "test",
+      "zhuyin":"",
+      "strokes":"0",
+      "englishAlphabet":"R"
     },
     {
       "uuid": "52c9a206-432d-4102-8a3c-197f5e86c2b2",
@@ -54,8 +60,11 @@
       "publisher": "檔案管理局",
       "language": "中文",
       "resourceDescribe": "test",
-      "relevanceDescribe": "test",
-      "relevanceUrl": "test"
+      "relevanceUrlDescribe": "test",
+      "relevanceUrl": "test",
+      "zhuyin":"",
+      "strokes":"0",
+      "englishAlphabet":"R"
     },
     {
       "uuid": "dcda29b9-5202-4040-972f-8607a3641785",
@@ -73,8 +82,11 @@
       "publisher": "檔案管理局",
       "language": "中文",
       "resourceDescribe": "test",
-      "relevanceDescribe": "test",
-      "relevanceUrl": "test"
+      "relevanceUrlDescribe": "test",
+      "relevanceUrl": "test",
+      "zhuyin":"",
+      "strokes":"0",
+      "englishAlphabet":"R"
     },
     {
       "uuid": "a0e0371c-33e2-4ce2-8cb4-1bb1624cb379",
@@ -92,8 +104,11 @@
       "publisher": "檔案管理局",
       "language": "中文",
       "resourceDescribe": "test",
-      "relevanceDescribe": "test",
-      "relevanceUrl": "test"
+      "relevanceUrlDescribe": "test",
+      "relevanceUrl": "test",
+      "zhuyin":"",
+      "strokes":"0",
+      "englishAlphabet":"R"
     }
   ],
   "tw": [
@@ -113,8 +128,11 @@
       "publisher": "檔案管理局",
       "language": "中文",
       "resourceDescribe": "test",
-      "relevanceDescribe": "test",
-      "relevanceUrl": "test"
+      "relevanceUrlDescribe": "test",
+      "relevanceUrl": "test",
+      "zhuyin":"ㄗ",
+      "strokes":"13",
+      "englishAlphabet":""
     },
     {
       "uuid": "8e48671d-cce5-4730-a3fe-9fb79c18e061",
@@ -132,8 +150,11 @@
       "publisher": "檔案管理局",
       "language": "中文",
       "resourceDescribe": "test",
-      "relevanceDescribe": "test",
-      "relevanceUrl": "test"
+      "relevanceUrlDescribe": "test",
+      "relevanceUrl": "test",
+      "zhuyin":"ㄗ",
+      "strokes":"13",
+      "englishAlphabet":""
     },
     {
       "uuid": "52c9a206-432d-4102-8a3c-197f5e86c2b2",
@@ -151,8 +172,11 @@
       "publisher": "檔案管理局",
       "language": "中文",
       "resourceDescribe": "test",
-      "relevanceDescribe": "test",
-      "relevanceUrl": "test"
+      "relevanceUrlDescribe": "test",
+      "relevanceUrl": "test",
+      "zhuyin":"ㄗ",
+      "strokes":"13",
+      "englishAlphabet":""
     },
     {
       "uuid": "dcda29b9-5202-4040-972f-8607a3641785",
@@ -170,8 +194,11 @@
       "publisher": "檔案管理局",
       "language": "中文",
       "resourceDescribe": "test",
-      "relevanceDescribe": "test",
-      "relevanceUrl": "test"
+      "relevanceUrlDescribe": "test",
+      "relevanceUrl": "test",
+      "zhuyin":"ㄗ",
+      "strokes":"13",
+      "englishAlphabet":""
     },
     {
       "uuid": "a0e0371c-33e2-4ce2-8cb4-1bb1624cb379",
@@ -189,8 +216,11 @@
       "publisher": "檔案管理局",
       "language": "中文",
       "resourceDescribe": "test",
-      "relevanceDescribe": "test",
-      "relevanceUrl": "test"
+      "relevanceUrlDescribe": "test",
+      "relevanceUrl": "test",
+      "zhuyin":"ㄗ",
+      "strokes":"13",
+      "englishAlphabet":""
     }
   ]
 }
