@@ -317,6 +317,8 @@ section {
           margin: 0;
           padding: 5px;
           text-align: center;
+          justify-content: center;
+          color: #333333;
         }
         ul {
           padding: 10px;
@@ -332,6 +334,11 @@ section {
             a {
               text-decoration: none;
               color: $anchor_color;
+            }
+
+            span {
+              color: $anchor_color;
+              cursor: pointer;
             }
 
             &.latest-news {

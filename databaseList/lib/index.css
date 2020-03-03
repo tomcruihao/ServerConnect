@@ -616,6 +616,10 @@ section {
   margin: 0;
   padding: 5px;
   text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #333333;
 }
 
 .content-field aside .aside-content .bulletin-board-frame ul {
@@ -634,6 +638,11 @@ section {
 .content-field aside .aside-content .bulletin-board-frame ul li a {
   text-decoration: none;
   color: #3333ff;
+}
+
+.content-field aside .aside-content .bulletin-board-frame ul li span {
+  color: #3333ff;
+  cursor: pointer;
 }
 
 .content-field aside .aside-content .bulletin-board-frame ul li.latest-news {
