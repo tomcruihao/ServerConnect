@@ -1,9 +1,5 @@
 <!DOCTYPE xtml PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
-<?php
-  $getJsonData = file_get_contents('data/eResourceList.json');
-  $decodeJsonData = json_decode($getJsonData, true);
-?>
 <html>
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -276,37 +272,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script type="text/javascript">
-  var dataList = <?php echo $getJsonData; ?>;
-
-  var ary_dataList = new Array();
-  ary_dataList['en'] = [];
-  ary_dataList['tw'] = [];
-
-  dataList.rows.forEach(item => {
-    ary_dataList['en'].push(item['en']);
-    ary_dataList['tw'].push(item['tw']);
-  })
-
   var contactList
 
-  function changeEsourceListLanguage() {
-    contactList.clear();
-    let ary_lang
+  // function changeEsourceListLanguage() {
+  //   contactList.clear();
+  //   let ary_lang
 
-    // check the language type
-    if("lang" in localStorage) {
-      ary_lang = localStorage.getItem('lang');
-    } else {
-      ary_lang = 'tw';
-    }
+  //   // check the language type
+  //   if("lang" in localStorage) {
+  //     ary_lang = localStorage.getItem('lang');
+  //   } else {
+  //     ary_lang = 'tw';
+  //   }
 
-    let index_numbering = 1;
-    ary_dataList[ary_lang].forEach((res, index) => {
-      res['numbering'] = index_numbering;
-      index_numbering++;
-      contactList.add(res);
-    })
-  }
+  //   let index_numbering = 1;
+  //   ary_dataList[ary_lang].forEach((res, index) => {
+  //     res['numbering'] = index_numbering;
+  //     index_numbering++;
+  //     contactList.add(res);
+  //   })
+  // }
 
   function resetNumbering() {
     let count = 1;
