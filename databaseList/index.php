@@ -94,8 +94,8 @@
           </div>
         </div>
       </div>
-      <div class="content-field" id="databaseList">
-        <article id="resourceList">
+      <div class="content-field" id="resourceList">
+        <article id="databaseList">
           <ol class="list">
             {{listlang}}
             <div v-if="'en' in eResource">
@@ -826,6 +826,7 @@
   }
 
   function addListJs() {
+    console.log('addListJs');
     var options = {
       valueNames: ['numbering', 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes', 'englishAlphabet'],
       page: 20,
