@@ -271,7 +271,7 @@
 
         aside.setLocale(i18n.locale);
 
-        await genDatalistStructure();
+        await genDatalistStructure(true);
       }
     }
   })
@@ -356,6 +356,7 @@
     },
     created: function() {
       let self = this;
+
       $.ajax({
         url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
         type: 'GET',
@@ -437,9 +438,9 @@
     }
   })
 
-  function genDatalistStructure() {
+  function genDatalistStructure(local = false) {
     return new Promise(function(resolve, reject) {
-
+      console.log(local);
       let ul_Dom = document.getElementById("resourceList");
 
       let ary_lang
