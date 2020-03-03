@@ -210,6 +210,12 @@
 
   var contactList
 
+  function refreshList() {
+    return new Promise(function(resolve, reject) {
+      contactList.reindex();
+    })
+  }
+
   function changeEsourceListLanguage() {
     contactList.clear();
     let ary_lang
@@ -272,6 +278,7 @@
         aside.setLocale(i18n.locale);
 
         await genDatalistStructure(true);
+
       }
     }
   })
