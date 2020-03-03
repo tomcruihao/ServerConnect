@@ -449,6 +449,7 @@
 
       // create li and append to ul
       ary_dataList[ary_lang].forEach((res, index) => {
+        console.log(res);
         let li_dom = document.createElement('li');
 
         let newLabel = document.createElement('label');
