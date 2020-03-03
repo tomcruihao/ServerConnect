@@ -97,7 +97,7 @@
       <div class="content-field" id="databaseList">
         <article>
           <ol class="list" id="resourceList">
-            {{eResource}}
+            {{eResource}}{{lang}}
             <div v-if="'en' in eResource">
               <li  v-for="(resourceInfo, index) in eResource['en']">
                 {{resourceInfo.uuid}}
@@ -499,7 +499,7 @@
     el:'#resourceList',
     i18n,
     data: {
-      lang: '',
+      lang: 'test',
       eResource: []
     },
     mounted: function() {
