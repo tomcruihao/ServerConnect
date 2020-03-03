@@ -440,7 +440,11 @@
 
   function genDatalistStructure(local = false) {
     return new Promise(function(resolve, reject) {
-      console.log(local);
+      let ul_Dom = document.getElementById("resourceList");
+      if(local){
+        ul_Dom.innerHTML = '';
+      }
+
       let ul_Dom = document.getElementById("resourceList");
 
       let ary_lang
