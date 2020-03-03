@@ -435,215 +435,108 @@
     }
   })
 
-  // var latestNews = new Vue({
-  //   el:'#latestNews',
-  //   i18n,
-  //   data: {
-  //     lang: '',
-  //     bulletinTitle: {
-  //       'en': '',
-  //       'tw': ''
-  //     },
-  //     displayNumber: 0,
-  //     latestNewsList: {
-  //       'en': [],
-  //       'tw': []
-  //     }
-  //   },
-  //   created: function() {
-  //     let self = this;
-  //     $.ajax({
-  //       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
-  //       type: 'GET',
-  //       error: function(jqXHR, exception) {
-  //         //use url variable here
-  //         console.log(jqXHR);
-  //         console.log(exception);
-  //       },
-  //       success: function(res) {
-  //         self.bulletinTitle.en = res.en.bulletinTitle;
-  //         self.bulletinTitle.tw = res.tw.bulletinTitle;
-  //         self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-  //         self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-  //         console.log(self.latestNewsList);
-  //         // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-  //         self.displayNumber = res.displayNumber;
-
-  //         self.latestNewsList.en = self.latestNewsList.en.slice(0, self.displayNumber);
-  //         self.latestNewsList.tw = self.latestNewsList.tw.slice(0, self.displayNumber);
-  //       }
-  //     });
-  //   },
-  //   mounted: function() {
-  //     if("lang" in localStorage) {
-  //       this.lang = localStorage.getItem('lang');
-  //     } else {
-  //       this.lang = 'tw';
-  //     }
-  //   },
-  //   methods: {
-  //     closeDialogue: function() {
-  //       this.show = false;
-  //     },
-  //     showContent: function(latestNews) {
-  //       let message = {
-  //         'title': latestNews.title,
-  //         'content': latestNews.content
-  //       }
-  //       dialogue.setDialogue('latestNews', message);
-  //     },
-  //     setLocale: function(language) {
-  //       this.lang = language;
-  //     }
-  //   }
-  // });
-
-  // var subjectField = new Vue({
-  //   el:'#subjectField',
-  //   i18n,
-  //   data: {
-  //     subjects: {
-  //       'en': [],
-  //       'tw': []
-  //     },
-  //     lang: ''
-  //   },
-  //   created: function() {
-  //     let self = this;
-  //     $.ajax({
-  //       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
-  //       type: 'GET',
-  //       error: function(jqXHR, exception) {
-  //         //use url variable here
-  //         console.log(jqXHR);
-  //         console.log(exception);
-  //       },
-  //       success: function(res) {
-  //         Object.keys(res.subjects).forEach(key => {
-  //           self.subjects[key] = res.subjects[key];
-  //         })
-  //         console.log('subjects');
-  //         console.log(self.subjects);
-  //         // self.subjects = res.subjects;
-  //       }
-  //     });
-  //   },
-  //   mounted: function() {
-  //     if("lang" in localStorage) {
-  //       this.lang = localStorage.getItem('lang');
-  //     } else {
-  //       this.lang = 'tw';
-  //     }
-  //   },
-  //   methods:{
-  //     search: function(subject, className) {
-  //       searchBy(subject, className);
-  //       aside('close');
-  //     },
-  //     setLocale: function(language) {
-  //       this.lang = language;
-  //     }
-  //   }
-  // });
-
   function genDatalistStructure() {
-    let ul_Dom = document.getElementById("resourceList");
+    return new Promise(function(resolve, reject) {
 
-    let ary_lang
-    if("lang" in localStorage) {
-      ary_lang = localStorage.getItem('lang');
-    } else {
-      ary_lang = 'tw';
-    }
+      let ul_Dom = document.getElementById("resourceList");
 
-    // create li and append to ul
-    ary_dataList[ary_lang].forEach((res, index) => {
-      let li_dom = document.createElement('li');
+      let ary_lang
+      if("lang" in localStorage) {
+        ary_lang = localStorage.getItem('lang');
+      } else {
+        ary_lang = 'tw';
+      }
 
-      let newLabel = document.createElement('label');
-      newLabel.setAttribute("for", 'checkbox_' + index);
-      // newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
-      newLabel.innerHTML = `<div class="numbering">${index + 1}</div>\
-                            <div class="row">\
-                              <div class="title">資源類型</div>\
-                              <div class="resourceName">${res.resourceName}</div>\
-                            </div>\
-                            <div class="row">\
-                              <div class="title">資源類型</div>\
-                              <div class="resourceType">${res.resourceType}</div>\
-                            </div>\
-                            <div class="row">\
-                              <div class="title">主題</div>\
-                              <div class="subject">${res.subject}</div>\
-                            </div>\
-                            <div class="row">\
-                              <div class="title">連結</div>\
-                              <div class="resourceUrl">\
-                                <a href="javascript:directTo(${res.uuid}, '${res.resourceUrl}')">點我連結</a>\
-                              </div>\
-                            </div>`;
+      // create li and append to ul
+      ary_dataList[ary_lang].forEach((res, index) => {
+        let li_dom = document.createElement('li');
 
-      let newCheckBox = document.createElement('input');
-      newCheckBox.type = 'checkbox';
-      newCheckBox.className = 'collapse-checkbox';
-      newCheckBox.id = 'checkbox_' + index;
-
-      let box_div_dom = document.createElement('div');
-      box_div_dom.className = 'box';
-      box_div_dom.innerHTML = `<div class="row">\
-                                <div class="title">起訂日期</div>\
-                                <div class="startDate">${res.startDate}</div>\
+        let newLabel = document.createElement('label');
+        newLabel.setAttribute("for", 'checkbox_' + index);
+        // newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
+        newLabel.innerHTML = `<div class="numbering">${index + 1}</div>\
+                              <div class="row">\
+                                <div class="title">資源類型</div>\
+                                <div class="resourceName">${res.resourceName}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">迄訂日期</div>\
-                                <div class="expireDate">${res.expireDate}</div>\
+                                <div class="title">資源類型</div>\
+                                <div class="resourceType">${res.resourceType}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">適用學院</div>\
-                                <div class="faculty">${res.faculty}</div>\
+                                <div class="title">主題</div>\
+                                <div class="subject">${res.subject}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">分類</div>\
-                                <div class="category">${res.category}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">類型</div class="title">\
-                                <div class="type">${res.type}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">資料庫代理商/出版商</div class="title">\
-                                <div class="publisher">${res.publisher}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">語言</div class="title">\
-                                <div class="language">${res.language}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">資源簡述(摘要)</div class="title">\
-                                <div class="resourceDescribe">${res.resourceDescribe}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">相關URL</div class="title">\
-                                <div class="relevanceUrlDescribe">${res.relevanceUrlDescribe}</div>\
-                              </div>\
-                              <div class="row hide">\
-                                <div class="title">注音</div class="title">\
-                                <div class="zhuyin">${res.zhuyin}</div>\
-                              </div>\
-                              <div class="row hide">\
-                                <div class="title">筆劃</div class="title">\
-                                <div class="strokes">${res.strokes}</div>\
-                              </div>\
-                              <div class="row hide">\
-                                <div class="title">英文</div class="title">\
-                                <div class="englishAlphabet">${res.englishAlphabet}</div>\
+                                <div class="title">連結</div>\
+                                <div class="resourceUrl">\
+                                  <a href="javascript:directTo(${res.uuid}, '${res.resourceUrl}')">點我連結</a>\
+                                </div>\
                               </div>`;
 
-      li_dom.appendChild(newLabel);
-      li_dom.appendChild(newCheckBox);
-      li_dom.appendChild(box_div_dom);
-      ul_Dom.appendChild(li_dom);
-    });
+        let newCheckBox = document.createElement('input');
+        newCheckBox.type = 'checkbox';
+        newCheckBox.className = 'collapse-checkbox';
+        newCheckBox.id = 'checkbox_' + index;
+
+        let box_div_dom = document.createElement('div');
+        box_div_dom.className = 'box';
+        box_div_dom.innerHTML = `<div class="row">\
+                                  <div class="title">起訂日期</div>\
+                                  <div class="startDate">${res.startDate}</div>\
+                                </div>\
+                                <div class="row">\
+                                  <div class="title">迄訂日期</div>\
+                                  <div class="expireDate">${res.expireDate}</div>\
+                                </div>\
+                                <div class="row">\
+                                  <div class="title">適用學院</div>\
+                                  <div class="faculty">${res.faculty}</div>\
+                                </div>\
+                                <div class="row">\
+                                  <div class="title">分類</div>\
+                                  <div class="category">${res.category}</div>\
+                                </div>\
+                                <div class="row">\
+                                  <div class="title">類型</div class="title">\
+                                  <div class="type">${res.type}</div>\
+                                </div>\
+                                <div class="row">\
+                                  <div class="title">資料庫代理商/出版商</div class="title">\
+                                  <div class="publisher">${res.publisher}</div>\
+                                </div>\
+                                <div class="row">\
+                                  <div class="title">語言</div class="title">\
+                                  <div class="language">${res.language}</div>\
+                                </div>\
+                                <div class="row">\
+                                  <div class="title">資源簡述(摘要)</div class="title">\
+                                  <div class="resourceDescribe">${res.resourceDescribe}</div>\
+                                </div>\
+                                <div class="row">\
+                                  <div class="title">相關URL</div class="title">\
+                                  <div class="relevanceUrlDescribe">${res.relevanceUrlDescribe}</div>\
+                                </div>\
+                                <div class="row hide">\
+                                  <div class="title">注音</div class="title">\
+                                  <div class="zhuyin">${res.zhuyin}</div>\
+                                </div>\
+                                <div class="row hide">\
+                                  <div class="title">筆劃</div class="title">\
+                                  <div class="strokes">${res.strokes}</div>\
+                                </div>\
+                                <div class="row hide">\
+                                  <div class="title">英文</div class="title">\
+                                  <div class="englishAlphabet">${res.englishAlphabet}</div>\
+                                </div>`;
+
+        li_dom.appendChild(newLabel);
+        li_dom.appendChild(newCheckBox);
+        li_dom.appendChild(box_div_dom);
+        ul_Dom.appendChild(li_dom);
+        resolve();
+      });
+    })
   }
   genDatalistStructure();
 
