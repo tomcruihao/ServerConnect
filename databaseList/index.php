@@ -97,6 +97,11 @@
       <div class="content-field" id="databaseList">
         <article>
           <ol class="list" id="resourceList">
+            <div v-if="'en' in eResource">
+              <li  v-for="(resourceInfo, index) in eResource['en']">
+                {{resourceInfo.uuid}}
+              </li>
+            </div>
             <li>
               <label for="checkbox_0">
                 <div class="numbering">1</div>
