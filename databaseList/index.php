@@ -365,6 +365,7 @@
           console.log(exception);
         },
         success: function(res) {
+          console.log(res);
           Object.keys(res.subjects).forEach(key => {
             self.subjects[key] = res.subjects[key];
             // let string_row = key;
