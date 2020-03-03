@@ -547,7 +547,10 @@
       lang: '',
       bulletinTitle: [],
       displayNumber: 0,
-      latestNewsList: []
+      latestNewsList: {
+        'en': [],
+        'tw': []
+      }
     },
     created: function() {
       let self = this;
