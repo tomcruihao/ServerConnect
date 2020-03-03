@@ -365,8 +365,9 @@
           console.log(exception);
         },
         success: function(res) {
-          console.log(res);
           Object.keys(res.subjects).forEach(key => {
+            console.log(key);
+            console.log(res.subjects[key]);
             self.subjects[key] = res.subjects[key];
             // let string_row = key;
             // ary_date.forEach(date => {
