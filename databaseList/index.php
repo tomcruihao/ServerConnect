@@ -104,11 +104,11 @@
           </ol>
           <ul class="pagination"></ul>
         </article>
-        <aside id="aside">
-          <button class="btn-accordion" @click="set_mobile_show_switch('open')">{{$t('message.index_bulletin')}}</button>
+        <aside id="aside" v-bind:class="{ show: isActive}">
+          <button class="btn-accordion" @click="set_mobile_show_switch(true)">{{$t('message.index_bulletin')}}</button>
           <div class="aside-mobile-header">
             <div class="title">{{$t('message.index_bulletin')}}</div>
-            <img src="img/clear.svg" class="close" @click="set_mobile_show_switch('close')">
+            <img src="img/clear.svg" class="close" @click="set_mobile_show_switch(false)">
           </div>
           <div class="aside-content">
             <div class="bulletin-board-frame" id="latestNews">
@@ -175,7 +175,7 @@
       </div>
     </div>
   </section>
-  <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
+  <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: mobile_frame }">
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{dialogHead_title}}</h4>
@@ -355,7 +355,7 @@
         'en': [],
         'tw': []
       },
-      mobile_frame: ''
+      mobile_frame: false
     },
     created: function() {
       let self = this;
