@@ -279,7 +279,7 @@
         aside.setLocale(i18n.locale);
 
         await genDatalistStructure(true);
-
+        await refreshList();
       }
     }
   })
