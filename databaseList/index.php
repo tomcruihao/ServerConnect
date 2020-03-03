@@ -264,12 +264,14 @@
       this.selector_lang = i18n.locale;
     },
     methods: {
-      setLang(event) {
+      async setLang(event) {
         i18n.locale = event.target.value;
         localStorage.setItem('lang', event.target.value);
         changeEsourceListLanguage();
 
         aside.setLocale(i18n.locale);
+
+        await genDatalistStructure();
       }
     }
   })

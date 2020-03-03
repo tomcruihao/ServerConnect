@@ -3,7 +3,7 @@
     {
       "uuid": "9bd7f763-0c33-4391-b86b-b9bd57fe76c8",
       "resourceName": "Resource 1",
-      "resourceUrl": "",
+      "resourceUrl": "https://www.ebsco.com/",
       "isProxy": "true",
       "resourceType": "Open Access",
       "startDate": "2020-01-01",
@@ -25,7 +25,7 @@
     {
       "uuid": "8e48671d-cce5-4730-a3fe-9fb79c18e061",
       "resourceName": "Resource 2",
-      "resourceUrl": "",
+      "resourceUrl": "https://www.ebsco.com/",
       "isProxy": "true",
       "resourceType": "Open Access",
       "startDate": "2020-01-01",
@@ -47,7 +47,7 @@
     {
       "uuid": "52c9a206-432d-4102-8a3c-197f5e86c2b2",
       "resourceName": "Resource 3",
-      "resourceUrl": "",
+      "resourceUrl": "https://www.ebsco.com/",
       "isProxy": "true",
       "resourceType": "Open Access",
       "startDate": "2020-01-01",
@@ -69,7 +69,7 @@
     {
       "uuid": "dcda29b9-5202-4040-972f-8607a3641785",
       "resourceName": "Resource 4",
-      "resourceUrl": "",
+      "resourceUrl": "https://www.ebsco.com/",
       "isProxy": "true",
       "resourceType": "Open Access",
       "startDate": "2020-01-01",
@@ -91,7 +91,7 @@
     {
       "uuid": "a0e0371c-33e2-4ce2-8cb4-1bb1624cb379",
       "resourceName": "Resource 5",
-      "resourceUrl": "",
+      "resourceUrl": "https://www.ebsco.com/",
       "isProxy": "true",
       "resourceType": "Open Access",
       "startDate": "2020-01-01",
@@ -115,7 +115,7 @@
     {
       "uuid": "9bd7f763-0c33-4391-b86b-b9bd57fe76c8",
       "resourceName": "資源 1",
-      "resourceUrl": "",
+      "resourceUrl": "https://www.ebsco.com/",
       "isProxy": "true",
       "resourceType": "Open Access",
       "startDate": "2020-01-01",
@@ -137,7 +137,7 @@
     {
       "uuid": "8e48671d-cce5-4730-a3fe-9fb79c18e061",
       "resourceName": "資源 2",
-      "resourceUrl": "",
+      "resourceUrl": "https://www.ebsco.com/",
       "isProxy": "true",
       "resourceType": "Open Access",
       "startDate": "2020-01-01",
@@ -159,7 +159,7 @@
     {
       "uuid": "52c9a206-432d-4102-8a3c-197f5e86c2b2",
       "resourceName": "資源 3",
-      "resourceUrl": "",
+      "resourceUrl": "https://www.ebsco.com/",
       "isProxy": "true",
       "resourceType": "Open Access",
       "startDate": "2020-01-01",
@@ -181,7 +181,7 @@
     {
       "uuid": "dcda29b9-5202-4040-972f-8607a3641785",
       "resourceName": "資源 4",
-      "resourceUrl": "",
+      "resourceUrl": "https://www.ebsco.com/",
       "isProxy": "true",
       "resourceType": "Open Access",
       "startDate": "2020-01-01",
@@ -203,7 +203,7 @@
     {
       "uuid": "a0e0371c-33e2-4ce2-8cb4-1bb1624cb379",
       "resourceName": "資源 5",
-      "resourceUrl": "",
+      "resourceUrl": "https://www.ebsco.com/",
       "isProxy": "true",
       "resourceType": "Open Access",
       "startDate": "2020-01-01",
