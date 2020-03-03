@@ -95,11 +95,11 @@
         </div>
       </div>
       <div class="content-field" id="databaseList">
-        <article>
-          <ol class="list" id="resourceList">
+        <article id="resourceList">
+          <ol class="list">
             {{listlang}}
             <div v-if="'en' in eResource">
-              <li  v-for="(resourceInfo, index) in eResource['en']">
+              <li v-for="(resourceInfo, index) in eResource['en']">
                 {{resourceInfo.uuid}}
               </li>
             </div>
