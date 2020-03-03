@@ -101,6 +101,80 @@
       <div class="content-field" id="databaseList">
         <article>
           <ol class="list" id="resourceList">
+            <li>
+              <label for="checkbox_0">
+                <div class="numbering">1</div>
+                <div class="row">
+                  <div class="title">資源類型</div>
+                  <div class="resourceName">EN_ACROSS檔案資源整合查詢平台</div>
+                </div>
+                <div class="row">
+                  <div class="title">資源類型</div>
+                  <div class="resourceType">免費OA</div>
+                </div>
+                <div class="row">
+                  <div class="title">主題</div>
+                  <div class="subject">社會科學類 人文藝術類</div>
+                </div>
+                <div class="row">
+                  <div class="title">連結</div>
+                  <div class="resourceUrl">
+                    <a href="javascript:directTo(undefined, 'http://across.archives.gov.tw/naahyint/search.jsp')">點我連結</a>
+                  </div>
+                </div>
+              </label>
+              <input type="checkbox" class="collapse-checkbox" id="checkbox_0">
+                <div class="box">
+                  <div class="row">
+                    <div class="title">起訂日期</div>
+                    <div class="startDate"></div>
+                  </div>
+                  <div class="row">
+                    <div class="title">迄訂日期</div>
+                    <div class="expireDate"></div>
+                  </div>
+                  <div class="row">
+                    <div class="title">適用學院</div>
+                    <div class="faculty">U 文學院 X 藝術學院</div>
+                  </div>
+                  <div class="row">
+                    <div class="title">分類</div>
+                    <div class="category"></div>
+                  </div>
+                  <div class="row">
+                    <div class="title">類型</div>
+                    <div class="type">全文資料庫</div>
+                  </div>
+                  <div class="row">
+                    <div class="title">資料庫代理商/出版商</div>
+                    <div class="publisher">檔案管理局</div>
+                  </div>
+                  <div class="row">
+                    <div class="title">語言</div>
+                    <div class="language">中文</div>
+                  </div>
+                  <div class="row">
+                    <div class="title">資源簡述(摘要)</div>
+                    <div class="resourceDescribe">TW_ACROSS檔案資源整合查詢平台由國家檔案局整合了12個機關47個資料庫, 是國內第一個跨機關的檔案資料整合平台, 利用metasearch的方式即時檢索各合作機關之資料庫, 減少個別資料庫查詢之困擾, 並快速獲得所需資訊。對於查詢老照片, 古文書, 史料, 老電影及歷史檔案, 提供很大的助益。</div>
+                  </div>
+                  <div class="row">
+                    <div class="title">相關URL</div>
+                    <div class="relevanceUrlDescribe"></div>
+                  </div>
+                  <div class="row hide">
+                    <div class="title">注音</div>
+                    <div class="zhuyin"></div>
+                  </div>
+                  <div class="row hide">
+                    <div class="title">筆劃</div>
+                    <div class="strokes">0</div>
+                  </div>
+                  <div class="row hide">
+                    <div class="title">英文</div>
+                    <div class="englishAlphabet">A</div>
+                  </div>
+                </div>
+            </li>
           </ol>
           <ul class="pagination"></ul>
         </article>
@@ -426,231 +500,137 @@
       },
       set_mobile_show_switch (status) {
         this.mobile_frame = status;
-        // switch(status) {
-        //   case 'open':
-        //     aside.classList.add("show");
-        //     break;
-        //   case 'close':
-        //     aside.classList.remove("show");
-        //     break;
-        //   default:
-        //     break;
-        // }
       }
     }
   })
 
-  // var latestNews = new Vue({
-  //   el:'#latestNews',
-  //   i18n,
-  //   data: {
-  //     lang: '',
-  //     bulletinTitle: {
-  //       'en': '',
-  //       'tw': ''
-  //     },
-  //     displayNumber: 0,
-  //     latestNewsList: {
-  //       'en': [],
-  //       'tw': []
-  //     }
-  //   },
-  //   created: function() {
-  //     let self = this;
-  //     $.ajax({
-  //       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
-  //       type: 'GET',
-  //       error: function(jqXHR, exception) {
-  //         //use url variable here
-  //         console.log(jqXHR);
-  //         console.log(exception);
-  //       },
-  //       success: function(res) {
-  //         self.bulletinTitle.en = res.en.bulletinTitle;
-  //         self.bulletinTitle.tw = res.tw.bulletinTitle;
-  //         self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-  //         self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-  //         console.log(self.latestNewsList);
-  //         // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-  //         self.displayNumber = res.displayNumber;
-
-  //         self.latestNewsList.en = self.latestNewsList.en.slice(0, self.displayNumber);
-  //         self.latestNewsList.tw = self.latestNewsList.tw.slice(0, self.displayNumber);
-  //       }
-  //     });
-  //   },
-  //   mounted: function() {
-  //     if("lang" in localStorage) {
-  //       this.lang = localStorage.getItem('lang');
-  //     } else {
-  //       this.lang = 'tw';
-  //     }
-  //   },
-  //   methods: {
-  //     closeDialogue: function() {
-  //       this.show = false;
-  //     },
-  //     showContent: function(latestNews) {
-  //       let message = {
-  //         'title': latestNews.title,
-  //         'content': latestNews.content
-  //       }
-  //       dialogue.setDialogue('latestNews', message);
-  //     },
-  //     setLocale: function(language) {
-  //       this.lang = language;
-  //     }
-  //   }
-  // });
-
-  // var subjectField = new Vue({
-  //   el:'#subjectField',
-  //   i18n,
-  //   data: {
-  //     subjects: {
-  //       'en': [],
-  //       'tw': []
-  //     },
-  //     lang: ''
-  //   },
-  //   created: function() {
-  //     let self = this;
-  //     $.ajax({
-  //       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
-  //       type: 'GET',
-  //       error: function(jqXHR, exception) {
-  //         //use url variable here
-  //         console.log(jqXHR);
-  //         console.log(exception);
-  //       },
-  //       success: function(res) {
-  //         Object.keys(res.subjects).forEach(key => {
-  //           self.subjects[key] = res.subjects[key];
-  //         })
-  //         console.log('subjects');
-  //         console.log(self.subjects);
-  //         // self.subjects = res.subjects;
-  //       }
-  //     });
-  //   },
-  //   mounted: function() {
-  //     if("lang" in localStorage) {
-  //       this.lang = localStorage.getItem('lang');
-  //     } else {
-  //       this.lang = 'tw';
-  //     }
-  //   },
-  //   methods:{
-  //     search: function(subject, className) {
-  //       searchBy(subject, className);
-  //       aside('close');
-  //     },
-  //     setLocale: function(language) {
-  //       this.lang = language;
-  //     }
-  //   }
-  // });
-
-  function genDatalistStructure() {
-    let ul_Dom = document.getElementById("resourceList");
-
-    let ary_lang
-    if("lang" in localStorage) {
-      ary_lang = localStorage.getItem('lang');
-    } else {
-      ary_lang = 'tw';
+  var eResourceListField = new Vue({
+    el:'#resourceList',
+    i18n,
+    data: {
+      lang: '',
+      eResource: []
+    },
+    created: function() {
+      let self = this;
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getList.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          Object.keys(res.subjects).forEach(key => {
+            self.eResource[key] = res[key];
+          })
+          console.log(self.eResource[key] = res[key]);
+          // self.subjects = res.subjects;
+        }
+      });
     }
+  })
+  // function genDatalistStructure() {
+  //   let ul_Dom = document.getElementById("resourceList");
 
-    // create li and append to ul
-    ary_dataList[ary_lang].forEach((res, index) => {
-      let li_dom = document.createElement('li');
+  //   let ary_lang
+  //   if("lang" in localStorage) {
+  //     ary_lang = localStorage.getItem('lang');
+  //   } else {
+  //     ary_lang = 'tw';
+  //   }
 
-      let newLabel = document.createElement('label');
-      newLabel.setAttribute("for", 'checkbox_' + index);
-      // newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
-      newLabel.innerHTML = `<div class="numbering">${index + 1}</div>\
-                            <div class="row">\
-                              <div class="title">資源類型</div>\
-                              <div class="resourceName">${res.resourceName}</div>\
-                            </div>\
-                            <div class="row">\
-                              <div class="title">資源類型</div>\
-                              <div class="resourceType">${res.resourceType}</div>\
-                            </div>\
-                            <div class="row">\
-                              <div class="title">主題</div>\
-                              <div class="subject">${res.subject}</div>\
-                            </div>\
-                            <div class="row">\
-                              <div class="title">連結</div>\
-                              <div class="resourceUrl">\
-                                <a href="javascript:directTo(${res.id}, '${res.url}')">點我連結</a>\
-                              </div>\
-                            </div>`;
+  //   // create li and append to ul
+  //   ary_dataList[ary_lang].forEach((res, index) => {
+  //     let li_dom = document.createElement('li');
 
-      let newCheckBox = document.createElement('input');
-      newCheckBox.type = 'checkbox';
-      newCheckBox.className = 'collapse-checkbox';
-      newCheckBox.id = 'checkbox_' + index;
+  //     let newLabel = document.createElement('label');
+  //     newLabel.setAttribute("for", 'checkbox_' + index);
+  //     // newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
+  //     newLabel.innerHTML = `<div class="numbering">${index + 1}</div>\
+  //                           <div class="row">\
+  //                             <div class="title">資源類型</div>\
+  //                             <div class="resourceName">${res.resourceName}</div>\
+  //                           </div>\
+  //                           <div class="row">\
+  //                             <div class="title">資源類型</div>\
+  //                             <div class="resourceType">${res.resourceType}</div>\
+  //                           </div>\
+  //                           <div class="row">\
+  //                             <div class="title">主題</div>\
+  //                             <div class="subject">${res.subject}</div>\
+  //                           </div>\
+  //                           <div class="row">\
+  //                             <div class="title">連結</div>\
+  //                             <div class="resourceUrl">\
+  //                               <a href="javascript:directTo(${res.id}, '${res.url}')">點我連結</a>\
+  //                             </div>\
+  //                           </div>`;
 
-      let box_div_dom = document.createElement('div');
-      box_div_dom.className = 'box';
-      box_div_dom.innerHTML = `<div class="row">\
-                                <div class="title">起訂日期</div>\
-                                <div class="startDate">${res.startDate}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">迄訂日期</div>\
-                                <div class="expireDate">${res.expireDate}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">適用學院</div>\
-                                <div class="faculty">${res.faculty}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">分類</div>\
-                                <div class="category">${res.category}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">類型</div class="title">\
-                                <div class="type">${res.type}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">資料庫代理商/出版商</div class="title">\
-                                <div class="publisher">${res.publisher}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">語言</div class="title">\
-                                <div class="language">${res.language}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">資源簡述(摘要)</div class="title">\
-                                <div class="resourceDescribe">${res.resourceDescribe}</div>\
-                              </div>\
-                              <div class="row">\
-                                <div class="title">相關URL</div class="title">\
-                                <div class="relevanceUrlDescribe">${res.relevanceUrlDescribe}</div>\
-                              </div>\
-                              <div class="row hide">\
-                                <div class="title">注音</div class="title">\
-                                <div class="zhuyin">${res.zhuyin}</div>\
-                              </div>\
-                              <div class="row hide">\
-                                <div class="title">筆劃</div class="title">\
-                                <div class="strokes">${res.strokes}</div>\
-                              </div>\
-                              <div class="row hide">\
-                                <div class="title">英文</div class="title">\
-                                <div class="englishAlphabet">${res.englishAlphabet}</div>\
-                              </div>`;
+  //     let newCheckBox = document.createElement('input');
+  //     newCheckBox.type = 'checkbox';
+  //     newCheckBox.className = 'collapse-checkbox';
+  //     newCheckBox.id = 'checkbox_' + index;
 
-      li_dom.appendChild(newLabel);
-      li_dom.appendChild(newCheckBox);
-      li_dom.appendChild(box_div_dom);
-      ul_Dom.appendChild(li_dom);
-    });
-  }
-  genDatalistStructure();
+  //     let box_div_dom = document.createElement('div');
+  //     box_div_dom.className = 'box';
+  //     box_div_dom.innerHTML = `<div class="row">\
+  //                               <div class="title">起訂日期</div>\
+  //                               <div class="startDate">${res.startDate}</div>\
+  //                             </div>\
+  //                             <div class="row">\
+  //                               <div class="title">迄訂日期</div>\
+  //                               <div class="expireDate">${res.expireDate}</div>\
+  //                             </div>\
+  //                             <div class="row">\
+  //                               <div class="title">適用學院</div>\
+  //                               <div class="faculty">${res.faculty}</div>\
+  //                             </div>\
+  //                             <div class="row">\
+  //                               <div class="title">分類</div>\
+  //                               <div class="category">${res.category}</div>\
+  //                             </div>\
+  //                             <div class="row">\
+  //                               <div class="title">類型</div class="title">\
+  //                               <div class="type">${res.type}</div>\
+  //                             </div>\
+  //                             <div class="row">\
+  //                               <div class="title">資料庫代理商/出版商</div class="title">\
+  //                               <div class="publisher">${res.publisher}</div>\
+  //                             </div>\
+  //                             <div class="row">\
+  //                               <div class="title">語言</div class="title">\
+  //                               <div class="language">${res.language}</div>\
+  //                             </div>\
+  //                             <div class="row">\
+  //                               <div class="title">資源簡述(摘要)</div class="title">\
+  //                               <div class="resourceDescribe">${res.resourceDescribe}</div>\
+  //                             </div>\
+  //                             <div class="row">\
+  //                               <div class="title">相關URL</div class="title">\
+  //                               <div class="relevanceUrlDescribe">${res.relevanceUrlDescribe}</div>\
+  //                             </div>\
+  //                             <div class="row hide">\
+  //                               <div class="title">注音</div class="title">\
+  //                               <div class="zhuyin">${res.zhuyin}</div>\
+  //                             </div>\
+  //                             <div class="row hide">\
+  //                               <div class="title">筆劃</div class="title">\
+  //                               <div class="strokes">${res.strokes}</div>\
+  //                             </div>\
+  //                             <div class="row hide">\
+  //                               <div class="title">英文</div class="title">\
+  //                               <div class="englishAlphabet">${res.englishAlphabet}</div>\
+  //                             </div>`;
+
+  //     li_dom.appendChild(newLabel);
+  //     li_dom.appendChild(newCheckBox);
+  //     li_dom.appendChild(box_div_dom);
+  //     ul_Dom.appendChild(li_dom);
+  //   });
+  // }
+  // genDatalistStructure();
 
   var dialogue = new Vue({
     el:'#dialogue',
