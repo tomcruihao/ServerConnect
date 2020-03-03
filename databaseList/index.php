@@ -105,10 +105,10 @@
           <ul class="pagination"></ul>
         </article>
         <aside id="aside">
-          <button class="btn-accordion" onclick="aside('open')">{{$t('message.index_bulletin')}}</button>
+          <button class="btn-accordion" @click="set_mobile_show_switch('open')">{{$t('message.index_bulletin')}}</button>
           <div class="aside-mobile-header">
             <div class="title">{{$t('message.index_bulletin')}}</div>
-            <img src="img/clear.svg" class="close" onclick="aside('close')">
+            <img src="img/clear.svg" class="close" @click="set_mobile_show_switch('close')">
           </div>
           <div class="aside-content">
             <div class="bulletin-board-frame" id="latestNews">
@@ -244,19 +244,6 @@
       }
     })
   }
-  function aside(status) {
-    let aside = document.getElementById('aside');
-    switch(status) {
-      case 'open':
-        aside.classList.add("show");
-        break;
-      case 'close':
-        aside.classList.remove("show");
-        break;
-      default:
-        break;
-    }
-  }
 
   function sortBy(sortName, options) {
     contactList.sort(sortName, options);
@@ -350,15 +337,25 @@
     }
   })
 
-  var subjectField = new Vue({
-    el:'#subjectField',
+  var aside = new Vue({
+    el:'#aside',
     i18n,
     data: {
       subjects: {
         'en': [],
         'tw': []
       },
-      lang: ''
+      lang: '',
+      bulletinTitle: {
+        'en': '',
+        'tw': ''
+      },
+      displayNumber: 0,
+      latestNewsList: {
+        'en': [],
+        'tw': []
+      },
+      mobile_frame: ''
     },
     created: function() {
       let self = this;
@@ -379,6 +376,28 @@
           // self.subjects = res.subjects;
         }
       });
+
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          self.bulletinTitle.en = res.en.bulletinTitle;
+          self.bulletinTitle.tw = res.tw.bulletinTitle;
+          self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          console.log(self.latestNewsList);
+          // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          self.displayNumber = res.displayNumber;
+
+          self.latestNewsList.en = self.latestNewsList.en.slice(0, self.displayNumber);
+          self.latestNewsList.tw = self.latestNewsList.tw.slice(0, self.displayNumber);
+        }
+      });
     },
     mounted: function() {
       if("lang" in localStorage) {
@@ -394,9 +413,143 @@
       },
       setLocale: function(language) {
         this.lang = language;
+      },
+      closeDialogue: function() {
+        this.show = false;
+      },
+      showContent: function(latestNews) {
+        let message = {
+          'title': latestNews.title,
+          'content': latestNews.content
+        }
+        dialogue.setDialogue('latestNews', message);
+      },
+      set_mobile_show_switch (status) {
+        this.mobile_frame = status;
+        // switch(status) {
+        //   case 'open':
+        //     aside.classList.add("show");
+        //     break;
+        //   case 'close':
+        //     aside.classList.remove("show");
+        //     break;
+        //   default:
+        //     break;
+        // }
       }
     }
-  });
+  })
+
+  // var latestNews = new Vue({
+  //   el:'#latestNews',
+  //   i18n,
+  //   data: {
+  //     lang: '',
+  //     bulletinTitle: {
+  //       'en': '',
+  //       'tw': ''
+  //     },
+  //     displayNumber: 0,
+  //     latestNewsList: {
+  //       'en': [],
+  //       'tw': []
+  //     }
+  //   },
+  //   created: function() {
+  //     let self = this;
+  //     $.ajax({
+  //       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
+  //       type: 'GET',
+  //       error: function(jqXHR, exception) {
+  //         //use url variable here
+  //         console.log(jqXHR);
+  //         console.log(exception);
+  //       },
+  //       success: function(res) {
+  //         self.bulletinTitle.en = res.en.bulletinTitle;
+  //         self.bulletinTitle.tw = res.tw.bulletinTitle;
+  //         self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+  //         self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+  //         console.log(self.latestNewsList);
+  //         // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+  //         self.displayNumber = res.displayNumber;
+
+  //         self.latestNewsList.en = self.latestNewsList.en.slice(0, self.displayNumber);
+  //         self.latestNewsList.tw = self.latestNewsList.tw.slice(0, self.displayNumber);
+  //       }
+  //     });
+  //   },
+  //   mounted: function() {
+  //     if("lang" in localStorage) {
+  //       this.lang = localStorage.getItem('lang');
+  //     } else {
+  //       this.lang = 'tw';
+  //     }
+  //   },
+  //   methods: {
+  //     closeDialogue: function() {
+  //       this.show = false;
+  //     },
+  //     showContent: function(latestNews) {
+  //       let message = {
+  //         'title': latestNews.title,
+  //         'content': latestNews.content
+  //       }
+  //       dialogue.setDialogue('latestNews', message);
+  //     },
+  //     setLocale: function(language) {
+  //       this.lang = language;
+  //     }
+  //   }
+  // });
+
+  // var subjectField = new Vue({
+  //   el:'#subjectField',
+  //   i18n,
+  //   data: {
+  //     subjects: {
+  //       'en': [],
+  //       'tw': []
+  //     },
+  //     lang: ''
+  //   },
+  //   created: function() {
+  //     let self = this;
+  //     $.ajax({
+  //       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
+  //       type: 'GET',
+  //       error: function(jqXHR, exception) {
+  //         //use url variable here
+  //         console.log(jqXHR);
+  //         console.log(exception);
+  //       },
+  //       success: function(res) {
+  //         Object.keys(res.subjects).forEach(key => {
+  //           self.subjects[key] = res.subjects[key];
+  //         })
+  //         console.log('subjects');
+  //         console.log(self.subjects);
+  //         // self.subjects = res.subjects;
+  //       }
+  //     });
+  //   },
+  //   mounted: function() {
+  //     if("lang" in localStorage) {
+  //       this.lang = localStorage.getItem('lang');
+  //     } else {
+  //       this.lang = 'tw';
+  //     }
+  //   },
+  //   methods:{
+  //     search: function(subject, className) {
+  //       searchBy(subject, className);
+  //       aside('close');
+  //     },
+  //     setLocale: function(language) {
+  //       this.lang = language;
+  //     }
+  //   }
+  // });
 
   function genDatalistStructure() {
     let ul_Dom = document.getElementById("resourceList");
@@ -536,69 +689,6 @@
       },
       closeDialogue: function() {
         this.show = false;
-      }
-    }
-  });
-
-  var latestNews = new Vue({
-    el:'#latestNews',
-    i18n,
-    data: {
-      lang: '',
-      bulletinTitle: {
-        'en': '',
-        'tw': ''
-      },
-      displayNumber: 0,
-      latestNewsList: {
-        'en': [],
-        'tw': []
-      }
-    },
-    created: function() {
-      let self = this;
-      $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
-        type: 'GET',
-        error: function(jqXHR, exception) {
-          //use url variable here
-          console.log(jqXHR);
-          console.log(exception);
-        },
-        success: function(res) {
-          self.bulletinTitle.en = res.en.bulletinTitle;
-          self.bulletinTitle.tw = res.tw.bulletinTitle;
-          self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-          self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-          console.log(self.latestNewsList);
-          // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-          self.displayNumber = res.displayNumber;
-
-          self.latestNewsList.en = self.latestNewsList.en.slice(0, self.displayNumber);
-          self.latestNewsList.tw = self.latestNewsList.tw.slice(0, self.displayNumber);
-        }
-      });
-    },
-    mounted: function() {
-      if("lang" in localStorage) {
-        this.lang = localStorage.getItem('lang');
-      } else {
-        this.lang = 'tw';
-      }
-    },
-    methods: {
-      closeDialogue: function() {
-        this.show = false;
-      },
-      showContent: function(latestNews) {
-        let message = {
-          'title': latestNews.title,
-          'content': latestNews.content
-        }
-        dialogue.setDialogue('latestNews', message);
-      },
-      setLocale: function(language) {
-        this.lang = language;
       }
     }
   });
