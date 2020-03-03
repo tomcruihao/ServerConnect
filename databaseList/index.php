@@ -114,7 +114,7 @@
             <div class="bulletin-board-frame" id="latestNews">
               <!-- <h3>{{bulletinTitle}}</h3> -->
               <ul v-if="lang === 'en'">
-                <li v-for="(latestNews, index) in latestNewsList['en']" class="latest-news">
+                <li v-for="(latestNews, index) in latestNewsList.en" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
@@ -123,7 +123,8 @@
                 </li>
               </ul>
               <ul v-else-if="lang === 'tw'">
-                <li v-for="(latestNews, index) in latestNewsList['tw']" class="latest-news">
+                {{latestNewsList.tw}}
+                <li v-for="(latestNews, index) in latestNewsList.tw" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
