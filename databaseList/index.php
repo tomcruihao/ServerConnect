@@ -212,6 +212,7 @@
 
   function refreshList() {
     return new Promise(function(resolve, reject) {
+      console.log('Refresh');
       contactList.reindex();
     })
   }
@@ -447,6 +448,8 @@
 
   function genDatalistStructure(local = false) {
     return new Promise(function(resolve, reject) {
+      console.log('generate List');
+
       let ul_Dom = document.getElementById("resourceList");
       if(local){
         ul_Dom.innerHTML = '';
@@ -458,6 +461,8 @@
       } else {
         ary_lang = 'tw';
       }
+
+      console.log(ary_lang);
 
       // create li and append to ul
       ary_dataList[ary_lang].forEach((res, index) => {
