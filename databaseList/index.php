@@ -520,8 +520,18 @@
           // self.subjects = res.subjects;
         }
       });
+    },
+    methods: {
+      setLang(event) {
+        i18n.locale = event.target.value;
+        localStorage.setItem('lang', event.target.value);
+        // changeEsourceListLanguage();
+
+        aside.setLocale(i18n.locale);
+      }
     }
   })
+
   // function genDatalistStructure() {
   //   let ul_Dom = document.getElementById("resourceList");
 
