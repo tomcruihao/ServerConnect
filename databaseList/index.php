@@ -502,6 +502,9 @@
       listlang: 'test',
       eResource: []
     },
+    created: function() {
+
+    }.
     mounted: function() {
       let self = this;
       $.ajax({
@@ -518,6 +521,7 @@
           })
           console.log(self.eResource);
           // self.subjects = res.subjects;
+          addListJs();
         }
       });
     },
@@ -819,6 +823,19 @@
       })
       resolve(linkWrap);
     })
+  }
+
+  function addListJs() {
+    var options = {
+      valueNames: ['numbering', 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes', 'englishAlphabet'],
+      page: 20,
+      pagination: {
+        innerWindow: 1,
+        outerWindow: 1
+      }
+      // indexAsync: true
+    };
+    contactList = new List('databaseList', options);
   }
 
   document.addEventListener("DOMContentLoaded", function(event) {
