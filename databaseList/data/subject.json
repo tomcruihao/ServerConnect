@@ -6,11 +6,11 @@
         "subjectTitle": "全文資料庫",
         "subjectList": [
           {
-            "name": "全文資料庫",
+            "name": "en_全文資料庫",
             "className": "subject"
           },
           {
-            "name": "索摘資料庫",
+            "name": "en_索摘資料庫",
             "className": "subject"
           }
         ]
@@ -19,11 +19,11 @@
         "subjectTitle": "適用學院",
         "subjectList": [
           {
-            "name": "文學院",
+            "name": "en_文學院",
             "className": "faculty"
           },
           {
-            "name": "藝術學院",
+            "name": "en_藝術學院",
             "className": "faculty"
           }
         ]
