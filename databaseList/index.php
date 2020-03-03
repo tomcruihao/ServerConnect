@@ -133,7 +133,6 @@
               </ul>
             </div>
             <div id="subjectField">
-              {{subjects}}
               <div v-if="lang === 'en'">
                 <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects.en">
                   <h3>{{subjectInfo.subjectTitle}}</h3>
@@ -389,12 +388,8 @@
         searchBy(subject, className);
         aside('close');
       },
-      setLang(event) {
-        i18n.locale = event.target.value;
-        localStorage.setItem('lang', event.target.value);
-        changeEsourceListLanguage();
-
-        latestNews.setLocale(i18n.locale);
+      setLocale: function(language) {
+        this.lang = language;
       }
     }
   });
