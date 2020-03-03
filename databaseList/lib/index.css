@@ -263,6 +263,12 @@ header nav .nav-list li.multi:before {
           align-items: center;
 }
 
+.mainTitle .lang-wrap select {
+  height: 24px;
+  background-color: #ffffff;
+  margin-left: 10px;
+}
+
 section {
   width: 100%;
   max-width: 1080px;

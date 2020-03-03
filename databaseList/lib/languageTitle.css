@@ -18,4 +18,10 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.mainTitle .lang-wrap select {
+  height: 24px;
+  background-color: #ffffff;
+  margin-left: 10px;
+}
 /*# sourceMappingURL=languageTitle.css.map */

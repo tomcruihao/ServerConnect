@@ -264,6 +264,12 @@ header nav .nav-list li.multi:before {
           align-items: center;
 }
 
+.mainTitle .lang-wrap select {
+  height: 24px;
+  background-color: #ffffff;
+  margin-left: 10px;
+}
+
 h3 {
   color: #333333;
   display: -webkit-box;
