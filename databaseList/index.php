@@ -351,7 +351,10 @@
     el:'#subjectField',
     i18n,
     data: {
-      subjects: [],
+      subjects: {
+        'en': [],
+        'tw': []
+      },
       lang: ''
     },
     created: function() {
