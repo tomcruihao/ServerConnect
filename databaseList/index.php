@@ -205,13 +205,8 @@
   var dataList = <?php echo $getJsonData; ?>;
 
   var ary_dataList = new Array();
-  ary_dataList['en'] = [];
-  ary_dataList['tw'] = [];
-
-  dataList.rows.forEach(item => {
-    ary_dataList['en'].push(item['en']);
-    ary_dataList['tw'].push(item['tw']);
-  })
+  ary_dataList['en'] = dataList.en;
+  ary_dataList['tw'] = dataList.tw;
 
   var contactList
 
