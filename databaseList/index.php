@@ -105,7 +105,9 @@
           <ul class="pagination"></ul>
         </article>
         <aside id="aside" v-bind:class="{ show: mobile_frame }">
-          <button class="btn-accordion" @click="set_mobile_show_switch(true)">{{$t('message.index_bulletin')}}</button>
+          <button class="btn-accordion" @click="set_mobile_show_switch(true)">
+            <img src="img/view_list.svg">
+          </button>
           <div class="aside-mobile-header">
             <div class="title">{{$t('message.index_bulletin')}}</div>
             <img src="img/clear.svg" class="close" @click="set_mobile_show_switch(false)">
