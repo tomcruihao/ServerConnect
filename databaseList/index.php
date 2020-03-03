@@ -510,7 +510,7 @@
           Object.keys(res).forEach(key => {
             self.eResource[key] = res[key];
           })
-          console.log(self.eResource[key] = res[key]);
+          console.log(self.eResource);
           // self.subjects = res.subjects;
         }
       });
