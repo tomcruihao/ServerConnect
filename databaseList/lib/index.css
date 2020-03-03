@@ -593,6 +593,8 @@ section {
 
 .content-field aside .btn-accordion {
   display: none;
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .content-field aside .aside-mobile-header {

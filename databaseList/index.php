@@ -118,7 +118,6 @@
                 <h3 v-if="lang === 'en'">{{bulletinTitle.en}}</h3>
                 <h3 v-else-if="lang === 'tw'">{{bulletinTitle.tw}}</h3>
               </div>
-              <!-- <h3>{{bulletinTitle}}</h3> -->
               <ul v-if="lang === 'en'">
                 <li v-for="(latestNews, index) in latestNewsList.en" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
@@ -275,8 +274,7 @@
         localStorage.setItem('lang', event.target.value);
         changeEsourceListLanguage();
 
-        latestNews.setLocale(i18n.locale);
-        subjectField.setLocale(i18n.locale);
+        aside.setLocale(i18n.locale);
       }
     }
   })
