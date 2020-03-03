@@ -135,7 +135,7 @@
             <div id="subjectField">
               {{subjects}}
               <div v-if="lang === 'en'">
-                <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects['en']">
+                <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects.en">
                   <h3>{{subjectInfo.subjectTitle}}</h3>
                   <ul>
                     <li v-for="(subject, index) in subjectInfo.subjectList">
@@ -145,7 +145,7 @@
                 </div>
               </div>
               <div v-else-if="lang === 'tw'">
-                <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects['tw']">
+                <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects.tw">
                   <h3>{{subjectInfo.subjectTitle}}</h3>
                   <ul>
                     <li v-for="(subject, index) in subjectInfo.subjectList">
