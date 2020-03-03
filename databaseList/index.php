@@ -97,6 +97,7 @@
       <div class="content-field" id="databaseList">
         <article>
           <ol class="list" id="resourceList">
+            {{eResource}}
             <div v-if="'en' in eResource">
               <li  v-for="(resourceInfo, index) in eResource['en']">
                 {{resourceInfo.uuid}}
