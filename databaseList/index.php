@@ -823,16 +823,16 @@
 
   document.addEventListener("DOMContentLoaded", function(event) {
     // Init list
-    var options = {
-      valueNames: ['numbering', 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes', 'englishAlphabet'],
-      page: 20,
-      pagination: {
-        innerWindow: 1,
-        outerWindow: 1
-      }
-      // indexAsync: true
-    };
-    contactList = new List('databaseList', options);
+    // var options = {
+    //   valueNames: ['numbering', 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes', 'englishAlphabet'],
+    //   page: 20,
+    //   pagination: {
+    //     innerWindow: 1,
+    //     outerWindow: 1
+    //   }
+    //   // indexAsync: true
+    // };
+    // contactList = new List('databaseList', options);
 
     createAlphabetAnchor();
   });
