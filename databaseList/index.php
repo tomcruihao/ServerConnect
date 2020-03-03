@@ -407,7 +407,7 @@
     } else {
       ary_lang = 'tw';
     }
-  
+
     // create li and append to ul
     ary_dataList[ary_lang].forEach((res, index) => {
       let li_dom = document.createElement('li');
@@ -565,14 +565,14 @@
         success: function(res) {
           self.bulletinTitle['en'] = res.en.bulletinTitle;
           self.bulletinTitle['tw'] = res.tw.bulletinTitle;
-          self.latestNewsList['en'] = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-          self.latestNewsList['tw'] = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           console.log(self.latestNewsList);
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
 
-          self.latestNewsList['en'] = self.latestNewsList['en'].slice(0, self.displayNumber);
-          self.latestNewsList['tw'] = self.latestNewsList['tw'].slice(0, self.displayNumber);
+          self.latestNewsList.en = self.latestNewsList.en.slice(0, self.displayNumber);
+          self.latestNewsList.tw = self.latestNewsList.tw.slice(0, self.displayNumber);
         }
       });
     },
