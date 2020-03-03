@@ -504,7 +504,7 @@
     },
     created: function() {
 
-    }.
+    },
     mounted: function() {
       let self = this;
       $.ajax({
