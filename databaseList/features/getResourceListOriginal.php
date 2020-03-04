@@ -41,5 +41,6 @@
   }
   $result['en'] = $result_en;
   $result['tw'] = $result_tw;
-  print_r($result);
+  
+  echo json_encode($result, JSON_UNESCAPED_UNICODE);
 ?>
