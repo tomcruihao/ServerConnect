@@ -1,7 +1,8 @@
 <?php
   header("Access-Control-Allow-Origin: *");
   header("Content-Security-Policy: upgrade-insecure-requests");
-  header('Content-Type: application/json');
+  // header('Content-Type: application/json');
+  header("Content-Type:text/html;charset=utf-8");
 
   $jsonFile_direct = '../data/eResourceList.json';
 
@@ -18,6 +19,9 @@
       // get position of language
       $i_en = array_search('en', array_keys($array));
       $i_tw = array_search('tw', array_keys($array));
+      echo $i_en.'<br>';
+      echo $i_tw.'<br>';
+      echo $key.'<br><br>';
 
       if($key != $i_en || $key != $i_tw) {
         array_push($temp_common, $value);
