@@ -37,8 +37,8 @@
   }
   foreach($result as $key => $value) {
     foreach($resourceList['tw'] as $tkey => $tvalue) {
-      echo $result['uuid'].' and '.$tvalue['uuid'].'<br>';
-      if(strcasecmp($result['uuid'], $tvalue['uuid']) == 0) {
+      // echo $value['uuid'].' and '.$tvalue['uuid'].'<br>';
+      if(strcasecmp($value['uuid'], $tvalue['uuid']) == 0) {
         $stack = array(
           "en" => array(
             "resourceName" => $tvalue['resourceName'],
@@ -58,7 +58,7 @@
       }
     }
   }
-
+  print_r($result);
   // print_r(json_encode($result, JSON_UNESCAPED_UNICODE));
   // foreach($resourceList['tw'] as $key => $value) {
   //   $twTemp[$value['uuid']] = $value;
