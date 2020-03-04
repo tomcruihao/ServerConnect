@@ -30,13 +30,13 @@
         if(strcasecmp($firstChar, $stroke['char']) == 0) {
           $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
           $firstZhuyin = $zhuyin[0];
-          $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
-          $resourceList['rows'][$key]['englishAlphabet'] = '';
+          $resourceList['rows'][$key_lang][$key_r]['zhuyin'] = $firstZhuyin;
+          $resourceList['rows'][$key_lang][$key_r]['englishAlphabet'] = '';
 
           if(strlen(strval($stroke['strokes'])) < 2) {
-            $resourceList['rows'][$key]['strokes'] = '0'.$stroke['strokes'];
+            $resourceList['rows'][$key_lang][$key_r]['strokes'] = '0'.$stroke['strokes'];
           } else {
-            $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
+            $resourceList['rows'][$key_lang][$key_r]['strokes'] = $stroke['strokes'];
           }
 
           $resultExist = true;
