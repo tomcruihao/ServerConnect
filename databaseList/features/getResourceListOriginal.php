@@ -15,7 +15,7 @@
   foreach($resourceList as $key => $value) {
     $temp_common = [];
     foreach($resourceList as $key => $value) {
-      echo $key;
+      echo $value;
       if(!(strcasecmp($key, 'en') == 0) || !(strcasecmp($key, 'tw') == 0)) {
         array_push($temp_common, $value);
       }
