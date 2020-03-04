@@ -13,7 +13,14 @@
   $temp_tw = [];
 
   foreach($resourceList as $key => $value) {
-    print_r($value);
+    $temp_common = [];
+    foreach($resourceList as $key => $value) {
+      if($key !== 'en' || 'tw') {
+        array_push($temp_common, $value);
+      }
+    }
+
+    print_r($temp_common);
     // $resourceList['en']
   }
 
