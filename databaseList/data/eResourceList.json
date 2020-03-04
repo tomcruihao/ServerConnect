@@ -954,7 +954,7 @@
   "tw": [
     {
       "uuid": "e7958e9b-47f4-4955-b743-33d2c305a8b1",
-      "resourceName": "ACROSS檔案資源整合查詢平台_en",
+      "resourceName": "ACROSS檔案資源整合查詢平台",
       "resourceUrl": "http://across.archives.gov.tw/naahyint/search.jsp",
       "isProxy": "",
       "resourceType": "免費OA",
@@ -973,7 +973,7 @@
     },
     {
       "uuid": "06cb9b1a-b769-4c7b-aa66-b2b564eaa3c0",
-      "resourceName": "HKJO - Hong Kong Journals Online_en",
+      "resourceName": "HKJO - Hong Kong Journals Online",
       "resourceUrl": "http://sunzi1.lib.hku.hk/hkjo/index.jsp",
       "isProxy": "",
       "resourceType": "免費OA",
@@ -992,7 +992,7 @@
     },
     {
       "uuid": "c34a0fd2-0f6a-4349-ae54-18d21a931a44",
-      "resourceName": "SOCOLAR (Open Access資源一站式檢索服務平台)_en",
+      "resourceName": "SOCOLAR (Open Access資源一站式檢索服務平台)",
       "resourceUrl": "http://www.socolar.com/",
       "isProxy": "",
       "resourceType": "免費OA",
@@ -1011,7 +1011,7 @@
     },
     {
       "uuid": "6cf1e02f-10b1-4d4f-88a0-226ccd25ae6c",
-      "resourceName": "中央研究院漢籍電子文獻(免費每年2月需續訂)(校園內無須輸入帳號及密碼即可瀏覽)。包含: 漢籍全文資料庫/古漢語文獻語料庫/古漢語語料庫(開放)/臺灣文獻叢刊/近代史數位資料庫/清代經世文編/近現代中國史事日誌/新民說/內閣漢文題本專題檔案：刑科婚姻類提要/文心雕龍/佛經三論/姚際恒著作集/泉翁大全集/正統道藏/話集成/新清史-本紀/府詩集/閩南語俗曲唱本「歌仔冊」/人文資料庫師生版1.1 電子書_en",
+      "resourceName": "中央研究院漢籍電子文獻(免費每年2月需續訂)(校園內無須輸入帳號及密碼即可瀏覽)。包含: 漢籍全文資料庫/古漢語文獻語料庫/古漢語語料庫(開放)/臺灣文獻叢刊/近代史數位資料庫/清代經世文編/近現代中國史事日誌/新民說/內閣漢文題本專題檔案：刑科婚姻類提要/文心雕龍/佛經三論/姚際恒著作集/泉翁大全集/正統道藏/話集成/新清史-本紀/府詩集/閩南語俗曲唱本「歌仔冊」/人文資料庫師生版1.1 電子書",
       "resourceUrl": "http://hanji.sinica.edu.tw/",
       "isProxy": "",
       "resourceType": "訂購",
@@ -1030,7 +1030,7 @@
     },
     {
       "uuid": "b0c2c14f-534f-4926-93b8-7567be0c8a5c",
-      "resourceName": "台灣期刊論文索引_en",
+      "resourceName": "台灣期刊論文索引",
       "resourceUrl": "http://readopac.ncl.edu.tw/nclJournal/",
       "isProxy": "",
       "resourceType": "免費OA",
@@ -1049,7 +1049,7 @@
     },
     {
       "uuid": "d714445b-f572-4eaa-a1b5-14395b4e6e61",
-      "resourceName": "中華民國統計資訊網_en",
+      "resourceName": "中華民國統計資訊網",
       "resourceUrl": "http://www1.stat.gov.tw/mp.asp?mp=3",
       "isProxy": "",
       "resourceType": "免費OA",
@@ -1068,7 +1068,7 @@
     },
     {
       "uuid": "65cbefa7-fe25-4d52-8d36-f3b3558d59a7",
-      "resourceName": "全國法規資料庫_en",
+      "resourceName": "全國法規資料庫",
       "resourceUrl": "http://law.moj.gov.tw/",
       "isProxy": "",
       "resourceType": "免費OA",
