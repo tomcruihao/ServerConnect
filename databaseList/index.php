@@ -546,7 +546,7 @@
       window.setTimeout(( () => {
         // contactList.update();
         contactList.reIndex();
-      } ), 1000);
+      } ), 500);
     }
   }
   genDatalistStructure();
