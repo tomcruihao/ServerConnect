@@ -6,7 +6,7 @@
   $jsonFile_direct = '../data/eResourceList.json';
 
   // get resource list
-  $getResourceListJsonData = file_get_contents('../data/eResourceList.json');
+  $getResourceListJsonData = file_get_contents($jsonFile_direct);
   $resourceList = json_decode($getResourceListJsonData, true);
 
   // get strokes list
@@ -18,43 +18,45 @@
   //   echo mb_detect_encoding($firstChar);
   // }
 
-  foreach($resourceList['rows'] as $key => $row) {
-    // get first char
-    $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
-    $firstChar = $chars[0];
-    $resultExist = false;
+  print_r($resourceList);
 
-    foreach($strokes as $stroke) {
-      if(strcasecmp($firstChar, $stroke['char']) == 0) {
-        $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
-        $firstZhuyin = $zhuyin[0];
-        $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
-        $resourceList['rows'][$key]['englishAlphabet'] = '';
+  // foreach($resourceList['rows'] as $key => $row) {
+  //   // get first char
+  //   $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
+  //   $firstChar = $chars[0];
+  //   $resultExist = false;
 
-        if(strlen(strval($stroke['strokes'])) < 2) {
-          $resourceList['rows'][$key]['strokes'] = '0'.$stroke['strokes'];
-        } else {
-          $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
-        }
+  //   foreach($strokes as $stroke) {
+  //     if(strcasecmp($firstChar, $stroke['char']) == 0) {
+  //       $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
+  //       $firstZhuyin = $zhuyin[0];
+  //       $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
+  //       $resourceList['rows'][$key]['englishAlphabet'] = '';
 
-        $resultExist = true;
-        break;
-      }
-    }
+  //       if(strlen(strval($stroke['strokes'])) < 2) {
+  //         $resourceList['rows'][$key]['strokes'] = '0'.$stroke['strokes'];
+  //       } else {
+  //         $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
+  //       }
 
-    if(!$resultExist) {
-      $resourceList['rows'][$key]['englishAlphabet'] = $firstChar;
-      $resourceList['rows'][$key]['zhuyin'] = '';
-      $resourceList['rows'][$key]['strokes'] = '0';
-    }
+  //       $resultExist = true;
+  //       break;
+  //     }
+  //   }
 
-    // $newChar = iconv(mb_detect_encoding($firstChar), "big5", $firstChar);
+  //   if(!$resultExist) {
+  //     $resourceList['rows'][$key]['englishAlphabet'] = $firstChar;
+  //     $resourceList['rows'][$key]['zhuyin'] = '';
+  //     $resourceList['rows'][$key]['strokes'] = '0';
+  //   }
 
-    // echo $newChar;
-  }
-  // write back
-  file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  //   // $newChar = iconv(mb_detect_encoding($firstChar), "big5", $firstChar);
 
-  $res = array('type' => 'success', 'mesage' => 'success');
-  echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  //   // echo $newChar;
+  // }
+  // // write back
+  // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+
+  // $res = array('type' => 'success', 'mesage' => 'success');
+  // echo json_encode($res, JSON_UNESCAPED_UNICODE);
 ?>
