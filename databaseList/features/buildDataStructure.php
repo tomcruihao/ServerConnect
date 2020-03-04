@@ -33,7 +33,7 @@
         "relevvanceUrlDescribe" => $value['relevvanceUrlDescribe']
       )
     );
-    array_push($result);
+    array_push($result,$stack);
   }
   print_r($result);
   // foreach($resourceList['tw'] as $key => $value) {
