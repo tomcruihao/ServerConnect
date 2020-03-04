@@ -50,7 +50,6 @@
         $resourceList[$key_lang][$key_r]['zhuyin'] = '';
         $resourceList[$key_lang][$key_r]['strokes'] = '0';
       }
-      print_r($resourceList[$key_lang][$key_r]);
     }
   }
 
