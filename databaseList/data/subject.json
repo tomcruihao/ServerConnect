@@ -7,11 +7,11 @@
         "subjectList": [
           {
             "name": "en_全文資料庫",
-            "className": "subject"
+            "className": "category"
           },
           {
             "name": "en_索摘資料庫",
-            "className": "subject"
+            "className": "category"
           }
         ]
       }, {
@@ -36,11 +36,11 @@
         "subjectList": [
           {
             "name": "全文資料庫",
-            "className": "subject"
+            "className": "category"
           },
           {
             "name": "索摘資料庫",
-            "className": "subject"
+            "className": "category"
           }
         ]
       }, {
