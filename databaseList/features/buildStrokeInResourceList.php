@@ -31,13 +31,13 @@
         if(strcasecmp($firstChar, $stroke['char']) == 0) {
           $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
           $firstZhuyin = $zhuyin[0];
-          $resourceList['rows'][$key_lang][$key_r]['zhuyin'] = $firstZhuyin;
-          $resourceList['rows'][$key_lang][$key_r]['englishAlphabet'] = '';
+          $resourceList[$key_lang][$key_r]['zhuyin'] = $firstZhuyin;
+          $resourceList[$key_lang][$key_r]['englishAlphabet'] = '';
 
           if(strlen(strval($stroke['strokes'])) < 2) {
-            $resourceList['rows'][$key_lang][$key_r]['strokes'] = '0'.$stroke['strokes'];
+            $resourceList[$key_lang][$key_r]['strokes'] = '0'.$stroke['strokes'];
           } else {
-            $resourceList['rows'][$key_lang][$key_r]['strokes'] = $stroke['strokes'];
+            $resourceList[$key_lang][$key_r]['strokes'] = $stroke['strokes'];
           }
 
           $resultExist = true;
@@ -46,11 +46,11 @@
       }
 
       if(!$resultExist) {
-        $resourceList['rows'][$key_lang][$key_r]['englishAlphabet'] = $firstChar;
-        $resourceList['rows'][$key_lang][$key_r]['zhuyin'] = '';
-        $resourceList['rows'][$key_lang][$key_r]['strokes'] = '0';
+        $resourceList[$key_lang][$key_r]['englishAlphabet'] = $firstChar;
+        $resourceList[$key_lang][$key_r]['zhuyin'] = '';
+        $resourceList[$key_lang][$key_r]['strokes'] = '0';
       }
-      print_r($resourceList['rows'][$key_lang][$key_r]);
+      print_r($resourceList[$key_lang][$key_r]);
     }
   }
   // foreach($resourceList['rows'] as $key => $row) {
