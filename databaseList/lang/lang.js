@@ -12,6 +12,8 @@ const messages = {
       index_bulletin: 'Bulletin',
       index_more: 'More',
       index_placeholder_text: 'Search Resource',
+      // All Latest News page
+      h1_all_latestNews: 'Latest News',
       // setting page
       h1_settings: 'Setting',
       generalSetting: 'General Setting',
@@ -60,6 +62,8 @@ const messages = {
       index_bulletin: '公佈欄',
       index_more: '更多',
       index_placeholder_text: '搜尋資源',
+      // All Latest News page
+      h1_all_latestNews: '最新消息',
       // setting page
       h1_settings: '設定',
       generalSetting: '一般設定',
