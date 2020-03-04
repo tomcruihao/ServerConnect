@@ -407,7 +407,8 @@
     methods:{
       search: function(subject, className) {
         searchBy(subject, className);
-        aside('close');
+        this.set_mobile_show_switch(false);
+        // aside('close');
       },
       setLocale: function(language) {
         this.lang = language;
