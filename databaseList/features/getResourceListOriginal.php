@@ -21,7 +21,7 @@
       // $i_tw = array_search('tw', array_keys($value));
 
       if(!(strcasecmp('tw', $vkey) == 0) || !(strcasecmp('en', $vkey) == 0)) {
-        array_push($temp_common, $vValue);
+        array_push($temp_common, array($vkey => $vValue));
       }
     }
 
