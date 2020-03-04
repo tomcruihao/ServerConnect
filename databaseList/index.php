@@ -438,6 +438,44 @@
     }
   })
 
+  let listTitles = [];
+  listTitles['en'] = {
+    "resourceName": "Resource Name",
+    "resourceUrlTitle": "Link",
+    "resourceUrlDisplayName": "Click Me",
+    "isProxy": "Proxy",
+    "resourceType": "Resource Type",
+    "startDate": "Start Date",
+    "expireDate": "Expire Date",
+    "faculty": "Faculty",
+    "department": "Department",
+    "subject": "Subject",
+    "category": "Category",
+    "type": "Type",
+    "publisher": "Publisher",
+    "language": "Language",
+    "Description": "test",
+    "relevanceUrlDescribe": "Revelance Link"
+  }
+  listTitles['tw'] = {
+    "resourceName": "資源名稱",
+    "resourceUrlTitle": "連結",
+    "resourceUrlDisplayName": "點我連結",
+    "isProxy": "代理",
+    "resourceType": "資源類型",
+    "startDate": "起訂日期",
+    "expireDate": "迄訂日期",
+    "faculty": "適用學院",
+    "department": "適用科系",
+    "subject": "主題",
+    "category": "分類",
+    "type": "類型",
+    "publisher": "出版商",
+    "language": "語言",
+    "Description": "資源簡述",
+    "relevanceUrlDescribe": "相關連結"
+  }
+
   function genDatalistStructure(local = false) {
     let ul_Dom = document.getElementById("resourceList");
     if(local){
@@ -451,11 +489,8 @@
       ary_lang = 'tw';
     }
 
-    console.log(ary_lang);
-
     // create li and append to ul
     ary_dataList[ary_lang].forEach((res, index) => {
-      console.log(res);
       let li_dom = document.createElement('li');
 
       let newLabel = document.createElement('label');
@@ -463,21 +498,21 @@
       // newLabel.innerHTML = `<div class="resourceName">${res.resourceName}<div class="sort_tag"></div></div>`;
       newLabel.innerHTML = `<div class="numbering">${index + 1}</div>\
                             <div class="row">\
-                              <div class="title">資源類型</div>\
+                              <div class="title">${listTitles[ary_lang].resourceName}</div>\
                               <div class="resourceName">${res.resourceName}</div>\
                             </div>\
                             <div class="row">\
-                              <div class="title">資源類型</div>\
+                              <div class="title">${listTitles[ary_lang].resourceType}</div>\
                               <div class="resourceType">${res.resourceType}</div>\
                             </div>\
                             <div class="row">\
-                              <div class="title">主題</div>\
+                              <div class="title">${listTitles[ary_lang].subject}</div>\
                               <div class="subject">${res.subject}</div>\
                             </div>\
                             <div class="row">\
-                              <div class="title">連結</div>\
+                              <div class="title">${listTitles[ary_lang].resourceUrlTitle}</div>\
                               <div class="resourceUrl">\
-                                <a href="javascript:directTo(${res.uuid}, '${res.resourceUrl}')">點我連結</a>\
+                                <a href="javascript:directTo(${res.uuid}, '${res.resourceUrl}')">${listTitles[ary_lang].resourceUrlDisplayName}</a>\
                               </div>\
                             </div>`;
 
@@ -489,27 +524,27 @@
       let box_div_dom = document.createElement('div');
       box_div_dom.className = 'box';
       box_div_dom.innerHTML = `<div class="row">\
-                                <div class="title">起訂日期</div>\
+                                <div class="title">${listTitles[ary_lang].startDate}</div>\
                                 <div class="startDate">${res.startDate}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">迄訂日期</div>\
+                                <div class="title">${listTitles[ary_lang].expireDate}</div>\
                                 <div class="expireDate">${res.expireDate}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">適用學院</div>\
+                                <div class="title">${listTitles[ary_lang].faculty}</div>\
                                 <div class="faculty">${res.faculty}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">分類</div>\
+                                <div class="title">${listTitles[ary_lang].category}</div>\
                                 <div class="category">${res.category}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">類型</div class="title">\
+                                <div class="title">${listTitles[ary_lang].type}</div class="title">\
                                 <div class="type">${res.type}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">資料庫代理商/出版商</div class="title">\
+                                <div class="title">${listTitles[ary_lang].publisher}</div class="title">\
                                 <div class="publisher">${res.publisher}</div>\
                               </div>\
                               <div class="row">\
@@ -517,11 +552,11 @@
                                 <div class="language">${res.language}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">資源簡述(摘要)</div class="title">\
+                                <div class="title">${listTitles[ary_lang].resourceDescribe}</div class="title">\
                                 <div class="resourceDescribe">${res.resourceDescribe}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">相關URL</div class="title">\
+                                <div class="title">${listTitles[ary_lang].relevanceUrlDescribe}</div class="title">\
                                 <div class="relevanceUrlDescribe">${res.relevanceUrlDescribe}</div>\
                               </div>\
                               <div class="row hide">\
