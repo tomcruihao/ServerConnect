@@ -37,15 +37,17 @@
   // $strokes_map = array_fill(1,70, false);
 
   // match with the map
-  foreach($resourceList['rows'] as $key => $row) {
-    if($row['zhuyin'] !== '') {
-      $zhuyin_map[$row['zhuyin']] = true;
-    } else if(preg_match("/^[a-zA-Z]$/", $row['englishAlphabet'])) {
-      $char_uppercase = strtoupper($row['englishAlphabet']);
-      $englishAlphabet_map[$char_uppercase] = true;
-    }
-    if($row['strokes'] !== '0') {
-      $strokes_map[$row['strokes']] = true;
+  foreach($resourceList as $key_lang => $language) {
+    foreach($language as $key => $row) {
+      if($row['zhuyin'] !== '') {
+        $zhuyin_map[$row['zhuyin']] = true;
+      } else if(preg_match("/^[a-zA-Z]$/", $row['englishAlphabet'])) {
+        $char_uppercase = strtoupper($row['englishAlphabet']);
+        $englishAlphabet_map[$char_uppercase] = true;
+      }
+      if($row['strokes'] !== '0') {
+        $strokes_map[$row['strokes']] = true;
+      }
     }
   }
 
@@ -75,7 +77,7 @@
   
   print_r($result);
   // write back
-  file_put_contents($jsonFile_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
-  $res = array('type' => 'success', 'mesage' => 'success');
+  // file_put_contents($jsonFile_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
+  // $res = array('type' => 'success', 'mesage' => 'success');
   // echo $res;
 ?>
