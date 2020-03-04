@@ -22,9 +22,9 @@
       echo $i_en.'<br>';
       echo $i_tw.'<br>';
       echo $key.'<br>';
-      echo ($key != $i_en || $key != $i_tw).'<br><br>';
+      echo (!(strcasecmp($i_en, $key) == 0) || !(strcasecmp($i_en, $key) == 0)).'<br><br>';
 
-      if($key != $i_en || $key != $i_tw) {
+      if(!(strcasecmp($i_en, $key) == 0) || !(strcasecmp($i_en, $key) == 0)) {
         array_push($temp_common, $value);
       }
     }
