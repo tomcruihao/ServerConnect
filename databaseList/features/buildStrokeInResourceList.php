@@ -53,43 +53,10 @@
       print_r($resourceList[$key_lang][$key_r]);
     }
   }
-  // foreach($resourceList['rows'] as $key => $row) {
-  //   // get first char
-  //   $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
-  //   $firstChar = $chars[0];
-  //   $resultExist = false;
 
-  //   foreach($strokes as $stroke) {
-  //     if(strcasecmp($firstChar, $stroke['char']) == 0) {
-  //       $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
-  //       $firstZhuyin = $zhuyin[0];
-  //       $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
-  //       $resourceList['rows'][$key]['englishAlphabet'] = '';
+  // write back
+  file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
-  //       if(strlen(strval($stroke['strokes'])) < 2) {
-  //         $resourceList['rows'][$key]['strokes'] = '0'.$stroke['strokes'];
-  //       } else {
-  //         $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
-  //       }
-
-  //       $resultExist = true;
-  //       break;
-  //     }
-  //   }
-
-  //   if(!$resultExist) {
-  //     $resourceList['rows'][$key]['englishAlphabet'] = $firstChar;
-  //     $resourceList['rows'][$key]['zhuyin'] = '';
-  //     $resourceList['rows'][$key]['strokes'] = '0';
-  //   }
-
-  //   // $newChar = iconv(mb_detect_encoding($firstChar), "big5", $firstChar);
-
-  //   // echo $newChar;
-  // }
-  // // write back
-  // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
-
-  // $res = array('type' => 'success', 'mesage' => 'success');
-  // echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  $res = array('type' => 'success', 'mesage' => 'success');
+  echo json_encode($res, JSON_UNESCAPED_UNICODE);
 ?>
