@@ -15,8 +15,11 @@
   foreach($resourceList as $key => $value) {
     $temp_common = [];
     foreach($resourceList as $key => $value) {
-      echo $value;
-      if(!(strcasecmp($key, 'en') == 0) || !(strcasecmp($key, 'tw') == 0)) {
+      // get position of language
+      $i_en = array_search('en', array_keys($array));
+      $i_tw = array_search('tw', array_keys($array));
+
+      if($key != $i_en || $key != $i_tw) {
         array_push($temp_common, $value);
       }
     }
