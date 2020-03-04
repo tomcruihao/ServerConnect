@@ -35,7 +35,7 @@
     );
     array_push($result,$stack);
   }
-  print_r($result);
+  print_r(json_encode($result, JSON_UNESCAPED_UNICODE));
   // foreach($resourceList['tw'] as $key => $value) {
   //   $twTemp[$value['uuid']] = $value;
   // }
