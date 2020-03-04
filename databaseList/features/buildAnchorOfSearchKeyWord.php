@@ -78,5 +78,5 @@
   // write back
   file_put_contents($jsonFile_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
   $res = array('type' => 'success', 'mesage' => 'success');
-  echo $res;
+  echo json_encode($res, JSON_UNESCAPED_UNICODE);
 ?>
