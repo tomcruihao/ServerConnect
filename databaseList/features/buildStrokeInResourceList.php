@@ -20,6 +20,7 @@
 
   // 1st foreach loop languages
   foreach($resourceList as $key_lang => $language) {
+    print_r($key_lang);
     foreach($language as $key_r => $row) {
       // get first char
       $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
