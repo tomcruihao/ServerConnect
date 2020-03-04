@@ -2,7 +2,7 @@
    "http://www.w3.org/TR/html4/strict.dtd">
 <?php
   // $getJsonData = file_get_contents('data/eResourceList.json');
-  $jsonFile_direct = '../data/eResourceList.json';
+  $jsonFile_direct = 'data/eResourceList.json';
 
   // get resource list
   $getResourceListJsonData = file_get_contents($jsonFile_direct);
