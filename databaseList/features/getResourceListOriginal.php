@@ -1,8 +1,8 @@
 <?php
   header("Access-Control-Allow-Origin: *");
   header("Content-Security-Policy: upgrade-insecure-requests");
-  // header('Content-Type: application/json');
-  header("Content-Type:text/html;charset=utf-8");
+  header('Content-Type: application/json');
+  // header("Content-Type:text/html;charset=utf-8");
 
   $jsonFile_direct = '../data/eResourceList.json';
 
@@ -17,16 +17,15 @@
     $temp_common = [];
     foreach($value as $vkey => $vValue) {
       // get position of language
-      echo $vkey;
       // $i_en = array_search('en', array_keys($value));
       // $i_tw = array_search('tw', array_keys($value));
 
-      // if(!(strcasecmp($i_en, $key) == 0) || !(strcasecmp($i_en, $key) == 0)) {
-      //   array_push($temp_common, $value);
-      // }
+      if(!(strcasecmp('tw', $vkey) == 0) || !(strcasecmp('en', $vkey) == 0)) {
+        array_push($temp_common, $value);
+      }
     }
 
-    // print_r($temp_common);
+    print_r($temp_common);
     // $resourceList['en']
   }
 
