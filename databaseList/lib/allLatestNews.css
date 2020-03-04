@@ -269,7 +269,7 @@ header nav .nav-list li.multi:before {
   margin-left: 10px;
 }
 
-body .app-content {
+body .mainTitle {
   width: 100%;
   max-width: 600px;
   margin: 20px auto;
@@ -278,17 +278,20 @@ body .app-content {
           box-sizing: border-box;
 }
 
-body .app-content .accordion {
+body .accordion {
   width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-body .app-content .accordion input {
+body .accordion input {
   display: none;
 }
 
-body .app-content .accordion .box {
+body .accordion .box {
   position: relative;
   background: white;
   height: 64px;
@@ -296,7 +299,7 @@ body .app-content .accordion .box {
   transition: all .15s ease-in-out;
 }
 
-body .app-content .accordion .box.title {
+body .accordion .box.title {
   background: #ffa701;
   cursor: initial;
   padding: 18px 0;
@@ -304,7 +307,7 @@ body .app-content .accordion .box.title {
           box-sizing: border-box;
 }
 
-body .app-content .accordion .box:before {
+body .accordion .box:before {
   content: '';
   position: absolute;
   display: block;
