@@ -19,7 +19,7 @@
       // get position of language
       // $i_en = array_search('en', array_keys($value));
       // $i_tw = array_search('tw', array_keys($value));
-      echo $vkey;
+      echo (strcasecmp('tw', $vkey) == 0);
 
       if(!(strcasecmp('tw', $vkey) == 0) || !(strcasecmp('en', $vkey) == 0)) {
         $temp_common[$vkey] = $vValue;
