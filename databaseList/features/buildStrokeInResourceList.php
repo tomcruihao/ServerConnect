@@ -18,7 +18,16 @@
   //   echo mb_detect_encoding($firstChar);
   // }
 
-  print_r($resourceList);
+  // 1st foreach loop languages
+  foreach($resourceList as $key_lang => $language) {
+    foreach($language as $key_r => $row) {
+      print_r($row);
+      // get first char
+      $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
+      $firstChar = $chars[0];
+      $resultExist = false;
+    }
+  }
 
   // foreach($resourceList['rows'] as $key => $row) {
   //   // get first char
