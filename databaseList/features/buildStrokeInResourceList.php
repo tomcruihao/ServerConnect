@@ -49,9 +49,9 @@
         $resourceList['rows'][$key_lang][$key_r]['zhuyin'] = '';
         $resourceList['rows'][$key_lang][$key_r]['strokes'] = '0';
       }
+      print_r($resourceList['rows'][$key_lang][$key_r]);
     }
   }
-  print_r($resourceList);
   // foreach($resourceList['rows'] as $key => $row) {
   //   // get first char
   //   $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
