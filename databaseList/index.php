@@ -123,7 +123,7 @@
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
-                <li class="more" v-if="latestNewsList['en'].length > displayNumber">
+                <li class="more" v-if="latestNewsList.en.length > displayNumber">
                   <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
                 </li>
               </ul>
@@ -132,7 +132,7 @@
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
-                <li class="more" v-if="latestNewsList['tw'].length > displayNumber">
+                <li class="more" v-if="latestNewsList.tw.length > displayNumber">
                   <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
                 </li>
               </ul>
@@ -160,18 +160,6 @@
               </div>
             </div>
           </div>
-<!-- 
-          <div class="bulletin-board-frame">
-            <h3>適用學院</h3>
-            <ul class="subject-list">
-              <li>
-                <a href="javascript:searchBy('文學院','faculty');">文學院</a>
-              </li>
-              <li>
-                <a href="javascript:searchBy('藝術學院','faculty');">藝術學院</a>
-              </li>
-            </ul>
-          </div> -->
         </aside>
       </div>
     </div>
@@ -369,8 +357,6 @@
           Object.keys(res.subjects).forEach(key => {
             self.subjects[key] = res.subjects[key];
           })
-          console.log('subjects');
-          console.log(self.subjects);
           // self.subjects = res.subjects;
         }
       });
@@ -388,7 +374,6 @@
           self.bulletinTitle.tw = res.tw.bulletinTitle;
           self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-          console.log(self.latestNewsList);
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
 
@@ -424,17 +409,8 @@
         dialogue.setDialogue('latestNews', message);
       },
       set_mobile_show_switch (status) {
+        // true = open, false = close
         this.mobile_frame = status;
-        // switch(status) {
-        //   case 'open':
-        //     aside.classList.add("show");
-        //     break;
-        //   case 'close':
-        //     aside.classList.remove("show");
-        //     break;
-        //   default:
-        //     break;
-        // }
       }
     }
   })

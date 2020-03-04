@@ -45,8 +45,8 @@
         </ul>
       </nav>
     </header>
-    <section class="accordion arrows" id="latestNews">
-      <div id="mainTitle" class="mainTitle">
+    <div class="app-content">
+      <section id="mainTitle" class="mainTitle">
         <h1 v-text="$t('message.h1_resource_list')"></h1>
         <div class="lang-wrap">
           <div>{{$t('message.chooseLanguage')}}:</div>
@@ -55,20 +55,35 @@
             <option value="tw">中文</option>
           </select>
         </div>
-      </div>
-      <div class="box title">
-        <label for="acc-close" class="box-title">{{bulletinTitle}}</label>
-      </div>
-      <div v-for="(latestNews, index) in latestNewsListData">
-        <input type="radio" name="accordion" v-bind:id="latestNews.uuid" />
-        <section class="box">
-          <label class="box-title" :for="latestNews.uuid">{{latestNews.title}}</label>
-          <label class="box-close" for="acc-close"></label>
-          <div class="box-content" v-html="latestNews.content"></div>
-        </section>
-      </div>
-      <input type="radio" name="accordion" id="acc-close" />
-    </section>
+      </section>
+      <section class="accordion arrows" id="latestNews">
+        <div class="box title">
+          <label v-if="lang === 'en'" for="acc-close" class="box-title">{{bulletinTitle.en}}</label>
+          <label v-else-if="lang === 'tw'" for="acc-close" class="box-title">{{bulletinTitle.tw}}</label>
+        </div>
+        <div v-if="lang === 'en'">
+          <div v-for="(latestNews, index) in latestNewsList.en">
+            <input type="radio" name="accordion" v-bind:id="latestNews.uuid" />
+            <section class="box">
+              <label class="box-title" :for="latestNews.uuid">{{latestNews.title}}</label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content" v-html="latestNews.content"></div>
+            </section>
+          </div>
+        </div>
+        <div v-else-if="lang === 'tw'">
+          <div v-for="(latestNews, index) in latestNewsList.tw">
+            <input type="radio" name="accordion" v-bind:id="latestNews.uuid" />
+            <section class="box">
+              <label class="box-title" :for="latestNews.uuid">{{latestNews.title}}</label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content" v-html="latestNews.content"></div>
+            </section>
+          </div>
+        </div>
+        <input type="radio" name="accordion" id="acc-close" />
+      </section>
+    </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
@@ -82,18 +97,13 @@
         selector_lang: ''
       },
       mounted: function() {
-        console.log(i18n.locale)
         this.selector_lang = i18n.locale;
       },
       methods: {
-        async setLang(event) {
+        setLang(event) {
           i18n.locale = event.target.value;
           localStorage.setItem('lang', event.target.value);
-          // changeEsourceListLanguage();
-
-          aside.setLocale(i18n.locale);
-
-          genDatalistStructure(true);
+          latestNews.setLocale(event.target.value);
         }
       }
     })
@@ -102,8 +112,15 @@
       el:'#latestNews',
       i18n,
       data: {
-        bulletinTitle: '',
-        latestNewsList: []
+        lang: '',
+        bulletinTitle: {
+          'en': '',
+          'tw': ''
+        },
+        latestNewsList: {
+          'en': [],
+          'tw': []
+        }
       },
       created: function() {
         let self = this;
@@ -116,19 +133,33 @@
             console.log(exception);
           },
           success: function(res) {
-            self.bulletinTitle = res.bulletinTitle;
-            self.latestNewsList = res.newsList;
+            self.bulletinTitle.en = res.en.bulletinTitle;
+            self.bulletinTitle.tw = res.tw.bulletinTitle;
+            self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+            self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+            // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           }
         });
       },
       computed: {
-        latestNewsListData: {
-          get: function () {
-            return this.latestNewsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-          }
+        // latestNewsListData: {
+        //   get: function () {
+        //     return this.latestNewsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+        //   }
+        // }
+      },
+      mounted: function() {
+        if("lang" in localStorage) {
+          this.lang = localStorage.getItem('lang');
+        } else {
+          this.lang = 'tw';
         }
       },
       methods:{
+        setLocale: function(language) {
+          this.lang = language;
+          console.log(this.lang);
+        },
         closeDialogue: function() {
           this.show = false;
         },
