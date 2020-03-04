@@ -17,8 +17,8 @@
     $temp_common = [];
     foreach($resourceList as $key => $value) {
       // get position of language
-      $i_en = array_search('en', array_keys($array));
-      $i_tw = array_search('tw', array_keys($array));
+      $i_en = array_search('en', array_keys($value));
+      $i_tw = array_search('tw', array_keys($value));
       echo $i_en.'<br>';
       echo $i_tw.'<br>';
       echo $key.'<br><br>';
