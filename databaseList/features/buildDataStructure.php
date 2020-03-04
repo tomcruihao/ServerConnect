@@ -13,7 +13,7 @@
 
   $enTemp = [];
   foreach($resourceList['en'] as $key => $value) {
-    $result[$value['uuid']] = $value;
+    $enTemp[$value['uuid']] = $value;
   }
   print_r($enTemp);
 
