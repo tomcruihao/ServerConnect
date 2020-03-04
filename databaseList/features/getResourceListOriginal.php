@@ -15,21 +15,18 @@
 
   foreach($resourceList as $key => $value) {
     $temp_common = [];
-    foreach($resourceList as $key => $value) {
+    foreach($value as $vkey => $vValue) {
       // get position of language
-      $i_en = array_search('en', array_keys($value));
-      $i_tw = array_search('tw', array_keys($value));
-      echo $i_en.'<br>';
-      echo $i_tw.'<br>';
-      echo $key.'<br>';
-      echo (!(strcasecmp($i_en, $key) == 0) || !(strcasecmp($i_en, $key) == 0)).'<br><br>';
+      echo $vkey;
+      // $i_en = array_search('en', array_keys($value));
+      // $i_tw = array_search('tw', array_keys($value));
 
-      if(!(strcasecmp($i_en, $key) == 0) || !(strcasecmp($i_en, $key) == 0)) {
-        array_push($temp_common, $value);
-      }
+      // if(!(strcasecmp($i_en, $key) == 0) || !(strcasecmp($i_en, $key) == 0)) {
+      //   array_push($temp_common, $value);
+      // }
     }
 
-    print_r($temp_common);
+    // print_r($temp_common);
     // $resourceList['en']
   }
 
