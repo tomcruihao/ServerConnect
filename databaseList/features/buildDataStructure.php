@@ -56,7 +56,6 @@
       }
     }
   }
-  print_r($result);
   // print_r(json_encode($result, JSON_UNESCAPED_UNICODE));
   // foreach($resourceList['tw'] as $key => $value) {
   //   $twTemp[$value['uuid']] = $value;
@@ -98,8 +97,8 @@
   // }
 
   // // write back
-  // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  file_put_contents($jsonFile_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
 
-  // $res = array('type' => 'success', 'mesage' => 'success');
-  // echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  $res = array('type' => 'success', 'mesage' => 'success');
+  echo json_encode($res, JSON_UNESCAPED_UNICODE);
 ?>
