@@ -64,7 +64,7 @@
       <div id="filterField">
         <div class="search-wrap">
           <div class="search-frame">
-            <input type="text" class="search" placeholder="搜尋資源" />
+            <input type="text" class="search" :placeholder="$t('message.index_placeholder_text')" />
           </div>
         </div>
         <div class="atoz-wrap">

@@ -11,6 +11,7 @@ const messages = {
       index_sort: 'Sort',
       index_bulletin: 'Bulletin',
       index_more: 'More',
+      index_placeholder_text: 'Search Resource',
       // setting page
       h1_settings: 'Setting',
       generalSetting: 'General Setting',
@@ -58,6 +59,7 @@ const messages = {
       index_sort: '排序',
       index_bulletin: '公佈欄',
       index_more: '更多',
+      index_placeholder_text: '搜尋資源',
       // setting page
       h1_settings: '設定',
       generalSetting: '一般設定',
