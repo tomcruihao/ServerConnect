@@ -21,14 +21,37 @@
   // 1st foreach loop languages
   foreach($resourceList as $key_lang => $language) {
     foreach($language as $key_r => $row) {
-      print_r($row);
       // get first char
       $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
       $firstChar = $chars[0];
       $resultExist = false;
+
+      foreach($strokes as $stroke) {
+        if(strcasecmp($firstChar, $stroke['char']) == 0) {
+          $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
+          $firstZhuyin = $zhuyin[0];
+          $resourceList['rows'][$key]['zhuyin'] = $firstZhuyin;
+          $resourceList['rows'][$key]['englishAlphabet'] = '';
+
+          if(strlen(strval($stroke['strokes'])) < 2) {
+            $resourceList['rows'][$key]['strokes'] = '0'.$stroke['strokes'];
+          } else {
+            $resourceList['rows'][$key]['strokes'] = $stroke['strokes'];
+          }
+
+          $resultExist = true;
+          break;
+        }
+      }
+
+      if(!$resultExist) {
+        $resourceList['rows'][$key_lang][$key_r]['englishAlphabet'] = $firstChar;
+        $resourceList['rows'][$key_lang][$key_r]['zhuyin'] = '';
+        $resourceList['rows'][$key_lang][$key_r]['strokes'] = '0';
+      }
     }
   }
-
+  print_r($resourceList);
   // foreach($resourceList['rows'] as $key => $row) {
   //   // get first char
   //   $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
