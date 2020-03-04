@@ -14,6 +14,8 @@ const messages = {
       index_placeholder_text: 'Search Resource',
       // All Latest News page
       h1_all_latestNews: 'Latest News',
+      // Resource Management page
+      h1_resource_management: 'Resource Management',
       // setting page
       h1_settings: 'Setting',
       generalSetting: 'General Setting',
@@ -64,6 +66,8 @@ const messages = {
       index_placeholder_text: '搜尋資源',
       // All Latest News page
       h1_all_latestNews: '最新消息',
+      // Resource Management page
+      h1_resource_management: '資源管理',
       // setting page
       h1_settings: '設定',
       generalSetting: '一般設定',

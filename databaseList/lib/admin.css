@@ -243,6 +243,9 @@ header nav .nav-list li.multi:before {
 }
 
 .mainTitle {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -301,7 +304,7 @@ input:focus, textarea:focus, select:focus, button {
   height: 60px;
 }
 
-.list-field {
+.app-content {
   width: 100%;
   padding: 0 15px;
   max-width: 960px;
@@ -310,7 +313,13 @@ input:focus, textarea:focus, select:focus, button {
           box-sizing: border-box;
 }
 
-.list-field .search-wrap .search-frame {
+.app-content .list-field {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.app-content .list-field .search-wrap .search-frame {
   width: 100%;
   max-width: 500px;
   height: 40px;
@@ -322,7 +331,7 @@ input:focus, textarea:focus, select:focus, button {
   background-color: #ffffff;
 }
 
-.list-field .search-wrap .search-frame .search {
+.app-content .list-field .search-wrap .search-frame .search {
   width: 100%;
   height: 100%;
   font-size: 1.2rem;
@@ -332,7 +341,7 @@ input:focus, textarea:focus, select:focus, button {
   border: none;
 }
 
-.list-field .resource-wrap {
+.app-content .list-field .resource-wrap {
   padding: 15px;
   margin-top: 15px;
   background-color: #ffffff;
@@ -341,7 +350,7 @@ input:focus, textarea:focus, select:focus, button {
   position: relative;
 }
 
-.list-field .resource-wrap .button-wrap {
+.app-content .list-field .resource-wrap .button-wrap {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -350,7 +359,7 @@ input:focus, textarea:focus, select:focus, button {
   right: 1rem;
 }
 
-.list-field .resource-wrap .button-wrap button {
+.app-content .list-field .resource-wrap .button-wrap button {
   width: 36px;
   height: 36px;
   margin-left: 5px;
@@ -366,7 +375,7 @@ input:focus, textarea:focus, select:focus, button {
   background-color: #7b8cde;
 }
 
-.list-field .resource-wrap .row {
+.app-content .list-field .resource-wrap .row {
   padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -375,29 +384,29 @@ input:focus, textarea:focus, select:focus, button {
       flex-wrap: wrap;
 }
 
-.list-field .resource-wrap .row .title {
+.app-content .list-field .resource-wrap .row .title {
   width: 160px;
   font-weight: bold;
 }
 
-.list-field .resource-wrap .row .content {
+.app-content .list-field .resource-wrap .row .content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   word-break: break-all;
 }
 
-.list-field .resource-wrap .row .content.over {
+.app-content .list-field .resource-wrap .row .content.over {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.list-field .resource-wrap .row:nth-of-type(2n-1) {
+.app-content .list-field .resource-wrap .row:nth-of-type(2n-1) {
   background-color: #ccdffc;
 }
 
-.list-field .resource-wrap .row:nth-of-type(2n) {
+.app-content .list-field .resource-wrap .row:nth-of-type(2n) {
   background-color: #ffffff;
 }
 
