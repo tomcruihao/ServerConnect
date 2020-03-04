@@ -11,11 +11,35 @@
 
   $result = [];
 
-  $enTemp = [];
   foreach($resourceList['en'] as $key => $value) {
-    $enTemp[$value['uuid']] = $value;
+    // $enTemp[$value['uuid']] = $value;
+    $stack = array(
+      "uuid" => $value['uuid'],
+      "resourceUrl" => $value['resourceUrl'],
+      "isProxy" => $value['isProxy'],
+      "startDate" => $value['startDate'],
+      "expireDate" => $value['expireDate'],
+      "relevanceUrl" => $value['relevanceUrl'],
+      "en" => array(
+        "resourceName" => $value['resourceName'],
+        "resourceType" => $value['resourceType'],
+        "faculty" => $value['faculty'],
+        "department" => $value['department'],
+        "subject" => $value['subject'],
+        "category" => $value['category'],
+        "publish" => $value['publish'],
+        "language" => $value['language'],
+        "resourceDescribe" => $value['resourceDescribe'],
+        "relevvanceUrlDescribe" => $value['relevvanceUrlDescribe']
+      )
+    );
+    array_push($result);
   }
-  print_r($enTemp);
+  print_r($result);
+  // foreach($resourceList['tw'] as $key => $value) {
+  //   $twTemp[$value['uuid']] = $value;
+  // }
+
 
   // // 1st foreach loop languages
   // foreach($resourceList as $key_lang => $language) {
