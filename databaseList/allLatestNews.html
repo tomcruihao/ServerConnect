@@ -46,6 +46,16 @@
       </nav>
     </header>
     <section class="accordion arrows" id="latestNews">
+      <div id="mainTitle" class="mainTitle">
+        <h1 v-text="$t('message.h1_resource_list')"></h1>
+        <div class="lang-wrap">
+          <div>{{$t('message.chooseLanguage')}}:</div>
+          <select v-model="selector_lang" @change="setLang($event)">
+            <option value="en">English</option>
+            <option value="tw">中文</option>
+          </select>
+        </div>
+      </div>
       <div class="box title">
         <label for="acc-close" class="box-title">{{bulletinTitle}}</label>
       </div>
@@ -61,10 +71,36 @@
     </section>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+  <script src="lang/lang.js"></script>
   <script src="lib/jquery.js"></script>
   <script type="text/javascript">
+    var mainTitle = new Vue({
+      el:'#mainTitle',
+      i18n,
+      data: {
+        selector_lang: ''
+      },
+      mounted: function() {
+        console.log(i18n.locale)
+        this.selector_lang = i18n.locale;
+      },
+      methods: {
+        async setLang(event) {
+          i18n.locale = event.target.value;
+          localStorage.setItem('lang', event.target.value);
+          // changeEsourceListLanguage();
+
+          aside.setLocale(i18n.locale);
+
+          genDatalistStructure(true);
+        }
+      }
+    })
+
     var latestNews = new Vue({
       el:'#latestNews',
+      i18n,
       data: {
         bulletinTitle: '',
         latestNewsList: []

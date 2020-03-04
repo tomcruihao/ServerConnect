@@ -176,7 +176,7 @@
       </div>
     </div>
   </section>
-  <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: mobile_frame }">
+  <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{dialogHead_title}}</h4>
