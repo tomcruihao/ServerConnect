@@ -39,21 +39,19 @@
     foreach($resourceList['tw'] as $tkey => $tvalue) {
       // echo $value['uuid'].' and '.$tvalue['uuid'].'<br>';
       if(strcasecmp($value['uuid'], $tvalue['uuid']) == 0) {
-        $stack = array(
-          "en" => array(
-            "resourceName" => $tvalue['resourceName'],
-            "resourceType" => $tvalue['resourceType'],
-            "faculty" => $tvalue['faculty'],
-            "department" => $tvalue['department'],
-            "subject" => $tvalue['subject'],
-            "category" => $tvalue['category'],
-            "publish" => $tvalue['publish'],
-            "language" => $tvalue['language'],
-            "resourceDescribe" => $tvalue['resourceDescribe'],
-            "relevvanceUrlDescribe" => $tvalue['relevvanceUrlDescribe']
-          )
+        $result[$key]['tw'] = array(
+          "resourceName" => $tvalue['resourceName'],
+          "resourceType" => $tvalue['resourceType'],
+          "faculty" => $tvalue['faculty'],
+          "department" => $tvalue['department'],
+          "subject" => $tvalue['subject'],
+          "category" => $tvalue['category'],
+          "publish" => $tvalue['publish'],
+          "language" => $tvalue['language'],
+          "resourceDescribe" => $tvalue['resourceDescribe'],
+          "relevvanceUrlDescribe" => $tvalue['relevvanceUrlDescribe']
         );
-        array_push($result[$key],$stack);
+        // array_push($result[$key],$stack);
         break;
       }
     }
