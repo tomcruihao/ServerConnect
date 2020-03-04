@@ -35,7 +35,30 @@
     );
     array_push($result,$stack);
   }
-  print_r(json_encode($result, JSON_UNESCAPED_UNICODE));
+  foreach($result as $key => $value) {
+    foreach($resourceList['tw'] as $tkey => $tvalue) {
+      if(strcasecmp($result['uuid'], $tvalue['uuid']) == 0) {
+        $stack = array(
+          "en" => array(
+            "resourceName" => $tvalue['resourceName'],
+            "resourceType" => $tvalue['resourceType'],
+            "faculty" => $tvalue['faculty'],
+            "department" => $tvalue['department'],
+            "subject" => $tvalue['subject'],
+            "category" => $tvalue['category'],
+            "publish" => $tvalue['publish'],
+            "language" => $tvalue['language'],
+            "resourceDescribe" => $tvalue['resourceDescribe'],
+            "relevvanceUrlDescribe" => $tvalue['relevvanceUrlDescribe']
+          )
+        );
+        array_push($result[$key],$stack);
+        break;
+      }
+    }
+  }
+  print_r($result);
+  // print_r(json_encode($result, JSON_UNESCAPED_UNICODE));
   // foreach($resourceList['tw'] as $key => $value) {
   //   $twTemp[$value['uuid']] = $value;
   // }
