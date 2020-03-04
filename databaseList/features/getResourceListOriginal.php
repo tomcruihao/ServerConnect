@@ -10,24 +10,36 @@
   $getResourceListJsonData = file_get_contents($jsonFile_direct);
   $resourceList = json_decode($getResourceListJsonData, true);
 
-  $temp_en = [];
-  $temp_tw = [];
+  $result = [];
+  $result_en = [];
+  $result_tw = [];
 
   foreach($resourceList as $key => $value) {
-    $temp_common = [];
+    $temp_tw = [];
+    $temp_en = [];
     foreach($value as $vkey => $vValue) {
       // get position of language
       // $i_en = array_search('en', array_keys($value));
-      // $i_tw = array_search('tw', array_keys($value));
 
       if(!(strcasecmp('tw', $vkey) == 0) && !(strcasecmp('en', $vkey) == 0)) {
-        $temp_common[$vkey] = $vValue;
+        $temp_tw[$vkey] = $vValue;
+        $temp_en[$vkey] = $vValue;
       }
     }
 
-    print_r($temp_common);
+    // get en value and write
+    foreach($value['en'] as $ekey => $eValue) {
+      $temp_en[$ekey] = $eValue;
+    }
+
+    foreach($value['tw'] as $tkey => $tValue) {
+      $temp_tw[$tkey] = $tValue;
+    }
+    array_push($result_en, $temp_en);
+    array_push($result_tw, $temp_tw);
     // $resourceList['en']
   }
-
-  // echo $getJsonData;
+  $result['en'] = $result_en;
+  $result['tw'] = $result_tw;
+  print_r($result);
 ?>
