@@ -1,7 +1,6 @@
 <!DOCTYPE xtml PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
 <?php
-  // $getJsonData = file_get_contents('data/eResourceList.json');
   $jsonFile_direct = 'data/eResourceList.json';
 
   // get resource list
@@ -16,7 +15,7 @@
     $temp_tw = [];
     $temp_en = [];
     foreach($value as $vkey => $vValue) {
-      // get position of language
+      // put content without languages
       // $i_en = array_search('en', array_keys($value));
 
       if(!(strcasecmp('tw', $vkey) == 0) && !(strcasecmp('en', $vkey) == 0)) {
@@ -35,8 +34,8 @@
     }
     array_push($result_en, $temp_en);
     array_push($result_tw, $temp_tw);
-    // $resourceList['en']
   }
+  
   $result['en'] = $result_en;
   $result['tw'] = $result_tw;
 
