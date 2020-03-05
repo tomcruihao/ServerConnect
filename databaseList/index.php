@@ -411,13 +411,21 @@
         success: function(res) {
           self.bulletinTitle.en = res.bulletinTitle.en;
           self.bulletinTitle.tw = res.bulletinTitle.tw;
-          self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          const sortingList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           // self.latestNewsList.tw = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
 
-          self.latestNewsList.en = self.latestNewsList.en.slice(0, self.displayNumber);
-          self.latestNewsList.tw = self.latestNewsList.tw.slice(0, self.displayNumber);
+          for(let index in sortingList) {
+            self.latestNewsList.en.push(sortingList[index].en);
+            self.latestNewsList.tw.push(sortingList[index].tw);
+            if(index >= self.displayNumber) {
+              break;
+            }
+          }
+
+          //  = sortingList.en.slice(0, self.displayNumber);
+          // self.latestNewsList.tw = sortingList.tw.slice(0, self.displayNumber);
         }
       });
     },
