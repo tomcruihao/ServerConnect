@@ -43,11 +43,15 @@ error_reporting(E_ALL);
     foreach($resourceList as $key => $row) {
       if(strcasecmp($row['uuid'], $resource['uuid']) == 0) {
         // get stroke and zhuyin info
-        $getStroke = getStrokeInfo($resource['resourceName']);
+        $getStroke = getStrokeInfo($resource['tw']['resourceName'], $resource['en']['resourceName']);
 
-        $resourceList['rows'][$key] = $resource;
-        $resourceList['rows'][$key]['stroke'] = $getStroke['strokes'];
-        $resourceList['rows'][$key]['zhuyin'] = $getStroke['zhuyin'];
+        $resourceList[$key] = $resource;
+        $resourceList[$key]['en']['stroke'] = $getStroke['strokes'];
+        $resourceList[$key]['en']['zhuyin'] = $getStroke['zhuyin'];
+        $resourceList[$key]['en']['englishAlphabet'] = $getStroke['englishAlphabet'];
+        $resourceList[$key]['tw']['stroke'] = $getStroke['strokes'];
+        $resourceList[$key]['tw']['zhuyin'] = $getStroke['zhuyin'];
+        $resourceList[$key]['tw']['englishAlphabet'] = $getStroke['englishAlphabet'];
         break;
       }
     }
