@@ -73,13 +73,13 @@ error_reporting(E_ALL);
     response('success', 'success');
   }
 
-  function getStrokeInfo($str_resourName_tw, $str_resourceName_en) {
+  function getStrokeInfo($str_resourceName_tw, $str_resourceName_en) {
     $getStrokesJsonData = file_get_contents('../data/UniHanO.json');
     $strokes = json_decode($getStrokesJsonData, true);
     $resultExist = false;
 
     // get first char
-    $chars = preg_split('/(?<!^)(?!$)/u', $str_resourName_tw);
+    $chars = preg_split('/(?<!^)(?!$)/u', $str_resourceName_tw);
     $firstChar = $chars[0];
     $result = [];
 
@@ -96,7 +96,7 @@ error_reporting(E_ALL);
       $result['strokes'] = '0';
       $result['englishAlphabet'] = $firstChar;
     } else {
-      $chars = preg_split('/(?<!^)(?!$)/u', $str_resourName_en);
+      $chars = preg_split('/(?<!^)(?!$)/u', $str_resourceName_en);
       $firstChar = $chars[0];
       $result['englishAlphabet'] = $firstChar;
     }
