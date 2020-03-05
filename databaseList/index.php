@@ -363,10 +363,10 @@
     el:'#aside',
     i18n,
     data: {
-      subjects: {
+      subjects: [{
         'en': [],
         'tw': []
-      },
+      }],
       lang: '',
       bulletinTitle: {
         'en': '',
@@ -391,10 +391,39 @@
           console.log(exception);
         },
         success: function(res) {
-          Object.keys(res.subjects).forEach(key => {
-            self.subjects[key] = res.subjects[key];
+          // Object.keys(res.subjects).forEach(key => {
+          //   self.subjects[key] = res.subjects[key];
+          // })
+          res.forEach((val, index) => {
+            let tempSubList_en = [];
+            let tempSubList_tw = [];
+            val.subjectList.forEach((sVal, sIndex) => {
+              let obj_en = {
+                "name": sVal.name.en,
+                "className": sVal.className
+              }
+              let obj_tw = {
+                "name": sVal.name.tw,
+                "className": sVal.className
+              }
+              tempSubList_en.push(obj_en);
+              tempSubList_tw.push(obj_tw);
+            })
+            
+            let temp_obj_en = {
+              "subjectID": val.subjectID
+              "subjectTitle": val.subjectTitle.en,
+              "subjectList": tempSubList_en
+            }
+
+            let temp_obj_tw = {
+              "subjectID": val.subjectID
+              "subjectTitle": val.subjectTitle.tw,
+              "subjectList": tempSubList_tw
+            }
+            self.subjects.en.push(temp_obj_en);
+            self.subjects.tw.push(temp_obj_tw);
           })
-          // self.subjects = res.subjects;
         }
       });
 
