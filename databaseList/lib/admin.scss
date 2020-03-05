@@ -90,6 +90,44 @@ input:focus, textarea:focus, select:focus, button {
           background-color: #7b8cde;
         }
       }
+      .tag-wrap {
+        button {
+          width: 120px;
+          height: 40px;
+          border-radius: 0px 10px 0 0;
+          border: 1px solid #cccccc;
+          border-bottom: 0px;
+          background-color: #eeeeee;
+          font-size: 1rem;
+
+          &.taged {
+            box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
+          }
+        }
+      }
+      .multi-lang-field {
+        box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+        .row {
+          &:nth-of-type(2n-1) {
+            background-color: $resource_odd_field_bgcolor_1;
+          }
+          &:nth-of-type(2n) {
+            background-color: $resource_even_field_bgcolor_2;
+          }
+        }
+      }
+      .common-field {
+        box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+        .row {
+          &:nth-of-type(2n-1) {
+            background-color: #dff0d8;
+          }
+          &:nth-of-type(2n) {
+            background-color: $resource_even_field_bgcolor_2;
+          }
+        }
+      }
       .row {
         padding: 5px;
         display: flex;
@@ -109,12 +147,6 @@ input:focus, textarea:focus, select:focus, button {
             text-overflow: ellipsis;
             white-space: nowrap;
           }
-        }
-        &:nth-of-type(2n-1) {
-          background-color: $resource_odd_field_bgcolor_1;
-        }
-        &:nth-of-type(2n) {
-          background-color: $resource_even_field_bgcolor_2;
         }
       }
     }
@@ -208,8 +240,26 @@ input:focus, textarea:focus, select:focus, button {
       right: 5px;
     }
 
+    .tag-wrap {
+      button {
+        width: 120px;
+        height: 30px;
+        border-radius: 0px 10px 0 0;
+        border: 1px solid #cccccc;
+        border-bottom: 0px;
+        background-color: #eeeeee;
+        font-size: 0.8rem;
+
+        &.taged {
+          box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+          background-color: #ffffff;
+        }
+      }
+    }
+
     .dialogue-content {
       max-height: 550px;
+      padding-top: 10px;
       overflow-y: scroll;
     
       .row {

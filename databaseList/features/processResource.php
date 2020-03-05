@@ -40,8 +40,8 @@ error_reporting(E_ALL);
     file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   } else if($type === 'modify') {
-    foreach($resourceList['rows'] as $key => $row) {
-      if(strcasecmp($row['id'], $resource['id']) == 0) {
+    foreach($resourceList as $key => $row) {
+      if(strcasecmp($row['uuid'], $resource['uuid']) == 0) {
         // get stroke and zhuyin info
         $getStroke = getStrokeInfo($resource['resourceName']);
 
@@ -51,10 +51,10 @@ error_reporting(E_ALL);
         break;
       }
     }
-
+    print_r($resourceList);
     // write back
-    file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+    // response('success', 'success');
   } else if ($type === 'delete') {
     foreach($resourceList['rows'] as $key => $row) {
       if(strcasecmp($row['id'], $resource['id']) == 0) {
@@ -69,13 +69,13 @@ error_reporting(E_ALL);
     response('success', 'success');
   }
 
-  function getStrokeInfo($str_resourName) {
+  function getStrokeInfo($str_resourName_tw, $str_resourceName_en) {
     $getStrokesJsonData = file_get_contents('../data/UniHanO.json');
     $strokes = json_decode($getStrokesJsonData, true);
     $resultExist = false;
 
     // get first char
-    $chars = preg_split('/(?<!^)(?!$)/u', $str_resourName);
+    $chars = preg_split('/(?<!^)(?!$)/u', $str_resourName_tw);
     $firstChar = $chars[0];
     $result = [];
 
@@ -90,6 +90,11 @@ error_reporting(E_ALL);
     if(!$resultExist) {
       $result['zhuyin'] = '';
       $result['strokes'] = '0';
+      $result['englishAlphabet'] = $firstChar;
+    } else {
+      $chars = preg_split('/(?<!^)(?!$)/u', $str_resourName_en);
+      $firstChar = $chars[0];
+      $result['englishAlphabet'] = $firstChar;
     }
 
     return $result;

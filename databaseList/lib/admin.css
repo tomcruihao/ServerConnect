@@ -375,6 +375,48 @@ input:focus, textarea:focus, select:focus, button {
   background-color: #7b8cde;
 }
 
+.app-content .list-field .resource-wrap .tag-wrap button {
+  width: 120px;
+  height: 40px;
+  border-radius: 0px 10px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: 0px;
+  background-color: #eeeeee;
+  font-size: 1rem;
+}
+
+.app-content .list-field .resource-wrap .tag-wrap button.taged {
+  -webkit-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.app-content .list-field .resource-wrap .multi-lang-field {
+  -webkit-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.app-content .list-field .resource-wrap .multi-lang-field .row:nth-of-type(2n-1) {
+  background-color: #ccdffc;
+}
+
+.app-content .list-field .resource-wrap .multi-lang-field .row:nth-of-type(2n) {
+  background-color: #ffffff;
+}
+
+.app-content .list-field .resource-wrap .common-field {
+  -webkit-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.app-content .list-field .resource-wrap .common-field .row:nth-of-type(2n-1) {
+  background-color: #dff0d8;
+}
+
+.app-content .list-field .resource-wrap .common-field .row:nth-of-type(2n) {
+  background-color: #ffffff;
+}
+
 .app-content .list-field .resource-wrap .row {
   padding: 5px;
   display: -webkit-box;
@@ -400,14 +442,6 @@ input:focus, textarea:focus, select:focus, button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.app-content .list-field .resource-wrap .row:nth-of-type(2n-1) {
-  background-color: #ccdffc;
-}
-
-.app-content .list-field .resource-wrap .row:nth-of-type(2n) {
-  background-color: #ffffff;
 }
 
 .mask {
@@ -508,8 +542,25 @@ input:focus, textarea:focus, select:focus, button {
   right: 5px;
 }
 
+.mask .dialogue-frame .tag-wrap button {
+  width: 120px;
+  height: 30px;
+  border-radius: 0px 10px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: 0px;
+  background-color: #eeeeee;
+  font-size: 0.8rem;
+}
+
+.mask .dialogue-frame .tag-wrap button.taged {
+  -webkit-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
 .mask .dialogue-frame .dialogue-content {
   max-height: 550px;
+  padding-top: 10px;
   overflow-y: scroll;
 }
 
