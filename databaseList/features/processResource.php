@@ -55,10 +55,10 @@ error_reporting(E_ALL);
         break;
       }
     }
-    echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
+
     // write back
-    // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
-    // response('success', 'success');
+    file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+    response('success', 'success');
   } else if ($type === 'delete') {
     foreach($resourceList['rows'] as $key => $row) {
       if(strcasecmp($row['id'], $resource['id']) == 0) {
