@@ -285,7 +285,6 @@
       selector_lang: ''
     },
     mounted: function() {
-      console.log(i18n.locale)
       this.selector_lang = i18n.locale;
     },
     methods: {
