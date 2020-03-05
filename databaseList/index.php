@@ -421,8 +421,10 @@
               "subjectTitle": val.subjectTitle.tw,
               "subjectList": tempSubList_tw
             }
-            self.subjects.en.push(temp_obj_en);
-            self.subjects.tw.push(temp_obj_tw);
+            console.log(self.subjects);
+            console.log(self.subjects.en);
+            // self.subjects.en.push(temp_obj_en);
+            // self.subjects.tw.push(temp_obj_tw);
           })
         }
       });
