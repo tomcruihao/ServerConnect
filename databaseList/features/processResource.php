@@ -25,16 +25,22 @@ error_reporting(E_ALL);
     $resource['uuid'] = gen_uuid();
 
     // get stroke and zhuyin info
-    $getStroke = getStrokeInfo($resource['resourceName']);
-    $resource['stroke'] = $getStroke['strokes'];
-    $resource['zhuyin'] = $getStroke['zhuyin'];
 
-    array_push($resourceList['rows'], $resource);
+    $getStroke = getStrokeInfo($resource['tw']['resourceName'], $resource['en']['resourceName']);
 
-    // update resource info
-    $total = count($resourceList['rows']);
-    $resourceList['total'] = $total;
-    $resourceList['totalNotFiltered'] = $total;
+
+    $resourceList[$key]['en']['stroke'] = $getStroke['strokes'];
+    $resource['en']['zhuyin'] = $getStroke['zhuyin'];
+    $resource['en']['englishAlphabet'] = $getStroke['englishAlphabet'];
+    $resource['tw']['stroke'] = $getStroke['strokes'];
+    $resource['tw']['zhuyin'] = $getStroke['zhuyin'];
+    $resource['tw']['englishAlphabet'] = $getStroke['englishAlphabet'];
+
+    // $getStroke = getStrokeInfo($resource['resourceName']);
+    // $resource['stroke'] = $getStroke['strokes'];
+    // $resource['zhuyin'] = $getStroke['zhuyin'];
+
+    array_push($resourceList, $resource);
 
     // write back
     file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
@@ -60,8 +66,8 @@ error_reporting(E_ALL);
     file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   } else if ($type === 'delete') {
-    foreach($resourceList['rows'] as $key => $row) {
-      if(strcasecmp($row['id'], $resource['id']) == 0) {
+    foreach($resourceList as $key => $row) {
+      if(strcasecmp($row['uuid'], $resource['uuid']) == 0) {
         // unset($resourceList['rows'][$key]);
         array_splice($resourceList['rows'], $key, 1);
         break;

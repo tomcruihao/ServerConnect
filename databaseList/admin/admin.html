@@ -488,7 +488,6 @@
       },
       methods:{
         setForm: function(type, database) {
-          console.log(database);
           if(type === 'modify') {
             // check the time formate
             if(database.startDate.trim() !== '') {
@@ -498,10 +497,10 @@
               database.expireDate = this.processDateFormate(database.expireDate);
             }
             this.btnType = 'modify';
-            this.resource = Object.assign({}, database);
+            this.resource = JSON.parse(JSON.stringify(database));
           } else if(type === 'add') {
             this.btnType = 'add';
-            this.resource = Object.assign({}, this.template);
+            this.resource = JSON.parse(JSON.stringify(this.template));
           }
           this.sendType = type;
           this.show = true;
