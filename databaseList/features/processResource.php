@@ -29,7 +29,7 @@ error_reporting(E_ALL);
     $getStroke = getStrokeInfo($resource['tw']['resourceName'], $resource['en']['resourceName']);
 
 
-    $resourceList[$key]['en']['stroke'] = $getStroke['strokes'];
+    $resource['en']['stroke'] = $getStroke['strokes'];
     $resource['en']['zhuyin'] = $getStroke['zhuyin'];
     $resource['en']['englishAlphabet'] = $getStroke['englishAlphabet'];
     $resource['tw']['stroke'] = $getStroke['strokes'];
