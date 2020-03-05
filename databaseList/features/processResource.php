@@ -67,7 +67,6 @@ error_reporting(E_ALL);
     response('success', 'success');
   } else if ($type === 'delete') {
     foreach($resourceList as $key => $row) {
-      echo $key;
       if(strcasecmp($row['uuid'], $resource['uuid']) == 0) {
         // unset($resourceList['rows'][$key]);
         array_splice($resourceList, $key, 1);

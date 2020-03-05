@@ -568,6 +568,7 @@
       },
       methods:{
         setDialogue: function(type, database = '') {
+          console.log('set dialogue');
           this.type = type;
           switch (type) {
             case 'deleteResource':
@@ -606,6 +607,7 @@
               console.log(exception);
             },
             success: function(res) {
+              console.log('remove');
               dataList.getDatabaseList();
               self.setDialogue('delete_success');
             }
