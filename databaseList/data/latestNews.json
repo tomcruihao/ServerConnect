@@ -1,13 +1,16 @@
 {
   "displayNumber": 5,
-  "bulletinTitle": "最新消息",
+  "bulletinTitle": {
+    "en": "Latest News",
+    "tw": "最新消息"
+  },
   "newsList": [
     {
       "uuid": "a5f8e96a-8dee-40a7-80c3-9c828bfefbbd",
       "publishDate": "2020-02-01",
       "en": {
-        "title": "公告消息1",
-        "content": "公告消息1"
+        "title": "News 1",
+        "content": "Content 1"
       },
       "tw": {
         "title": "公告消息1",
@@ -17,8 +20,8 @@
       "uuid": "6310b7b7-1b07-4bd8-af9b-2b7552e56aed",
       "publishDate": "2020-02-02",
       "en": {
-        "title": "公告消息1",
-        "content": "公告消息1"
+        "title": "News 2",
+        "content": "Content 2"
       },
       "tw": {
         "title": "公告消息1",
@@ -28,19 +31,19 @@
       "uuid": "20e412d0-52e7-4619-a8ff-299253e5903a",
       "publishDate": "2020-02-03",
       "en": {
-        "title": "公告消息1",
+        "title": "News 3",
         "content": "公告消息1"
       },
       "tw": {
-        "title": "公告消息1",
-        "content": "公告消息1"
+        "title": "公告消息3",
+        "content": "Content 3"
       }
     }, {
       "uuid": "62c9c9a1-cc51-46f5-b9f5-5f32de6fcba3",
       "publishDate": "2020-02-04",
       "en": {
-        "title": "公告消息1",
-        "content": "公告消息1"
+        "title": "News 4",
+        "content": "Content 4"
       },
       "tw": {
         "title": "公告消息1",
@@ -50,8 +53,8 @@
       "uuid": "c7d00202-ab8d-4428-b547-5fd10756451c",
       "publishDate": "2020-02-05",
       "en": {
-        "title": "公告消息1",
-        "content": "公告消息1"
+        "title": "News 5",
+        "content": "Content 5"
       },
       "tw": {
         "title": "公告消息1",
@@ -61,8 +64,8 @@
       "uuid": "47e411e4-06b2-4a3d-9556-71a79706d37f",
       "publishDate": "2020-02-06",
       "en": {
-        "title": "公告消息1",
-        "content": "公告消息1"
+        "title": "News 6",
+        "content": "Content 6"
       },
       "tw": {
         "title": "公告消息1",
@@ -72,8 +75,8 @@
       "uuid": "cf8d87d4-eda6-4a77-84a1-25de80c04efd",
       "publishDate": "2020-02-07",
       "en": {
-        "title": "公告消息1",
-        "content": "公告消息1"
+        "title": "News 7",
+        "content": "Content 7"
       },
       "tw": {
         "title": "公告消息1",
