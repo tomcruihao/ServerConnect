@@ -411,13 +411,13 @@
             })
             
             let temp_obj_en = {
-              "subjectID": val.subjectID
+              "subjectID": val.subjectID,
               "subjectTitle": val.subjectTitle.en,
               "subjectList": tempSubList_en
             }
 
             let temp_obj_tw = {
-              "subjectID": val.subjectID
+              "subjectID": val.subjectID,
               "subjectTitle": val.subjectTitle.tw,
               "subjectList": tempSubList_tw
             }
