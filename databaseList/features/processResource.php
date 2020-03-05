@@ -55,7 +55,7 @@ error_reporting(E_ALL);
         break;
       }
     }
-    print_r($resourceList);
+    echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
     // write back
     // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
     // response('success', 'success');
@@ -86,6 +86,15 @@ error_reporting(E_ALL);
     foreach($strokes as $stroke) {
       if(strcasecmp($firstChar, $stroke['char']) == 0) {
         $result = $stroke;
+        
+        $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
+        $firstZhuyin = $zhuyin[0];
+        $result['zhuyin'] = $firstZhuyin;
+
+        if(strlen(strval($stroke['strokes'])) < 2) {
+          $result['strokes'] = '0'.$stroke['strokes'];
+        }
+        
         $resultExist = true;
         break;
       }
