@@ -407,10 +407,10 @@
           console.log(exception);
         },
         success: function(res) {
-          self.bulletinTitle.en = res.en.bulletinTitle;
-          self.bulletinTitle.tw = res.tw.bulletinTitle;
-          self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-          self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          self.bulletinTitle.en = res.bulletinTitle.en;
+          self.bulletinTitle.tw = res.bulletinTitle.tw;
+          self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          // self.latestNewsList.tw = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
 
