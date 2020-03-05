@@ -415,15 +415,12 @@
           self.displayNumber = res.displayNumber;
 
           for(let index in sortingList) {
-            self.latestNewsList.en.push(sortingList[index].en);
-            self.latestNewsList.tw.push(sortingList[index].tw);
             if(index >= self.displayNumber) {
               break;
             }
+            self.latestNewsList.en.push(sortingList[index].en);
+            self.latestNewsList.tw.push(sortingList[index].tw);
           }
-
-          //  = sortingList.en.slice(0, self.displayNumber);
-          // self.latestNewsList.tw = sortingList.tw.slice(0, self.displayNumber);
         }
       });
     },
