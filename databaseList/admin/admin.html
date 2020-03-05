@@ -68,84 +68,77 @@
           <input type="text" class="search" placeholder="搜尋資源" v-model="searchKeyword" />
         </div>
       </div>
-      <div class="list-container" v-show="tag === 'tw'">
-        <div v-for="(database, index) in databaseList.tw" class="resource-wrap" v-if="database.resourceName.match(searchKeyword)!=null">
-          <h3>{{database.resourceName}}</h3>
+      <div class="list-container">
+        <!-- <div v-for="(database, index) in databaseList" class="resource-wrap" v-if="database.resourceName.match(searchKeyword)!=null"> -->
+        <div v-for="(database, index) in databaseList" class="resource-wrap">
           <div class="button-wrap">
             <button @click="modifyResource(database)"><img src="../img/edit.svg"/></button>
             <button @click="deleteResource(database)"><img src="../img/delete.svg"/></button>
           </div>
-          <div class="row">
-            <div class="title">資源連結</div>
-            <div class="content over">
-              <a :href="database.url" target="_blank">{{database.url}}</a>
-            </div>
+          <div class="tag-wrap">
+            <button @click="changeTag(database, 'en')">En</button>
+            <button @click="changeTag(database, 'tw')">TW</button>
           </div>
-          <div class="row">
-            <div class="title">試用/免費註記</div>
-            <div class="content">{{database.resourceType}}</div>
-          </div>
-          <div class="row">
-            <div class="title">起訂日期</div>
-            <div class="content">{{database.startDate}}</div>
-          </div>
-          <div class="row">
-            <div class="title">迄訂日期</div>
-            <div class="content">{{database.expireDate}}</div>
-          </div>
-          <div class="row">
-            <div class="title">適用學院</div>
-            <div class="content">{{database.faculty}}</div>
-          </div>
-          <div class="row">
-            <div class="title">主題</div>
-            <div class="content">{{database.subject}}</div>
-          </div>
-          <div class="row">
-            <div class="title">分類</div>
-            <div class="content">{{database.category}}</div>
-          </div>
-          <div class="row">
-            <div class="title">類型</div>
-            <div class="content">{{database.type}}</div>
-          </div>
-          <div class="row">
-            <div class="title">資料庫代理商/出版商</div>
-            <div class="content">{{database.publisher}}</div>
-          </div>
-          <div class="row">
-            <div class="title">語言</div>
-            <div class="content">{{database.language}}</div>
-          </div>
-          <div class="row">
-            <div class="title">資源簡述(摘要)</div>
-            <div class="content">{{database.resourceDescribe}}</div>
-          </div>
-          <div class="row">
-            <div class="title">相關URL</div>
-            <div class="content">
-              <a :href="database.relevanceUrl" target="_blank" v-if="database.relevanceUrlDescribe !== ''">
-                {{database.relevanceUrlDescribe}}
-              </a>
-              <div v-else>
-                N/A
+          <div class="multi-lang-field">
+            <div v-if="database.tag === 'tw'">
+              <div class="row">
+                <div class="title">資源名稱</div>
+                <div class="content">{{database.tw.resourceName}}</div>
+              </div>
+              <div class="row">
+                <div class="title">資源類型</div>
+                <div class="content">{{database.tw.resourceType}}</div>
+              </div>
+              <div class="row">
+                <div class="title">資源類型</div>
+                <div class="content">{{database.tw.faculty}}</div>
+              </div>
+              <div class="row">
+                <div class="title">資源類型</div>
+                <div class="content">{{database.tw.department}}</div>
+              </div>
+              <div class="row">
+                <div class="title">資源類型</div>
+                <div class="content">{{database.tw.subject}}</div>
+              </div>
+              <div class="row">
+                <div class="title">資源類型</div>
+                <div class="content">{{database.tw.category}}</div>
+              </div>
+              <div class="row">
+                <div class="title">資源類型</div>
+                <div class="content">{{database.tw.publish}}</div>
+              </div>
+              <div class="row">
+                <div class="title">資源類型</div>
+                <div class="content">{{database.tw.language}}</div>
+              </div>
+              <div class="row">
+                <div class="title">資源類型</div>
+                <div class="content">{{database.tw.resourceDescribe}}</div>
+              </div>
+              <div class="row">
+                <div class="title">資源類型</div>
+                <div class="content">{{database.tw.relevanceUrlDescribe}}</div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="list-container" v-show="tag === 'en'">
-        <div v-for="(database, index) in databaseList.en" class="resource-wrap" v-if="database.resourceName.match(searchKeyword)!=null">
-          <h3>{{database.resourceName}}</h3>
-          <div class="button-wrap">
-            <button @click="modifyResource(database)"><img src="../img/edit.svg"/></button>
-            <button @click="deleteResource(database)"><img src="../img/delete.svg"/></button>
+            <div v-else-if="database.tag === 'en'">
+
+            </div>
           </div>
           <div class="row">
             <div class="title">資源連結</div>
             <div class="content over">
               <a :href="database.url" target="_blank">{{database.url}}</a>
             </div>
+          </div>
+          <div class="row">
+            <div class="title">UUID</div>
+            <div class="content">{{database.uuid}}</div>
+          </div>
+          <div class="row">
+            <div class="title">TAG</div>
+            <div class="content">{{database.tag}}</div>
           </div>
           <div class="row">
             <div class="title">試用/免費註記</div>
@@ -349,20 +342,16 @@
       el:'#listField',
       data: {
         searchKeyword: '',
-        databaseList: {
-          'en': [],
-          'tw': []
-        },
-        tag: 'tw'
+        databaseList: []
       },
-      mounted: function() {
+      created: function() {
         this.getDatabaseList();
       },
       methods:{
         getDatabaseList: function() {
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getList.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getResourceListOriginal.php',
             type: 'GET',
             error: function(jqXHR, exception) {
               //use url variable here
@@ -370,8 +359,12 @@
               console.log(exception);
             },
             success: function(res) {
-              self.databaseList.en = res.en;
-              self.databaseList.tw = res.tw;
+              let temp = res;
+              for(let index in temp) {
+                temp[index]['tag'] = 'tw';
+              }
+              console.log(temp);
+              self.databaseList = temp;
             }
           });
         },
@@ -380,6 +373,10 @@
         },
         deleteResource: function(database) {
           dialogue.setDialogue('deleteResource', database);
+        },
+        changeTag(obj, lang) {
+          console.log(obj);
+          obj.tag = lang;
         }
       }
     });
