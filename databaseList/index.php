@@ -156,6 +156,7 @@
                 <h3 v-else-if="lang === 'tw'">{{bulletinTitle.tw}}</h3>
               </div>
               <ul v-if="lang === 'en'">
+                {{latestNewsList.en}}
                 <li v-for="(latestNews, index) in latestNewsList.en" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
@@ -165,6 +166,7 @@
                 </li>
               </ul>
               <ul v-else-if="lang === 'tw'">
+                {{latestNewsList.tw}}
                 <li v-for="(latestNews, index) in latestNewsList.tw" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
