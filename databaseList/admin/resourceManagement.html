@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>資料庫</title>
-    <link rel="stylesheet" type="text/css" href="../lib/admin.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/resourceManagement.css"/>
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
   </head>
 <body>
@@ -19,7 +19,7 @@
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
         <li>
-          <a href="admin.html" class="nav-tag">資源管理</a>
+          <a href="resourceManagement.html" class="nav-tag">資源管理</a>
         </li>
         <li>
           <a href="manageLatestNews.html" class="nav-tag">最新消息管理</a>
@@ -75,122 +75,114 @@
             <button @click="deleteResource(database)"><img src="../img/delete.svg"/></button>
           </div>
           <div class="tag-wrap">
-            <button @click="changeTag(database, 'tw')" :class="[database.tag === 'tw'? 'taged': '']">TW</button>
-            <button @click="changeTag(database, 'en')" :class="[database.tag === 'en'? 'taged': '']">En</button>
+            <button @click="changeTag(database, 'tw')" :class="[database.tag === 'tw'? 'taged': '']">{{$t('message.resource_tag_chinese')}}</button>
+            <button @click="changeTag(database, 'en')" :class="[database.tag === 'en'? 'taged': '']">{{$t('message.resource_tag_english')}}</button>
           </div>
           <div class="multi-lang-field">
             <div v-if="database.tag === 'tw'">
               <div class="row">
-                <div class="title">資源名稱</div>
+                <div class="title">{{$t('message.resource_resourceName')}}</div>
                 <div class="content">{{database.tw.resourceName}}</div>
               </div>
               <div class="row">
-                <div class="title">資源類型</div>
+                <div class="title">{{$t('message.resource_resourceType')}}</div>
                 <div class="content">{{database.tw.resourceType}}</div>
               </div>
               <div class="row">
-                <div class="title">適用學院</div>
+                <div class="title">{{$t('message.resource_faculty')}}</div>
                 <div class="content">{{database.tw.faculty}}</div>
               </div>
               <div class="row">
-                <div class="title">適用科系</div>
+                <div class="title">{{$t('message.resource_department')}}</div>
                 <div class="content">{{database.tw.department}}</div>
               </div>
               <div class="row">
-                <div class="title">主題</div>
+                <div class="title">{{$t('message.resource_subject')}}</div>
                 <div class="content">{{database.tw.subject}}</div>
               </div>
               <div class="row">
-                <div class="title">分類</div>
+                <div class="title">{{$t('message.resource_category')}}</div>
                 <div class="content">{{database.tw.category}}</div>
               </div>
               <div class="row">
-                <div class="title">出版商</div>
+                <div class="title">{{$t('message.resource_publisher')}}</div>
                 <div class="content">{{database.tw.publish}}</div>
               </div>
               <div class="row">
-                <div class="title">語言</div>
+                <div class="title">{{$t('message.resource_language')}}</div>
                 <div class="content">{{database.tw.language}}</div>
               </div>
               <div class="row">
-                <div class="title">資源類型</div>
-                <div class="content">{{database.tw.resourceType}}</div>
-              </div>
-              <div class="row">
-                <div class="title">資源簡述</div>
+                <div class="title">{{$t('message.resource_resourceDescribe')}}</div>
                 <div class="content">{{database.tw.resourceDescribe}}</div>
               </div>
               <div class="row">
-                <div class="title">相關連結名稱</div>
+                <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
                 <div class="content">{{database.tw.relevanceUrlDescribe}}</div>
               </div>
             </div>
             <div v-else-if="database.tag === 'en'">
               <div class="row">
-                <div class="title">資源名稱</div>
+                <div class="title">{{$t('message.resource_resourceName')}}</div>
                 <div class="content">{{database.en.resourceName}}</div>
               </div>
               <div class="row">
-                <div class="title">資源類型</div>
+                <div class="title">{{$t('message.resource_resourceType')}}</div>
                 <div class="content">{{database.en.resourceType}}</div>
               </div>
               <div class="row">
-                <div class="title">適用學院</div>
+                <div class="title">{{$t('message.resource_faculty')}}</div>
                 <div class="content">{{database.en.faculty}}</div>
               </div>
               <div class="row">
-                <div class="title">適用科系</div>
+                <div class="title">{{$t('message.resource_department')}}</div>
                 <div class="content">{{database.en.department}}</div>
               </div>
               <div class="row">
-                <div class="title">主題</div>
+                <div class="title">{{$t('message.resource_subject')}}</div>
                 <div class="content">{{database.en.subject}}</div>
               </div>
               <div class="row">
-                <div class="title">分類</div>
+                <div class="title">{{$t('message.resource_category')}}</div>
                 <div class="content">{{database.en.category}}</div>
               </div>
               <div class="row">
-                <div class="title">出版商</div>
+                <div class="title">{{$t('message.resource_publisher')}}</div>
                 <div class="content">{{database.en.publish}}</div>
               </div>
               <div class="row">
-                <div class="title">語言</div>
+                <div class="title">{{$t('message.resource_language')}}</div>
                 <div class="content">{{database.en.language}}</div>
               </div>
               <div class="row">
-                <div class="title">資源類型</div>
-                <div class="content">{{database.en.resourceType}}</div>
-              </div>
-              <div class="row">
-                <div class="title">資源簡述</div>
+                <div class="title">{{$t('message.resource_resourceDescribe')}}</div>
                 <div class="content">{{database.en.resourceDescribe}}</div>
               </div>
               <div class="row">
-                <div class="title">相關連結名稱</div>
+                <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
                 <div class="content">{{database.tw.relevanceUrlDescribe}}</div>
               </div>
             </div>
           </div>
           <div class="common-field">
             <div class="row">
-              <div class="title">起訂日期</div>
+              <div class="title">{{$t('message.resource_startDate')}}</div>
               <div class="content">{{database.startDate}}</div>
             </div>
             <div class="row">
-              <div class="title">迄訂日期</div>
+              <div class="title">{{$t('message.resource_expireDate')}}</div>
               <div class="content">{{database.expireDate}}</div>
             </div>
             <div class="row">
-              <div class="title">代理</div>
+              <div class="title">{{$t('message.resource_isProxy')}}</div>
               <div class="content">{{database.isProxy}}</div>
             </div>
             <div class="row">
-              <div class="title">資源連結</div>
+              <div class="title">{{$t('message.resource_resourceUrl')}}</div>
               <div class="content">{{database.resourceUrl}}</div>
             </div>
             <div class="row">
-              <div class="title">相關資源連結</div>
+              <div class="title">{{$t('message.resource_resourceUrl')}}</div>
               <div class="content">{{database.relevanceUrl}}</div>
             </div>
           </div>
@@ -202,133 +194,125 @@
     <div class="dialogue-frame">
       <img src="../img/close.svg" class="close" @click="closeForm">
       <div class="tag-wrap">
-        <button @click="changeTag(resource, 'tw')" :class="[resource.tag === 'tw'? 'taged': '']">TW</button>
-        <button @click="changeTag(resource, 'en')" :class="[resource.tag === 'en'? 'taged': '']">En</button>
+        <button @click="changeTag(resource, 'tw')" :class="[resource.tag === 'tw'? 'taged': '']">{{$t('message.resource_tag_chinese')}}</button>
+        <button @click="changeTag(resource, 'en')" :class="[resource.tag === 'en'? 'taged': '']">{{$t('message.resource_tag_english')}}</button>
       </div>
       <div class="dialogue-content">
         <div class="multiple-lang-field" v-show="resource.tag === 'en'">
           <div class="row">
-            <div class="title">資源名稱</div>
+            <div class="title">{{$t('message.resource_resourceName')}}</div>
             <input type="text" v-model="resource.en.resourceName">
           </div>
           <div class="row">
-            <div class="title">資源類型</div>
+            <div class="title">{{$t('message.resource_resourceType')}}</div>
             <input type="text" v-model="resource.en.resourceType">
           </div>
           <div class="row">
-            <div class="title">適用學院</div>
+            <div class="title">{{$t('message.resource_faculty')}}</div>
             <input type="text" v-model="resource.en.faculty">
           </div>
           <div class="row">
-            <div class="title">適用科系</div>
+            <div class="title">{{$t('message.resource_department')}}</div>
             <input type="text" v-model="resource.en.department">
           </div>
           <div class="row">
-            <div class="title">主題</div>
+            <div class="title">{{$t('message.resource_subject')}}</div>
             <input type="text" v-model="resource.en.subject">
           </div>
           <div class="row">
-            <div class="title">分類</div>
+            <div class="title">{{$t('message.resource_category')}}</div>
             <input type="text" v-model="resource.en.category">
           </div>
           <div class="row">
-            <div class="title">出版商</div>
+            <div class="title">{{$t('message.resource_publisher')}}</div>
             <input type="text" v-model="resource.en.publish">
           </div>
           <div class="row">
-            <div class="title">語言</div>
+            <div class="title">{{$t('message.resource_language')}}</div>
             <input type="text" v-model="resource.en.language">
           </div>
           <div class="row">
-            <div class="title">資源類型</div>
-            <input type="text" v-model="resource.en.resourceType">
-          </div>
-          <div class="row">
-            <div class="title">資源簡述</div>
+            <div class="title">{{$t('message.resource_resourceDescribe')}}</div>
             <textarea v-model="resource.en.resourceDescribe" name="editor_en"></textarea>
           </div>
           <div class="row">
-            <div class="title">相關連結名稱</div>
+            <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
             <input type="text" v-model="resource.en.relevanceUrlDescribe">
           </div>
         </div>
         <div class="multiple-lang-field" v-show="resource.tag === 'tw'">
           <div class="row">
-            <div class="title">資源名稱</div>
+            <div class="title">{{$t('message.resource_resourceName')}}</div>
             <input type="text" v-model="resource.tw.resourceName">
           </div>
           <div class="row">
-            <div class="title">資源類型</div>
+            <div class="title">{{$t('message.resource_resourceType')}}</div>
             <input type="text" v-model="resource.tw.resourceType">
           </div>
           <div class="row">
-            <div class="title">適用學院</div>
+            <div class="title">{{$t('message.resource_faculty')}}</div>
             <input type="text" v-model="resource.tw.faculty">
           </div>
           <div class="row">
-            <div class="title">適用科系</div>
+            <div class="title">{{$t('message.resource_department')}}</div>
             <input type="text" v-model="resource.tw.department">
           </div>
           <div class="row">
-            <div class="title">主題</div>
+            <div class="title">{{$t('message.resource_subject')}}</div>
             <input type="text" v-model="resource.tw.subject">
           </div>
           <div class="row">
-            <div class="title">分類</div>
+            <div class="title">{{$t('message.resource_category')}}</div>
             <input type="text" v-model="resource.tw.category">
           </div>
           <div class="row">
-            <div class="title">出版商</div>
+            <div class="title">{{$t('message.resource_publisher')}}</div>
             <input type="text" v-model="resource.tw.publish">
           </div>
           <div class="row">
-            <div class="title">語言</div>
+            <div class="title">{{$t('message.resource_language')}}</div>
             <input type="text" v-model="resource.tw.language">
           </div>
           <div class="row">
-            <div class="title">資源類型</div>
-            <input type="text" v-model="resource.tw.resourceType">
-          </div>
-          <div class="row">
-            <div class="title">資源簡述</div>
+            <div class="title">{{$t('message.resource_resourceDescribe')}}</div>
             <textarea v-model="resource.tw.resourceDescribe" name="editor_tw"></textarea>
           </div>
           <div class="row">
-            <div class="title">相關連結名稱</div>
+            <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
             <input type="text" v-model="resource.tw.relevanceUrlDescribe">
           </div>
         </div>
         <div class="common-field">
           <div class="row">
-            <div class="title">起訂日期</div>
+            <div class="title">{{$t('message.resource_startDate')}}</div>
             <input type="date" v-model="resource.startDate">
           </div>
           <div class="row">
-            <div class="title">迄訂日期</div>
+            <div class="title">{{$t('message.resource_expireDate')}}</div>
             <input type="date" v-model="resource.expireDate">
           </div>
           <div class="row">
-            <div class="title">代理</div>
+            <div class="title">{{$t('message.resource_isProxy')}}</div>
             <div class="content">
               <select v-model="resource.isProxy">
-                <option value="true">是</option>
-                <option value="false">否</option>
+                <option value="true">{{$t('message.resource_select_yes')}}</option>
+                <option value="false">{{$t('message.resource_select_no')}}</option>
               </select>
             </div>
           </div>
           <div class="row">
-            <div class="title">資源連結</div>
+            <div class="title">{{$t('message.resource_resourceUrl')}}</div>
             <input type="text" v-model="resource.resourceUrl">
           </div>
           <div class="row">
-            <div class="title">相關資源連結</div>
+            <div class="title">{{$t('message.resource_relevanceUrl')}}</div>
             <input type="text" v-model="resource.relevanceUrl">
           </div>
         </div>
       </div>
       <div class="btn-frame">
-        <button v-if="btnType === 'add'" @click="sendForm">新增</button>
-        <button v-else-if="btnType === 'modify'" @click="sendForm">修改</button>
+        <button v-if="btnType === 'add'" @click="sendForm">{{$t('message.resource_btn_add')}}</button>
+        <button v-else-if="btnType === 'modify'" @click="sendForm">{{$t('message.resource_btn_modify')}}</button>
       </div>
     </div>
   </div>
