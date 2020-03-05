@@ -363,10 +363,10 @@
     el:'#aside',
     i18n,
     data: {
-      subjects: [{
+      subjects: {
         'en': [],
         'tw': []
-      }],
+      },
       lang: '',
       bulletinTitle: {
         'en': '',
@@ -421,10 +421,9 @@
               "subjectTitle": val.subjectTitle.tw,
               "subjectList": tempSubList_tw
             }
-            console.log(self.subjects);
-            console.log(self.subjects.en);
-            // self.subjects.en.push(temp_obj_en);
-            // self.subjects.tw.push(temp_obj_tw);
+
+            self.subjects.en.push(temp_obj_en);
+            self.subjects.tw.push(temp_obj_tw);
           })
         }
       });
