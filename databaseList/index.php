@@ -156,8 +156,8 @@
                 <h3 v-else-if="lang === 'tw'">{{bulletinTitle.tw}}</h3>
               </div>
               <ul v-if="lang === 'en'">
-                <li v-for="(latestNews, index) in latestNewsList" class="latest-news">
-                  <span class="latest-title" @click="showContent(latestNews, 'en')">{{latestNews.en.title}}</span>
+                <li v-for="(latestNews, index) in latestNewsList.en" class="latest-news">
+                  <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
                 <li class="more" v-if="latestNewsList.en.length >= displayNumber">
@@ -165,8 +165,8 @@
                 </li>
               </ul>
               <ul v-else-if="lang === 'tw'">
-                <li v-for="(latestNews, index) in latestNewsList" class="latest-news">
-                  <span class="latest-title" @click="showContent(latestNews, 'tw')">{{latestNews.tw.title}}</span>
+                <li v-for="(latestNews, index) in latestNewsList.tw" class="latest-news">
+                  <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
                 <li class="more" v-if="latestNewsList.tw.length >= displayNumber">
@@ -465,20 +465,11 @@
       closeDialogue: function() {
         this.show = false;
       },
-      showContent: function(latestNews, type) {
-        let message
-        if(type === 'tw') {
-          message = {
-            'title': latestNews.tw.title,
-            'content': latestNews.tw.content
-          }
-        } else if(type === 'en') {
-          message = {
-            'title': latestNews.en.title,
-            'content': latestNews.en.content
-          }
+      showContent: function(latestNews) {
+        let message = {
+          'title': latestNews.title,
+          'content': latestNews.content
         }
-
         dialogue.setDialogue('latestNews', message);
       },
       set_mobile_show_switch (status) {
