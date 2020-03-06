@@ -42,11 +42,10 @@ error_reporting(E_ALL);
         break;
       }
     }
-    print_r($latestNewsData);
 
     // write back
-    // file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
-    // response('success', 'success');
+    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+    response('success', 'success');
   } else if ($type === 'deleteNews') {
     foreach($latestNewsData['newsList'] as $key => $row) {
       if(strcasecmp($row['uuid'], $receivedData['uuid']) == 0) {
