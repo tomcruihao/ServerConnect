@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>資源管理系統</title>
+    <link rel="stylesheet" type="text/css" href="../lib/clickReport.css"/>
+  </head>
+<body>
+  <!-- <header id="header">
+    <div class="logo">
+      <img src="../img/logo.png" alt="EBSCO" title="EBSCO"/>
+    </div>
+    <nav>
+      <label for="mobile_btn" class="mobile-btn-frame">
+        <img src="../img/dehaze.svg"/>
+      </label>
+      <input type="checkbox" id="mobile_btn">
+      <ul class="nav-list">
+        <li>
+          <a href="../resourceManagement.html" class="nav-tag">資源管理</a>
+        </li>
+        <li>
+          <a href="../manageLatestNews.html" class="nav-tag">最新消息管理</a>
+        </li>
+        <li>
+          <a href="../manageSetting.html" class="nav-tag">設定</a>
+        </li>
+        <li class="multi">
+          <label class="nav-tag" for="tag1">link 2</label>
+          <input type="checkbox" id="tag1">
+          <ul>
+            <li>
+              <a href="#">link 2-1</a>
+            </li>
+            <li>
+              <a href="#">link 2-2</a>
+            </li>
+            <li>
+              <a href="#">link 2-3</a>
+            </li>
+            <li>
+              <a href="#">link 2-4</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header> -->
+  <div class="app-content">
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+  <script src="../lang/lang.js"></script>
+  <script src="../lib/jquery.js"></script>
+  <script type="text/javascript">
+    var mainTitle = new Vue({
+      el:'#mainTitle',
+      i18n,
+      data: {
+        selector_lang: ''
+      },
+      mounted: function() {
+        console.log(i18n.locale)
+        this.selector_lang = i18n.locale;
+      },
+      methods: {
+        setLang(event) {
+          i18n.locale = event.target.value;
+          localStorage.setItem('lang', event.target.value);
+        }
+      }
+    })
+    var authForm = new Vue({
+      el:'#authForm',
+      i18n,
+      data: {
+        account: '',
+        password: ''
+      },
+      computed: {
+      },
+      methods:{
+        logIn() {
+
+        }
+      }
+    });
+  </script>
+</body>
+</html>

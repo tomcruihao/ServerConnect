@@ -62,34 +62,67 @@
         </select>
       </div>
     </div>
-    <div id="latestNewsListField" class="latestNews-wrap">
+    <div id="latestNewsListField" class="latestNews-field">
       <div class="latestNews-wrap form-setting">
         <h3><img src="../img/settings.svg"/>{{$t('message.latest_form_setting')}}</h3>
         <div class="button-wrap">
           <button @click="updateNewsField()"><img src="../img/edit.svg"/></button>
         </div>
-        <div class="row">
-          <div class="title">{{$t('message.latest_form_name')}}</div>
-          <div class="content">{{title}}</div>
+        <div class="tag-wrap">
+          <button @click="changeTag(latestNewsField, 'tw')" :class="[latestNewsField.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+          <button @click="changeTag(latestNewsField, 'en')" :class="[latestNewsField.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
         </div>
-        <div class="row">
-          <div class="title">{{$t('message.latest_form_number_of_showing')}}</div>
-          <div class="content">{{displayNumber}}</div>
+        <div class="multi-lang-field">
+          <div class="row" v-if="latestNewsField.tag === 'tw'">
+            <div class="title">{{$t('message.latest_form_name')}}</div>
+            <div class="content">{{latestNewsField.bulletinTitle.tw}}</div>
+          </div>
+          <div class="row" v-else-if="latestNewsField.tag === 'en'">
+            <div class="title">{{$t('message.latest_form_name')}}</div>
+            <div class="content">{{latestNewsField.bulletinTitle.en}}</div>
+          </div>
+        </div>
+        <div class="common-field">
+          <div class="row">
+            <div class="title">{{$t('message.latest_form_number_of_showing')}}</div>
+            <div class="content">{{latestNewsField.displayNumber}}</div>
+          </div>
         </div>
       </div>
       <div v-for="(latestNews, index) in latestNewsList" class="latestNews-wrap">
-        <h3>{{latestNews.title}}</h3>
         <div class="button-wrap">
           <button @click="updateNews(latestNews)"><img src="../img/edit.svg"/></button>
           <button @click="deleteNews(latestNews)"><img src="../img/delete.svg"/></button>
         </div>
-        <div class="row">
-          <div class="title">{{$t('message.latest_publish_date')}}</div>
-          <div class="content">{{latestNews.publishDate}}</div>
+        <div class="tag-wrap">
+          <button @click="changeTag(latestNews, 'tw')" :class="[latestNews.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+          <button @click="changeTag(latestNews, 'en')" :class="[latestNews.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
         </div>
-        <div class="row">
-          <div class="title">{{$t('message.latest_publish_content')}}</div>
-          <div class="content">{{latestNews.content}}</div>
+        <div class="multi-lang-field" v-if="latestNews.tag === 'tw'">
+          <div class="row">
+            <div class="title">{{$t('message.latest_publish_title')}}</div>
+            <div class="content">{{latestNews.tw.title}}</div>
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.latest_publish_content')}}</div>
+            <div class="content">{{latestNews.tw.content}}</div>
+          </div>
+        </div>
+        <div class="multi-lang-field" v-else-if="latestNews.tag === 'en'">
+          <div class="row">
+            <div class="title">{{$t('message.latest_publish_title')}}</div>
+            <div class="content">{{latestNews.en.title}}</div>
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.latest_publish_content')}}</div>
+            <div class="content">{{latestNews.en.content}}</div>
+          </div>
+        </div>
+        <div class="common-field">
+          <div class="row">
+            <div class="title">{{$t('message.latest_publish_date')}}</div>
+            <div class="content">{{latestNews.publishDate}}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -101,33 +134,55 @@
         <img src="../img/closeWhite.svg"/ class="close" @click="closeForm">
       </div>
       <div class="dialogue-body" v-if="sendType === 'updateNewsField'">
-        <div class="row">
-          <div class="title">{{$t('message.dialogue_title')}}</div>
-          <div class="content">
-            <input type="text" v-model="newsField.bulletinTitle">
+        <div class="tag-wrap-s">
+          <button @click="changeTag(newsField, 'tw')" :class="[newsField.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+          <button @click="changeTag(newsField, 'en')" :class="[newsField.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
+        </div>
+        <div class="multi-lang-field">
+          <div class="row" v-if="newsField.tag === 'tw'">
+            <div class="title">{{$t('message.latest_form_name')}}</div>
+            <input type="text" v-model="newsField.bulletinTitle.tw">
+          </div>
+          <div class="row" v-else-if="newsField.tag === 'en'">
+            <div class="title">{{$t('message.latest_form_name')}}</div>
+            <input type="text" v-model="newsField.bulletinTitle.en">
           </div>
         </div>
-        <div class="row">
-          <div class="title">{{$t('message.latest_form_number_of_showing')}}</div>
-          <div class="content">
-            <input type="number" v-model="newsField.displayNumber" min="1">
+        <div class="common-field">
+          <div class="row">
+            <div class="title">{{$t('message.latest_form_number_of_showing')}}</div>
+            <div class="content">
+              <input type="number" v-model="newsField.displayNumber" min="1">
+            </div>
           </div>
         </div>
         <div class="btn-frame">
-          <button @click="sendFieldForm">{{btnName}}</button>
+          <button @click="sendFieldForm">{{$t('message.btn_update')}}</button>
         </div>
       </div>
       <div class="dialogue-body" v-else>
-        <div class="row">
-          <div class="title">{{$t('message.dialogue_title')}}</div>
-          <div class="content">
-            <input type="text" v-model="news.title">
+        <div class="tag-wrap-s">
+          <button @click="changeTag(news, 'tw')" :class="[news.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+          <button @click="changeTag(news, 'en')" :class="[news.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
+        </div>
+        <div class="multi-lang-field" v-show="news.tag === 'tw'">
+          <div class="row">
+            <div class="title">{{$t('message.latest_publish_title')}}</div>
+            <input type="text" v-model="news.tw.title">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.latest_publish_content')}}</div>
+            <input type="text" v-model="news.tw.content" name="editor_tw">
           </div>
         </div>
-        <div class="row">
-          <div class="title">內容</div>
-          <div class="content">
-            <textarea v-model="news.content" name="editor1"></textarea>
+        <div class="multi-lang-field" v-show="news.tag === 'en'">
+          <div class="row">
+            <div class="title">{{$t('message.latest_publish_title')}}</div>
+            <input type="text" v-model="news.en.title">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.latest_publish_content')}}</div>
+            <input type="text" v-model="news.en.content" name="editor_en">
           </div>
         </div>
         <div class="btn-frame">
@@ -167,20 +222,27 @@
     }
     function replaceCKEditor() {
       setTimeout(() => {
-        CKEDITOR.replace( 'editor1' );
+        CKEDITOR.replace( 'editor_en' );
+        CKEDITOR.replace( 'editor_tw' );
       }, 500);
     }
-    function getEditorData() {
+    function getEditorData(type) {
       // remove script tags
       const pattern = /<script([\S\s]*?)>([\S\s]*?)<\/script>/ig;
       const regExp = new RegExp(pattern, 'i');
 
-      let editorData = CKEDITOR.instances.editor1.getData();
+      let editorData;
+      if(type === 'en') {
+        editorData = CKEDITOR.instances.editor_en.getData();
+      } else if(type === 'tw') {
+        editorData = CKEDITOR.instances.editor_tw.getData();
+      }
+
       let processData = editorData.replace(pattern, "");
-      console.log(processData);
 
       return processData;
     }
+
     var mainTitle = new Vue({
       el:'#mainTitle',
       i18n,
@@ -201,14 +263,23 @@
       el:'#latestNewsListField',
       i18n,
       data: {
-        title: '',
-        displayNumber: 0,
+        latestNewsField: {
+          bulletinTitle: {
+            'en': '',
+            'tw': '',
+          },
+          displayNumber: 0,
+          tag: 'tw'
+        },
         latestNewsList: []
       },
       created: function() {
         this.getLatestNewsListInfo();
       },
       methods:{
+        changeTag(Obj, type) {
+          Obj.tag = type;
+        },
         getLatestNewsListInfo: function() {
           let self = this;
           $.ajax({
@@ -220,18 +291,25 @@
               console.log(exception);
             },
             success: function(res) {
-              self.title = res.bulletinTitle;
-              self.displayNumber = res.displayNumber;
-              self.latestNewsList = res.newsList;
+              self.latestNewsField.bulletinTitle.en= res.bulletinTitle.en;
+              self.latestNewsField.bulletinTitle.tw= res.bulletinTitle.tw;
+
+              self.latestNewsField.displayNumber = res.displayNumber;
+              let temp_newsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+              for(let index in temp_newsList) {
+                temp_newsList[index]['tag'] = 'tw';
+              }
+              self.latestNewsList = temp_newsList;
             }
           });
         },
         updateNewsField: function() {
-          let newsFieldData = {
-            'bulletinTitle': this.title,
-            'displayNumber': this.displayNumber
-          }
-          fillForm.setDisplayForm('updateNewsField', newsFieldData);
+          // let newsFieldData = {
+          //   'bulletinTitle': this.title,
+          //   'displayNumber': this.displayNumber
+          // }
+
+          fillForm.setDisplayForm('updateNewsField', this.latestNewsField);
         },
         updateNews: function(news) {
           fillForm.setDisplayForm('updateNews', news);
@@ -250,14 +328,21 @@
         btnName: '',
         sendType: '',
         news: '',
-        newsField: ''
+        newsField: {
+          'en': '',
+          'tw': '',
+          'tag': ''
+        }
       },
       methods:{
+        changeTag(Obj, type) {
+          Obj.tag = type;
+        },
         setDisplayForm: function(type, data = '') {
           if(type === 'updateNews') {
             this.btnName = '修改';
             this.headTitle = '修改內容';
-            this.news = data;
+            this.news = JSON.parse(JSON.stringify(data));
             replaceCKEditor();
           } else if(type === 'addNews') {
             this.btnName = '新增';
@@ -267,10 +352,10 @@
               "content": ""
             }
             replaceCKEditor();
-          } else if (type === 'updateNewsField') {
+          } else if (type === 'updateNewsField') {  // done
             this.btnName = '修改';
             this.headTitle = '修改內容';
-            this.newsField = data
+            this.newsField = JSON.parse(JSON.stringify(data));
           }
           this.sendType = type;
           this.show = true;
@@ -301,33 +386,34 @@
         },
         sendForm: function() {
           // get the CKEditor data
-          let editorData = getEditorData();
-          this.news.content = editorData;
           
+          this.news.en.content = getEditorData('en');
+          this.news.tw.content = getEditorData('tw');
+
           let newsData = JSON.stringify(this.news);
           let self = this;
           console.log(newsData);
 
-          $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
-            type: 'POST',
-            data: {
-              type: self.sendType,
-              processData: newsData
-            },
-            error: function(jqXHR, exception) {
-              //use url variable here
-              console.log(jqXHR);
-              console.log(exception);
-            },
-            success: function(res) {
-              console.log(res);
-              dataList.getLatestNewsListInfo();
-              self.closeForm();
-              let dialogueType = `${self.sendType}_success`;
-              dialogue.setDialogue(dialogueType);
-            }
-          });
+          // $.ajax({
+          //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+          //   type: 'POST',
+          //   data: {
+          //     type: self.sendType,
+          //     processData: newsData
+          //   },
+          //   error: function(jqXHR, exception) {
+          //     //use url variable here
+          //     console.log(jqXHR);
+          //     console.log(exception);
+          //   },
+          //   success: function(res) {
+          //     console.log(res);
+          //     dataList.getLatestNewsListInfo();
+          //     self.closeForm();
+          //     let dialogueType = `${self.sendType}_success`;
+          //     dialogue.setDialogue(dialogueType);
+          //   }
+          // });
         },
         closeForm: function() {
           this.show = false;

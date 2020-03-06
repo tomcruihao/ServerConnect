@@ -31,8 +31,6 @@ const messages = {
       resource_isProxy: 'Proxy',
       resource_resourceUrl: 'Resource Url',
       resource_relevanceUrl: 'Relevance Url',
-      resource_tag_chinese: 'Chinese',
-      resource_tag_english: 'English',
       resource_select_yes: 'yes',
       resource_select_no: 'no',
       resource_btn_modify: 'Modify',
@@ -51,8 +49,9 @@ const messages = {
       h1_latestNews: 'Latest News',
       latest_form_setting: 'Form Setting',
       latest_form_name: 'Form Name',
-      latest_form_number_of_showing: 'Number Of Showing',
+      latest_form_number_of_showing: 'Number of Showing',
       latest_publish_date: 'Publish Date',
+      latest_publish_title: 'News Title',
       latest_publish_content: 'News Content',
       // Clicking Report page
       h1_clickingReport: 'Clicking Report',
@@ -69,7 +68,10 @@ const messages = {
       btn_resource_name: 'Resource Name',
       btn_resource_subject: 'Subject',
       btn_resource_catalog: 'Catalog',
-      btn_resource_type: 'Type'
+      btn_resource_type: 'Type',
+      // tag
+      tag_chinese: 'Chinese',
+      tag_english: 'English'
     }
   },
   tw: {
@@ -104,8 +106,6 @@ const messages = {
       resource_isProxy: '代理',
       resource_resourceUrl: '資源連結',
       resource_relevanceUrl: '相關資源連結',
-      resource_tag_chinese: '中文',
-      resource_tag_english: '英文',
       resource_select_yes: '是',
       resource_select_no: '否',
       resource_btn_modify: '修改',
@@ -126,6 +126,7 @@ const messages = {
       latest_form_name: '表格設定',
       latest_form_number_of_showing: '顯示筆數',
       latest_publish_date: '發佈日期',
+      latest_publish_title: '消息標頭',
       latest_publish_content: '消息內容',
       // Clicking Report page
       h1_clickingReport: '使用率報表',
@@ -142,7 +143,10 @@ const messages = {
       btn_resource_name: '資源名稱',
       btn_resource_subject: '主題',
       btn_resource_catalog: '分類',
-      btn_resource_type: '類型'
+      btn_resource_type: '類型',
+      // tag
+      tag_chinese: '中文',
+      tag_english: '英文'
     }
   }
 }

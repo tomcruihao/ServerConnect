@@ -273,6 +273,45 @@ header nav .nav-list li.multi:before {
   margin-left: 10px;
 }
 
+.tag-wrap button {
+  width: 120px;
+  height: 40px;
+  border-radius: 0px 10px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: 0px;
+  background-color: #eeeeee;
+  font-size: 1rem;
+}
+
+.tag-wrap button.taged {
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.tag-wrap-s button {
+  width: 120px;
+  height: 30px;
+  border-radius: 0px 10px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: 0px;
+  background-color: #eeeeee;
+  font-size: 0.8rem;
+}
+
+.tag-wrap-s button.taged {
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.multi-lang-field, .common-field {
+  padding: 10px;
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
 h3 {
   color: #333333;
   display: -webkit-box;
@@ -316,16 +355,16 @@ input[type="text"], input[type="date"], input[type="number"] {
   height: 60px;
 }
 
-.latestNews-wrap {
+.app-content {
   width: 100%;
+  padding: 0 15px;
   max-width: 960px;
   margin: 20px auto;
-  padding: 0 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.latestNews-wrap .latestNews-wrap {
+.app-content .latestNews-field .latestNews-wrap {
   padding: 15px;
   margin-top: 15px;
   border-radius: 10px;
@@ -335,11 +374,11 @@ input[type="text"], input[type="date"], input[type="number"] {
           box-sizing: border-box;
 }
 
-.latestNews-wrap .latestNews-wrap.form-setting {
+.app-content .latestNews-field .latestNews-wrap.form-setting {
   background-color: #cceee1;
 }
 
-.latestNews-wrap .latestNews-wrap .button-wrap {
+.app-content .latestNews-field .latestNews-wrap .button-wrap {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -348,7 +387,7 @@ input[type="text"], input[type="date"], input[type="number"] {
   right: 1rem;
 }
 
-.latestNews-wrap .latestNews-wrap .button-wrap button {
+.app-content .latestNews-field .latestNews-wrap .button-wrap button {
   width: 36px;
   height: 36px;
   margin-left: 5px;
@@ -364,7 +403,7 @@ input[type="text"], input[type="date"], input[type="number"] {
   background-color: #7b8cde;
 }
 
-.latestNews-wrap .latestNews-wrap .row {
+.app-content .latestNews-field .latestNews-wrap .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -372,19 +411,19 @@ input[type="text"], input[type="date"], input[type="number"] {
       flex-wrap: wrap;
 }
 
-.latestNews-wrap .latestNews-wrap .row .title {
-  width: 100px;
+.app-content .latestNews-field .latestNews-wrap .row .title {
+  width: 120px;
   font-weight: bold;
 }
 
-.latestNews-wrap .latestNews-wrap .row .content {
+.app-content .latestNews-field .latestNews-wrap .row .content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   word-break: break-all;
 }
 
-.latestNews-wrap .latestNews-wrap .row .content.over {
+.app-content .latestNews-field .latestNews-wrap .row .content.over {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

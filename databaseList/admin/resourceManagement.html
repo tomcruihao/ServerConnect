@@ -75,8 +75,8 @@
             <button @click="deleteResource(database)"><img src="../img/delete.svg"/></button>
           </div>
           <div class="tag-wrap">
-            <button @click="changeTag(database, 'tw')" :class="[database.tag === 'tw'? 'taged': '']">{{$t('message.resource_tag_chinese')}}</button>
-            <button @click="changeTag(database, 'en')" :class="[database.tag === 'en'? 'taged': '']">{{$t('message.resource_tag_english')}}</button>
+            <button @click="changeTag(database, 'tw')" :class="[database.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+            <button @click="changeTag(database, 'en')" :class="[database.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
           </div>
           <div class="multi-lang-field">
             <div v-if="database.tag === 'tw'">
@@ -194,8 +194,8 @@
     <div class="dialogue-frame">
       <img src="../img/close.svg" class="close" @click="closeForm">
       <div class="tag-wrap">
-        <button @click="changeTag(resource, 'tw')" :class="[resource.tag === 'tw'? 'taged': '']">{{$t('message.resource_tag_chinese')}}</button>
-        <button @click="changeTag(resource, 'en')" :class="[resource.tag === 'en'? 'taged': '']">{{$t('message.resource_tag_english')}}</button>
+        <button @click="changeTag(resource, 'tw')" :class="[resource.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+        <button @click="changeTag(resource, 'en')" :class="[resource.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
       </div>
       <div class="dialogue-content">
         <div class="multiple-lang-field" v-show="resource.tag === 'en'">

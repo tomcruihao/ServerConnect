@@ -2,6 +2,7 @@
 @import "variables";
 @import "header";
 @import "languageTitle";
+@import "tagStyle";
 
 $resource_field_bgcolor: #ccdffc;
 $resource_setting_bgcolor: #cceee1;
@@ -43,65 +44,66 @@ input[type="text"], input[type="date"], input[type="number"] {
     height: 60px;
   }
 }
-.latestNews-wrap {
+.app-content {
   width: 100%;
+  padding: 0 15px;
   max-width: 960px;
   margin: 20px auto;
-  padding: 0 15px;
   box-sizing: border-box;
 
-  .latestNews-wrap {
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 10px;
-    background-color: $resource_field_bgcolor;
-    position: relative;
-    box-sizing: border-box;
+  .latestNews-field {
+    .latestNews-wrap {
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 10px;
+      background-color: $resource_field_bgcolor;
+      position: relative;
+      box-sizing: border-box;
 
-    &.form-setting {
-      background-color: $resource_setting_bgcolor;
-    }
+      &.form-setting {
+        background-color: $resource_setting_bgcolor;
+      }
 
-    .button-wrap {
-      position: absolute;
-      display: flex;
-      top: 1rem;
-      right: 1rem;
-
-      button {
-        width: 36px;
-        height: 36px;
-        margin-left: 5px;
-        border-radius: 50%;
+      .button-wrap {
+        position: absolute;
         display: flex;
-        justify-content: center;
-        align-content: center;
-        background-color: #7b8cde;
-      }
-    }
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-  
-      .title {
-        width: 100px;
-        font-weight: bold;
-      }
-  
-      .content {
-        flex: 1;
-        word-break: break-all;
+        top: 1rem;
+        right: 1rem;
 
-        &.over {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+        button {
+          width: 36px;
+          height: 36px;
+          margin-left: 5px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          background-color: #7b8cde;
+        }
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+    
+        .title {
+          width: 120px;
+          font-weight: bold;
+        }
+    
+        .content {
+          flex: 1;
+          word-break: break-all;
+
+          &.over {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
         }
       }
     }
   }
 }
-
 
 .mask {
   width: 100vw;
