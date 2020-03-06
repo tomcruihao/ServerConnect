@@ -204,18 +204,11 @@
   <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
-        <h4>{{dialogHead_title}}</h4>
+        <h4>{{dialogueMessage.title}}</h4>
         <img src="img/closeWhite.svg" class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body">
-        <div class="row">
-          <div class="title">標題</div>
-          <div class="content">{{dialogueMessage.title}}</div>
-        </div>
-        <div class="row">
-          <div class="title">相關URL</div>
-          <div class="content" v-html="dialogueMessage.content"></div>
-        </div>
+        <div class="content" v-html="dialogueMessage.content"></div>
       </div>
     </div>
   </div>
