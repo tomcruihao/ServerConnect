@@ -105,7 +105,7 @@
           </div>
           <div class="row">
             <div class="title">{{$t('message.latest_publish_content')}}</div>
-            <div class="content">{{latestNews.tw.content}}</div>
+            <div class="content" v-html="latestNews.tw.content"></div>
           </div>
         </div>
         <div class="multi-lang-field" v-else-if="latestNews.tag === 'en'">
@@ -115,7 +115,7 @@
           </div>
           <div class="row">
             <div class="title">{{$t('message.latest_publish_content')}}</div>
-            <div class="content">{{latestNews.en.content}}</div>
+            <div class="content" v-html="latestNews.en.content"></div>
           </div>
         </div>
         <div class="common-field">
@@ -207,7 +207,7 @@
       <div class="dialogue-body" v-else>
         {{message}}
         <div class="btn-frame">
-          <button @click="closeDialogue">{{$t('message.btn_confirm')}}</button>
+          <button @click="closeDialogue">{{$t('message.btn_close')}}</button>
         </div>
       </div>
     </div>
@@ -328,6 +328,17 @@
         btnName: '',
         sendType: '',
         news: '',
+        template_newsField: {
+          'en': {
+            "title": "",
+            "content": ""
+          },
+          'tw': {
+            "title": "",
+            "content": ""
+          },
+          'tag': 'tw'
+        },
         newsField: {
           'en': '',
           'tw': '',
@@ -347,10 +358,7 @@
           } else if(type === 'addNews') {
             this.btnName = '新增';
             this.headTitle = '新增最新消息';
-            this.news = {
-              "title": "",
-              "content": ""
-            }
+            this.news = JSON.parse(JSON.stringify(this.template_newsField));
             replaceCKEditor();
           } else if (type === 'updateNewsField') {  // done
             this.btnName = '修改';

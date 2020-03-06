@@ -31,8 +31,8 @@ error_reporting(E_ALL);
     array_push($latestNewsData['newsList'], $receivedData);
 
     // write back
-    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    // file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+    // response('success', 'success');
 
   } else if($type === 'updateNews') {
     // search the news
