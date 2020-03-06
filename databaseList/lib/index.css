@@ -740,7 +740,7 @@ section {
 
 .mask-dia .dialogue-message-frame .dialogue-head {
   width: 100%;
-  padding: 5px 15px;
+  padding: 5px 20px 5px 15px;
   font-size: 1.2rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
