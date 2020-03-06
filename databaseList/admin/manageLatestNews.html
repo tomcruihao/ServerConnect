@@ -172,7 +172,7 @@
           </div>
           <div class="row">
             <div class="title">{{$t('message.latest_publish_content')}}</div>
-            <input type="text" v-model="news.tw.content" name="editor_tw">
+            <textarea v-model="news.tw.content" name="editor_tw"></textarea>
           </div>
         </div>
         <div class="multi-lang-field" v-show="news.tag === 'en'">
@@ -182,7 +182,7 @@
           </div>
           <div class="row">
             <div class="title">{{$t('message.latest_publish_content')}}</div>
-            <input type="text" v-model="news.en.content" name="editor_en">
+            <textarea v-model="news.en.content" name="editor_en"></textarea>
           </div>
         </div>
         <div class="btn-frame">
@@ -221,7 +221,7 @@
       fillForm.setDisplayForm('addNews');
     }
     function replaceCKEditor() {
-      setTimeout(() => {
+      setTimeout(()=>{
         CKEDITOR.replace( 'editor_en' );
         CKEDITOR.replace( 'editor_tw' );
       }, 500);
@@ -357,8 +357,8 @@
             this.headTitle = '修改內容';
             this.newsField = JSON.parse(JSON.stringify(data));
           }
-          this.sendType = type;
           this.show = true;
+          this.sendType = type;
         },
         sendFieldForm: function() {
           let self = this;
@@ -392,28 +392,27 @@
 
           let newsData = JSON.stringify(this.news);
           let self = this;
-          console.log(newsData);
 
-          // $.ajax({
-          //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
-          //   type: 'POST',
-          //   data: {
-          //     type: self.sendType,
-          //     processData: newsData
-          //   },
-          //   error: function(jqXHR, exception) {
-          //     //use url variable here
-          //     console.log(jqXHR);
-          //     console.log(exception);
-          //   },
-          //   success: function(res) {
-          //     console.log(res);
-          //     dataList.getLatestNewsListInfo();
-          //     self.closeForm();
-          //     let dialogueType = `${self.sendType}_success`;
-          //     dialogue.setDialogue(dialogueType);
-          //   }
-          // });
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            type: 'POST',
+            data: {
+              type: self.sendType,
+              processData: newsData
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              console.log(res);
+              dataList.getLatestNewsListInfo();
+              self.closeForm();
+              let dialogueType = `${self.sendType}_success`;
+              dialogue.setDialogue(dialogueType);
+            }
+          });
         },
         closeForm: function() {
           this.show = false;
