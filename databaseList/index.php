@@ -157,6 +157,7 @@
               </div>
               <ul v-if="lang === 'en'">
                 <li v-for="(latestNews, index) in latestNewsList.en" class="latest-news">
+                  {{latestNews}}
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
