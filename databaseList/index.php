@@ -155,7 +155,6 @@
                 <h3 v-if="lang === 'en'">{{bulletinTitle.en}}</h3>
                 <h3 v-else-if="lang === 'tw'">{{bulletinTitle.tw}}</h3>
               </div>
-              {{latestNews}}
               <ul v-if="lang === 'en'">
                 <li v-for="(latestNews, index) in latestNewsList" class="latest-news">
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.en.title}}</span>
@@ -436,6 +435,8 @@
           // self.latestNewsList.tw = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
+
+          console.log(sortingList);
 
           for(let index in sortingList) {
             if(index >= self.displayNumber) {
