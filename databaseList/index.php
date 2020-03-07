@@ -437,7 +437,7 @@
             if(index >= self.displayNumber) {
               break;
             }
-            self.latestNewsList.tw.push(sortingList[index]);
+            self.latestNewsList.push(sortingList[index]);
           }
           console.log(self.latestNewsList);
         }
