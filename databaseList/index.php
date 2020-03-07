@@ -436,8 +436,6 @@
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
 
-          console.log(sortingList);
-
           for(let index in sortingList) {
             if(index >= self.displayNumber) {
               break;
@@ -445,6 +443,7 @@
             self.latestNewsList.en.push(sortingList[index].en);
             self.latestNewsList.tw.push(sortingList[index].tw);
           }
+          console.log(self.latestNewsList);
         }
       });
     },
