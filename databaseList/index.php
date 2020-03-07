@@ -365,10 +365,7 @@
         'tw': ''
       },
       displayNumber: 0,
-      latestNewsList: {
-        'en': [],
-        'tw': []
-      },
+      latestNewsList: '',
       mobile_frame: false
     },
     created: function() {
@@ -440,8 +437,7 @@
             if(index >= self.displayNumber) {
               break;
             }
-            self.latestNewsList.en.push(sortingList[index].en);
-            self.latestNewsList.tw.push(sortingList[index].tw);
+            self.latestNewsList.tw.push(sortingList[index]);
           }
           console.log(self.latestNewsList);
         }
