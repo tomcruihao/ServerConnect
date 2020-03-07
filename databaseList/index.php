@@ -365,7 +365,7 @@
         'tw': ''
       },
       displayNumber: 0,
-      latestNewsList: '',
+      latestNewsList: [],
       mobile_frame: false
     },
     created: function() {
