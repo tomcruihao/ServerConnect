@@ -160,7 +160,7 @@
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.en.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
-                <li class="more" v-if="latestNewsList.en.length >= displayNumber">
+                <li class="more" v-if="latestNewsList.length >= displayNumber">
                   <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
                 </li>
               </ul>
@@ -169,7 +169,7 @@
                   <span class="latest-title" @click="showContent(latestNews)">{{latestNews.tw.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
-                <li class="more" v-if="latestNewsList.tw.length >= displayNumber">
+                <li class="more" v-if="latestNewsList.length >= displayNumber">
                   <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
                 </li>
               </ul>
