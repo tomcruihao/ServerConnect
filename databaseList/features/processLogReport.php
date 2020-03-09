@@ -36,9 +36,9 @@ error_reporting(E_ALL);
   // create map and countable template
   // $resourceIdArray = [];
   $template = [];
-  foreach($resourceData['rows'] as $resource) {
+  foreach($resourceData as $resource) {
     // $resourceIdArray[$resource['id']] = $resource['resourceName'];
-    $template[$resource['id']] = array(
+    $template[$resource['uuid']] = array(
       "name" => $resource['resourceName'],
       "clickTimes" => 0,
     );
@@ -66,7 +66,7 @@ error_reporting(E_ALL);
     // $ary_tempDate = explode(" ", $log['clickedDateTime']);
     // $date = $ary_tempDate[0];
 
-    $report[$string_time][$log['id']]['clickTimes']++;
+    $report[$string_time][$log['uuid']]['clickTimes']++;
     $report[$string_time]['total']++;
     // if (array_key_exists($log['id'], $report[$string_time])) {
     //   $report[$string_time][$log['id']]['clickTimes']++;
