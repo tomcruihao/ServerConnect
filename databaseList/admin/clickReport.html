@@ -185,8 +185,9 @@
           });
           string_metadata = `${string_metadata}\n`;
 
+          // create content
           Object.keys(ary_row).forEach(key => {
-            let string_row = key;
+            let string_row = key.replace(/,/g, "");
             ary_date.forEach(date => {
               string_row = `${string_row},${ary_row[key][date]}`;
             })
@@ -197,7 +198,7 @@
 
           // create hidden anchor and click it
           let hiddenElement = document.createElement('a');
-          hiddenElement.href = prefix + encodeURIComponent(universalBOM+csv.replace(/,/g, ""));
+          hiddenElement.href = prefix + encodeURIComponent(universalBOM+csv);
           hiddenElement.target = '_blank';
           hiddenElement.download = `${fileName}.csv`;
           hiddenElement.click();
