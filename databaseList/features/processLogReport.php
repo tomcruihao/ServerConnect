@@ -39,7 +39,7 @@ error_reporting(E_ALL);
   foreach($resourceData as $resource) {
     // $resourceIdArray[$resource['id']] = $resource['resourceName'];
     $template[$resource['uuid']] = array(
-      "name" => $resource['resourceName'],
+      "name" => $resource['local']['resourceName'],
       "clickTimes" => 0,
     );
     $template['total'] = 0;
