@@ -44,7 +44,7 @@
   } else if($type === 'delete') {
     foreach($subjectList as $key => $row) {
       if(strcasecmp($row['subjectID'], $received_subject['subjectID']) == 0) {
-        array_splice($subjectList['subjects'], $key, 1);
+        array_splice($subjectList, $key, 1);
         break;
       }
     }
