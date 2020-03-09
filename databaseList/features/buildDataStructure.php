@@ -11,51 +11,57 @@
 
   $result = [];
 
-  foreach($resourceList['en'] as $key => $value) {
-    // $enTemp[$value['uuid']] = $value;
-    $stack = array(
-      "uuid" => $value['uuid'],
-      "resourceUrl" => $value['resourceUrl'],
-      "isProxy" => $value['isProxy'],
-      "startDate" => $value['startDate'],
-      "expireDate" => $value['expireDate'],
-      "relevanceUrl" => $value['relevanceUrl'],
-      "en" => array(
-        "resourceName" => $value['resourceName'],
-        "resourceType" => $value['resourceType'],
-        "faculty" => $value['faculty'],
-        "department" => $value['department'],
-        "subject" => $value['subject'],
-        "category" => $value['category'],
-        "publish" => $value['publish'],
-        "language" => $value['language'],
-        "resourceDescribe" => $value['resourceDescribe'],
-        "relevvanceUrlDescribe" => $value['relevvanceUrlDescribe']
-      )
-    );
-    array_push($result,$stack);
+  foreach($resourceList as $key => $value) {
+    $resourceList[$key]['local'] = $resourceList[$key]['tw'];
+    unset($resourceList[$key]['tw']);
   }
-  foreach($result as $key => $value) {
-    foreach($resourceList['tw'] as $tkey => $tvalue) {
-      // echo $value['uuid'].' and '.$tvalue['uuid'].'<br>';
-      if(strcasecmp($value['uuid'], $tvalue['uuid']) == 0) {
-        $result[$key]['tw'] = array(
-          "resourceName" => $tvalue['resourceName'],
-          "resourceType" => $tvalue['resourceType'],
-          "faculty" => $tvalue['faculty'],
-          "department" => $tvalue['department'],
-          "subject" => $tvalue['subject'],
-          "category" => $tvalue['category'],
-          "publish" => $tvalue['publish'],
-          "language" => $tvalue['language'],
-          "resourceDescribe" => $tvalue['resourceDescribe'],
-          "relevvanceUrlDescribe" => $tvalue['relevvanceUrlDescribe']
-        );
-        // array_push($result[$key],$stack);
-        break;
-      }
-    }
-  }
+  print_r($resourceList);
+
+  // foreach($resourceList['en'] as $key => $value) {
+  //   // $enTemp[$value['uuid']] = $value;
+  //   $stack = array(
+  //     "uuid" => $value['uuid'],
+  //     "resourceUrl" => $value['resourceUrl'],
+  //     "isProxy" => $value['isProxy'],
+  //     "startDate" => $value['startDate'],
+  //     "expireDate" => $value['expireDate'],
+  //     "relevanceUrl" => $value['relevanceUrl'],
+  //     "en" => array(
+  //       "resourceName" => $value['resourceName'],
+  //       "resourceType" => $value['resourceType'],
+  //       "faculty" => $value['faculty'],
+  //       "department" => $value['department'],
+  //       "subject" => $value['subject'],
+  //       "category" => $value['category'],
+  //       "publish" => $value['publish'],
+  //       "language" => $value['language'],
+  //       "resourceDescribe" => $value['resourceDescribe'],
+  //       "relevvanceUrlDescribe" => $value['relevvanceUrlDescribe']
+  //     )
+  //   );
+  //   array_push($result,$stack);
+  // }
+  // foreach($result as $key => $value) {
+  //   foreach($resourceList['tw'] as $tkey => $tvalue) {
+  //     // echo $value['uuid'].' and '.$tvalue['uuid'].'<br>';
+  //     if(strcasecmp($value['uuid'], $tvalue['uuid']) == 0) {
+  //       $result[$key]['tw'] = array(
+  //         "resourceName" => $tvalue['resourceName'],
+  //         "resourceType" => $tvalue['resourceType'],
+  //         "faculty" => $tvalue['faculty'],
+  //         "department" => $tvalue['department'],
+  //         "subject" => $tvalue['subject'],
+  //         "category" => $tvalue['category'],
+  //         "publish" => $tvalue['publish'],
+  //         "language" => $tvalue['language'],
+  //         "resourceDescribe" => $tvalue['resourceDescribe'],
+  //         "relevvanceUrlDescribe" => $tvalue['relevvanceUrlDescribe']
+  //       );
+  //       // array_push($result[$key],$stack);
+  //       break;
+  //     }
+  //   }
+  // }
   // print_r(json_encode($result, JSON_UNESCAPED_UNICODE));
   // foreach($resourceList['tw'] as $key => $value) {
   //   $twTemp[$value['uuid']] = $value;
