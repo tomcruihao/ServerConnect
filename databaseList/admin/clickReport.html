@@ -231,7 +231,9 @@
 
                   if(!Array.isArray(res[key])){
                     Object.keys(res[key]).forEach(function(item){
-                      tempReportData.clickedList.push(res[key][item]);
+                      if(item !== 'total') {
+                        tempReportData.clickedList.push(res[key][item]);
+                      }
                     })
                   }
                   self.reportData.push(tempReportData);
