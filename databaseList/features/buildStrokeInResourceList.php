@@ -49,9 +49,15 @@
   }
 
   // for en
+  $alphas = array_merge(range('A', 'Z'), range('a', 'z'));
   foreach($resourceList as $key_lang => $resource) {
-    $chars = preg_split('/(?<!^)(?!$)/u', $resource['local']['resourceName']);
+    $chars = preg_split('/(?<!^)(?!$)/u', $resource['en']['resourceName']);
     $firstChar = $chars[0];
+
+    if(!in_array($firstChar, $alphas, TRUE)) {
+      $firstChar = '';
+    }
+    // $firstChar = $chars[0];
     $resourceList[$key_lang]['en']['englishAlphabet'] = $firstChar;
     $resourceList[$key_lang]['en']['zhuyin'] = '';
     $resourceList[$key_lang]['en']['strokes'] = '0';
