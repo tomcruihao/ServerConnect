@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>資料庫</title>
-    <link rel="stylesheet" type="text/css" href="../lib/resourceManagement.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/manageResource.css"/>
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
   </head>
 <body>
@@ -19,7 +19,7 @@
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
         <li>
-          <a href="resourceManagement.html" class="nav-tag">資源管理</a>
+          <a href="manageResource.html" class="nav-tag">資源管理</a>
         </li>
         <li>
           <a href="manageLatestNews.html" class="nav-tag">最新消息管理</a>
@@ -58,7 +58,7 @@
         <div>{{$t('message.chooseLanguage')}}:</div>
         <select v-model="selector_lang" @change="setLang($event)">
           <option value="en">English</option>
-          <option value="tw">中文</option>
+          <option value="local">中文</option>
         </select>
       </div>
     </section>
@@ -69,56 +69,56 @@
         </div>
       </div>
       <div class="list-container">
-        <div v-for="(database, index) in databaseList" class="resource-wrap" v-if="(database.en.resourceName.toUpperCase().match(searchKeyword.toUpperCase())!=null || database.tw.resourceName.toUpperCase().match(searchKeyword.toUpperCase())!=null)">
+        <div v-for="(database, index) in databaseList" class="resource-wrap" v-if="(database.en.resourceName.toUpperCase().match(searchKeyword.toUpperCase())!=null || database.local.resourceName.toUpperCase().match(searchKeyword.toUpperCase())!=null)">
           <div class="button-wrap">
             <button @click="modifyResource(database)"><img src="../img/edit.svg"/></button>
             <button @click="deleteResource(database)"><img src="../img/delete.svg"/></button>
           </div>
           <div class="tag-wrap">
-            <button @click="changeTag(database, 'tw')" :class="[database.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+            <button @click="changeTag(database, 'local')" :class="[database.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
             <button @click="changeTag(database, 'en')" :class="[database.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
           </div>
           <div class="multi-lang-field">
-            <div v-if="database.tag === 'tw'">
+            <div v-if="database.tag === 'local'">
               <div class="row">
                 <div class="title">{{$t('message.resource_resourceName')}}</div>
-                <div class="content">{{database.tw.resourceName}}</div>
+                <div class="content">{{database.local.resourceName}}</div>
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_resourceType')}}</div>
-                <div class="content">{{database.tw.resourceType}}</div>
+                <div class="content">{{database.local.resourceType}}</div>
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_faculty')}}</div>
-                <div class="content">{{database.tw.faculty}}</div>
+                <div class="content">{{database.local.faculty}}</div>
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_department')}}</div>
-                <div class="content">{{database.tw.department}}</div>
+                <div class="content">{{database.local.department}}</div>
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_subject')}}</div>
-                <div class="content">{{database.tw.subject}}</div>
+                <div class="content">{{database.local.subject}}</div>
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_category')}}</div>
-                <div class="content">{{database.tw.category}}</div>
+                <div class="content">{{database.local.category}}</div>
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_publisher')}}</div>
-                <div class="content">{{database.tw.publish}}</div>
+                <div class="content">{{database.local.publish}}</div>
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_language')}}</div>
-                <div class="content">{{database.tw.language}}</div>
+                <div class="content">{{database.local.language}}</div>
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_resourceDescribe')}}</div>
-                <div class="content">{{database.tw.resourceDescribe}}</div>
+                <div class="content">{{database.local.resourceDescribe}}</div>
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
-                <div class="content">{{database.tw.relevanceUrlDescribe}}</div>
+                <div class="content">{{database.local.relevanceUrlDescribe}}</div>
               </div>
             </div>
             <div v-else-if="database.tag === 'en'">
@@ -160,7 +160,7 @@
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
-                <div class="content">{{database.tw.relevanceUrlDescribe}}</div>
+                <div class="content">{{database.en.relevanceUrlDescribe}}</div>
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@
     <div class="dialogue-frame">
       <img src="../img/close.svg" class="close" @click="closeForm">
       <div class="tag-wrap">
-        <button @click="changeTag(resource, 'tw')" :class="[resource.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+        <button @click="changeTag(resource, 'local')" :class="[resource.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
         <button @click="changeTag(resource, 'en')" :class="[resource.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
       </div>
       <div class="dialogue-content">
@@ -240,46 +240,46 @@
             <input type="text" v-model="resource.en.relevanceUrlDescribe">
           </div>
         </div>
-        <div class="multiple-lang-field" v-show="resource.tag === 'tw'">
+        <div class="multiple-lang-field" v-show="resource.tag === 'local'">
           <div class="row">
             <div class="title">{{$t('message.resource_resourceName')}}</div>
-            <input type="text" v-model="resource.tw.resourceName">
+            <input type="text" v-model="resource.local.resourceName">
           </div>
           <div class="row">
             <div class="title">{{$t('message.resource_resourceType')}}</div>
-            <input type="text" v-model="resource.tw.resourceType">
+            <input type="text" v-model="resource.local.resourceType">
           </div>
           <div class="row">
             <div class="title">{{$t('message.resource_faculty')}}</div>
-            <input type="text" v-model="resource.tw.faculty">
+            <input type="text" v-model="resource.local.faculty">
           </div>
           <div class="row">
             <div class="title">{{$t('message.resource_department')}}</div>
-            <input type="text" v-model="resource.tw.department">
+            <input type="text" v-model="resource.local.department">
           </div>
           <div class="row">
             <div class="title">{{$t('message.resource_subject')}}</div>
-            <input type="text" v-model="resource.tw.subject">
+            <input type="text" v-model="resource.local.subject">
           </div>
           <div class="row">
             <div class="title">{{$t('message.resource_category')}}</div>
-            <input type="text" v-model="resource.tw.category">
+            <input type="text" v-model="resource.local.category">
           </div>
           <div class="row">
             <div class="title">{{$t('message.resource_publisher')}}</div>
-            <input type="text" v-model="resource.tw.publish">
+            <input type="text" v-model="resource.local.publish">
           </div>
           <div class="row">
             <div class="title">{{$t('message.resource_language')}}</div>
-            <input type="text" v-model="resource.tw.language">
+            <input type="text" v-model="resource.local.language">
           </div>
           <div class="row">
             <div class="title">{{$t('message.resource_resourceDescribe')}}</div>
-            <textarea v-model="resource.tw.resourceDescribe" name="editor_tw"></textarea>
+            <textarea v-model="resource.local.resourceDescribe" name="editor_local"></textarea>
           </div>
           <div class="row">
             <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
-            <input type="text" v-model="resource.tw.relevanceUrlDescribe">
+            <input type="text" v-model="resource.local.relevanceUrlDescribe">
           </div>
         </div>
         <div class="common-field">
@@ -365,12 +365,12 @@
     function replaceCKEditor() {
       setTimeout(()=>{
         CKEDITOR.replace( 'editor_en' );
-        CKEDITOR.replace( 'editor_tw' );
+        CKEDITOR.replace( 'editor_local' );
       }, 1000);
     }
 
-    function getEditorData_tw() {
-      return CKEDITOR.instances.editor_tw.getData();
+    function getEditorData_local() {
+      return CKEDITOR.instances.editor_local.getData();
     }
     function getEditorData_en() {
       return CKEDITOR.instances.editor_en.getData();
@@ -388,7 +388,7 @@
         if("lang" in localStorage) {
           this.lang = localStorage.getItem('lang');
         } else {
-          this.lang = 'tw';
+          this.lang = 'local';
         }
 
         this.getDatabaseList();
@@ -442,7 +442,7 @@
           "startDate": "",
           "expireDate": "",
           "relevanceUrl": "",
-          "tag": "tw",
+          "tag": "local",
           "en":{
             "resourceName": "",
             "resourceType": "",
@@ -455,7 +455,7 @@
             "resourceDescribe": "",
             "relevanceUrlDescribe": ""
           },
-          "tw":{
+          "local":{
             "resourceName": "",
             "resourceType": "",
             "faculty": "",
@@ -505,9 +505,9 @@
         },
         sendForm() {
           // get the CKEditor data
-          let editorData_tw = getEditorData_tw();
+          let editorData_local = getEditorData_local();
           let editorData_en = getEditorData_en();
-          this.resource.tw.resourceDescribe = editorData_tw;
+          this.resource.local.resourceDescribe = editorData_local;
           this.resource.en.resourceDescribe = editorData_en;
           
           let resourceData = JSON.stringify(this.resource);
