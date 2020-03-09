@@ -63,10 +63,9 @@
     $resourceList[$key_lang]['en']['strokes'] = '0';
   }
 
-  print_r(json_encode($resourceList, JSON_UNESCAPED_UNICODE));
   // write back
-  // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
-  // $res = array('type' => 'success', 'mesage' => 'success');
-  // echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  $res = array('type' => 'success', 'mesage' => 'success');
+  echo json_encode($res, JSON_UNESCAPED_UNICODE);
 ?>
