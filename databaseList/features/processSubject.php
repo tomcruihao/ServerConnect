@@ -22,19 +22,10 @@
   }
 
   if ($type === 'add') {
-    // new object
-    $newSubject = [];
-
     // gen UUID
-    $newSubject['subjectID'] = gen_uuid();
-    
-    $newSubject['subjectTitle'] = [];
-    $newSubject['subjectTitle']['en'] = '';
-    $newSubject['subjectTitle']['local'] = '';
+    $received_subject['subjectID'] = gen_uuid();
 
-    $newSubject['subjectList'] = [];
-
-    array_push($subjectList, $newSubject);
+    array_push($subjectList, $received_subject);
 
     // write back
     file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));

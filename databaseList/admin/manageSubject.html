@@ -361,11 +361,20 @@
       },
       addNewSubjectBlock: function() {
         let self = this;
+        const template =   {
+          "subjectTitle": {
+            "en": "",
+            "local": ""
+          },
+          "subjectList": []
+        }
+
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
           type: 'POST',
           data: {
             type: 'add',
+            subject: JSON.stringify(template)
           },
           error: function(jqXHR, exception) {
             //use url variable here
@@ -408,7 +417,10 @@
         this.subjects.forEach(res => {
           if(res.subjectID === subjectID) {
             let object = {
-              "name": "",
+              "name": {
+                'en': '',
+                'local': ''
+              },
               "className": "default"
             }
             res.subjectList.push(object);
