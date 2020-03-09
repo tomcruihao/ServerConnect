@@ -550,7 +550,7 @@
                             <div class="row">\
                               <div class="title">${listTitles[ary_lang].resourceUrlTitle}</div>\
                               <div class="resourceUrl">\
-                                <a href="javascript:directTo(${res.uuid}, '${res.resourceUrl}')">${listTitles[ary_lang].resourceUrlDisplayName}</a>\
+                                <a href="javascript:directTo('${res.uuid}', '${res.resourceUrl}')">${listTitles[ary_lang].resourceUrlDisplayName}</a>\
                               </div>\
                             </div>`;
 
