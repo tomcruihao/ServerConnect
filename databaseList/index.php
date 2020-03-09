@@ -9,17 +9,17 @@
 
   $result = [];
   $result_en = [];
-  $result_tw = [];
+  $result_local = [];
 
   foreach($resourceList as $key => $value) {
-    $temp_tw = [];
+    $temp_local = [];
     $temp_en = [];
     foreach($value as $vkey => $vValue) {
       // put content without languages
       // $i_en = array_search('en', array_keys($value));
 
-      if(!(strcasecmp('tw', $vkey) == 0) && !(strcasecmp('en', $vkey) == 0)) {
-        $temp_tw[$vkey] = $vValue;
+      if(!(strcasecmp('local', $vkey) == 0) && !(strcasecmp('en', $vkey) == 0)) {
+        $temp_local[$vkey] = $vValue;
         $temp_en[$vkey] = $vValue;
       }
     }
@@ -29,15 +29,15 @@
       $temp_en[$ekey] = $eValue;
     }
 
-    foreach($value['tw'] as $tkey => $tValue) {
-      $temp_tw[$tkey] = $tValue;
+    foreach($value['local'] as $tkey => $tValue) {
+      $temp_local[$tkey] = $tValue;
     }
     array_push($result_en, $temp_en);
-    array_push($result_tw, $temp_tw);
+    array_push($result_local, $temp_local);
   }
   
   $result['en'] = $result_en;
-  $result['tw'] = $result_tw;
+  $result['local'] = $result_local;
 
   $getJsonData = json_encode($result, JSON_UNESCAPED_UNICODE);
 ?>
@@ -93,7 +93,7 @@
         <div>{{$t('message.chooseLanguage')}}:</div>
         <select v-model="selector_lang" @change="setLang($event)">
           <option value="en">English</option>
-          <option value="tw">中文</option>
+          <option value="local">中文</option>
         </select>
       </div>
     </div>
@@ -153,7 +153,7 @@
             <div class="bulletin-board-frame" id="latestNews">
               <div>
                 <h3 v-if="lang === 'en'">{{bulletinTitle.en}}</h3>
-                <h3 v-else-if="lang === 'tw'">{{bulletinTitle.tw}}</h3>
+                <h3 v-else-if="lang === 'local'">{{bulletinTitle.local}}</h3>
               </div>
               <ul v-if="lang === 'en'">
                 <li v-for="(latestNews, index) in latestNewsList" class="latest-news">
@@ -164,9 +164,9 @@
                   <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
                 </li>
               </ul>
-              <ul v-else-if="lang === 'tw'">
+              <ul v-else-if="lang === 'local'">
                 <li v-for="(latestNews, index) in latestNewsList" class="latest-news">
-                  <span class="latest-title" @click="showContent(latestNews.tw)">{{latestNews.tw.title}}</span>
+                  <span class="latest-title" @click="showContent(latestNews.local)">{{latestNews.local.title}}</span>
                   <div class="datetime">{{latestNews.publishDate}}</div>
                 </li>
                 <li class="more" v-if="latestNewsList.length >= displayNumber">
@@ -185,8 +185,8 @@
                   </ul>
                 </div>
               </div>
-              <div v-else-if="lang === 'tw'">
-                <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects.tw">
+              <div v-else-if="lang === 'local'">
+                <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects.local">
                   <h3>{{subjectInfo.subjectTitle}}</h3>
                   <ul>
                     <li v-for="(subject, index) in subjectInfo.subjectList">
@@ -224,7 +224,7 @@
 
   var ary_dataList = new Array();
   ary_dataList['en'] = dataList.en;
-  ary_dataList['tw'] = dataList.tw;
+  ary_dataList['local'] = dataList.local;
 
   var contactList
 
@@ -236,7 +236,7 @@
     if("lang" in localStorage) {
       ary_lang = localStorage.getItem('lang');
     } else {
-      ary_lang = 'tw';
+      ary_lang = 'local';
     }
 
     let index_numbering = 1;
@@ -357,12 +357,12 @@
     data: {
       subjects: {
         'en': [],
-        'tw': []
+        'local': []
       },
       lang: '',
       bulletinTitle: {
         'en': '',
-        'tw': ''
+        'local': ''
       },
       displayNumber: 0,
       latestNewsList: [],
@@ -385,18 +385,18 @@
           // })
           res.forEach((val, index) => {
             let tempSubList_en = [];
-            let tempSubList_tw = [];
+            let tempSubList_local = [];
             val.subjectList.forEach((sVal, sIndex) => {
               let obj_en = {
                 "name": sVal.name.en,
                 "className": sVal.className
               }
-              let obj_tw = {
-                "name": sVal.name.tw,
+              let obj_local = {
+                "name": sVal.name.local,
                 "className": sVal.className
               }
               tempSubList_en.push(obj_en);
-              tempSubList_tw.push(obj_tw);
+              tempSubList_local.push(obj_local);
             })
             
             let temp_obj_en = {
@@ -405,14 +405,14 @@
               "subjectList": tempSubList_en
             }
 
-            let temp_obj_tw = {
+            let temp_obj_local = {
               "subjectID": val.subjectID,
-              "subjectTitle": val.subjectTitle.tw,
-              "subjectList": tempSubList_tw
+              "subjectTitle": val.subjectTitle.local,
+              "subjectList": tempSubList_local
             }
 
             self.subjects.en.push(temp_obj_en);
-            self.subjects.tw.push(temp_obj_tw);
+            self.subjects.local.push(temp_obj_local);
           })
         }
       });
@@ -427,9 +427,9 @@
         },
         success: function(res) {
           self.bulletinTitle.en = res.bulletinTitle.en;
-          self.bulletinTitle.tw = res.bulletinTitle.tw;
+          self.bulletinTitle.local = res.bulletinTitle.local;
           const sortingList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-          // self.latestNewsList.tw = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          // self.latestNewsList.local = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           self.displayNumber = res.displayNumber;
 
@@ -447,7 +447,7 @@
       if("lang" in localStorage) {
         this.lang = localStorage.getItem('lang');
       } else {
-        this.lang = 'tw';
+        this.lang = 'local';
       }
     },
     methods:{
@@ -495,7 +495,7 @@
     "Description": "test",
     "relevanceUrlDescribe": "Revelance Link"
   }
-  listTitles['tw'] = {
+  listTitles['local'] = {
     "resourceName": "資源名稱",
     "resourceUrlTitle": "連結",
     "resourceUrlDisplayName": "點我連結",
@@ -524,7 +524,7 @@
     if("lang" in localStorage) {
       ary_lang = localStorage.getItem('lang');
     } else {
-      ary_lang = 'tw';
+      ary_lang = 'local';
     }
 
     // create li and append to ul
