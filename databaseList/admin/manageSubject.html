@@ -93,7 +93,7 @@
         <div class="multi-lang-field" v-show="subjectInfo.tag === 'local'">
           <h3 class="subject-header">
             <div class="title">{{$t('message.subject_title')}}</div>
-            <input type="text" v-model="subjectInfo.subjectTitle.en">
+            <input type="text" v-model="subjectInfo.subjectTitle.local">
           </h3>
           <ul>
             <li v-for="(subject, subject_index) in subjectInfo.subjectList">

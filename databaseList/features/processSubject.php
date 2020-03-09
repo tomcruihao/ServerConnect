@@ -28,7 +28,9 @@
     // gen UUID
     $newSubject['subjectID'] = gen_uuid();
     
-    $newSubject['subjectTitle'] = "";
+    $newSubject['subjectTitle'] = [];
+    $newSubject['subjectTitle']['en'] = '';
+    $newSubject['subjectTitle']['local'] = '';
 
     $newSubject['subjectList'] = [];
 
