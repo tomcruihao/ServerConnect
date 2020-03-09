@@ -13,7 +13,7 @@
   $log = [];
   $log['clickedDateTime'] = date("Y-m-d h:i:s");
   $log['ip'] = getUserIpAddr();
-  $log['id'] = $resourceID;
+  $log['uuid'] = $resourceID;
 
   array_push($logData['log'], $log);
   // write back
