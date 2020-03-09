@@ -55,6 +55,12 @@ const messages = {
       latest_publish_content: 'News Content',
       // Clicking Report page
       h1_clickingReport: 'Clicking Report',
+      clickingReport_start_date: 'Start Date',
+      clickingReport_end_date: 'End Date',
+      clickingReport_display_by: 'Display by',
+      clickingReport_day: 'Day',
+      clickingReport_month: 'Month',
+      clickingReport_download_the_report: 'Report Download',
       // dialogue
       dialogue_title: 'Title',
       // button
@@ -131,6 +137,12 @@ const messages = {
       latest_publish_content: '消息內容',
       // Clicking Report page
       h1_clickingReport: '使用率報表',
+      clickingReport_start_date: '起始時間',
+      clickingReport_end_date: '結束時間',
+      clickingReport_display_by: '顯示方式',
+      clickingReport_day: '日',
+      clickingReport_month: '月',
+      clickingReport_download_the_report: '下載報表',
       // dialogue
       dialogue_title: '標題',
       // button

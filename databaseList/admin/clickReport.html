@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>最新消息</title>
+    <title>使用率報表</title>
     <link rel="stylesheet" type="text/css" href="../lib/clickReport.css"/>
   </head>
 <body>
@@ -54,25 +54,25 @@
         <div>{{$t('message.chooseLanguage')}}:</div>
         <select v-model="selector_lang" @change="setLang($event)">
           <option value="en">English</option>
-          <option value="tw">中文</option>
+          <option value="local">中文</option>
         </select>
       </div>
     </div>
     <section id="reportTable" class="report-wrap">
       <div class="search-wrap">
         <div class="date-wrap">
-          <div class="title">起始時間: </div>
+          <div class="title">{{$t('message.chooseLanguage')}}: </div>
           <input type="date" v-model="searchRange.startDate">
         </div>
         <div class="date-wrap">
-          <div class="title">結束時間: </div>
+          <div class="title">{{$t('message.chooseLanguage')}}: </div>
           <input type="date" v-model="searchRange.endDate">
         </div>
         <div class="date-wrap">
-          <div class="title">顯示方式: </div>
+          <div class="title">{{$t('message.clickingReport_display_by')}}: </div>
           <select v-model="searchRange.type">
-            <option value="day">日</option>
-            <option value="month">月</option>
+            <option value="day">{{$t('message.clickingReport_day')}}</option>
+            <option value="month">{{$t('message.clickingReport_month')}}</option>
           </select>
         </div>
         <button @click="search()">{{$t('message.btn_search')}}</button>
@@ -83,7 +83,7 @@
         </div>
         <div class="report-list" v-if="reportData.length !== 0">
           <div class="btn-report-wrap">
-            <button @click="generateCsvFile">下載報表</button>
+            <button @click="generateCsvFile">{{$t('message.clickingReport_download_the_report')}}</button>
           </div>
           <div class="row" v-for="(data, index) in reportData" v-if="data.total > 0">
             <div class="title">{{data.date}}</div>
