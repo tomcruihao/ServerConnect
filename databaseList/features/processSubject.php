@@ -33,7 +33,7 @@
   } else if($type === 'modify') {
     foreach($subjectList['subjects'] as $key => $row) {
       if(strcasecmp($row['subjectID'], $received_subject['subjectID']) == 0) {
-        $subjectList['subjects'][$key] = $received_subject;
+        $subjectList[$key] = $received_subject;
         break;
       }
     }
