@@ -34,7 +34,7 @@
 
     $newSubject['subjectList'] = [];
 
-    array_push($subjectList['subjects'], $newSubject);
+    array_push($subjectList, $newSubject);
 
     // write back
     file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));

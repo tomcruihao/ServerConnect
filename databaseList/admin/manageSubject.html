@@ -374,7 +374,7 @@
           },
           success: function(res) {
             console.log(res);
-            self.updateSubjectList();
+            self.buildSubjectList();
           }
         });
       },
@@ -400,7 +400,7 @@
               warning: ''
             }
             dialogue.setDialogue('message', messageInfo);
-            self.updateSubjectList();
+            self.buildSubjectList();
           }
         });
       },
@@ -445,7 +445,7 @@
           },
           success: function(res) {
             console.log(res);
-            self.updateSubjectList();
+            self.buildSubjectList();
           }
         });
       },
