@@ -52,32 +52,32 @@
           <div>{{$t('message.chooseLanguage')}}:</div>
           <select v-model="selector_lang" @change="setLang($event)">
             <option value="en">English</option>
-            <option value="tw">中文</option>
+            <option value="local">中文</option>
           </select>
         </div>
       </section>
       <section class="accordion arrows" id="latestNews">
         <div class="box title">
           <label v-if="lang === 'en'" for="acc-close" class="box-title">{{bulletinTitle.en}}</label>
-          <label v-else-if="lang === 'tw'" for="acc-close" class="box-title">{{bulletinTitle.tw}}</label>
+          <label v-else-if="lang === 'local'" for="acc-close" class="box-title">{{bulletinTitle.local}}</label>
         </div>
         <div v-if="lang === 'en'">
-          <div v-for="(latestNews, index) in latestNewsList.en">
+          <div v-for="(latestNews, index) in latestNewsList">
             <input type="radio" name="accordion" v-bind:id="latestNews.uuid" />
             <section class="box">
-              <label class="box-title" :for="latestNews.uuid">{{latestNews.title}}</label>
+              <label class="box-title" :for="latestNews.uuid">{{latestNews.en.title}}</label>
               <label class="box-close" for="acc-close"></label>
-              <div class="box-content" v-html="latestNews.content"></div>
+              <div class="box-content" v-html="latestNews.en.content"></div>
             </section>
           </div>
         </div>
-        <div v-else-if="lang === 'tw'">
-          <div v-for="(latestNews, index) in latestNewsList.tw">
+        <div v-else-if="lang === 'local'">
+          <div v-for="(latestNews, index) in latestNewsList">
             <input type="radio" name="accordion" v-bind:id="latestNews.uuid" />
             <section class="box">
-              <label class="box-title" :for="latestNews.uuid">{{latestNews.title}}</label>
+              <label class="box-title" :for="latestNews.uuid">{{latestNews.local.title}}</label>
               <label class="box-close" for="acc-close"></label>
-              <div class="box-content" v-html="latestNews.content"></div>
+              <div class="box-content" v-html="latestNews.local.content"></div>
             </section>
           </div>
         </div>
@@ -115,12 +115,22 @@
         lang: '',
         bulletinTitle: {
           'en': '',
-          'tw': ''
+          'local': ''
         },
-        latestNewsList: {
-          'en': [],
-          'tw': []
-        }
+        latestNewsList: [
+          {
+            'uuid': '',
+            'publishDate': '',
+            'en': {
+              'title': '',
+              'content': ''
+            },
+            'local': {
+              'title': '',
+              'content': ''
+            },
+          }
+        ]
       },
       created: function() {
         let self = this;
@@ -133,11 +143,11 @@
             console.log(exception);
           },
           success: function(res) {
-            self.bulletinTitle.en = res.en.bulletinTitle;
-            self.bulletinTitle.tw = res.tw.bulletinTitle;
-            self.latestNewsList.en = res.en.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-            self.latestNewsList.tw = res.tw.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-            // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+            self.bulletinTitle.en = res.bulletinTitle.en;
+            self.bulletinTitle.local = res.bulletinTitle.local;
+            // self.latestNewsList.en = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+            // self.latestNewsList.local = res.local.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+            self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           }
         });
       },
@@ -152,23 +162,15 @@
         if("lang" in localStorage) {
           this.lang = localStorage.getItem('lang');
         } else {
-          this.lang = 'tw';
+          this.lang = 'local';
         }
       },
       methods:{
         setLocale: function(language) {
           this.lang = language;
-          console.log(this.lang);
         },
         closeDialogue: function() {
           this.show = false;
-        },
-        showContent: function(latestNews) {
-          let message = {
-            'title': latestNews.title,
-            'content': latestNews.content
-          }
-          dialogue.setDialogue('latestNews', message);
         }
       }
     });
