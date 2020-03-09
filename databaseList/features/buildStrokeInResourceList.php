@@ -18,43 +18,49 @@
   //   echo mb_detect_encoding($firstChar);
   // }
 
-  // 1st foreach loop languages
-  foreach($resourceList as $key_lang => $language) {
-    foreach($language as $key_r => $row) {
-      // get first char
-      $chars = preg_split('/(?<!^)(?!$)/u', $row['resourceName']);
-      $firstChar = $chars[0];
-      $resultExist = false;
+  // for local
+  foreach($resourceList as $key_lang => $resource) {
+    $chars = preg_split('/(?<!^)(?!$)/u', $resource['local']['resourceName']);
+    $firstChar = $chars[0];
+    $resultExist = false;
+    foreach($strokes as $stroke) {
+      if(strcasecmp($firstChar, $stroke['char']) == 0) {
+        $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
+        $firstZhuyin = $zhuyin[0];
+        $resourceList[$key_lang]['local']['zhuyin'] = $firstZhuyin;
+        $resourceList[$key_lang]['local']['englishAlphabet'] = '';
 
-      foreach($strokes as $stroke) {
-        if(strcasecmp($firstChar, $stroke['char']) == 0) {
-          $zhuyin = preg_split('/(?<!^)(?!$)/u', $stroke['zhuyin']);
-          $firstZhuyin = $zhuyin[0];
-          $resourceList[$key_lang][$key_r]['zhuyin'] = $firstZhuyin;
-          $resourceList[$key_lang][$key_r]['englishAlphabet'] = '';
-
-          if(strlen(strval($stroke['strokes'])) < 2) {
-            $resourceList[$key_lang][$key_r]['strokes'] = '0'.$stroke['strokes'];
-          } else {
-            $resourceList[$key_lang][$key_r]['strokes'] = $stroke['strokes'];
-          }
-
-          $resultExist = true;
-          break;
+        if(strlen(strval($stroke['strokes'])) < 2) {
+          $resourceList[$key_lang]['local']['strokes'] = '0'.$stroke['strokes'];
+        } else {
+          $resourceList[$key_lang]['local']['strokes'] = $stroke['strokes'];
         }
+
+        $resultExist = true;
+        break;
       }
 
       if(!$resultExist) {
-        $resourceList[$key_lang][$key_r]['englishAlphabet'] = $firstChar;
-        $resourceList[$key_lang][$key_r]['zhuyin'] = '';
-        $resourceList[$key_lang][$key_r]['strokes'] = '0';
+        $resourceList[$key_lang]['local']['englishAlphabet'] = $firstChar;
+        $resourceList[$key_lang]['local']['zhuyin'] = '';
+        $resourceList[$key_lang]['local']['strokes'] = '0';
       }
     }
   }
 
-  // write back
-  file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  // for en
+  foreach($resourceList as $key_lang => $resource) {
+    $chars = preg_split('/(?<!^)(?!$)/u', $resource['local']['resourceName']);
+    $firstChar = $chars[0];
+    $resourceList[$key_lang]['en']['englishAlphabet'] = $firstChar;
+    $resourceList[$key_lang]['en']['zhuyin'] = '';
+    $resourceList[$key_lang]['en']['strokes'] = '0';
+  }
 
-  $res = array('type' => 'success', 'mesage' => 'success');
-  echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  print_r(json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  // write back
+  // file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+
+  // $res = array('type' => 'success', 'mesage' => 'success');
+  // echo json_encode($res, JSON_UNESCAPED_UNICODE);
 ?>
