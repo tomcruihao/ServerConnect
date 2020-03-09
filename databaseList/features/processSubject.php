@@ -31,7 +31,7 @@
     file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   } else if($type === 'modify') {
-    foreach($subjectList['subjects'] as $key => $row) {
+    foreach($subjectList as $key => $row) {
       if(strcasecmp($row['subjectID'], $received_subject['subjectID']) == 0) {
         $subjectList[$key] = $received_subject;
         break;

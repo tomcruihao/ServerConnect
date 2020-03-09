@@ -81,14 +81,6 @@
               <button @click="deleteSubject(index, subject)" class="btn-icon" name="刪除這項主題" title="刪除這項主題"><img src="../img/delete.svg"/></button>
             </li>
           </ul>
-          <div class="button-wrap">
-            <button class="btn-edit" @click="updateList(subjectInfo)">
-              <img src="../img/edit.svg"/>{{$t('message.btn_update')}}
-            </button>
-            <button class="btn-add" @click="addNewSubject(subjectInfo.subjectID)">
-              <img src="../img/add.svg"/>{{$t('message.subject_create_subject')}}
-            </button>
-          </div>
         </div>
         <div class="multi-lang-field" v-show="subjectInfo.tag === 'local'">
           <h3 class="subject-header">
@@ -105,14 +97,14 @@
               <button @click="deleteSubject(index, subject)" class="btn-icon" name="刪除這項主題" title="刪除這項主題"><img src="../img/delete.svg"/></button>
             </li>
           </ul>
-          <div class="button-wrap">
-            <button class="btn-edit" @click="updateList(subjectInfo)">
-              <img src="../img/edit.svg"/>{{$t('message.btn_update')}}
-            </button>
-            <button class="btn-add" @click="addNewSubject(subjectInfo.subjectID)">
-              <img src="../img/add.svg"/>{{$t('message.subject_create_subject')}}
-            </button>
-          </div>
+        </div>
+        <div class="button-wrap">
+          <button class="btn-edit" @click="updateList(subjectInfo)">
+            <img src="../img/edit.svg"/>{{$t('message.btn_update')}}
+          </button>
+          <button class="btn-add" @click="addNewSubject(subjectInfo.subjectID)">
+            <img src="../img/add.svg"/>{{$t('message.subject_create_subject')}}
+          </button>
         </div>
       </div>
       <div class="button-wrap">
