@@ -2,7 +2,7 @@
   "displayNumber": 5,
   "bulletinTitle": {
     "en": "Latest News",
-    "tw": "最新消息"
+    "local": "最新消息"
   },
   "newsList": [
     {
@@ -12,7 +12,7 @@
         "title": "News 1",
         "content": "Content 1"
       },
-      "tw": {
+      "local": {
         "title": "公告消息1",
         "content": "公告消息內容1"
       }
@@ -23,7 +23,7 @@
         "title": "News 2",
         "content": "Content 2"
       },
-      "tw": {
+      "local": {
         "title": "公告消息2",
         "content": "公告消息內容2"
       }
@@ -34,7 +34,7 @@
         "title": "News 3",
         "content": "Content 3"
       },
-      "tw": {
+      "local": {
         "title": "公告消息3",
         "content": "公告消息內容3"
       }
@@ -45,7 +45,7 @@
         "title": "News 4",
         "content": "Content 4"
       },
-      "tw": {
+      "local": {
         "title": "公告消息4",
         "content": "公告消息內容4"
       }
@@ -56,7 +56,7 @@
         "title": "News 5",
         "content": "Content 5"
       },
-      "tw": {
+      "local": {
         "title": "公告消息5",
         "content": "公告消息內容5"
       }
@@ -67,7 +67,7 @@
         "title": "News 6",
         "content": "Content 6"
       },
-      "tw": {
+      "local": {
         "title": "公告消息6",
         "content": "公告消息內容6"
       }
@@ -78,7 +78,7 @@
         "title": "News 7",
         "content": "Content 7"
       },
-      "tw": {
+      "local": {
         "title": "公告消息7",
         "content": "公告消息內容7"
       }
