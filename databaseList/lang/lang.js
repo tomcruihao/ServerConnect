@@ -75,7 +75,7 @@ const messages = {
       tag_english: 'English'
     }
   },
-  tw: {
+  local: {
     message: {
       chooseLanguage:'選擇語言',
       // index page
