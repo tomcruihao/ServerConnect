@@ -423,7 +423,7 @@
         let messageInfo = {
           title: '',
           content: '',
-          warning: `您確定要刪除${subjectBlock.subjectTitle}嗎?`
+          warning: `您確定要刪除嗎?`
         }
         dialogue.setDialogue('deleteSubjectBlock', messageInfo);
         // this.subjects.splice(this.subjects.indexOf(subjectBlock), 1);
@@ -431,6 +431,7 @@
       set_deleteSubjectBlock: function() {
         let self = this;
         let post_subjectBlock = JSON.stringify(this.delete_tempSubject);
+        console.log(this.delete_tempSubject);
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
           type: 'POST',

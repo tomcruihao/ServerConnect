@@ -51,7 +51,7 @@
     file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   } else if($type === 'delete') {
-    foreach($subjectList['subjects'] as $key => $row) {
+    foreach($subjectList as $key => $row) {
       if(strcasecmp($row['subjectID'], $received_subject['subjectID']) == 0) {
         array_splice($subjectList['subjects'], $key, 1);
         break;
