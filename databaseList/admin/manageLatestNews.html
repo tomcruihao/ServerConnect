@@ -58,7 +58,7 @@
         <div>{{$t('message.chooseLanguage')}}:</div>
         <select v-model="selector_lang" @change="setLang($event)">
           <option value="en">English</option>
-          <option value="tw">中文</option>
+          <option value="local">中文</option>
         </select>
       </div>
     </div>
@@ -69,13 +69,13 @@
           <button @click="updateNewsField()"><img src="../img/edit.svg"/></button>
         </div>
         <div class="tag-wrap">
-          <button @click="changeTag(latestNewsField, 'tw')" :class="[latestNewsField.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+          <button @click="changeTag(latestNewsField, 'local')" :class="[latestNewsField.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
           <button @click="changeTag(latestNewsField, 'en')" :class="[latestNewsField.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
         </div>
         <div class="multi-lang-field">
-          <div class="row" v-if="latestNewsField.tag === 'tw'">
+          <div class="row" v-if="latestNewsField.tag === 'local'">
             <div class="title">{{$t('message.latest_form_name')}}</div>
-            <div class="content">{{latestNewsField.bulletinTitle.tw}}</div>
+            <div class="content">{{latestNewsField.bulletinTitle.local}}</div>
           </div>
           <div class="row" v-else-if="latestNewsField.tag === 'en'">
             <div class="title">{{$t('message.latest_form_name')}}</div>
@@ -95,17 +95,17 @@
           <button @click="deleteNews(latestNews)"><img src="../img/delete.svg"/></button>
         </div>
         <div class="tag-wrap">
-          <button @click="changeTag(latestNews, 'tw')" :class="[latestNews.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+          <button @click="changeTag(latestNews, 'local')" :class="[latestNews.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
           <button @click="changeTag(latestNews, 'en')" :class="[latestNews.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
         </div>
-        <div class="multi-lang-field" v-if="latestNews.tag === 'tw'">
+        <div class="multi-lang-field" v-if="latestNews.tag === 'local'">
           <div class="row">
             <div class="title">{{$t('message.latest_publish_title')}}</div>
-            <div class="content">{{latestNews.tw.title}}</div>
+            <div class="content">{{latestNews.local.title}}</div>
           </div>
           <div class="row">
             <div class="title">{{$t('message.latest_publish_content')}}</div>
-            <div class="content" v-html="latestNews.tw.content"></div>
+            <div class="content" v-html="latestNews.local.content"></div>
           </div>
         </div>
         <div class="multi-lang-field" v-else-if="latestNews.tag === 'en'">
@@ -135,13 +135,13 @@
       </div>
       <div class="dialogue-body" v-if="sendType === 'updateNewsField'">
         <div class="tag-wrap-s">
-          <button @click="changeTag(newsField, 'tw')" :class="[newsField.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+          <button @click="changeTag(newsField, 'local')" :class="[newsField.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
           <button @click="changeTag(newsField, 'en')" :class="[newsField.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
         </div>
         <div class="multi-lang-field">
-          <div class="row" v-if="newsField.tag === 'tw'">
+          <div class="row" v-if="newsField.tag === 'local'">
             <div class="title">{{$t('message.latest_form_name')}}</div>
-            <input type="text" v-model="newsField.bulletinTitle.tw">
+            <input type="text" v-model="newsField.bulletinTitle.local">
           </div>
           <div class="row" v-else-if="newsField.tag === 'en'">
             <div class="title">{{$t('message.latest_form_name')}}</div>
@@ -162,17 +162,17 @@
       </div>
       <div class="dialogue-body" v-else>
         <div class="tag-wrap-s">
-          <button @click="changeTag(news, 'tw')" :class="[news.tag === 'tw'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+          <button @click="changeTag(news, 'local')" :class="[news.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
           <button @click="changeTag(news, 'en')" :class="[news.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
         </div>
-        <div class="multi-lang-field" v-show="news.tag === 'tw'">
+        <div class="multi-lang-field" v-show="news.tag === 'local'">
           <div class="row">
             <div class="title">{{$t('message.latest_publish_title')}}</div>
-            <input type="text" v-model="news.tw.title">
+            <input type="text" v-model="news.local.title">
           </div>
           <div class="row">
             <div class="title">{{$t('message.latest_publish_content')}}</div>
-            <textarea v-model="news.tw.content" name="editor_tw"></textarea>
+            <textarea v-model="news.local.content" name="editor_local"></textarea>
           </div>
         </div>
         <div class="multi-lang-field" v-show="news.tag === 'en'">
@@ -223,7 +223,7 @@
     function replaceCKEditor() {
       setTimeout(()=>{
         CKEDITOR.replace( 'editor_en' );
-        CKEDITOR.replace( 'editor_tw' );
+        CKEDITOR.replace( 'editor_local' );
       }, 500);
     }
     function getEditorData(type) {
@@ -234,8 +234,8 @@
       let editorData;
       if(type === 'en') {
         editorData = CKEDITOR.instances.editor_en.getData();
-      } else if(type === 'tw') {
-        editorData = CKEDITOR.instances.editor_tw.getData();
+      } else if(type === 'local') {
+        editorData = CKEDITOR.instances.editor_local.getData();
       }
 
       let processData = editorData.replace(pattern, "");
@@ -266,10 +266,10 @@
         latestNewsField: {
           bulletinTitle: {
             'en': '',
-            'tw': '',
+            'local': '',
           },
           displayNumber: 0,
-          tag: 'tw'
+          tag: 'local'
         },
         latestNewsList: []
       },
@@ -291,13 +291,13 @@
               console.log(exception);
             },
             success: function(res) {
-              self.latestNewsField.bulletinTitle.en= res.bulletinTitle.en;
-              self.latestNewsField.bulletinTitle.tw= res.bulletinTitle.tw;
+              self.latestNewsField.bulletinTitle.en = res.bulletinTitle.en;
+              self.latestNewsField.bulletinTitle.local = res.bulletinTitle.local;
 
               self.latestNewsField.displayNumber = res.displayNumber;
               let temp_newsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
               for(let index in temp_newsList) {
-                temp_newsList[index]['tag'] = 'tw';
+                temp_newsList[index]['tag'] = 'local';
               }
               self.latestNewsList = temp_newsList;
             }
@@ -333,15 +333,15 @@
             "title": "",
             "content": ""
           },
-          'tw': {
+          'local': {
             "title": "",
             "content": ""
           },
-          'tag': 'tw'
+          'tag': 'local'
         },
         newsField: {
           'en': '',
-          'tw': '',
+          'local': '',
           'tag': ''
         }
       },
@@ -396,7 +396,7 @@
           // get the CKEditor data
           
           this.news.en.content = getEditorData('en');
-          this.news.tw.content = getEditorData('tw');
+          this.news.local.content = getEditorData('local');
 
           let newsData = JSON.stringify(this.news);
           let self = this;
