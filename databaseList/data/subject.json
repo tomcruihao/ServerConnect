@@ -3,21 +3,21 @@
     "subjectID": "d11b19fc-4c6e-416e-b201-9ff9d9cc4bdd",
     "subjectTitle": {
       "en": "en_全文資料庫",
-      "tw": "全文資料庫"
+      "local": "全文資料庫"
     },
     "subjectList": [
       {
         "className": "category",
         "name": {
           "en": "en_全文資料庫",
-          "tw": "全文資料庫"
+          "local": "全文資料庫"
         }
       },
       {
         "className": "category",
         "name": {
           "en": "en_索摘資料庫",
-          "tw": "索摘資料庫"
+          "local": "索摘資料庫"
         }
       }
     ]
@@ -26,21 +26,21 @@
     "subjectID": "7b51a6eb-ec64-49de-a053-b6f6be5c1894",
     "subjectTitle": {
       "en": "en_適用學院",
-      "tw": "適用學院"
+      "local": "適用學院"
     },
     "subjectList": [
       {
         "className": "faculty",
         "name": {
           "en": "en_文學院",
-          "tw": "文學院"
+          "local": "文學院"
         }
       },
       {
         "className": "faculty",
         "name": {
           "en": "en_藝術學院",
-          "tw": "藝術學院"
+          "local": "藝術學院"
         }
       }
     ]

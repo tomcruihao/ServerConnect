@@ -61,11 +61,11 @@
     <section id="reportTable" class="report-wrap">
       <div class="search-wrap">
         <div class="date-wrap">
-          <div class="title">{{$t('message.chooseLanguage')}}: </div>
+          <div class="title">{{$t('message.clickingReport_start_date')}}: </div>
           <input type="date" v-model="searchRange.startDate">
         </div>
         <div class="date-wrap">
-          <div class="title">{{$t('message.chooseLanguage')}}: </div>
+          <div class="title">{{$t('message.clickingReport_end_date')}}: </div>
           <input type="date" v-model="searchRange.endDate">
         </div>
         <div class="date-wrap">
@@ -75,7 +75,9 @@
             <option value="month">{{$t('message.clickingReport_month')}}</option>
           </select>
         </div>
-        <button @click="search()">{{$t('message.btn_search')}}</button>
+        <div class="date-wrap">
+          <button @click="search()">{{$t('message.btn_search')}}</button>
+        </div>
       </div>
       <div class="report-list-wrap">
         <div class="loading-frame" v-if="searching">

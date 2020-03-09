@@ -272,6 +272,49 @@ header nav .nav-list li.multi:before {
   margin-left: 10px;
 }
 
+.tag-wrap button {
+  width: 120px;
+  height: 40px;
+  border-radius: 0px 10px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: 0px;
+  background-color: #eeeeee;
+  font-size: 1rem;
+}
+
+.tag-wrap button.taged {
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.tag-wrap-s button {
+  width: 120px;
+  height: 30px;
+  border-radius: 0px 10px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: 0px;
+  background-color: #eeeeee;
+  font-size: 0.8rem;
+}
+
+.tag-wrap-s button.taged {
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.multi-lang-field, .common-field {
+  padding: 10px;
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+h4 {
+  color: #ff0000;
+}
+
 .app-content {
   width: 100%;
   max-width: 960px;
@@ -281,8 +324,81 @@ header nav .nav-list li.multi:before {
           box-sizing: border-box;
 }
 
-.app-content .report-wrap .search-wrap {
+.app-content .setting-wrap {
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+  background-color: #ccdffc;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.app-content .setting-wrap .subject-frame {
+  background-color: #d4edda;
+  padding: 30px 15px 15px;
   margin-top: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.app-content .setting-wrap .subject-frame .delete-subject-block {
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #155724;
+}
+
+.app-content .setting-wrap .subject-frame .delete-subject-block img {
+  width: 20px;
+  height: 20px;
+}
+
+.app-content .setting-wrap .subject-frame:first-of-type {
+  margin-top: 0;
+}
+
+.app-content .setting-wrap .subject-frame .subject-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.app-content .setting-wrap .subject-frame .subject-header .title {
+  width: 150px;
+}
+
+.app-content .setting-wrap .subject-frame ul li {
+  padding: 5px 40px 5px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.app-content .setting-wrap .subject-frame ul li .btn-icon {
+  position: absolute;
+  top: 5px;
+  right: 0px;
+}
+
+.app-content .setting-wrap .subject-frame ul li .title {
+  width: 150px;
+}
+
+.app-content .setting-wrap .subject-frame ul li .subject-class {
+  width: 120px;
+  height: 34px;
+  background-color: #ffffff;
+}
+
+.app-content .setting-wrap .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -291,126 +407,167 @@ header nav .nav-list li.multi:before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.app-content .setting-wrap .row .title {
+  width: 120px;
+  font-weight: bold;
+}
+
+.app-content .setting-wrap .row .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  word-break: break-all;
+  text-align: end;
+}
+
+.app-content .setting-wrap .row .content.over {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.app-content .button-wrap {
+  width: 100%;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.app-content .report-wrap .search-wrap .date-wrap {
-  padding: 15px 7px;
+.app-content .button-wrap button {
+  min-height: 38px;
+  padding: 5px 15px;
+  margin-left: 15px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.app-content .report-wrap .search-wrap .date-wrap .title {
-  min-width: 90px;
-}
-
-.app-content .report-wrap .search-wrap .date-wrap select {
-  height: 36px;
-  border: 2px solid #cccccc;
-}
-
-.app-content .report-wrap .search-wrap button {
-  height: 36px;
-  padding: 5px 20px;
-  background-color: #2B78FE;
-  color: #ffffff;
-  font-size: 1rem;
-  position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  cursor: pointer;
-}
-
-.app-content .report-wrap .report-list-wrap {
-  padding: 15px;
-}
-
-.app-content .report-wrap .report-list-wrap .loading-frame {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.app-content .report-wrap .report-list-wrap .loading-frame .icon-loading {
-  width: 100px;
-  height: 100px;
+.app-content .button-wrap button:first-of-type {
+  margin-left: 0;
 }
 
-.app-content .report-wrap .report-list-wrap .report-list .btn-report-wrap {
-  text-align: center;
-}
-
-.app-content .report-wrap .report-list-wrap .report-list .btn-report-wrap button {
-  width: 150px;
-  height: 36px;
+.app-content .button-wrap button.btn-edit {
   background-color: #4CAF50;
-  color: #ffffff;
-  font-size: 1rem;
 }
 
-.app-content .report-wrap .report-list-wrap .report-list .row {
-  padding: 15px;
-  margin-top: 20px;
-  background-color: #ffffff;
+.app-content .button-wrap button.btn-add {
+  background-color: #17a2b8;
+}
+
+.app-content .button-wrap button.btn-add-subject-block {
+  background-color: #007bff;
+}
+
+.mask-dia {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mask-dia.show {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
-          box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.app-content .report-wrap .report-list-wrap .report-list .row .title {
+.mask-dia .dialogue-message-frame {
+  width: 94%;
+  max-width: 700px;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-head {
+  width: 100%;
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #00B0ED;
+  border-radius: 10px 10px 0px 0px;
+  position: relative;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-head h4 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-head .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body {
+  min-height: 150px;
+  padding: 15px 15px 80px;
+  background-color: #ffffff;
+  border-radius: 0px 0px 10px 10px;
+  position: relative;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .row .title {
   width: 100px;
 }
 
-.app-content .report-wrap .report-list-wrap .report-list .row .content {
+.mask-dia .dialogue-message-frame .dialogue-body .row .content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  word-break: break-all;
 }
 
-.app-content .report-wrap .report-list-wrap .report-list .row .content .list-frame {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.app-content .report-wrap .report-list-wrap .report-list .row .content .list-frame .list-title {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  padding: 5px 10px;
-}
-
-.app-content .report-wrap .report-list-wrap .report-list .row .content .list-frame .list-content {
-  width: 50px;
-  padding: 5px 10px;
+.mask-dia .dialogue-message-frame .dialogue-body .btn-frame {
+  width: 100%;
+  height: 50px;
+  padding: 15px 0;
+  position: absolute;
+  bottom: 0;
   text-align: center;
 }
 
-.app-content .report-wrap .report-list-wrap .report-list .row .content .list-frame:nth-of-type(2n-1) {
-  background-color: #ccdffc;
+.mask-dia .dialogue-message-frame .dialogue-body .btn-frame button {
+  width: 80px;
+  height: 38px;
+  margin-left: 15px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #ffa701;
+  border-radius: 5px;
 }
-
-.app-content .report-wrap .report-list-wrap .report-list .row .content .list-frame:nth-of-type(2n) {
-  background-color: #ffffff;
-}
-
-@media screen and (max-width: 600px) {
-  .date-wrap {
-    width: 100%;
-  }
-  .date-wrap button {
-    width: 100%;
-  }
-}
-/*# sourceMappingURL=clickReport.css.map */
+/*# sourceMappingURL=manageSubject.css.map */

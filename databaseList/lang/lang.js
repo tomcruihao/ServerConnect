@@ -15,7 +15,7 @@ const messages = {
       // All Latest News page
       h1_all_latestNews: 'Latest News',
       // Resource Management page
-      h1_resource_management: 'Resource Management',
+      h1_resource_management: 'Resource Setting',
       resource_resourceName: 'Resource Name',
       resource_resourceType: 'Resource Type',
       resource_faculty: 'Faculty',
@@ -36,7 +36,7 @@ const messages = {
       resource_btn_modify: 'Modify',
       resource_btn_add: 'Add',
       // setting page
-      h1_settings: 'Setting',
+      h1_settings: 'General Setting',
       generalSetting: 'General Setting',
       subject_setting: 'Subject Setting',
       subject_title: 'Subject Title',
@@ -46,13 +46,15 @@ const messages = {
       tools: 'Tool Kits',
       create_alphabet_stokes: 'Create Alphabet and Strokes',
       // latest news management page
-      h1_latestNews: 'Latest News',
+      h1_latestNews: 'Latest News Setting',
       latest_form_setting: 'Form Setting',
       latest_form_name: 'Form Name',
       latest_form_number_of_showing: 'Number of Showing',
       latest_publish_date: 'Publish Date',
       latest_publish_title: 'News Title',
       latest_publish_content: 'News Content',
+      // Subject management page
+      h1_subject: 'Subject Setting',
       // Clicking Report page
       h1_clickingReport: 'Clicking Report',
       clickingReport_start_date: 'Start Date',
@@ -135,6 +137,8 @@ const messages = {
       latest_publish_date: '發佈日期',
       latest_publish_title: '消息標頭',
       latest_publish_content: '消息內容',
+      // Subject management page
+      h1_subject: '主題設定',
       // Clicking Report page
       h1_clickingReport: '使用率報表',
       clickingReport_start_date: '起始時間',
