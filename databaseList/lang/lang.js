@@ -161,6 +161,8 @@ function initLanguage () {
     lang = navigator.language || navigator.userLanguage;
     if (lang === 'en-US') {
       lang = 'en';
+    } else {
+      lang = 'local';
     }
     localStorage.setItem('lang', lang);
   }
