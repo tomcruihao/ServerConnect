@@ -15,13 +15,13 @@ error_reporting(E_ALL);
     echo "$name: $value\n";
   }
 
-
+  session_start();
   echo $_SESSION['UserName'];
   if(isset($_SESSION['UserName'])) {
     echo 'session is exist';
     echo $_SESSION['UserName'];
   } else {
-    $_SESSION['UserName']='Jordan';
+    $_SESSION['UserName'] = 'Jordan';
     echo $_SESSION['UserName'];
   }
 ?>
