@@ -11,10 +11,10 @@ error_reporting(E_ALL);
 
 
   echo "ehllo";
-  // foreach (getallheaders() as $name => $value) {
-  //   echo "$name: $value\n";
-  // }
-// 　session_start();
-//   $_SESSION['UserName']='Jordan';
-//   echo $_SESSION['UserName'];
+  foreach (getallheaders() as $name => $value) {
+    echo "$name: $value\n";
+  }
+　session_start();
+  $_SESSION['UserName']='Jordan';
+  echo $_SESSION['UserName'];
 ?>
