@@ -44,6 +44,7 @@
       $zhuyin_map[$row['local']['zhuyin']] = true;
     } else if(preg_match("/^[a-zA-Z]$/", $row['local']['englishAlphabet'])) {
       $char_uppercase = strtoupper($row['local']['englishAlphabet']);
+      echo $char_uppercase;
       $englishAlphabet_local_map[$char_uppercase] = true;
     }
     if($row['local']['strokes'] !== '0') {
