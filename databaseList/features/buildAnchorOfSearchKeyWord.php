@@ -43,7 +43,8 @@
     echo (preg_match("/^[a-zA-Z]$/", $row['local']['englishAlphabet']));
     if($row['zhuyin'] !== '') {
       $zhuyin_map[$row['local']['zhuyin']] = true;
-    } else if(preg_match("/^[a-zA-Z]$/", $row['local']['englishAlphabet'])) {
+    }
+    if(preg_match("/^[a-zA-Z]$/", $row['local']['englishAlphabet'])) {
       $char_uppercase = strtoupper($row['local']['englishAlphabet']);
       $englishAlphabet_local_map[$char_uppercase] = true;
     }
