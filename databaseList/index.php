@@ -363,18 +363,18 @@
             console.log(localStorage.getItem('lang'));
             switch (localStorage.getItem('lang')) {
               case 'en':
-                this.anchorList = JSON.parse(JSON.stringify(res.en));
+                self.anchorList = JSON.parse(JSON.stringify(res.en));
                 break;
               case 'local':
-                this.anchorList = JSON.parse(JSON.stringify(res.local));
+                self.anchorList = JSON.parse(JSON.stringify(res.local));
                 break;            
               default:
-                this.anchorList = JSON.parse(JSON.stringify(res.local));
+              self.anchorList = JSON.parse(JSON.stringify(res.local));
                 break;
             }
             let lang = localStorage.getItem('lang');
           } else {
-            this.anchorList = JSON.parse(JSON.stringify(res.local));
+            self.anchorList = JSON.parse(JSON.stringify(res.local));
           }
           // fillAnchor(res);
         }
