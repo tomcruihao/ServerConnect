@@ -306,9 +306,7 @@
         zhuyin: [],
         strokes: []
       },
-      temp_anchorList: {
-
-      },
+      temp_anchorList: {},
       buttons: [
         {
           btnName: '資源名稱',
@@ -351,7 +349,8 @@
         },
         success: function(res) {
           console.log(res);
-          temp_anchorList = res;
+          this.temp_anchorList = res;
+          this.anchorList = res.local;
           // fillAnchor(res);
         }
       });
@@ -839,6 +838,6 @@
     };
     contactList = new List('databaseList', options);
 
-    createAlphabetAnchor();
+    // createAlphabetAnchor();
   });
 </script>
