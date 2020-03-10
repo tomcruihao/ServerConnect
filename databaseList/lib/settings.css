@@ -390,6 +390,7 @@ h4 {
 }
 
 .app-content .toolkit-setting-wrap .toolkits .row {
+  padding: 5px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

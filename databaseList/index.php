@@ -112,15 +112,19 @@
             </div>
           </div>
         </div>
-        <div class="atoz-wrap">
+        <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('alphabet')">
           <div class="atoz-title">{{$t('message.index_atoz')}}:</div>
           <div id="atozField" class="atoz-field"></div>
         </div>
-        <div class="atoz-wrap">
+        <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('zhuyin')">
           <div class="atoz-title">{{$t('message.index_zhuyin')}}:</div>
-          <div id="zhuYinField" class="atoz-field"></div>
+          <div class="atoz-field" v-for="(zhuyin, index) in anchorList.zhuyin">
+            <div class="link-field">
+              
+            </div>
+          </div>
         </div>
-        <div class="atoz-wrap">
+        <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('strokes')">
           <div class="atoz-title">{{$t('message.index_strokes')}}:</div>
           <div id="strokesField" class="atoz-field"></div>
         </div>
@@ -228,7 +232,7 @@
 
   var contactList
 
-  function changeEsourceListLanguage() {
+  function changeRsourceListLanguage() {
     contactList.clear();
     let ary_lang
 
@@ -284,7 +288,7 @@
       async setLang(event) {
         i18n.locale = event.target.value;
         localStorage.setItem('lang', event.target.value);
-        // changeEsourceListLanguage();
+        // changeRsourceListLanguage();
 
         aside.setLocale(i18n.locale);
 
@@ -297,6 +301,14 @@
     el:'#filterField',
     i18n,
     data: {
+      anchorList: {
+        alphabet: [],
+        zhuyin: [],
+        strokes: []
+      },
+      temp_anchorList: {
+
+      },
       buttons: [
         {
           btnName: '資源名稱',
@@ -327,6 +339,22 @@
           }
         }
       ]
+    },
+    created: function() {
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getStrokes.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          console.log(res);
+          temp_anchorList = res;
+          // fillAnchor(res);
+        }
+      });
     },
     mounted: function() {
     },
@@ -727,25 +755,25 @@
   //   });
   // }
 
-  function searchAtoZ(upperCharacter, anchor) {
-    initAndAddClickedClass(anchor);
+  // function searchAtoZ(upperCharacter, anchor) {
+  //   initAndAddClickedClass(anchor);
   
-    contactList.search(upperCharacter, ['englishAlphabet']);
-    resetNumbering();
-  }
+  //   contactList.search(upperCharacter, ['englishAlphabet']);
+  //   resetNumbering();
+  // }
 
-  function searchZhuYin(zhuYinChar, anchor) {
-    initAndAddClickedClass(anchor);
+  // function searchZhuYin(zhuYinChar, anchor) {
+  //   initAndAddClickedClass(anchor);
   
-    contactList.search(zhuYinChar, ['zhuyin']);
-    resetNumbering();
-  }
+  //   contactList.search(zhuYinChar, ['zhuyin']);
+  //   resetNumbering();
+  // }
 
-  function searchStrokes(stroke, anchor) {
-    initAndAddClickedClass(anchor);
-    contactList.search(stroke, ['strokes']);
-    resetNumbering();
-  }
+  // function searchStrokes(stroke, anchor) {
+  //   initAndAddClickedClass(anchor);
+  //   contactList.search(stroke, ['strokes']);
+  //   resetNumbering();
+  // }
   function searchBy(term, field) {
     contactList.search(term, [field]);
     resetNumbering();
@@ -761,57 +789,42 @@
     resetNumbering();
   }
 
-  function createAlphabetAnchor() {
-    $.ajax({
-      url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getStrokes.php',
-      type: 'GET',
-      error: function(jqXHR, exception) {
-        //use url variable here
-        console.log(jqXHR);
-        console.log(exception);
-      },
-      success: function(res) {
-        fillAnchor(res);
-      }
-    });
-  }
+  // async function fillAnchor(allAnchor) {
+  //   // create hyper link of a to z
+  //   let englishAnchor = await createAnchor('english', allAnchor.englishAlphabet);
+  //   document.getElementById("atozField").appendChild(englishAnchor);
 
-  async function fillAnchor(allAnchor) {
-    // create hyper link of a to z
-    let englishAnchor = await createAnchor('english', allAnchor.englishAlphabet);
-    document.getElementById("atozField").appendChild(englishAnchor);
+  //   // create hyper link of ZhuYin
+  //   let zhuYinAnchor = await createAnchor('zhuyin', allAnchor.zhuyin);
+  //   document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
 
-    // create hyper link of ZhuYin
-    let zhuYinAnchor = await createAnchor('zhuyin', allAnchor.zhuyin);
-    document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
+  //   // create hyper link of strokes
+  //   let strokesAnchor = await createAnchor('strokes', allAnchor.strokes);
+  //   document.getElementById("strokesField").appendChild(strokesAnchor);
+  // }
 
-    // create hyper link of strokes
-    let strokesAnchor = await createAnchor('strokes', allAnchor.strokes);
-    document.getElementById("strokesField").appendChild(strokesAnchor);
-  }
-
-  function createAnchor(type, rows) {
-    return new Promise((resolve, reject) => {
-      let linkWrap = document.createElement('div')
-      linkWrap.className = 'link-field';
-      rows.forEach(res => {
-        let anchor = document.createElement('a');
-        let alphabet = res;
-        let anchorText = document.createTextNode(alphabet);
-        anchor.setAttribute('href', `javascript:void(0);`);
-        if(type === 'zhuyin') {
-          anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
-        } else if (type === 'english') {
-          anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
-        } else if (type === 'strokes') {
-          anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
-        }
-        anchor.appendChild(anchorText);
-        linkWrap.appendChild(anchor);
-      })
-      resolve(linkWrap);
-    })
-  }
+  // function createAnchor(type, rows) {
+  //   return new Promise((resolve, reject) => {
+  //     let linkWrap = document.createElement('div')
+  //     linkWrap.className = 'link-field';
+  //     rows.forEach(res => {
+  //       let anchor = document.createElement('a');
+  //       let alphabet = res;
+  //       let anchorText = document.createTextNode(alphabet);
+  //       anchor.setAttribute('href', `javascript:void(0);`);
+  //       if(type === 'zhuyin') {
+  //         anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
+  //       } else if (type === 'english') {
+  //         anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
+  //       } else if (type === 'strokes') {
+  //         anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
+  //       }
+  //       anchor.appendChild(anchorText);
+  //       linkWrap.appendChild(anchor);
+  //     })
+  //     resolve(linkWrap);
+  //   })
+  // }
 
   document.addEventListener("DOMContentLoaded", function(event) {
     // Init list

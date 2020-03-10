@@ -83,7 +83,7 @@
             {{$t('message.build_alphabet_stokes')}}
           </div>
           <div class="content">
-            <button onclick="buildStrokes()">{{$t('message.btn_execute')}}</button>
+            <button @click="buildStrokes()">{{$t('message.btn_execute')}}</button>
           </div>
         </div>
         <div class="row">
@@ -91,7 +91,7 @@
             {{$t('message.build_alphabet_list')}}
           </div>
           <div class="content">
-            <button onclick="buildStrokeAnchorList()">{{$t('message.btn_execute')}}</button>
+            <button @click="buildStrokeAnchorList()">{{$t('message.btn_execute')}}</button>
           </div>
         </div>
       </div>
@@ -124,10 +124,44 @@
     el:'#toolsField',
     i18n,
     data: {
+      btn_stroke: {
+        loading: false
+      },
+      btn_stroke_list: {
+        loading: false
+      }
     },
     mounted: function() {
     },
     methods: {
+      buildStrokeAnchorList: function() {
+        $.ajax({
+          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildAnchorOfSearchKeyWord.php',
+          type: 'POST',
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(res) {
+            dialogue.setDialogue('update_success');
+          }
+        });
+      },
+      buildStrokes: function() {
+        $.ajax({
+          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildStrokeInResourceList.php',
+          type: 'POST',
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(res) {
+            dialogue.setDialogue('update_success');
+          }
+        });
+      },
     }
   })
   var mainTitle = new Vue({
@@ -255,23 +289,4 @@
       }
     }
   });
-  function buildStrokes() {
-    $.ajax({
-      url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildStrokeInResourceList.php',
-      type: 'POST',
-      error: function(jqXHR, exception) {
-        //use url variable here
-        console.log(jqXHR);
-        console.log(exception);
-      },
-      success: function(res) {
-        let messageInfo = {
-          title: '',
-          content: '建立成功',
-          warning: ''
-        }
-        dialogue.setDialogue('update_success');
-      }
-    });
-  }
 </script>
