@@ -75,8 +75,14 @@
           let self = this;
 
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getStrokes.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/login.php',
             type: 'GET',
+            beforeSend: function(request) {
+              request.setRequestHeader("Authority", 'test');
+              request.setRequestHeader("ver", '1.0');
+              request.setRequestHeader("fileType", 'mp4');
+              request.setRequestHeader("md5", '47e954ec481d097e96261d993ec43ba5');
+            },
             error: function(jqXHR, exception) {
               //use url variable here
               console.log(jqXHR);
