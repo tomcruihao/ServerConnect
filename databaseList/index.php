@@ -299,6 +299,7 @@
         // changeRsourceListLanguage();
 
         aside.setLocale(i18n.locale);
+        filterField.setLocale(i18n.locale);
 
         genDatalistStructure(true);
       }
@@ -386,6 +387,19 @@
         }
         sortBy(obj.sortName, obj.options);
         // addSortResultAfterTitle(obj);
+      },
+      setLocale: function(language) {
+        switch (language) {
+          case 'en':
+            this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.en));
+            break;
+          case 'local':
+            this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.local));
+            break;            
+          default:
+            this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.local));
+            break;
+        }
       },
       initAllBtn() {
         this.buttons.forEach((res, index) => {
