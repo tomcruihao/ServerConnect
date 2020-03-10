@@ -360,7 +360,6 @@
         success: function(res) {
           self.temp_anchorList = res;
           if("lang" in localStorage) {
-            console.log(localStorage.getItem('lang'));
             switch (localStorage.getItem('lang')) {
               case 'en':
                 self.anchorList = JSON.parse(JSON.stringify(res.en));
@@ -369,7 +368,7 @@
                 self.anchorList = JSON.parse(JSON.stringify(res.local));
                 break;            
               default:
-              self.anchorList = JSON.parse(JSON.stringify(res.local));
+                self.anchorList = JSON.parse(JSON.stringify(res.local));
                 break;
             }
             let lang = localStorage.getItem('lang');

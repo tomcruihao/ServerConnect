@@ -4,51 +4,39 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>資源管理系統</title>
-    <link rel="stylesheet" type="text/css" href="../lib/clickReport.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/admin_index.css"/>
   </head>
 <body>
-  <!-- <header id="header">
-    <div class="logo">
-      <img src="../img/logo.png" alt="EBSCO" title="EBSCO"/>
-    </div>
-    <nav>
-      <label for="mobile_btn" class="mobile-btn-frame">
-        <img src="../img/dehaze.svg"/>
-      </label>
-      <input type="checkbox" id="mobile_btn">
-      <ul class="nav-list">
-        <li>
-          <a href="../resourceManagement.html" class="nav-tag">資源管理</a>
-        </li>
-        <li>
-          <a href="../manageLatestNews.html" class="nav-tag">最新消息管理</a>
-        </li>
-        <li>
-          <a href="../manageSetting.html" class="nav-tag">設定</a>
-        </li>
-        <li class="multi">
-          <label class="nav-tag" for="tag1">link 2</label>
-          <input type="checkbox" id="tag1">
-          <ul>
-            <li>
-              <a href="#">link 2-1</a>
-            </li>
-            <li>
-              <a href="#">link 2-2</a>
-            </li>
-            <li>
-              <a href="#">link 2-3</a>
-            </li>
-            <li>
-              <a href="#">link 2-4</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header> -->
   <div class="app-content">
-    
+    <div id="mainTitle" class="mainTitle">
+      <div class="lang-wrap">
+        <div>{{$t('message.chooseLanguage')}}:</div>
+        <select v-model="selector_lang" @change="setLang($event)">
+          <option value="en">English</option>
+          <option value="local">中文</option>
+        </select>
+      </div>
+    </div>
+    <div id="loginForm" class="login-frame">
+      <div class="logo">
+        <img src="../img/logo.png" alt="EBSCO" title="EBSCO"/>
+      </div>
+      <div class="row">
+        <div class="title">帳號</div>
+        <div class="content">
+          <input type="text" v-model="user.account">
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">密碼</div>
+        <div class="content">
+          <input type="password" v-model="user.password">
+        </div>
+      </div>
+      <div class="btn-wrap">
+        <button @click="logIn">Login</button>
+      </div>
+    </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
@@ -62,7 +50,6 @@
         selector_lang: ''
       },
       mounted: function() {
-        console.log(i18n.locale)
         this.selector_lang = i18n.locale;
       },
       methods: {
@@ -72,18 +59,57 @@
         }
       }
     })
-    var authForm = new Vue({
-      el:'#authForm',
+    var loginForm = new Vue({
+      el:'#loginForm',
       i18n,
       data: {
-        account: '',
-        password: ''
+        user: {
+          account: '',
+          password: ''
+        }
       },
       computed: {
       },
       methods:{
         logIn() {
-
+          let self = this;
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/login.php',
+            data: {
+              user: JSON.stringify(self.user)
+            },
+            type: 'POST',
+            headers: {
+              'ver': '1.0',
+              'fileType': 'mp4',
+              'md5': '47e954ec481d097e96261d993ec43ba5'
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              self.temp_anchorList = res;
+              if("lang" in localStorage) {
+                switch (localStorage.getItem('lang')) {
+                  case 'en':
+                    self.anchorList = JSON.parse(JSON.stringify(res.en));
+                    break;
+                  case 'local':
+                    self.anchorList = JSON.parse(JSON.stringify(res.local));
+                    break;            
+                  default:
+                    self.anchorList = JSON.parse(JSON.stringify(res.local));
+                    break;
+                }
+                let lang = localStorage.getItem('lang');
+              } else {
+                self.anchorList = JSON.parse(JSON.stringify(res.local));
+              }
+              // fillAnchor(res);
+            }
+          });
         }
       }
     });

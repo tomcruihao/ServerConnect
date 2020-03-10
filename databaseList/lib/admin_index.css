@@ -272,287 +272,83 @@ header nav .nav-list li.multi:before {
   margin-left: 10px;
 }
 
-h4 {
-  color: #ff0000;
-}
-
 .app-content {
   width: 100%;
   max-width: 960px;
-  margin: 20px auto;
-  padding: 0 15px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.app-content section {
-  padding: 15px;
-  margin-top: 15px;
-  border-radius: 10px;
-  background-color: #ccdffc;
-  position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.app-content .setting-wrap .subject-frame {
-  background-color: #d4edda;
-  padding: 30px 15px 15px;
-  margin-top: 20px;
-  border-radius: 10px;
-  position: relative;
-}
-
-.app-content .setting-wrap .subject-frame .delete-subject-block {
-  width: 24px;
-  height: 24px;
-  padding: 2px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #155724;
-}
-
-.app-content .setting-wrap .subject-frame .delete-subject-block img {
-  width: 20px;
-  height: 20px;
-}
-
-.app-content .setting-wrap .subject-frame:first-of-type {
-  margin-top: 0;
-}
-
-.app-content .setting-wrap .subject-frame .subject-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.app-content .setting-wrap .subject-frame .subject-header .title {
-  width: 150px;
-}
-
-.app-content .setting-wrap .subject-frame ul li {
-  padding: 5px 40px 5px 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
-}
-
-.app-content .setting-wrap .subject-frame ul li .btn-icon {
-  position: absolute;
-  top: 5px;
-  right: 0px;
-}
-
-.app-content .setting-wrap .subject-frame ul li .title {
-  width: 150px;
-}
-
-.app-content .setting-wrap .subject-frame ul li .subject-class {
-  width: 120px;
-  height: 34px;
-  background-color: #ffffff;
-}
-
-.app-content .setting-wrap .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.app-content .setting-wrap .row .title {
-  width: 120px;
-  font-weight: bold;
-}
-
-.app-content .setting-wrap .row .content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  word-break: break-all;
-  text-align: end;
-}
-
-.app-content .setting-wrap .row .content.over {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.app-content .toolkit-setting-wrap .toolkits .row {
-  padding: 5px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.app-content .toolkit-setting-wrap .toolkits .row .title {
-  font-weight: bold;
-}
-
-.app-content .toolkit-setting-wrap .toolkits .row .content button {
-  width: 120px;
-  height: 36px;
-  background-color: #4CAF50;
-  color: #ffffff;
-  font-size: 1rem;
-}
-
-.app-content .button-wrap {
-  width: 100%;
-  padding: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.app-content .button-wrap button {
-  min-height: 38px;
-  padding: 5px 15px;
-  margin-left: 15px;
-  background-color: #4CAF50;
-  color: #ffffff;
-  font-size: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.app-content .button-wrap button:first-of-type {
-  margin-left: 0;
-}
-
-.app-content .button-wrap button.btn-edit {
-  background-color: #4CAF50;
-}
-
-.app-content .button-wrap button.btn-add {
-  background-color: #17a2b8;
-}
-
-.app-content .button-wrap button.btn-add-subject-block {
-  background-color: #007bff;
-}
-
-.mask-dia {
-  width: 100vw;
   height: 100vh;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.mask-dia.show {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.mask-dia .dialogue-message-frame {
-  width: 94%;
-  max-width: 700px;
-}
-
-.mask-dia .dialogue-message-frame .dialogue-head {
-  width: 100%;
-  padding: 5px 15px;
-  font-size: 1.2rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #00B0ED;
-  border-radius: 10px 10px 0px 0px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
 
-.mask-dia .dialogue-message-frame .dialogue-head h4 {
-  margin: 0;
-  color: #ffffff;
-}
-
-.mask-dia .dialogue-message-frame .dialogue-head .close {
+.app-content .mainTitle {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   position: absolute;
-  right: 5px;
-  top: 5px;
-  cursor: pointer;
+  top: 20px;
 }
 
-.mask-dia .dialogue-message-frame .dialogue-body {
-  min-height: 150px;
-  padding: 15px 15px 80px;
+.app-content .login-frame {
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #333333;
+  padding: 30px;
   background-color: #ffffff;
-  border-radius: 0px 0px 10px 10px;
-  position: relative;
 }
 
-.mask-dia .dialogue-message-frame .dialogue-body .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.mask-dia .dialogue-message-frame .dialogue-body .row .title {
-  width: 100px;
-}
-
-.mask-dia .dialogue-message-frame .dialogue-body .row .content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  word-break: break-all;
-}
-
-.mask-dia .dialogue-message-frame .dialogue-body .btn-frame {
-  width: 100%;
-  height: 50px;
-  padding: 15px 0;
-  position: absolute;
-  bottom: 0;
+.app-content .login-frame .logo {
   text-align: center;
 }
 
-.mask-dia .dialogue-message-frame .dialogue-body .btn-frame button {
-  width: 80px;
-  height: 38px;
-  margin-left: 15px;
-  font-size: 1.2rem;
-  color: #ffffff;
-  background-color: #ffa701;
-  border-radius: 5px;
+.app-content .login-frame .logo img {
+  height: 60px;
 }
-/*# sourceMappingURL=settings.css.map */
+
+.app-content .login-frame .row {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-content .login-frame .row .title {
+  width: 100px;
+  color: #666666;
+}
+
+.app-content .login-frame .row .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.app-content .login-frame .btn-wrap {
+  width: 100%;
+  margin-top: 15px;
+  text-align: end;
+}
+
+.app-content .login-frame .btn-wrap button {
+  width: 120px;
+  height: 36px;
+  background-color: #2B78FE;
+  color: #ffffff;
+  font-size: 1rem;
+}
+/*# sourceMappingURL=admin_index.css.map */
