@@ -369,11 +369,11 @@
     },
     methods: {
       search: function(trem, row, id) {
-        console.log(id);
-        // initAndAddClickedClass(anchor);
+        const anchor = document.querySelector(`#${id}`);
+        initAndAddClickedClass(anchor);
   
-  //   contactList.search(zhuYinChar, ['zhuyin']);
-  //   resetNumbering();
+        contactList.search(trem, [row]);
+        resetNumbering();
       },
       processSort: function(obj) {
         if(obj.options.order === '') {
