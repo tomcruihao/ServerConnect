@@ -73,17 +73,10 @@
       methods:{
         logIn() {
           let self = this;
+
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/login.php',
-            data: {
-              user: JSON.stringify(self.user)
-            },
-            type: 'POST',
-            headers: {
-              'ver': '1.0',
-              'fileType': 'mp4',
-              'md5': '47e954ec481d097e96261d993ec43ba5'
-            },
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getStrokes.php',
+            type: 'GET',
             error: function(jqXHR, exception) {
               //use url variable here
               console.log(jqXHR);
@@ -93,6 +86,27 @@
               console.log(res);
             }
           });
+
+          // $.ajax({
+          //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/login.php',
+          //   data: {
+          //     user: JSON.stringify(self.user)
+          //   },
+          //   type: 'POST',
+          //   headers: {
+          //     'ver': '1.0',
+          //     'fileType': 'mp4',
+          //     'md5': '47e954ec481d097e96261d993ec43ba5'
+          //   },
+          //   error: function(jqXHR, exception) {
+          //     //use url variable here
+          //     console.log(jqXHR);
+          //     console.log(exception);
+          //   },
+          //   success: function(res) {
+          //     console.log(res);
+          //   }
+          // });
         }
       }
     });
