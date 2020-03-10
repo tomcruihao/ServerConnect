@@ -40,7 +40,7 @@
 
   // match with the local map
   foreach($resourceList as $key_lang => $row) {
-    echo $row['local']['englishAlphabet'];
+    echo (preg_match("/^[a-zA-Z]$/", $row['local']['englishAlphabet']));
     if($row['zhuyin'] !== '') {
       $zhuyin_map[$row['local']['zhuyin']] = true;
     } else if(preg_match("/^[a-zA-Z]$/", $row['local']['englishAlphabet'])) {
