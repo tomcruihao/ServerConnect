@@ -9,8 +9,6 @@ error_reporting(E_ALL);
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
-
-  echo "ehllo";
   foreach (getallheaders() as $name => $value) {
     echo "$name: $value\n";
   }
