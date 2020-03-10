@@ -116,7 +116,7 @@
           <div class="atoz-title">{{$t('message.index_atoz')}}:</div>
           <div class="atoz-field">
             <div class="link-field" v-for="(alphabet, index) in anchorList.englishAlphabet">
-              <a href="#">{{alphabet}}</a>
+              <a :id="'alpha'+index" @click="search(alphabet, 'englishAlphabet', 'alpha'+index)">{{alphabet}}</a>
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@
           <div class="atoz-title">{{$t('message.index_zhuyin')}}:</div>
           <div class="atoz-field">
             <div class="link-field" v-for="(zhuyin, index) in anchorList.zhuyin">
-              <a href="#">{{zhuyin}}</a>
+              <a :id="'zhutin'+index" @click="search(zhuyin, 'zhuyin', 'zhutin'+index)">{{zhuyin}}</a>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@
           <div class="atoz-title">{{$t('message.index_strokes')}}:</div>
           <div class="atoz-field">
             <div class="link-field" v-for="(strokes, index) in anchorList.strokes">
-              <a href="#">{{strokes}}</a>
+              <a :id="'strokes'+index" @click="search(strokes, 'strokes', 'strokes'+index)">{{strokes}}</a>
             </div>
           </div>
         </div>
@@ -368,6 +368,13 @@
 
     },
     methods: {
+      search: function(trem, row, id) {
+        console.log(id);
+        // initAndAddClickedClass(anchor);
+  
+  //   contactList.search(zhuYinChar, ['zhuyin']);
+  //   resetNumbering();
+      }
       processSort: function(obj) {
         if(obj.options.order === '') {
           this.initAllBtn();
