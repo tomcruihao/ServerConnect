@@ -285,7 +285,7 @@ h4 {
           box-sizing: border-box;
 }
 
-.app-content .setting-wrap {
+.app-content section {
   padding: 15px;
   margin-top: 15px;
   border-radius: 10px;
@@ -389,6 +389,30 @@ h4 {
   white-space: nowrap;
 }
 
+.app-content .toolkit-setting-wrap .toolkits .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-content .toolkit-setting-wrap .toolkits .row .title {
+  font-weight: bold;
+}
+
+.app-content .toolkit-setting-wrap .toolkits .row .content button {
+  width: 120px;
+  height: 36px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
 .app-content .button-wrap {
   width: 100%;
   padding: 20px;
@@ -409,7 +433,6 @@ h4 {
   background-color: #4CAF50;
   color: #ffffff;
   font-size: 1rem;
-  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -22,13 +22,16 @@ h4 {
   padding: 0 15px;
   box-sizing: border-box;
 
-  .setting-wrap {
+  section {
     padding: 15px;
     margin-top: 15px;
     border-radius: 10px;
     background-color: $resource_field_bgcolor;
     position: relative;
     box-sizing: border-box;
+  }
+
+  .setting-wrap {
 
     .subject-frame {
       background-color: $subject_block_bgcolor;
@@ -112,6 +115,28 @@ h4 {
       }
     }
   }
+  .toolkit-setting-wrap {
+    .toolkits {
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .title {
+          font-weight: bold;
+        }
+        .content {
+          button {
+            width: 120px;
+            height: 36px;
+            background-color: $button_update_bgcolor;
+            color: #ffffff;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
   .button-wrap {
     width: 100%;
     padding: 20px;
@@ -126,7 +151,6 @@ h4 {
       background-color: $button_update_bgcolor;
       color: #ffffff;
       font-size: 1rem;
-      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;

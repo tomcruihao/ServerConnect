@@ -75,12 +75,12 @@
         <button v-if="btn_recovery.show" @click="recoverySettings()">{{$t('message.btn_recover')}}</button>
       </div>
     </section>
-    <section id="toolsField" class="setting-wrap">
-      <h1>{{$t('message.tools')}}</h1>
-      <div class="setting-wrap">
+    <section id="toolsField" class="toolkit-setting-wrap">
+      <div class="toolkits">
+        <h1>{{$t('message.tools')}}</h1>
         <div class="row">
           <div class="title">
-            <span>{{$t('message.create_alphabet_stokes')}}</span>
+            {{$t('message.create_alphabet_stokes')}}
           </div>
           <div class="content">
             <button onclick="buildStrokes()">{{$t('message.btn_execute')}}</button>
@@ -158,7 +158,6 @@
     methods:{
       setDialogue: function(status) {
         this.status = status;
-        this.message = messageInfo;
         this.show = true;
       },
       closeDialogue: function() {
@@ -224,7 +223,7 @@
       },
       updateSettings: function() {
         let self = this;
-        
+
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSettings.php',
           type: 'POST',
@@ -239,10 +238,10 @@
           success: function(res) {
             console.log(res);
             // open the dialogue
-
+            dialogue.setDialogue('update_success');
 
             // refresh the general list
-            this.getSettings();
+            self.getSettings();
           }
         });
       }
