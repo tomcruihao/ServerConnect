@@ -112,21 +112,25 @@
             </div>
           </div>
         </div>
-        <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('alphabet')">
+        <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('englishAlphabet')">
           <div class="atoz-title">{{$t('message.index_atoz')}}:</div>
-          <div id="atozField" class="atoz-field"></div>
+          <div class="atoz-field" v-for="(alphabet, index) in anchorList.englishAlphabet">
+            <a href="#">{{alphabet}}</a>
+          </div>
         </div>
         <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('zhuyin')">
           <div class="atoz-title">{{$t('message.index_zhuyin')}}:</div>
           <div class="atoz-field" v-for="(zhuyin, index) in anchorList.zhuyin">
             <div class="link-field">
-              
+              <a href="#">{{zhuyin}}</a>
             </div>
           </div>
         </div>
         <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('strokes')">
           <div class="atoz-title">{{$t('message.index_strokes')}}:</div>
-          <div id="strokesField" class="atoz-field"></div>
+          <div class="atoz-field" v-for="(strokes, index) in anchorList.strokes">
+            <a href="#">{{strokes}}</a>
+          </div>
         </div>
         <div class="sort-wrap">
           <div class="sort-title">{{$t('message.index_sort')}}:</div>
@@ -466,7 +470,6 @@
             }
             self.latestNewsList.push(sortingList[index]);
           }
-          console.log(self.latestNewsList);
         }
       });
     },
