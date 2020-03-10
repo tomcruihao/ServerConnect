@@ -43,10 +43,12 @@
     if(!empty(trim($row['local']['zhuyin']))) {
       $zhuyin_map[$row['local']['zhuyin']] = true;
     }
+
     if(preg_match("/^[a-zA-Z]$/", $row['local']['englishAlphabet'])) {
       $char_uppercase = strtoupper($row['local']['englishAlphabet']);
       $englishAlphabet_local_map[$char_uppercase] = true;
     }
+
     if($row['local']['strokes'] !== '0') {
       $strokes_map[$row['local']['strokes']] = true;
     }
@@ -60,34 +62,38 @@
     }
   }
 
-  print_r($zhuyin_map);
-  print_r($englishAlphabet_en_map);
-  print_r($englishAlphabet_local_map);
-  print_r($strokes_map);
-
   // create the list
   $result = [];
-  $result['zhuyin'] = [];
-  $result['englishAlphabet'] = [];
-  $result['strokes'] = [];
+  $result['local']['zhuyin'] = [];
+  $result['local']['englishAlphabet'] = [];
+  $result['local']['strokes'] = [];
+  $result['en']['englishAlphabet'] = [];
 
-  // foreach($zhuyin_map as $key => $row) {
-  //   if($row) {
-  //     array_push($result['zhuyin'], $key);
-  //   }
-  // }
+  foreach($zhuyin_map as $key => $row) {
+    if($row) {
+      array_push($result['local']['zhuyin'], $key);
+    }
+  }
 
-  // foreach($englishAlphabet_map as $key => $row) {
-  //   if($row) {
-  //     array_push($result['englishAlphabet'], $key);
-  //   }
-  // }
+  foreach($englishAlphabet_local_map as $key => $row) {
+    if($row) {
+      array_push($result['local']['englishAlphabet'], $key);
+    }
+  }
 
-  // foreach($strokes_map as $key => $row) {
-  //   if($row) {
-  //     array_push($result['strokes'], $key);
-  //   }
-  // }
+  foreach($strokes_map as $key => $row) {
+    if($row) {
+      array_push($result['local']['strokes'], $key);
+    }
+  }
+
+  foreach($englishAlphabet_en_map as $key => $row) {
+    if($row) {
+      array_push($result['en']['englishAlphabet'], $key);
+    }
+  }
+
+  print_r($result);
   
   // write back
   // file_put_contents($jsonFile_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
