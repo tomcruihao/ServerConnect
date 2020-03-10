@@ -65,6 +65,8 @@ const messages = {
       clickingReport_download_the_report: 'Report Download',
       // dialogue
       dialogue_title: 'Title',
+      dialogue_title_info: 'Info',
+      dialogue_content_updateSuccess: 'Update Successful',
       // button
       btn_recover: 'Recover',
       btn_update: 'Update',
@@ -149,6 +151,8 @@ const messages = {
       clickingReport_download_the_report: '下載報表',
       // dialogue
       dialogue_title: '標題',
+      dialogue_title_info: '訊息',
+      dialogue_content_updateSuccess: '更新成功',
       // button
       btn_recover: '復原',
       btn_update: '更新',

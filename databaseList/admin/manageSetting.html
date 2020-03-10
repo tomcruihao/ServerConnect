@@ -90,17 +90,17 @@
     </section>
   </div>
   <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
-    <div class="dialogue-message-frame" v-if="type === 'message'">
+    <div class="dialogue-message-frame" v-if="status === 'update_success'">
       <div class="dialogue-head">
-        <h4>{{dialogHead_title}}</h4>
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
         <img src="../img/closeWhite.svg" class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body">
         <div class="row">
-          <div class="content">{{message.content}}</div>
+          <div class="content">{{$t('message.dialogue_content_updateSuccess')}}</div>
         </div>
         <div class="btn-frame">
-          <button @click="closeDialogue">{{$t('message.btn_confirm')}}</button>
+          <button @click="closeDialogue">{{$t('message.btn_close')}}</button>
         </div>
       </div>
     </div>
@@ -144,13 +144,7 @@
     i18n,
     data: {
       show: false,
-      type: '',
-      dialogHead_title: '',
-      message: {
-        title: '',
-        content: '',
-        warning: ''
-      }
+      status: ''
     },
     computed: {
       dialogueMessage: {
@@ -162,18 +156,10 @@
       }
     },
     methods:{
-      setDialogue: function(type, messageInfo) {
-        this.type = type;
+      setDialogue: function(status) {
+        this.status = status;
         this.message = messageInfo;
         this.show = true;
-        switch (type) {
-          case 'deleteSubjectBlock':
-            this.dialogHead_title = '注意';
-            break;
-          default:
-            this.dialogHead_title = '訊息';
-            break;
-        }
       },
       closeDialogue: function() {
         this.show = false;
@@ -252,6 +238,11 @@
           },
           success: function(res) {
             console.log(res);
+            // open the dialogue
+
+
+            // refresh the general list
+            this.getSettings();
           }
         });
       }
@@ -272,7 +263,7 @@
           content: '建立成功',
           warning: ''
         }
-        dialogue.setDialogue('message', messageInfo);
+        dialogue.setDialogue('update_success');
       }
     });
   }
