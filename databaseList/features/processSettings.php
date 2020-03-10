@@ -23,4 +23,9 @@ error_reporting(E_ALL);
   // write the setting back to the file
   file_put_contents($jsonFile_direct, json_encode($settings, JSON_UNESCAPED_UNICODE));
   response('success', 'success');
+
+  function response($errorType, $message) {
+    $res = array('type' => $errorType, 'mesage' => $message);
+    echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  }
 ?>
