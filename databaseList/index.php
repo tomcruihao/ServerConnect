@@ -374,7 +374,7 @@
   
   //   contactList.search(zhuYinChar, ['zhuyin']);
   //   resetNumbering();
-      }
+      },
       processSort: function(obj) {
         if(obj.options.order === '') {
           this.initAllBtn();
