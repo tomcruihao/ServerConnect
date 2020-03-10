@@ -332,9 +332,6 @@ section {
 }
 
 .atoz-wrap .atoz-field {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -348,6 +345,7 @@ section {
   border-radius: 10px;
   display: inline-block;
   color: blue;
+  cursor: pointer;
   text-decoration: none;
 }
 

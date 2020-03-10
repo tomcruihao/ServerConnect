@@ -51,7 +51,6 @@ section {
     align-items: center;
   }
   .atoz-field {
-    flex: 1;
     display: flex;
     flex-wrap: wrap;
 
@@ -62,6 +61,7 @@ section {
         border-radius: 10px;
         display: inline-block;
         color: blue;
+        cursor: pointer;
         text-decoration: none;
 
         &.clicked {
