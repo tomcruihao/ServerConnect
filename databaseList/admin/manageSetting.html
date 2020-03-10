@@ -54,7 +54,7 @@
         <div>{{$t('message.chooseLanguage')}}:</div>
         <select v-model="selector_lang" @change="setLang($event)">
           <option value="en">English</option>
-          <option value="tw">中文</option>
+          <option value="local">中文</option>
         </select>
       </div>
     </div>
@@ -73,40 +73,6 @@
           <img src="../img/edit.svg"/>{{$t('message.btn_update')}}
         </button>
         <button v-if="btn_recovery.show" @click="recoverySettings()">{{$t('message.btn_recover')}}</button>
-      </div>
-    </section>
-    <section id="subjectSetField" class="setting-wrap">
-      <h2>{{$t('message.subject_setting')}}</h2>
-      <!-- <span v-t="'message.h1_Settings'"></span> -->
-      <div class="subject-frame" v-for="(subjectInfo, index) in subjects">
-        <button class="btn-icon delete-subject-block" name="刪除整個主題區" title="刪除整個主題區" @click="deleteSubjectBlock(subjectInfo)"><img src="../img/delete.svg"/></button>
-        <h3 class="subject-header">
-          <div class="title">{{$t('message.subject_title')}}</div>
-          <input type="text" v-model="subjectInfo.subjectTitle">
-        </h3>
-        <ul>
-          <li v-for="(subject, subject_index) in subjectInfo.subjectList">
-            <div class="title">{{$t('message.subject_name')}}</div>
-            <input type="text" v-model="subject.name">
-            <select v-model="subject.className" class="subject-class">
-              <option v-for="option in subjectOptions" :value="option.className">{{option.displayName}}
-            </select>
-            <button @click="deleteSubject(index, subject)" class="btn-icon" name="刪除這項主題" title="刪除這項主題"><img src="../img/delete.svg"/></button>
-          </li>
-        </ul>
-        <div class="button-wrap">
-          <button class="btn-edit" @click="updateList(subjectInfo)">
-            <img src="../img/edit.svg"/>{{$t('message.btn_update')}}
-          </button>
-          <button class="btn-add" @click="addNewSubject(subjectInfo.subjectID)">
-            <img src="../img/add.svg"/>{{$t('message.subject_create_subject')}}
-          </button>
-        </div>
-      </div>
-      <div class="button-wrap">
-        <button class="btn-add-subject-block" @click="addNewSubjectBlock">
-          <img src="../img/add.svg"/>{{$t('message.subject_create_subject_item')}}
-        </button>
       </div>
     </section>
     <section id="toolsField" class="setting-wrap">
@@ -135,22 +101,6 @@
         </div>
         <div class="btn-frame">
           <button @click="closeDialogue">{{$t('message.btn_confirm')}}</button>
-        </div>
-      </div>
-    </div>
-    <div class="dialogue-message-frame" v-else-if="type === 'deleteSubjectBlock'">
-      <div class="dialogue-head">
-        <h4>{{dialogHead_title}}</h4>
-        <img src="../img/closeWhite.svg" class="close" @click="closeDialogue">
-      </div>
-      <div class="dialogue-body">
-        <div class="row">
-          <div class="warning" v-if="message.warning !== ''">{{message.warning}}</div>
-          <div class="content" v-else>{{message.content}}</div>
-        </div>
-        <div class="btn-frame">
-          <button @click="deleteSubjectBlock">{{$t('message.btn_confirm')}}</button>
-          <button @click="closeDialogue">{{$t('message.btn_cancel')}}</button>
         </div>
       </div>
     </div>
@@ -234,158 +184,6 @@
       }
     }
   });
-  var subjectField = new Vue({
-    el:'#subjectSetField',
-    i18n,
-    data: {
-      subjects: '',
-      subjectOptions: [
-        {
-          className: 'resourceType',
-          displayName: '資源類型'
-        },
-        {
-          className: 'faculty',
-          displayName: '適用學院'
-        },
-        {
-          className: 'subject',
-          displayName: '主題'
-        },
-        {
-          className: 'category',
-          displayName: '分類'
-        },
-        {
-          className: 'type',
-          displayName: '類型'
-        },
-        {
-          className: 'publisher',
-          displayName: '出版商'
-        },
-        {
-          className: 'default',
-          displayName: '請選擇欄位'
-        }
-      ],
-      delete_tempSubject: ''
-    },
-    created: function() {
-      this.updateSubjectList();
-    },
-    mounted: function () {
-      // console.log(this.$t('message.minwt'));
-      console.log(this.i18n);
-    },
-    methods:{
-      updateSubjectList: function () {
-        let self = this;
-        $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
-          type: 'GET',
-          error: function(jqXHR, exception) {
-            //use url variable here
-            console.log(jqXHR);
-            console.log(exception);
-          },
-          success: function(res) {
-            self.subjects = res.subjects;
-          }
-        });
-      },
-      addNewSubjectBlock: function() {
-        let self = this;
-        $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
-          type: 'POST',
-          data: {
-            type: 'add',
-          },
-          error: function(jqXHR, exception) {
-            //use url variable here
-            console.log(jqXHR);
-            console.log(exception);
-          },
-          success: function(res) {
-            console.log(res);
-            self.updateSubjectList();
-          }
-        });
-      },
-      updateList: function(subject) {
-        let self = this;
-        let post_subject = JSON.stringify(subject);
-        $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
-          type: 'POST',
-          data: {
-            type: 'modify',
-            subject: post_subject
-          },
-          error: function(jqXHR, exception) {
-            //use url variable here
-            console.log(jqXHR);
-            console.log(exception);
-          },
-          success: function(res) {
-            let messageInfo = {
-              title: '',
-              content: '更新成功',
-              warning: ''
-            }
-            dialogue.setDialogue('message', messageInfo);
-            self.updateSubjectList();
-          }
-        });
-      },
-      addNewSubject: function(subjectID) {
-        this.subjects.forEach(res => {
-          if(res.subjectID === subjectID) {
-            let object = {
-              "name": "",
-              "className": "default"
-            }
-            res.subjectList.push(object);
-          }
-        })
-      },
-      deleteSubject: function(index, subject) {
-        this.subjects[index].subjectList.splice(this.subjects[index].subjectList.indexOf(subject), 1);
-      },
-      deleteSubjectBlock: function(subjectBlock) {
-        this.delete_tempSubject = subjectBlock;
-        let messageInfo = {
-          title: '',
-          content: '',
-          warning: `您確定要刪除${subjectBlock.subjectTitle}嗎?`
-        }
-        dialogue.setDialogue('deleteSubjectBlock', messageInfo);
-        // this.subjects.splice(this.subjects.indexOf(subjectBlock), 1);
-      },
-      set_deleteSubjectBlock: function() {
-        let self = this;
-        let post_subjectBlock = JSON.stringify(this.delete_tempSubject);
-        $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
-          type: 'POST',
-          data: {
-            type: 'delete',
-            subject: post_subjectBlock
-          },
-          error: function(jqXHR, exception) {
-            //use url variable here
-            console.log(jqXHR);
-            console.log(exception);
-          },
-          success: function(res) {
-            console.log(res);
-            self.updateSubjectList();
-          }
-        });
-      }
-    }
-  });
 
   var settings = new Vue({
     el:'#generalSetting',
@@ -429,34 +227,33 @@
           },
           success: function(res) {
             self.settings = res;
-            Object.assign(self.settings_backup, self.settings);
+            // Object.assign(self.settings_backup, self.settings);
+            self.settings_backup = JSON.parse(JSON.stringify(self.settings));
           }
         });
       },
       recoverySettings: function() {
-        Object.assign(this.settings, this.settings_backup);
+        // Object.assign(this.settings, this.settings_backup);
+        this.settings = JSON.parse(JSON.stringify(this.settings_backup));
       },
-      updateSettings: function(news) {
-        // $.ajax({
-        //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
-        //   type: 'POST',
-        //   data: {
-        //     type: self.sendType,
-        //     processData: newsData
-        //   },
-        //   error: function(jqXHR, exception) {
-        //     //use url variable here
-        //     console.log(jqXHR);
-        //     console.log(exception);
-        //   },
-        //   success: function(res) {
-        //     console.log(res);
-        //     dataList.getLatestNewsListInfo();
-        //     self.closeForm();
-        //     let dialogueType = `${self.sendType}_success`;
-        //     dialogue.setDialogue(dialogueType);
-        //   }
-        // });
+      updateSettings: function() {
+        let self = this;
+        
+        $.ajax({
+          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSettings.php',
+          type: 'POST',
+          data: {
+            settings: JSON.stringify(self.settings),
+          },
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(res) {
+            console.log(res);
+          }
+        });
       }
     }
   });

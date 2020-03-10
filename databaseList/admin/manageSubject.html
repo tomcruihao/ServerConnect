@@ -113,19 +113,6 @@
         </button>
       </div>
     </section>
-    <section id="toolsField" class="setting-wrap">
-      <h1>{{$t('message.tools')}}</h1>
-      <div class="setting-wrap">
-        <div class="row">
-          <div class="title">
-            <span>{{$t('message.create_alphabet_stokes')}}</span>
-          </div>
-          <div class="content">
-            <button onclick="buildStrokes()">{{$t('message.btn_execute')}}</button>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
   <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
     <div class="dialogue-message-frame" v-if="type === 'message'">
@@ -166,16 +153,6 @@
 <script src="../lang/lang.js"></script>
 <script src="../lib/jquery.js"></script>
 <script type="text/javascript">
-  var toolsField = new Vue({
-    el:'#toolsField',
-    i18n,
-    data: {
-    },
-    mounted: function() {
-    },
-    methods: {
-    }
-  })
   var mainTitle = new Vue({
     el:'#mainTitle',
     i18n,

@@ -276,7 +276,7 @@ h4 {
   color: #ff0000;
 }
 
-.content {
+.app-content {
   width: 100%;
   max-width: 960px;
   margin: 20px auto;
@@ -285,7 +285,7 @@ h4 {
           box-sizing: border-box;
 }
 
-.content .setting-wrap {
+.app-content .setting-wrap {
   padding: 15px;
   margin-top: 15px;
   border-radius: 10px;
@@ -295,7 +295,7 @@ h4 {
           box-sizing: border-box;
 }
 
-.content .setting-wrap .subject-frame {
+.app-content .setting-wrap .subject-frame {
   background-color: #d4edda;
   padding: 30px 15px 15px;
   margin-top: 20px;
@@ -303,7 +303,7 @@ h4 {
   position: relative;
 }
 
-.content .setting-wrap .subject-frame .delete-subject-block {
+.app-content .setting-wrap .subject-frame .delete-subject-block {
   width: 24px;
   height: 24px;
   padding: 2px;
@@ -313,26 +313,26 @@ h4 {
   background-color: #155724;
 }
 
-.content .setting-wrap .subject-frame .delete-subject-block img {
+.app-content .setting-wrap .subject-frame .delete-subject-block img {
   width: 20px;
   height: 20px;
 }
 
-.content .setting-wrap .subject-frame:first-of-type {
+.app-content .setting-wrap .subject-frame:first-of-type {
   margin-top: 0;
 }
 
-.content .setting-wrap .subject-frame .subject-header {
+.app-content .setting-wrap .subject-frame .subject-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.content .setting-wrap .subject-frame .subject-header .title {
+.app-content .setting-wrap .subject-frame .subject-header .title {
   width: 150px;
 }
 
-.content .setting-wrap .subject-frame ul li {
+.app-content .setting-wrap .subject-frame ul li {
   padding: 5px 40px 5px 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -343,23 +343,23 @@ h4 {
   position: relative;
 }
 
-.content .setting-wrap .subject-frame ul li .btn-icon {
+.app-content .setting-wrap .subject-frame ul li .btn-icon {
   position: absolute;
   top: 5px;
   right: 0px;
 }
 
-.content .setting-wrap .subject-frame ul li .title {
+.app-content .setting-wrap .subject-frame ul li .title {
   width: 150px;
 }
 
-.content .setting-wrap .subject-frame ul li .subject-class {
+.app-content .setting-wrap .subject-frame ul li .subject-class {
   width: 120px;
   height: 34px;
   background-color: #ffffff;
 }
 
-.content .setting-wrap .row {
+.app-content .setting-wrap .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -370,12 +370,12 @@ h4 {
           align-items: center;
 }
 
-.content .setting-wrap .row .title {
+.app-content .setting-wrap .row .title {
   width: 120px;
   font-weight: bold;
 }
 
-.content .setting-wrap .row .content {
+.app-content .setting-wrap .row .content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -383,13 +383,13 @@ h4 {
   text-align: end;
 }
 
-.content .setting-wrap .row .content.over {
+.app-content .setting-wrap .row .content.over {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.content .button-wrap {
+.app-content .button-wrap {
   width: 100%;
   padding: 20px;
   -webkit-box-sizing: border-box;
@@ -402,7 +402,7 @@ h4 {
           justify-content: center;
 }
 
-.content .button-wrap button {
+.app-content .button-wrap button {
   min-height: 38px;
   padding: 5px 15px;
   margin-left: 15px;
@@ -421,19 +421,19 @@ h4 {
           justify-content: center;
 }
 
-.content .button-wrap button:first-of-type {
+.app-content .button-wrap button:first-of-type {
   margin-left: 0;
 }
 
-.content .button-wrap button.btn-edit {
+.app-content .button-wrap button.btn-edit {
   background-color: #4CAF50;
 }
 
-.content .button-wrap button.btn-add {
+.app-content .button-wrap button.btn-add {
   background-color: #17a2b8;
 }
 
-.content .button-wrap button.btn-add-subject-block {
+.app-content .button-wrap button.btn-add-subject-block {
   background-color: #007bff;
 }
 
