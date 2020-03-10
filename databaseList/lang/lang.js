@@ -44,7 +44,8 @@ const messages = {
       subject_create_subject: 'New Subject',
       subject_create_subject_item: 'Create New Subject Item',
       tools: 'Tool Kits',
-      create_alphabet_stokes: 'Create Alphabet and Strokes',
+      build_alphabet_stokes: 'Create Alphabet and Strokes',
+      build_alphabet_list: 'Create Alphabet and Strokes List',
       // latest news management page
       h1_latestNews: 'Latest News Setting',
       latest_form_setting: 'Form Setting',
@@ -124,13 +125,9 @@ const messages = {
       // setting page
       h1_settings: '設定',
       generalSetting: '一般設定',
-      subject_setting: '主題設定',
-      subject_title: '主題標題',
-      subject_name: '主題名',
-      subject_create_subject: '新增檢索主題',
-      subject_create_subject_item: '新增主題',
       tools: '小工具',
-      create_alphabet_stokes: '建立注音與比劃',
+      build_alphabet_stokes: '建立注音與比劃',
+      build_alphabet_list: '建立注音與比劃列表',
       // latest news management page
       h1_latestNews: '最新消息管理',
       latest_form_setting: '表格設定',
@@ -141,6 +138,11 @@ const messages = {
       latest_publish_content: '消息內容',
       // Subject management page
       h1_subject: '主題設定',
+      subject_setting: '主題設定',
+      subject_title: '主題標題',
+      subject_name: '主題名',
+      subject_create_subject: '新增檢索主題',
+      subject_create_subject_item: '新增主題',
       // Clicking Report page
       h1_clickingReport: '使用率報表',
       clickingReport_start_date: '起始時間',
