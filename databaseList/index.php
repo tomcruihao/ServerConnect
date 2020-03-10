@@ -358,9 +358,23 @@
           console.log(exception);
         },
         success: function(res) {
-          console.log(res.local);
           self.temp_anchorList = res;
-          self.anchorList = JSON.parse(JSON.stringify(res.local));
+          if("lang" in localStorage) {
+            switch (localStorage.getItem('lang')) {
+              case 'en':
+                this.anchorList = JSON.parse(JSON.stringify(res.en));
+                break;
+              case 'local':
+                this.anchorList = JSON.parse(JSON.stringify(res.local));
+                break;            
+              default:
+                this.anchorList = JSON.parse(JSON.stringify(res.local));
+                break;
+            }
+            let lang = localStorage.getItem('lang');
+          } else {
+            this.anchorList = JSON.parse(JSON.stringify(res.local));
+          }
           // fillAnchor(res);
         }
       });
