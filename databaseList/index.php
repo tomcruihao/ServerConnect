@@ -344,6 +344,9 @@
       ]
     },
     created: function() {
+
+    },
+    mounted: function() {
       $.ajax({
         url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getStrokes.php',
         type: 'GET',
@@ -359,8 +362,6 @@
           // fillAnchor(res);
         }
       });
-    },
-    mounted: function() {
     },
     methods: {
       processSort: function(obj) {
