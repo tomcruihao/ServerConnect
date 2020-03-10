@@ -92,8 +92,6 @@
       array_push($result['en']['englishAlphabet'], $key);
     }
   }
-
-  print_r($result);
   
   // write back
   file_put_contents($jsonFile_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
