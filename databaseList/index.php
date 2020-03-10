@@ -112,25 +112,28 @@
             </div>
           </div>
         </div>
-        {{anchorList}}
         <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('englishAlphabet')">
           <div class="atoz-title">{{$t('message.index_atoz')}}:</div>
-          <div class="atoz-field" v-for="(alphabet, index) in anchorList.englishAlphabet">
-            <a href="#">{{alphabet}}</a>
+          <div class="atoz-field">
+            <div class="link-field" v-for="(alphabet, index) in anchorList.englishAlphabet">
+              <a href="#">{{alphabet}}</a>
+            </div>
           </div>
         </div>
         <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('zhuyin')">
           <div class="atoz-title">{{$t('message.index_zhuyin')}}:</div>
-          <div class="atoz-field" v-for="(zhuyin, index) in anchorList.zhuyin">
-            <div class="link-field">
+          <div class="atoz-field">
+            <div class="link-field" v-for="(zhuyin, index) in anchorList.zhuyin">
               <a href="#">{{zhuyin}}</a>
             </div>
           </div>
         </div>
         <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('strokes')">
           <div class="atoz-title">{{$t('message.index_strokes')}}:</div>
-          <div class="atoz-field" v-for="(strokes, index) in anchorList.strokes">
-            <a href="#">{{strokes}}</a>
+          <div class="atoz-field">
+            <div class="link-field" v-for="(strokes, index) in anchorList.strokes">
+              <a href="#">{{strokes}}</a>
+            </div>
           </div>
         </div>
         <div class="sort-wrap">
