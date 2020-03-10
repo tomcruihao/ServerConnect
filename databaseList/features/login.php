@@ -14,6 +14,7 @@ error_reporting(E_ALL);
   }
 
   session_start();
+  $_SESSION['UserName'] = 'Jordan';
   echo $_SESSION['UserName'];
   if(isset($_SESSION['UserName'])) {
     echo 'session is exist';
