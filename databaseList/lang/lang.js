@@ -14,6 +14,9 @@ const messages = {
       index_placeholder_text: 'Search Resource',
       // All Latest News page
       h1_all_latestNews: 'Latest News',
+      // admin index page
+      adminIndex_account: 'Account',
+      adminIndex_password: 'Password',
       // Resource Management page
       h1_resource_management: 'Resource Setting',
       resource_resourceName: 'Resource Name',
@@ -81,6 +84,7 @@ const messages = {
       btn_resource_subject: 'Subject',
       btn_resource_catalog: 'Catalog',
       btn_resource_type: 'Type',
+      btn_login: 'Login',
       // tag
       tag_chinese: 'Chinese',
       tag_english: 'English'
@@ -101,6 +105,9 @@ const messages = {
       index_placeholder_text: '搜尋資源',
       // All Latest News page
       h1_all_latestNews: '最新消息',
+      // admin index page
+      adminIndex_account: '帳號',
+      adminIndex_password: '密碼',
       // Resource Management page
       h1_resource_management: '資源管理',
       resource_resourceName: '資源名稱',
@@ -168,6 +175,7 @@ const messages = {
       btn_resource_subject: '主題',
       btn_resource_catalog: '分類',
       btn_resource_type: '類型',
+      btn_login: '登入',
       // tag
       tag_chinese: '中文',
       tag_english: '英文'

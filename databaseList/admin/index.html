@@ -22,19 +22,19 @@
         <img src="../img/logo.png" alt="EBSCO" title="EBSCO"/>
       </div>
       <div class="row">
-        <div class="title">帳號</div>
+        <div class="title">{{$t('message.adminIndex_account')}}</div>
         <div class="content">
           <input type="text" v-model="user.account">
         </div>
       </div>
       <div class="row">
-        <div class="title">密碼</div>
+        <div class="title">{{$t('message.adminIndex_password')}}</div>
         <div class="content">
           <input type="password" v-model="user.password">
         </div>
       </div>
       <div class="btn-wrap">
-        <button @click="logIn">Login</button>
+        <button @click="logIn">{{$t('message.btn_login')}}</button>
       </div>
     </div>
   </div>
