@@ -15,7 +15,9 @@ error_reporting(E_ALL);
     echo "$name: $value\n";
   }
 
-  if( isset($_SESSION['UserName']) ) {
+
+  echo isset($_SESSION['UserName']);
+  if(isset($_SESSION['UserName'])) {
     echo 'session is exist';
     echo $_SESSION['UserName'];
   } else {
