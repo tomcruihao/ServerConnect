@@ -112,6 +112,7 @@
             </div>
           </div>
         </div>
+        {{anchorList}}
         <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('englishAlphabet')">
           <div class="atoz-title">{{$t('message.index_atoz')}}:</div>
           <div class="atoz-field" v-for="(alphabet, index) in anchorList.englishAlphabet">
