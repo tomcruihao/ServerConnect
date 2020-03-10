@@ -14,7 +14,12 @@ error_reporting(E_ALL);
   foreach (getallheaders() as $name => $value) {
     echo "$name: $value\n";
   }
-　session_start();
-  $_SESSION['UserName']='Jordan';
-  echo $_SESSION['UserName'];
+
+  if( isset($_SESSION['UserName']) ) {
+    echo 'session is exist';
+    echo $_SESSION['UserName'];
+  } else {
+    $_SESSION['UserName']='Jordan';
+    echo $_SESSION['UserName'];
+  }
 ?>
