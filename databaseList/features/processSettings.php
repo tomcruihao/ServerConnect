@@ -17,7 +17,10 @@ error_reporting(E_ALL);
   $getSettingJsonData = file_get_contents($jsonFile_direct);
   $settings = json_decode($getSettingJsonData, true);
 
-  print_r($settings);
-  print_r($recievedSettings);
+  // replace the settings
+  $settings = $recievedSettings;
 
+  // write the setting back to the file
+  file_put_contents($jsonFile_direct, json_encode($settings, JSON_UNESCAPED_UNICODE));
+  response('success', 'success');
 ?>
