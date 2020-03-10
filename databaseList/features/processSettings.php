@@ -11,14 +11,13 @@ error_reporting(E_ALL);
   $jsonFile_direct = '../data/settings.json';
 
   // parameters
-  $type = $_POST["type"];
-  // $resource = $_POST["resource"];
   $recievedSettings = json_decode($_POST["settings"], true);
 
   // get resource list
   $getSettingJsonData = file_get_contents($jsonFile_direct);
   $settings = json_decode($getSettingJsonData, true);
 
+  print_r($settings);
   print_r($recievedSettings);
 
 ?>
