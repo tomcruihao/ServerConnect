@@ -307,7 +307,7 @@
     i18n,
     data: {
       anchorList: {
-        alphabet: [],
+        englishAlphabet: [],
         zhuyin: [],
         strokes: []
       },
@@ -353,9 +353,9 @@
           console.log(exception);
         },
         success: function(res) {
-          console.log(res);
+          console.log(res.local);
           this.temp_anchorList = res;
-          this.anchorList = res.local;
+          this.anchorList = JSON.parse(JSON.stringify(res.local));
           // fillAnchor(res);
         }
       });
