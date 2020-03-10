@@ -90,24 +90,7 @@
               console.log(exception);
             },
             success: function(res) {
-              self.temp_anchorList = res;
-              if("lang" in localStorage) {
-                switch (localStorage.getItem('lang')) {
-                  case 'en':
-                    self.anchorList = JSON.parse(JSON.stringify(res.en));
-                    break;
-                  case 'local':
-                    self.anchorList = JSON.parse(JSON.stringify(res.local));
-                    break;            
-                  default:
-                    self.anchorList = JSON.parse(JSON.stringify(res.local));
-                    break;
-                }
-                let lang = localStorage.getItem('lang');
-              } else {
-                self.anchorList = JSON.parse(JSON.stringify(res.local));
-              }
-              // fillAnchor(res);
+              console.log(res);
             }
           });
         }
