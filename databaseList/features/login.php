@@ -22,11 +22,14 @@ error_reporting(E_ALL);
 
   // encrypted the password
   $encryptedPwd = sha1(md5($received_user['account'].$received_user['password']));
+  echo $encryptedPwd;
 
   $auth = false;
   foreach($userList as $row) {
     if(strcasecmp($row['account'], $received_user['account']) == 0) {
+      echo 'account is true';
       if(strcasecmp($row['pwd'], $received_user['password']) == 0) {
+        echo 'password is true';
         $auth = true;
       }
     }
