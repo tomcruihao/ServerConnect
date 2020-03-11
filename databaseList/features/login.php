@@ -20,8 +20,14 @@ error_reporting(E_ALL);
     $received_user = json_decode($_POST["user"], true);
   }
 
-  echo $received_user['password'];
-  echo md5($received_user['password']);
+  echo $received_user['account'].$received_user['password'];
+  $encryptedPwd = sha1(md5($received_user['password'].$received_user['password']));
+  echo $encryptedPwd;
+
+  // foreach($userList as $row) {
+  // }
+  // compare the pwd
+
 
   
 
