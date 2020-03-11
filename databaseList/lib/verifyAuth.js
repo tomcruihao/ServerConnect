@@ -1,6 +1,16 @@
 function verifyToken () {
   if("user" in localStorage) {
-    window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+    let userEncode = localStorage.getItem('user');
+    let user = JSON.parse(userEncode);
+    let expiredDatetime = Date.parse(user.expiredTime);
+
+    let today = new Date();
+    if(today > expiredDatetime) {
+      directToIndex();
+    } else {
+      console.log('not expired');
+    }
+
   } else {
     directToIndex();
   }
