@@ -327,6 +327,10 @@ header nav .nav-list li.multi:before {
           align-items: center;
 }
 
+.app-content .login-frame .row.fixed {
+  height: 50px;
+}
+
 .app-content .login-frame .row .title {
   width: 100px;
   color: #666666;
