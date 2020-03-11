@@ -22,7 +22,6 @@ error_reporting(E_ALL);
 
   // encrypted the password
   $encryptedPwd = sha1(md5($received_user['account'].$received_user['password']));
-  echo $encryptedPwd;
 
   $auth = false;
   foreach($userList as $row) {
@@ -32,7 +31,6 @@ error_reporting(E_ALL);
       }
     }
   }
-  echo $auth;
   // compare the pwd
 
 
