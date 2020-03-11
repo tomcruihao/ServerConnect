@@ -33,6 +33,11 @@
           <input type="password" v-model="user.password">
         </div>
       </div>
+      <div class="row">
+        <div class="content" v-if="error">
+          <span class="error">{{$t('message.adminIndex_account_pwd_rror')}}</span>
+        </div>
+      </div>
       <div class="btn-wrap">
         <button @click="logIn">{{$t('message.btn_login')}}</button>
       </div>
@@ -66,7 +71,8 @@
         user: {
           account: '',
           password: ''
-        }
+        },
+        error: false
       },
       computed: {
       },
@@ -80,6 +86,11 @@
               withCredentials: true
             },
             type: 'POST',
+            // headers: {
+            //   'ver': '1.0',
+            //   'fileType': 'mp4',
+            //   'md5': '47e954ec481d097e96261d993ec43ba5'
+            // },
             data: {
               user: JSON.stringify(self.user)
             },
@@ -90,7 +101,7 @@
             },
             success: function(res) {
               if(res.type === 'error') {
-                console.log(res);
+                self.showLoginError();
               } else if(res.type === 'success') {
                 // write the data in localstorage
                 console.log(res);
@@ -98,27 +109,13 @@
               }
             }
           });
-
-          // $.ajax({
-          //   url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/login.php',
-          //   data: {
-          //     user: JSON.stringify(self.user)
-          //   },
-          //   type: 'POST',
-          //   headers: {
-          //     'ver': '1.0',
-          //     'fileType': 'mp4',
-          //     'md5': '47e954ec481d097e96261d993ec43ba5'
-          //   },
-          //   error: function(jqXHR, exception) {
-          //     //use url variable here
-          //     console.log(jqXHR);
-          //     console.log(exception);
-          //   },
-          //   success: function(res) {
-          //     console.log(res);
-          //   }
-          // });
+        },
+        showLoginError() {
+          let self = this;
+          this.error = true
+          setTimeout(function(){
+            self.error = false;
+          }, 3000);
         }
       }
     });

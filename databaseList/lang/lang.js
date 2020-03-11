@@ -17,6 +17,7 @@ const messages = {
       // admin index page
       adminIndex_account: 'Account',
       adminIndex_password: 'Password',
+      adminIndex_account_pwd_rror: 'Invalid Account/Password',
       // Resource Management page
       h1_resource_management: 'Resource Setting',
       resource_resourceName: 'Resource Name',
@@ -108,6 +109,7 @@ const messages = {
       // admin index page
       adminIndex_account: '帳號',
       adminIndex_password: '密碼',
+      adminIndex_account_pwd_rror: '帳號密碼錯誤',
       // Resource Management page
       h1_resource_management: '資源管理',
       resource_resourceName: '資源名稱',

@@ -46,6 +46,11 @@
       }
       .content {
         flex: 1;
+
+        .error {
+          color: red;
+          font-weight: bold;
+        }
       }
     }
     .btn-wrap {

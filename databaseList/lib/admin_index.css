@@ -338,6 +338,11 @@ header nav .nav-list li.multi:before {
           flex: 1;
 }
 
+.app-content .login-frame .row .content .error {
+  color: red;
+  font-weight: bold;
+}
+
 .app-content .login-frame .btn-wrap {
   width: 100%;
   margin-top: 15px;
