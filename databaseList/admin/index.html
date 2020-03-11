@@ -104,8 +104,8 @@
                 self.showLoginError();
               } else if(res.type === 'success') {
                 // write the data in localstorage
-                console.log(res);
-                localStorage.setItem('lang', event.target.value);
+                console.log(res.message);
+                localStorage.setItem('user', JSON.stringify(res.message));
               }
             }
           });
