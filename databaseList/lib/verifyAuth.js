@@ -5,8 +5,9 @@ function verifyToken () {
     let expiredDatetime = Date.parse(user.expiredTime);
 
     let today = new Date();
-    if(today > expiredDatetime) {
-      directToIndex();
+    if(today < expiredDatetime) {
+      console.log('expired');
+      // directToIndex();
     } else {
       console.log('not expired');
     }
