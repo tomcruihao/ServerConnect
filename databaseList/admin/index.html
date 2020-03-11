@@ -82,12 +82,9 @@
               'fileType': 'mp4',
               'md5': '47e954ec481d097e96261d993ec43ba5'
             },
-            // beforeSend: function(request) {
-            //   request.setRequestHeader("Authority", 'test');
-            //   request.setRequestHeader("ver", '1.0');
-            //   request.setRequestHeader("fileType", 'mp4');
-            //   request.setRequestHeader("md5", '47e954ec481d097e96261d993ec43ba5');
-            // },
+            data: {
+              user: JSON.stringify(self.user)
+            },
             error: function(jqXHR, exception) {
               //use url variable here
               console.log(jqXHR);
