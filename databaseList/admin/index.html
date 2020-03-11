@@ -102,7 +102,7 @@
             success: function(res) {
               if(res.status === 'error') {
                 self.showLoginError();
-              } else if(res.type === 'success') {
+              } else if(res.status === 'success') {
                 // write the data in localstorage
                 console.log(res.message);
                 localStorage.setItem('user', JSON.stringify(res.message));
