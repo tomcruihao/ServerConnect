@@ -15,13 +15,13 @@ error_reporting(E_ALL);
   $getUserListJsonData = file_get_contents($jsonFile_direct);
   $userList = json_decode($getUserListJsonData, true);
 
-  $received_user = '888';
+  $received_user = '';
   if(isset($_POST['user'])) {
     $received_user = json_decode($_POST["user"], true);
   }
 
-  print_r($received_user);
-  // echo md5($received_user['password']);
+  echo $received_user['password'];
+  echo md5($received_user['password']);
 
   
 
