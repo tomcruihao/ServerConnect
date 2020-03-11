@@ -45,7 +45,7 @@ error_reporting(E_ALL);
     echo "$name: $value\n";
   }
 
-  // session_start();
+  session_start();
   // echo $_SESSION['UserName'];
   if(isset($_SESSION['UserName'])) {
     echo 'session is exist';
