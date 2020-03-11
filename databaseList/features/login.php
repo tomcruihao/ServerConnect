@@ -27,9 +27,7 @@ error_reporting(E_ALL);
   $auth = false;
   foreach($userList as $row) {
     if(strcasecmp($row['account'], $received_user['account']) == 0) {
-      echo 'account is true';
-      if(strcasecmp($row['pwd'], $received_user['password']) == 0) {
-        echo 'password is true';
+      if(strcasecmp($row['pwd'], $encryptedPwd) == 0) {
         $auth = true;
       }
     }
