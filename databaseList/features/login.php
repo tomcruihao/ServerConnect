@@ -41,7 +41,7 @@ error_reporting(E_ALL);
 
     // h/m/s
     $remainTime = 1 * 60 * 60;
-    $expiredTime = date("YYYY-mm-dd h:i:s", time() + $remainTime);
+    $expiredTime = date("Y-m-d h:i:s", time() + $remainTime);
 
     $message = [];
     $message['expiredTime'] = $expiredTime;
