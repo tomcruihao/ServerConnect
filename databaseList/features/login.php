@@ -21,7 +21,7 @@ error_reporting(E_ALL);
   }
 
   echo $received_user['account'].$received_user['password'];
-  $encryptedPwd = sha1(md5($received_user['password'].$received_user['password']));
+  $encryptedPwd = sha1(md5($received_user['account'].$received_user['password']));
   echo $encryptedPwd;
 
   // foreach($userList as $row) {
