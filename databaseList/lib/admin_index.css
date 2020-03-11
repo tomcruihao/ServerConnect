@@ -291,6 +291,7 @@ header nav .nav-list li.multi:before {
 
 .app-content .mainTitle {
   width: 100%;
+  padding: 0 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -16,6 +16,7 @@
 
   .mainTitle {
     width: 100%;
+    padding: 0 15px;
     display: flex;
     justify-content: flex-end;
     position: absolute;
@@ -57,10 +58,12 @@
         }
       }
     }
+
     .btn-wrap {
       width: 100%;
       margin-top: 15px;
       text-align: end;
+
       button {
         width: 120px;
         height: 36px;
