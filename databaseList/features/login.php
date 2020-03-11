@@ -45,13 +45,13 @@ error_reporting(E_ALL);
 
     $message = [];
     $message['expiredTime'] = $expiredTime;
-    $message['tokem'] = '123456';
+    $message['token'] = '123456';
 
-    $response = array('type' => 'success', 'mesage' => $message);
+    $response = array('status' => 'success', 'type' => 'account', 'message' => $message);
 
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
   } else {
-    $response = array('type' => 'error', 'mesage' => 'Account and ');
+    $response = array('status' => 'error', 'type' => 'account');
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
   }
 
