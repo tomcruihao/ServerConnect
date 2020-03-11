@@ -9,6 +9,7 @@ error_reporting(E_ALL);
   header("Access-Control-Allow-Origin: http://gss.ebscohost.com/");
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json;charset=UTF-8');
+  date_default_timezone_set('Asia/Taipei');
 
   $jsonFile_direct = '../data/u5er.json';
 
@@ -34,24 +35,37 @@ error_reporting(E_ALL);
   }
 
   // if pass, generate token and send it back
-  // if($auth) {
+  if($auth) {
+    $_SESSION['userAccount'] = $received_user['account'];
+    $_SESSION['expiredTime'] = 
 
-  // } else {
-  //   $res = array('type' => 'error', 'mesage' => 'Account and ');
-  //   echo json_encode($res, JSON_UNESCAPED_UNICODE);
+    // h/m/s
+    $remainTime = 1 * 60 * 60;
+    $expiredTime = date("YYYY-mm-dd h:i:s", time() + $remainTime);
+
+    $message = [];
+    $message['expiredTime'] = $expiredTime;
+    $message['tokem'] = '123456';
+
+    $response = array('type' => 'success', 'mesage' => $message);
+
+    echo json_encode($response, JSON_UNESCAPED_UNICODE);
+  } else {
+    $response = array('type' => 'error', 'mesage' => 'Account and ');
+    echo json_encode($response, JSON_UNESCAPED_UNICODE);
+  }
+
+  // foreach (getallheaders() as $name => $value) {
+  //   echo "$name: $value\n";
   // }
 
-  foreach (getallheaders() as $name => $value) {
-    echo "$name: $value\n";
-  }
-
-  session_start();
-  // echo $_SESSION['UserName'];
-  if(isset($_SESSION['UserName'])) {
-    echo 'session is exist';
-    echo $_SESSION['UserName'];
-  } else {
-    $_SESSION['UserName'] = 'Jordan';
-    echo $_SESSION['UserName'];
-  }
+  // session_start();
+  // // echo $_SESSION['UserName'];
+  // if(isset($_SESSION['UserName'])) {
+  //   echo 'session is exist';
+  //   echo $_SESSION['UserName'];
+  // } else {
+  //   $_SESSION['UserName'] = 'Jordan';
+  //   echo $_SESSION['UserName'];
+  // }
 ?>

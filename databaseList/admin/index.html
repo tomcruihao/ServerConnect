@@ -80,11 +80,6 @@
               withCredentials: true
             },
             type: 'POST',
-            // headers: {
-            //   'ver': '1.0',
-            //   'fileType': 'mp4',
-            //   'md5': '47e954ec481d097e96261d993ec43ba5'
-            // },
             data: {
               user: JSON.stringify(self.user)
             },
@@ -94,7 +89,13 @@
               console.log(exception);
             },
             success: function(res) {
-              console.log(res);
+              if(res.type === 'error') {
+                console.log(res);
+              } else if(res.type === 'success') {
+                // write the data in localstorage
+                console.log(res);
+                localStorage.setItem('lang', event.target.value);
+              }
             }
           });
 
