@@ -76,12 +76,15 @@
 
           $.ajax({
             url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/login.php',
-            type: 'POST',
-            headers: {
-              'ver': '1.0',
-              'fileType': 'mp4',
-              'md5': '47e954ec481d097e96261d993ec43ba5'
+            xhrFields: {
+              withCredentials: true
             },
+            type: 'POST',
+            // headers: {
+            //   'ver': '1.0',
+            //   'fileType': 'mp4',
+            //   'md5': '47e954ec481d097e96261d993ec43ba5'
+            // },
             data: {
               user: JSON.stringify(self.user)
             },

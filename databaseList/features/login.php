@@ -23,6 +23,7 @@ error_reporting(E_ALL);
   // encrypted the password
   $encryptedPwd = sha1(md5($received_user['account'].$received_user['password']));
 
+  // compare the pwd
   $auth = false;
   foreach($userList as $row) {
     if(strcasecmp($row['account'], $received_user['account']) == 0) {
@@ -31,23 +32,26 @@ error_reporting(E_ALL);
       }
     }
   }
-  // compare the pwd
 
+  // if pass, generate token and send it back
+  // if($auth) {
 
-  
-
-
-  // foreach (getallheaders() as $name => $value) {
-  //   echo "$name: $value\n";
-  // }
-
-  // // session_start();
-  // // echo $_SESSION['UserName'];
-  // if(isset($_SESSION['UserName'])) {
-  //   echo 'session is exist';
-  //   echo $_SESSION['UserName'];
   // } else {
-  //   $_SESSION['UserName'] = 'Jordan';
-  //   echo $_SESSION['UserName'];
+  //   $res = array('type' => 'error', 'mesage' => 'Account and ');
+  //   echo json_encode($res, JSON_UNESCAPED_UNICODE);
   // }
+
+  foreach (getallheaders() as $name => $value) {
+    echo "$name: $value\n";
+  }
+
+  // session_start();
+  // echo $_SESSION['UserName'];
+  if(isset($_SESSION['UserName'])) {
+    echo 'session is exist';
+    echo $_SESSION['UserName'];
+  } else {
+    $_SESSION['UserName'] = 'Jordan';
+    echo $_SESSION['UserName'];
+  }
 ?>
