@@ -100,7 +100,7 @@
               console.log(exception);
             },
             success: function(res) {
-              if(res.type === 'error') {
+              if(res.status === 'error') {
                 self.showLoginError();
               } else if(res.type === 'success') {
                 // write the data in localstorage
