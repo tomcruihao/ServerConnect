@@ -6,7 +6,7 @@
   session_start();
 
   if(isset($_SESSION['userAccount'])) {
-    echo 'session is exist';
+    
   } else {
     $res = array('status' => 'error', 'type' => 'Auth Failed', 'mesage' => 'Auth Failed');
     echo json_encode($res, JSON_UNESCAPED_UNICODE);

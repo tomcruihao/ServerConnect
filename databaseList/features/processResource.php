@@ -4,18 +4,19 @@ ini_set("track_errors", 1);
 ini_set("html_errors", 1);
 error_reporting(E_ALL);
 
+  header("Access-Control-Allow-Headers: *");
+  header("Access-Control-Allow-Credentials: true");
+  header("Access-Control-Allow-Origin: http://gss.ebscohost.com/");
+  header("Content-Security-Policy: upgrade-insecure-requests");
+  header('Content-Type: application/json;charset=UTF-8');
+  date_default_timezone_set('Asia/Taipei');
+
   include 'verifyToken.php';
 
   $jsonFile_direct = '../data/eResourceList.json';
 
-  header("Access-Control-Allow-Origin: *");
-  header("Content-Security-Policy: upgrade-insecure-requests");
-  // header("Content-Type:text/html;charset=utf-8");
-  header('Content-Type: application/json');
-
   // parameters
   $type = $_POST["type"];
-  // $resource = $_POST["resource"];
   $resource = json_decode($_POST["resource"], true);
 
   // get resource list
@@ -28,7 +29,7 @@ error_reporting(E_ALL);
 
     // get stroke and zhuyin info
 
-    $getStroke = getStrokeInfo($resource['tw']['resourceName'], $resource['en']['resourceName']);
+    $getStroke = getStrokeInfo($resource['local']['resourceName'], $resource['en']['resourceName']);
 
 
     $resource['en']['stroke'] = $getStroke['strokes'];
