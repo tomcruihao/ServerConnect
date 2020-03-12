@@ -161,7 +161,6 @@
       selector_lang: ''
     },
     mounted: function() {
-      console.log(i18n.locale)
       this.selector_lang = i18n.locale;
     },
     methods: {
@@ -318,7 +317,6 @@
               temp[index]['tag'] = 'local';
             }
             self.subjects = temp;;
-            console.log(self.subjects);
           }
         });
       },
@@ -352,7 +350,6 @@
             console.log(exception);
           },
           success: function(res) {
-            console.log(res);
             self.buildSubjectList();
           }
         });
@@ -413,7 +410,7 @@
       set_deleteSubjectBlock: function() {
         let self = this;
         let post_subjectBlock = JSON.stringify(this.delete_tempSubject);
-        console.log(this.delete_tempSubject);
+
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
           type: 'POST',
@@ -427,7 +424,6 @@
             console.log(exception);
           },
           success: function(res) {
-            console.log(res);
             self.buildSubjectList();
           }
         });
