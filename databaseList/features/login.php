@@ -1,8 +1,8 @@
 <?php
-ini_set("display_errors", 1);
-ini_set("track_errors", 1);
-ini_set("html_errors", 1);
-error_reporting(E_ALL);
+// ini_set("display_errors", 1);
+// ini_set("track_errors", 1);
+// ini_set("html_errors", 1);
+// error_reporting(E_ALL);
 
   header("Access-Control-Allow-Headers: *");
   header("Access-Control-Allow-Credentials: true");
@@ -45,11 +45,11 @@ error_reporting(E_ALL);
     $_SESSION['userAccount'] = $received_user['account'];
     $_SESSION['expiredTime'] = $expiredTime;
 
-    $message = [];
-    $message['expiredTime'] = $expiredTime;
-    $message['token'] = '123456';
+    $tokenInfo = [];
+    $tokenInfo['expiredTime'] = $expiredTime;
+    $tokenInfo['token'] = '123456';
 
-    $response = array('status' => 'success', 'type' => 'account', 'message' => $message);
+    $response = array('status' => 'success', 'type' => 'account', 'message' => $tokenInfo);
 
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
   } else {

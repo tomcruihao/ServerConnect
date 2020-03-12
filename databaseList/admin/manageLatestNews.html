@@ -376,6 +376,9 @@
           $.ajax({
             url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
             data: {
               type: self.sendType,
               processData: sentData
@@ -405,6 +408,9 @@
           $.ajax({
             url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
             data: {
               type: self.sendType,
               processData: newsData
@@ -473,6 +479,9 @@
           $.ajax({
             url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
             type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
             data: {
               type: 'deleteNews',
               processData: self.news

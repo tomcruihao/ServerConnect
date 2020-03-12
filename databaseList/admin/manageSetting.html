@@ -139,6 +139,9 @@
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildAnchorOfSearchKeyWord.php',
           type: 'POST',
+          xhrFields: {
+            withCredentials: true
+          },
           error: function(jqXHR, exception) {
             //use url variable here
             console.log(jqXHR);
@@ -153,6 +156,9 @@
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildStrokeInResourceList.php',
           type: 'POST',
+          xhrFields: {
+            withCredentials: true
+          },
           error: function(jqXHR, exception) {
             //use url variable here
             console.log(jqXHR);
@@ -270,6 +276,9 @@
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSettings.php',
           type: 'POST',
+          xhrFields: {
+            withCredentials: true
+          },
           data: {
             settings: JSON.stringify(self.settings),
           },

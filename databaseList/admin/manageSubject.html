@@ -340,6 +340,9 @@
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
           type: 'POST',
+          xhrFields: {
+            withCredentials: true
+          },
           data: {
             type: 'add',
             subject: JSON.stringify(template)
@@ -360,6 +363,9 @@
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
           type: 'POST',
+          xhrFields: {
+            withCredentials: true
+          },
           data: {
             type: 'modify',
             subject: post_subject
@@ -414,6 +420,9 @@
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
           type: 'POST',
+          xhrFields: {
+            withCredentials: true
+          },
           data: {
             type: 'delete',
             subject: post_subjectBlock
@@ -438,6 +447,9 @@
     $.ajax({
       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildStrokeInResourceList.php',
       type: 'POST',
+      xhrFields: {
+        withCredentials: true
+      },
       error: function(jqXHR, exception) {
         //use url variable here
         console.log(jqXHR);

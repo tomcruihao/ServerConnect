@@ -59,10 +59,30 @@
       </label>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
-        <li>
-          <a href="#" class="nav-tag">link 1</a>
+        <li v-for="(link, index) in links">
+          <div v-if="link.child.length === 0">
+            <a href="#" class="nav-tag">link 1</a>
+          </div>
+          <div v-else>
+            <label class="nav-tag" for="tag1">link 2</label>
+            <input type="checkbox" id="tag1">
+            <ul>
+              <li>
+                <a href="#">link 2-1</a>
+              </li>
+              <li>
+                <a href="#">link 2-2</a>
+              </li>
+              <li>
+                <a href="#">link 2-3</a>
+              </li>
+              <li>
+                <a href="#">link 2-4</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li class="multi">
+        <li class="multi" >
           <label class="nav-tag" for="tag1">link 2</label>
           <input type="checkbox" id="tag1">
           <ul>
@@ -282,6 +302,98 @@
     //   sortFunction: undefined
     // })
   }
+
+  var header = new Vue({
+    el:'#header',
+    i18n,
+    data: {
+      template: {
+        'en': [
+          {
+            title: 'Link 1',
+            link: 'http://www.google.com',
+            focus: false
+            child: []
+          },
+          {
+            title: 'Link 2',
+            link: 'http://www.google.com',
+            focus: false
+            child: [
+              {
+                title: 'Link 2-1',
+                link: 'http://www.google.com',
+                focus: false
+              },
+              {
+                title: 'Link 2-2',
+                link: 'http://www.google.com',
+                focus: false
+              },
+              {
+                title: 'Link 2-3',
+                link: 'http://www.google.com',
+                focus: false
+              }
+            ]
+          }
+        ],
+        'local': [
+          {
+            title: '連結 1',
+            link: 'http://www.google.com',
+            focus: false
+            child: []
+          },
+          {
+            title: '連結 2',
+            link: 'http://www.google.com',
+            focus: false
+            child: [
+              {
+                title: '連結 2-1',
+                link: 'http://www.google.com',
+                focus: false
+              },
+              {
+                title: '連結 2-2',
+                link: 'http://www.google.com',
+                focus: false
+              },
+              {
+                title: '連結 2-3',
+                link: 'http://www.google.com',
+                focus: false
+              }
+            ]
+          }
+        ]
+      }
+      links: ''
+    },
+    mounted: function() {
+      if(i18n.locale === 'en') {
+        this.links = JSON.parse(JSON.stringify(this.template.en));
+      } else if(i18n.locale === 'local') {
+        this.links = JSON.parse(JSON.stringify(this.template.local));
+      }
+    },
+    methods: {
+      setLocale: function(language) {
+        switch (language) {
+          case 'en':
+            this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.en));
+            break;
+          case 'local':
+            this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.local));
+            break;            
+          default:
+            this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.local));
+            break;
+        }
+      }
+    }
+  })
 
   var mainTitle = new Vue({
     el:'#mainTitle',

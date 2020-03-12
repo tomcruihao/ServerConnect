@@ -5,7 +5,7 @@
 // error_reporting(E_ALL);
   session_start();
 
-  if(isset($_SESSION['userAccount'])) {
+  if(isset($_SESSION['userAccount']) && isset($_SESSION['userAccount'])) {
     
   } else {
     $res = array('status' => 'error', 'type' => 'Auth Failed', 'mesage' => 'Auth Failed');
