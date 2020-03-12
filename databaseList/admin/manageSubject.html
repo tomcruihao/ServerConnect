@@ -13,7 +13,7 @@
     </div>
     <nav>
       <label for="mobile_btn" class="mobile-btn-frame">
-        <img src="../img/dehaze.svg"/>
+        <img src="../img/icon/dehaze.svg"/>
       </label>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
@@ -61,7 +61,7 @@
     <section id="subjectSetField" class="setting-wrap">
       <!-- <span v-t="'message.h1_Settings'"></span> -->
       <div class="subject-frame" v-for="(subjectInfo, index) in subjects">
-        <button class="btn-icon delete-subject-block" name="刪除整個主題區" title="刪除整個主題區" @click="deleteSubjectBlock(subjectInfo)"><img src="../img/delete.svg"/></button>
+        <button class="btn-icon delete-subject-block" name="刪除整個主題區" title="刪除整個主題區" @click="deleteSubjectBlock(subjectInfo)"><img src="../img/icon/delete.svg"/></button>
         <div class="tag-wrap">
           <button @click="changeTag(subjectInfo, 'local')" :class="[subjectInfo.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
           <button @click="changeTag(subjectInfo, 'en')" :class="[subjectInfo.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
@@ -78,7 +78,7 @@
               <select v-model="subject.className" class="subject-class">
                 <option v-for="option in subjectOptions" :value="option.className">{{option.displayName}}
               </select>
-              <button @click="deleteSubject(index, subject)" class="btn-icon" name="刪除這項主題" title="刪除這項主題"><img src="../img/delete.svg"/></button>
+              <button @click="deleteSubject(index, subject)" class="btn-icon" name="刪除這項主題" title="刪除這項主題"><img src="../img/icon/delete.svg"/></button>
             </li>
           </ul>
         </div>
@@ -94,22 +94,22 @@
               <select v-model="subject.className" class="subject-class">
                 <option v-for="option in subjectOptions" :value="option.className">{{option.displayName}}
               </select>
-              <button @click="deleteSubject(index, subject)" class="btn-icon" name="刪除這項主題" title="刪除這項主題"><img src="../img/delete.svg"/></button>
+              <button @click="deleteSubject(index, subject)" class="btn-icon" name="刪除這項主題" title="刪除這項主題"><img src="../img/icon/delete.svg"/></button>
             </li>
           </ul>
         </div>
         <div class="button-wrap">
           <button class="btn-edit" @click="updateList(subjectInfo)">
-            <img src="../img/edit.svg"/>{{$t('message.btn_update')}}
+            <img src="../icon/edit.svg"/>{{$t('message.btn_update')}}
           </button>
           <button class="btn-add" @click="addNewSubject(subjectInfo.subjectID)">
-            <img src="../img/add.svg"/>{{$t('message.subject_create_subject')}}
+            <img src="../img/icon/add.svg"/>{{$t('message.subject_create_subject')}}
           </button>
         </div>
       </div>
       <div class="button-wrap">
         <button class="btn-add-subject-block" @click="addNewSubjectBlock">
-          <img src="../img/add.svg"/>{{$t('message.subject_create_subject_item')}}
+          <img src="../img/icon/add.svg"/>{{$t('message.subject_create_subject_item')}}
         </button>
       </div>
     </section>
@@ -118,7 +118,7 @@
     <div class="dialogue-message-frame" v-if="type === 'message'">
       <div class="dialogue-head">
         <h4>{{dialogHead_title}}</h4>
-        <img src="../img/closeWhite.svg" class="close" @click="closeDialogue">
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body">
         <div class="row">
@@ -132,7 +132,7 @@
     <div class="dialogue-message-frame" v-else-if="type === 'deleteSubjectBlock'">
       <div class="dialogue-head">
         <h4>{{dialogHead_title}}</h4>
-        <img src="../img/closeWhite.svg" class="close" @click="closeDialogue">
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body">
         <div class="row">
@@ -148,11 +148,11 @@
   </div>
 </body>
 </html>
-<script src="../lib/verifyAuth.js"></script>
+<script src="../lib/js/verifyAuth.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
 <script src="../lang/lang.js"></script>
-<script src="../lib/jquery.js"></script>
+<script src="../lib/js/jquery.js"></script>
 <script type="text/javascript">
   var mainTitle = new Vue({
     el:'#mainTitle',
