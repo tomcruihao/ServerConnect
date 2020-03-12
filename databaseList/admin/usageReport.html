@@ -68,7 +68,7 @@
       </div>
       <div class="report-list-wrap">
         <div class="loading-frame" v-if="searching">
-          <img src="../img/Spinner.svg" alt="loading" title="loading" class="icon-loading"/>
+          <img src="../img/icon/Spinner.svg" alt="loading" title="loading" class="icon-loading"/>
         </div>
         <div class="report-list" v-if="reportData.length !== 0">
           <div class="btn-report-wrap">
@@ -87,11 +87,11 @@
       </div>
     </section>
   </div>
-  <script src="../lib/verifyAuth.js"></script>
+  <script src="../lib/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
   <script src="../lang/lang.js"></script>
-  <script src="../lib/jquery.js"></script>
+  <script src="../lib/js/jquery.js"></script>
   <script type="text/javascript">
     var header = new Vue({
       el:'#header',
