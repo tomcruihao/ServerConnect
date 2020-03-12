@@ -10,5 +10,4 @@
     echo json_encode($res, JSON_UNESCAPED_UNICODE);
     exit();
   }
-  echo "test";
 ?>
