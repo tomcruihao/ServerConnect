@@ -37,7 +37,7 @@ error_reporting(E_ALL);
   // if pass, generate token and send it back
   if($auth) {
     session_start();
-    
+
     // h/m/s
     $remainTime = 1 * 60 * 60;
     $expiredTime = date("Y-m-d H:i:s", time() + $remainTime);
@@ -54,7 +54,7 @@ error_reporting(E_ALL);
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
   } else {
     $response = array('status' => 'error', 'type' => 'account');
-    echo json_encode($response, JSON_UNESCAPED_UNICODE);
+    // echo json_encode($response, JSON_UNESCAPED_UNICODE);
   }
 
   // foreach (getallheaders() as $name => $value) {
@@ -63,11 +63,11 @@ error_reporting(E_ALL);
 
   // session_start();
   // // echo $_SESSION['UserName'];
-  // if(isset($_SESSION['UserName'])) {
-  //   echo 'session is exist';
-  //   echo $_SESSION['UserName'];
-  // } else {
-  //   $_SESSION['UserName'] = 'Jordan';
-  //   echo $_SESSION['UserName'];
-  // }
+  if(isset($_SESSION['userAccount'])) {
+    echo 'session is exist';
+    echo $_SESSION['userAccount'];
+  } else {
+    $_SESSION['UserName'] = 'Jordan';
+    echo $_SESSION['userAccount'];
+  }
 ?>
