@@ -59,7 +59,7 @@
       </label>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
-        <li v-for="(link, index) in links">
+        <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
           <div v-if="link.child.length === 0">
             <a href="#" class="nav-tag">link 1</a>
           </div>
