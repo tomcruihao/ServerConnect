@@ -314,23 +314,27 @@
                 self.searching = false;
               },
               success: function(res) {
-                Object.keys(res).forEach(function(key){
-                  let tempReportData = {
-                    date: key,
-                    clickedList: [],
-                    total: res[key].total
-                  }
+                if(res.status === 'expired') {
+                  console.log('expired');
+                } else if(res.status === 'success'){
+                  Object.keys(res.report).forEach(function(key){
+                    let tempReportData = {
+                      date: key,
+                      clickedList: [],
+                      total: res[key].total
+                    }
 
-                  if(!Array.isArray(res[key])){
-                    Object.keys(res[key]).forEach(function(item){
-                      if(item !== 'total') {
-                        tempReportData.clickedList.push(res[key][item]);
-                      }
-                    })
-                  }
-                  self.reportData.push(tempReportData);
-                });
-                self.searching = false;
+                    if(!Array.isArray(res[key])){
+                      Object.keys(res[key]).forEach(function(item){
+                        if(item !== 'total') {
+                          tempReportData.clickedList.push(res[key][item]);
+                        }
+                      })
+                    }
+                    self.reportData.push(tempReportData);
+                  });
+                  self.searching = false;
+                }
               }
             });
           } else {

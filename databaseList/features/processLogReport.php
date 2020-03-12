@@ -80,7 +80,12 @@ error_reporting(E_ALL);
     //   $report[$string_time][$log['id']]['clickTimes'] = 1;
     // }
   }
-  echo json_encode($report, JSON_UNESCAPED_UNICODE);
+
+  $response = [];
+  $response['status'] = 'success';
+  $response['report'] = $report;
+
+  echo json_encode($response, JSON_UNESCAPED_UNICODE);
 
   function array_period($interval, $dateFormat, $startTime, $endTime) {
     $array_result = [];
