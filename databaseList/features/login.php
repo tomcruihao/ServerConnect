@@ -63,11 +63,11 @@ error_reporting(E_ALL);
 
   // session_start();
   // // echo $_SESSION['UserName'];
-  if(isset($_SESSION['userAccount'])) {
-    echo 'session is exist';
-    echo $_SESSION['userAccount'];
-  } else {
-    $_SESSION['UserName'] = 'Jordan';
-    echo $_SESSION['userAccount'];
-  }
+  // if(isset($_SESSION['userAccount'])) {
+  //   echo 'session is exist';
+  //   echo $_SESSION['userAccount'];
+  // } else {
+  //   $_SESSION['UserName'] = 'Jordan';
+  //   echo $_SESSION['userAccount'];
+  // }
 ?>
