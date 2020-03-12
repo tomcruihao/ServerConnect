@@ -4,6 +4,8 @@ ini_set("track_errors", 1);
 ini_set("html_errors", 1);
 error_reporting(E_ALL);
 
+  include 'verifyToken.php';
+
   $jsonFile_direct = '../data/eResourceList.json';
 
   header("Access-Control-Allow-Origin: *");
