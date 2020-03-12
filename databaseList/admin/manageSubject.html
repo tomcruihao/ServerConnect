@@ -9,40 +9,27 @@
 <body>
   <header id="header">
     <div class="logo">
-      <img src="../img/logo.png" alt="EBSCO" title="EBSCO"/>
+      <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
     </div>
     <nav>
       <label for="mobile_btn" class="mobile-btn-frame">
-        <img src="../img/icon/dehaze.svg"/>
+        <img src="img/icon/dehaze.svg"/>
       </label>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
-        <li>
-          <a href="resourceManagement.html" class="nav-tag">資源管理</a>
-        </li>
-        <li>
-          <a href="manageLatestNews.html" class="nav-tag">最新消息管理</a>
-        </li>
-        <li>
-          <a href="manageSetting.html" class="nav-tag">設定</a>
-        </li>
-        <li class="multi">
-          <label class="nav-tag" for="tag1">link 2</label>
-          <input type="checkbox" id="tag1">
-          <ul>
-            <li>
-              <a href="#">link 2-1</a>
-            </li>
-            <li>
-              <a href="#">link 2-2</a>
-            </li>
-            <li>
-              <a href="#">link 2-3</a>
-            </li>
-            <li>
-              <a href="#">link 2-4</a>
-            </li>
-          </ul>
+        <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
+          <div v-if="link.child.length === 0">
+            <a :href="link.link" class="nav-tag">{{link.title}}</a>
+          </div>
+          <div v-else>
+            <label class="nav-tag" :for="'tag'+index">{{link.title}}</label>
+            <input type="checkbox" :id="'tag'+index">
+            <ul>
+              <li v-for="(childLink, c_index) in link.child">
+                <a :href="childLink.link">{{childLink.title}}</a>
+              </li>
+            </ul>
+          </div>
         </li>
       </ul>
     </nav>
@@ -154,6 +141,97 @@
 <script src="../lang/lang.js"></script>
 <script src="../lib/js/jquery.js"></script>
 <script type="text/javascript">
+  var header = new Vue({
+    el:'#header',
+    i18n,
+    data: {
+      template: {
+        'en': [
+          {
+            title: 'Link 1',
+            link: 'http://www.google.com',
+            focus: false,
+            child: []
+          },
+          {
+            title: 'Link 2',
+            link: 'http://www.google.com',
+            focus: false,
+            child: [
+              {
+                title: 'Link 2-1',
+                link: 'http://www.google.com',
+                focus: false
+              },
+              {
+                title: 'Link 2-2',
+                link: 'http://www.google.com',
+                focus: false
+              },
+              {
+                title: 'Link 2-3',
+                link: 'http://www.google.com',
+                focus: false
+              }
+            ]
+          }
+        ],
+        'local': [
+          {
+            title: '連結 1',
+            link: 'http://www.google.com',
+            focus: false,
+            child: []
+          },
+          {
+            title: '連結 2',
+            link: 'http://www.google.com',
+            focus: false,
+            child: [
+              {
+                title: '連結 2-1',
+                link: 'http://www.google.com',
+                focus: false
+              },
+              {
+                title: '連結 2-2',
+                link: 'http://www.google.com',
+                focus: false
+              },
+              {
+                title: '連結 2-3',
+                link: 'http://www.google.com',
+                focus: false
+              }
+            ]
+          }
+        ]
+      },
+      links: ''
+    },
+    mounted: function() {
+      if(i18n.locale === 'en') {
+        this.links = JSON.parse(JSON.stringify(this.template.en));
+      } else if(i18n.locale === 'local') {
+        this.links = JSON.parse(JSON.stringify(this.template.local));
+      }
+    },
+    methods: {
+      setLocale: function(language) {
+        switch (language) {
+          case 'en':
+            this.links = JSON.parse(JSON.stringify(this.template.en));
+            break;
+          case 'local':
+            this.links = JSON.parse(JSON.stringify(this.template.local));
+            break;            
+          default:
+            this.links = JSON.parse(JSON.stringify(this.template.local));
+            break;
+        }
+      }
+    }
+  })
   var mainTitle = new Vue({
     el:'#mainTitle',
     i18n,
@@ -169,6 +247,7 @@
         localStorage.setItem('lang', event.target.value);
 
         subjectField.setLocale(event.target.value);
+        header.setLocale(event.target.value);
       }
     }
   })
