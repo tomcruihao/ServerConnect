@@ -46,7 +46,7 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>資料庫</title>
-  <link rel="stylesheet" type="text/css" href="lib/index.css"/>
+  <link rel="stylesheet" type="text/css" href="lib/css/index.css"/>
 </head>
 <body>
   <header id="header">
