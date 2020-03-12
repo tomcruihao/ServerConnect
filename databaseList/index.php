@@ -312,13 +312,13 @@
           {
             title: 'Link 1',
             link: 'http://www.google.com',
-            focus: false
+            focus: false,
             child: []
           },
           {
             title: 'Link 2',
             link: 'http://www.google.com',
-            focus: false
+            focus: false,
             child: [
               {
                 title: 'Link 2-1',
@@ -342,13 +342,13 @@
           {
             title: '連結 1',
             link: 'http://www.google.com',
-            focus: false
+            focus: false,
             child: []
           },
           {
             title: '連結 2',
             link: 'http://www.google.com',
-            focus: false
+            focus: false,
             child: [
               {
                 title: '連結 2-1',
