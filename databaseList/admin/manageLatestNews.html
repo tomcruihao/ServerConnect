@@ -479,10 +479,14 @@
               console.log(exception);
             },
             success: function(res) {
-              dataList.getLatestNewsListInfo();
-              self.closeForm();
-              let dialogueType = `${self.sendType}_success`;
-              dialogue.setDialogue(dialogueType);
+              if(res.status === "expired") {
+                window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+              } else {
+                dataList.getLatestNewsListInfo();
+                self.closeForm();
+                let dialogueType = `${self.sendType}_success`;
+                dialogue.setDialogue(dialogueType);
+              }
             }
           });
         },
@@ -511,11 +515,14 @@
               console.log(exception);
             },
             success: function(res) {
-              console.log(res);
-              dataList.getLatestNewsListInfo();
-              self.closeForm();
-              let dialogueType = `${self.sendType}_success`;
-              dialogue.setDialogue(dialogueType);
+              if(res.status === "expired") {
+                window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+              } else {
+                dataList.getLatestNewsListInfo();
+                self.closeForm();
+                let dialogueType = `${self.sendType}_success`;
+                dialogue.setDialogue(dialogueType);
+              }
             }
           });
         },
@@ -582,9 +589,12 @@
               console.log(exception);
             },
             success: function(res) {
-              console.log(res);
-              dataList.getLatestNewsListInfo();
-              self.setDialogue('deleteNews_success');
+              if(res.status === "expired") {
+                window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+              } else {
+                dataList.getLatestNewsListInfo();
+                self.setDialogue('deleteNews_success');
+              }
             }
           });
         },

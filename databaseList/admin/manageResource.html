@@ -619,11 +619,14 @@
               console.log(exception);
             },
             success: function(res) {
-              console.log(res);
-              dataList.getDatabaseList();
-              self.closeForm();
-              let dialogueType = `${self.sendType}_success`
-              dialogue.setDialogue(dialogueType);
+              if(res.status === "expired") {
+                window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+              } else {
+                dataList.getDatabaseList();
+                self.closeForm();
+                let dialogueType = `${self.sendType}_success`
+                dialogue.setDialogue(dialogueType);
+              }
             }
           });
         },
@@ -687,9 +690,12 @@
               console.log(exception);
             },
             success: function(res) {
-              console.log('remove');
-              dataList.getDatabaseList();
-              self.setDialogue('delete_success');
+              if(res.status === 'expired') {
+                window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+              } else {
+                dataList.getDatabaseList();
+                self.setDialogue('delete_success');
+              }
             }
           });
         },

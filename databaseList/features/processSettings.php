@@ -30,7 +30,7 @@ error_reporting(E_ALL);
   response('success', 'success');
 
   function response($errorType, $message) {
-    $res = array('type' => $errorType, 'mesage' => $message);
+    $res = array('status' => $errorType, 'type' => $message);
     echo json_encode($res, JSON_UNESCAPED_UNICODE);
   }
 ?>

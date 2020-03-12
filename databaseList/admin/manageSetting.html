@@ -236,7 +236,11 @@
             console.log(exception);
           },
           success: function(res) {
-            dialogue.setDialogue('update_success');
+            if(res.status === 'expired') {
+              window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+            } else {
+              dialogue.setDialogue('update_success');
+            }
           }
         });
       },

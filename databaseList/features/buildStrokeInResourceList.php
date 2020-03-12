@@ -66,6 +66,6 @@
   // write back
   file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
-  $res = array('type' => 'success', 'mesage' => 'success');
+  $res = array('status' => 'success', 'type' => 'success');
   echo json_encode($res, JSON_UNESCAPED_UNICODE);
 ?>

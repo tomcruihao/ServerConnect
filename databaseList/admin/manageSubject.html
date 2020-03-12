@@ -442,7 +442,11 @@
             console.log(exception);
           },
           success: function(res) {
-            self.buildSubjectList();
+            if(res.status === 'expired') {
+              window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+            } else {
+              self.buildSubjectList();
+            }
           }
         });
       },
@@ -465,13 +469,17 @@
             console.log(exception);
           },
           success: function(res) {
-            let messageInfo = {
-              title: '',
-              content: '更新成功',
-              warning: ''
+            if(res.status === 'expired') {
+              window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+            } else {
+              let messageInfo = {
+                title: '',
+                content: '更新成功',
+                warning: ''
+              }
+              dialogue.setDialogue('message', messageInfo);
+              self.buildSubjectList();
             }
-            dialogue.setDialogue('message', messageInfo);
-            self.buildSubjectList();
           }
         });
       },
@@ -522,7 +530,11 @@
             console.log(exception);
           },
           success: function(res) {
-            self.buildSubjectList();
+            if(res.status === 'expired') {
+              window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+            } else {
+              self.buildSubjectList();
+            }
           }
         });
       },
@@ -531,27 +543,4 @@
       }
     }
   });
-
-  function buildStrokes() {
-    $.ajax({
-      url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildStrokeInResourceList.php',
-      type: 'POST',
-      xhrFields: {
-        withCredentials: true
-      },
-      error: function(jqXHR, exception) {
-        //use url variable here
-        console.log(jqXHR);
-        console.log(exception);
-      },
-      success: function(res) {
-        let messageInfo = {
-          title: '',
-          content: '建立成功',
-          warning: ''
-        }
-        dialogue.setDialogue('message', messageInfo);
-      }
-    });
-  }
 </script>
