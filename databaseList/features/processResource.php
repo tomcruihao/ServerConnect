@@ -35,9 +35,9 @@ error_reporting(E_ALL);
     $resource['en']['stroke'] = $getStroke['strokes'];
     $resource['en']['zhuyin'] = $getStroke['zhuyin'];
     $resource['en']['englishAlphabet'] = $getStroke['englishAlphabet'];
-    $resource['tw']['stroke'] = $getStroke['strokes'];
-    $resource['tw']['zhuyin'] = $getStroke['zhuyin'];
-    $resource['tw']['englishAlphabet'] = $getStroke['englishAlphabet'];
+    $resource['local']['stroke'] = $getStroke['strokes'];
+    $resource['local']['zhuyin'] = $getStroke['zhuyin'];
+    $resource['local']['englishAlphabet'] = $getStroke['englishAlphabet'];
 
     // $getStroke = getStrokeInfo($resource['resourceName']);
     // $resource['stroke'] = $getStroke['strokes'];
@@ -52,15 +52,15 @@ error_reporting(E_ALL);
     foreach($resourceList as $key => $row) {
       if(strcasecmp($row['uuid'], $resource['uuid']) == 0) {
         // get stroke and zhuyin info
-        $getStroke = getStrokeInfo($resource['tw']['resourceName'], $resource['en']['resourceName']);
+        $getStroke = getStrokeInfo($resource['local']['resourceName'], $resource['en']['resourceName']);
 
         $resourceList[$key] = $resource;
         $resourceList[$key]['en']['stroke'] = $getStroke['strokes'];
         $resourceList[$key]['en']['zhuyin'] = $getStroke['zhuyin'];
         $resourceList[$key]['en']['englishAlphabet'] = $getStroke['englishAlphabet'];
-        $resourceList[$key]['tw']['stroke'] = $getStroke['strokes'];
-        $resourceList[$key]['tw']['zhuyin'] = $getStroke['zhuyin'];
-        $resourceList[$key]['tw']['englishAlphabet'] = $getStroke['englishAlphabet'];
+        $resourceList[$key]['local']['stroke'] = $getStroke['strokes'];
+        $resourceList[$key]['local']['zhuyin'] = $getStroke['zhuyin'];
+        $resourceList[$key]['local']['englishAlphabet'] = $getStroke['englishAlphabet'];
         break;
       }
     }
@@ -82,13 +82,13 @@ error_reporting(E_ALL);
     response('success', 'success');
   }
 
-  function getStrokeInfo($str_resourceName_tw, $str_resourceName_en) {
+  function getStrokeInfo($str_resourceName_local, $str_resourceName_en) {
     $getStrokesJsonData = file_get_contents('../data/UniHanO.json');
     $strokes = json_decode($getStrokesJsonData, true);
     $resultExist = false;
 
     // get first char
-    $chars = preg_split('/(?<!^)(?!$)/u', $str_resourceName_tw);
+    $chars = preg_split('/(?<!^)(?!$)/u', $str_resourceName_local);
     $firstChar = $chars[0];
     $result = [];
 
