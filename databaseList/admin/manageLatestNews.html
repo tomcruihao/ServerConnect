@@ -14,7 +14,7 @@
     </div>
     <nav>
       <label for="mobile_btn" class="mobile-btn-frame">
-        <img src="../img/dehaze.svg"/>
+        <img src="../img/icon/dehaze.svg"/>
       </label>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
@@ -49,7 +49,7 @@
     </nav>
   </header>
   <button class="add-new-button" onclick="addNews()">
-    <img src="../img/add.svg"/>
+    <img src="../img/icon/add.svg"/>
   </button>
   <div class="app-content">
     <div id="mainTitle" class="mainTitle">
@@ -64,9 +64,9 @@
     </div>
     <div id="latestNewsListField" class="latestNews-field">
       <div class="latestNews-wrap form-setting">
-        <h3><img src="../img/settings.svg"/>{{$t('message.latest_form_setting')}}</h3>
+        <h3><img src="../img/icon/settings.svg"/>{{$t('message.latest_form_setting')}}</h3>
         <div class="button-wrap">
-          <button @click="updateNewsField()"><img src="../img/edit.svg"/></button>
+          <button @click="updateNewsField()"><img src="../img/icon/edit.svg"/></button>
         </div>
         <div class="tag-wrap">
           <button @click="changeTag(latestNewsField, 'local')" :class="[latestNewsField.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
@@ -91,8 +91,8 @@
       </div>
       <div v-for="(latestNews, index) in latestNewsList" class="latestNews-wrap">
         <div class="button-wrap">
-          <button @click="updateNews(latestNews)"><img src="../img/edit.svg"/></button>
-          <button @click="deleteNews(latestNews)"><img src="../img/delete.svg"/></button>
+          <button @click="updateNews(latestNews)"><img src="../img/icon/edit.svg"/></button>
+          <button @click="deleteNews(latestNews)"><img src="../img/icon/delete.svg"/></button>
         </div>
         <div class="tag-wrap">
           <button @click="changeTag(latestNews, 'local')" :class="[latestNews.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
@@ -131,7 +131,7 @@
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{headTitle}}</h4>
-        <img src="../img/closeWhite.svg"/ class="close" @click="closeForm">
+        <img src="../img/icon/closeWhite.svg"/ class="close" @click="closeForm">
       </div>
       <div class="dialogue-body" v-if="sendType === 'updateNewsField'">
         <div class="tag-wrap-s">
@@ -195,7 +195,7 @@
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{title}}</h4>
-        <img src="../img/closeWhite.svg"/ class="close" @click="closeDialogue">
+        <img src="../img/icon/closeWhite.svg"/ class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body" v-if="type === 'deleteNews'">
         {{message}} <span class="resource-name">{{newsTitle}}</span>?
@@ -212,11 +212,11 @@
       </div>
     </div>
   </div>
-  <script src="../lib/verifyAuth.js"></script>
+  <script src="../lib/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
   <script src="../lang/lang.js"></script>
-  <script src="../lib/jquery.js"></script>
+  <script src="../lib/js/jquery.js"></script>
   <script type="text/javascript">
     function addNews() {
       fillForm.setDisplayForm('addNews');

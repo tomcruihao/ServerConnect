@@ -55,7 +55,7 @@
     </div>
     <nav>
       <label for="mobile_btn" class="mobile-btn-frame">
-        <img src="img/dehaze.svg"/>
+        <img src="img/icon/dehaze.svg"/>
       </label>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
@@ -155,11 +155,11 @@
         </article>
         <aside id="aside" v-bind:class="{ show: mobile_frame }">
           <button class="btn-accordion" @click="set_mobile_show_switch(true)">
-            <img src="img/view_list.svg">
+            <img src="img/icon/view_list.svg">
           </button>
           <div class="aside-mobile-header">
             <div class="title">{{$t('message.index_bulletin')}}</div>
-            <img src="img/clear.svg" class="close" @click="set_mobile_show_switch(false)">
+            <img src="img/icon/clear.svg" class="close" @click="set_mobile_show_switch(false)">
           </div>
           <div class="aside-content">
             <div class="bulletin-board-frame" id="latestNews">
@@ -217,7 +217,7 @@
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{dialogueMessage.title}}</h4>
-        <img src="img/closeWhite.svg" class="close" @click="closeDialogue">
+        <img src="img/icon/closeWhite.svg" class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body">
         <div class="content" v-html="dialogueMessage.content"></div>
