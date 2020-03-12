@@ -4,14 +4,10 @@ function verifyToken () {
     let user = JSON.parse(userEncode);
     let expiredDatetime = Date.parse(user.expiredTime);
 
-    let today = new Date();
-    if(today > expiredDatetime) {
-      console.log('expired');
-      // directToIndex();
-    } else {
-      console.log('not expired');
+    let now = new Date();
+    if(now > expiredDatetime) {
+      directToIndex();
     }
-
   } else {
     directToIndex();
   }

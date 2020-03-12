@@ -11,6 +11,8 @@ error_reporting(E_ALL);
   header('Content-Type: application/json;charset=UTF-8');
   date_default_timezone_set('Asia/Taipei');
 
+  include 'verifyToken.php';
+
   $getResourceData = file_get_contents('../data/eResourceList.json');
   $resourceData = json_decode($getResourceData, true);
   
