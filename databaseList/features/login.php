@@ -36,12 +36,12 @@ error_reporting(E_ALL);
 
   // if pass, generate token and send it back
   if($auth) {
-    $_SESSION['userAccount'] = $received_user['account'];
-    $_SESSION['expiredTime'] = 
-
     // h/m/s
     $remainTime = 1 * 60 * 60;
     $expiredTime = date("Y-m-d H:i:s", time() + $remainTime);
+
+    $_SESSION['userAccount'] = $received_user['account'];
+    $_SESSION['expiredTime'] = $expiredTime;
 
     $message = [];
     $message['expiredTime'] = $expiredTime;
