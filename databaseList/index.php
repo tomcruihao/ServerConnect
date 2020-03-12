@@ -61,38 +61,17 @@
       <ul class="nav-list">
         <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
           <div v-if="link.child.length === 0">
-            <a href="#" class="nav-tag">{{link.title}}</a>
+            <a :href="link.link" class="nav-tag">{{link.title}}</a>
           </div>
           <div v-else>
             <label class="nav-tag" :for="'tag'+index">{{link.title}}</label>
             <input type="checkbox" :id="'tag'+index">
             <ul>
               <li v-for="(childLink, c_index) in link.child">
-                <a href="#">{{childLink.title}}</a>
+                <a :href="childLink.link">{{childLink.title}}</a>
               </li>
             </ul>
           </div>
-        </li>
-        <li class="multi" >
-          <label class="nav-tag" for="tag1">link 2</label>
-          <input type="checkbox" id="tag1">
-          <ul>
-            <li>
-              <a href="#">link 2-1</a>
-            </li>
-            <li>
-              <a href="#">link 2-2</a>
-            </li>
-            <li>
-              <a href="#">link 2-3</a>
-            </li>
-            <li>
-              <a href="#">link 2-4</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="nav-tag">link 3</a>
         </li>
       </ul>
     </nav>
