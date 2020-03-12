@@ -352,13 +352,13 @@
       setLocale: function(language) {
         switch (language) {
           case 'en':
-            this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.en));
+            this.links = JSON.parse(JSON.stringify(this.template.en));
             break;
           case 'local':
-            this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.local));
+            this.links = JSON.parse(JSON.stringify(this.template.local));
             break;            
           default:
-            this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.local));
+            this.links = JSON.parse(JSON.stringify(this.template.local));
             break;
         }
       }
@@ -382,6 +382,7 @@
 
         aside.setLocale(i18n.locale);
         filterField.setLocale(i18n.locale);
+        header.setLocale(i18n.locale);
 
         genDatalistStructure(true);
       }
