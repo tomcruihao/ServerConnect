@@ -36,6 +36,8 @@ error_reporting(E_ALL);
 
   // if pass, generate token and send it back
   if($auth) {
+    session_start();
+    
     // h/m/s
     $remainTime = 1 * 60 * 60;
     $expiredTime = date("Y-m-d H:i:s", time() + $remainTime);
