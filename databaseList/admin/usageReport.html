@@ -321,13 +321,13 @@
                     let tempReportData = {
                       date: key,
                       clickedList: [],
-                      total: res[key].total
+                      total: res.report[key].total
                     }
 
-                    if(!Array.isArray(res[key])){
-                      Object.keys(res[key]).forEach(function(item){
+                    if(!Array.isArray(res.report[key])){
+                      Object.keys(res.report[key]).forEach(function(item){
                         if(item !== 'total') {
-                          tempReportData.clickedList.push(res[key][item]);
+                          tempReportData.clickedList.push(res.report[key][item]);
                         }
                       })
                     }
