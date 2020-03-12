@@ -14,7 +14,7 @@
     </div>
     <nav>
       <label for="mobile_btn" class="mobile-btn-frame">
-        <img src="../img/dehaze.svg"/>
+        <img src="../img/icon/dehaze.svg"/>
       </label>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
@@ -49,7 +49,7 @@
     </nav>
   </header>
   <button class="add-new-button" onclick="addNew()">
-    <img src="../img/add.svg"/>
+    <img src="../img/icon/add.svg"/>
   </button>
   <div class="app-content">
     <section id="mainTitle" class="mainTitle">
@@ -71,8 +71,8 @@
       <div class="list-container">
         <div v-for="(database, index) in databaseList" class="resource-wrap" v-if="(database.en.resourceName.toUpperCase().match(searchKeyword.toUpperCase())!=null || database.local.resourceName.toUpperCase().match(searchKeyword.toUpperCase())!=null)">
           <div class="button-wrap">
-            <button @click="modifyResource(database)"><img src="../img/edit.svg"/></button>
-            <button @click="deleteResource(database)"><img src="../img/delete.svg"/></button>
+            <button @click="modifyResource(database)"><img src="../img/icon/edit.svg"/></button>
+            <button @click="deleteResource(database)"><img src="../img/icon/delete.svg"/></button>
           </div>
           <div class="tag-wrap">
             <button @click="changeTag(database, 'local')" :class="[database.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
@@ -192,7 +192,7 @@
   </div>
   <div class="mask" id="fillForm" v-if="show">
     <div class="dialogue-frame">
-      <img src="../img/close.svg" class="close" @click="closeForm">
+      <img src="../img/icon/close.svg" class="close" @click="closeForm">
       <div class="tag-wrap">
         <button @click="changeTag(resource, 'local')" :class="[resource.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
         <button @click="changeTag(resource, 'en')" :class="[resource.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
@@ -320,7 +320,7 @@
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{title}}</h4>
-        <img src="../img/closeWhite.svg" class="close" @click="closeDialogue">
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body" v-if="type === 'deleteResource'">
         {{message}} <span class="resource-name">{{resourceName}}</span>?
