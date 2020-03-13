@@ -85,7 +85,19 @@
     </section>
   </div>
   <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
-    <div class="dialogue-message-frame" v-if="status === 'update_success'">
+    <div class="dialogue-message-frame" v-if="type === 'expired'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_expired')}}
+        <div class="btn-frame">
+          <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'update_success'">
       <div class="dialogue-head">
         <h4>{{$t('message.dialogue_title_info')}}</h4>
         <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
@@ -237,7 +249,8 @@
           },
           success: function(res) {
             if(res.status === 'expired') {
-              window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+              dialogue.setDialogue('expired');
+              // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
             } else {
               dialogue.setDialogue('update_success');
             }
@@ -286,7 +299,7 @@
     i18n,
     data: {
       show: false,
-      status: ''
+      type: ''
     },
     computed: {
       dialogueMessage: {
@@ -299,7 +312,7 @@
     },
     methods:{
       setDialogue: function(status) {
-        this.status = status;
+        this.type = status;
         this.show = true;
       },
       closeDialogue: function() {

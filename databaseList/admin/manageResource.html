@@ -632,7 +632,8 @@
             },
             success: function(res) {
               if(res.status === "expired") {
-                window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+                dialogue.setDialogue('expired', 'expired');
+                // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 dataList.getDatabaseList();
                 self.closeForm();
@@ -660,7 +661,6 @@
       },
       methods:{
         setDialogue: function(type, database = '') {
-          console.log('set dialogue');
           this.type = type;
           switch (type) {
             case 'deleteResource':
