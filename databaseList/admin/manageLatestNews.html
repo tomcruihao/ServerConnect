@@ -492,7 +492,7 @@
             },
             success: function(res) {
               if(res.status === "expired") {
-                dialogue.setDialogue('expired', 'expired', 'expired');
+                dialogue.setDialogue('expired', 'expired');
                 // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 dataList.getLatestNewsListInfo();
@@ -529,7 +529,7 @@
             },
             success: function(res) {
               if(res.status === "expired") {
-                dialogue.setDialogue('expired', 'expired', 'expired');
+                dialogue.setDialogue('expired', 'expired');
                 // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 dataList.getLatestNewsListInfo();
@@ -559,7 +559,7 @@
         news: ''
       },
       methods:{
-        setDialogue: function(type = '', news = '', status = '') {
+        setDialogue: function(type = '', news = '') {
           this.type = type;
           switch (type) {
             case 'deleteNews':
@@ -606,7 +606,7 @@
             },
             success: function(res) {
               if(res.status === "expired") {
-                dialogue.setDialogue('expired', 'expired', 'expired');
+                dialogue.setDialogue('expired', 'expired');
                 // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 dataList.getLatestNewsListInfo();
