@@ -11,9 +11,9 @@
       echo json_encode($res, JSON_UNESCAPED_UNICODE);
       exit();
     } else {
-      // $res = array('status' => 'expired', 'type' => 'expired', 'mesage' => 'expired');
-      // echo json_encode($res, JSON_UNESCAPED_UNICODE);
-      // exit();
+      $res = array('status' => 'expired', 'type' => 'expired', 'mesage' => 'expired');
+      echo json_encode($res, JSON_UNESCAPED_UNICODE);
+      exit();
     }
   } else {
     $res = array('status' => 'expired', 'type' => 'Auth Failed', 'mesage' => 'Auth Failed');
