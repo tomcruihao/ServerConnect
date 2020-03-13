@@ -11,7 +11,7 @@
       echo json_encode($res, JSON_UNESCAPED_UNICODE);
       exit();
     } else {
-      var_dump(http_response_code(404));
+      http_response_code(404);
       $res = array('status' => 'expired', 'type' => 'expired', 'mesage' => 'expired');
       echo json_encode($res, JSON_UNESCAPED_UNICODE);
       exit();
