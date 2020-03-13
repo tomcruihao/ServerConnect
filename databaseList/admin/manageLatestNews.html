@@ -178,7 +178,7 @@
       </div>
     </div>
   </div>
-  <div id="dialogue" class="mask" v-if="show">
+  <div id="dialogue" class="mask" v-if="show" :class="{ show: show }">
     <div class="dialogue-message-frame" v-if="type === 'expired'">
       <div class="dialogue-head">
         <h4>{{$t('message.dialogue_title_info')}}</h4>
