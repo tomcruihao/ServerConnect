@@ -178,11 +178,23 @@
       </div>
     </div>
   </div>
-  <div class="mask" id="dialogue" v-if="show">
+  <div id="dialogue" class="mask" v-if="show">
+    <div class="dialogue-message-frame" v-if="type === 'expired'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body" v-if="type === 'deleteNews'">
+        {{$t('message.dialogue_content_expired')}}
+      </div>
+      <div class="btn-frame">
+        <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+      </div>
+    </div>
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{title}}</h4>
-        <img src="../img/icon/closeWhite.svg"/ class="close" @click="closeDialogue">
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body" v-if="type === 'deleteNews'">
         {{message}} <span class="resource-name">{{newsTitle}}</span>?
@@ -531,10 +543,12 @@
         }
       }
     });
+
     var dialogue = new Vue({
       el:'#dialogue',
       i18n,
       data: {
+        status: '',
         show: false,
         type: '',
         title: '測試標題',
@@ -543,7 +557,7 @@
         news: ''
       },
       methods:{
-        setDialogue: function(type, news = '') {
+        setDialogue: function(type, news = '', status = '') {
           this.type = type;
           switch (type) {
             case 'deleteNews':
@@ -590,13 +604,17 @@
             },
             success: function(res) {
               if(res.status === "expired") {
-                window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+                dialogue.setDialogue('expired', 'expired', 'expired');
+                // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 dataList.getLatestNewsListInfo();
                 self.setDialogue('deleteNews_success');
               }
             }
           });
+        },
+        backToLogin: function() {
+          window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
         },
         closeDialogue: function() {
           this.show = false;

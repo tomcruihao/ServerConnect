@@ -71,6 +71,7 @@ const messages = {
       // dialogue
       dialogue_title: 'Title',
       dialogue_title_info: 'Info',
+      dialogue_content_expired: 'The credential has expired, please log in again',
       dialogue_content_updateSuccess: 'Update Successful',
       // button
       btn_recover: 'Recover',
@@ -163,6 +164,7 @@ const messages = {
       // dialogue
       dialogue_title: '標題',
       dialogue_title_info: '訊息',
+      dialogue_content_expired: '憑證已失效, 請重新登入',
       dialogue_content_updateSuccess: '更新成功',
       // button
       btn_recover: '復原',
