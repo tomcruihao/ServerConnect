@@ -482,7 +482,8 @@
           },
           success: function(res) {
             if(res.status === 'expired') {
-              window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+              dialogue.setDialogue('expired', 'expired');
+              // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
             } else {
               let messageInfo = {
                 title: '',
@@ -543,7 +544,8 @@
           },
           success: function(res) {
             if(res.status === 'expired') {
-              window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+              dialogue.setDialogue('expired', 'expired');
+              // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
             } else {
               self.buildSubjectList();
             }
