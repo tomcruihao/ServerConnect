@@ -7,7 +7,11 @@
     $now = strtotime($string_now);
 
     if($now > $expiredTime) {
-      $res = array('status' => 'expired', 'type' => 'Expired', 'mesage' => 'Expired');
+      $res = array('status' => 'expired', 'type' => 'expired', 'mesage' => 'expired');
+      echo json_encode($res, JSON_UNESCAPED_UNICODE);
+      exit();
+    } else {
+      $res = array('status' => 'expired', 'type' => 'expired', 'mesage' => 'expired');
       echo json_encode($res, JSON_UNESCAPED_UNICODE);
       exit();
     }
