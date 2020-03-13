@@ -113,9 +113,13 @@ input[type="text"], input[type="date"], input[type="number"] {
   top: 0;
   left: 0;
   z-index: 1000;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
+
+  &.show{
+    display: flex;
+  }
 
   .dialogue-message-frame {
     width: 94%;

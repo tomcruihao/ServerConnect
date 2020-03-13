@@ -114,7 +114,7 @@
       </div>
     </div>
   </div>
-  <div class="mask" id="fillForm" v-if="show">
+  <div class="mask" id="fillForm" :class="{ show: show }">
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{headTitle}}</h4>
