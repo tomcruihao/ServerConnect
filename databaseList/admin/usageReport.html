@@ -87,6 +87,20 @@
       </div>
     </section>
   </div>
+  <div id="dialogue" class="mask" v-if="show" :class="{ show: show }">
+    <div class="dialogue-message-frame" v-if="type === 'expired'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_expired')}}
+        <div class="btn-frame">
+          <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="../lib/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
@@ -315,7 +329,7 @@
               },
               success: function(res) {
                 if(res.status === 'expired') {
-                  console.log('expired');
+                  dialogue.setDialogue('expired', 'expired');
                 } else if(res.status === 'success'){
                   Object.keys(res.report).forEach(function(key){
                     let tempReportData = {
@@ -340,6 +354,26 @@
           } else {
             this.searching = false;
           }
+        }
+      }
+    });
+    var dialogue = new Vue({
+      el:'#dialogue',
+      i18n,
+      data: {
+        show: false,
+        type: ''
+      },
+      methods:{
+        setDialogue: function(type = '', news = '') {
+          this.type = type;
+          this.show = true;
+        },
+        backToLogin: function() {
+          window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+        },
+        closeDialogue: function() {
+          this.show = false;
         }
       }
     });
