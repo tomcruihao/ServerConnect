@@ -191,7 +191,7 @@
         <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
       </div>
     </div>
-    <div class="dialogue-message-frame">
+    <div class="dialogue-message-frame" v-else>
       <div class="dialogue-head">
         <h4>{{title}}</h4>
         <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
@@ -559,7 +559,7 @@
         news: ''
       },
       methods:{
-        setDialogue: function(type, news = '', status = '') {
+        setDialogue: function(type = '', news = '', status = '') {
           this.type = type;
           switch (type) {
             case 'deleteNews':
