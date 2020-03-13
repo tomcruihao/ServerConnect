@@ -315,11 +315,10 @@
         this.type = status;
         this.show = true;
       },
-      closeDialogue: function() {
-        this.show = false;
+      backToLogin: function() {
+        window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
       },
-      deleteSubjectBlock: function() {
-        subjectField.set_deleteSubjectBlock();
+      closeDialogue: function() {
         this.show = false;
       }
     }
@@ -394,12 +393,15 @@
             console.log(exception);
           },
           success: function(res) {
-            console.log(res);
-            // open the dialogue
-            dialogue.setDialogue('update_success');
-
-            // refresh the general list
-            self.getSettings();
+            if(res.status === 'expired') {
+              dialogue.setDialogue('expired');
+            } else {
+              // open the dialogue
+              dialogue.setDialogue('update_success');
+              
+              // refresh the general list
+              self.getSettings();
+            }
           }
         });
       }
