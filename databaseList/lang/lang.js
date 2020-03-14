@@ -49,7 +49,6 @@ const messages = {
       subject_create_subject_item: 'Create New Subject Item',
       tools: 'Tool Kits',
       build_alphabet_stokes: 'Create Alphabet and Strokes',
-      build_alphabet_list: 'Create Alphabet and Strokes List',
       // latest news management page
       h1_latestNews: 'Latest News Setting',
       latest_form_setting: 'Form Setting',
@@ -71,6 +70,7 @@ const messages = {
       // dialogue
       dialogue_title: 'Title',
       dialogue_title_info: 'Info',
+      dialogue_title_actpwd: 'Account and Password Setting',
       dialogue_content_expired: 'The credential has expired, please log in again',
       dialogue_content_updateSuccess: 'Update Successful',
       // button
@@ -137,7 +137,6 @@ const messages = {
       generalSetting: '一般設定',
       tools: '小工具',
       build_alphabet_stokes: '建立注音與比劃',
-      build_alphabet_list: '建立注音與比劃列表',
       // latest news management page
       h1_latestNews: '最新消息管理',
       latest_form_setting: '表格設定',
@@ -164,6 +163,7 @@ const messages = {
       // dialogue
       dialogue_title: '標題',
       dialogue_title_info: '訊息',
+      dialogue_title_actpwd: '帳號密碼修改',
       dialogue_content_expired: '憑證已失效, 請重新登入',
       dialogue_content_updateSuccess: '更新成功',
       // button

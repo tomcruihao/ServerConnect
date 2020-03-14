@@ -46,6 +46,7 @@
     $_SESSION['expiredTime'] = $expiredTime;
 
     $tokenInfo = [];
+    $tokenInfo['user'] = $received_user['account'];
     $tokenInfo['expiredTime'] = $expiredTime;
     $tokenInfo['token'] = '123456';
 

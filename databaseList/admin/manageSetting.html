@@ -73,14 +73,14 @@
             <button @click="buildStrokes()">{{$t('message.btn_execute')}}</button>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="title">
             {{$t('message.build_alphabet_list')}}
           </div>
           <div class="content">
             <button @click="buildStrokeAnchorList()">{{$t('message.btn_execute')}}</button>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </div>
@@ -235,28 +235,6 @@
     mounted: function() {
     },
     methods: {
-      buildStrokeAnchorList: function() {
-        $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildAnchorOfSearchKeyWord.php',
-          type: 'POST',
-          xhrFields: {
-            withCredentials: true
-          },
-          error: function(jqXHR, exception) {
-            //use url variable here
-            console.log(jqXHR);
-            console.log(exception);
-          },
-          success: function(res) {
-            if(res.status === 'expired') {
-              dialogue.setDialogue('expired');
-              // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
-            } else {
-              dialogue.setDialogue('update_success');
-            }
-          }
-        });
-      },
       buildStrokes: function() {
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildStrokeInResourceList.php',
