@@ -53,7 +53,7 @@
       $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
 
-    print_r($temp_local);
+    // print_r($temp_local);
 
     array_push($result_en, $temp_en);
     array_push($result_local, $temp_local);
@@ -62,5 +62,5 @@
   $result['en'] = $result_en;
   $result['local'] = $temp_local;
   
-  // echo json_encode($result, JSON_UNESCAPED_UNICODE);
+  echo json_encode($result, JSON_UNESCAPED_UNICODE);
 ?>
