@@ -10,6 +10,12 @@
   $getResourceListJsonData = file_get_contents($jsonFile_direct);
   $resourceList = json_decode($getResourceListJsonData, true);
 
+  // get Proxy
+  $getSettingJsonData = file_get_contents('../data/settings.json');
+  $settingData = json_decode($getSettingJsonData, true);
+
+  $proxy = $settingData['proxy'];
+
   $result = [];
   $result_en = [];
   $result_tw = [];
@@ -17,6 +23,8 @@
   foreach($resourceList as $key => $value) {
     $temp_tw = [];
     $temp_en = [];
+    $isProxy = false;
+
     foreach($value as $vkey => $vValue) {
       // get position of language
       // $i_en = array_search('en', array_keys($value));
@@ -24,6 +32,9 @@
       if(!(strcasecmp('tw', $vkey) == 0) && !(strcasecmp('en', $vkey) == 0)) {
         $temp_tw[$vkey] = $vValue;
         $temp_en[$vkey] = $vValue;
+      }
+      if(strcasecmp('isProxy', $vkey) == 0) {
+        $isProxy = $vValue;
       }
     }
 
@@ -35,6 +46,12 @@
     foreach($value['tw'] as $tkey => $tValue) {
       $temp_tw[$tkey] = $tValue;
     }
+
+    if($isProxy) {
+      $temp_en['resourceUrl'] = $proxy.$temp_en['resourceUrl'];
+      $temp_tw['resourceUrl'] = $proxy.$temp_tw['resourceUrl'];
+    }
+
     array_push($result_en, $temp_en);
     array_push($result_tw, $temp_tw);
     // $resourceList['en']
