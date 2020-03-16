@@ -45,8 +45,8 @@
       $temp_local[$tkey] = $tValue;
     }
 
-    echo $isProxy.'<br>';
     if($isProxy) {
+      echo 'change<br>';
       $temp_en['resourceUrl'] = $proxy.$temp_en['resourceUrl'];
       $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
