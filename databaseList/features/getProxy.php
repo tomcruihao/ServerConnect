@@ -12,5 +12,5 @@
   $result['proxy'] = $proxy;
 
   $res = array('status' => $errorType, 'data' => $result);
-  echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  echo json_encode('success', JSON_UNESCAPED_UNICODE);
 ?>
