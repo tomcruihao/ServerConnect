@@ -18,10 +18,10 @@
 
   $result = [];
   $result_en = [];
-  $result_tw = [];
+  $result_local = [];
 
   foreach($resourceList as $key => $value) {
-    $temp_tw = [];
+    $temp_local = [];
     $temp_en = [];
     $isProxy = false;
 
@@ -30,7 +30,7 @@
       // $i_en = array_search('en', array_keys($value));
 
       if(!(strcasecmp('local', $vkey) == 0) && !(strcasecmp('en', $vkey) == 0)) {
-        $temp_tw[$vkey] = $vValue;
+        $temp_local[$vkey] = $vValue;
         $temp_en[$vkey] = $vValue;
       }
 
@@ -45,7 +45,7 @@
     }
 
     foreach($value['local'] as $tkey => $tValue) {
-      $temp_tw[$tkey] = $tValue;
+      $temp_local[$tkey] = $tValue;
     }
 
     if($isProxy) {
