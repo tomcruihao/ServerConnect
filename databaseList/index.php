@@ -28,6 +28,10 @@
         $temp_local[$vkey] = $vValue;
         $temp_en[$vkey] = $vValue;
       }
+
+      if(strcasecmp('isProxy', $vkey) == 0) {
+        $isProxy = filter_var($vValue, FILTER_VALIDATE_BOOLEAN);
+      }
     }
 
     // get en value and write
@@ -43,7 +47,7 @@
       $temp_en['resourceUrl'] = $proxy.$temp_en['resourceUrl'];
       $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
-    
+
     array_push($result_en, $temp_en);
     array_push($result_local, $temp_local);
   }
