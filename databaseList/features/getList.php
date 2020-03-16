@@ -29,13 +29,12 @@
       // get position of language
       // $i_en = array_search('en', array_keys($value));
 
-      if(!(strcasecmp('tw', $vkey) == 0) && !(strcasecmp('en', $vkey) == 0)) {
+      if(!(strcasecmp('local', $vkey) == 0) && !(strcasecmp('en', $vkey) == 0)) {
         $temp_tw[$vkey] = $vValue;
         $temp_en[$vkey] = $vValue;
       }
 
       if(strcasecmp('isProxy', $vkey) == 0) {
-        echo $vValue;
         $isProxy = filter_var($vValue, FILTER_VALIDATE_BOOLEAN);
       }
     }
@@ -45,21 +44,21 @@
       $temp_en[$ekey] = $eValue;
     }
 
-    foreach($value['tw'] as $tkey => $tValue) {
+    foreach($value['local'] as $tkey => $tValue) {
       $temp_tw[$tkey] = $tValue;
     }
 
     if($isProxy) {
       $temp_en['resourceUrl'] = $proxy.$temp_en['resourceUrl'];
-      $temp_tw['resourceUrl'] = $proxy.$temp_tw['resourceUrl'];
+      $temp_tw['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
 
     array_push($result_en, $temp_en);
-    array_push($result_tw, $temp_tw);
+    array_push($result_local, $temp_tw);
     // $resourceList['en']
   }
   $result['en'] = $result_en;
-  $result['tw'] = $result_tw;
+  $result['local'] = $result_tw;
   
   echo json_encode($result, JSON_UNESCAPED_UNICODE);
 ?>
