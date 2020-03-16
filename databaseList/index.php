@@ -705,6 +705,7 @@
                               <div class="title">${listTitles[ary_lang].resourceUrlTitle}</div>\
                               <div class="resourceUrl">\
                                 <a href="javascript:directTo('${res.uuid}', '${res.resourceUrl}')">${listTitles[ary_lang].resourceUrlDisplayName}</a>\
+                                ${res.resourceUrl}\
                               </div>\
                             </div>`;
 
