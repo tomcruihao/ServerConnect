@@ -664,7 +664,7 @@
     "type": "Type",
     "publisher": "Publisher",
     "language": "Language",
-    "Description": "test",
+    "resourceDescribe": "Resource Description",
     "relevanceUrlDescribe": "Revelance Link"
   }
   listTitles['local'] = {
@@ -682,7 +682,7 @@
     "type": "類型",
     "publisher": "出版商",
     "language": "語言",
-    "Description": "資源簡述",
+    "resourceDescribe": "資源簡述",
     "relevanceUrlDescribe": "相關連結"
   }
 
@@ -723,7 +723,6 @@
                               <div class="title">${listTitles[ary_lang].resourceUrlTitle}</div>\
                               <div class="resourceUrl">\
                                 <a href="javascript:directTo('${res.uuid}', '${res.resourceUrl}')">${listTitles[ary_lang].resourceUrlDisplayName}</a>\
-                                ${res.resourceUrl}\
                               </div>\
                             </div>`;
 
@@ -759,7 +758,7 @@
                                 <div class="publisher">${res.publisher}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">語言</div class="title">\
+                                <div class="title">${listTitles[ary_lang].language}</div class="title">\
                                 <div class="language">${res.language}</div>\
                               </div>\
                               <div class="row">\
