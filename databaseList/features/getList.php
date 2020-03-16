@@ -45,6 +45,7 @@
     }
 
     foreach($value['local'] as $tkey => $tValue) {
+      echo $tValue;
       $temp_local[$tkey] = $tValue;
     }
 
@@ -60,5 +61,5 @@
   $result['en'] = $result_en;
   $result['local'] = $temp_local;
   
-  echo json_encode($result, JSON_UNESCAPED_UNICODE);
+  // echo json_encode($result, JSON_UNESCAPED_UNICODE);
 ?>
