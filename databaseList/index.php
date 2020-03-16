@@ -746,12 +746,12 @@
                                 <div class="faculty">${res.faculty}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">${listTitles[ary_lang].category}</div>\
-                                <div class="category">${res.category}</div>\
+                                <div class="title">${listTitles[ary_lang].department}</div class="title">\
+                                <div class="type">${res.department}</div>\
                               </div>\
                               <div class="row">\
-                                <div class="title">${listTitles[ary_lang].type}</div class="title">\
-                                <div class="type">${res.resourceType}</div>\
+                                <div class="title">${listTitles[ary_lang].category}</div>\
+                                <div class="category">${res.category}</div>\
                               </div>\
                               <div class="row">\
                                 <div class="title">${listTitles[ary_lang].publisher}</div class="title">\
