@@ -42,13 +42,10 @@ const messages = {
       // setting page
       h1_settings: 'General Setting',
       generalSetting: 'General Setting',
-      subject_setting: 'Subject Setting',
-      subject_title: 'Subject Title',
-      subject_name: 'Subject Name',
-      subject_create_subject: 'New Subject',
-      subject_create_subject_item: 'Create New Subject Item',
       tools: 'Tool Kits',
       build_alphabet_stokes: 'Create Alphabet and Strokes',
+      setting_update_the_account_and_password: 'Update the account and password',
+      setting_account_info: 'Account Information',
       // latest news management page
       h1_latestNews: 'Latest News Setting',
       latest_form_setting: 'Form Setting',
@@ -59,6 +56,11 @@ const messages = {
       latest_publish_content: 'News Content',
       // Subject management page
       h1_subject: 'Subject Setting',
+      subject_setting: 'Subject Setting',
+      subject_title: 'Subject Title',
+      subject_name: 'Subject Name',
+      subject_create_subject: 'New Subject',
+      subject_create_subject_item: 'Create New Subject Item',
       // Clicking Report page
       h1_clickingReport: 'Clicking Report',
       clickingReport_start_date: 'Start Date',
@@ -71,6 +73,10 @@ const messages = {
       dialogue_title: 'Title',
       dialogue_title_info: 'Info',
       dialogue_title_actpwd: 'Account and Password Setting',
+      dialogue_title_account: 'Account',
+      dialogue_title_old_password: 'Old Password',
+      dialogue_title_new_password: 'New Password',
+      dialogue_title_confirm_new_password: 'Confirm New Password',
       dialogue_content_expired: 'The credential has expired, please log in again',
       dialogue_content_updateSuccess: 'Update Successful',
       // button
@@ -87,6 +93,7 @@ const messages = {
       btn_resource_catalog: 'Catalog',
       btn_resource_type: 'Type',
       btn_login: 'Login',
+      btn_change: 'Change',
       // tag
       tag_chinese: 'Chinese',
       tag_english: 'English'
@@ -137,6 +144,8 @@ const messages = {
       generalSetting: '一般設定',
       tools: '小工具',
       build_alphabet_stokes: '建立注音與比劃',
+      setting_update_the_account_and_password: '帳號密碼設定',
+      setting_account_info: '帳號資訊',
       // latest news management page
       h1_latestNews: '最新消息管理',
       latest_form_setting: '表格設定',
@@ -164,6 +173,10 @@ const messages = {
       dialogue_title: '標題',
       dialogue_title_info: '訊息',
       dialogue_title_actpwd: '帳號密碼修改',
+      dialogue_title_account: '帳號',
+      dialogue_title_old_password: '舊密碼',
+      dialogue_title_new_password: '新密碼',
+      dialogue_title_confirm_new_password: '確認新密碼',
       dialogue_content_expired: '憑證已失效, 請重新登入',
       dialogue_content_updateSuccess: '更新成功',
       // button
@@ -180,6 +193,7 @@ const messages = {
       btn_resource_catalog: '分類',
       btn_resource_type: '類型',
       btn_login: '登入',
+      btn_change: ' 變更',
       // tag
       tag_chinese: '中文',
       tag_english: '英文'

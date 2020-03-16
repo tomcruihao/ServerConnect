@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>設定</title>
-    <link rel="stylesheet" type="text/css" href="../lib/css/settings.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageSettings.css"/>
   </head>
 <body>
   <header id="header">
@@ -83,6 +83,18 @@
         </div> -->
       </div>
     </section>
+    <section id="accountInfoField" class="user-info-wrap">
+      <h1>{{$t('message.setting_account_info')}}</h1>
+      <div class="row">
+        <div class="infoTitle">
+          <div class="title">{{$t('message.setting_update_the_account_and_password')}}</div>
+          <div class="user-id">{{userAccount}}</div>
+        </div>
+        <div class="content">
+          <button @click="modifyAccountAndPwd()">{{$t('message.btn_change')}}</button>
+        </div>
+      </div>
+    </section>
   </div>
   <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
     <div class="dialogue-message-frame" v-if="type === 'expired'">
@@ -111,10 +123,51 @@
         </div>
       </div>
     </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'modifyUserInfo'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_actpwd')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body">
+        <div class="row">
+          <div class="title">{{$t('message.dialogue_title_account')}}</div>
+          <div class="content">
+            <input type="text" v-model="userAccount.newAccount">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">{{$t('message.dialogue_title_old_password')}}</div>
+          <div class="content">
+            <input type="text" v-model="userAccount.oldPassword">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">{{$t('message.dialogue_title_new_password')}}</div>
+          <div class="content">
+            <input type="text" v-model="userAccount.newPassword">
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">{{$t('message.dialogue_title_confirm_new_password')}}</div>
+          <div class="content">
+            <input type="text" v-model="userAccount.confirmNewPassword">
+          </div>
+        </div>
+        <div class="row">
+          <div class="content fixed">
+            <div class="error" v-if="error.type === 'match_error'">Password not match</div>
+            <div class="error" v-else-if="error.type === 'oldPasswrodWrong'">You're password wrong</div>
+          </div>
+        </div>
+        <div class="btn-frame">
+          <button @click="updateUserInfo">{{$t('message.btn_update')}}</button>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
-<script src="../lib/js/verifyAuth.js"></script>
+<!-- <script src="../lib/js/verifyAuth.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
 <script src="../lang/lang.js"></script>
@@ -272,12 +325,43 @@
       }
     }
   })
+  var accountInfoField = new Vue({    
+    el:'#accountInfoField',
+    i18n,
+    data: {
+      userAccount: ''
+    },
+    created: function() {
+      let userInfo = JSON.parse(localStorage.getItem('user'));
+      this.userAccount = userInfo.user;
+    },
+    methods:{
+      modifyAccountAndPwd() {
+        dialogue.setDialogue('modifyUserInfo', this.userAccount);
+      }
+    }
+  });
+
   var dialogue = new Vue({
     el:'#dialogue',
     i18n,
     data: {
       show: false,
-      type: ''
+      type: '',
+      userAccount: {
+        oldAccount: '',
+        newAccount: '',
+        oldPassword: '',
+        newPassword: '',
+        confirmNewPassword: ''
+      },
+      error: {
+        type: ''
+      }
+    },
+    created: function() {
+      // let userInfo = JSON.parse(localStorage.getItem('user'));
+      // this.userAccount = userInfo.user;
     },
     computed: {
       dialogueMessage: {
@@ -289,9 +373,33 @@
       }
     },
     methods:{
-      setDialogue: function(status) {
+      setDialogue: function(status, data = '') {
         this.type = status;
         this.show = true;
+        if(status === 'modifyUserInfo') {
+          this.userAccount.oldAccount = data.slice(0);
+          this.userAccount.newAccount = data.slice(0);
+        }
+      },
+      showLoginError(type) {
+        let self = this;
+        this.error.type = type;
+        setTimeout(function(){
+          self.error.type = '';
+        }, 3000);
+      },
+      updateUserInfo() {
+        console.log(this.userAccount);
+        
+        let newPwd = this.userAccount.newPassword.slice(0);
+        let newConfirmPwd = this.userAccount.confirmNewPassword.slice(0);
+        if(newPwd.localeCompare(newConfirmPwd) === 0) {
+          console.log('confirmed');
+        } else {
+          this.showLoginError('match_error');
+        }
+        
+        // update, when success, logout this account
       },
       backToLogin: function() {
         window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
