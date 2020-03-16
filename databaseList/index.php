@@ -751,11 +751,11 @@
                               </div>\
                               <div class="row">\
                                 <div class="title">${listTitles[ary_lang].type}</div class="title">\
-                                <div class="type">${res.type}</div>\
+                                <div class="type">${res.resourceType}</div>\
                               </div>\
                               <div class="row">\
                                 <div class="title">${listTitles[ary_lang].publisher}</div class="title">\
-                                <div class="publisher">${res.publisher}</div>\
+                                <div class="publisher">${res.publish}</div>\
                               </div>\
                               <div class="row">\
                                 <div class="title">${listTitles[ary_lang].language}</div class="title">\
