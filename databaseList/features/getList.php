@@ -60,7 +60,7 @@
     // $resourceList['en']
   }
   $result['en'] = $result_en;
-  $result['local'] = $temp_local;
+  $result['local'] = $result_local;
   
   echo json_encode($result, JSON_UNESCAPED_UNICODE);
 ?>
