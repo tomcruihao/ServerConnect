@@ -50,15 +50,15 @@
 
     if($isProxy) {
       $temp_en['resourceUrl'] = $proxy.$temp_en['resourceUrl'];
-      $temp_tw['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
+      $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
 
     array_push($result_en, $temp_en);
-    array_push($result_local, $temp_tw);
+    array_push($result_local, $temp_local);
     // $resourceList['en']
   }
   $result['en'] = $result_en;
-  $result['local'] = $result_tw;
+  $result['local'] = $temp_local;
   
   echo json_encode($result, JSON_UNESCAPED_UNICODE);
 ?>
