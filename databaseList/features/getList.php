@@ -33,7 +33,9 @@
         $temp_tw[$vkey] = $vValue;
         $temp_en[$vkey] = $vValue;
       }
+
       if(strcasecmp('isProxy', $vkey) == 0) {
+        echo $vValue;
         $isProxy = filter_var($vValue, FILTER_VALIDATE_BOOLEAN);
       }
     }
