@@ -20,6 +20,8 @@
   foreach($resourceList as $key => $value) {
     $temp_local = [];
     $temp_en = [];
+    $isProxy = false;
+    
     foreach($value as $vkey => $vValue) {
       // put content without languages
       // $i_en = array_search('en', array_keys($value));
