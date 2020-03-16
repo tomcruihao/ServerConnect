@@ -8,7 +8,7 @@
   $resourceList = json_decode($getResourceListJsonData, true);
 
   // get Proxy
-  $getSettingJsonData = file_get_contents('../data/settings.json');
+  $getSettingJsonData = file_get_contents('data/settings.json');
   $settingData = json_decode($getSettingJsonData, true);
 
   $proxy = $settingData['proxy'];
@@ -46,7 +46,6 @@
     }
 
     if($isProxy) {
-      echo $proxy.' change<br>';
       $temp_en['resourceUrl'] = $proxy.$temp_en['resourceUrl'];
       $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
