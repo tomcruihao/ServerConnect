@@ -46,7 +46,7 @@
     }
 
     if($isProxy) {
-      echo 'change<br>';
+      echo $proxy.' change<br>';
       $temp_en['resourceUrl'] = $proxy.$temp_en['resourceUrl'];
       $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
