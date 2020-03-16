@@ -44,8 +44,8 @@
     foreach($value['local'] as $tkey => $tValue) {
       $temp_local[$tkey] = $tValue;
     }
-    echo $isProxy;
-    if($isProxy) {
+
+    if($isProxy == 1) {
       $temp_en['resourceUrl'] = $proxy.$temp_en['resourceUrl'];
       $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
