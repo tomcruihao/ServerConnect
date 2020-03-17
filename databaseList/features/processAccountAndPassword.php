@@ -18,13 +18,15 @@
     $received_user = json_decode($_POST["user"], true);
   }
 
+  $oldPassword = generatePassword($received_user['oldAccount'], $received_user['oldPassword']);
+
   // verify the old password. If not matched, exit
   foreach($userList as $row) {
     if(strcasecmp($row['account'], $received_user['oldAccount']) == 0) {
-      if(strcasecmp($row['pwd'], $encryptedPwd) == 0) {
-        
+      if(strcasecmp($row['pwd'], $oldPassword) == 0) {
+        $newPassword = generatePassword();
       } else {
-        response('oldPasswrodWrong', 'oldPasswrodWrong');
+        response('old_password_wrong', 'old_password_wrong');
         exit();
       }
     }

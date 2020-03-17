@@ -156,7 +156,7 @@
         <div class="row">
           <div class="content fixed">
             <div class="error" v-if="error.type === 'match_error'">Password not match</div>
-            <div class="error" v-else-if="error.type === 'oldPasswrodWrong'">You're password wrong</div>
+            <div class="error" v-else-if="error.type === 'old_password_wrong'">You're password is wrong</div>
           </div>
         </div>
         <div class="btn-frame">
@@ -417,7 +417,7 @@
               console.log(exception);
             },
             success: function(res) {
-              if(res.status === "oldPasswrodWrong") {
+              if(res.status === "old_password_wrong") {
                 self.showLoginError(res.status);
                 // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
