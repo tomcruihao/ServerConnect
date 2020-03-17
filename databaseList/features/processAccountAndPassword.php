@@ -35,10 +35,7 @@
   }
 
   function response($status, $message, $data) {
-    if($status === 'success') {
-      $res = array('status' => $errorType, 'data' => $data);
-    }
-    $res = array('status' => $errorType, 'type' => $message);
+    $res = array('status' => $status, 'type' => $message);
 
     echo json_encode($res, JSON_UNESCAPED_UNICODE);
   }
