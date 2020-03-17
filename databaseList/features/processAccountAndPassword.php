@@ -18,19 +18,34 @@
     $received_user = json_decode($_POST["user"], true);
   }
 
-  print_r($received_user);
-
   // verify the old password
 
+
   // encrypted the password
-  $encryptedPwd = sha1(md5($received_user['account'].$received_user['password']));
+  
 
   // compare the pwd
   foreach($userList as $row) {
     if(strcasecmp($row['account'], $received_user['account']) == 0) {
       if(strcasecmp($row['pwd'], $encryptedPwd) == 0) {
         
+      } else {
+        response('oldPasswrodWrong', 'oldPasswrodWrong');
+        exit();
       }
     }
+  }
+
+  function generatePassword($account, $password) {
+    return sha1(md5($account.$password));
+  }
+
+  function response($status, $message, $data) {
+    if($status === 'success') {
+      $res = array('status' => $errorType, 'data' => $data);
+    }
+    $res = array('status' => $errorType, 'type' => $message);
+
+    echo json_encode($res, JSON_UNESCAPED_UNICODE);
   }
 ?>
