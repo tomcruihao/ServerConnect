@@ -29,11 +29,8 @@
         $userList[$key]["account"] = $received_user['newAccount'];
         $userList[$key]["pwd"] = $newPassword;
 
-
-
         // write back
         file_put_contents($jsonFile_direct, json_encode($userList, JSON_UNESCAPED_UNICODE));
-
         response('success', 'success');
         break;
       } else {

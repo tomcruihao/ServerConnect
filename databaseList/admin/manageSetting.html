@@ -431,6 +431,7 @@
             success: function(res) {
               if(res.status === "old_password_wrong") {
                 self.showLoginError(res.status);
+                setDialogue('account_update_success');
                 // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 // update success and relogin
