@@ -131,26 +131,26 @@
       <div class="dialogue-body">
         <div class="row">
           <div class="title">{{$t('message.dialogue_title_account')}}</div>
-          <div class="content">
-            <input type="text" v-model="userAccount.newAccount">
+          <div class="content no-wrap">
+            <input type="text" v-model="accountDialogue.userAccount.newAccount" v-bind:class="{ disabled: accountDialogue.accountDisabled }" :disabled="accountDialogue.accountDisabled"><button class="btn-change" @click="changeAccountDisabledStatus()">{{$t('message.btn_change')}}</button>
           </div>
         </div>
         <div class="row">
           <div class="title">{{$t('message.dialogue_title_old_password')}}</div>
           <div class="content">
-            <input type="text" v-model="userAccount.oldPassword">
+            <input type="text" v-model="accountDialogue.userAccount.oldPassword">
           </div>
         </div>
         <div class="row">
           <div class="title">{{$t('message.dialogue_title_new_password')}}</div>
           <div class="content">
-            <input type="text" v-model="userAccount.newPassword">
+            <input type="text" v-model="accountDialogue.userAccount.newPassword">
           </div>
         </div>
         <div class="row">
           <div class="title">{{$t('message.dialogue_title_confirm_new_password')}}</div>
           <div class="content">
-            <input type="text" v-model="userAccount.confirmNewPassword">
+            <input type="text" v-model="accountDialogue.userAccount.confirmNewPassword">
           </div>
         </div>
         <div class="row">
@@ -348,12 +348,15 @@
     data: {
       show: false,
       type: '',
-      userAccount: {
-        oldAccount: '',
-        newAccount: '',
-        oldPassword: '',
-        newPassword: '',
-        confirmNewPassword: ''
+      accountDialogue: {
+        userAccount: {
+          oldAccount: '',
+          newAccount: '',
+          oldPassword: '',
+          newPassword: '',
+          confirmNewPassword: ''
+        },
+        accountDisabled: true
       },
       error: {
         type: ''
@@ -373,12 +376,15 @@
       }
     },
     methods:{
+      changeAccountDisabledStatus() {
+        this.accountDialogue.accountDisabled = false;
+      },
       setDialogue: function(status, data = '') {
         this.type = status;
         this.show = true;
         if(status === 'modifyUserInfo') {
-          this.userAccount.oldAccount = data.slice(0);
-          this.userAccount.newAccount = data.slice(0);
+          this.accountDialogue.userAccount.oldAccount = data.slice(0);
+          this.accountDialogue.userAccount.newAccount = data.slice(0);
         }
       },
       showLoginError(type) {
@@ -391,10 +397,34 @@
       updateUserInfo() {
         console.log(this.userAccount);
         
-        let newPwd = this.userAccount.newPassword.slice(0);
-        let newConfirmPwd = this.userAccount.confirmNewPassword.slice(0);
+        let newPwd = this.accountDialogue.userAccount.newPassword.slice(0);
+        let newConfirmPwd = this.accountDialogue.userAccount.confirmNewPassword.slice(0);
+
         if(newPwd.localeCompare(newConfirmPwd) === 0) {
-          console.log('confirmed');
+          let self = this;
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
+            data: {
+              user: JSON.stringify(self.accountDialogue.userAccount)
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              if(res.status === "old_password_wrong") {
+                dialogue.setDialogue('expired', 'expired');
+                // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+              } else {
+                // update success and relogin
+              }
+            }
+          });
         } else {
           this.showLoginError('match_error');
         }

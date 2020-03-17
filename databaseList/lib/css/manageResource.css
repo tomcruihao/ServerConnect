@@ -48,6 +48,10 @@ input[type="text"], input[type="password"], input[type="date"], input[type="numb
           box-sizing: border-box;
 }
 
+input[type="text"].disabled, input[type="password"].disabled, input[type="date"].disabled, input[type="number"].disabled {
+  background-color: #dddddd;
+}
+
 .btn-icon {
   width: 36px;
   height: 36px;

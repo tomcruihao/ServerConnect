@@ -838,7 +838,6 @@
   });
 
   function directTo(id, url) {
-    console.log(`${id}, ${url}`);
     window.open(url, '_blank');
     $.ajax({
       url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLogClick.php',

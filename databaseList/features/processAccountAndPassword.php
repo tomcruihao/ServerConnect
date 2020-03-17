@@ -18,6 +18,8 @@
     $received_user = json_decode($_POST["user"], true);
   }
 
+  print_r($received_user);
+
   // verify the old password
 
   // encrypted the password

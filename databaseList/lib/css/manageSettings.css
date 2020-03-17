@@ -48,6 +48,10 @@ input[type="text"], input[type="password"], input[type="date"], input[type="numb
           box-sizing: border-box;
 }
 
+input[type="text"].disabled, input[type="password"].disabled, input[type="date"].disabled, input[type="number"].disabled {
+  background-color: #dddddd;
+}
+
 .btn-icon {
   width: 36px;
   height: 36px;
@@ -573,6 +577,24 @@ h4 {
       -ms-flex: 1;
           flex: 1;
   word-break: break-all;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .row .content.no-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .row .content .btn-change {
+  width: 80px;
+  height: 34px;
+  margin-left: 10px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #2B78FE;
 }
 
 .mask-dia .dialogue-message-frame .dialogue-body .row .error {

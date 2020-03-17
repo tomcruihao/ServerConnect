@@ -40,6 +40,10 @@ input[type="text"], input[type="password"], input[type="date"], input[type="numb
   border-radius: 5px;
   border: 2px solid #cccccc;
   box-sizing: border-box;
+
+  &.disabled {
+    background-color: #dddddd;
+  }
 }
 
 .btn-icon {

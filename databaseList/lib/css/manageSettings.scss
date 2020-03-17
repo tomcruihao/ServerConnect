@@ -264,6 +264,20 @@ h4 {
         .content {
           flex: 1;
           word-break: break-all;
+
+          &.no-wrap {
+            display: flex;
+            align-items: center;
+          }
+
+          .btn-change {
+            width: 80px;
+            height: 34px;
+            margin-left: 10px;
+            font-size: 1rem;
+            color: #ffffff;
+            background-color: $button_login_bgcolor;
+          }
         }
 
         .error {
