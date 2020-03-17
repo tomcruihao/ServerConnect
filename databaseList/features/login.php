@@ -55,7 +55,7 @@
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
   } else {
     $response = array('status' => 'error', 'type' => 'account');
-    // echo json_encode($response, JSON_UNESCAPED_UNICODE);
+    echo json_encode($response, JSON_UNESCAPED_UNICODE);
   }
 
   // foreach (getallheaders() as $name => $value) {
