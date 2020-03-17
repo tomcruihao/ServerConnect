@@ -417,8 +417,8 @@
               console.log(exception);
             },
             success: function(res) {
-              if(res.status === "old_password_wrong") {
-                dialogue.setDialogue('expired', 'expired');
+              if(res.status === "oldPasswrodWrong") {
+                self.showLoginError(res.status);
                 // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 // update success and relogin
