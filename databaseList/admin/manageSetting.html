@@ -123,6 +123,20 @@
         </div>
       </div>
     </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'account_update_success'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
+      </div>
+      <div class="dialogue-body">
+        <div class="row">
+          <div class="content">{{$t('message.dialogue_content_account_updateSuccess')}}</div>
+        </div>
+        <div class="btn-frame">
+          <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
     <div class="dialogue-message-frame" v-else-if="type === 'modifyUserInfo'">
       <div class="dialogue-head">
         <h4>{{$t('message.dialogue_title_actpwd')}}</h4>
@@ -395,8 +409,6 @@
         }, 3000);
       },
       updateUserInfo() {
-        console.log(this.userAccount);
-        
         let newPwd = this.accountDialogue.userAccount.newPassword.slice(0);
         let newConfirmPwd = this.accountDialogue.userAccount.confirmNewPassword.slice(0);
 
