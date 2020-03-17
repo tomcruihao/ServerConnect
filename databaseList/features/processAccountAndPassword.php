@@ -21,17 +21,18 @@
   $oldPassword = generatePassword($received_user['oldAccount'], $received_user['oldPassword']);
 
   // verify the old password. If not matched, exit
-  foreach($userList as $row) {
+  foreach($userList as $key => $row) {
     if(strcasecmp($row['account'], $received_user['oldAccount']) == 0) {
       if(strcasecmp($row['pwd'], $oldPassword) == 0) {
         $newPassword = generatePassword($received_user['newAccount'], $received_user['newPassword']);
 
-        $userList["account"] = $received_user['newAccount'];
-        $userList["pwd"] = $newPassword;
+        $userList[$key]["account"] = $received_user['newAccount'];
+        $userList[$key]["pwd"] = $newPassword;
+
+
 
         // write back
         file_put_contents($jsonFile_direct, json_encode($userList, JSON_UNESCAPED_UNICODE));
-        response('success', 'success');
 
         response('success', 'success');
         break;
