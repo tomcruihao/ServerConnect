@@ -18,15 +18,9 @@
     $received_user = json_decode($_POST["user"], true);
   }
 
-  // verify the old password
-
-
-  // encrypted the password
-  
-
-  // compare the pwd
+  // verify the old password. If not matched, exit
   foreach($userList as $row) {
-    if(strcasecmp($row['account'], $received_user['account']) == 0) {
+    if(strcasecmp($row['account'], $received_user['oldAccount']) == 0) {
       if(strcasecmp($row['pwd'], $encryptedPwd) == 0) {
         
       } else {
