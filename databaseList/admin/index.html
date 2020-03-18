@@ -97,7 +97,10 @@
       },
       methods:{
         logIn() {
-          if(this.verifyCodeInput.localeCompare(this.codeText)) {
+          console.log(this.verifyCodeInput);
+          console.log(this.codeText);
+          console.log(this.verifyCodeInput.toUpperCase() === this.codeText.toUpperCase());
+          if(this.verifyCodeInput.toUpperCase() === this.codeText.toUpperCase()) {
             let self = this;
 
             $.ajax({
@@ -132,15 +135,16 @@
               }
             });            
           } else {
-
+            this.showLoginError('verifyError');
           }
         },
         showLoginError(type) {
           let self = this;
-          this.errorCode.show = true
-          this.errorCode.type = type
+          this.errorCode.show = true;
+          this.errorCode.type = type;
           setTimeout(function(){
             self.errorCode.show = false;
+            self.errorCode.type = '';
           }, 3000);
         }
       }
