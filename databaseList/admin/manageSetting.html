@@ -54,6 +54,20 @@
             <input type="text" v-model="settings.proxy">
           </div>
         </div>
+        <div class="row">
+          <div class="title">Localization</div>
+          <div class="content">
+            <div class="switch-wrap">
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="onoffswitch" v-model="settings.localization">
+                <label class="onoffswitch-label" for="onoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="button-wrap">
         <button @click="updateSettings()">

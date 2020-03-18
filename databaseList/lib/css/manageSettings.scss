@@ -2,6 +2,7 @@
 @import "variables";
 @import "header";
 @import "languageTitle";
+@import "toggle";
 
 
 $resource_field_bgcolor: #ccdffc;
@@ -32,66 +33,6 @@ h4 {
   }
 
   .setting-wrap {
-
-    .subject-frame {
-      background-color: $subject_block_bgcolor;
-      padding: 30px 15px 15px;
-      margin-top: 20px;
-      border-radius: 10px;
-      position: relative;
-
-      .delete-subject-block {
-        width: 24px;
-        height: 24px;
-        padding: 2px;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: $subject_btn_delete_subjectBlock_bgcolor;
-        
-        img {
-          width: 20px;
-          height: 20px;
-        }
-      }
-
-      &:first-of-type {
-        margin-top: 0;
-      }
-
-      .subject-header {
-        display: flex;
-
-        .title {
-          width: 150px;
-        }
-      }
-
-      ul {
-        li {
-          padding: 5px 40px 5px 5px;
-          display: flex;
-          align-items: center;
-          position: relative;
-
-          .btn-icon {
-            position: absolute;
-            top: 5px;
-            right: 0px;
-          }
-
-          .title {
-            width: 150px;
-          }
-          .subject-class {
-            width: 120px;
-            height: 34px;
-            background-color: #ffffff;
-          }
-        }
-      }
-    }
-
     .row {
       display: flex;
       flex-wrap: wrap;

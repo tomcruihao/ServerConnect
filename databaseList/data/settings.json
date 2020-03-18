@@ -1,3 +1,4 @@
 {
-  "proxy": "https://www.google.com"
+  "proxy": "https://www.google.com",
+  "localization": "true"
 }
