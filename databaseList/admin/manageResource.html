@@ -32,6 +32,11 @@
             </ul>
           </div>
         </li>
+        <li>
+          <div>
+            <a class="nav-tag" @click="logout">{{$t('message.header_logout')}}</a>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
@@ -304,7 +309,19 @@
     </div>
   </div>
   <div class="mask" id="dialogue" v-if="show" :class="{ show: show }">
-    <div class="dialogue-message-frame" v-if="type === 'expired'">
+    <div class="dialogue-message-frame" v-if="type === 'logout'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_logout')}}
+        <div class="btn-frame">
+          <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'expired'">
       <div class="dialogue-head">
         <h4>{{$t('message.dialogue_title_info')}}</h4>
         <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
@@ -440,6 +457,10 @@
               this.links = JSON.parse(JSON.stringify(this.template.local));
               break;
           }
+        },
+        logout() {
+          localStorage.removeItem('user');
+          dialogue.setDialogue('logout', 'logout');
         }
       }
     })

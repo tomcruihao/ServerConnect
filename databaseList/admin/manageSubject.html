@@ -119,7 +119,7 @@
         </div>
       </div>
     </div>
-    <div class="dialogue-message-frame" v-if="type === 'expired'">
+    <div class="dialogue-message-frame" v-else-if="type === 'expired'">
       <div class="dialogue-head">
         <h4>{{$t('message.dialogue_title_info')}}</h4>
         <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
