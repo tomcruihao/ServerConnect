@@ -48,7 +48,6 @@
     $tokenInfo = [];
     $tokenInfo['user'] = $received_user['account'];
     $tokenInfo['expiredTime'] = $expiredTime;
-    $tokenInfo['token'] = '123456';
 
     $response = array('status' => 'success', 'type' => 'account', 'message' => $tokenInfo);
 

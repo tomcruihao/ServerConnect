@@ -33,9 +33,17 @@
           <input type="password" v-model="user.password">
         </div>
       </div>
-      <div class="row fixed">
-        <div class="content" v-if="error">
-          <span class="error">{{$t('message.adminIndex_account_pwd_rror')}}</span>
+      <div class="row verify-code">
+        <div class="content">
+          <div class="error">
+            <span v-if="errorCode.type === 'passwordError'">{{$t('message.adminIndex_account_pwd_rror')}}</span>
+            <span v-else-if="errorCode.type === 'verifyError'">{{$t('message.adminIndex_account_pwd_rror')}}</span>
+          </div>
+          <div class="codeBackground">
+            <div>{{$t('message.adminIndex_verifyCode')}}</div>
+            <input type="password" v-model="verifyCodeInput">
+            <img class="codeImage" :src="imageData">
+          </div>
         </div>
       </div>
       <div class="btn-wrap">
@@ -47,6 +55,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
   <script src="../lang/lang.js"></script>
   <script src="../lib/js/jquery.js"></script>
+  <script src="../lib/js/verifyCode/canvas-verification-code.js"></script>
   <script type="text/javascript">
     var mainTitle = new Vue({
       el:'#mainTitle',
@@ -72,51 +81,66 @@
           account: '',
           password: ''
         },
-        error: false
+        errorCode: {
+          show: false,
+          type: ''
+        },
+        verifyCodeInput: '',
+        imageData: '',
+        codeText : ''
       },
-      computed: {
+      mounted() {
+        const { code, data } = generateCode(120, 40);
+
+        this.imageData = data;
+        this.codeText  = code;
       },
       methods:{
         logIn() {
-          let self = this;
+          if(this.verifyCodeInput.localeCompare(this.codeText)) {
+            let self = this;
 
-          $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/login.php',
-            xhrFields: {
-              withCredentials: true
-            },
-            type: 'POST',
-            // headers: {
-            //   'ver': '1.0',
-            //   'fileType': 'mp4',
-            //   'md5': '47e954ec481d097e96261d993ec43ba5'
-            // },
-            data: {
-              user: JSON.stringify(self.user)
-            },
-            error: function(jqXHR, exception) {
-              //use url variable here
-              console.log(jqXHR);
-              console.log(exception);
-            },
-            success: function(res) {
-              if(res.status === 'error') {
-                self.showLoginError();
-              } else if(res.status === 'success') {
-                // write the data in localstorage
-                localStorage.setItem('user', JSON.stringify(res.message));
+            $.ajax({
+              url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/login.php',
+              xhrFields: {
+                withCredentials: true
+              },
+              type: 'POST',
+              // headers: {
+              //   'ver': '1.0',
+              //   'fileType': 'mp4',
+              //   'md5': '47e954ec481d097e96261d993ec43ba5'
+              // },
+              data: {
+                user: JSON.stringify(self.user)
+              },
+              error: function(jqXHR, exception) {
+                //use url variable here
+                console.log(jqXHR);
+                console.log(exception);
+              },
+              success: function(res) {
+                if(res.status === 'error') {
+                  self.showLoginError('passwordError');
+                } else if(res.status === 'success') {
+                  // write the data in localstorage
+                  localStorage.setItem('user', JSON.stringify(res.message));
 
-                // direct to main page
-                window.location.replace("manageResource.html");
+                  // direct to main page
+                  window.location.replace("manageResource.html");
+                }
               }
-            }
-          });
+            });            
+          } else {
+
+          }
         },
-        showLoginError() {
+        showLoginError(type) {
           let self = this;
-          this.error = true
+          this.errorCode.show = true
+          this.errorCode.type = type
           setTimeout(function(){
-            self.error = false;
+            self.errorCode.show = false;
           }, 3000);
         }
       }

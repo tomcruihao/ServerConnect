@@ -31,6 +31,11 @@
             </ul>
           </div>
         </li>
+        <li>
+          <div>
+            <a class="nav-tag" @click="logout">{{$t('message.header_logout')}}</a>
+          </div>
+        </li>
       </ul>
     </nav>
   </header>
@@ -147,7 +152,7 @@
   </div>
 </body>
 </html>
-<script src="../lib/js/verifyAuth.js"></script>
+<!-- <script src="../lib/js/verifyAuth.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
 <script src="../lang/lang.js"></script>
@@ -251,6 +256,9 @@
             this.links = JSON.parse(JSON.stringify(this.template.local));
             break;
         }
+      },
+      logout() {
+        console.log('log out');
       }
     }
   })

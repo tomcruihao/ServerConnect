@@ -6,7 +6,7 @@
   header('Content-Type: application/json;charset=UTF-8');
   date_default_timezone_set('Asia/Taipei');
 
-  // include 'verifyToken.php';
+  include 'verifyToken.php';
 
   $jsonFile_direct = '../data/u5er.json';
 

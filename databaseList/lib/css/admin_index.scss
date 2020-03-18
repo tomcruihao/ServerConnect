@@ -43,8 +43,26 @@
       display: flex;
       align-items: center;
 
-      &.fixed {
-        height: 16px;
+      &.verify-code {
+        .content {
+          display: flex;
+          justify-content: space-between;
+          .error {
+            width: 150px;
+            height: 100%;
+          }
+          .codeBackground {
+            display: flex;
+            align-items: center;
+            input {
+              width: 120px;
+              margin-left: 5px;
+            }
+            img {
+              margin-left: 5px;
+            }
+          }
+        }
       }
       .title {
         width: 100px;

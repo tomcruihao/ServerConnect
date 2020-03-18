@@ -2,6 +2,7 @@ const messages = {
   en: {
     message: {
       chooseLanguage:'Language',
+      header_logout: 'Logout',
       // index page
       h1_resource_list: 'e-Resource List',
       index_total: 'Total',
@@ -12,6 +13,7 @@ const messages = {
       index_bulletin: 'Bulletin',
       index_more: 'More',
       index_placeholder_text: 'Search Resource',
+      adminIndex_verifyCode: 'Verify Code',
       // All Latest News page
       h1_all_latestNews: 'Latest News',
       // admin index page
@@ -103,6 +105,7 @@ const messages = {
   local: {
     message: {
       chooseLanguage:'選擇語言',
+      header_logout: '登出',
       // index page
       h1_resource_list: '電子資源',
       index_total: '全部',
@@ -119,6 +122,7 @@ const messages = {
       adminIndex_account: '帳號',
       adminIndex_password: '密碼',
       adminIndex_account_pwd_rror: '帳號密碼錯誤',
+      adminIndex_verifyCode: '驗證碼',
       // Resource Management page
       h1_resource_management: '資源管理',
       resource_resourceName: '資源名稱',

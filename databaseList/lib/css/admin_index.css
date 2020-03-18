@@ -335,8 +335,36 @@ header nav .nav-list li.multi:before {
           align-items: center;
 }
 
-.app-content .login-frame .row.fixed {
-  height: 16px;
+.app-content .login-frame .row.verify-code .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.app-content .login-frame .row.verify-code .content .error {
+  width: 150px;
+  height: 100%;
+}
+
+.app-content .login-frame .row.verify-code .content .codeBackground {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-content .login-frame .row.verify-code .content .codeBackground input {
+  width: 120px;
+  margin-left: 5px;
+}
+
+.app-content .login-frame .row.verify-code .content .codeBackground img {
+  margin-left: 5px;
 }
 
 .app-content .login-frame .row .title {
