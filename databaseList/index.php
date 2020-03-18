@@ -95,7 +95,7 @@
     </nav>
   </header>
   <section>
-    <div id="mainTitle" class="mainTitle">
+    <div id="mainTitle" class="mainTitle" v-if="show">
       <h1 v-text="$t('message.h1_resource_list')"></h1>
       <div class="lang-wrap">
         <div>{{$t('message.chooseLanguage')}}:</div>
@@ -387,7 +387,24 @@
     el:'#mainTitle',
     i18n,
     data: {
-      selector_lang: ''
+      selector_lang: '',
+      show: true
+    },
+    created: function() {
+      let self = this;
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSetting.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          self.show = res.localization;
+          // self.settings = res;          
+        }
+      });
     },
     mounted: function() {
       this.selector_lang = i18n.locale;
