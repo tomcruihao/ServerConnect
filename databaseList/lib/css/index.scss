@@ -221,6 +221,12 @@ section {
             }
           }
         }
+        .more-detail {
+          text-align: end;
+          div {
+            color: $anchor_color;
+          }
+        }
       }
     }
 

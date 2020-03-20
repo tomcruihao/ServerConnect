@@ -532,6 +532,14 @@ section {
   background-color: #ffffff;
 }
 
+.content-field article .list li .more-detail {
+  text-align: end;
+}
+
+.content-field article .list li .more-detail div {
+  color: #3333ff;
+}
+
 .content-field article .databaseList-wrap {
   max-width: 100%;
   overflow-x: scroll;

@@ -802,6 +802,7 @@
                               </div>`;
       let moreLabel = document.createElement('label');
       moreLabel.setAttribute("for", 'checkbox_' + index);
+      moreLabel.className = 'more-detail';
       moreLabel.innerHTML = `<div>${listTitles[ary_lang].moreDetail}</div>`;
 
       li_dom.appendChild(newLabel);
