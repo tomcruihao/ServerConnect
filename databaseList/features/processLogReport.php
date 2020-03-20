@@ -15,7 +15,7 @@ error_reporting(E_ALL);
 
   $getResourceData = file_get_contents('../data/eResourceList.json');
   $resourceData = json_decode($getResourceData, true);
-  
+
   $getLogJsonData = file_get_contents('../data/logUserCountClick.json');
   $logData = json_decode($getLogJsonData, true);
 
