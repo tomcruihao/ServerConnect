@@ -682,7 +682,8 @@
     "publisher": "Publisher",
     "language": "Language",
     "resourceDescribe": "Resource Description",
-    "relevanceUrlDescribe": "Revelance Link"
+    "relevanceUrlDescribe": "Revelance Link",
+    "moreDetail": "more..."
   }
   listTitles['local'] = {
     "resourceName": "資源名稱",
@@ -700,7 +701,8 @@
     "publisher": "出版商",
     "language": "語言",
     "resourceDescribe": "資源簡述",
-    "relevanceUrlDescribe": "相關連結"
+    "relevanceUrlDescribe": "相關連結",
+    "moreDetail": "更多..."
   }
 
   function genDatalistStructure(local = false) {
@@ -798,10 +800,14 @@
                                 <div class="title">英文</div class="title">\
                                 <div class="englishAlphabet">${res.englishAlphabet}</div>\
                               </div>`;
+      let moreLabel = document.createElement('label');
+      moreLabel.setAttribute("for", 'checkbox_' + index);
+      moreLabel.innerHTML = `<div>${listTitles[ary_lang].moreDetail}</div>`;
 
       li_dom.appendChild(newLabel);
       li_dom.appendChild(newCheckBox);
       li_dom.appendChild(box_div_dom);
+      li_dom.appendChild(moreLabel);
       ul_Dom.appendChild(li_dom);
     });
     if(local){
