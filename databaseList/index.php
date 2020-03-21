@@ -83,7 +83,8 @@
             <a :href="link.link" class="nav-tag" v-else-if="lang === 'local'">{{link.title.en}}</a>
           </div>
           <div v-else>
-            <label class="nav-tag" :for="'tag'+index">{{link.title}}</label>
+            <label class="nav-tag" :for="'tag'+index" v-if="lang === 'en'">{{link.title.en}}</label>
+            <label class="nav-tag" :for="'tag'+index" v-else-if="lang === 'local'">{{link.title.local}}</label>
             <input type="checkbox" :id="'tag'+index">
             <ul>
               <li v-for="(childLink, c_index) in link.child">
