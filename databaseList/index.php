@@ -295,7 +295,6 @@
     el:'#header',
     i18n,
     data: {
-      template: '',
       links: ''
     },
     created: function() {
@@ -309,17 +308,17 @@
           console.log(exception);
         },
         success: function(res) {
-          self.show = res.localization;
+          self.links = res.localization;
           // self.settings = res;          
         }
       });
     },
     mounted: function() {
-      if(i18n.locale === 'en') {
-        this.links = JSON.parse(JSON.stringify(this.template.en));
-      } else if(i18n.locale === 'local') {
-        this.links = JSON.parse(JSON.stringify(this.template.local));
-      }
+      // if(i18n.locale === 'en') {
+      //   this.links = JSON.parse(JSON.stringify(this.template.en));
+      // } else if(i18n.locale === 'local') {
+      //   this.links = JSON.parse(JSON.stringify(this.template.local));
+      // }
     },
     methods: {
       setLocale: function(language) {
