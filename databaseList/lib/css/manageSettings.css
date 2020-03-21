@@ -389,6 +389,7 @@ h4 {
 }
 
 .app-content .setting-wrap .row {
+  padding: 5px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

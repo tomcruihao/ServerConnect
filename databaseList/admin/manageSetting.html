@@ -59,6 +59,12 @@
             <input type="text" v-model="settings.proxy">
           </div>
         </div>
+        <div class="row">
+          <div class="title">{{$t('message.setting_ga')}}</div>
+          <div class="content">
+            <input type="text" v-model="settings.GA_ID">
+          </div>
+        </div>
         <div class="row">
           <div class="title">Localization</div>
           <div class="content">
@@ -71,12 +77,6 @@
                 </label>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="title">{{$t('message.setting_ga')}}</div>
-          <div class="content">
-            <input type="text" v-model="settings.GA_ID">
           </div>
         </div>
       </div>
