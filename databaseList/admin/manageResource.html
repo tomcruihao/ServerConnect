@@ -10,31 +10,29 @@
 <body>
   <header id="header">
     <div class="logo">
-      <img src="../img/logo.png" alt="EBSCO" title="EBSCO"/>
+      <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
     </div>
     <nav>
       <label for="mobile_btn" class="mobile-btn-frame">
-        <img src="../img/icon/dehaze.svg"/>
+        <img src="img/icon/dehaze.svg"/>
       </label>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
         <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
           <div v-if="link.child.length === 0">
-            <a :href="link.link" class="nav-tag">{{link.title}}</a>
+            <a :href="link.link" class="nav-tag" v-if="lang === 'en'">{{link.title.en}}</a>
+            <a :href="link.link" class="nav-tag" v-else-if="lang === 'local'">{{link.title.local}}</a>
           </div>
           <div v-else>
-            <label class="nav-tag" :for="'tag'+index">{{link.title}}</label>
+            <label class="nav-tag" :for="'tag'+index" v-if="lang === 'en'">{{link.title.en}}</label>
+            <label class="nav-tag" :for="'tag'+index" v-else-if="lang === 'local'">{{link.title.local}}</label>
             <input type="checkbox" :id="'tag'+index">
             <ul>
               <li v-for="(childLink, c_index) in link.child">
-                <a :href="childLink.link">{{childLink.title}}</a>
+                <a :href="childLink.link" v-if="lang === 'en'">{{childLink.title.en}}</a>
+                <a :href="childLink.link" v-if="lang === 'local'">{{childLink.title.local}}</a>
               </li>
             </ul>
-          </div>
-        </li>
-        <li>
-          <div>
-            <a class="nav-tag" @click="logout">{{$t('message.header_logout')}}</a>
           </div>
         </li>
       </ul>
