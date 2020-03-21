@@ -242,6 +242,8 @@
 <script src="lang/lang.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="lib/js/header_back.js"></script>
+
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;
 
@@ -293,39 +295,6 @@
     //   sortFunction: undefined
     // })
   }
-
-  var header = new Vue({
-    el:'#header',
-    i18n,
-    data: {
-      links: '',
-      lang: ''
-    },
-    created: function() {
-      let self = this;
-      $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getHeader_front.php',
-        type: 'GET',
-        error: function(jqXHR, exception) {
-          //use url variable here
-          console.log(jqXHR);
-          console.log(exception);
-        },
-        success: function(res) {
-          self.links = res;
-          // self.settings = res;          
-        }
-      });
-    },
-    mounted: function() {
-      this.lang = i18n.locale;
-    },
-    methods: {
-      setLocale: function(language) {
-        this.lang = language;
-      }
-    }
-  })
 
   var mainTitle = new Vue({
     el:'#mainTitle',
