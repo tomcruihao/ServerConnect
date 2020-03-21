@@ -79,7 +79,8 @@
       <ul class="nav-list">
         <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
           <div v-if="link.child.length === 0">
-            <a :href="link.link" class="nav-tag">{{link.title}}</a>
+            <a :href="link.link" class="nav-tag" v-if="lang === 'en">{{link.title.en}}</a>
+            <a :href="link.link" class="nav-tag" v-else-if="lang === 'local">{{link.title.en}}</a>
           </div>
           <div v-else>
             <label class="nav-tag" :for="'tag'+index">{{link.title}}</label>
@@ -295,7 +296,8 @@
     el:'#header',
     i18n,
     data: {
-      links: ''
+      links: '',
+      lang: ''
     },
     created: function() {
       let self = this;
@@ -314,6 +316,7 @@
       });
     },
     mounted: function() {
+      this.lang = i18n.locale;
       // if(i18n.locale === 'en') {
       //   this.links = JSON.parse(JSON.stringify(this.template.en));
       // } else if(i18n.locale === 'local') {
