@@ -158,6 +158,10 @@
           </div>
           <div class="common-field">
             <div class="row">
+              <div class="title">{{$t('message.resource_resourceUrl')}}</div>
+              <div class="content">{{database.relevanceUrl}}</div>
+            </div>
+            <div class="row">
               <div class="title">{{$t('message.resource_startDate')}}</div>
               <div class="content">{{database.startDate}}</div>
             </div>
@@ -172,10 +176,6 @@
             <div class="row">
               <div class="title">{{$t('message.resource_resourceUrl')}}</div>
               <div class="content">{{database.resourceUrl}}</div>
-            </div>
-            <div class="row">
-              <div class="title">{{$t('message.resource_resourceUrl')}}</div>
-              <div class="content">{{database.relevanceUrl}}</div>
             </div>
           </div>
         </div>
@@ -276,6 +276,10 @@
         </div>
         <div class="common-field">
           <div class="row">
+            <div class="title">{{$t('message.resource_relevanceUrl')}}</div>
+            <input type="text" v-model="resource.relevanceUrl">
+          </div>
+          <div class="row">
             <div class="title">{{$t('message.resource_startDate')}}</div>
             <input type="date" v-model="resource.startDate">
           </div>
@@ -295,10 +299,6 @@
           <div class="row">
             <div class="title">{{$t('message.resource_resourceUrl')}}</div>
             <input type="text" v-model="resource.resourceUrl">
-          </div>
-          <div class="row">
-            <div class="title">{{$t('message.resource_relevanceUrl')}}</div>
-            <input type="text" v-model="resource.relevanceUrl">
           </div>
         </div>
       </div>

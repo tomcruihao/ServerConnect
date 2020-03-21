@@ -295,69 +295,24 @@
     el:'#header',
     i18n,
     data: {
-      template: {
-        'en': [
-          {
-            title: 'Link 1',
-            link: 'http://www.google.com',
-            focus: false,
-            child: []
-          },
-          {
-            title: 'Link 2',
-            link: 'http://www.google.com',
-            focus: false,
-            child: [
-              {
-                title: 'Link 2-1',
-                link: 'http://www.google.com',
-                focus: false
-              },
-              {
-                title: 'Link 2-2',
-                link: 'http://www.google.com',
-                focus: false
-              },
-              {
-                title: 'Link 2-3',
-                link: 'http://www.google.com',
-                focus: false
-              }
-            ]
-          }
-        ],
-        'local': [
-          {
-            title: '連結 1',
-            link: 'http://www.google.com',
-            focus: false,
-            child: []
-          },
-          {
-            title: '連結 2',
-            link: 'http://www.google.com',
-            focus: false,
-            child: [
-              {
-                title: '連結 2-1',
-                link: 'http://www.google.com',
-                focus: false
-              },
-              {
-                title: '連結 2-2',
-                link: 'http://www.google.com',
-                focus: false
-              },
-              {
-                title: '連結 2-3',
-                link: 'http://www.google.com',
-                focus: false
-              }
-            ]
-          }
-        ]
-      },
+      template: '',
       links: ''
+    },
+    created: function() {
+      let self = this;
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getFrontHeader.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          self.show = res.localization;
+          // self.settings = res;          
+        }
+      });
     },
     mounted: function() {
       if(i18n.locale === 'en') {
@@ -374,7 +329,7 @@
             break;
           case 'local':
             this.links = JSON.parse(JSON.stringify(this.template.local));
-            break;            
+            break;
           default:
             this.links = JSON.parse(JSON.stringify(this.template.local));
             break;
