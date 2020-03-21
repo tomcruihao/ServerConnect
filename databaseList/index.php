@@ -12,6 +12,7 @@
   $settingData = json_decode($getSettingJsonData, true);
 
   $proxy = $settingData['proxy'];
+  $GA_ID = $settingData['GA_ID'];
 
   $result = [];
   $result_en = [];
@@ -243,6 +244,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script src="lib/js/header_front.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $GA_ID; ?>"></script>
+<script>
+  const GA_code = <?php echo $GA_ID; ?>;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', `${GA_code}`);
+</script>
 
 <script type="text/javascript">
   var dataList = <?php echo $getJsonData; ?>;

@@ -1,4 +1,5 @@
 {
   "proxy": "https://www.google.com",
-  "localization": "true"
+  "localization": "true",
+  "GA_ID": "UA-51603949-3" 
 }
