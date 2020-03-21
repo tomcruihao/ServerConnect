@@ -304,7 +304,7 @@
     created: function() {
       let self = this;
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getFrontHeader.php',
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getHeader_front.php',
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here
