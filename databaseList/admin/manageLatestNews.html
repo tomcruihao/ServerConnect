@@ -233,6 +233,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
   <script src="../lang/lang.js"></script>
   <script src="../lib/js/jquery.js"></script>
+  <script src="../lib/js/header_back.js"></script>
   <script type="text/javascript">
     function addNews() {
       fillForm.setDisplayForm('addNews');
@@ -259,31 +260,6 @@
 
       return processData;
     }
-
-    var header = new Vue({
-      el:'#header',
-      i18n,
-      data: {
-        links: '',
-        lang: ''
-      },
-      mounted: function() {
-        if(i18n.locale === 'en') {
-          this.links = JSON.parse(JSON.stringify(this.template.en));
-        } else if(i18n.locale === 'local') {
-          this.links = JSON.parse(JSON.stringify(this.template.local));
-        }
-      },
-      methods: {
-        setLocale: function(language) {
-          this.links = language;
-        },
-        logout() {
-          localStorage.removeItem('user');
-          dialogue.setDialogue('logout', 'logout');
-        }
-      }
-    })
 
     var mainTitle = new Vue({
       el:'#mainTitle',
