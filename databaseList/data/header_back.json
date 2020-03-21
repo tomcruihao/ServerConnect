@@ -1,0 +1,57 @@
+[
+  {
+    "title": {
+      "en": "Usage Report",
+      "local": "使用率報告"
+    },
+    "link": "usageReport.html",
+    "focus": false,
+    "child": []
+  },
+  {
+    "title": {
+      "en": "System",
+      "local": "系統"
+    },
+    "link": " ",
+    "focus": false,
+    "child": [
+      {
+        "title": {
+          "en": "Resource",
+          "local": "資源管理"
+        },
+        "link": "manageResource.html",
+        "focus": false,
+        "child": []
+      },
+      {
+        "title": {
+          "en": "Subject",
+          "local": "主題"
+        },
+        "link": "manageSubject.html",
+        "focus": false,
+        "child": []
+      },
+      {
+        "title": {
+          "en": "Latest News",
+          "local": "最新消息"
+        },
+        "link": "manageLatestNews.html",
+        "focus": false,
+        "child": []
+      },
+      {
+        "title": {
+          "en": "Setting",
+          "local": "一般設定"
+        },
+        "link": "manageSetting.html",
+        "focus": false,
+        "child": []
+      }
+    ]
+  }
+]

@@ -305,17 +305,7 @@
     },
     methods: {
       setLocale: function(language) {
-        switch (language) {
-          case 'en':
-            this.links = JSON.parse(JSON.stringify(this.template.en));
-            break;
-          case 'local':
-            this.links = JSON.parse(JSON.stringify(this.template.local));
-            break;            
-          default:
-            this.links = JSON.parse(JSON.stringify(this.template.local));
-            break;
-        }
+        this.links = language;
       },
       logout() {
         localStorage.removeItem('user');

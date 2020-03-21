@@ -319,25 +319,10 @@
     },
     mounted: function() {
       this.lang = i18n.locale;
-      // if(i18n.locale === 'en') {
-      //   this.links = JSON.parse(JSON.stringify(this.template.en));
-      // } else if(i18n.locale === 'local') {
-      //   this.links = JSON.parse(JSON.stringify(this.template.local));
-      // }
     },
     methods: {
       setLocale: function(language) {
-        switch (language) {
-          case 'en':
-            this.links = JSON.parse(JSON.stringify(this.template.en));
-            break;
-          case 'local':
-            this.links = JSON.parse(JSON.stringify(this.template.local));
-            break;
-          default:
-            this.links = JSON.parse(JSON.stringify(this.template.local));
-            break;
-        }
+        this.lang = language;
       }
     }
   })

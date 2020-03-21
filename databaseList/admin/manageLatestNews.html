@@ -264,79 +264,8 @@
       el:'#header',
       i18n,
       data: {
-        template: {
-          'en': [
-          {
-              title: 'Usage Report',
-              link: 'usageReport.html',
-              focus: false,
-              child: []
-            },
-            {
-              title: 'System',
-              link: 'http://www.google.com',
-              focus: false,
-              child: [
-                {
-                  title: 'Resource',
-                  link: 'manageResource.html',
-                  focus: false
-                },
-                {
-                  title: 'Subject',
-                  link: 'manageSubject.html',
-                  focus: false
-                },
-                {
-                  title: 'Latest News',
-                  link: 'manageLatestNews.html',
-                  focus: false
-                },
-                {
-                  title: 'Setting',
-                  link: 'manageSetting.html',
-                  focus: false
-                }
-              ]
-            }
-          ],
-          'local': [
-            {
-              title: '使用率報告',
-              link: 'usageReport.html',
-              focus: false,
-              child: []
-            },
-            {
-              title: '系統',
-              link: '#',
-              focus: false,
-              child: [
-                {
-                  title: '資源管理',
-                  link: 'manageResource.html',
-                  focus: false
-                },
-                {
-                  title: '主題',
-                  link: 'manageSubject.html',
-                  focus: false
-                },
-                {
-                  title: '最新消息',
-                  link: 'manageLatestNews.html',
-                  focus: false
-                },
-                {
-                  title: '一般設定',
-                  link: 'manageSetting.html',
-                  focus: false
-                }
-              ]
-            }
-          ]
-        },
-        links: ''
+        links: '',
+        lang: ''
       },
       mounted: function() {
         if(i18n.locale === 'en') {
@@ -347,17 +276,7 @@
       },
       methods: {
         setLocale: function(language) {
-          switch (language) {
-            case 'en':
-              this.links = JSON.parse(JSON.stringify(this.template.en));
-              break;
-            case 'local':
-              this.links = JSON.parse(JSON.stringify(this.template.local));
-              break;            
-            default:
-              this.links = JSON.parse(JSON.stringify(this.template.local));
-              break;
-          }
+          this.links = language;
         },
         logout() {
           localStorage.removeItem('user');
