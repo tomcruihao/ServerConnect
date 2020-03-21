@@ -248,12 +248,11 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $GA_ID; ?>"></script>
 <script>
-  const GA_code = <?php echo $GA_ID; ?>;
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', `${GA_code}`);
+  gtag('config', '<?php echo $GA_ID; ?>');
 </script>
 
 <script type="text/javascript">
