@@ -77,6 +77,7 @@
       </label>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
+        {{links}}
         <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
           <div v-if="link.child.length === 0">
             <a :href="link.link" class="nav-tag">{{link.title}}</a>
@@ -308,7 +309,7 @@
           console.log(exception);
         },
         success: function(res) {
-          self.links = res.localization;
+          self.links = res;
           // self.settings = res;          
         }
       });
