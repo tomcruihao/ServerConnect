@@ -279,6 +279,15 @@ header nav .nav-list li.multi:before {
   margin-left: 10px;
 }
 
+.switch-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .switch-wrap .onoffswitch {
   position: relative;
   width: 60px;
