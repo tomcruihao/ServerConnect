@@ -22,11 +22,13 @@
             <a :href="link.link" class="nav-tag">{{link.title}}</a>
           </div>
           <div v-else>
-            <label class="nav-tag" :for="'tag'+index">{{link.title}}</label>
+            <label class="nav-tag" :for="'tag'+index" v-if="lang === 'en'">{{link.title.en}}</label>
+            <label class="nav-tag" :for="'tag'+index" v-else-if="lang === 'local'">{{link.title.local}}</label>
             <input type="checkbox" :id="'tag'+index">
             <ul>
               <li v-for="(childLink, c_index) in link.child">
-                <a :href="childLink.link">{{childLink.title}}</a>
+                <a :href="childLink.link" v-if="lang === 'en'">{{childLink.title.en}}</a>
+                <a :href="childLink.link" v-if="lang === 'local'">{{childLink.title.local}}</a>
               </li>
             </ul>
           </div>
