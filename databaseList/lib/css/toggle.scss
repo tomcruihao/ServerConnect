@@ -4,7 +4,9 @@
 // $off-slider: #120152;
 
 .switch-wrap {
-
+  display: flex;
+  justify-content: flex-end;
+  
   .onoffswitch {
     position: relative;
     width: 60px;
