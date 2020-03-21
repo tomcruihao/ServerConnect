@@ -47,6 +47,7 @@ const messages = {
       tools: 'Tool Kits',
       build_alphabet_stokes: 'Create Alphabet and Strokes',
       setting_ga: 'Google Analytics',
+      setting_localization: 'Localization',
       setting_update_the_account_and_password: 'Update the account and password',
       setting_account_info: 'Account Information',
       // latest news management page
@@ -152,6 +153,7 @@ const messages = {
       tools: '小工具',
       build_alphabet_stokes: '建立注音與比劃',
       setting_ga: 'Google 分析',
+      setting_localization: '多語系',
       setting_update_the_account_and_password: '帳號密碼設定',
       setting_account_info: '帳號資訊',
       // latest news management page
