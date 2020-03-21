@@ -80,7 +80,7 @@
         <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
           <div v-if="link.child.length === 0">
             <a :href="link.link" class="nav-tag" v-if="lang === 'en'">{{link.title.en}}</a>
-            <a :href="link.link" class="nav-tag" v-else-if="lang === 'local'">{{link.title.en}}</a>
+            <a :href="link.link" class="nav-tag" v-else-if="lang === 'local'">{{link.title.local}}</a>
           </div>
           <div v-else>
             <label class="nav-tag" :for="'tag'+index" v-if="lang === 'en'">{{link.title.en}}</label>
