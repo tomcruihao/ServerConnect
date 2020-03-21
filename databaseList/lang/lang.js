@@ -46,6 +46,7 @@ const messages = {
       generalSetting: 'General Setting',
       tools: 'Tool Kits',
       build_alphabet_stokes: 'Create Alphabet and Strokes',
+      setting_ga: 'Google Analytics',
       setting_update_the_account_and_password: 'Update the account and password',
       setting_account_info: 'Account Information',
       // latest news management page
@@ -150,6 +151,7 @@ const messages = {
       generalSetting: '一般設定',
       tools: '小工具',
       build_alphabet_stokes: '建立注音與比劃',
+      setting_ga: 'Google 分析',
       setting_update_the_account_and_password: '帳號密碼設定',
       setting_account_info: '帳號資訊',
       // latest news management page
