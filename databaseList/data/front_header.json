@@ -18,8 +18,8 @@
       },
       {
         "title": {
-          "en": "SubLink 1",
-          "local": "子連結 1"
+          "en": "SubLink 2",
+          "local": "子連結 2"
         },
         "link": "http://www.google.com",
         "focus": false,
@@ -27,8 +27,8 @@
       },
       {
         "title": {
-          "en": "SubLink 1",
-          "local": "子連結 1"
+          "en": "SubLink 3",
+          "local": "子連結 3"
         },
         "link": "http://www.google.com",
         "focus": false,
@@ -36,8 +36,8 @@
       },
       {
         "title": {
-          "en": "SubLink 1",
-          "local": "子連結 1"
+          "en": "SubLink 4",
+          "local": "子連結 4"
         },
         "link": "http://www.google.com",
         "focus": false,
