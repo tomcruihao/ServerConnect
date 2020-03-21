@@ -98,6 +98,7 @@
           i18n.locale = event.target.value;
           localStorage.setItem('lang', event.target.value);
           latestNews.setLocale(event.target.value);
+          header.setLocale(i18n.locale);
         }
       }
     })
