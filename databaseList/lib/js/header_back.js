@@ -26,8 +26,8 @@ var header = new Vue({
   },
   methods: {
     setLocale: function(language) {
-    this.links = language;
-  },
+      this.lang = language;
+    },
     logout() {
       localStorage.removeItem('user');
       dialogue.setDialogue('logout', 'logout');
