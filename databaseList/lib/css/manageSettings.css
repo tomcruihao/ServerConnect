@@ -635,7 +635,11 @@ h4 {
 
 .mask-dia .dialogue-message-frame .dialogue-body .btn-frame {
   width: 100%;
-  padding: 5px 0;
+  height: 50px;
+  padding: 15px 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   text-align: center;
 }
 
