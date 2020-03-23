@@ -43,7 +43,7 @@
     <div class="app-content">
       <section id="mainTitle" class="mainTitle">
         <h1 v-text="$t('message.h1_all_latestNews')"></h1>
-        <div class="lang-wrap">
+        <div class="lang-wrap" v-if="localization_show">
           <div>{{$t('message.chooseLanguage')}}:</div>
           <select v-model="selector_lang" @change="setLang($event)">
             <option value="en">English</option>
@@ -90,7 +90,23 @@
       el:'#mainTitle',
       i18n,
       data: {
-        selector_lang: ''
+        selector_lang: '',
+        localization_show: false
+      },
+      created: function() {
+        let self = this;
+        $.ajax({
+          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSetting.php',
+          type: 'GET',
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(res) {
+            self.settings = res.localization;
+          }
+        });
       },
       mounted: function() {
         this.selector_lang = i18n.locale;
