@@ -96,6 +96,14 @@
             <button @click="buildStrokes()">{{$t('message.btn_execute')}}</button>
           </div>
         </div>
+        <div class="row">
+          <div class="title">
+            {{$t('message.setting_import_csv_data')}}
+          </div>
+          <div class="content">
+            <input type="file" accept=".csv" @change="onFileChange">
+          </div>
+        </div>
       </div>
     </section>
     <section id="accountInfoField" class="user-info-wrap">
@@ -229,6 +237,28 @@
     mounted: function() {
     },
     methods: {
+      onFileChange(e) {
+        let csvFile = e.target.files || e.dataTransfer.files;
+        if (!csvFile.length)
+          return;
+
+        let file_data = csvFile[0];
+        let form_data = new FormData();
+        form_data.append('file', file_data);
+
+        $.ajax({
+          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/fileConverter.php',
+          dataType: 'text',
+          cache: false,
+          contentType: false,
+          processData: false,
+          data: form_data,
+          type: 'post',
+          success: function(res){
+            console.log(res);
+          }
+        });
+      },
       buildStrokes: function() {
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildStrokeInResourceList.php',

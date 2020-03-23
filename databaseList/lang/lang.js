@@ -52,6 +52,7 @@ const messages = {
       setting_account_info: 'Account Information',
       setting_password_wronging: 'Your password is wrong',
       setting_password_not_matching: 'Your password and confirm password are not match',
+      setting_import_csv_data: 'Import resources CSV file',
       // latest news management page
       h1_latestNews: 'Latest News Setting',
       latest_form_setting: 'Form Setting',
@@ -160,6 +161,7 @@ const messages = {
       setting_account_info: '帳號資訊',
       setting_password_wronging: '密碼驗證錯誤',
       setting_password_not_matching: '密碼和確認密碼不匹配',
+      setting_import_csv_data: '上傳資源的CSV檔案',
       // latest news management page
       h1_latestNews: '最新消息管理',
       latest_form_setting: '表格設定',
