@@ -70,7 +70,9 @@
 <body>
   <header id="header">
     <div class="logo">
-      <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
+      <a href="index.php">
+        <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
+      </a>
     </div>
     <nav>
       <label for="mobile_btn" class="mobile-btn-frame">
