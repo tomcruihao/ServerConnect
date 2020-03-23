@@ -1,0 +1,7 @@
+# Group 1
+User-agent: *
+Disallow: https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin
+
+# Group 2
+User-agent: *
+Allow: https://gss.ebscohost.com/chchang/ServerConnect/databaseList
