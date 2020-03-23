@@ -263,7 +263,7 @@
 
  
 
-  ga('create', GA_ID, 'auto');
+  ga('create', `${GA_ID}`, 'auto');
   ga('send', 'pageview');
 </script>
 
