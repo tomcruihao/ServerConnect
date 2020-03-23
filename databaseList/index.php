@@ -101,9 +101,9 @@
     </nav>
   </header>
   <section>
-    <div id="mainTitle" class="mainTitle" v-if="show">
+    <div id="mainTitle" class="mainTitle">
       <h1 v-text="$t('message.h1_resource_list')"></h1>
-      <div class="lang-wrap">
+      <div class="lang-wrap"  v-if="show">
         <div>{{$t('message.chooseLanguage')}}:</div>
         <select v-model="selector_lang" @change="setLang($event)">
           <option value="en">English</option>
