@@ -29,8 +29,21 @@ var header = new Vue({
       this.lang = language;
     },
     logout() {
-      localStorage.removeItem('user');
-      dialogue.setDialogue('logout', 'logout');
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/logout.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          console.log(res);
+          localStorage.removeItem('user');
+          dialogue.setDialogue('logout', 'logout');
+          // self.settings = res;          
+        }
+      });
     }
   }
 })
