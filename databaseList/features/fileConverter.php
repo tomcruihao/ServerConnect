@@ -1,4 +1,8 @@
 <?php
+  header("Access-Control-Allow-Origin: *");
+  header("Content-Security-Policy: upgrade-insecure-requests");
+  header('Content-Type: application/json');
+
   if ( 0 < $_FILES['file']['error'] ) {
     echo 'Error: ' . $_FILES['file']['error'] . '<br>';
     echo "Error";
