@@ -1,8 +1,8 @@
 # Group 1
 User-agent: *
-Disallow: /data/
-Disallow: /img/
-Disallow: /admin/
-Disallow: /features/
-Disallow: /lang/
-Disallow: /lib/
+Disallow: http://gss.ebscohost.com/chchang/ServerConnect/databaseList/data/
+Disallow: http://gss.ebscohost.com/chchang/ServerConnect/databaseList/img/
+Disallow: http://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/
+Disallow: http://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/
+Disallow: http://gss.ebscohost.com/chchang/ServerConnect/databaseList/lang/
+Disallow: http://gss.ebscohost.com/chchang/ServerConnect/databaseList/lib/
