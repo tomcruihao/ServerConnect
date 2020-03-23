@@ -1,0 +1,25 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <script/>
+  <script/>
+  <url>
+    <loc>
+      http://gss.ebscohost.com/chchang/ServerConnect/databaseList/
+    </loc>
+    <lastmod>2020-03-23T03:22:58+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>
+      http://gss.ebscohost.com/chchang/ServerConnect/databaseList/index.php
+    </loc>
+    <lastmod>2020-03-23T03:22:58+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>
+      http://gss.ebscohost.com/chchang/ServerConnect/databaseList/allLatestNews.html
+    </loc>
+    <lastmod>2020-03-23T02:03:39+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+</urlset>
