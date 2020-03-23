@@ -196,8 +196,8 @@
         </div>
         <div class="row">
           <div class="content fixed">
-            <div class="error" v-if="error.type === 'match_error'">Password not match</div>
-            <div class="error" v-else-if="error.type === 'old_password_wrong'">You're password is wrong</div>
+            <div class="error" v-if="error.type === 'match_error'">{{$t('message.setting_password_wronging')}}</div>
+            <div class="error" v-else-if="error.type === 'old_password_wrong'">{{$t('message.setting_password_not_matching')}}</div>
           </div>
         </div>
         <div class="btn-frame">

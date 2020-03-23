@@ -50,6 +50,8 @@ const messages = {
       setting_localization: 'Localization',
       setting_update_the_account_and_password: 'Update the account and password',
       setting_account_info: 'Account Information',
+      setting_password_wronging: 'Your password is wrong',
+      setting_password_not_matching: 'Your password and confirm password are not match',
       // latest news management page
       h1_latestNews: 'Latest News Setting',
       latest_form_setting: 'Form Setting',
@@ -156,6 +158,8 @@ const messages = {
       setting_localization: '多語系',
       setting_update_the_account_and_password: '帳號密碼設定',
       setting_account_info: '帳號資訊',
+      setting_password_wronging: '密碼驗證錯誤',
+      setting_password_not_matching: '密碼和確認密碼不匹配',
       // latest news management page
       h1_latestNews: '最新消息管理',
       latest_form_setting: '表格設定',
