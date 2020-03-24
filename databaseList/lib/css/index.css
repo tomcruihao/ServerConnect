@@ -450,6 +450,7 @@ section {
   height: 36px;
   border-radius: 50%;
   background-color: #008cce;
+  color: #ffffde;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
