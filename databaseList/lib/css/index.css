@@ -251,16 +251,18 @@ header nav .nav-list li.multi:before {
 }
 
 .footer {
-  padding: 20px 15px;
+  margin-top: 50px;
+  padding: 30px 15px 15px;
   background-color: #777777;
 }
 
 .footer img {
-  height: 60px;
+  height: 30px;
 }
 
 .footer p {
-  color: #ffffdb;
+  font-size: 0.7rem;
+  color: #ffffde;
   margin-left: 20px;
 }
 
