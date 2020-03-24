@@ -349,6 +349,8 @@ section {
 
     .aside-content {
       .bulletin-board-frame {
+        margin-bottom: 15px;
+
         h3 {
           width: 100%;
           box-sizing: border-box;
@@ -362,7 +364,6 @@ section {
         }
         ul {
           padding: 10px;
-          margin-bottom: 10px;
           border: 1px dotted $border_color;
           border-radius: 0 0 10px 10px;
           background-color: #ffffff;

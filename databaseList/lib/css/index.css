@@ -669,6 +669,10 @@ section {
   display: none;
 }
 
+.content-field aside .aside-content .bulletin-board-frame {
+  margin-bottom: 15px;
+}
+
 .content-field aside .aside-content .bulletin-board-frame h3 {
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -686,7 +690,6 @@ section {
 
 .content-field aside .aside-content .bulletin-board-frame ul {
   padding: 10px;
-  margin-bottom: 10px;
   border: 1px dotted #cccccc;
   border-radius: 0 0 10px 10px;
   background-color: #ffffff;
