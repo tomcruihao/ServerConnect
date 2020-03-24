@@ -69,6 +69,7 @@ const messages = {
       subject_name: 'Item',
       subject_create_subject: 'New Item',
       subject_create_subject_item: 'Add New Facet Block',
+      subject_facet_field: 'Facet Field',
       // Clicking Report page
       h1_clickingReport: 'Clicking Report',
       clickingReport_start_date: 'Start Date',
@@ -179,6 +180,7 @@ const messages = {
       subject_name: '項目名稱',
       subject_create_subject: '新增分類項目',
       subject_create_subject_item: '新增後分類區塊',
+      subject_facet_field: '後分類欄位',
       // Clicking Report page
       h1_clickingReport: '使用率報表',
       clickingReport_start_date: '起始時間',

@@ -107,7 +107,7 @@ header nav .nav-list {
 }
 
 header nav .nav-list li {
-  width: 120px;
+  width: 130px;
   height: 60px;
   position: relative;
   -webkit-box-sizing: border-box;
@@ -376,7 +376,7 @@ h4 {
 }
 
 .app-content .setting-wrap .subject-frame .subject-header .title {
-  width: 150px;
+  width: 180px;
 }
 
 .app-content .setting-wrap .subject-frame ul li {
@@ -404,6 +404,15 @@ h4 {
   width: 120px;
   height: 34px;
   background-color: #ffffff;
+}
+
+.app-content .setting-wrap .subject-frame ul li.facet-wrap .facet-header {
+  text-align: end;
+}
+
+.app-content .setting-wrap .subject-frame ul li.facet-wrap .empty {
+  width: 40px;
+  height: 20px;
 }
 
 .app-content .setting-wrap .row {

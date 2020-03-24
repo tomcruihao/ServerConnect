@@ -61,7 +61,7 @@ h4 {
         display: flex;
 
         .title {
-          width: 150px;
+          width: 180px;
         }
       }
 
@@ -85,6 +85,16 @@ h4 {
             width: 120px;
             height: 34px;
             background-color: #ffffff;
+          }
+
+          &.facet-wrap {
+            .facet-header {
+              text-align: end;
+            }
+            .empty {
+              width: 40px;
+              height: 20px;
+            }
           }
         }
       }
