@@ -407,6 +407,7 @@ h4 {
 }
 
 .app-content .setting-wrap .subject-frame ul li.facet-wrap .facet-header {
+  width: 100%;
   text-align: end;
 }
 
