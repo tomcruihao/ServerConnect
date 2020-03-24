@@ -250,6 +250,19 @@ header nav .nav-list li.multi:before {
   }
 }
 
+.footer {
+  padding: 20px 15px;
+  background-color: #777777;
+}
+
+.footer img {
+  height: 60px;
+}
+
+.footer p {
+  color: #ffffdb;
+}
+
 .mainTitle {
   width: 100%;
   -webkit-box-sizing: border-box;
