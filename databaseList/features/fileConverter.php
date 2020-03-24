@@ -9,7 +9,7 @@ error_reporting(E_ALL);
   header('Content-Type: application/json');
 
   // received the csv data and move to csv folder
-  $csvFilePath = receivedAndGetFilePath();
+  $csvFilePath = receivedFileAndGetPath();
 
   // transfer to array
   if($csvFilePath) {
@@ -17,7 +17,7 @@ error_reporting(E_ALL);
     print_r($dataArray);
   }
 
-  function receivedAndMoveCsvFile() {
+  function receivedFileAndGetPath() {
     if ( 0 < $_FILES['file']['error'] ) {
       return false;
     } else {
