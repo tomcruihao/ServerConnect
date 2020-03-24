@@ -185,6 +185,14 @@ section {
             height: auto;
             margin-top: 10px;
           }
+          &:checked + .more-detail {
+            .more {
+              display: none;
+            }
+            .less {
+              display: block;
+            }
+          }
         }
 
         .box {
@@ -228,14 +236,6 @@ section {
           }
           .less {
             display: none;
-          }
-        }
-        input[type=checkbox]:checked + .more-detail {
-          .more {
-            display: none;
-          }
-          .less {
-            display: block;
           }
         }
       }
