@@ -3,7 +3,6 @@
 @import "header";
 @import "languageTitle";
 
-$pagination_btn_active_bgcolor: #2B78FE;
 $sort_subject_color: #721c24;
 
 section {
@@ -179,9 +178,14 @@ section {
               display: flex;
               align-items: center;
             }
+
             .resourceUrl {
               a {
                 display: flex;
+                color: $anchor_color;
+                img {
+                  margin-right: 5px;
+                }
               }
             }
 

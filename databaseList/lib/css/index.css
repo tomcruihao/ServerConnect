@@ -495,6 +495,11 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  color: #008cce;
+}
+
+.content-field article .list li label .row .resourceUrl a img {
+  margin-right: 5px;
 }
 
 .content-field article .list li label .row:nth-of-type(2n-1) {
@@ -752,7 +757,7 @@ section {
 }
 
 .pagination li.active {
-  background-color: #2B78FE;
+  background-color: #008cce;
 }
 
 .pagination li.active a {
@@ -798,7 +803,7 @@ section {
   font-size: 1.2rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #00B0ED;
+  background-color: #008cce;
   border-radius: 10px 10px 0px 0px;
   position: relative;
 }
