@@ -352,7 +352,7 @@ section {
   margin: 0px 5px;
   border-radius: 10px;
   display: inline-block;
-  color: #00B0ED;
+  color: #008cce;
   cursor: pointer;
   text-decoration: none;
 }
@@ -694,11 +694,11 @@ section {
 
 .content-field aside .aside-content .bulletin-board-frame ul li a {
   text-decoration: none;
-  color: #00B0ED;
+  color: #008cce;
 }
 
 .content-field aside .aside-content .bulletin-board-frame ul li span {
-  color: #00B0ED;
+  color: #008cce;
   cursor: pointer;
 }
 
@@ -717,7 +717,7 @@ section {
           flex: 1;
   display: block;
   word-break: break-all;
-  color: #00B0ED;
+  color: #008cce;
   cursor: pointer;
 }
 

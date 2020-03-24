@@ -107,7 +107,7 @@ header nav .nav-list {
 }
 
 header nav .nav-list li {
-  width: 120px;
+  width: 130px;
   height: 60px;
   position: relative;
   -webkit-box-sizing: border-box;
@@ -473,7 +473,7 @@ h4 {
 
 .app-content .user-info-wrap .row .infoTitle .user-id {
   font-weight: bold;
-  color: #00B0ED;
+  color: #008cce;
 }
 
 .app-content .user-info-wrap .row .content button {
