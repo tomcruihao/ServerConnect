@@ -606,10 +606,10 @@
   let listTitles = [];
   listTitles['en'] = {
     "resourceName": "Title",
-    "resourceUrlTitle": "Link",
-    "resourceUrlDisplayName": "Access Link",
+    "resourceUrlTitle": "Access Link",
+    "resourceUrlDisplayName": "Link",
     "isProxy": "Proxy",
-    "resourceType": "Resource Type",
+    "resourceType": "Type",
     "startDate": "Start Date",
     "expireDate": "End Date",
     "faculty": "School",
