@@ -741,8 +741,7 @@
       let moreLabel = document.createElement('label');
       moreLabel.setAttribute("for", 'checkbox_' + index);
       moreLabel.className = 'more-detail';
-      moreLabel.innerHTML = `<div class="more"><img src="img/icon/expand_more.svg" alt="EBSCO" title="EBSCO"/></div>`;
-      moreLabel.innerHTML = `<div class="less"><img src="img/icon/expand_less.svg" alt="EBSCO" title="EBSCO"/></div>`;
+      moreLabel.innerHTML = `<div class="more"><img src="img/icon/expand_more.svg" alt="EBSCO" title="EBSCO"/></div><div class="less"><img src="img/icon/expand_less.svg" alt="EBSCO" title="EBSCO"/></div>`;
 
       li_dom.appendChild(newLabel);
       li_dom.appendChild(newCheckBox);
