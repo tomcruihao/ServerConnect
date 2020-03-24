@@ -679,7 +679,7 @@
                             <div class="row">\
                               <div class="title">${listTitles[ary_lang].resourceUrlTitle}</div>\
                               <div class="resourceUrl">\
-                                <a href="javascript:directTo('${res.uuid}', '${res.resourceUrl}')">${listTitles[ary_lang].resourceUrlDisplayName}</a>\
+                                <a href="javascript:directTo('${res.uuid}', '${res.resourceUrl}')"><img src="img/icon/link.svg" alt="link" title="link"/>${listTitles[ary_lang].resourceUrlDisplayName}</a>\
                               </div>\
                             </div>`;
 
@@ -741,7 +741,7 @@
       let moreLabel = document.createElement('label');
       moreLabel.setAttribute("for", 'checkbox_' + index);
       moreLabel.className = 'more-detail';
-      moreLabel.innerHTML = `<div class="more"><img src="img/icon/expand_more.svg" alt="EBSCO" title="EBSCO"/></div><div class="less"><img src="img/icon/expand_less.svg" alt="EBSCO" title="EBSCO"/></div>`;
+      moreLabel.innerHTML = `<div class="more"><img src="img/icon/expand_more.svg" alt="expand" title="expand"/></div><div class="less"><img src="img/icon/expand_less.svg" alt="less" title="less"/></div>`;
 
       li_dom.appendChild(newLabel);
       li_dom.appendChild(newCheckBox);

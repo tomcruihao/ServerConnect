@@ -1,12 +1,12 @@
 $header_height: 60px;
-$header_bhcolor: #005c88;
+$header_bgcolor: #005c88;
 
 $mobile_header_height: 40px;
 $mobile_header_padding: 5px;
 
 header {
   height: $header_height;
-  background-color: $header_bhcolor;
+  background-color: $header_bgcolor;
   display: flex;
   justify-content: space-between;
 
