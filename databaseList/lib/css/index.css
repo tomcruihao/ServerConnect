@@ -69,7 +69,7 @@ input[type="text"].disabled, input[type="password"].disabled, input[type="date"]
 
 header {
   height: 60px;
-  background-color: #333333;
+  background-color: #008cce;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,7 +135,7 @@ header nav .nav-list li .nav-tag {
 
 header nav .nav-list li ul {
   display: none;
-  background-color: #333333;
+  background-color: #008cce;
   position: absolute;
   top: 60px;
   right: 0;
@@ -213,7 +213,7 @@ header nav .nav-list li.multi:before {
     width: 100vw;
     height: 0;
     overflow: hidden;
-    background-color: #333333;
+    background-color: #008cce;
     display: block;
     position: absolute;
     right: 0;
@@ -358,7 +358,7 @@ section {
 
 .atoz-wrap .atoz-field .link-field a.clicked {
   background-color: #00ac69;
-  color: #ffffff;
+  color: #ffffdb;
 }
 
 .sort-wrap {
@@ -384,8 +384,8 @@ section {
   padding: 5px 20px;
   margin: 5px 0 5px 15px;
   border-radius: 36px;
-  background-color: #2B78FE;
-  color: #ffffff;
+  background-color: #008cce;
+  color: #ffffdb;
   font-size: 1rem;
   position: relative;
   -webkit-box-sizing: border-box;
@@ -632,7 +632,7 @@ section {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #ffa701;
+  background-color: #008cce;
   border-radius: 10px 10px 0px 0px;
   margin: 0;
   padding: 5px;
@@ -720,7 +720,7 @@ section {
 }
 
 .pagination li.active a {
-  color: #ffffff;
+  color: #ffffdb;
 }
 
 .pagination li.disabled a {
@@ -769,7 +769,7 @@ section {
 
 .mask-dia .dialogue-message-frame .dialogue-head h4 {
   margin: 0;
-  color: #ffffff;
+  color: #ffffdb;
 }
 
 .mask-dia .dialogue-message-frame .dialogue-head .close {
@@ -818,7 +818,7 @@ section {
   height: 38px;
   margin-left: 15px;
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #ffffdb;
   background-color: #ffa701;
   border-radius: 5px;
 }
@@ -858,7 +858,7 @@ section {
 
 .mask .dialogue-message-frame .dialogue-head h4 {
   margin: 0;
-  color: #ffffff;
+  color: #ffffdb;
 }
 
 .mask .dialogue-message-frame .dialogue-head .close {
@@ -894,7 +894,7 @@ section {
   height: 38px;
   margin-left: 15px;
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #ffffdb;
   background-color: #ffa701;
   border-radius: 5px;
 }
@@ -986,7 +986,7 @@ section {
   width: 150px;
   height: 38px;
   background-color: #4CAF50;
-  color: #ffffff;
+  color: #ffffdb;
 }
 
 .mask.show {
@@ -1047,7 +1047,7 @@ section {
             align-items: center;
   }
   .content-field aside .aside-mobile-header .title {
-    color: #ffffff;
+    color: #ffffdb;
     font-size: 1rem;
   }
   .content-field aside .aside-content {

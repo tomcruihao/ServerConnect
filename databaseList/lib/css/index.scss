@@ -66,7 +66,7 @@ section {
 
         &.clicked {
           background-color: $atoz_btn_bgcolor;
-          color: #ffffff;
+          color: $text_white;
         }
       }
     }
@@ -91,7 +91,7 @@ section {
       margin: 5px 0 5px 15px;
       border-radius: 36px;
       background-color: $sorting_btn_bgcolor;
-      color: #ffffff;
+      color: $text_white;
       font-size: 1rem;;
       position: relative;
       box-sizing: border-box;
@@ -399,7 +399,7 @@ section {
       background-color: $pagination_btn_active_bgcolor;
 
       a {
-        color: #ffffff;
+        color: $text_white;
       }
     }
 
@@ -444,7 +444,7 @@ section {
 
       h4 {
         margin: 0;
-        color: #ffffff;
+        color: $text_white;
       }
 
       .close {
@@ -488,7 +488,7 @@ section {
           height: 38px;
           margin-left: 15px;
           font-size: 1.2rem;
-          color: #ffffff;
+          color: $text_white;
           background-color: #ffa701;
           border-radius: 5px;
         }
@@ -525,7 +525,7 @@ section {
 
       h4 {
         margin: 0;
-        color: #ffffff;
+        color: $text_white;
       }
 
       .close {
@@ -562,7 +562,7 @@ section {
           height: 38px;
           margin-left: 15px;
           font-size: 1.2rem;
-          color: #ffffff;
+          color: $text_white;
           background-color: #ffa701;
           border-radius: 5px;
         }
@@ -639,7 +639,7 @@ section {
         width: 150px;
         height: 38px;
         background-color: $button_color;
-        color: #ffffff;
+        color: $text_white;
       }
     }
   }
@@ -695,7 +695,7 @@ section {
         align-items: center;
 
         .title {
-          color: #ffffff;
+          color: $text_white;
           font-size: 1rem;
         }
       }
