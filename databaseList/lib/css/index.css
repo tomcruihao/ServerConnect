@@ -352,7 +352,7 @@ section {
   margin: 0px 5px;
   border-radius: 10px;
   display: inline-block;
-  color: blue;
+  color: #00B0ED;
   cursor: pointer;
   text-decoration: none;
 }
@@ -472,6 +472,12 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.content-field article .list li label .row .resourceUrl a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .content-field article .list li label .row:nth-of-type(2n-1) {
