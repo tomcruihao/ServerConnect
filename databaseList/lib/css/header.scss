@@ -6,7 +6,7 @@ $mobile_header_padding: 5px;
 
 header {
   height: $header_height;
-  padding: 0 15px;
+  padding: 0 14px;
   background-color: $header_bgcolor;
   display: flex;
   justify-content: space-between;
@@ -54,7 +54,7 @@ header {
 
         ul {
           display: none;
-          background-color: $header_bhcolor;
+          background-color: $header_bgcolor;
           position: absolute;
           top: $header_height;
           right: 0;
@@ -131,7 +131,7 @@ header {
         width: 100vw;
         height: 0;
         overflow: hidden;
-        background-color: $header_bhcolor;
+        background-color: $header_bgcolor;
         display: block;
         position: absolute;
         right: 0;

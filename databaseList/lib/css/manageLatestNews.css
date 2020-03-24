@@ -70,7 +70,8 @@ input[type="text"].disabled, input[type="password"].disabled, input[type="date"]
 
 header {
   height: 60px;
-  background-color: #333333;
+  padding: 0 14px;
+  background-color: #005c88;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,7 +137,7 @@ header nav .nav-list li .nav-tag {
 
 header nav .nav-list li ul {
   display: none;
-  background-color: #333333;
+  background-color: #005c88;
   position: absolute;
   top: 60px;
   right: 0;
@@ -214,7 +215,7 @@ header nav .nav-list li.multi:before {
     width: 100vw;
     height: 0;
     overflow: hidden;
-    background-color: #333333;
+    background-color: #005c88;
     display: block;
     position: absolute;
     right: 0;
