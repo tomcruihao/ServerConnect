@@ -6,6 +6,7 @@ $mobile_header_padding: 5px;
 
 header {
   height: $header_height;
+  padding: 0 15px;
   background-color: $header_bgcolor;
   display: flex;
   justify-content: space-between;
