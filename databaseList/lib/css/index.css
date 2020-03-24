@@ -680,6 +680,7 @@ section {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #008cce;
+  border-radius: 10px 10px 0px 0px;
   margin: 0;
   padding: 5px;
   text-align: center;
@@ -692,6 +693,7 @@ section {
 .content-field aside .aside-content .bulletin-board-frame ul {
   padding: 10px;
   border: 1px dotted #cccccc;
+  border-radius: 0 0 10px 10px;
   background-color: #ffffff;
 }
 
