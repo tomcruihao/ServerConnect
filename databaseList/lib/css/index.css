@@ -537,7 +537,7 @@ section {
 }
 
 .content-field article .list li .more-detail div {
-  color: #3333ff;
+  color: #00B0ED;
 }
 
 .content-field article .databaseList-wrap {
@@ -640,7 +640,7 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #333333;
+  color: #ffffdb;
 }
 
 .content-field aside .aside-content .bulletin-board-frame ul {
@@ -658,11 +658,11 @@ section {
 
 .content-field aside .aside-content .bulletin-board-frame ul li a {
   text-decoration: none;
-  color: #3333ff;
+  color: #00B0ED;
 }
 
 .content-field aside .aside-content .bulletin-board-frame ul li span {
-  color: #3333ff;
+  color: #00B0ED;
   cursor: pointer;
 }
 
@@ -681,7 +681,7 @@ section {
           flex: 1;
   display: block;
   word-break: break-all;
-  color: #3333ff;
+  color: #00B0ED;
   cursor: pointer;
 }
 
