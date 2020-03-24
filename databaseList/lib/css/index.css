@@ -525,11 +525,11 @@ section {
 }
 
 .content-field article .list li .box .row:nth-of-type(2n-1) {
-  background-color: #ccdffc;
+  background-color: #ffffff;
 }
 
 .content-field article .list li .box .row:nth-of-type(2n) {
-  background-color: #ffffff;
+  background-color: #ccdffc;
 }
 
 .content-field article .list li .more-detail {

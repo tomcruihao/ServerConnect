@@ -122,7 +122,7 @@
           <div class="atoz-title">{{$t('message.index_total')}}:</div>
           <div class="atoz-field">
             <div class="link-field">
-              <a href="javascript:searchAll()" id="searchTotal" class="clicked">{{$t('message.index_total')}}</a>
+              <a href="javascript:searchAll()" id="searchTotal" class="clicked">{{$t('message.index_show_all')}}</a>
             </div>
           </div>
         </div>
@@ -605,22 +605,22 @@
 
   let listTitles = [];
   listTitles['en'] = {
-    "resourceName": "Resource Name",
+    "resourceName": "Title",
     "resourceUrlTitle": "Link",
-    "resourceUrlDisplayName": "Click Me",
+    "resourceUrlDisplayName": "Access Link",
     "isProxy": "Proxy",
     "resourceType": "Resource Type",
     "startDate": "Start Date",
-    "expireDate": "Expire Date",
-    "faculty": "Faculty",
+    "expireDate": "End Date",
+    "faculty": "School",
     "department": "Department",
     "subject": "Subject",
     "category": "Category",
     "type": "Type",
     "publisher": "Publisher",
     "language": "Language",
-    "resourceDescribe": "Resource Description",
-    "relevanceUrlDescribe": "Revelance Link",
+    "resourceDescribe": "Description",
+    "relevanceUrlDescribe": "Information Link",
     "moreDetail": "more..."
   }
   listTitles['local'] = {

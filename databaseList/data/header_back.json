@@ -2,7 +2,7 @@
   {
     "title": {
       "en": "Usage Report",
-      "local": "使用率報告"
+      "local": "使用統計"
     },
     "link": "usageReport.html",
     "focus": false,
@@ -10,15 +10,15 @@
   },
   {
     "title": {
-      "en": "System",
-      "local": "系統"
+      "en": "Settings",
+      "local": "系統設定"
     },
     "link": " ",
     "focus": false,
     "child": [
       {
         "title": {
-          "en": "Resource",
+          "en": "Resources",
           "local": "資源管理"
         },
         "link": "manageResource.html",
@@ -27,8 +27,8 @@
       },
       {
         "title": {
-          "en": "Subject",
-          "local": "主題"
+          "en": "Facets",
+          "local": "後分類管理"
         },
         "link": "manageSubject.html",
         "focus": false,
@@ -36,8 +36,8 @@
       },
       {
         "title": {
-          "en": "Latest News",
-          "local": "最新消息"
+          "en": "News",
+          "local": "消息管理"
         },
         "link": "manageLatestNews.html",
         "focus": false,
@@ -45,7 +45,7 @@
       },
       {
         "title": {
-          "en": "Setting",
+          "en": "Generic Settings",
           "local": "一般設定"
         },
         "link": "manageSetting.html",
