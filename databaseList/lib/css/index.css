@@ -107,7 +107,7 @@ header nav .nav-list {
 }
 
 header nav .nav-list li {
-  width: 120px;
+  width: 130px;
   height: 60px;
   position: relative;
   -webkit-box-sizing: border-box;
@@ -443,6 +443,22 @@ section {
 
 .content-field article .list li label {
   cursor: pointer;
+}
+
+.content-field article .list li label .numbering {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #008cce;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .content-field article .list li label .row {

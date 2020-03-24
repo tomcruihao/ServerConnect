@@ -147,6 +147,16 @@ section {
         label {
           cursor: pointer;
 
+          .numbering {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #008cce;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
           .row {
             padding: 10px 5px;
             display: flex;
