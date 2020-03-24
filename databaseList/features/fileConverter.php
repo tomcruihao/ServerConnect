@@ -3,14 +3,46 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
-  if ( 0 < $_FILES['file']['error'] ) {
-    echo 'Error: ' . $_FILES['file']['error'] . '<br>';
-  } else {
-    move_uploaded_file($_FILES['file']['tmp_name'], '../csvFiles/' . $_FILES['file']['name']);
-    // echo $_FILES['file'];
-    print_r($_FILES['file']);
+  // received the csv data and move to csv folder
+  $csvFilePath = receivedAndGetFilePath();
+
+  // transfer to array
+  if($csvFilePath) {
+    $dataArray = csvToArray($csvFilePath);
+    print_r($dataArray);
   }
 
+  function receivedAndMoveCsvFile() {
+    if ( 0 < $_FILES['file']['error'] ) {
+      return false;
+    } else {
+      move_uploaded_file($_FILES['file']['tmp_name'], '../csvFiles/' . $_FILES['file']['name']);
+      return '../csvFiles/'.$_FILES['file']['name'];
+    }
+  }
+
+  function csvToArray($file) {
+    $rows = array();
+    $headers = array();
+
+    if (file_exists($file) && is_readable($file)) {
+      $handle = fopen($file, 'r');
+      while (!feof($handle)) {
+        $row = fgetcsv($handle, 10240, ';', '"');
+        if (empty($headers))
+          $headers = $row;
+        else if (is_array($row)) {
+          array_splice($row, count($headers));
+          $rows[] = array_combine($headers, $row);
+        }
+      }
+      fclose($handle);
+    } else {
+      // throw new Exception($file . ' doesn`t exist or is not readable.');
+      return array("error" => "Coordinates are not available");
+    }
+    return $rows;
+  }
 // 
 // // CSV File
 // $filename = 'someExcel.csv';
