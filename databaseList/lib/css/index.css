@@ -490,11 +490,11 @@ section {
   margin-top: 10px;
 }
 
-.content-field article .list li input:checked + .more-detail .more {
+.content-field article .list li input:checked ~ .more-detail .more {
   display: none;
 }
 
-.content-field article .list li input:checked + .more-detail .less {
+.content-field article .list li input:checked ~ .more-detail .less {
   display: block;
 }
 
