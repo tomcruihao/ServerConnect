@@ -536,8 +536,20 @@ section {
   text-align: end;
 }
 
-.content-field article .list li .more-detail div {
-  color: #00B0ED;
+.content-field article .list li .more-detail .more {
+  display: block;
+}
+
+.content-field article .list li .more-detail .less {
+  display: none;
+}
+
+.content-field article .list li input[type=checkbox]:checked + .more-detail .more {
+  display: none;
+}
+
+.content-field article .list li input[type=checkbox]:checked + .more-detail .less {
+  display: block;
 }
 
 .content-field article .databaseList-wrap {

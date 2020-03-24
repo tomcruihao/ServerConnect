@@ -223,8 +223,19 @@ section {
         }
         .more-detail {
           text-align: end;
-          div {
-            color: $anchor_color;
+          .more {
+            display: block;
+          }
+          .less {
+            display: none;
+          }
+        }
+        input[type=checkbox]:checked + .more-detail {
+          .more {
+            display: none;
+          }
+          .less {
+            display: block;
           }
         }
       }
