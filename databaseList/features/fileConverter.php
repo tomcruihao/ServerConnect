@@ -16,7 +16,8 @@ error_reporting(E_ALL);
   $getCSV_data = file_get_contents($csvFilePath);
   $processData = str_replace('"\n"', " ", $getCSV_data);
   $processData = str_replace('","', "，", $processData);
-  print_r($processData);
+  $rows = explode("\n", $processData);
+  print_r($rows);
 
 
 
