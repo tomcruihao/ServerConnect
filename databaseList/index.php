@@ -115,7 +115,7 @@
       <div id="filterField">
         <div class="search-wrap">
           <div class="search-frame">
-            <input type="text" class="search" :placeholder="$t('message.index_placeholder_text')"/>
+            <input type="text" class="search" :placeholder="$t('message.index_placeholder_text')" v-model="searchTerm" @change="searchbox"/>
           </div>
         </div>
         <div class="atoz-wrap">
@@ -375,6 +375,7 @@
         zhuyin: [],
         strokes: []
       },
+      searchTerm: '',
       temp_anchorList: {},
       buttons: [
         {
@@ -443,6 +444,9 @@
 
     },
     methods: {
+      searchbox: function() {
+        console.log(this.searchTerm);
+      },
       search: function(trem, row, id) {
         const anchor = document.querySelector(`#${id}`);
         initAndAddClickedClass(anchor);
@@ -883,8 +887,12 @@
   //   contactList.search(stroke, ['strokes']);
   //   resetNumbering();
   // }
-  function searchBy(term, field) {
-    contactList.search(term, [field]);
+  function searchBy(term, field = '') {
+    if(field !== '') {
+      contactList.search(term, [field]);
+    } else {
+      contactList.search(term);
+    }
     resetNumbering();
   }
   function searchAll(anchor) {
