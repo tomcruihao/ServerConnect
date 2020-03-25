@@ -13,8 +13,12 @@ error_reporting(E_ALL);
   $csvFilePath = "../csvFiles/ResourceListNew.csv";
   // $csvFilePath = receivedFileAndGetPath();
 
-  $getData = file_get_contents($csvFilePath);
-  print_r($getData);
+  $getCSV_data = file_get_contents($csvFilePath);
+  $processData = str_replace('"\n"', " ", $getCSV_data);
+  $processData = str_replace('","', "，", $processData);
+  print_r($processData);
+
+
 
   // $handle = fopen($csvFilePath, 'r');
   // while (!feof($handle)) {
