@@ -3,7 +3,7 @@ $shadow_style: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
 .tag-wrap {
   button {
     width: 120px;
-    height: 40px;
+    height: 30px;
     border-radius: 0px 10px 0 0;
     border: 1px solid #cccccc;
     border-bottom: 0px;
@@ -11,6 +11,7 @@ $shadow_style: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
     font-size: 1rem;
 
     &.taged {
+      height: 40px;
       box-shadow: $shadow_style;
       background-color: #ffffff;
     }
