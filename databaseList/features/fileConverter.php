@@ -13,18 +13,21 @@ error_reporting(E_ALL);
   $csvFilePath = "../csvFiles/ResourceListNew.csv";
   // $csvFilePath = receivedFileAndGetPath();
 
-  $handle = fopen($csvFilePath, 'r');
-  while (!feof($handle)) {
-    $row = fgetcsv($handle, 10240, ';', '"');
-    print_r($row);
-    // if (empty($headers))
-    //   $headers = $row;
-    // else if (is_array($row)) {
-    //   array_splice($row, count($headers));
-    //   $rows[] = array_combine($headers, $row);
-    // }
-  }
-  fclose($handle);
+  $getData = file_get_contents($csvFilePath);
+  print_r($getData);
+
+  // $handle = fopen($csvFilePath, 'r');
+  // while (!feof($handle)) {
+  //   $row = fgetcsv($handle, 10240, ';', '"');
+  //   print_r($row);
+  //   // if (empty($headers))
+  //   //   $headers = $row;
+  //   // else if (is_array($row)) {
+  //   //   array_splice($row, count($headers));
+  //   //   $rows[] = array_combine($headers, $row);
+  //   // }
+  // }
+  // fclose($handle);
 
 
   // transfer to array
