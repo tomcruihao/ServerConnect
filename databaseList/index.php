@@ -413,7 +413,7 @@
         console.log(val);
         console.log(oldVal);
       }
-    }
+    },
     created: function() {
       let self = this;
       $.ajax({
