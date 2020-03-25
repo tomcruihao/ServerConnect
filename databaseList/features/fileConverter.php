@@ -6,16 +6,32 @@ error_reporting(E_ALL);
 
   header("Access-Control-Allow-Origin: *");
   header("Content-Security-Policy: upgrade-insecure-requests");
-  header('Content-Type: application/json');
+  // header('Content-Type: application/json');
+  header('Content-Type: text/html');
 
   // received the csv data and move to csv folder
-  $csvFilePath = receivedFileAndGetPath();
+  $csvFilePath = "../csvFiles/ResourceListNew.csv";
+  // $csvFilePath = receivedFileAndGetPath();
+
+  $handle = fopen($csvFilePath, 'r');
+  while (!feof($handle)) {
+    $row = fgetcsv($handle, 10240, ';', '"');
+    print_r($row);
+    // if (empty($headers))
+    //   $headers = $row;
+    // else if (is_array($row)) {
+    //   array_splice($row, count($headers));
+    //   $rows[] = array_combine($headers, $row);
+    // }
+  }
+  fclose($handle);
+
 
   // transfer to array
-  if($csvFilePath) {
-    $dataArray = csvToArray($csvFilePath);
-    print_r($dataArray);
-  }
+  // if($csvFilePath) {
+  //   $dataArray = csvToArray($csvFilePath);
+  //   print_r($dataArray);
+  // }
 
   function receivedFileAndGetPath() {
     if ( 0 < $_FILES['file']['error'] ) {
