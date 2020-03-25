@@ -444,7 +444,8 @@
 
     },
     methods: {
-      searchbox: function() {
+      searchbox: function(e) {
+        console.log(e);
         console.log(this.searchTerm);
       },
       search: function(trem, row, id) {
