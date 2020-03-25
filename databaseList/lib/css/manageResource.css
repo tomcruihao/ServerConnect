@@ -305,6 +305,46 @@ header nav .nav-list li.multi:before {
   margin-left: 10px;
 }
 
+.tag-wrap button {
+  width: 120px;
+  height: 35px;
+  border-radius: 0px 10px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: 0px;
+  background-color: #eeeeee;
+  font-size: 1rem;
+}
+
+.tag-wrap button.taged {
+  height: 40px;
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.tag-wrap-s button {
+  width: 120px;
+  height: 30px;
+  border-radius: 0px 10px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: 0px;
+  background-color: #eeeeee;
+  font-size: 0.8rem;
+}
+
+.tag-wrap-s button.taged {
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.multi-lang-field, .common-field {
+  padding: 10px;
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
 h4 {
   color: #ff0000;
 }
@@ -406,22 +446,6 @@ input:focus, textarea:focus, select:focus, button {
   -ms-flex-line-pack: center;
       align-content: center;
   background-color: #7b8cde;
-}
-
-.app-content .list-field .resource-wrap .tag-wrap button {
-  width: 120px;
-  height: 40px;
-  border-radius: 0px 10px 0 0;
-  border: 1px solid #cccccc;
-  border-bottom: 0px;
-  background-color: #eeeeee;
-  font-size: 1rem;
-}
-
-.app-content .list-field .resource-wrap .tag-wrap button.taged {
-  -webkit-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
-  background-color: #ffffff;
 }
 
 .app-content .list-field .resource-wrap .multi-lang-field {
@@ -577,22 +601,6 @@ input:focus, textarea:focus, select:focus, button {
   cursor: pointer;
   top: 5px;
   right: 5px;
-}
-
-.mask .dialogue-frame .tag-wrap button {
-  width: 120px;
-  height: 30px;
-  border-radius: 0px 10px 0 0;
-  border: 1px solid #cccccc;
-  border-bottom: 0px;
-  background-color: #eeeeee;
-  font-size: 0.8rem;
-}
-
-.mask .dialogue-frame .tag-wrap button.taged {
-  -webkit-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
-          box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
-  background-color: #ffffff;
 }
 
 .mask .dialogue-frame .dialogue-content {

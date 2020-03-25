@@ -3,6 +3,7 @@
 @import "header";
 @import "footer";
 @import "languageTitle";
+@import "tagStyle";
 
 $resource_field_bgcolor: #ffffff;
 
@@ -91,22 +92,7 @@ input:focus, textarea:focus, select:focus, button {
           background-color: #7b8cde;
         }
       }
-      .tag-wrap {
-        button {
-          width: 120px;
-          height: 40px;
-          border-radius: 0px 10px 0 0;
-          border: 1px solid #cccccc;
-          border-bottom: 0px;
-          background-color: #eeeeee;
-          font-size: 1rem;
 
-          &.taged {
-            box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
-            background-color: #ffffff;
-          }
-        }
-      }
       .multi-lang-field {
         box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
         .row {
@@ -243,23 +229,6 @@ input:focus, textarea:focus, select:focus, button {
       cursor: pointer;
       top: 5px;
       right: 5px;
-    }
-
-    .tag-wrap {
-      button {
-        width: 120px;
-        height: 30px;
-        border-radius: 0px 10px 0 0;
-        border: 1px solid #cccccc;
-        border-bottom: 0px;
-        background-color: #eeeeee;
-        font-size: 0.8rem;
-
-        &.taged {
-          box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.3);
-          background-color: #ffffff;
-        }
-      }
     }
 
     .dialogue-content {
