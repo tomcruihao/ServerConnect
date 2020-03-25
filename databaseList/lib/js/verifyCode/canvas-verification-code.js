@@ -91,8 +91,8 @@ const generateCode = (
   // numbers: 0, 1
   // letters: i, l, o, I, L, O, Q, S
   // feel free to delete them from the string
-  const numberArr = '0123456789'.split('');
-  const letterArr = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  const numberArr = '23456789'.split('');
+  const letterArr = 'abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ'.split('');
 
   let codeText  = '';
   let targetArr = [];
