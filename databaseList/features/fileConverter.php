@@ -14,7 +14,7 @@ error_reporting(E_ALL);
   // $csvFilePath = receivedFileAndGetPath();
 
   $getCSV_data = file_get_contents($csvFilePath);
-  if (strpos($getCSV_data, '","') !== false) {
+  if (strpos($getCSV_data, '"\n"') !== false) {
     echo 'true';
   }
   $processData = str_replace('"\n"', " ", $getCSV_data);
