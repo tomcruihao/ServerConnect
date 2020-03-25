@@ -115,7 +115,7 @@
       <div id="filterField">
         <div class="search-wrap">
           <div class="search-frame">
-            <input type="text" class="search" :placeholder="$t('message.index_placeholder_text')" v-model="searchTerm" @change="searchbox"/>
+            <input type="text" class="search" :placeholder="$t('message.index_placeholder_text')" v-model="searchTerm"/>
           </div>
         </div>
         <div class="atoz-wrap">
@@ -408,6 +408,12 @@
         }
       ]
     },
+    watch: {
+      searchTerm: function(val, oldVal) {
+        console.log(val);
+        console.log(oldVal);
+      }
+    }
     created: function() {
       let self = this;
       $.ajax({
