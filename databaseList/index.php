@@ -410,8 +410,7 @@
     },
     watch: {
       searchTerm: function(val, oldVal) {
-        console.log(val);
-        console.log(oldVal);
+        searchBy(val);
       }
     },
     created: function() {
