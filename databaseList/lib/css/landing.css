@@ -394,22 +394,22 @@ section {
   border-top: 3px solid #008cce;
 }
 
-.journal-field {
+.ebook-field, .journal-field {
   /* when screen pixel less than 640px */
 }
 
-.journal-field .slider {
+.ebook-field .slider, .journal-field .slider {
   width: 90%;
   height: 300px;
   margin: 100px auto;
 }
 
-.journal-field .slider h2 {
+.ebook-field .slider h2, .journal-field .slider h2 {
   font-size: 1rem;
   color: #666666;
 }
 
-.journal-field .slider .image-frame {
+.ebook-field .slider .image-frame, .journal-field .slider .image-frame {
   height: 200px;
   background-color: #fff;
   -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
@@ -422,36 +422,40 @@ section {
           justify-content: center;
 }
 
-.journal-field .slick-slide {
+.ebook-field .slick-slide, .journal-field .slick-slide {
   margin: 0px 20px;
 }
 
-.journal-field .slick-slide img {
+.ebook-field .slick-slide img, .journal-field .slick-slide img {
   width: 100%;
 }
 
-.journal-field .slick-prev:before, .journal-field .slick-next:before {
+.ebook-field .slick-prev:before, .ebook-field .slick-next:before, .journal-field .slick-prev:before, .journal-field .slick-next:before {
   color: black;
 }
 
-.journal-field a {
+.ebook-field a, .journal-field a {
   outline: none;
   text-decoration: none;
 }
 
-.journal-field .ebook-wrap img {
+.ebook-field .ebook-wrap img, .journal-field .ebook-wrap img {
   width: auto;
   height: 100%;
 }
 
-.journal-field .ebook-wrap {
+.ebook-field .ebook-wrap, .journal-field .ebook-wrap {
   position: relative;
 }
 
-.journal-field .image-frame:hover + h2 {
+.ebook-field .image-frame:hover + h2, .journal-field .image-frame:hover + h2 {
   opacity: 1;
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
+}
+
+.ebook-field {
+  background-color: #fff;
 }
 
 .footer {

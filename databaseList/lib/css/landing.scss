@@ -117,7 +117,7 @@ section {
   }
 }
 
-.journal-field {
+.ebook-field, .journal-field {
   .slider {
     width: 90%;
     height: 300px;
@@ -287,7 +287,9 @@ section {
   //   right: 50px;
   // }
 }
-
+.ebook-field {
+  background-color: #fff;
+}
 
 .footer {
   margin-top: 0px;

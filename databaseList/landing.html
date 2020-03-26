@@ -70,8 +70,8 @@
     </div>
   </section>
   <section class="journal-field">
-    <h1>推薦期刊</h1>
-    <div id="ebook" class="regular slider">
+    <h1>期刊推薦</h1>
+    <div id="ebook" class="ejournal slider">
       <div class="ebook-wrap">
         <a href="http://www.google.com">
           <div class="image-frame">
@@ -129,6 +129,88 @@
         </a>
       </div>
     </div>
+    
+    <!-- <div id="slider_journal">
+      <div class="postarea">
+        <div class="posts" :style="computedLeft">
+          <div class="postbox" v-for="(work, id) in works" :class="{curItem: id == nowIndex}">
+            <div class="cover" :style="coverUrl(work.cover)">
+              <div class="infos">
+                <h1>{{work.title}}</h1>
+                <h5>{{work.description}}</h5>
+              </div>
+            </div>
+            <div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="control_left" @click="delta(-1)">left<i class="fa fa-angle-left"></i></div>
+      <div class="control_right" @click="delta(1)">right<i class="fa fa-angle-right"></i></div>
+    </div> -->
+  </section>
+  <section class="ebook-field">
+    <h1>電子書推薦</h1>
+    <div id="ebook" class="ebook slider">
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24108383%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%2478385%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%2478327%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24138581%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%241710%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24108051%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%2481853%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+    </div>
+    
     <!-- <div id="slider_journal">
       <div class="postarea">
         <div class="posts" :style="computedLeft">
@@ -183,7 +265,36 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript">
-  $(".regular").slick(
+  $(".ejournal").slick(
+    {
+      'dots': true,
+      'slidesToShow': 5,
+      'infinite': true,
+      'slidesToScroll': 5,
+      'swipeToSlide': false,
+      'responsive':[
+        {
+          'breakpoint': 641,
+          'settings': {
+            'slidesToShow': 3,
+            'slidesToScroll': 3,
+            'infinite': true,
+            'dots': true
+          }
+        },
+        {
+          'breakpoint':481,
+          'settings': {
+            'slidesToShow':1,
+            'slidesToScroll':1,
+            'infinite':true,
+            'dots':true
+          }
+        }
+      ]
+    }
+  );
+  $(".ebook").slick(
     {
       'dots': true,
       'slidesToShow': 5,
