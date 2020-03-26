@@ -405,6 +405,7 @@ section {
 }
 
 .ebook-field .slider h2, .journal-field .slider h2 {
+  text-align: center;
   font-size: 1rem;
   color: #666666;
 }
