@@ -1,0 +1,280 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博科網</title>
+  <meta name=”description” content=”網頁說明” />
+  <link rel="stylesheet" type="text/css" href="lib/css/landing.css"/>
+</head>
+<body>
+  <header id="header">
+    <div class="logo">
+      <a href="index.php">
+        <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
+      </a>
+    </div>
+    <nav>
+      <label for="mobile_btn" class="mobile-btn-frame">
+        <img src="img/icon/dehaze.svg"/>
+      </label>
+      <input type="checkbox" id="mobile_btn">
+      <ul class="nav-list">
+        <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
+          <div v-if="link.child.length === 0">
+            <a :href="link.link" class="nav-tag" v-if="lang === 'en'">{{link.title.en}}</a>
+            <a :href="link.link" class="nav-tag" v-else-if="lang === 'local'">{{link.title.local}}</a>
+          </div>
+          <div v-else>
+            <label class="nav-tag" :for="'tag'+index" v-if="lang === 'en'">{{link.title.en}}</label>
+            <label class="nav-tag" :for="'tag'+index" v-else-if="lang === 'local'">{{link.title.local}}</label>
+            <input type="checkbox" :id="'tag'+index">
+            <ul>
+              <li v-for="(childLink, c_index) in link.child">
+                <a :href="childLink.link" v-if="lang === 'en'">{{childLink.title.en}}</a>
+                <a :href="childLink.link" v-if="lang === 'local'">{{childLink.title.local}}</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="search-field">
+    <div class="search-warpper">
+      <input class="radio" id="one" name="group" type="radio" checked>
+      <input class="radio" id="two" name="group" type="radio">
+      <input class="radio" id="three" name="group" type="radio">
+    
+      <div class="tabs">
+        <label class="tab" id="one-tab" for="one">資源搜索</label>
+        <label class="tab" id="two-tab" for="two">Tab2</label>
+        <label class="tab" id="three-tab" for="three">Tab3</label>
+      </div>
+    
+      <div class="panels">
+        <div class="panel" id="one-panel">
+          <div class="panel-title">Title1</div>
+          <p>
+            <input type="text" placeholder="test">
+          </p>
+        </div>
+        <div class="panel" id="two-panel">
+          <div class="panel-title">Title2</div>
+          <p>Content2</p>
+        </div>
+        <div class="panel" id="three-panel">
+          <div class="panel-title">Title3</div>
+          <p>Content3</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="journal-field">
+    <h1>推薦期刊</h1>
+    <div id="ebook" class="regular slider">
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24108383%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%2478385%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%2478327%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24138581%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%241710%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24108051%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="http://www.google.com">
+          <div class="image-frame">
+            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%2481853%24PDF&s=l">
+          </div>
+          <h2>test</h2>
+        </a>
+      </div>
+    </div>
+    <!-- <div id="slider_journal">
+      <div class="postarea">
+        <div class="posts" :style="computedLeft">
+          <div class="postbox" v-for="(work, id) in works" :class="{curItem: id == nowIndex}">
+            <div class="cover" :style="coverUrl(work.cover)">
+              <div class="infos">
+                <h1>{{work.title}}</h1>
+                <h5>{{work.description}}</h5>
+              </div>
+            </div>
+            <div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="control_left" @click="delta(-1)">left<i class="fa fa-angle-left"></i></div>
+      <div class="control_right" @click="delta(1)">right<i class="fa fa-angle-right"></i></div>
+    </div> -->
+  </section>
+  <footer class="footer">
+    <div class="lib-info">
+      <div class="info">
+        <address>
+          台北市松山區南京東路三段248號8樓之3
+        </address>
+        <a href="tel:1-408-555-5555">1-408-555-5555</a>
+        <ul class="open-time">
+          <li>Monday	8:00 - 18:00</li>
+          <li>Tuesday	8:00 - 18:00</li>
+          <li>Wednesday	8:00 - 18:00</li>
+          <li>Thursday	8:00 - 18:00</li>
+          <li>Friday	8:00 - 18:00</li>
+        </ul>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57836.86436154896!2d121.5221525725216!3d25.040724039471048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x59c6a43e9c9bbbde!2z576O5ZWG5Y2a56eR5aSW5paH6LOH6KiK6IKh5Lu95pyJ6ZmQ5YWs5Y-45Y-w54Gj5YiG5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1585214750086!5m2!1szh-TW!2stw" width="600" height="150" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <img src="img/logo_white.svg">
+    <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
+  </footer>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-carousel@0.18.0/dist/vue-carousel.min.js"></script>
+<script src="lang/lang.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="lib/js/header_front.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript">
+  $(".regular").slick(
+    {
+      'dots': true,
+      'slidesToShow': 5,
+      'infinite': true,
+      'slidesToScroll': 5,
+      'swipeToSlide': false,
+      'responsive':[
+        {
+          'breakpoint': 641,
+          'settings': {
+            'slidesToShow': 3,
+            'slidesToScroll': 3,
+            'infinite': true,
+            'dots': true
+          }
+        },
+        {
+          'breakpoint':481,
+          'settings': {
+            'slidesToShow':1,
+            'slidesToScroll':1,
+            'infinite':true,
+            'dots':true
+          }
+        }
+      ]
+    }
+  );
+</script>
+
+<script>
+
+  // const buildSlideMarkup = (count) => {
+  //   let slideMarkup = '';
+  //   for (var i = 1; i <= count; i++) {
+  //     slideMarkup += '<slide><span class="label">' + i + '</span></slide>'
+  //   }
+  //   return slideMarkup;
+  // };
+
+  // new Vue({
+  //   el: '#example',
+  //   data: function () {
+  //     return {
+  //       works: [
+  //         {
+  //           title: "海象樂園",
+  //           description: "趴在冰層上的懶惰動物",
+  //           cover: "https://unsplash.it/400/300?image=1084"
+  //         },
+  //         {
+  //           title: "搭船遊去",
+  //           description: "不會游泳只好搭船",
+  //           cover: "https://unsplash.it/400/300?image=1083"
+  //         },
+  //         {
+  //           title: "老年學鋼琴",
+  //           description: "學習永遠不嫌晚！",
+  //           cover: "https://unsplash.it/400/300?image=1082"
+  //         },
+  //         {
+  //           title: "高樓的一隅",
+  //           description: "繁複的幾何線條構築",
+  //           cover: "https://unsplash.it/400/300?image=1081"
+  //         },
+  //         {
+  //           title: "草莓來襲",
+  //           description: "聽見果農的艱辛",
+  //           cover: "https://unsplash.it/400/300?image=1080"
+  //         },
+  //         {
+  //           title: "探索宇宙",
+  //           description: "看見光的速度與殘影",
+  //           cover: "https://unsplash.it/400/300?image=1079"
+  //         }
+  //       ]
+  //     }
+  //   },
+  //   components: {
+  //     'carousel': VueCarousel.Carousel,
+  //     'slide': VueCarousel.Slide
+  //   },
+  //   methods: {
+  //     buildSlideMarkup = (count) => {
+  //       let slideMarkup = '';
+  //       for (var i = 1; i <= count; i++) {
+  //         slideMarkup += '<slide><span class="label">' + i + '</span></slide>'
+  //       }
+  //       return slideMarkup;
+  //     }
+  //   },
+  //   template: '<div><carousel :perPageCustom="[[480, 2], [768, 3]]">' + buildSlideMarkup(10) + '</carousel></div>'
+  // });
+</script>
