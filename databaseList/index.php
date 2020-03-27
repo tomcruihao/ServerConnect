@@ -965,8 +965,10 @@
     let url_string = window.location.href;
     let url = new URL(url_string);
     let param_keyword = url.searchParams.get("keyword");
-    console.log(param_keyword);
-    // filterField.setKeyword
-
+    
+    // if param have value, set the keyword to search-box
+    if(param_keyword) {
+      filterField.setKeyword(param_keyword);
+    }
   });
 </script>
