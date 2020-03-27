@@ -445,10 +445,10 @@
         }
       });
     },
-    mounted: function() {
-
-    },
     methods: {
+      setKeyword: function(keyword) {
+        this.searchTerm = keyword;
+      },
       searchbox: function(e) {
         console.log(e);
         console.log(this.searchTerm);
@@ -962,6 +962,11 @@
     };
     contactList = new List('databaseList', options);
 
-    // createAlphabetAnchor();
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    let param_keyword = url.searchParams.get("keyword");
+    console.log(param_keyword);
+    // filterField.setKeyword
+
   });
 </script>

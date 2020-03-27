@@ -168,129 +168,27 @@ section {
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
   }
-  
-  /* when screen pixel less than 640px */
-  // @include size(100%);
-  // @include flex_center;
-  
-  // .postarea {
-  //   @include size(930px, 250px);
-  //   white-space: nowrap;
-  //   overflow: hidden;
-  // }
-  
-  // .posts {
-  //   height: 100%;
-  //   position: relative;
-  //   transition: .5s;
-  // }
-  
-  // .postbox {
-  //   display: inline-block;
-  //   height: 100%;
-
-  //   .cover {
-  //     @include size(330px, 100%);
-  //     @include flex_center;
-  //     @include trans;
-  //     margin: 0 300px;
-  //     background-size: 100% auto;
-  //     background-position: center center;
-  //     background-repeat: no-repeat;
-  //     cursor: pointer;
-
-  //     &:hover {
-  //       @include size(340px, 110%);
-      
-  //       .infos {
-  //         transform: translate(-220px);
-  //       }
-  //     }
-  //   }
-      
-  //   .infos {
-  //     color: white;
-  //     transform: translateX(-200px);
-  //     text-shadow: 0 0 30px rgba(0,0,0,.3);
-  //     @include trans;
-      
-  //     h1 {
-  //       margin-bottom: 10px;
-  //       font-size: 50px;
-  //       font-weight: 400;
-  //     }
-  //     h5 {
-  //       background-color: white;
-  //       color: black;
-  //       padding: 4px 12px;
-  //       font-size: 20px;
-  //       font-weight: 300; 
-  //       box-shadow: 0 0 30px rgba(0,0,0,.3);
-  //     }
-  //   }
-
-  //   .curItem {
-  //     .cover {
-  //       animation: fadeIn 1s ease both;
-  //     }
-      
-  //     .infos {
-  //       h5 {
-  //         animation: slideIn 1s 0.2s ease both;
-  //       }
-  //     }
-
-  //     @keyframes fadeIn {
-  //       0% {
-  //         opacity: 0;
-  //         transform: translateX(30px);
-  //         filter: saturate(0%);
-  //       }
-  //       100% {
-  //         opacity: 1;
-  //         transform: translateX(0px);
-  //         filter: saturate(100%);
-  //       }
-  //     }
-
-  //     @keyframes slideIn {
-  //       0% {
-  //         opacity: .5;
-  //         transform: translate(-50px);
-  //       }
-  //       100% {
-  //         opacity: 1;
-  //         transform: translate(0px);
-  //       }
-  //     }
-  //   }
-  // }
-
-  // .control_left, .control_right {
-  //   @include size(40px);
-  //   border: solid 1px white;
-  //   position: fixed;
-  //   border-radius: 50%;
-  //   color: white;
-  //   font-size: 30px;
-  //   @include flex_center;
-  //   cursor: pointer;
-  //   @include trans;
-    
-  //   &:hover {
-  //     background-color: white;
-  //     color: black;
-  //   }
-  // }
-  // .control_left {
-  //   left: 50px;
-  // }
-  // .control_right {
-  //   right: 50px;
-  // }
 }
 .ebook-field {
   background-color: #fff;
+}
+
+.linking-field {
+  h2 {
+    font-size: 1.8rem;
+    &.red{
+      color: #e96656;
+    }
+    &.blue {
+      color: #3ab0e2;
+    }
+    &.green {
+      color: #34d293;
+    }
+    &.yellow {
+      color: #f7d861;
+    }
+  }
 }
 
 .footer {
