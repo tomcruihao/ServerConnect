@@ -281,6 +281,10 @@ section {
   padding: 50px;
 }
 
+section h1 {
+  margin: 0;
+}
+
 .search-field {
   width: 100%;
   display: -webkit-box;
@@ -319,7 +323,7 @@ section {
 
 .search-field .search-warpper .tabs .tab {
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 10px 15px;
   margin: 0px 2px;
   background: #008cce;
   display: inline-block;
@@ -339,9 +343,16 @@ section {
   border-radius: 5px;
   overflow: hidden;
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .search-field .search-warpper .panels .panel {
+  width: 100%;
   display: none;
   -webkit-animation: fadein 0.8s;
           animation: fadein 0.8s;
@@ -352,10 +363,43 @@ section {
   font-weight: bold;
 }
 
-.search-field .search-warpper .panels .panel p input {
+.search-field .search-warpper .panels .panel .search-box-wrap {
   width: 100%;
   height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.search-field .search-warpper .panels .panel .search-box-wrap select {
+  width: 80px;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.search-field .search-warpper .panels .panel .search-box-wrap input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 100%;
   font-size: 1rem;
+}
+
+.search-field .search-warpper .panels .panel .search-box-wrap button {
+  width: 50px;
+  height: 100%;
+  margin-left: 10px;
+  background-color: #008cce;
+  cursor: pointer;
+}
+
+.search-field .search-warpper .panels .panel .atoz-wrap button {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 5px 10px;
+  background-color: #00ac69;
+  font-size: 1rem;
+  color: #ffffdb;
 }
 
 @-webkit-keyframes fadein {
@@ -394,10 +438,6 @@ section {
   border-top: 3px solid #008cce;
 }
 
-.ebook-field, .journal-field {
-  /* when screen pixel less than 640px */
-}
-
 .ebook-field .slider, .journal-field .slider {
   width: 90%;
   height: 300px;
@@ -412,9 +452,6 @@ section {
 
 .ebook-field .slider .image-frame, .journal-field .slider .image-frame {
   height: 200px;
-  background-color: #fff;
-  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
-          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -459,14 +496,26 @@ section {
   background-color: #fff;
 }
 
-.footer {
-  margin-top: 0px;
+.database-field .database-wrap {
+  padding: 30px 15px;
 }
 
-.footer .lib-info {
+.database-field .database-wrap .database {
+  width: 240px;
+  height: 320px;
+  padding: 10px;
+  margin: 0 15px 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  display: inline-block;
+}
+
+.database-field .database-wrap .database .btn-wrap {
   width: 100%;
-  padding: 30px 0;
-  color: #ffffdb;
+  padding: 10px 0 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -475,8 +524,102 @@ section {
           justify-content: center;
 }
 
-.footer .lib-info address {
-  padding-right: 15px;
+.database-field .database-wrap .database .btn-wrap button {
+  width: 100%;
+  max-width: 150px;
+  height: 30px;
+  background-color: #4CAF50;
+  color: #ffffff;
+}
+
+.database-field .database-wrap .database .card-wrap {
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+.database-field .database-wrap .database .card-wrap .card {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  /*preserve the back when fliping*/
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  /*front card*/
+  /*back card*/
+}
+
+.database-field .database-wrap .database .card-wrap .card.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.database-field .database-wrap .database .card-wrap .card .card-front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /*hide backface*/
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.database-field .database-wrap .database .card-wrap .card .card-front .img-frame {
+  width: 100%;
+  height: 200px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.database-field .database-wrap .database .card-wrap .card .card-front .img-frame img {
+  width: 100%;
+}
+
+.database-field .database-wrap .database .card-wrap .card .card-front .img-frame img.ver {
+  height: 100%;
+}
+
+.database-field .database-wrap .database .card-wrap .card .card-front .img-frame img.hor {
+  width: 100%;
+}
+
+.database-field .database-wrap .database .card-wrap .card .card-front figcaption {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 5px;
+  text-align: center;
+  color: #333333;
+  font-size: 1rem;
+}
+
+.database-field .database-wrap .database .card-wrap .card .card-back {
+  border-radius: 5px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*hide backface*/
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  color: #333;
+  background-color: #cccccc;
+  font-size: 1rem;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.footer {
+  margin-top: 0px;
 }
 
 @media screen and (max-width: 639px) {
@@ -485,6 +628,16 @@ section {
   }
   .image-frame {
     height: 300px;
+  }
+  .search-field .search-warpper .tabs {
+    width: 100%;
+  }
+  .database-field .database-wrap {
+    padding: 30px 0px;
+  }
+  .database-field .database-wrap .database {
+    width: 100%;
+    margin: 0px 0px 20px;
   }
 }
 /*# sourceMappingURL=landing.css.map */

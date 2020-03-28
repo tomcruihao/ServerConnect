@@ -9,20 +9,28 @@
   align-items: center;
 }
 
-
 @mixin size($w, $h: $w) {
   width: $w;
   height: $h;
 }
 
-
 @mixin trans($t: 0.5s, $td: 0s) {
   transition: $t $td;
 }
 
+@mixin turn180($zIndex: 10) {
+	position: relative;
+	perspective: 1000px;
+}
+
+
 section {
   box-sizing: border-box;
   padding: 50px;
+
+  h1 {
+    margin: 0;
+  }
 }
 
 .search-field {
@@ -37,7 +45,6 @@ section {
   background-size: cover;
   background-position: center;
 
-
   .search-warpper {
     width: 100%;
     display: flex;
@@ -47,10 +54,10 @@ section {
     .tabs {
       width: 90%;
       max-width: 800px;
-      
+
       .tab {
         cursor: pointer;
-        padding: 10px 20px;
+        padding: 10px 15px;
         margin: 0px 2px;
         background: $main_color;
         display: inline-block;
@@ -69,21 +76,49 @@ section {
       border-radius: 5px;
       overflow: hidden;
       padding: 20px;
-  
+      display: flex;
+      align-items: center;
+
       .panel {
+        width: 100%;
         display: none;
         animation: fadein 0.8s;
-  
+
         .panel-title {
           font-size: 1.5em;
           font-weight: bold;
         }
 
-        p {
+        .search-box-wrap {
+          width: 100%;
+          height: 50px;
+          display: flex;
+          select {
+            width: 80px;
+            height: 100%;
+            margin-right: 10px;
+          }
           input {
-            width: 100%;
-            height: 50px;
+            flex: 1;
+            height: 100%;
             font-size: 1rem;
+          }
+          button {
+            width: 50px;
+            height: 100%;
+            margin-left: 10px;
+            background-color: $main_color;
+            cursor: pointer;
+          }
+        }
+        .atoz-wrap {
+          button {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            padding: 5px 10px;
+            background-color: $atoz_btn_bgcolor;
+            font-size: 1rem;
+            color: $text_white;
           }
         }
       }
@@ -132,8 +167,7 @@ section {
 
     .image-frame {
       height: 200px;
-      background-color: #fff;
-      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+      // box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: center;
     }
@@ -173,36 +207,111 @@ section {
   background-color: #fff;
 }
 
-.linking-field {
-  h2 {
-    font-size: 1.8rem;
-    &.red{
-      color: #e96656;
-    }
-    &.blue {
-      color: #3ab0e2;
-    }
-    &.green {
-      color: #34d293;
-    }
-    &.yellow {
-      color: #f7d861;
+.database-field {
+  .database-wrap {
+    padding: 30px 15px;
+    .database {
+      width:240px;
+      height:320px;
+      padding: 10px;
+      margin: 0 15px 15px;
+      box-sizing: border-box;
+      background-color: #fff;
+      display: inline-block;
+
+      .btn-wrap {
+        width: 100%;
+        padding: 10px 0 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+
+        button {
+          width: 100%;
+          max-width: 150px;
+          height: 30px;
+          background-color: $button_color;
+          color: #ffffff;
+        }
+      }
+
+      .card-wrap {
+        width: 100%;
+        height: 250px;
+        position:relative;
+
+        .card{
+          width:100%;
+          height:100%;
+          margin: 0;
+          position:absolute;
+          /*preserve the back when fliping*/
+          transform-style:preserve-3d;
+          transition:0.5s all ease;
+          // box-shadow: 0px 0px 10px rgba(10, 10, 10, 0.8);
+
+          &.back {
+            transform:rotateY(180deg);
+          }
+
+          /*front card*/
+          .card-front{
+            width:100%;
+            height:100%;
+            // border-radius:5px;
+            position:absolute;
+            /*hide backface*/
+            backface-visibility:hidden;
+            .img-frame {
+              width: 100%;
+              height: 200px;
+              box-sizing: border-box;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              img {
+                width: 100%;
+                &.ver {
+                  height: 100%;
+                }
+                &.hor {
+                  width: 100%;
+                }
+              }
+            }
+
+            figcaption {
+              box-sizing: border-box;
+              padding: 5px;
+              text-align: center;
+              color: #333333;
+              font-size: 1rem;
+            }
+          }
+
+          /*back card*/
+          .card-back{
+            border-radius:5px;
+            position:absolute;
+            width:100%;
+            height:100%;
+            /*hide backface*/
+            backface-visibility:hidden;
+            color:#333;
+            background-color: #cccccc;
+            font-size:1rem;
+            // background:url("https://preview.ibb.co/bF05wV/danask.png") center top repeat;
+            transform:rotateY(180deg);
+          }
+        }
+      }
     }
   }
 }
 
 .footer {
   margin-top: 0px;
-  .lib-info {
-    width: 100%;
-    padding: 30px 0;
-    color: $text_white;
-    display: flex;
-    justify-content: center;
-    address {
-      padding-right: 15px;
-    }
-  }
 }
 
 @media screen and (max-width: 639px) {
@@ -211,5 +320,21 @@ section {
   }
   .image-frame {
     height: 300px;
+  }
+  .search-field {
+    .search-warpper {
+      .tabs {
+        width: 100%;
+      }
+    }
+  }
+  .database-field {
+    .database-wrap {
+      padding: 30px 0px;
+      .database {
+        width: 100%;
+        margin: 0px 0px 20px;
+      }
+    }
   }
 }

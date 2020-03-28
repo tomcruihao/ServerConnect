@@ -40,31 +40,54 @@
     </nav>
   </header>
   <section class="search-field">
-    <div class="search-warpper">
+    <div class="search-warpper" id="searchField">
       <input class="radio" id="one" name="group" type="radio" checked>
       <input class="radio" id="two" name="group" type="radio">
       <input class="radio" id="three" name="group" type="radio">
     
       <div class="tabs">
-        <label class="tab" id="one-tab" for="one">資源搜索</label>
-        <label class="tab" id="two-tab" for="two">Tab2</label>
-        <label class="tab" id="three-tab" for="three">Tab3</label>
+        <label class="tab" id="one-tab" for="one">文章查詢</label>
+        <label class="tab" id="two-tab" for="two">期刊查詢</label>
+        <label class="tab" id="three-tab" for="three">資料庫查詢</label>
       </div>
     
       <div class="panels">
         <div class="panel" id="one-panel">
-          <div class="panel-title">Title1</div>
-          <p>
-            <input type="text" placeholder="test">
-          </p>
+          <div class="panel-title">文章查詢</div>
+          <div class="search-box-wrap">
+            <select v-model="eds.prefix">
+              <option value="" selected="selected">關鍵字</option>
+              <option value="TI">標題</option>
+              <option value="AU">作者</option>
+              <option value="JN">期刊</option>
+            </select>
+            <input type="text" placeholder="請輸入文章標題" v-on:keyup.13="sendToEDS" v-model="eds.articleKeyword">
+            <button @click="sendToEDS">
+              <img src="img/icon/search.svg" alt="Search" title="Search"/>
+            </button>
+          </div>
         </div>
         <div class="panel" id="two-panel">
-          <div class="panel-title">Title2</div>
-          <p>Content2</p>
+          <div class="search-box-wrap">
+            <input type="text" placeholder="請輸入期刊標題" v-on:keyup.13="sendToPFI()" v-model="pfi.pfiKeyword">
+            <button @click="sendToPFI()">
+              <img src="img/icon/search.svg" alt="Search" title="Search"/>
+            </button>
+          </div>
+          <div class="atoz-wrap">
+            <button class="text-frame" @click="atozLink('number')">0-9</button>
+            <button class="text-frame" @click="atozLink(alphabet)" v-for="(alphabet, index) in atoz">{{alphabet}}</button>
+            <button class="text-frame" @click="atozLink('other')">Others</button>
+          </div>
         </div>
         <div class="panel" id="three-panel">
-          <div class="panel-title">Title3</div>
-          <p>Content3</p>
+          <div class="panel-title">資料庫查詢</div>
+          <div class="search-box-wrap">
+            <input type="text" placeholder="請輸入資源名稱" v-on:keyup.13="sendToResourcePage()" v-model="resourceKeyword">
+            <button @click="sendToResourcePage()">
+              <img src="img/icon/search.svg" alt="Search" title="Search"/>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -231,72 +254,30 @@
       <div class="control_right" @click="delta(1)">right<i class="fa fa-angle-right"></i></div>
     </div> -->
   </section>
-  <section>
+  <section class="database-field" id="databaseField">
     <h1>資料庫推薦</h1>
-  </section>
-  <section class="linking-field">
-    <div class="linking-list">
-      <h2 class="red">研究資源</h2>
-      <ul>
-        <li>
-          <a href="http://www.google.com">EBSCO EDS</a>
-        </li>
-        <li>
-          <a href="http://www.google.com">EBSCO PFI</a>
-        </li>
-      </ul>
-    </div>
-    <div class="linking-list">
-      <h2 class="red">參考諮詢</h2>
-      <ul>
-        <li>
-          <a href="http://www.google.com">EBSCO EDS</a>
-        </li>
-        <li>
-          <a href="http://www.google.com">EBSCO PFI</a>
-        </li>
-      </ul>
-    </div>
-    <div class="linking-list">
-      <h2 class="red">服務項目</h2>
-      <ul>
-        <li>
-          <a href="http://www.google.com">EBSCO EDS</a>
-        </li>
-        <li>
-          <a href="http://www.google.com">EBSCO PFI</a>
-        </li>
-      </ul>
-    </div>
-    <div class="linking-list">
-      <h2 class="red">關於本館</h2>
-      <ul>
-        <li>
-          <a href="http://www.google.com">EBSCO EDS</a>
-        </li>
-        <li>
-          <a href="http://www.google.com">EBSCO PFI</a>
-        </li>
-      </ul>
+    <div class="database-wrap">
+      <div class="database" v-for="(database, index) in databases">
+        <div class="card-wrap">
+          <figure class="card" v-bind:class="{ back: database.rotate}">
+            <div class="card-front">
+              <div class="img-frame">
+                <img :src="database.imgCoverPath" alt="Trulli" style="width:100%">
+              </div>
+              <figcaption>{{database.name.local}}</figcaption>
+            </div>
+            <div class="card-back">
+              {{database.brief.local}}
+            </div>
+          </figure>
+        </div>
+        <div class="btn-wrap">
+          <button @click="rotate(database)">簡介</button>
+        </div>
+      </div>
     </div>
   </section>
   <footer class="footer">
-    <div class="lib-info">
-      <div class="info">
-        <address>
-          台北市松山區南京東路三段248號8樓之3
-        </address>
-        <a href="tel:1-408-555-5555">1-408-555-5555</a>
-        <ul class="open-time">
-          <li>Monday	8:00 - 18:00</li>
-          <li>Tuesday	8:00 - 18:00</li>
-          <li>Wednesday	8:00 - 18:00</li>
-          <li>Thursday	8:00 - 18:00</li>
-          <li>Friday	8:00 - 18:00</li>
-        </ul>
-      </div>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57836.86436154896!2d121.5221525725216!3d25.040724039471048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x59c6a43e9c9bbbde!2z576O5ZWG5Y2a56eR5aSW5paH6LOH6KiK6IKh5Lu95pyJ6ZmQ5YWs5Y-45Y-w54Gj5YiG5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1585214750086!5m2!1szh-TW!2stw" width="600" height="150" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div>
     <img src="img/logo_white.svg">
     <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
   </footer>
@@ -314,6 +295,111 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript">
+  var searchField = new Vue({
+    el:'#searchField',
+    i18n,
+    data: {
+      eds: {
+        prefix: '',
+        articleKeyword: '',
+      },
+      pfi: {
+        pfiKeyword: '',
+      },      
+      resourceKeyword: '',
+      atoz: []
+    },
+    created: function() {
+      // create atoz
+      for(let loop = 0; loop < 26; loop++) {
+        let alphabet = String.fromCharCode(65 + loop);
+        this.atoz.push(alphabet);
+      }
+    },
+    mounted: function() {
+    },
+    methods: {
+      sendToEDS() {
+        let bquery = '';
+
+        if(this.eds.prefix !== '') {
+          bquery = `${this.eds.prefix} ${this.eds.articleKeyword}`;
+        } else {
+          bquery = this.eds.articleKeyword;
+        }
+        
+        window.open(`https://search.ebscohost.com/login.aspx?authtype=guest&custid=jaychang&groupid=main&profile=test_eds&bquery=${bquery}&direct=true`);
+      },
+      sendToPFI(query = '') {
+        let bquery = query;
+        if(query === '') {
+          bquery = this.pfi.pfiKeyword;
+        }
+        console.log(bquery);
+        // window.open(`https://search.ebscohost.com/login.aspx?authtype=guest&custid=jaychang&groupid=main&profile=pfi&bquery=${bquery}&direct=true`);
+      },
+      sendToResourcePage() {
+        window.open(`http://gss.ebscohost.com/chchang/ServerConnect/databaseList/index.php?keyword=${this.resourceKeyword}`);
+      },
+      atozLink(alphabet) {
+        let alphabetQuery = '';
+        if(alphabet === 'number') {
+          alphabetQuery = 'JN+0*+OR+JN+1*+OR+JN+2*+OR+JN+3*+OR+JN+4*+OR+JN+5*+OR+JN+6*+OR+JN+7*+OR+JN+8*+OR+JN+9*';
+        } else if(alphabet === 'other') {
+          alphabetQuery = 'JN+*+NOT+(JN+A*+OR+JN+B*+OR+JN+C*+OR+JN+D*+OR+JN+E*+OR+JN+F*+OR+JN+G*+OR+JN+H*+OR+JN+I*+OR+JN+J*+OR+JN+K*+OR+JN+L*+OR+JN+M*+OR+JN+N*+OR+JN+O*+OR+JN+P*+OR+JN+Q*+OR+JN+R*+OR+JN+S*+OR+JN+T*+OR+JN+U*+OR+JN+V*+OR+JN+W*+OR+JN+X*+OR+JN+Y*+OR+JN+Z*+OR+JN+0*+OR+JN+1*+OR+JN+2*+OR+JN+3*+OR+JN+4*+OR+JN+5*+OR+JN+6*+OR+JN+7*+OR+JN+8*+OR+JN+9*)';
+        } else {
+          alphabetQuery = `JN+${alphabet}*+OR+JN+THE+${alphabet}*+OR+JN+DER+${alphabet}*+OR+JN+DIE+${alphabet}*+OR+JN+DAS+${alphabet}*+OR+JN+LAS+${alphabet}*+OR+JN+LOS+${alphabet}*+OR+JN+LES+${alphabet}*+OR+JN+EL+${alphabet}*+OR+JN+IL+${alphabet}*+OR+JN+LA+${alphabet}*+OR+JN+LE+${alphabet}*`;
+        }
+        this.sendToPFI(alphabetQuery);
+      }
+    }
+  })
+
+  var databaseField = new Vue({
+    el:'#databaseField',
+    i18n,
+    data: {
+      databases: [
+        {
+          name: {
+            en: 'ERIC',
+            local: 'ERIC 高等教育知識庫'
+          },
+          brief: {
+            en: 'ERIC Intro',
+            local: 'ERIC 介紹'
+          },
+          imgCoverPath: 'img/dbVendor/ERIC.jpg',
+          linkUrl: 'http://www.ericdata.com/',
+          rotate: false
+        },
+        {
+          name: {
+            en: 'AIRITI Library',
+            local: 'AIRITI 華藝線上圖書館'
+          },
+          brief: {
+            en: 'AIRITI Intro',
+            local: 'AIRITI 介紹'
+          },
+          imgCoverPath: 'img/dbVendor/AIRITI.png',
+          linkUrl: 'https://www.airitilibrary.com/',
+          rotate: false
+        }
+      ],
+      lang: 'local'
+    },
+    created: function() {
+    },
+    mounted: function() {
+    },
+    methods: {
+      rotate(obj) {
+        obj.rotate = !obj.rotate;
+      }
+    }
+  })
+
   $(".ejournal").slick(
     {
       'dots': true,
