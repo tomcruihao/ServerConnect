@@ -35,7 +35,7 @@
     //   return $url;
     // }
   }
-  $url = getRealurl('https://libermg.ncyu.edu.tw/cgi-bin/smartweaver/browse.cgi?ccd=DqySwM&o=e0&s=c-1-114082');
+  $url = getRealurl('https://libermg.ncyu.edu.tw/cgi-bin/smartweaver/browse.cgi?ccd=2HOKxW&o=e0&s=c-1-114082');
   echo $url;
   // $jsonFilePath = './test.json';
   // $SID = $_GET['sid'];
