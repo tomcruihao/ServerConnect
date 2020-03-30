@@ -23,7 +23,7 @@
   }
 
   $url = get_proxy_site_page('https://libermg.ncyu.edu.tw/cgi-bin/smartweaver/browse.cgi?ccd=bPrCxo&o=e0&s=c-1-230784');
-  echo $url;
+  print_r($url);
   // $jsonFilePath = './test.json';
   // $SID = $_GET['sid'];
 
