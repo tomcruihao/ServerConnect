@@ -92,6 +92,68 @@
       </div>
     </div>
   </section>
+  <section class="subject-field" id="subjectField">
+    <h1>特色專題</h1>
+    <div class="subjects">
+      <figure class="subject-wrap">
+        <div class="img-frame">
+          <img src="img/subjects/elearning.png">
+        </div>
+        <figcaption>
+          <h2>
+            E - Learning
+          </h2>
+        </figcaption>
+      </figure>
+      <figure class="subject-wrap">
+        <div class="img-frame">
+          <img src="img/subjects/adaptive_learning.png">
+        </div>
+        <figcaption>
+          <h2>
+            自適應學習
+          </h2>
+        </figcaption>
+      </figure>
+      <figure class="subject-wrap">
+        <div class="img-frame">
+          <img src="img/subjects/peer_learning.png">
+        </div>
+        <figcaption>
+          <h2>
+            同儕學習
+          </h2>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="article-field" id="articleField">
+    <h1>文章推薦</h1>
+    <div class="articles">
+      <div class="article-wrap">
+        <h2>Lean principles, learning, and knowledge work: Evidence from a software services provider</h2>
+        <div class="row">
+          <div class="title">作者:</div>
+          <div class="content">Staats, Bradley R. a, ⁎; Brunner, David James b, 1; Upton, David M. c, 2</div>
+        </div>
+        <div class="row">
+          <div class="title">來源:</div>
+          <div class="content">In Special Issue on Field Research in Operations and Supply Chain Management, Journal of Operations Management 2011 29(5):376-390</div>
+        </div>
+      </div>
+      <div class="article-wrap">
+        <h2>Quorum quenching enzyme activity is widely conserved in the sera of mammalian species</h2>
+        <div class="row">
+          <div class="title">作者:</div>
+          <div class="content">Yang, Fan a, b; Wang, Lian-Hui a; Wang, Jing a; Dong, Yi-Hu a; Hu, Jiang Yong b; Zhang, Lian-Hui a, ⁎</div>
+        </div>
+        <div class="row">
+          <div class="title">來源:</div>
+          <div class="content">In FEBS Letters 2005 579(17):3713-3717</div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="journal-field">
     <h1>期刊推薦</h1>
     <div id="ebook" class="ejournal slider">
@@ -335,8 +397,8 @@
         if(query === '') {
           bquery = this.pfi.pfiKeyword;
         }
-        console.log(bquery);
-        // window.open(`https://search.ebscohost.com/login.aspx?authtype=guest&custid=jaychang&groupid=main&profile=pfi&bquery=${bquery}&direct=true`);
+
+        window.open(`https://search.ebscohost.com/login.aspx?authtype=guest&custid=jaychang&groupid=main&profile=pfi&bquery=${bquery}&direct=true`);
       },
       sendToResourcePage() {
         window.open(`http://gss.ebscohost.com/chchang/ServerConnect/databaseList/index.php?keyword=${this.resourceKeyword}`);
@@ -367,7 +429,7 @@
           },
           brief: {
             en: 'ERIC Intro',
-            local: 'ERIC 介紹'
+            local: '擁有全國最多教育叢書之高等教育出版社，2009年與凌網科技合作建置「高等教育知識庫」。匯集兩岸三地數十種教育核心期刊資源與成果，編輯群更涵蓋教育知名學校系所、學會、基金會、出版社等，提供最新期刊電子全文內容。'
           },
           imgCoverPath: 'img/dbVendor/ERIC.jpg',
           linkUrl: 'http://www.ericdata.com/',
@@ -380,10 +442,62 @@
           },
           brief: {
             en: 'AIRITI Intro',
-            local: 'AIRITI 介紹'
+            local: '「Airiti Library 華藝線上圖書館」是唯一整合台灣與大陸的學術資源，包括期刊論文、學位論文、會議論文集等重要全文資料。收錄主題含人文學、社會科學、自然科學、應用科學、醫學生命科學。 ※『Airiti Library 華藝線上圖書館』為CEPS思博網+CETD中文電子學位論文服務整合查詢入口網'
           },
           imgCoverPath: 'img/dbVendor/AIRITI.png',
           linkUrl: 'https://www.airitilibrary.com/',
+          rotate: false
+        },
+        {
+          name: {
+            en: 'The Learning and Technology Library',
+            local: 'The Learning and Technology Library'
+          },
+          brief: {
+            en: 'The Learning and Technology Library Intro',
+            local: 'The Learning and Technology Library 介紹'
+          },
+          imgCoverPath: 'img/dbVendor/LEARNINGandTECH.png',
+          linkUrl: 'https://www.learntechlib.org/',
+          rotate: false
+        },
+        {
+          name: {
+            en: 'Education World',
+            local: 'Education World'
+          },
+          brief: {
+            en: 'Education World Brief',
+            local: '提供給教育者的免費資源，包含教案內容、網站整理、主題資源等教學訊息。'
+          },
+          imgCoverPath: 'img/dbVendor/EDUCATION_WORLD.png',
+          linkUrl: 'https://www.educationworld.com/',
+          rotate: false
+        },
+        {
+          name: {
+            en: 'ERIC Digests',
+            local: 'ERIC Digests'
+          },
+          brief: {
+            en: 'ERIC Digests Brief',
+            local: '免費提供ERIC資料庫收錄之全文短篇(1000-1500字)報告，適用於教育專業者廣及社會團體。每篇報告內含現行關注教育主題之概述，以及參考文獻資訊。'
+          },
+          imgCoverPath: 'img/dbVendor/ERIC_DIGESTS.png',
+          linkUrl: 'https://www.ericdigests.org/eric-digests.html',
+          rotate: false
+        },
+        {
+          name: {
+            en: 'Professional Development Collection(PDC)',
+            local: 'Professional Development Collection(PDC)'
+          },
+          brief: {
+            en: 'Professional Development Collection Brief',
+            local: '為專業教育者所設計，收錄逾750種具高專業性全文期刊，其中以職業教育資料為主'
+          },
+          imgCoverPath: 'img/dbVendor/PROFESSIONAL_DEVELOPMENT_COLLECTION.png',
+          linkUrl: 'https://www.ebsco.com/products/research-databases/professional-development-collection',
           rotate: false
         }
       ],

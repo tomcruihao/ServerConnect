@@ -3,6 +3,9 @@
 @import "header";
 @import "footer";
 
+$section_block1_bg: #ffffff;
+$section_block2_bg: transparent;
+
 @mixin flex_center {
   display: flex;
   justify-content: center;
@@ -30,6 +33,13 @@ section {
 
   h1 {
     margin: 0;
+  }
+
+  &:nth-of-type(2n-1) {
+    background-color: $section_block1_bg;
+  }
+  &:nth-of-type(2n) {
+    background-color: $section_block2_bg;
   }
 }
 
@@ -153,6 +163,75 @@ section {
   }
 }
 
+.subject-field {
+  .subjects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .subject-wrap {
+      width: 300px;
+      height: 260px;
+      margin: 30px 15px 0;
+      background-color: #fff;
+      border: 1px solid $main_color;
+      box-sizing: border-box;
+      display: inline-block;
+
+      .img-frame {
+        width: 100%;
+        height: 200px;
+
+        img {
+          width: 100%;
+          height: 200px;
+        }
+      }
+      figcaption {
+        h2 {
+          padding-left: 10px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.article-field {
+  // &.block {
+  //   .articles {
+
+  //     .article-wrap {
+  //       width: 20%;
+  //       display: flex;
+  //       flex-wrap: wrap;
+  //     }
+  //   }
+  // }
+  .articles {
+    .article-wrap {
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px solid $main_color;
+
+      h2 {
+        font-size: 1.2rem;
+      }
+      .row {
+        display: flex;
+
+        .title {
+          width: 80px;
+        }
+
+        .content {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+
 .ebook-field, .journal-field {
   .slider {
     width: 90%;
@@ -210,11 +289,16 @@ section {
 .database-field {
   .database-wrap {
     padding: 30px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
     .database {
       width:240px;
       height:320px;
       padding: 10px;
-      margin: 0 15px 15px;
+      margin: 0 15px 30px;
+      border: 1px solid $main_color;
       box-sizing: border-box;
       background-color: #fff;
       display: inline-block;
@@ -299,7 +383,7 @@ section {
             /*hide backface*/
             backface-visibility:hidden;
             color:#333;
-            background-color: #cccccc;
+            background-color: #fff;
             font-size:1rem;
             // background:url("https://preview.ibb.co/bF05wV/danask.png") center top repeat;
             transform:rotateY(180deg);
@@ -334,6 +418,14 @@ section {
       .database {
         width: 100%;
         margin: 0px 0px 20px;
+      }
+    }
+  }
+  .subject-field {
+    .subjects {
+      .subject-wrap {
+        width: 100%;
+        margin: 30px 0 0;
       }
     }
   }

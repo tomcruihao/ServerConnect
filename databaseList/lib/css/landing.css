@@ -285,6 +285,14 @@ section h1 {
   margin: 0;
 }
 
+section:nth-of-type(2n-1) {
+  background-color: #ffffff;
+}
+
+section:nth-of-type(2n) {
+  background-color: transparent;
+}
+
 .search-field {
   width: 100%;
   display: -webkit-box;
@@ -438,6 +446,68 @@ section h1 {
   border-top: 3px solid #008cce;
 }
 
+.subject-field .subjects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.subject-field .subjects .subject-wrap {
+  width: 300px;
+  height: 260px;
+  margin: 30px 15px 0;
+  background-color: #fff;
+  border: 1px solid #008cce;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+}
+
+.subject-field .subjects .subject-wrap .img-frame {
+  width: 100%;
+  height: 200px;
+}
+
+.subject-field .subjects .subject-wrap .img-frame img {
+  width: 100%;
+  height: 200px;
+}
+
+.subject-field .subjects .subject-wrap figcaption h2 {
+  padding-left: 10px;
+  font-size: 1.2rem;
+}
+
+.article-field .articles .article-wrap {
+  margin-top: 30px;
+  padding: 15px;
+  border: 1px solid #008cce;
+}
+
+.article-field .articles .article-wrap h2 {
+  font-size: 1.2rem;
+}
+
+.article-field .articles .article-wrap .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.article-field .articles .article-wrap .row .title {
+  width: 80px;
+}
+
+.article-field .articles .article-wrap .row .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 .ebook-field .slider, .journal-field .slider {
   width: 90%;
   height: 300px;
@@ -498,13 +568,21 @@ section h1 {
 
 .database-field .database-wrap {
   padding: 30px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .database-field .database-wrap .database {
   width: 240px;
   height: 320px;
   padding: 10px;
-  margin: 0 15px 15px;
+  margin: 0 15px 30px;
+  border: 1px solid #008cce;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #fff;
@@ -612,7 +690,7 @@ section h1 {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   color: #333;
-  background-color: #cccccc;
+  background-color: #fff;
   font-size: 1rem;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
@@ -638,6 +716,10 @@ section h1 {
   .database-field .database-wrap .database {
     width: 100%;
     margin: 0px 0px 20px;
+  }
+  .subject-field .subjects .subject-wrap {
+    width: 100%;
+    margin: 30px 0 0;
   }
 }
 /*# sourceMappingURL=landing.css.map */
