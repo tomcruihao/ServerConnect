@@ -8,7 +8,7 @@
     <AbstractLength>300</AbstractLength>
     <ClientCredentials>
         <User>
-            <UserId>jaychangapi</UserId>
+            <UserId>jaychang</UserId>
             <Password>Qwer1!34</Password>        
         </User>
     </ClientCredentials>
@@ -18,7 +18,7 @@
             <ClientUser>guest</ClientUser>
             <EDSUserID>J4VAGI77SD^hDOkw0uCV</EDSUserID>
             <EDSPassword>H5r3CUIj^ZnEXSR$hbO^</EDSPassword>
-            <EDSProfile>eds-api</EDSProfile>           
+            <EDSProfile>api</EDSProfile>           
         </User>
         <User>
             <ClientUser>jaychang</ClientUser>
