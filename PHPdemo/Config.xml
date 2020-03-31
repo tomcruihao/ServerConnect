@@ -15,6 +15,12 @@
     
     <EDSCredentials>     
         <User>
+            <ClientUser>guest</ClientUser>
+            <EDSUserID>insert EDS credential</EDSUserID>
+            <EDSPassword>insert EDS credential</EDSPassword>
+            <EDSProfile>insert EDS credential</EDSProfile>           
+        </User>
+        <User>
             <ClientUser>Client Credential UserId</ClientUser>
             <EDSUserID>J4VAGI77SD^hDOkw0uCV</EDSUserID>
             <EDSPassword>H5r3CUIj^ZnEXSR$hbO^</EDSPassword>
