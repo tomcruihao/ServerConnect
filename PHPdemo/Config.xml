@@ -18,13 +18,13 @@
             <ClientUser>guest</ClientUser>
             <EDSUserID>J4VAGI77SD^hDOkw0uCV</EDSUserID>
             <EDSPassword>H5r3CUIj^ZnEXSR$hbO^</EDSPassword>
-            <EDSProfile>eds-api</EDSProfile>           
+            <EDSProfile>api</EDSProfile>           
         </User>
         <User>
             <ClientUser>jaychang</ClientUser>
             <EDSUserID>J4VAGI77SD^hDOkw0uCV</EDSUserID>
             <EDSPassword>H5r3CUIj^ZnEXSR$hbO^</EDSPassword>
-            <EDSProfile>eds-api</EDSProfile>           
+            <EDSProfile>api</EDSProfile>           
         </User>       
     </EDSCredentials>
 </Config>
