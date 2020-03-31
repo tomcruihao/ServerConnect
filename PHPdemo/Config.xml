@@ -8,18 +8,12 @@
     <AbstractLength>300</AbstractLength>
     <ClientCredentials>
         <User>
-            <UserId>jaychangapi</UserId>
+            <UserId>jaychang</UserId>
             <Password>Qwer1!34</Password>        
         </User>
     </ClientCredentials>
     
-    <EDSCredentials>     
-        <User>
-            <ClientUser>guest</ClientUser>
-            <EDSUserID>insert EDS credential</EDSUserID>
-            <EDSPassword>insert EDS credential</EDSPassword>
-            <EDSProfile>insert EDS credential</EDSProfile>           
-        </User>
+    <EDSCredentials>
         <User>
             <ClientUser>jaychang</ClientUser>
             <EDSUserID>J4VAGI77SD^hDOkw0uCV</EDSUserID>
