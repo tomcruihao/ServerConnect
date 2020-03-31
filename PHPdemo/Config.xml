@@ -8,8 +8,8 @@
     <AbstractLength>300</AbstractLength>
     <ClientCredentials>
         <User>
-            <UserId>jaychang</UserId>
-            <Password>Qwer1!34</Password>        
+            <UserId>eds-api</UserId>
+            <Password>eds-api</Password>        
         </User>
     </ClientCredentials>
     
