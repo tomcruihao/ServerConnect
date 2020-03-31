@@ -8,17 +8,23 @@
     <AbstractLength>300</AbstractLength>
     <ClientCredentials>
         <User>
-            <UserId>jaychangapi</UserId>
-            <Password>Qwer1!34</Password>        
+            <UserId>eds-api</UserId>
+            <Password>eds-api</Password>        
         </User>
     </ClientCredentials>
     
     <EDSCredentials>     
         <User>
+            <ClientUser>guest</ClientUser>
+            <EDSUserID>J4VAGI77SD^hDOkw0uCV</EDSUserID>
+            <EDSPassword>H5r3CUIj^ZnEXSR$hbO^</EDSPassword>
+            <EDSProfile>eds-api</EDSProfile>           
+        </User>
+        <User>
             <ClientUser>jaychangapi</ClientUser>
             <EDSUserID>J4VAGI77SD^hDOkw0uCV</EDSUserID>
             <EDSPassword>H5r3CUIj^ZnEXSR$hbO^</EDSPassword>
-            <EDSProfile>api</EDSProfile>           
+            <EDSProfile>eds-api</EDSProfile>           
         </User>       
     </EDSCredentials>
 </Config>
