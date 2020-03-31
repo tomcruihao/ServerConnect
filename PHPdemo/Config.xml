@@ -8,23 +8,17 @@
     <AbstractLength>300</AbstractLength>
     <ClientCredentials>
         <User>
-            <UserId>insert client side profile</UserId>
-            <Password>insert client side profile</Password>        
+            <UserId>jaychangapi</UserId>
+            <Password>Qwer1!34</Password>        
         </User>
     </ClientCredentials>
     
     <EDSCredentials>     
         <User>
-            <ClientUser>guest</ClientUser>
-            <EDSUserID>insert EDS credential</EDSUserID>
-            <EDSPassword>insert EDS credential</EDSPassword>
-            <EDSProfile>insert EDS credential</EDSProfile>           
-        </User>
-        <User>
             <ClientUser>Client Credential UserId</ClientUser>
-            <EDSUserID>insert EDS credential</EDSUserID>
-            <EDSPassword>insert EDS credential</EDSPassword>
-            <EDSProfile>insert EDS credential</EDSProfile>           
+            <EDSUserID>J4VAGI77SD^hDOkw0uCV</EDSUserID>
+            <EDSPassword>H5r3CUIj^ZnEXSR$hbO^</EDSPassword>
+            <EDSProfile>api</EDSProfile>           
         </User>       
     </EDSCredentials>
 </Config>
