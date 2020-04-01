@@ -47,5 +47,5 @@
   } else {
     exit();
   }
-  // echo $apiResponse;
+  echo $apiResponse;
 ?>
