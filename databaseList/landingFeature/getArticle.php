@@ -26,7 +26,7 @@
     // print_r($headerInfo);
     
     // curl_setopt($curl, CURLOPT_HTTPHEADER, $headerInfo);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
       "x-authenticationToken:".$_SESSION["AuthenticationToken"],
       "x-sessionToken:".$_SESSION["SessionToken"]
     ));
