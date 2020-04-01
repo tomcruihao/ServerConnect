@@ -47,7 +47,7 @@
 
   if($processResponse['IsSuccessful']) {
     $_SESSION['AuthenticationToken'] = $processResponse['AuthenticationToken'];
-    $_SESSION['SessionToken'] = $processResponse['SessionToken']
+    $_SESSION['SessionToken'] = $processResponse['SessionToken'];
   }
 
   echo $_SESSION['AuthenticationToken'];
