@@ -8,14 +8,12 @@
   // }
   include 'getAuth.php';
 
-  function getArticle($data = false) {
+  function getArticle($data) {
     $curl = curl_init();
 
     // set method and data
     curl_setopt($curl, CURLOPT_POST, 1);
-    if ($data) {
-      curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
-    }
+    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
 
     // set header
     // $headerInfo = array(
@@ -30,7 +28,6 @@
       "x-authenticationToken:".$_SESSION["AuthenticationToken"],
       "x-sessionToken:".$_SESSION["SessionToken"]
     ));
-    curl_setopt($curl, CURLOPT_HEADER, 0);
 
     curl_setopt($curl, CURLOPT_URL, 'https://eds-api.ebscohost.com/edsapi/rest/Search');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
