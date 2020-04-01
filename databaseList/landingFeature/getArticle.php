@@ -22,12 +22,13 @@
       'x-authenticationToken' => $_SESSION['AuthenticationToken'],
       'x-sessionToken' => $_SESSION['SessionToken']
     );
-    print_r($headerInfo);
     
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headerInfo);
 
     curl_setopt($curl, CURLOPT_URL, 'https://eds-api.ebscohost.com/edsapi/rest/Search');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+    print_r($curl);
 
     $result = curl_exec($curl);
 
