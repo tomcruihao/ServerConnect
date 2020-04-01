@@ -55,6 +55,6 @@
     "query" => "nature",
     "searchmode" => "all"
   );
-  // print_r(getArticle(json_encode($articleParams, JSON_UNESCAPED_UNICODE)));
-  print_r(getArticle($articleParams));
+  print_r(getArticle(json_encode($articleParams, JSON_UNESCAPED_UNICODE)));
+  // print_r(getArticle($articleParams));
 ?>
