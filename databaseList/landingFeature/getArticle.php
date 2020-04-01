@@ -22,6 +22,7 @@
       'x-authenticationToken' => $_SESSION['AuthenticationToken'],
       'x-sessionToken' => $_SESSION['SessionToken']
     );
+    print_r($headerInfo);
     
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headerInfo);
 
@@ -53,7 +54,7 @@
     "Actions" => null
   );
   $articleParams = json_encode($articleParams, JSON_UNESCAPED_UNICODE);
-  print_r($articleParams);
+  // print_r($articleParams);
   
   print_r(getArticle($articleParams));
   // print_r(getArticle($articleParams));
