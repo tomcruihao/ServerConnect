@@ -19,8 +19,8 @@
 
     // set header
     $headerInfo = array(
-      'x-authenticationToken' => $_SESSION['AuthenticationToken'],
-      'x-sessionToken' => $_SESSION['SessionToken']
+      "x-authenticationToken" => $_SESSION["AuthenticationToken"],
+      "x-sessionToken" => $_SESSION["SessionToken"]
     );
 
     print_r($headerInfo);
