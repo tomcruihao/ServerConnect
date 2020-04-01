@@ -18,14 +18,18 @@
     }
 
     // set header
-    $headerInfo = array(
-      "x-authenticationToken" => $_SESSION["AuthenticationToken"],
-      "x-sessionToken" => $_SESSION["SessionToken"]
-    );
+    // $headerInfo = array(
+    //   "x-authenticationToken" => $_SESSION["AuthenticationToken"],
+    //   "x-sessionToken" => $_SESSION["SessionToken"]
+    // );
 
-    print_r($headerInfo);
+    // print_r($headerInfo);
     
-    curl_setopt($curl, CURLOPT_HTTPHEADER, $headerInfo);
+    // curl_setopt($curl, CURLOPT_HTTPHEADER, $headerInfo);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+      "x-authenticationToken:".$_SESSION["AuthenticationToken"],
+      "x-sessionToken:".$_SESSION["SessionToken"]
+    ));
 
     curl_setopt($curl, CURLOPT_URL, 'https://eds-api.ebscohost.com/edsapi/rest/Search');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
