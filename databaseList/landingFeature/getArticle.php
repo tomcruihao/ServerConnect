@@ -13,7 +13,7 @@
 
     // set method and data
     curl_setopt($curl, CURLOPT_POST, 1);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
     // set header
     // $headerInfo = array(
