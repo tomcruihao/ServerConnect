@@ -44,8 +44,8 @@
     ),
     "RetrievalCriteria" => array(
       "View" => "brief",
-      "ResultsPerPage" => 20,
-      "PageNumber" => 1,
+      "ResultsPerPage" => "20",
+      "PageNumber" => "1",
       "Highlight" => "y",
       "IncludeImageQuickView" => "n",
     ),
