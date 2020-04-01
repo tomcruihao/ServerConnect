@@ -1,29 +1,49 @@
 <?php
-  function get_proxy_site_page( $url )
+ini_set("display_errors", 1);
+ini_set("track_errors", 1);
+ini_set("html_errors", 1);
+error_reporting(E_ALL);
+
+function CallAPI($method, $url, $data = false) {
+  $curl = curl_init();
+
+  switch ($method)
   {
-      $options = [
-          CURLOPT_RETURNTRANSFER => true,     // return web page
-          CURLOPT_HEADER         => true,     // return headers
-          CURLOPT_FOLLOWLOCATION => true,     // follow redirects
-          CURLOPT_ENCODING       => "",       // handle all encodings
-          CURLOPT_AUTOREFERER    => true,     // set referer on redirect
-          CURLOPT_CONNECTTIMEOUT => 120,      // timeout on connect
-          CURLOPT_TIMEOUT        => 120,      // timeout on response
-          CURLOPT_MAXREDIRS      => 10,       // stop after 10 redirects
-      ];
-
-      $ch = curl_init($url);
-      curl_setopt_array($ch, $options);
-      $remoteSite = curl_exec($ch);
-      $header = curl_getinfo($ch);
-      curl_close($ch);
-
-      $header['content'] = $remoteSite;
-      return $header;
+    case "POST":
+      curl_setopt($curl, CURLOPT_POST, 1);
+      if ($data)
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+      break;
+    case "PUT":
+      curl_setopt($curl, CURLOPT_PUT, 1);
+      break;
+    default:
+      if ($data)
+        $url = sprintf("%s?%s", $url, http_build_query($data));
   }
 
-  $url = get_proxy_site_page('https://libermg.ncyu.edu.tw/cgi-bin/smartweaver/browse.cgi?ccd=bPrCxo&o=e0&s=c-1-230784');
-  print_r($url);
+  // Optional Authentication:
+  // curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+  // curl_setopt($curl, CURLOPT_USERPWD, "username:password");
+
+  curl_setopt($curl, CURLOPT_URL, $url);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+  $result = curl_exec($curl);
+
+  curl_close($curl);
+
+  return $result;
+}
+$userInfo = array(
+    'UserName' => 'J4VAGI77SD^hDOkw0uCV',
+    'Password' => 'H5r3CUIj^ZnEXSR$hbO^',
+    'Profile' => 'api',
+    'Customer ID' => 'J4VAGI77SD^hDOkw0uCV'
+);
+
+$apiResponse = CallAPI("POST", "https://eds-api.ebscohost.com/Console/IntegratedAuthentication/ValidateUser", )
+print_r($apiResponse);
   // $jsonFilePath = './test.json';
   // $SID = $_GET['sid'];
 
