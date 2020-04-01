@@ -23,7 +23,7 @@
       'x-sessionToken' => $_SESSION['SessionToken']
     );
 
-    // print_r(getArticle($headerInfo));
+    print_r($headerInfo);
     
     curl_setopt($curl, CURLOPT_HTTPHEADER, $headerInfo);
 
