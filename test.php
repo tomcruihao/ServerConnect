@@ -36,13 +36,13 @@ function CallAPI($method, $url, $data = false) {
   return $result;
 }
 $userInfo = array(
-    'UserName' => 'J4VAGI77SD^hDOkw0uCV',
-    'Password' => 'H5r3CUIj^ZnEXSR$hbO^',
-    'Profile' => 'api',
-    'Customer ID' => 'J4VAGI77SD^hDOkw0uCV'
+  'UserName' => 'J4VAGI77SD^hDOkw0uCV',
+  'Password' => 'H5r3CUIj^ZnEXSR$hbO^',
+  'Profile' => 'api',
+  'Customer ID' => 'J4VAGI77SD^hDOkw0uCV'
 );
 
-$apiResponse = CallAPI("POST", "https://eds-api.ebscohost.com/Console/IntegratedAuthentication/ValidateUser", )
+$apiResponse = CallAPI("POST", "https://eds-api.ebscohost.com/Console/IntegratedAuthentication/ValidateUser", $userInfo);
 print_r($apiResponse);
   // $jsonFilePath = './test.json';
   // $SID = $_GET['sid'];
