@@ -35,7 +35,7 @@
   }
   $articleParams = array(
     "SearchCriteria" => array(
-      "Queries" => array("Term" => "nature"),
+      "Queries" => array(array("Term" => "nature")),
       "SearchMode" => "all",
       "IncludeFacets" => "y",
       "Sort" => "relevance",
