@@ -33,23 +33,28 @@
 
     return $result;
   }
+  // $articleParams = array(
+  //   "SearchCriteria" => array(
+  //     "Queries" => array("Term" => "nature"),
+  //     "SearchMode" => "all",
+  //     "IncludeFacets" => "y",
+  //     "Sort" => "relevance",
+  //     "AutoSuggest" => "n",
+  //     "AutoCorrect" => "n",
+  //   ),
+  //   "RetrievalCriteria" => array(
+  //     "View" => "brief",
+  //     "ResultsPerPage" => 20,
+  //     "PageNumber" => 1,
+  //     "Highlight" => "y",
+  //     "IncludeImageQuickView" => "n",
+  //   ),
+  //   "Actions" => null
+  // );
   $articleParams = array(
-    "SearchCriteria" => array(
-      "Queries" => array("Term" => "nature"),
-      "SearchMode" => "all",
-      "IncludeFacets" => "y",
-      "Sort" => "relevance",
-      "AutoSuggest" => "n",
-      "AutoCorrect" => "n",
-    ),
-    "RetrievalCriteria" => array(
-      "View" => "brief",
-      "ResultsPerPage" => 20,
-      "PageNumber" => 1,
-      "Highlight" => "y",
-      "IncludeImageQuickView" => "n",
-    ),
-    "Actions" => null
+    "query" => "nature",
+    "searchmode" => "all"
   );
-  print_r(getArticle(json_encode($articleParams, JSON_UNESCAPED_UNICODE)));
+  // print_r(getArticle(json_encode($articleParams, JSON_UNESCAPED_UNICODE)));
+  print_r(getArticle($articleParams));
 ?>
