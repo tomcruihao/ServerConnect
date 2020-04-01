@@ -1,8 +1,4 @@
-<?php
-  header("Access-Control-Allow-Origin: *");
-  header("Content-Security-Policy: upgrade-insecure-requests");
-  header('Content-Type: application/json');
-  
+<?php  
   function CallAPI($method, $url, $data = false) {
     $curl = curl_init();
 
@@ -43,16 +39,13 @@
 
   $apiResponse = CallAPI("POST", "https://eds-api.ebscohost.com/Console/IntegratedAuthentication/ValidateUser", $userInfo);
   $processResponse = json_decode($apiResponse, true);
-  print_r($processResponse);
 
   if($processResponse['IsSuccessful']) {
+    session_start();
     $_SESSION['AuthenticationToken'] = $processResponse['AuthenticationToken'];
     $_SESSION['SessionToken'] = $processResponse['SessionToken'];
+  } else {
+    exit();
   }
-
-  echo $_SESSION['AuthenticationToken'];
-  echo $_SESSION['SessionToken'];
-  
-  session_start();
   // echo $apiResponse;
 ?>
