@@ -44,8 +44,8 @@
     ),
     "RetrievalCriteria" => array(
       "View" => "brief",
-      "ResultsPerPage" => "20",
-      "PageNumber" => "1",
+      "ResultsPerPage" => 20,
+      "PageNumber" => 1,
       "Highlight" => "y",
       "IncludeImageQuickView" => "n",
     ),
@@ -54,6 +54,6 @@
   $articleParams = json_encode($articleParams, JSON_UNESCAPED_UNICODE);
   print_r($articleParams);
   
-  // print_r(getArticle($articleParams));
+  print_r(getArticle($articleParams));
   // print_r(getArticle($articleParams));
 ?>
