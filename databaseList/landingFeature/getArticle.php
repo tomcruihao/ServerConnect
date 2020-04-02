@@ -60,7 +60,7 @@
     "Actions" => null
   );
   $articleParams = json_encode($articleParams, JSON_UNESCAPED_UNICODE);
-  print_r($articleParams);
+  // print_r($articleParams);
   
   print_r(getArticle($articleParams));
   // print_r(getArticle($articleParams));
