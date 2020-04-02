@@ -25,6 +25,8 @@
     
     // curl_setopt($curl, CURLOPT_HTTPHEADER, $headerInfo);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+      "Content-Type: application/json",
+      "Accept: application/json",
       "x-authenticationToken:".$_SESSION["AuthenticationToken"],
       "x-sessionToken:".$_SESSION["SessionToken"]
     ));
