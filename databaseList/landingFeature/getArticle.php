@@ -3,11 +3,10 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
-  // if(isset($_SESSION['AuthenticationToken']) && isset($_SESSION['SessionToken'])) {
-    
-  // }
-  include 'getAuth.php';
-
+  if(isset($_SESSION['AuthenticationToken']) && isset($_SESSION['SessionToken'])) {
+    include 'getAuth.php';
+  }
+  
   function getArticle($data) {
     $curl = curl_init();
 
@@ -56,5 +55,7 @@
   
   $result = getArticle($articleParams);
   $result_ary = json_decode($result, true);
-  print_r($result_ary['SearchResult']);
+
+  // print the result
+  echo json_encode($result_ary['SearchResult'], JSON_UNESCAPED_UNICODE);
 ?>
