@@ -44,7 +44,7 @@
       "AutoCorrect" => "n",
     ),
     "RetrievalCriteria" => array(
-      "View" => "brief",
+      "View" => "detailed",
       "ResultsPerPage" => 20,
       "PageNumber" => 1,
       "Highlight" => "n",

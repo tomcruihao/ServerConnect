@@ -440,15 +440,24 @@
         },
         success: function(res) {
           console.log(res);
-          self.articles = res.Data.Records
+          for(index in res.Data.Records) {
+            self.articles.push(self.processArticleData(res.Data.Records[index]));
+            // self.articles = res.Data.Records
+          }
         }
       });
     },
     mounted: function() {
     },
     methods: {
-      sendToEDS() {
-        let bquery = '';
+      processArticleData(dataObj) {
+        let template = {
+          articleTitle: '',
+          articleLink: dataObj.PLink,
+          articleAuthor: '',
+          articleReference: ''
+        }
+        return template;
       }
     }
   })
