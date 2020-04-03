@@ -16,20 +16,13 @@
     curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
     // set header
-    // $headerInfo = array(
-    //   "x-authenticationToken" => $_SESSION["AuthenticationToken"],
-    //   "x-sessionToken" => $_SESSION["SessionToken"]
-    // );
-
-    // print_r($headerInfo);
-    
-    // curl_setopt($curl, CURLOPT_HTTPHEADER, $headerInfo);
     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
       "Content-Type: application/json",
       "Accept: application/json",
       "x-authenticationToken:".$_SESSION["AuthenticationToken"],
       "x-sessionToken:".$_SESSION["SessionToken"]
     ));
+
 
     curl_setopt($curl, CURLOPT_URL, 'https://eds-api.ebscohost.com/edsapi/rest/Search');
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -60,8 +53,7 @@
     "Actions" => null
   );
   $articleParams = json_encode($articleParams, JSON_UNESCAPED_UNICODE);
-  // print_r($articleParams);
   
-  print_r(getArticle($articleParams));
-  // print_r(getArticle($articleParams));
+  $result = getArticle($articleParams);
+  print_r($result['SearchResult']);
 ?>
