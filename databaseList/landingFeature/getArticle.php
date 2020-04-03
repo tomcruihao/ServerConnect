@@ -47,7 +47,7 @@
       "View" => "brief",
       "ResultsPerPage" => 20,
       "PageNumber" => 1,
-      "Highlight" => "y",
+      "Highlight" => "n",
       "IncludeImageQuickView" => "n",
     ),
     "Actions" => null

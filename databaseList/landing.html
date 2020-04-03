@@ -129,7 +129,7 @@
   </section>
   <section class="article-field" id="articleField">
     <h1>文章推薦</h1>
-    <div class="articles">
+    <div class="articles" v-if="articles.length !== 0">
       <div class="article-wrap">
         <h2>Lean principles, learning, and knowledge work: Evidence from a software services provider</h2>
         <div class="row">
@@ -152,6 +152,9 @@
           <div class="content">In FEBS Letters 2005 579(17):3713-3717</div>
         </div>
       </div>
+    </div>
+    <div class="article-wrap" v-else>
+      <img src="img/icon/Spinner.svg" alt="loading">
     </div>
   </section>
   <section class="journal-field">
@@ -413,6 +416,39 @@
           alphabetQuery = `JN+${alphabet}*+OR+JN+THE+${alphabet}*+OR+JN+DER+${alphabet}*+OR+JN+DIE+${alphabet}*+OR+JN+DAS+${alphabet}*+OR+JN+LAS+${alphabet}*+OR+JN+LOS+${alphabet}*+OR+JN+LES+${alphabet}*+OR+JN+EL+${alphabet}*+OR+JN+IL+${alphabet}*+OR+JN+LA+${alphabet}*+OR+JN+LE+${alphabet}*`;
         }
         this.sendToPFI(alphabetQuery);
+      }
+    }
+  })
+
+  var articleField = new Vue({
+    el:'#articleField',
+    i18n,
+    data: {
+      articles: []
+    },
+    created: function() {
+      let self = this;
+      $.ajax({
+        url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getArticle.php',
+        type: 'GET',
+        data: {
+        },
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          console.log(res);
+          self.articles = res.Data.Records
+        }
+      });
+    },
+    mounted: function() {
+    },
+    methods: {
+      sendToEDS() {
+        let bquery = '';
       }
     }
   })
