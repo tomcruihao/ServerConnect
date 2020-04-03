@@ -226,6 +226,24 @@ section {
 
         .content {
           flex: 1;
+
+          &.hide {
+            height: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+          }
+        }
+
+        .expand {
+          width: 100%;
+          text-align: end;
+          .expandText {
+            color: $anchor_color;
+            cursor: pointer;
+          }
         }
       }
     }

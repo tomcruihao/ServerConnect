@@ -130,7 +130,24 @@
   <section class="article-field" id="articleField">
     <h1>文章推薦</h1>
     <div class="articles" v-if="articles.length !== 0">
-      <div class="article-wrap">
+      <div class="article-wrap" v-for="(article, id) in articles">
+        <h2 v-html="article.articleTitle"></h2>
+        <div class="row">
+          <div class="title">作者:</div>
+          <div class="content" v-html="article.articleAuthor"></div>
+        </div>
+        <div class="row">
+          <div class="title">摘要:</div>
+          <div class="content" v-html="article.articleAbstract" :class="{ hide: article.hide }"></div>
+        </div>
+        <div class="row">
+          <div class="expand">
+            <div class="expandText" v-if="article.hide === true" @click="expandArticle(article)">展開</div>
+            <div class="expandText" v-else @click="expandArticle(article)">收起</div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="article-wrap">
         <h2>Lean principles, learning, and knowledge work: Evidence from a software services provider</h2>
         <div class="row">
           <div class="title">作者:</div>
@@ -151,7 +168,7 @@
           <div class="title">來源:</div>
           <div class="content">In FEBS Letters 2005 579(17):3713-3717</div>
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="article-wrap" v-else>
       <img src="img/icon/Spinner.svg" alt="loading">
@@ -455,9 +472,33 @@
           articleTitle: '',
           articleLink: dataObj.PLink,
           articleAuthor: '',
-          articleReference: ''
+          articleAbstract: '',
+          hide: true
         }
+        dataObj.Items.forEach(res => {
+          switch(res.Name) {
+            case 'Title':
+              template.articleTitle = res.Data;
+              break;
+            case 'Author':
+              // template.articleAuthor = unescape(res.Data);
+              template.articleAuthor = this.htmlDecode(res.Data);
+              break;
+            case 'Abstract':
+              template.articleAbstract = this.htmlDecode(res.Data);
+              break;
+          }
+        })
+
         return template;
+      },
+      htmlDecode(input){
+        let e = document.createElement('div');
+        e.innerHTML = input;
+        return e.childNodes[0].nodeValue;
+      },
+      expandArticle(Obj) {
+        Obj.hide = !Obj.hide;
       }
     }
   })

@@ -508,6 +508,25 @@ section:nth-of-type(2n) {
           flex: 1;
 }
 
+.article-field .articles .article-wrap .row .content.hide {
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.article-field .articles .article-wrap .row .expand {
+  width: 100%;
+  text-align: end;
+}
+
+.article-field .articles .article-wrap .row .expand .expandText {
+  color: #008cce;
+  cursor: pointer;
+}
+
 .ebook-field .slider, .journal-field .slider {
   width: 90%;
   height: 300px;
