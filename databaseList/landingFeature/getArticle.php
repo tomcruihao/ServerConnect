@@ -56,6 +56,7 @@
   $result = getArticle($articleParams);
   $result_ary = json_decode($result, true);
 
+  print_r($result_ary['SearchResult']);
   // print the result
   echo json_encode($result_ary['SearchResult'], JSON_UNESCAPED_UNICODE);
 ?>
