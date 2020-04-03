@@ -3,9 +3,10 @@
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
-  if(isset($_SESSION['AuthenticationToken']) && isset($_SESSION['SessionToken'])) {
-    include 'getAuth.php';
-  }
+  // if(isset($_SESSION['AuthenticationToken']) && isset($_SESSION['SessionToken'])) {
+    
+  // }
+  include 'getAuth.php';
   
   function getArticle($data) {
     $curl = curl_init();
