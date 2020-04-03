@@ -45,7 +45,7 @@
     "SearchCriteria" => array(
       "Queries" => array(array("Term" => "nature")),
       "SearchMode" => "all",
-      "IncludeFacets" => "y",
+      "IncludeFacets" => "n",
       "Sort" => "relevance",
       "AutoSuggest" => "n",
       "AutoCorrect" => "n",
