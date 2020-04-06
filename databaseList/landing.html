@@ -458,7 +458,7 @@
           <figure class="card" v-bind:class="{ back: database.rotate}">
             <div class="card-front">
               <div class="img-frame">
-                <img :src="database.imgCoverPath" alt="Trulli" style="width:100%">
+                <img :src="database.imgCoverPath" :alt="database.name.local" style="width:100%">
               </div>
               <figcaption>{{database.name.local}}</figcaption>
             </div>
@@ -619,6 +619,19 @@
     i18n,
     data: {
       databases: [
+        {
+          name: {
+            en: 'EBSCOhost',
+            local: 'EBSCOhost系統'
+          },
+          brief: {
+            en: 'EBSCOhost Intro',
+            local: '主要提供 EBSCO綜合學科、商管財經、生物醫護、人文歷史、法律等期刊之電子全文資料庫，以及部分當今全球知名之索引摘要資料庫。'
+          },
+          imgCoverPath: 'img/dbVendor/EHOST.png',
+          linkUrl: 'http://www.lib.ntnu.edu.tw/database/dbview.jsp?id=A7009302-3FCE-88B9-9C60-45DD0E2F2ADE&type=0',
+          rotate: false
+        },
         {
           name: {
             en: 'ERIC',
