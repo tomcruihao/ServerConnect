@@ -209,41 +209,64 @@ section {
   //   }
   // }
   .articles {
+    height: 500px;
+    margin-top: 30px;
+    overflow-y: scroll;
+
+    &.loading-wrap {
+      text-align: center;
+
+      .icon-loading {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
     .article-wrap {
-      margin-top: 30px;
       padding: 15px;
+      margin-top: 30px;
       border: 1px solid $main_color;
 
-      h2 {
-        font-size: 1.2rem;
+      &:first-child {
+        margin-top: 0px;
       }
-      .row {
-        display: flex;
-
-        .title {
-          width: 80px;
+      a {
+        color: #333;
+        text-decoration: none;
+        h2 {
+          font-size: 1.2rem;
+          color: $anchor_color;
+          text-decoration: underline;
         }
-
-        .content {
-          flex: 1;
-
-          &.hide {
-            height: 100px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
+  
+        .row {
+          display: flex;
+  
+          .title {
+            width: 80px;
+          }
+  
+          .content {
+            flex: 1;
+  
+            &.hide {
+              height: 100px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 4;
+              -webkit-box-orient: vertical;
+            }
           }
         }
+      }
 
-        .expand {
-          width: 100%;
-          text-align: end;
-          .expandText {
-            color: $anchor_color;
-            cursor: pointer;
-          }
+      .expand {
+        width: 100%;
+        text-align: end;
+        .expandText {
+          color: $anchor_color;
+          cursor: pointer;
         }
       }
     }
@@ -320,20 +343,20 @@ section {
       box-sizing: border-box;
       background-color: #fff;
       display: inline-block;
+      position: relative;
 
       .btn-wrap {
-        width: 100%;
-        padding: 10px 0 0;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 1;
 
         button {
-          width: 100%;
-          max-width: 150px;
-          height: 30px;
-          background-color: $button_color;
-          color: #ffffff;
+          color: transparent;
+          img {
+            width: 24px;
+            height: 24px;
+          }
         }
       }
 
@@ -394,6 +417,7 @@ section {
 
           /*back card*/
           .card-back{
+            padding-top: 24px;
             border-radius:5px;
             position:absolute;
             width:100%;

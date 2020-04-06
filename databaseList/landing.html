@@ -131,106 +131,190 @@
     <h1>文章推薦</h1>
     <div class="articles" v-if="articles.length !== 0">
       <div class="article-wrap" v-for="(article, id) in articles">
-        <h2 v-html="article.articleTitle"></h2>
-        <div class="row">
-          <div class="title">作者:</div>
-          <div class="content" v-html="article.articleAuthor"></div>
-        </div>
-        <div class="row">
-          <div class="title">摘要:</div>
-          <div class="content" v-html="article.articleAbstract" :class="{ hide: article.hide }"></div>
-        </div>
-        <div class="row">
-          <div class="expand">
-            <div class="expandText" v-if="article.hide === true" @click="expandArticle(article)">展開</div>
-            <div class="expandText" v-else @click="expandArticle(article)">收起</div>
+        <a :href="article.articleLink" target="_blank">
+          <h2 v-html="article.articleTitle"></h2>
+          <div class="row">
+            <div class="title">作者:</div>
+            <div class="content" v-html="article.articleAuthor"></div>
           </div>
+          <div class="row">
+            <div class="title">摘要:</div>
+            <div class="content" v-html="article.articleAbstract" :class="{ hide: article.hide }"></div>
+          </div>
+        </a>
+        <div class="expand">
+          <div class="expandText" v-if="article.hide === true" @click="expandArticle(article)">展開</div>
+          <div class="expandText" v-else @click="expandArticle(article)">收起</div>
         </div>
       </div>
-      <!-- <div class="article-wrap">
-        <h2>Lean principles, learning, and knowledge work: Evidence from a software services provider</h2>
-        <div class="row">
-          <div class="title">作者:</div>
-          <div class="content">Staats, Bradley R. a, ⁎; Brunner, David James b, 1; Upton, David M. c, 2</div>
-        </div>
-        <div class="row">
-          <div class="title">來源:</div>
-          <div class="content">In Special Issue on Field Research in Operations and Supply Chain Management, Journal of Operations Management 2011 29(5):376-390</div>
-        </div>
-      </div>
-      <div class="article-wrap">
-        <h2>Quorum quenching enzyme activity is widely conserved in the sera of mammalian species</h2>
-        <div class="row">
-          <div class="title">作者:</div>
-          <div class="content">Yang, Fan a, b; Wang, Lian-Hui a; Wang, Jing a; Dong, Yi-Hu a; Hu, Jiang Yong b; Zhang, Lian-Hui a, ⁎</div>
-        </div>
-        <div class="row">
-          <div class="title">來源:</div>
-          <div class="content">In FEBS Letters 2005 579(17):3713-3717</div>
-        </div>
-      </div> -->
     </div>
-    <div class="article-wrap" v-else>
-      <img src="img/icon/Spinner.svg" alt="loading">
+    <div class="articles loading-wrap" v-else>
+      <img class="icon-loading" src="img/icon/Spinner.svg" alt="loading">
     </div>
   </section>
   <section class="journal-field">
     <h1>期刊推薦</h1>
     <div id="ebook" class="ejournal slider">
       <div class="ebook-wrap">
-        <a href="http://www.google.com">
+        <a href="https://journals.sagepub.com/home/aer" target="_blank">
           <div class="image-frame">
-            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24108383%24PDF&s=l">
+            <img src="img/journals/AER.png">
           </div>
-          <h2>test</h2>
+          <h2>
+            American Educational Research Journal
+          </h2>
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="http://www.google.com">
+        <a href="https://anthrosource.onlinelibrary.wiley.com/journal/15481492" target="_blank">
           <div class="image-frame">
-            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%2478385%24PDF&s=l">
+            <img src="img/journals/AAEQ.gif">
           </div>
-          <h2>test</h2>
+          <h2>ANTHROPOLOGY AND EDUCATION QUARTERLY</h2>
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="http://www.google.com">
+        <a href="https://onlinelibrary.wiley.com/journal/14693518" target="_blank">
           <div class="image-frame">
-            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%2478327%24PDF&s=l">
+            <img src="img/journals/BERJ.gif">
           </div>
-          <h2>test</h2>
+          <h2>BRITISH EDUCATIONAL RESEARCH JOURNAL</h2>
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="http://www.google.com">
+        <a href="https://www.springer.com/journal/11007" target="_blank">
           <div class="image-frame">
-            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24138581%24PDF&s=l">
+            <img src="img/journals/CPR.jpg">
           </div>
-          <h2>test</h2>
+          <h2>CONTINENTAL PHILOSOPHY REVIEW</h2>
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="http://www.google.com">
+        <a href="https://www.tandfonline.com/loi/rcui20" target="_blank">
           <div class="image-frame">
-            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%241710%24PDF&s=l">
+            <img src="img/journals/CUI.png">
           </div>
-          <h2>test</h2>
+          <h2>Curriculum Inquiry</h2>
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="http://www.google.com">
+        <a href="https://journals.sagepub.com/home/eaq" target="_blank">
           <div class="image-frame">
-            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%24108051%24PDF&s=l">
+            <img src="img/journals/EAQ.png">
           </div>
-          <h2>test</h2>
+          <h2>EDUCATIONAL ADMINISTRATION QUARTERLY</h2>
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="http://www.google.com">
+        <a href="https://onlinelibrary.wiley.com/journal/17415446" target="_blank">
           <div class="image-frame">
-            <img src="https://rps2images.ebscohost.com/rpsweb/othumb?id=NL%2481853%24PDF&s=l">
+            <img src="img/journals/ETJ.gif">
           </div>
-          <h2>test</h2>
+          <h2>EDUCATIONAL THEORY</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://www.onlinelibrary.wiley.com/journal/14653435" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/EJOE.gif">
+          </div>
+          <h2>EUROPEAN JOURNAL OF EDUCATION</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://www.cambridge.org/core/journals/history-of-education-quarterly" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/HEQ.jpg">
+          </div>
+          <h2>HISTORY OF EDUCATION QUARTERLY</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://www.springer.com/journal/10746" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/HSJ.jpg">
+          </div>
+          <h2>HUMAN STUDIES</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://www.springer.com/journal/10780" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/InterChange.jpg">
+          </div>
+          <h2>INTERCHANGE : A QUARTERLY REVIEW OF EDUCATION</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://www.journals.elsevier.com/international-journal-of-educational-development" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/IJED.gif">
+          </div>
+          <h2>INTERNATIONAL JOURNAL OF EDUCATIONAL DEVELOPMENT</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://onlinelibrary.wiley.com/journal/14679752" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/JPE.gif">
+          </div>
+          <h2>JOURNAL OF PHILOSOPHY OF EDUCATION</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://onlinelibrary.wiley.com/journal/1534875x" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/NDFE.gif">
+          </div>
+          <h2>NEW DIRECTIONS FOR EVALUATION</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://onlinelibrary.wiley.com/journal/15360741" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/NDFHE.gif">
+          </div>
+          <h2>NEW DIRECTIONS FOR HIGHER EDUCATION</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://journals.sagepub.com/home/qix" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/QIJ.png">
+          </div>
+          <h2>QUALITATIVE INQUIRY</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://www.springer.com/journal/11162" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/RIHE.jpeg">
+          </div>
+          <h2>RESEARCH IN HIGHER EDUCATION</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://journals.sagepub.com/home/rer" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/ROER.png">
+          </div>
+          <h2>REVIEW OF EDUCATIONAL RESEARCH</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://onlinelibrary.wiley.com/journal/15406237" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/SSQ.gif">
+          </div>
+          <h2>SOCIAL SCIENCE QUARTERLY</h2>
+        </a>
+      </div>
+      <div class="ebook-wrap">
+        <a href="https://journals.sagepub.com/home/soe" target="_blank">
+          <div class="image-frame">
+            <img src="img/journals/SOE.png">
+          </div>
+          <h2>SOCIOLOGY OF EDUCATION</h2>
         </a>
       </div>
     </div>
@@ -340,6 +424,11 @@
     <h1>資料庫推薦</h1>
     <div class="database-wrap">
       <div class="database" v-for="(database, index) in databases">
+        <div class="btn-wrap">
+          <button @click="rotate(database)">
+            <img src="img/icon/help.svg">
+          </button>
+        </div>
         <div class="card-wrap">
           <figure class="card" v-bind:class="{ back: database.rotate}">
             <div class="card-front">
@@ -353,8 +442,30 @@
             </div>
           </figure>
         </div>
+      </div>
+    </div>
+  </section>
+  <section class="database-field" id="databaseField">
+    <h1>學科相關</h1>
+    <div class="database-wrap">
+      <div class="database" v-for="(database, index) in databases">
         <div class="btn-wrap">
-          <button @click="rotate(database)">簡介</button>
+          <button @click="rotate(database)">
+            <img src="img/icon/help.svg">
+          </button>
+        </div>
+        <div class="card-wrap">
+          <figure class="card" v-bind:class="{ back: database.rotate}">
+            <div class="card-front">
+              <div class="img-frame">
+                <img :src="database.imgCoverPath" alt="Trulli" style="width:100%">
+              </div>
+              <figcaption>{{database.name.local}}</figcaption>
+            </div>
+            <div class="card-back">
+              {{database.brief.local}}
+            </div>
+          </figure>
         </div>
       </div>
     </div>

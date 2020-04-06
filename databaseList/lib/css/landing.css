@@ -482,33 +482,59 @@ section:nth-of-type(2n) {
   font-size: 1.2rem;
 }
 
-.article-field .articles .article-wrap {
+.article-field .articles {
+  height: 500px;
   margin-top: 30px;
+  overflow-y: scroll;
+}
+
+.article-field .articles.loading-wrap {
+  text-align: center;
+}
+
+.article-field .articles.loading-wrap .icon-loading {
+  width: 60px;
+  height: 60px;
+}
+
+.article-field .articles .article-wrap {
   padding: 15px;
+  margin-top: 30px;
   border: 1px solid #008cce;
 }
 
-.article-field .articles .article-wrap h2 {
-  font-size: 1.2rem;
+.article-field .articles .article-wrap:first-child {
+  margin-top: 0px;
 }
 
-.article-field .articles .article-wrap .row {
+.article-field .articles .article-wrap a {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-field .articles .article-wrap a h2 {
+  font-size: 1.2rem;
+  color: #008cce;
+  text-decoration: underline;
+}
+
+.article-field .articles .article-wrap a .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.article-field .articles .article-wrap .row .title {
+.article-field .articles .article-wrap a .row .title {
   width: 80px;
 }
 
-.article-field .articles .article-wrap .row .content {
+.article-field .articles .article-wrap a .row .content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.article-field .articles .article-wrap .row .content.hide {
+.article-field .articles .article-wrap a .row .content.hide {
   height: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -517,12 +543,12 @@ section:nth-of-type(2n) {
   -webkit-box-orient: vertical;
 }
 
-.article-field .articles .article-wrap .row .expand {
+.article-field .articles .article-wrap .expand {
   width: 100%;
   text-align: end;
 }
 
-.article-field .articles .article-wrap .row .expand .expandText {
+.article-field .articles .article-wrap .expand .expandText {
   color: #008cce;
   cursor: pointer;
 }
@@ -606,27 +632,23 @@ section:nth-of-type(2n) {
           box-sizing: border-box;
   background-color: #fff;
   display: inline-block;
+  position: relative;
 }
 
 .database-field .database-wrap .database .btn-wrap {
-  width: 100%;
-  padding: 10px 0 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
 }
 
 .database-field .database-wrap .database .btn-wrap button {
-  width: 100%;
-  max-width: 150px;
-  height: 30px;
-  background-color: #4CAF50;
-  color: #ffffff;
+  color: transparent;
+}
+
+.database-field .database-wrap .database .btn-wrap button img {
+  width: 24px;
+  height: 24px;
 }
 
 .database-field .database-wrap .database .card-wrap {
@@ -701,6 +723,7 @@ section:nth-of-type(2n) {
 }
 
 .database-field .database-wrap .database .card-wrap .card .card-back {
+  padding-top: 24px;
   border-radius: 5px;
   position: absolute;
   width: 100%;
