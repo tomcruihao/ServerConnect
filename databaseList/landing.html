@@ -138,6 +138,10 @@
             <div class="content" v-html="article.articleAuthor"></div>
           </div>
           <div class="row">
+            <div class="title">來源:</div>
+            <div class="content" v-html="article.articleSource"></div>
+          </div>
+          <div class="row">
             <div class="title">摘要:</div>
             <div class="content" v-html="article.articleAbstract" :class="{ hide: article.hide }"></div>
           </div>
@@ -584,6 +588,7 @@
           articleLink: dataObj.PLink,
           articleAuthor: '',
           articleAbstract: '',
+          articleSource: '',
           hide: true
         }
         dataObj.Items.forEach(res => {
@@ -597,6 +602,9 @@
               break;
             case 'Abstract':
               template.articleAbstract = this.htmlDecode(res.Data);
+              break;
+            case 'TitleSource':
+              template.articleSource = this.htmlDecode(res.Data);
               break;
           }
         })

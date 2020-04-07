@@ -7,6 +7,15 @@
     
   // }
   include 'getAuth.php';
+
+  $keyword = '';
+  if(isset($_GET["keyword"])) {
+    $keyword = $_GET["keyword"];
+  } else {
+    $res = array('status' => 'error', 'message' => 'No Value');
+    echo json_encode($res, JSON_UNESCAPED_UNICODE);
+    exit();
+  }
   
   function getArticle($data) {
     $curl = curl_init();
@@ -34,6 +43,7 @@
 
     return $result;
   }
+
   $articleParams = array(
     "SearchCriteria" => array(
       "Queries" => array(array("Term" => "nature")),
