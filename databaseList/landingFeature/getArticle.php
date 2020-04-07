@@ -5,7 +5,7 @@
   include 'getAuth.php';
 
   // varibles
-  $getNumberOfArticles = 100;
+  $getNumberOfArticles = 8;
   
 
   $keyword = '';
