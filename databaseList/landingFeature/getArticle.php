@@ -60,7 +60,7 @@
 
       // put this record in temp array
 
-      if($allValueExist && ($articleCounter <= $getNumberOfArticles)) {
+      if($allValueExist && ($articleCounter < $getNumberOfArticles)) {
         array_push($ary_tempRecords, $row);
         $articleCounter = $articleCounter + 1;
       }
