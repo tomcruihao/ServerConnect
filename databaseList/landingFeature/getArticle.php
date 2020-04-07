@@ -102,5 +102,5 @@
 
 
   // print the result
-  echo json_encode($result_ary['SearchResult'], JSON_UNESCAPED_UNICODE);
+  echo json_encode($lastResult, JSON_UNESCAPED_UNICODE);
 ?>
