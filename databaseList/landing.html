@@ -50,7 +50,6 @@
         <label class="tab" id="two-tab" for="two">期刊查詢</label>
         <label class="tab" id="three-tab" for="three">資料庫查詢</label>
       </div>
-    
       <div class="panels">
         <div class="panel" id="one-panel">
           <div class="panel-title">文章查詢</div>
@@ -127,35 +126,39 @@
       </figure>
     </div>
   </section>
-  <section class="article-field" id="articleField">
-    <h1>文章推薦</h1>
-    <div class="articles" v-if="articles.length !== 0">
-      <div class="article-wrap" v-for="(article, id) in articles">
-        <a :href="article.articleLink" target="_blank">
-          <h2 v-html="article.articleTitle"></h2>
-          <div class="row">
-            <div class="title">作者:</div>
-            <div class="content" v-html="article.articleAuthor"></div>
+  <div id="subjectsField">
+    <section class="subject-field" v-for="(subject, id) in subjects">
+      <div class="container" v-if="subject.articles.length !== 0">
+        <h1>{{subject.keyword}}</h1>
+        <div class="articles">
+          <div class="article-wrap" v-for="(article, id) in subject.articles">
+            <a :href="article.articleLink" target="_blank">
+              <h2 v-html="article.articleTitle"></h2>
+              <div class="row">
+                <div class="title">作者:</div>
+                <div class="content" v-html="article.articleAuthor"></div>
+              </div>
+              <div class="row">
+                <div class="title">來源:</div>
+                <div class="content" v-html="article.articleSource"></div>
+              </div>
+              <div class="row">
+                <div class="title">摘要:</div>
+                <div class="content" v-html="article.articleAbstract" :class="{ hide: article.hide }"></div>
+              </div>
+            </a>
+            <div class="expand">
+              <div class="expandText" v-if="article.hide === true" @click="expandArticle(article)">展開</div>
+              <div class="expandText" v-else @click="expandArticle(article)">收起</div>
+            </div>
           </div>
-          <div class="row">
-            <div class="title">來源:</div>
-            <div class="content" v-html="article.articleSource"></div>
-          </div>
-          <div class="row">
-            <div class="title">摘要:</div>
-            <div class="content" v-html="article.articleAbstract" :class="{ hide: article.hide }"></div>
-          </div>
-        </a>
-        <div class="expand">
-          <div class="expandText" v-if="article.hide === true" @click="expandArticle(article)">展開</div>
-          <div class="expandText" v-else @click="expandArticle(article)">收起</div>
         </div>
       </div>
-    </div>
-    <div class="articles loading-wrap" v-else>
-      <img class="icon-loading" src="img/icon/Spinner.svg" alt="loading">
-    </div>
-  </section>
+      <div class="container loading-wrap" v-else>
+        <img class="icon-loading" src="img/icon/Spinner.svg" alt="loading">
+      </div>
+    </section>
+  </div>
   <section class="journal-field">
     <h1>期刊推薦</h1>
     <div id="ebook" class="ejournal slider">
@@ -449,31 +452,6 @@
       </div>
     </div>
   </section>
-  <section class="database-field" id="databaseField">
-    <h1>學科相關</h1>
-    <div class="database-wrap">
-      <div class="database" v-for="(database, index) in databases">
-        <div class="btn-wrap">
-          <button @click="rotate(database)">
-            <img src="img/icon/help.svg">
-          </button>
-        </div>
-        <div class="card-wrap">
-          <figure class="card" v-bind:class="{ back: database.rotate}">
-            <div class="card-front">
-              <div class="img-frame">
-                <img :src="database.imgCoverPath" :alt="database.name.local" style="width:100%">
-              </div>
-              <figcaption>{{database.name.local}}</figcaption>
-            </div>
-            <div class="card-back">
-              {{database.brief.local}}
-            </div>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
   <footer class="footer">
     <img src="img/logo_white.svg">
     <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
@@ -552,36 +530,74 @@
     }
   })
 
-  var articleField = new Vue({
-    el:'#articleField',
+  var subjectsField = new Vue({
+    el:'#subjectsField',
     i18n,
     data: {
-      articles: []
-    },
-    created: function() {
-      let self = this;
-      $.ajax({
-        url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getArticle.php',
-        type: 'GET',
-        data: {
+      subjects: [
+        {
+          'keyword': '教育心理學',
+          'articles': []
         },
-        error: function(jqXHR, exception) {
-          //use url variable here
-          console.log(jqXHR);
-          console.log(exception);
+        {
+          'keyword': '比較教育',
+          'articles': []
         },
-        success: function(res) {
-          console.log(res);
-          for(index in res.Data.Records) {
-            self.articles.push(self.processArticleData(res.Data.Records[index]));
-            // self.articles = res.Data.Records
-          }
+        {
+          'keyword': '教學科技',
+          'articles': []
+        },
+        {
+          'keyword': '科技與性別研究',
+          'articles': []
         }
-      });
+      ]
+    },
+    created () {
+      let self = this;
+      this.subjects.forEach(async res => {
+        let tempArticleList = await self.getArticles(res.keyword);
+
+        // process the data
+        for(index in tempArticleList) {
+          tempArticleList[index] = self.processArticleData(tempArticleList[index]);
+        }
+        res.articles = tempArticleList;
+        // const Obj_article = {
+        //   'keyword': res,
+        //   'articles': tempArticleList
+        // }
+        // self.subjects.push(Obj_article);
+        console.log(res.articles);
+      })
     },
     mounted: function() {
     },
     methods: {
+      getArticles : async keyword => {
+        return new Promise((resolve, reject) => {
+          $.ajax({
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getArticle.php',
+            type: 'GET',
+            data: {
+              keyword: keyword
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              let articleAry = [];
+              for(index in res.Data.Records) {
+                articleAry.push(res.Data.Records[index]);
+                // self.articles.push(self.processArticleData(res.Data.Records[index]));
+              }
+              resolve(articleAry);
+            }
+          });
+        })
+      },
       processArticleData(dataObj) {
         let template = {
           articleTitle: '',

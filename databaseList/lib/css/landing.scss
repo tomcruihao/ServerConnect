@@ -197,7 +197,7 @@ section {
   }
 }
 
-.article-field {
+.subject-field {
   // &.block {
   //   .articles {
 
@@ -209,64 +209,62 @@ section {
   //   }
   // }
   .articles {
-    height: 500px;
-    margin-top: 30px;
-    overflow-y: scroll;
-
-    &.loading-wrap {
-      text-align: center;
-
-      .icon-loading {
-        width: 60px;
-        height: 60px;
-      }
-    }
-
-    .article-wrap {
-      padding: 15px;
-      margin-top: 30px;
-      border: 1px solid $main_color;
-
-      &:first-child {
-        margin-top: 0px;
-      }
-      a {
-        color: #333;
-        text-decoration: none;
-        h2 {
-          font-size: 1.2rem;
-          color: $anchor_color;
-          text-decoration: underline;
+    .container {
+      &.loading-wrap {
+        text-align: center;
+  
+        .icon-loading {
+          width: 60px;
+          height: 60px;
         }
+      }
+
+      .article-wrap {
+        padding: 15px;
+        margin-top: 30px;
+        border: 1px solid $main_color;
   
-        .row {
-          display: flex;
-  
-          .title {
-            width: 80px;
+        &:first-child {
+          margin-top: 0px;
+        }
+        a {
+          color: #333;
+          text-decoration: none;
+          h2 {
+            font-size: 1.2rem;
+            color: $anchor_color;
+            text-decoration: underline;
           }
-  
-          .content {
-            flex: 1;
-  
-            &.hide {
-              height: 100px;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              display: -webkit-box;
-              -webkit-line-clamp: 4;
-              -webkit-box-orient: vertical;
+    
+          .row {
+            display: flex;
+    
+            .title {
+              width: 80px;
+            }
+    
+            .content {
+              flex: 1;
+    
+              &.hide {
+                height: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+              }
             }
           }
         }
-      }
-
-      .expand {
-        width: 100%;
-        text-align: end;
-        .expandText {
-          color: $anchor_color;
-          cursor: pointer;
+  
+        .expand {
+          width: 100%;
+          text-align: end;
+          .expandText {
+            color: $anchor_color;
+            cursor: pointer;
+          }
         }
       }
     }
