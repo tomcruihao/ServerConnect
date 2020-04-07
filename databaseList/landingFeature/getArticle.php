@@ -49,7 +49,7 @@
     $articleCounter = 0;
     $ary_tempRecords = [];
     foreach($ary_articles['Data']['Records'] as $key => $row) {
-      print_r($row);
+      print_r($row['Items']);
       $allValueExist = true;
       
       // check all item have data
