@@ -63,11 +63,10 @@
     "Actions" => null
   );
   $articleParams = json_encode($articleParams, JSON_UNESCAPED_UNICODE);
-  print_r($articleParams);
   
-  // $result = getArticle($articleParams);
-  // $result_ary = json_decode($result, true);
+  $result = getArticle($articleParams);
+  $result_ary = json_decode($result, true);
 
-  // // print the result
-  // echo json_encode($result_ary['SearchResult'], JSON_UNESCAPED_UNICODE);
+  // print the result
+  echo json_encode($result_ary['SearchResult'], JSON_UNESCAPED_UNICODE);
 ?>
