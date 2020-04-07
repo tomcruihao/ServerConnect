@@ -46,7 +46,12 @@
 
   function processArticles($ary_articles) {
     foreach($ary_articles['Data']['Records'] as $key => $row) {
-      print_r($row);
+
+      foreach($row['Items'] as $itemKey => $itemRow) {
+        
+        print_r($itemRow);
+      }
+      // print_r($row);
     }
   }
 
