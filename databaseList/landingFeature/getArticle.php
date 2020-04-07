@@ -67,7 +67,7 @@
         break;
       }
     }
-
+    print_r($ary_tempRecords);
     // replace the Records of result
     $result['Data']['Records'] = $ary_tempRecords;
 
@@ -102,5 +102,5 @@
 
 
   // print the result
-  echo json_encode($lastResult, JSON_UNESCAPED_UNICODE);
+  // echo json_encode($lastResult, JSON_UNESCAPED_UNICODE);
 ?>
