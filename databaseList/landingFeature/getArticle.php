@@ -91,15 +91,14 @@
     "Actions" => null
   );
   $articleParams = json_encode($articleParams, JSON_UNESCAPED_UNICODE);
-  print_r($articleParams);
   
-  // $result = getArticle($articleParams);
+  $result = getArticle($articleParams);
 
-  // $result_ary = json_decode($result, true);
+  $result_ary = json_decode($result, true);
   
-  // $lastResult = processArticles($result_ary['SearchResult'], $getNumberOfArticles);
+  $lastResult = processArticles($result_ary['SearchResult'], $getNumberOfArticles);
 
 
-  // // print the result
-  // echo json_encode($lastResult, JSON_UNESCAPED_UNICODE);
+  // print the result
+  echo json_encode($lastResult, JSON_UNESCAPED_UNICODE);
 ?>
