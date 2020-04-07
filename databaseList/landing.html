@@ -91,7 +91,7 @@
       </div>
     </div>
   </section>
-  <section class="subject-field" id="subjectField">
+  <!-- <section class="subject-field" id="subjectField">
     <h1>特色專題</h1>
     <div class="subjects">
       <figure class="subject-wrap">
@@ -125,9 +125,9 @@
         </figcaption>
       </figure>
     </div>
-  </section>
-  <div id="subjectsField">
-    <section class="subject-field" v-for="(subject, id) in subjects">
+  </section> -->
+  <div id="articlesField" class="articles-field">
+    <section v-for="(subject, id) in subjects" class="article-subject">
       <div class="container" v-if="subject.articles.length !== 0">
         <h1>{{subject.title}}</h1>
         <div class="articles">
@@ -530,8 +530,8 @@
     }
   })
 
-  var subjectsField = new Vue({
-    el:'#subjectsField',
+  var articlesField = new Vue({
+    el:'#articlesField',
     i18n,
     data: {
       subjects: [

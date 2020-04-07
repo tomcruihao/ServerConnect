@@ -163,52 +163,42 @@ section {
   }
 }
 
-.subject-field {
-  .subjects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+// .subject-field {
+//   .subjects {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
 
-    .subject-wrap {
-      width: 300px;
-      height: 260px;
-      margin: 30px 15px 0;
-      background-color: #fff;
-      border: 1px solid $main_color;
-      box-sizing: border-box;
-      display: inline-block;
+//     .subject-wrap {
+//       width: 300px;
+//       height: 260px;
+//       margin: 30px 15px 0;
+//       background-color: #fff;
+//       border: 1px solid $main_color;
+//       box-sizing: border-box;
+//       display: inline-block;
 
-      .img-frame {
-        width: 100%;
-        height: 200px;
+//       .img-frame {
+//         width: 100%;
+//         height: 200px;
 
-        img {
-          width: 100%;
-          height: 200px;
-        }
-      }
-      figcaption {
-        h2 {
-          padding-left: 10px;
-          font-size: 1.2rem;
-        }
-      }
-    }
-  }
-}
+//         img {
+//           width: 100%;
+//           height: 200px;
+//         }
+//       }
+//       figcaption {
+//         h2 {
+//           padding-left: 10px;
+//           font-size: 1.2rem;
+//         }
+//       }
+//     }
+//   }
+// }
 
-.subject-field {
-  // &.block {
-  //   .articles {
-
-  //     .article-wrap {
-  //       width: 20%;
-  //       display: flex;
-  //       flex-wrap: wrap;
-  //     }
-  //   }
-  // }
-  .articles {
+.articles-field {
+  .article-subject {
     .container {
       &.loading-wrap {
         text-align: center;
@@ -220,13 +210,15 @@ section {
       }
 
       .article-wrap {
+        width: 21%;
         padding: 15px;
         margin-top: 30px;
         border: 1px solid $main_color;
+        display: inline-block;
   
-        &:first-child {
-          margin-top: 0px;
-        }
+        // &:first-child {
+        //   margin-top: 0px;
+        // }
         a {
           color: #333;
           text-decoration: none;
