@@ -44,7 +44,7 @@
     return $result;
   }
 
-  function processArticles($ary_articles) {
+  function processArticles($ary_articles, $getNumberOfArticles) {
     $result = $ary_articles;
     $articleCounter = 0;
     $ary_tempRecords = [];
@@ -96,7 +96,7 @@
 
   $result_ary = json_decode($result, true);
   
-  $lastResult = processArticles($result_ary['SearchResult']);
+  $lastResult = processArticles($result_ary['SearchResult'], $getNumberOfArticles);
 
 
   // print the result
