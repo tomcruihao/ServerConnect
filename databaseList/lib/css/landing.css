@@ -278,7 +278,7 @@ header nav .nav-list li.multi:before {
 section {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 50px;
+  padding: 50px 30px;
 }
 
 section h1 {
@@ -455,42 +455,54 @@ section:nth-of-type(2n) {
   height: 60px;
 }
 
-.articles-field .article-subject .container .article-wrap {
-  width: 21%;
+.articles-field .article-subject .container .articles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.articles-field .article-subject .container .articles .article-wrap {
+  width: 24%;
   padding: 15px;
   margin-top: 30px;
   border: 1px solid #008cce;
-  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.articles-field .article-subject .container .article-wrap a {
+.articles-field .article-subject .container .articles .article-wrap a {
   color: #333;
   text-decoration: none;
 }
 
-.articles-field .article-subject .container .article-wrap a h2 {
+.articles-field .article-subject .container .articles .article-wrap a h2 {
   font-size: 1.2rem;
   color: #008cce;
   text-decoration: underline;
 }
 
-.articles-field .article-subject .container .article-wrap a .row {
+.articles-field .article-subject .container .articles .article-wrap .row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.articles-field .article-subject .container .article-wrap a .row .title {
+.articles-field .article-subject .container .articles .article-wrap .row .title {
   width: 80px;
 }
 
-.articles-field .article-subject .container .article-wrap a .row .content {
+.articles-field .article-subject .container .articles .article-wrap .row .content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.articles-field .article-subject .container .article-wrap a .row .content.hide {
+.articles-field .article-subject .container .articles .article-wrap .row .content.hide {
   height: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -499,12 +511,12 @@ section:nth-of-type(2n) {
   -webkit-box-orient: vertical;
 }
 
-.articles-field .article-subject .container .article-wrap .expand {
+.articles-field .article-subject .container .articles .article-wrap .expand {
   width: 100%;
   text-align: end;
 }
 
-.articles-field .article-subject .container .article-wrap .expand .expandText {
+.articles-field .article-subject .container .articles .article-wrap .expand .expandText {
   color: #008cce;
   cursor: pointer;
 }

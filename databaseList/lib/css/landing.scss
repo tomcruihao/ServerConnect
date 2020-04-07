@@ -29,7 +29,7 @@ $section_block2_bg: transparent;
 
 section {
   box-sizing: border-box;
-  padding: 50px;
+  padding: 50px 30px;
 
   h1 {
     margin: 0;
@@ -208,26 +208,31 @@ section {
           height: 60px;
         }
       }
+      .articles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
-      .article-wrap {
-        width: 21%;
-        padding: 15px;
-        margin-top: 30px;
-        border: 1px solid $main_color;
-        display: inline-block;
-  
-        // &:first-child {
-        //   margin-top: 0px;
-        // }
-        a {
-          color: #333;
-          text-decoration: none;
-          h2 {
-            font-size: 1.2rem;
-            color: $anchor_color;
-            text-decoration: underline;
-          }
+        .article-wrap {
+          width: 24%;
+          padding: 15px;
+          margin-top: 30px;
+          border: 1px solid $main_color;
+          box-sizing: border-box;
     
+          // &:first-child {
+          //   margin-top: 0px;
+          // }
+          a {
+            color: #333;
+            text-decoration: none;
+            h2 {
+              font-size: 1.2rem;
+              color: $anchor_color;
+              text-decoration: underline;
+            }
+          }
+          
           .row {
             display: flex;
     
@@ -248,14 +253,15 @@ section {
               }
             }
           }
-        }
-  
-        .expand {
-          width: 100%;
-          text-align: end;
-          .expandText {
-            color: $anchor_color;
-            cursor: pointer;
+          
+    
+          .expand {
+            width: 100%;
+            text-align: end;
+            .expandText {
+              color: $anchor_color;
+              cursor: pointer;
+            }
           }
         }
       }
