@@ -58,11 +58,10 @@
         }
       }
 
-
       // put this record in temp array
-      echo $allValueExist && ($articleCounter <= $getNumberOfArticles);
+
       if($allValueExist && ($articleCounter <= $getNumberOfArticles)) {
-        array_push($ary_tempArticle, $row);
+        array_push($ary_tempRecords, $row);
         $articleCounter = $articleCounter + 1;
       }
     }
