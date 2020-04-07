@@ -55,7 +55,6 @@
       foreach($row['Items'] as $itemKey => $itemRow) {
         if(empty($itemRow['Data'])) {
           $allValueExist = false;
-          break;
         }
       }
       echo $allValueExist;
@@ -64,8 +63,6 @@
       if($allValueExist && $articleCounter <= $getNumberOfArticles) {
         array_push($ary_tempArticle, $row);
         $articleCounter = $articleCounter + 1;
-      } else if($articleCounter > $getNumberOfArticles) {
-        break;
       }
     }
     print_r($ary_tempRecords);
