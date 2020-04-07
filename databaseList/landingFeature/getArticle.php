@@ -57,7 +57,7 @@
           $allValueExist = false;
         }
       }
-      echo $allValueExist;
+
       echo $getNumberOfArticles;
       // put this record in temp array
       if($allValueExist && $articleCounter <= $getNumberOfArticles) {
