@@ -53,13 +53,13 @@
       
       // check all item have data
       foreach($row['Items'] as $itemKey => $itemRow) {
-        echo $itemRow['Data'] == '';
-        if($itemRow['Data'] == '') {
+        if(empty($itemRow['Data'])) {
           $allValueExist = false;
           break;
         }
       }
-
+      echo $allValueExist;
+      echo $getNumberOfArticles;
       // put this record in temp array
       if($allValueExist && $articleCounter <= $getNumberOfArticles) {
         array_push($ary_tempArticle, $row);
