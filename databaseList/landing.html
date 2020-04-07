@@ -39,7 +39,7 @@
       </ul>
     </nav>
   </header>
-  <section class="search-field">
+  <div class="search-field">
     <div class="search-warpper" id="searchField">
       <input class="radio" id="one" name="group" type="radio" checked>
       <input class="radio" id="two" name="group" type="radio">
@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
   <!-- <section class="subject-field" id="subjectField">
     <h1>特色專題</h1>
     <div class="subjects">
@@ -137,20 +137,21 @@
             </a>
             <div class="row">
               <div class="title">作者:</div>
-              <div class="content" v-html="article.articleAuthor"></div>
+              <div class="content author" v-html="article.articleAuthor"></div>
             </div>
             <div class="row">
               <div class="title">來源:</div>
-              <div class="content" v-html="article.articleSource"></div>
+              <div class="content source" v-html="article.articleSource"></div>
             </div>
             <div class="row">
               <div class="title">摘要:</div>
-              <div class="content" v-html="article.articleAbstract" :class="{ hide: article.hide }"></div>
+              <div class="content abstract" v-html="article.articleAbstract" :class="{ hide: article.hide }"></div>
             </div>
             
             <div class="expand">
-              <div class="expandText" v-if="article.hide === true" @click="expandArticle(article)">展開</div>
-              <div class="expandText" v-else @click="expandArticle(article)">收起</div>
+              <div class="expandText" v-if="article.hide === true" @click="expandArticle(article)">更多...</div>
+              <!-- <div class="expandText" v-if="article.hide === true" @click="expandArticle(article)">展開</div>
+              <div class="expandText" v-else @click="expandArticle(article)">收起</div> -->
             </div>
           </div>
         </div>

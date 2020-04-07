@@ -45,6 +45,8 @@ section {
 
 .search-field {
   width: 100%;
+  box-sizing: border-box;
+  padding: 50px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -227,30 +229,64 @@ section {
             color: #333;
             text-decoration: none;
             h2 {
-              font-size: 1.2rem;
+              height: 70px;
+              font-size: 1rem;
               color: $anchor_color;
               text-decoration: underline;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
             }
           }
-          
+
           .row {
             display: flex;
+            font-size: 0.8rem;
     
             .title {
-              width: 80px;
+              width: 50px;
             }
     
             .content {
               flex: 1;
-    
-              &.hide {
-                height: 100px;
+
+              &.author {
+                height: 60px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+              }
+
+              &.source {
+                height: 60px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+              }
+
+              &.abstract {
+                height: 98px;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 display: -webkit-box;
                 -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
               }
+    
+              // &.hide {
+              //   height: 100px;
+              //   overflow: hidden;
+              //   text-overflow: ellipsis;
+              //   display: -webkit-box;
+              //   -webkit-line-clamp: 4;
+              //   -webkit-box-orient: vertical;
+              // }
             }
           }
           
@@ -259,6 +295,7 @@ section {
             width: 100%;
             text-align: end;
             .expandText {
+              font-size: 0.8rem;
               color: $anchor_color;
               cursor: pointer;
             }
