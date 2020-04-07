@@ -129,7 +129,7 @@
   <div id="subjectsField">
     <section class="subject-field" v-for="(subject, id) in subjects">
       <div class="container" v-if="subject.articles.length !== 0">
-        <h1>{{subject.keyword}}</h1>
+        <h1>{{subject.title}}</h1>
         <div class="articles">
           <div class="article-wrap" v-for="(article, id) in subject.articles">
             <a :href="article.articleLink" target="_blank">
@@ -536,19 +536,23 @@
     data: {
       subjects: [
         {
-          'keyword': '教育心理學',
+          'keyword': 'Educational psychology',
+          'title': '教育心理學',
           'articles': []
         },
         {
-          'keyword': '比較教育',
+          'keyword': 'comparative education',
+          'title': '比較教育',
           'articles': []
         },
         {
-          'keyword': '教學科技',
+          'keyword': 'Instructional Technology',
+          'title': '教學科技',
           'articles': []
         },
         {
-          'keyword': '科技與性別研究',
+          'keyword': 'gender in science and technology',
+          'title': '科技與性別研究',
           'articles': []
         }
       ]

@@ -2,11 +2,11 @@
   header("Access-Control-Allow-Origin: *");
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
-
-  // if(isset($_SESSION['AuthenticationToken']) && isset($_SESSION['SessionToken'])) {
-    
-  // }
   include 'getAuth.php';
+
+  // varibles
+  $getNumberOfArticles = 8;
+  
 
   $keyword = '';
   if(isset($_GET["keyword"])) {
@@ -44,6 +44,12 @@
     return $result;
   }
 
+  function processArticles($ary_articles) {
+    foreach($ary_articles['Data']['Records'] as $key => $row) {
+      print_r($row);
+    }
+  }
+
   $articleParams = array(
     "SearchCriteria" => array(
       "Queries" => array(array("Term" => $keyword)),
@@ -65,8 +71,12 @@
   $articleParams = json_encode($articleParams, JSON_UNESCAPED_UNICODE);
   
   $result = getArticle($articleParams);
+
   $result_ary = json_decode($result, true);
+  
+  $lastResult = processArticles($result_ary['SearchResult']);
+
 
   // print the result
-  echo json_encode($result_ary['SearchResult'], JSON_UNESCAPED_UNICODE);
+  // echo json_encode($result_ary['SearchResult'], JSON_UNESCAPED_UNICODE);
 ?>
