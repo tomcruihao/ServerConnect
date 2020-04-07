@@ -45,14 +45,33 @@
   }
 
   function processArticles($ary_articles) {
+    $result = $ary_articles;
+    $articleCounter = 0;
+    $ary_tempRecords = [];
     foreach($ary_articles['Data']['Records'] as $key => $row) {
-
+      $allValueExist = true;
+      
+      // check all item have data
       foreach($row['Items'] as $itemKey => $itemRow) {
-        
-        print_r($itemRow);
+        if(empty($itemRow['data'])) {
+          $allValueExist = false;
+          break;
+        }
       }
-      // print_r($row);
+
+      // put this record in temp array
+      if($allValueExist && $articleCounter <= $getNumberOfArticles) {
+        array_push($ary_tempArticle, $row);
+        $articleCounter = $articleCounter + 1;
+      } else if($articleCounter > $getNumberOfArticles) {
+        break;
+      }
     }
+
+    // replace the Records of result
+    $result['Data']['Records'] = $ary_tempRecords;
+
+    return $result;
   }
 
   $articleParams = array(
@@ -83,5 +102,5 @@
 
 
   // print the result
-  // echo json_encode($result_ary['SearchResult'], JSON_UNESCAPED_UNICODE);
+  echo json_encode($result_ary['SearchResult'], JSON_UNESCAPED_UNICODE);
 ?>
