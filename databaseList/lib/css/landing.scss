@@ -505,10 +505,20 @@ section {
       }
 
       .close {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         right: 5px;
         top: 5px;
         cursor: pointer;
+        background-color: #aaaaaa;
+        &:hover {
+          background-color: #cccccc;
+        }
       }
     }
     .dialogue-body {
@@ -520,12 +530,17 @@ section {
       overflow-y: scroll;
 
       .article-content {
-        .article-title {
-          margin: 15px 0;
-          font-size: 1.2rem;
-          color: $anchor_color;
+        .title-link {
+          text-decoration: none;
+          .article-title {
+            margin: 15px 0;
+            font-size: 1.2rem;
+            color: $anchor_color;
+          }
         }
+
         .row {
+          margin-top: 5px;
           display: flex;
 
           .title {

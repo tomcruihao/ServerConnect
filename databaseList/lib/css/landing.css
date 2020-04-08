@@ -780,10 +780,27 @@ section:nth-of-type(2n) {
 }
 
 .mask .dialogue-message-frame .dialogue-head .close {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   right: 5px;
   top: 5px;
   cursor: pointer;
+  background-color: #aaaaaa;
+}
+
+.mask .dialogue-message-frame .dialogue-head .close:hover {
+  background-color: #cccccc;
 }
 
 .mask .dialogue-message-frame .dialogue-body {
@@ -795,13 +812,18 @@ section:nth-of-type(2n) {
   overflow-y: scroll;
 }
 
-.mask .dialogue-message-frame .dialogue-body .article-content .article-title {
+.mask .dialogue-message-frame .dialogue-body .article-content .title-link {
+  text-decoration: none;
+}
+
+.mask .dialogue-message-frame .dialogue-body .article-content .title-link .article-title {
   margin: 15px 0;
   font-size: 1.2rem;
   color: #008cce;
 }
 
 .mask .dialogue-message-frame .dialogue-body .article-content .row {
+  margin-top: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

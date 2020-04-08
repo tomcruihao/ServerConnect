@@ -457,11 +457,13 @@
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>文章資訊</h4>
-        <img src="img/icon/closeWhite.svg" class="close" @click="closeDialogue()">
+        <button @click="closeDialogue()" class="close">
+          <img src="img/icon/closeWhite.svg">
+        </button>
       </div>
       <div class="dialogue-body">
         <div class="article-content">
-          <a :href="articleObj.articleLink">
+          <a :href="articleObj.articleLink" class="title-link">
             <h5 v-html="articleObj.articleTitle" class="article-title">
             </h5>
           </a>
