@@ -56,6 +56,7 @@
         // if(empty($itemRow['Data'])) {
         //   $allValueExist = false;
         // }
+        echo $itemRow['Data'].'@@@@@@@@@@@@@@@@';
         if($itemRow['Data'] === '') {
           $allValueExist = false;
         }
