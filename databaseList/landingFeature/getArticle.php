@@ -58,7 +58,7 @@
       //   }
       // }
 
-      if(!isset($row['Items']['Abstract']) || !isset($row['Items']['Title']) || !isset($row['Items']['Author']) || !isset($row['Items']['TitleSource'])) {
+      if(!array_key_exists($row['Items'], 'Abstract') || !array_key_exists($row['Items'], 'Title') || !array_key_exists($row['Items'], 'Author') || !array_key_exists($row['Items'], 'TitleSource')) {
         $allValueExist = false;
       }
 
