@@ -823,7 +823,7 @@ section:nth-of-type(2n) {
 }
 
 .mask .dialogue-message-frame .dialogue-body .article-content .row {
-  margin-top: 5px;
+  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
