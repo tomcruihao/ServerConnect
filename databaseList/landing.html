@@ -147,9 +147,8 @@
               <div class="title">摘要:</div>
               <div class="content abstract" v-html="article.articleAbstract" :class="{ hide: article.hide }"></div>
             </div>
-            
             <div class="expand">
-              <div class="expandText" v-if="article.hide === true" @click="expandArticle(article)">更多...</div>
+              <div class="expandText" @click="showDetail(article)">更多...</div>
               <!-- <div class="expandText" v-if="article.hide === true" @click="expandArticle(article)">展開</div>
               <div class="expandText" v-else @click="expandArticle(article)">收起</div> -->
             </div>
@@ -165,7 +164,8 @@
     <h1>期刊推薦</h1>
     <div id="ebook" class="ejournal slider">
       <div class="ebook-wrap">
-        <a href="https://journals.sagepub.com/home/aer" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+American+Educational+Research+Journal">
+          <!-- <a href="https://journals.sagepub.com/home/aer" target="_blank"></a> -->
           <div class="image-frame">
             <img src="img/journals/AER.png">
           </div>
@@ -175,7 +175,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://anthrosource.onlinelibrary.wiley.com/journal/15481492" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+ANTHROPOLOGY+AND+EDUCATION+QUARTERLY">
+        <!-- <a href="https://anthrosource.onlinelibrary.wiley.com/journal/15481492" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/AAEQ.gif">
           </div>
@@ -183,7 +184,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://onlinelibrary.wiley.com/journal/14693518" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+BRITISH+EDUCATIONAL+RESEARCH+JOURNAL">
+        <!-- <a href="https://onlinelibrary.wiley.com/journal/14693518" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/BERJ.gif">
           </div>
@@ -191,7 +193,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://www.springer.com/journal/11007" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+CONTINENTAL+PHILOSOPHY+REVIEW">
+        <!-- <a href="https://www.springer.com/journal/11007" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/CPR.jpg">
           </div>
@@ -199,7 +202,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://www.tandfonline.com/loi/rcui20" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+Curriculum+Inquiry">
+        <!-- <a href="https://www.tandfonline.com/loi/rcui20" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/CUI.png">
           </div>
@@ -207,7 +211,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://journals.sagepub.com/home/eaq" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+EDUCATIONAL+ADMINISTRATION+QUARTERLY">
+        <!-- <a href="https://journals.sagepub.com/home/eaq" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/EAQ.png">
           </div>
@@ -215,7 +220,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://onlinelibrary.wiley.com/journal/17415446" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+EDUCATIONAL+THEORY">
+        <!-- <a href="https://onlinelibrary.wiley.com/journal/17415446" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/ETJ.gif">
           </div>
@@ -223,7 +229,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://www.onlinelibrary.wiley.com/journal/14653435" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+EUROPEAN+JOURNAL+OF+EDUCATION">
+        <!-- <a href="https://www.onlinelibrary.wiley.com/journal/14653435" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/EJOE.gif">
           </div>
@@ -231,7 +238,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://www.cambridge.org/core/journals/history-of-education-quarterly" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+HISTORY+OF+EDUCATION+QUARTERLY">
+        <!-- <a href="https://www.cambridge.org/core/journals/history-of-education-quarterly" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/HEQ.jpg">
           </div>
@@ -239,7 +247,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://www.springer.com/journal/10746" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+HUMAN+STUDIES">
+        <!-- <a href="https://www.springer.com/journal/10746" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/HSJ.jpg">
           </div>
@@ -247,15 +256,17 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://www.springer.com/journal/10780" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+Interchange">
+        <!-- <a href="https://www.springer.com/journal/10780" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/InterChange.jpg">
           </div>
-          <h2>INTERCHANGE : A QUARTERLY REVIEW OF EDUCATION</h2>
+          <h2>INTERCHANGE: A QUARTERLY REVIEW OF EDUCATION</h2>
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://www.journals.elsevier.com/international-journal-of-educational-development" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+INTERNATIONAL+JOURNAL+OF+EDUCATIONAL+DEVELOPMENT">
+        <!-- <a href="https://www.journals.elsevier.com/international-journal-of-educational-development" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/IJED.gif">
           </div>
@@ -263,7 +274,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://onlinelibrary.wiley.com/journal/14679752" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+JOURNAL+OF+PHILOSOPHY+OF+EDUCATION">
+        <!-- <a href="https://onlinelibrary.wiley.com/journal/14679752" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/JPE.gif">
           </div>
@@ -271,7 +283,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://onlinelibrary.wiley.com/journal/1534875x" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+NEW+DIRECTIONS+FOR+EVALUATION">
+        <!-- <a href="https://onlinelibrary.wiley.com/journal/1534875x" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/NDFE.gif">
           </div>
@@ -279,7 +292,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://onlinelibrary.wiley.com/journal/15360741" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+NEW+DIRECTIONS+FOR+HIGHER+EDUCATION">
+        <!-- <a href="https://onlinelibrary.wiley.com/journal/15360741" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/NDFHE.gif">
           </div>
@@ -287,7 +301,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://journals.sagepub.com/home/qix" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+QUALITATIVE+INQUIRY">
+        <!-- <a href="https://journals.sagepub.com/home/qix" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/QIJ.png">
           </div>
@@ -295,7 +310,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://www.springer.com/journal/11162" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+RESEARCH+IN+HIGHER+EDUCATION">
+        <!-- <a href="https://www.springer.com/journal/11162" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/RIHE.jpeg">
           </div>
@@ -303,7 +319,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://journals.sagepub.com/home/rer" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+REVIEW+OF+EDUCATIONAL+RESEARCH">
+        <!-- <a href="https://journals.sagepub.com/home/rer" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/ROER.png">
           </div>
@@ -311,7 +328,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://onlinelibrary.wiley.com/journal/15406237" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+SOCIAL+SCIENCE+QUARTERLY">
+        <!-- <a href="https://onlinelibrary.wiley.com/journal/15406237" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/SSQ.gif">
           </div>
@@ -319,7 +337,8 @@
         </a>
       </div>
       <div class="ebook-wrap">
-        <a href="https://journals.sagepub.com/home/soe" target="_blank">
+        <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&profile=pfi&groupid=main&custid=jaychang&direct=true&db=edspub&bquery=JN+SOCIOLOGY+OF+EDUCATION">
+        <!-- <a href="https://journals.sagepub.com/home/soe" target="_blank"> -->
           <div class="image-frame">
             <img src="img/journals/SOE.png">
           </div>
@@ -327,26 +346,6 @@
         </a>
       </div>
     </div>
-    
-    <!-- <div id="slider_journal">
-      <div class="postarea">
-        <div class="posts" :style="computedLeft">
-          <div class="postbox" v-for="(work, id) in works" :class="{curItem: id == nowIndex}">
-            <div class="cover" :style="coverUrl(work.cover)">
-              <div class="infos">
-                <h1>{{work.title}}</h1>
-                <h5>{{work.description}}</h5>
-              </div>
-            </div>
-            <div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="control_left" @click="delta(-1)">left<i class="fa fa-angle-left"></i></div>
-      <div class="control_right" @click="delta(1)">right<i class="fa fa-angle-right"></i></div>
-    </div> -->
   </section>
   <section class="ebook-field">
     <h1>電子書推薦</h1>
@@ -454,6 +453,34 @@
       </div>
     </div>
   </section>
+  <div class="mask" id="dialogue" v-if="show" :class="{ show: show }">
+    <div class="dialogue-message-frame">
+      <div class="dialogue-head">
+        <h4>文章資訊</h4>
+        <img src="img/icon/closeWhite.svg" class="close" @click="closeDialogue()">
+      </div>
+      <div class="dialogue-body">
+        <div class="article-content">
+          <a :href="articleObj.articleLink">
+            <h5 v-html="articleObj.articleTitle" class="article-title">
+            </h5>
+          </a>
+          <div class="row">
+            <div class="title">作者</div>
+            <div class="content" v-html="articleObj.articleAuthor"></div>
+          </div>
+          <div class="row">
+            <div class="title">來源</div>
+            <div class="content" v-html="articleObj.articleSource"></div>
+          </div>
+          <div class="row">
+            <div class="title">摘要</div>
+            <div class="content" v-html="articleObj.articleAbstract"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer class="footer">
     <img src="img/logo_white.svg">
     <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
@@ -569,18 +596,15 @@
           tempArticleList[index] = self.processArticleData(tempArticleList[index]);
         }
         res.articles = tempArticleList;
-        // const Obj_article = {
-        //   'keyword': res,
-        //   'articles': tempArticleList
-        // }
-        // self.subjects.push(Obj_article);
-        console.log(res.articles);
       })
     },
     mounted: function() {
     },
     methods: {
-      getArticles : async keyword => {
+      showDetail(obj_article) {
+        dialogue.setDialogue('showArticleDetail', JSON.parse(JSON.stringify(obj_article)));
+      },
+      getArticles: async keyword => {
         return new Promise((resolve, reject) => {
           $.ajax({
             url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getArticle.php',
@@ -643,6 +667,31 @@
       }
     }
   })
+
+  var dialogue = new Vue({
+    el:'#dialogue',
+    i18n,
+    data: {
+      show: false,
+      type: '',
+      articleObj: {
+        articleTitle: '',
+        articleLink: '',
+        articleAuthor: '',
+        articleAbstract: '',
+        articleSource: ''
+      }
+    },
+    methods:{
+      setDialogue: function(type, Obj) {
+        this.articleObj = Obj;
+        this.show = true;
+      },
+      closeDialogue: function() {
+        this.show = false;
+      }
+    }
+  });
 
   var databaseField = new Vue({
     el:'#databaseField',
@@ -812,69 +861,4 @@
       ]
     }
   );
-</script>
-
-<script>
-
-  // const buildSlideMarkup = (count) => {
-  //   let slideMarkup = '';
-  //   for (var i = 1; i <= count; i++) {
-  //     slideMarkup += '<slide><span class="label">' + i + '</span></slide>'
-  //   }
-  //   return slideMarkup;
-  // };
-
-  // new Vue({
-  //   el: '#example',
-  //   data: function () {
-  //     return {
-  //       works: [
-  //         {
-  //           title: "海象樂園",
-  //           description: "趴在冰層上的懶惰動物",
-  //           cover: "https://unsplash.it/400/300?image=1084"
-  //         },
-  //         {
-  //           title: "搭船遊去",
-  //           description: "不會游泳只好搭船",
-  //           cover: "https://unsplash.it/400/300?image=1083"
-  //         },
-  //         {
-  //           title: "老年學鋼琴",
-  //           description: "學習永遠不嫌晚！",
-  //           cover: "https://unsplash.it/400/300?image=1082"
-  //         },
-  //         {
-  //           title: "高樓的一隅",
-  //           description: "繁複的幾何線條構築",
-  //           cover: "https://unsplash.it/400/300?image=1081"
-  //         },
-  //         {
-  //           title: "草莓來襲",
-  //           description: "聽見果農的艱辛",
-  //           cover: "https://unsplash.it/400/300?image=1080"
-  //         },
-  //         {
-  //           title: "探索宇宙",
-  //           description: "看見光的速度與殘影",
-  //           cover: "https://unsplash.it/400/300?image=1079"
-  //         }
-  //       ]
-  //     }
-  //   },
-  //   components: {
-  //     'carousel': VueCarousel.Carousel,
-  //     'slide': VueCarousel.Slide
-  //   },
-  //   methods: {
-  //     buildSlideMarkup = (count) => {
-  //       let slideMarkup = '';
-  //       for (var i = 1; i <= count; i++) {
-  //         slideMarkup += '<slide><span class="label">' + i + '</span></slide>'
-  //       }
-  //       return slideMarkup;
-  //     }
-  //   },
-  //   template: '<div><carousel :perPageCustom="[[480, 2], [768, 3]]">' + buildSlideMarkup(10) + '</carousel></div>'
-  // });
 </script>
