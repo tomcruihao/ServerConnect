@@ -52,15 +52,15 @@
       $allValueExist = true;
       
       // check all item have data
-      // foreach($row['Items'] as $itemKey => $itemRow) {
-      //   if(empty($itemRow['Data'])) {
-      //     $allValueExist = false;
-      //   }
-      // }
-
-      if(!array_key_exists($row['Items'], 'Abstract')) {
-        $allValueExist = false;
+      foreach($row['Items'] as $itemKey => $itemRow) {
+        if(empty($itemRow['Data'])) {
+          $allValueExist = false;
+        }
       }
+
+      // if(!array_key_exists($row['Items'], 'Abstract')) {
+      //   $allValueExist = false;
+      // }
 
 
       // put this record in temp array
