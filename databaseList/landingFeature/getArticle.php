@@ -53,7 +53,10 @@
       
       // check all item have data
       foreach($row['Items'] as $itemKey => $itemRow) {
-        if(empty($itemRow['Data'])) {
+        // if(empty($itemRow['Data'])) {
+        //   $allValueExist = false;
+        // }
+        if($itemRow['Data'] === '') {
           $allValueExist = false;
         }
       }

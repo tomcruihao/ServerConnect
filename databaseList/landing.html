@@ -454,12 +454,11 @@
     </div>
   </section>
   <div class="mask" id="dialogue" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeDialogue()"></div>
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>文章資訊</h4>
-        <button @click="closeDialogue()" class="close">
-          <img src="img/icon/closeWhite.svg">
-        </button>
+        <img src="img/icon/closeWhite.svg" class="close" @click="closeDialogue()">
       </div>
       <div class="dialogue-body">
         <div class="article-content">

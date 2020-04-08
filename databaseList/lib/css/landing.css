@@ -487,7 +487,6 @@ section:nth-of-type(2n) {
   height: 70px;
   font-size: 1rem;
   color: #008cce;
-  text-decoration: underline;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -739,7 +738,6 @@ section:nth-of-type(2n) {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
   top: 0;
   left: 0;
   z-index: 1000;
@@ -756,6 +754,16 @@ section:nth-of-type(2n) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.mask .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 
 .mask .dialogue-message-frame {
@@ -780,27 +788,10 @@ section:nth-of-type(2n) {
 }
 
 .mask .dialogue-message-frame .dialogue-head .close {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   position: absolute;
   right: 5px;
   top: 5px;
   cursor: pointer;
-  background-color: #aaaaaa;
-}
-
-.mask .dialogue-message-frame .dialogue-head .close:hover {
-  background-color: #cccccc;
 }
 
 .mask .dialogue-message-frame .dialogue-body {
