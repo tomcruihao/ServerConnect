@@ -623,6 +623,7 @@
             },
             success: function(res) {
               let articleAry = [];
+              console.log(res.Data.Records);
               for(index in res.Data.Records) {
                 articleAry.push(res.Data.Records[index]);
                 // self.articles.push(self.processArticleData(res.Data.Records[index]));
