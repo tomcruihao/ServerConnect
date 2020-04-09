@@ -67,6 +67,7 @@
         }
       }
 
+      echo $countDescribe;
       // put this record in temp array
       if($countDescribe === 0 && ($articleCounter < $getNumberOfArticles)) {
         array_push($ary_tempRecords, $row);
