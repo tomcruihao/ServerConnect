@@ -62,8 +62,8 @@
 
       foreach($row['Items'] as $itemKey => $itemRow) {
         // array_key_exists($getKeys, $itemRow['Name']);
-        echo $itemRow['Name'].in_array($getKeys, $itemRow['Name']).'============';
-        if(in_array($getKeys, $itemRow['Name'])) {
+        echo $itemRow['Name'].' is '.in_array($itemRow['Name'], $getKeys).'============';
+        if(in_array($itemRow['Name'], $getKeys)) {
           $countDescribe = $countDescribe - 1;
         }
       }
