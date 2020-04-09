@@ -303,6 +303,7 @@ section {
 section h1 {
   margin: 0;
   font-size: 1.2rem;
+  color: #666666;
 }
 
 section:nth-of-type(2n-1) {
@@ -394,6 +395,7 @@ section:nth-of-type(2n) {
   margin-bottom: 5px;
   font-size: 1.2rem;
   font-weight: bold;
+  color: #005c88;
 }
 
 .search-field .search-warpper .panels .panel .search-box-wrap {
@@ -509,7 +511,7 @@ section:nth-of-type(2n) {
 .articles-field .article-subject .container .articles .article-wrap a h2 {
   height: 70px;
   font-size: 1rem;
-  color: #008cce;
+  color: #333;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
