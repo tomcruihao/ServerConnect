@@ -49,23 +49,27 @@
     $articleCounter = 0;
     $ary_tempRecords = [];
     foreach($ary_articles['Data']['Records'] as $key => $row) {
-      $allValueExist = true;
+      // $allValueExist = true;
+      $getValueDescribe = ["Title", "Author", "TitleSource", "Abstract"];
+      $countDescribe = count($getValueDescribe);
       
       // check all item have data
+      // foreach($row['Items'] as $itemKey => $itemRow) {
+      //   if(empty($itemRow['Data'])) {
+      //     $allValueExist = false;
+      //   }
+      // }
+
       foreach($row['Items'] as $itemKey => $itemRow) {
-        if(empty($itemRow['Data'])) {
-          $allValueExist = false;
+        if(array_key_exists($getValueDescribe, $itemRow['Name'])) {
+          $countDescribe = $countDescribe - 1;
         }
       }
-
-      // if(!array_key_exists($row['Items'], 'Abstract')) {
-      //   $allValueExist = false;
-      // }
 
 
       // put this record in temp array
 
-      if($allValueExist && ($articleCounter < $getNumberOfArticles)) {
+      if($countDescribe === 0 && ($articleCounter < $getNumberOfArticles)) {
         array_push($ary_tempRecords, $row);
         $articleCounter = $articleCounter + 1;
       }
