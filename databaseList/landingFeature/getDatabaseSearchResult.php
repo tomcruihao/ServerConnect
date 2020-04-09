@@ -10,7 +10,7 @@
 
   $bookInfoList = getInfoFromServer($apiConnection, $keyword, $resultAmount);
 
-  // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
+  echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
   function getInfoFromServer($apiUrl, $keyword, $resultAmount) {
     $result = array();
