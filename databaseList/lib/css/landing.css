@@ -100,6 +100,7 @@ header .logo a .brand-name {
   margin-left: 10px;
   color: #ffffff;
   font-size: 1.2rem;
+  text-decoration: none;
 }
 
 header nav {
@@ -301,6 +302,7 @@ section {
 
 section h1 {
   margin: 0;
+  font-size: 1.2rem;
 }
 
 section:nth-of-type(2n-1) {
@@ -390,7 +392,7 @@ section:nth-of-type(2n) {
 
 .search-field .search-warpper .panels .panel .panel-title {
   margin-bottom: 5px;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
