@@ -13,9 +13,17 @@ header {
 
   .logo {
     height: $header_height;
-    
-    img {
-      height: $header_height;
+    a {
+      display: flex;
+      align-items: center;
+      img {
+        height: $header_height;
+      }
+      .brand-name {
+        margin-left: 10px;
+        color: #ffffff;
+        font-size: 1.2rem;
+      }
     }
   }
   nav {

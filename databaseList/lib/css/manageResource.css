@@ -83,8 +83,23 @@ header .logo {
   height: 60px;
 }
 
-header .logo img {
+header .logo a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logo a img {
   height: 60px;
+}
+
+header .logo a .brand-name {
+  margin-left: 10px;
+  color: #ffffff;
+  font-size: 1.2rem;
 }
 
 header nav {
