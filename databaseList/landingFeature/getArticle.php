@@ -68,7 +68,7 @@
 
 
       // put this record in temp array
-
+      echo $countDescribe;
       if($countDescribe === 0 && ($articleCounter < $getNumberOfArticles)) {
         array_push($ary_tempRecords, $row);
         $articleCounter = $articleCounter + 1;
