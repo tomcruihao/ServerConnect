@@ -334,7 +334,7 @@ section:nth-of-type(2n) {
 
 .search-field .search-warpper .tabs .tab {
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 10px 10px;
   margin: 0px 2px;
   background: #008cce;
   display: inline-block;
@@ -342,6 +342,7 @@ section:nth-of-type(2n) {
   border-radius: 5px 5px 0px 0px;
   -webkit-box-shadow: 0 0.5rem 0.8rem #00000080;
           box-shadow: 0 0.5rem 0.8rem #00000080;
+  font-size: 0.9rem;
 }
 
 .search-field .search-warpper .panels {
