@@ -536,6 +536,7 @@
       let self = this;
       this.subjects.forEach(async res => {
         let tempArticleList = await self.getArticles(res.keyword);
+        console.log(tempArticleList);
 
         // process the data
         for(index in tempArticleList) {
@@ -564,7 +565,7 @@
               console.log(exception);
             },
             success: function(res) {
-              console.log(res);
+              // const articles = processArticleData(res);
               resolve(res);
             }
           });
@@ -572,30 +573,13 @@
       },
       processArticleData(dataObj) {
         let template = {
-          articleTitle: '',
-          articleLink: dataObj.PLink,
-          articleAuthor: '',
-          articleAbstract: '',
-          articleSource: '',
+          articleTitle: dataObj.title,
+          articleLink: dataObj.pLink,
+          articleAuthor: dataObj.authors,
+          articleAbstract: dataObj.abstract,
+          articleSource: dataObj.source,
           hide: true
         }
-        dataObj.Items.forEach(res => {
-          switch(res.Name) {
-            case 'Title':
-              template.articleTitle = res.Data;
-              break;
-            case 'Author':
-              // template.articleAuthor = unescape(res.Data);
-              template.articleAuthor = this.htmlDecode(res.Data);
-              break;
-            case 'Abstract':
-              template.articleAbstract = this.htmlDecode(res.Data);
-              break;
-            case 'TitleSource':
-              template.articleSource = this.htmlDecode(res.Data);
-              break;
-          }
-        })
 
         return template;
       },
