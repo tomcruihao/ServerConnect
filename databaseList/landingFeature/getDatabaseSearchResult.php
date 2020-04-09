@@ -26,7 +26,7 @@
     $parseXml = simplexml_load_string($xml);
     curl_close($ch);
 
-    $counter = 0;
+    $articleCounter = 0;
 
     foreach($parseXml->SearchResults->records->children() as $rec) {
       
@@ -35,20 +35,20 @@
       $abstract = $rec->header->controlInfo->artinfo->ab;
       $ary_authors = $rec->header->controlInfo->artinfo->aug->au;
       $authors = '';
-      $counter = 0;
+      $authorCounter = 0;
       foreach($ary_authors as $key => $author) {
-        if($counter > 0) {
+        if($authorCounter > 0) {
           $authors = $authors.'; '.$author;
         } else {
           $authors = $author;
         }
-        $counter++;
+        $authorCounter++;
       }
 
       $tempItem = array('title' => strval($title), 'pLink' => strval($pLink), 'abstract' => strval($abstract), 'authors' => strval($authors));
-      if($counter < $resultAmount) {
+      if($articleCounter < $resultAmount) {
         array_push($result, $tempItem);
-        $counter++;
+        $articleCounter++;
       }
     }
 

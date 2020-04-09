@@ -553,10 +553,10 @@
       getArticles: async keyword => {
         return new Promise((resolve, reject) => {
           $.ajax({
-            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getArticle.php',
+            url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getDatabaseSearchResult.php',
             type: 'GET',
             data: {
-              keyword: keyword
+              uquery: keyword
             },
             error: function(jqXHR, exception) {
               //use url variable here
@@ -564,12 +564,12 @@
               console.log(exception);
             },
             success: function(res) {
-              let articleAry = [];
-              console.log(res.Data.Records);
-              for(index in res.Data.Records) {
-                articleAry.push(res.Data.Records[index]);
-                // self.articles.push(self.processArticleData(res.Data.Records[index]));
-              }
+              console.log(res);
+              // let articleAry = [];
+              // console.log(res.Data.Records);
+              // for(index in res.Data.Records) {
+              //   articleAry.push(res.Data.Records[index]);
+              // }
               resolve(articleAry);
             }
           });
