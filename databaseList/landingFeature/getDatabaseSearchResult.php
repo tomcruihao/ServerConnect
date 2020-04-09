@@ -10,7 +10,7 @@
 
   $bookInfoList = getInfoFromServer($apiConnection, $keyword, $resultAmount);
 
-  echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
+  // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
   function getInfoFromServer($apiUrl, $keyword, $resultAmount) {
     $result = array();
@@ -36,6 +36,7 @@
       $ary_authors = $rec->header->controlInfo->artinfo->aug->au;
       $authors = '';
       foreach($ary_authors as $key => $author) {
+        echo $key;
         if($key > 0) {
           $authors = $authors.'\; '.$author;
         } else {
