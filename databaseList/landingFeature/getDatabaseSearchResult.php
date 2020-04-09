@@ -7,8 +7,10 @@
   $apiConnection = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=jaychang.main.edu-eit&&pwd=ebs1927&db=ehh";
 
   $keyword = str_replace(' ', '+', $_GET['uquery']);
-  $profile = $_GET['profile'];
-  $custID = $_GET['custID'];
+  // $profile = $_GET['profile'];
+  // $custID = $_GET['custID'];
+
+  // http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getDatabaseSearchResult.php?uquery=test
 
   // $keyword = "blockchain";
 
