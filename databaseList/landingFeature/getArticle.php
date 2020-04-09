@@ -50,7 +50,7 @@
     $ary_tempRecords = [];
     foreach($ary_articles['Data']['Records'] as $key => $row) {
       // $allValueExist = true;
-      $getValueDescribe = ["Title", "Author", "TitleSource", "Abstract"];
+      $getKeys = ["Title", "Author", "TitleSource", "Abstract"];
       $countDescribe = count($getValueDescribe);
       
       // check all item have data
@@ -61,8 +61,8 @@
       // }
 
       foreach($row['Items'] as $itemKey => $itemRow) {
-        echo $itemRow['Name'];
-        if(array_key_exists($getValueDescribe, $itemRow['Name'])) {
+        echo array_key_exists($getKeys, $itemRow['Name']);
+        if(array_key_exists($getKeys, $itemRow['Name'])) {
           $countDescribe = $countDescribe - 1;
         }
       }
