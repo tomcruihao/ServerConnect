@@ -51,8 +51,8 @@
     foreach($ary_articles['Data']['Records'] as $key => $row) {
       // $allValueExist = true;
       $getKeys = array("Title", "Author", "TitleSource", "Abstract");
-      $countDescribe = count($getValueDescribe);
-      echo 'before is'.$countDescribe;
+      $countDescribe = count($getKeys);
+      // echo 'before is'.$countDescribe;
       
       // check all item have data
       // foreach($row['Items'] as $itemKey => $itemRow) {
@@ -68,7 +68,7 @@
         }
       }
 
-      echo 'after is'.$countDescribe.'--->';
+      // echo 'after is'.$countDescribe.'--->';
       // put this record in temp array
       if($countDescribe === 0 && ($articleCounter < $getNumberOfArticles)) {
         array_push($ary_tempRecords, $row);
