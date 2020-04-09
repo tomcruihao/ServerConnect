@@ -33,6 +33,12 @@
       $pLink = $rec->plink;
       $title = $rec->header->controlInfo->artinfo->tig->atl;
       $abstract = $rec->header->controlInfo->artinfo->ab;
+
+      $source = $rec->header->controlInfo->jinfo->jtl;
+      $pubInfo = $rec->header->controlInfo->pubinfo->dt;
+      $volInfo = $rec->header->controlInfo->pubinfo->vid;
+      $sourceInfo = $source.'.'.$pubInfo.', Vol.'.$volInfo;
+
       $ary_authors = $rec->header->controlInfo->artinfo->aug->au;
       $authors = '';
       $authorCounter = 0;
@@ -45,7 +51,7 @@
         $authorCounter++;
       }
 
-      $tempItem = array('title' => strval($title), 'pLink' => strval($pLink), 'abstract' => strval($abstract), 'authors' => strval($authors));
+      $tempItem = array('title' => strval($title), 'pLink' => strval($pLink), 'abstract' => strval($abstract), 'authors' => strval($authors), 'source' => strval($sourceInfo));
       if($articleCounter < $resultAmount) {
         array_push($result, $tempItem);
         $articleCounter++;

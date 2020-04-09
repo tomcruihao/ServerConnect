@@ -565,12 +565,7 @@
             },
             success: function(res) {
               console.log(res);
-              // let articleAry = [];
-              // console.log(res.Data.Records);
-              // for(index in res.Data.Records) {
-              //   articleAry.push(res.Data.Records[index]);
-              // }
-              resolve(articleAry);
+              resolve(res);
             }
           });
         })
