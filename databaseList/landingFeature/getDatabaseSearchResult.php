@@ -37,7 +37,7 @@
       $authors = '';
       foreach($ary_authors as $key => $author) {
         if($key > 0) {
-          $authors = $authors.'; '.$author;
+          $authors = $authors.'\; '.$author;
         } else {
           $authors = $author;
         }
