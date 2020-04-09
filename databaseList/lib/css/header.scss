@@ -16,6 +16,8 @@ header {
     a {
       display: flex;
       align-items: center;
+      text-decoration: none;
+      
       img {
         height: $header_height;
       }
@@ -23,7 +25,6 @@ header {
         margin-left: 10px;
         color: #ffffff;
         font-size: 1.2rem;
-        text-decoration: none;
       }
     }
   }

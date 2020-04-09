@@ -91,6 +91,7 @@ header .logo a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: none;
 }
 
 header .logo a img {
@@ -101,7 +102,6 @@ header .logo a .brand-name {
   margin-left: 10px;
   color: #ffffff;
   font-size: 1.2rem;
-  text-decoration: none;
 }
 
 header nav {
