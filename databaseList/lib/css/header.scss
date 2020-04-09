@@ -108,10 +108,15 @@ header {
 
     .logo {
       height: $mobile_header_height;
-      
-      img {
-        height: $mobile_header_height;
+      a {
+        img {
+          height: $mobile_header_height;
+        }
+        .brand-name {
+          font-size: 0.8rem;
+        }
       }
+
     }
     nav {
       height: $mobile_header_height;

@@ -199,8 +199,11 @@ header nav .nav-list li.multi:before {
   header .logo {
     height: 40px;
   }
-  header .logo img {
+  header .logo a img {
     height: 40px;
+  }
+  header .logo a .brand-name {
+    font-size: 0.8rem;
   }
   header nav {
     height: 40px;
