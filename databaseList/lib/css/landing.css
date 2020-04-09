@@ -387,6 +387,7 @@ section:nth-of-type(2n) {
   width: 80px;
   height: 100%;
   margin-right: 10px;
+  font-size: 1rem;
 }
 
 .search-field .search-warpper .panels .panel .search-box-wrap input {
