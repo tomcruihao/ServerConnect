@@ -50,7 +50,7 @@
     $ary_tempRecords = [];
     foreach($ary_articles['Data']['Records'] as $key => $row) {
       // $allValueExist = true;
-      $getKeys = ["Title", "Author", "TitleSource", "Abstract"];
+      $getKeys = array("Title", "Author", "TitleSource", "Abstract");
       $countDescribe = count($getValueDescribe);
       echo 'before is'.$countDescribe;
       
