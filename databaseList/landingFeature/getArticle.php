@@ -61,15 +61,14 @@
       // }
 
       foreach($row['Items'] as $itemKey => $itemRow) {
-        echo array_key_exists($getKeys, $itemRow['Name']);
-        if(array_key_exists($getKeys, $itemRow['Name'])) {
+        // array_key_exists($getKeys, $itemRow['Name']);
+        if(in_array($getKeys, $itemRow['Name'])) {
           $countDescribe = $countDescribe - 1;
         }
       }
 
 
       // put this record in temp array
-      echo $countDescribe;
       if($countDescribe === 0 && ($articleCounter < $getNumberOfArticles)) {
         array_push($ary_tempRecords, $row);
         $articleCounter = $articleCounter + 1;
