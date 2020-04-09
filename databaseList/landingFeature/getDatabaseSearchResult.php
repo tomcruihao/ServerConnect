@@ -38,10 +38,11 @@
       $title = $rec->header->controlInfo->artinfo->tig->atl;
       $abstract = $rec->header->controlInfo->artinfo->ab;
       $authors = $rec->header->controlInfo->artinfo->aug->au;
-      while ($author = current($authors)) {
-        echo $author;
-        echo next($authors) ? ', ' : null;
-      }
+      print_r($authors);
+      // while ($author = current($authors)) {
+      //   echo $author;
+      //   echo next($authors) ? ', ' : null;
+      // }
 
       $tempItem = array('title' => strval($title), 'pLink' => strval($pLink), 'abstract' => strval($abstract));
       array_push($result, $tempItem);
