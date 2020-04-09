@@ -7,18 +7,12 @@
   $apiConnection = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=jaychang.main.edu-eit&&pwd=ebs1927&db=ehh";
 
   $keyword = str_replace(' ', '+', $_GET['uquery']);
-  // $profile = $_GET['profile'];
-  // $custID = $_GET['custID'];
 
-  // http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getDatabaseSearchResult.php?uquery=test
+  $bookInfoList = getInfoFromServer($apiConnection, $keyword, $resultAmount);
 
-  // $keyword = "blockchain";
+  echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
-  $bookInfoList = getInfoFromServer($apiConnection, $keyword, $profile, $custID);
-
-  // echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
-
-  function getInfoFromServer($apiUrl, $keyword, $profile, $custID) {
+  function getInfoFromServer($apiUrl, $keyword, $resultAmount) {
     $result = array();
 
     // get value from API
@@ -32,20 +26,28 @@
     $parseXml = simplexml_load_string($xml);
     curl_close($ch);
 
+    $counter = 0;
+
     foreach($parseXml->SearchResults->records->children() as $rec) {
       
       $pLink = $rec->plink;
       $title = $rec->header->controlInfo->artinfo->tig->atl;
       $abstract = $rec->header->controlInfo->artinfo->ab;
-      $authors = $rec->header->controlInfo->artinfo->aug->au;
-      print_r($authors);
-      // while ($author = current($authors)) {
-      //   echo $author;
-      //   echo next($authors) ? ', ' : null;
-      // }
+      $ary_authors = $rec->header->controlInfo->artinfo->aug->au;
+      $authors = '';
+      foreach($ary_authors as $key => $author) {
+        if($key > 0) {
+          $authors = $authors.'; '.$author;
+        } else {
+          $authors = $author;
+        }
+      }
 
-      $tempItem = array('title' => strval($title), 'pLink' => strval($pLink), 'abstract' => strval($abstract));
-      array_push($result, $tempItem);
+      $tempItem = array('title' => strval($title), 'pLink' => strval($pLink), 'abstract' => strval($abstract), 'authors' => strval($authors));
+      if($counter < $resultAmount) {
+        array_push($result, $tempItem);
+        $counter++;
+      }
     }
 
     return $result;
