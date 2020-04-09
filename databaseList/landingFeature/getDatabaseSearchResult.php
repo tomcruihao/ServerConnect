@@ -35,13 +35,14 @@
       $abstract = $rec->header->controlInfo->artinfo->ab;
       $ary_authors = $rec->header->controlInfo->artinfo->aug->au;
       $authors = '';
+      $counter = 0;
       foreach($ary_authors as $key => $author) {
-        echo $key;
-        if($key > 0) {
-          $authors = $authors.'\; '.$author;
+        if($counter > 0) {
+          $authors = $authors.'; '.$author;
         } else {
           $authors = $author;
         }
+        $counter++;
       }
 
       $tempItem = array('title' => strval($title), 'pLink' => strval($pLink), 'abstract' => strval($abstract), 'authors' => strval($authors));
