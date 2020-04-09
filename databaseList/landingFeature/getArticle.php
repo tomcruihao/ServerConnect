@@ -61,6 +61,7 @@
       // }
 
       foreach($row['Items'] as $itemKey => $itemRow) {
+        echo $itemRow['Name'];
         if(array_key_exists($getValueDescribe, $itemRow['Name'])) {
           $countDescribe = $countDescribe - 1;
         }
