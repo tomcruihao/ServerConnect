@@ -386,7 +386,8 @@ section:nth-of-type(2n) {
 }
 
 .search-field .search-warpper .panels .panel .panel-title {
-  font-size: 1.5em;
+  margin-bottom: 5px;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
