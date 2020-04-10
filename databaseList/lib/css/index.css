@@ -755,6 +755,31 @@ section {
   cursor: pointer;
 }
 
+.content-field aside .aside-content .bulletin-board-frame ul li.popular-databases {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-field aside .aside-content .bulletin-board-frame ul li.popular-databases .meta-title, .content-field aside .aside-content .bulletin-board-frame ul li.popular-databases .title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: block;
+  word-break: break-all;
+  color: #008cce;
+  cursor: pointer;
+}
+
+.content-field aside .aside-content .bulletin-board-frame ul li.popular-databases .meta-clickAmount, .content-field aside .aside-content .bulletin-board-frame ul li.popular-databases .clickAmount {
+  width: 90px;
+  margin-left: 5px;
+  text-align: center;
+}
+
 .content-field aside .aside-content .bulletin-board-frame ul li.latest-news {
   display: -webkit-box;
   display: -ms-flexbox;
