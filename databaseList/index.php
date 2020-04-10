@@ -609,6 +609,7 @@
           console.log(exception);
         },
         success: function(res) {
+          self.popularDatabases = res;
           console.log(res);
         }
       });
