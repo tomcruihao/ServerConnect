@@ -14,6 +14,9 @@ const messages = {
       index_bulletin: 'Bulletin',
       index_more: 'More',
       index_placeholder_text: 'Search Resource',
+      index_popular_frameTitle: 'Popular Resources',
+      index_popular_title: 'Resource Name',
+      index_popular_clickAmount: 'Click Amount',
       adminIndex_verifyCode: 'Verify Code',
       // All Latest News page
       h1_all_latestNews: 'Latest News',
@@ -126,6 +129,9 @@ const messages = {
       index_bulletin: '公佈欄',
       index_more: '更多',
       index_placeholder_text: '搜尋資源',
+      index_popular_frameTitle: '熱門資源',
+      index_popular_title: '題名',
+      index_popular_clickAmount: '次數',
       // All Latest News page
       h1_all_latestNews: '最新消息',
       // admin index page

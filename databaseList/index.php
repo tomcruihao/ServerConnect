@@ -202,14 +202,14 @@
             </div>
             <div class="bulletin-board-frame">
               <div>
-                <h3>熱門資源</h3>
+                <h3>{{$t('message.index_popular_frameTitle')}}</h3>
               </div>
               <ul v-if="lang === 'en'">
                 <li class="popular-databases">
-                  <span class="meta-title">題名</span>
-                  <div class="meta-clickAmount">次數</div>
+                  <span class="meta-title">{{$t('message.index_popular_title')}}</span>
+                  <div class="meta-clickAmount">{{$t('message.index_popular_clickAmount')}}</div>
                 </li>
-                <li v-for="(database, index) in popularDatabases" class="latest-news">
+                <li v-for="(database, index) in popularDatabases" class="popular-databases">
                   <span class="title" @click="linkTo(database.uuid, database.resourceUrl)" v-if="lang === 'en'">
                     {{database.name.en}}
                   </span>
