@@ -35,6 +35,11 @@ error_reporting(E_ALL);
     }
   }
 
+  // sort the array
+  usort($databaseList, function($a, $b) {
+    return $a['clickTimes'] <=> $b['clickTimes'];
+  });
+  
   print_r($databaseList);
   // $response = [];
   // $response['status'] = 'success';
