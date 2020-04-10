@@ -205,13 +205,15 @@
                 <h3>熱門資源</h3>
               </div>
               <ul v-if="lang === 'en'">
-                <li class="latest-news">
-                  <span class="latest-title">題名</span>
-                  <div class="datetime">次數</div>
+                <li class="popular-databases">
+                  <span class="meta-title">題名</span>
+                  <div class="meta-clickAmount">次數</div>
                 </li>
                 <li v-for="(database, index) in popularDatabases" class="latest-news">
-                  <span class="latest-title" @click="linkTo(database.uuid, database.resourceUrl)">{{database.name}}</span>
-                  <div class="datetime">{{database.clickTimes}}</div>
+                  <span class="title" @click="linkTo(database.uuid, database.resourceUrl)">
+                    {{if(lang === 'en') ? database.name.en : database.name.local}}
+                  </span>
+                  <div class="clickAmount">{{database.clickTimes}}</div>
                 </li>
               </ul>
             </div>

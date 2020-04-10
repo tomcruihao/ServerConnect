@@ -385,6 +385,24 @@ section {
               cursor: pointer;
             }
 
+            &.popular-databases {
+              display: flex;
+              align-items: center;
+              .meta-title, .title {
+                flex: 1;
+                display: block;
+                word-break: break-all;
+                color: $anchor_color;
+                cursor: pointer;
+              }
+
+              .meta-clickAmount, .clickAmount {
+                width: 90px;
+                margin-left: 5px;
+                text-align: center;
+              }
+            }
+
             &.latest-news {
               display: flex;
               align-items: center;
