@@ -23,7 +23,7 @@ error_reporting(E_ALL);
   foreach($resourceData as $resource) {
     $databaseList[$resource['uuid']] = array(
       "name" => $resource['local']['resourceName'],
-      "resourceUrl" => $resource['local']['resourceUrl'],
+      "resourceUrl" => $resource['resourceUrl'],
       "clickTimes" => 0,
     );
   }
