@@ -10,6 +10,8 @@ error_reporting(E_ALL);
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json;charset=UTF-8');
 
+  $amountOfDatabases = 5;
+
 
   $getResourceData = file_get_contents('../data/eResourceList.json');
   $resourceData = json_decode($getResourceData, true);
@@ -40,7 +42,17 @@ error_reporting(E_ALL);
     return $a['clickTimes'] - $b['clickTimes'];
   });
 
-  print_r($databaseList);
+  // get result
+  $result = array();
+  $counter = 0;
+  foreach(array_reverse($databaseList) as $database) {
+    if($counter < $amountOfDatabases) {
+      array_push($result, $database);
+      $counter++;
+    }
+  }
+
+  print_r($result);
   // $response = [];
   // $response['status'] = 'success';
   // $response['report'] = $report;
