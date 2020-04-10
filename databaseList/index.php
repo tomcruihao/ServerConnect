@@ -204,7 +204,7 @@
               <div>
                 <h3>{{$t('message.index_popular_frameTitle')}}</h3>
               </div>
-              <ul v-if="lang === 'en'">
+              <ul>
                 <li class="popular-databases">
                   <span class="meta-title">{{$t('message.index_popular_title')}}</span>
                   <div class="meta-clickAmount">{{$t('message.index_popular_clickAmount')}}</div>
