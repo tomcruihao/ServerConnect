@@ -16,7 +16,7 @@ const messages = {
       index_placeholder_text: 'Search Resource',
       index_popular_frameTitle: 'Popular Resources',
       index_popular_title: 'Resource Name',
-      index_popular_clickAmount: 'Click Amount',
+      index_popular_clickAmount: 'Clicks',
       adminIndex_verifyCode: 'Verify Code',
       // All Latest News page
       h1_all_latestNews: 'Latest News',
