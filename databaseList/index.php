@@ -210,7 +210,7 @@
                   <div class="datetime">次數</div>
                 </li>
                 <li v-for="(database, index) in popularDatabases" class="latest-news">
-                  <span class="latest-title">{{database.name}}</span>
+                  <span class="latest-title" @click="linkTo(database.uuid, database.resourceUrl)">{{database.name}}</span>
                   <div class="datetime">{{database.clickTimes}}</div>
                 </li>
               </ul>
@@ -643,6 +643,9 @@
       set_mobile_show_switch (status) {
         // true = open, false = close
         this.mobile_frame = status;
+      },
+      linkTo(id, url) {
+        directTo(id, url);
       }
     }
   })
