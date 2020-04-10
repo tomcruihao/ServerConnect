@@ -200,6 +200,21 @@
                 </li>
               </ul>
             </div>
+            <div class="bulletin-board-frame">
+              <div>
+                <h3>熱門資源</h3>
+              </div>
+              <ul v-if="lang === 'en'">
+                <li class="latest-news">
+                  <span class="latest-title">題名</span>
+                  <div class="datetime">次數</div>
+                </li>
+                <li v-for="(database, index) in popularDatabases" class="latest-news">
+                  <span class="latest-title">{{database.name}}</span>
+                  <div class="datetime">{{database.clickTimes}}</div>
+                </li>
+              </ul>
+            </div>
             <div id="subjectField">
               <div v-if="lang === 'en'">
                 <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects.en">
@@ -506,6 +521,7 @@
         'en': '',
         'local': ''
       },
+      popularDatabases: [],
       displayNumber: 0,
       latestNewsList: [],
       mobile_frame: false
@@ -581,6 +597,19 @@
             }
             self.latestNewsList.push(sortingList[index]);
           }
+        }
+      });
+
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getPopularDatabases.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          console.log(res);
         }
       });
     },
