@@ -210,8 +210,11 @@
                   <div class="meta-clickAmount">次數</div>
                 </li>
                 <li v-for="(database, index) in popularDatabases" class="latest-news">
-                  <span class="title" @click="linkTo(database.uuid, database.resourceUrl)">
-                    {{if(lang === 'en') ? database.name.en : database.name.local}}
+                  <span class="title" @click="linkTo(database.uuid, database.resourceUrl)" v-if="lang === 'en'">
+                    {{database.name.en}}
+                  </span>
+                  <span class="title" @click="linkTo(database.uuid, database.resourceUrl)" v-else>
+                    {{database.name.local}}
                   </span>
                   <div class="clickAmount">{{database.clickTimes}}</div>
                 </li>
