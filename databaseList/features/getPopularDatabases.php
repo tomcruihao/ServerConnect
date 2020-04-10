@@ -30,7 +30,9 @@ error_reporting(E_ALL);
 
   // // create log counting array
   foreach($logData['log'] as $log) {
-    $databaseList[$log['uuid']]['clickTimes']++;
+    if($log['uuid'] !== null) {
+      $databaseList[$log['uuid']]['clickTimes']++;
+    }
   }
 
   print_r($databaseList);
