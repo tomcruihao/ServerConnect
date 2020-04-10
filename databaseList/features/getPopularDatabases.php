@@ -49,13 +49,10 @@ error_reporting(E_ALL);
     if($counter < $amountOfDatabases) {
       array_push($result, $database);
       $counter++;
+    } else {
+      break;
     }
   }
 
-  print_r($result);
-  // $response = [];
-  // $response['status'] = 'success';
-  // $response['report'] = $report;
-
-  // echo json_encode($response, JSON_UNESCAPED_UNICODE);
+  echo json_encode($result, JSON_UNESCAPED_UNICODE);
 ?>
