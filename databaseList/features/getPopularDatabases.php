@@ -20,18 +20,18 @@ error_reporting(E_ALL);
 
   // create map and countable database list
   $databaseList = [];
-  // foreach($resourceData as $resource) {
-  //   $databaseList[$resource['uuid']] = array(
-  //     "name" => $resource['local']['resourceName'],
-  //     "resourceUrl" => $resource['local']['resourceUrl'];
-  //     "clickTimes" => 0,
-  //   );
-  // }
+  foreach($resourceData as $resource) {
+    $databaseList[$resource['uuid']] = array(
+      "name" => $resource['local']['resourceName'],
+      "resourceUrl" => $resource['local']['resourceUrl'],
+      "clickTimes" => 0,
+    );
+  }
 
   // // create log counting array
-  // foreach($logData['log'] as $log) {
-  //   $databaseList[$log['uuid']]['clickTimes']++;
-  // }
+  foreach($logData['log'] as $log) {
+    $databaseList[$log['uuid']]['clickTimes']++;
+  }
 
   print_r($databaseList);
   // $response = [];
