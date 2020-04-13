@@ -2,4 +2,31 @@
 @import "variables";
 @import "header";
 @import "footer";
-@import "landing_searchField"
+@import "landing_searchField";
+
+
+.search-app {
+  .content-field {
+    display: flex;
+
+    .control-panel {
+      width: 250px;
+    }
+    
+    .result-field {
+      flex: 1;
+
+      .result-list {
+        .result {
+          width: 100%;
+          box-sizing: border-box;
+          border: 1px solid $main_color;
+
+          .title {
+            
+          }
+        }
+      }
+    }
+  }
+}

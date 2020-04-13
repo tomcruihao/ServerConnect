@@ -39,7 +39,7 @@
       </ul>
     </nav>
   </header>
-  <div id="searchApp">
+  <div id="searchApp" class="search-app">
     <div class="search-field">
       <div class="search-warpper" id="searchField">
         <input class="radio" id="one" name="group" type="radio" checked>
@@ -93,9 +93,18 @@
       </div>
     </div>
     <div class="content-field">
-      <div class="control-panel"></div>
+      <div class="control-panel">
+        This area is for Control Panel
+      </div>
       <div class="result-field">
-  
+        <div class="result-list">
+          <div class="result" v-for="(result, index) in resultList">
+            <h5 v-html="result.title" class="article-title"></h5>
+            <div v-html="result.author"></div>
+            <div v-html="result.source"></div>
+            <div>{{result.abstract}}</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -114,34 +123,26 @@
       eds: {
         prefix: '',
         articleKeyword: '',
-      }
+      },
+      resultList: []
     },
     created: function() {
       let url_string = window.location.href;
       let url = new URL(url_string);
       let param_keyword = url.searchParams.get("keyword");
+      let param_prefix = url.searchParams.get("prefix");
 
       // if param have value, set the keyword to search-box
       if(param_keyword) {
-        console.log('yes');
+        if(param_prefix) {
+          this.eds.prefix = param_prefix;
+        }
+
+        this.eds.articleKeyword = param_keyword;
+        this.sendToEDS();
       } else {
         console.log('no');
       }
-      $.ajax({
-        url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getEDSResult.php',
-        type: 'GET',
-        data: {
-          keyword: 'nature'
-        },
-        error: function(jqXHR, exception) {
-          //use url variable here
-          console.log(jqXHR);
-          console.log(exception);
-        },
-        success: function(res) {
-          console.res;
-        }
-      });
     },
     computed: {
       // dialogueMessage: {
@@ -154,6 +155,8 @@
     },
     methods: {
       sendToEDS() {
+        this.resultList = [];
+        let self = this;
         let bquery = '';
 
         if(this.eds.prefix !== '') {
@@ -162,11 +165,63 @@
           bquery = this.eds.articleKeyword;
         }
         
-        window.open(`https://search.ebscohost.com/login.aspx?authtype=guest&custid=jaychang&groupid=main&profile=test_eds&bquery=${bquery}&direct=true`);
+        $.ajax({
+        url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getEDSResult.php',
+          type: 'GET',
+          data: {
+            keyword: bquery
+          },
+          error: function(jqXHR, exception) {
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(res) {
+            // deliver the data
+            self.processResponseData(res);
+          }
+        });
+        // window.open(`https://search.ebscohost.com/login.aspx?authtype=guest&custid=jaychang&groupid=main&profile=test_eds&bquery=${bquery}&direct=true`);
+      },
+      processResponseData(obj_response) {
+        // process search result
+        obj_response.SearchResult.Data.Records.forEach( res => {
+          this.resultList.push(this.processSearchResult(res));
+        })
+        console.log(this.resultList);
+        // this.processSearchResult(obj_response.SearchResult.Data.Records);
+      },
+      processSearchResult(obj_data) {
+        let template = {
+          title: '',
+          link: obj_data.PLink,
+          author: '',
+          abstract: '',
+          source: ''
+        }
+        obj_data.Items.forEach(res => {
+          switch(res.Name) {
+            case 'Title':
+              template.title = res.Data;
+              break;
+            case 'Author':
+              template.author = this.htmlDecode(res.Data);
+              break;
+            case 'Abstract':
+              template.abstract = this.htmlDecode(res.Data);
+              break;
+            case 'TitleSource':
+              template.source = this.htmlDecode(res.Data);
+              break;
+          }
+        })
+
+        return template;
+      },
+      htmlDecode(input){
+        let e = document.createElement('div');
+        e.innerHTML = input;
+        return e.childNodes[0].nodeValue;
       }
-      // closeDialogue: function() {
-      //   this.show = false;
-      // }
     }
   });
 </script>
