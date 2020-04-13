@@ -1,0 +1,126 @@
+
+.search-field {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("https://twstatic.newmobilelife.com/wp-content/uploads/2019/05/1140-yeager-sell-your-used-books.imgcache.rev6feda141288df73e8fd100822bb375ea.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .search-warpper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .tabs {
+      width: 90%;
+      max-width: 800px;
+
+      .tab {
+        cursor: pointer;
+        padding: 10px 10px;
+        margin: 0px 2px;
+        background-color: #008cce;
+        display: inline-block;
+        color: #fff;
+        border-radius: 5px 5px 0px 0px;
+        box-shadow: 0 0.5rem 0.8rem #00000080;
+        font-size: 0.9rem;
+      }
+    }
+
+    .panels {
+      width: 90%;
+      max-width: 800px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0.5rem 2rem #00000080;
+      min-height: 150px;
+      border-radius: 5px;
+      overflow: hidden;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+
+      .panel {
+        width: 100%;
+        display: none;
+        animation: fadein 0.8s;
+
+        .panel-title {
+          margin-bottom: 5px;
+          font-size: 1.2rem;
+          font-weight: bold;
+          color: #005c88;
+        }
+
+        .search-box-wrap {
+          width: 100%;
+          height: 50px;
+          display: flex;
+
+          select {
+            width: 80px;
+            height: 100%;
+            margin-right: 10px;
+            font-size: 1rem;
+          }
+          input {
+            flex: 1;
+            height: 100%;
+            font-size: 1rem;
+          }
+          button {
+            width: 50px;
+            height: 100%;
+            margin-left: 10px;
+            background-color: #008cce;
+            cursor: pointer;
+          }
+        }
+        .atoz-wrap {
+          button {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            padding: 5px 10px;
+            background-color: #00ac69;
+            font-size: 1rem;
+            color: #ffffdb;
+          }
+        }
+      }
+  
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    }
+    
+    .radio {
+      display: none;
+    }
+    
+    #one:checked ~ .panels #one-panel,
+    #two:checked ~ .panels #two-panel,
+    #three:checked ~ .panels #three-panel {
+      display: block;
+    }
+    
+    #one:checked ~ .tabs #one-tab,
+    #two:checked ~ .tabs #two-tab,
+    #three:checked ~ .tabs #three-tab {
+      background: #fff;
+      color: #000;
+      border-top: 3px solid #008cce;
+    }
+  }
+}

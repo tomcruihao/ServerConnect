@@ -1,0 +1,157 @@
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>博科網</title>
+  <meta name=”description” content=”網頁說明” />
+  <link rel="stylesheet" type="text/css" href="lib/css/landing_select_result.css"/>
+</head>
+<body>
+  <header id="header">
+    <div class="logo">
+      <a href="index.php">
+        <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
+      </a>
+    </div>
+    <nav>
+      <label for="mobile_btn" class="mobile-btn-frame">
+        <img src="img/icon/dehaze.svg"/>
+      </label>
+      <input type="checkbox" id="mobile_btn">
+      <ul class="nav-list">
+        <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
+          <div v-if="link.child.length === 0">
+            <a :href="link.link" class="nav-tag" v-if="lang === 'en'">{{link.title.en}}</a>
+            <a :href="link.link" class="nav-tag" v-else-if="lang === 'local'">{{link.title.local}}</a>
+          </div>
+          <div v-else>
+            <label class="nav-tag" :for="'tag'+index" v-if="lang === 'en'">{{link.title.en}}</label>
+            <label class="nav-tag" :for="'tag'+index" v-else-if="lang === 'local'">{{link.title.local}}</label>
+            <input type="checkbox" :id="'tag'+index">
+            <ul>
+              <li v-for="(childLink, c_index) in link.child">
+                <a :href="childLink.link" v-if="lang === 'en'">{{childLink.title.en}}</a>
+                <a :href="childLink.link" v-if="lang === 'local'">{{childLink.title.local}}</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div id="searchApp">
+    <div class="search-field">
+      <div class="search-warpper" id="searchField">
+        <input class="radio" id="one" name="group" type="radio" checked>
+        <input class="radio" id="two" name="group" type="radio">
+        <input class="radio" id="three" name="group" type="radio">
+      
+        <!-- <div class="tabs">
+          <label class="tab" id="one-tab" for="one">文章查詢</label>
+          <label class="tab" id="two-tab" for="two">期刊查詢</label>
+          <label class="tab" id="three-tab" for="three">資料庫查詢</label>
+        </div> -->
+        <div class="panels">
+          <div class="panel" id="one-panel">
+            <div class="panel-title">文章查詢</div>
+            <div class="search-box-wrap">
+              <select v-model="eds.prefix">
+                <option value="" selected="selected">關鍵字</option>
+                <option value="TI">標題</option>
+                <option value="AU">作者</option>
+                <option value="JN">期刊</option>
+              </select>
+              <input type="text" placeholder="請輸入文章標題" v-on:keyup.13="sendToEDS" v-model="eds.articleKeyword">
+              <button @click="sendToEDS">
+                <img src="img/icon/search.svg" alt="Search" title="Search"/>
+              </button>
+            </div>
+          </div>
+          <!-- <div class="panel" id="two-panel">
+            <div class="search-box-wrap">
+              <input type="text" placeholder="請輸入期刊標題" v-on:keyup.13="sendToPFI()" v-model="pfi.pfiKeyword">
+              <button @click="sendToPFI()">
+                <img src="img/icon/search.svg" alt="Search" title="Search"/>
+              </button>
+            </div>
+            <div class="atoz-wrap">
+              <button class="text-frame" @click="atozLink('number')">0-9</button>
+              <button class="text-frame" @click="atozLink(alphabet)" v-for="(alphabet, index) in atoz">{{alphabet}}</button>
+              <button class="text-frame" @click="atozLink('other')">Others</button>
+            </div>
+          </div>
+          <div class="panel" id="three-panel">
+            <div class="panel-title">資料庫查詢</div>
+            <div class="search-box-wrap">
+              <input type="text" placeholder="請輸入資源名稱" v-on:keyup.13="sendToResourcePage()" v-model="resourceKeyword">
+              <button @click="sendToResourcePage()">
+                <img src="img/icon/search.svg" alt="Search" title="Search"/>
+              </button>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="content-field">
+      <div class="control-panel"></div>
+      <div class="result-field">
+  
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+<script src="lang/lang.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="lib/js/header_front.js"></script>
+<script>
+  var searchApp = new Vue({
+    el:'#searchApp',
+    i18n,
+    data: {
+      eds: {
+        prefix: '',
+        articleKeyword: '',
+      }
+    },
+    created: function() {
+      let url_string = window.location.href;
+      let url = new URL(url_string);
+      let param_keyword = url.searchParams.get("keyword");
+
+      // if param have value, set the keyword to search-box
+      if(param_keyword) {
+        console.log('yes');
+      } else {
+        console.log('no');
+      }
+    },
+    computed: {
+      // dialogueMessage: {
+      //   get: function () {
+      //     return this.message;
+      //   }
+      //   ,set: function () {
+      //   }
+      // }
+    },
+    methods: {
+      sendToEDS() {
+        let bquery = '';
+
+        if(this.eds.prefix !== '') {
+          bquery = `${this.eds.prefix} ${this.eds.articleKeyword}`;
+        } else {
+          bquery = this.eds.articleKeyword;
+        }
+        
+        window.open(`https://search.ebscohost.com/login.aspx?authtype=guest&custid=jaychang&groupid=main&profile=test_eds&bquery=${bquery}&direct=true`);
+      }
+      // closeDialogue: function() {
+      //   this.show = false;
+      // }
+    }
+  });
+</script>
