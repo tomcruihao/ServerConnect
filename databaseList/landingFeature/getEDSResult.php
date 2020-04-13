@@ -63,6 +63,7 @@
   
   $result = getEDS_Data($articleParams);
 
+  echo $result;
   // print the result
-  echo json_encode($result, JSON_UNESCAPED_UNICODE);
+  // echo json_encode($result, JSON_UNESCAPED_UNICODE);
 ?>

@@ -127,6 +127,21 @@
       } else {
         console.log('no');
       }
+      $.ajax({
+        url: 'http://gss.ebscohost.com/chchang/ServerConnect/databaseList/landingFeature/getEDSResult.php',
+        type: 'GET',
+        data: {
+          keyword: 'nature'
+        },
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          console.res;
+        }
+      });
     },
     computed: {
       // dialogueMessage: {
