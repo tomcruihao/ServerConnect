@@ -38,7 +38,7 @@
 
     print_r($html);
 
-    echo $redirectedUrl;
+    echo '@@@@@@@@@redirect: '.$redirectedUrl;
 
     curl_close($ch);
 
