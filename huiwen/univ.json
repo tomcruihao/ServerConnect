@@ -3,5 +3,5 @@
   {"id": "s4411044", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://opac.lib.hit.edu.cn/api/itemgo.php"},
   {"id": "s1397862", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "http://www.libopac.seu.edu.cn:8080/api/itemgo.php"},
   {"id": "s6914280", "appID": "hrbeu", "appKey": "28c4vhkla0f4l7s1", "connectingUrl": "http://202.118.176.18:8080/api/itemgo.php"},
-  {"id": "ns223535", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "https://opac.xjtlu.edu.cn/opac/item.php"},
+  {"id": "ns223535", "appID": "eds", "appKey": "z18gEZ0bzPMeGpai", "connectingUrl": "https://opac.xjtlu.edu.cn/api/itemgo.php"}
 ]
