@@ -23,40 +23,42 @@
   // }
 
   function getRealurl($url) {
-    // $ch = curl_init();
+    $ch = curl_init();
 
-    // curl_setopt($ch, CURLOPT_URL, $url);
-    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-    // curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
 
-    // $html = curl_exec($ch);
+    $html = curl_exec($ch);
 
-    // $redirectedUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+    $redirectedUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
 
-    // curl_close($ch);
+    curl_close($ch);
 
-    // return $redirectedUrl;
+    echo $redirectedUrl;
+
+    return $redirectedUrl;
 
 
-    $curl = curl_init();
-    curl_setopt_array($curl, array(    
-      CURLOPT_URL => $url,
-      CURLOPT_HEADER => true,
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_NOBODY => true));
+    // $curl = curl_init();
+    // curl_setopt_array($curl, array(    
+    //   CURLOPT_URL => $url,
+    //   CURLOPT_HEADER => true,
+    //   CURLOPT_RETURNTRANSFER => true,
+    //   CURLOPT_NOBODY => true));
 
-    $header = explode("\n", curl_exec($curl));
-    curl_close($curl);
+    // $header = explode("\n", curl_exec($curl));
+    // curl_close($curl);
 
-    if (strpos($header[0],'301') || strpos($header[0],'302')) {
-      if(is_array($header['Location'])) {
-        return $header['Location'][count($header['Location'])-1];
-      } else {
-        return $header['Location'];
-      }
-    } else {
-      return $url;
-    }
+    // if (strpos($header[0],'301') || strpos($header[0],'302')) {
+    //   if(is_array($header['Location'])) {
+    //     return $header['Location'][count($header['Location'])-1];
+    //   } else {
+    //     return $header['Location'];
+    //   }
+    // } else {
+    //   return $url;
+    // }
   }
 
   function getContent($url) {
