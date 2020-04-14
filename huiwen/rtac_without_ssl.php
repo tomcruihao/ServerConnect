@@ -43,9 +43,9 @@
   $domainName = $getDomainName["host"];
   $port = $getDomainName["port"];
 
-  echo $url.'@@@@@';
   $url_extract = explode("=",$url);
-  echo 'ID: '.$url_extract.'@@@';
+  
+  echo 'ID: '.$url_extract[1].'@@@';
 
   if ($port) {
     getContent($domainName.":".$port."/opac/ajax_item.php?marc_no=".$url_extract[1]);
