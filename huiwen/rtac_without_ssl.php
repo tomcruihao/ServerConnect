@@ -69,6 +69,8 @@
     curl_setopt($ch1,CURLOPT_URL,$url);
     curl_setopt($ch1,CURLOPT_RETURNTRANSFER,1);
     curl_setopt($ch1,CURLOPT_CONNECTTIMEOUT, 4);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
     $response = curl_exec($ch1);
     curl_close($ch1);
     echo $response;
