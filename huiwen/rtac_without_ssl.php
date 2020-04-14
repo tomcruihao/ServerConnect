@@ -48,7 +48,7 @@
   if ($port) {
     getContent($domainName.":".$port."/opac/ajax_item.php?marc_no=".$url_extract[1]);
   } else {
-    // getContent($domainName."/opac/ajax_item.php?marc_no=".$url_extract[1]);
-    file_get_contents($domainName."/opac/ajax_item.php?marc_no=".$url_extract[1]);
+    getContent('https://'.$domainName."/opac/ajax_item.php?marc_no=".$url_extract[1]);
+    // file_get_contents($domainName."/opac/ajax_item.php?marc_no=".$url_extract[1]);
   }
 ?>
