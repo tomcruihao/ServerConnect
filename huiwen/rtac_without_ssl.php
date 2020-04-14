@@ -44,12 +44,11 @@
   $port = $getDomainName["port"];
 
   $url_extract = explode("=",$url);
-  
-  echo 'ID: '.$url_extract[1].'@@@';
 
   if ($port) {
     getContent($domainName.":".$port."/opac/ajax_item.php?marc_no=".$url_extract[1]);
   } else {
+  	echo $domainName."/opac/ajax_item.php?marc_no=".$url_extract[1];
     getContent($domainName."/opac/ajax_item.php?marc_no=".$url_extract[1]);
   }
 ?>
