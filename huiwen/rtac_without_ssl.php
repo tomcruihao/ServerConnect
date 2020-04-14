@@ -36,6 +36,8 @@
 
     $html = curl_exec($ch);
 
+    echo $html;
+
     $redirectedUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
 
     curl_close($ch);
@@ -78,6 +80,7 @@
 
   // $url = 'http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000930184&appid=eds&time=2019-06-2815:54:07&sign=0f5565e3fa910d1bd23959ebe4c7d172';
   $url = getRealurl($getOriginalUrl);
+  echo $url;
 
 
   $getDomainName = parse_url($url);
