@@ -36,9 +36,8 @@
 
     $html = curl_exec($ch);
 
-    echo $html;
-
     $redirectedUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+    echo $redirectedUrl;
 
     curl_close($ch);
 
