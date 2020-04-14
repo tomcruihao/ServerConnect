@@ -86,6 +86,8 @@
 
 
   $url_extract = explode("=",$url);
+  echo 'ID: '.$url_extract.'@@@';
+
   if ($port) {
     getContent($domainName.":".$port."/opac/ajax_item.php?marc_no=".$url_extract[1]);
   } else {
