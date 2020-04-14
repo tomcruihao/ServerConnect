@@ -36,8 +36,6 @@
 
     $redirectedUrl = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
 
-    echo '@@@@@@@@@redirect: '.$redirectedUrl;
-
     curl_close($ch);
 
     return $redirectedUrl;
@@ -74,16 +72,14 @@
     echo $response;
   }
 
-  // $url = getRealurl($getOriginalUrl);
+  // $url = 'http://opac.lib.nankai.edu.cn/api/itemgo.php?marc_no=0000930184&appid=eds&time=2019-06-2815:54:07&sign=0f5565e3fa910d1bd23959ebe4c7d172';
+  $url = getRealurl($getOriginalUrl);
 
-  $html = file_get_contents($getOriginalUrl);
-  echo $html;
+  echo $url;
 
-  // echo $url;
-
-  // $getDomainName = parse_url($url);
-  // $domainName = $getDomainName["host"];
-  // $port = $getDomainName["port"];
+  $getDomainName = parse_url($url);
+  $domainName = $getDomainName["host"];
+  $port = $getDomainName["port"];
 
 
   // $url_extract = explode("=",$url);
