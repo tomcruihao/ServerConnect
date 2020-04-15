@@ -1,0 +1,33 @@
+* Hostname was NOT found in DNS cache
+*   Trying 192.229.162.143...
+* Connected to eds-api.ebscohost.com (192.229.162.143) port 443 (#7)
+* successfully set certificate verify locations:
+*   CAfile: none
+  CApath: /etc/ssl/certs
+* SSL connection using ECDHE-RSA-AES128-GCM-SHA256
+* Server certificate:
+* 	 subject: OU=Domain Control Validated; CN=*.ebscohost.com
+* 	 start date: 2019-12-18 19:42:23 GMT
+* 	 expire date: 2020-12-18 19:42:23 GMT
+* 	 subjectAltName: eds-api.ebscohost.com matched
+* 	 issuer: C=US; ST=Arizona; L=Scottsdale; O=GoDaddy.com, Inc.; OU=http://certs.godaddy.com/repository/; CN=Go Daddy Secure Certificate Authority - G2
+* 	 SSL certificate verify ok.
+> POST /Authservice/rest/UIDAuth HTTP/1.1
+Host: eds-api.ebscohost.com
+Accept: */*
+Content-Type: application/xml
+Conent-Length: 213
+Content-Length: 213
+
+* upload completely sent off: 213 out of 213 bytes
+< HTTP/1.1 400 Bad Request
+< Cache-Control: private
+< Content-Type: application/xml; charset=utf-8
+< Date: Wed, 01 Apr 2020 00:30:29 GMT
+* Server Microsoft-IIS/8.5 is not blacklisted
+< Server: Microsoft-IIS/8.5
+< X-AspNet-Version: 4.0.30319
+< X-Powered-By: ASP.NET
+< Content-Length: 265
+< 
+* Connection #7 to host eds-api.ebscohost.com left intact

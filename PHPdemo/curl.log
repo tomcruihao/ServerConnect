@@ -1,0 +1,24 @@
+* Hostname was NOT found in DNS cache
+*   Trying 192.229.162.143...
+* Connected to eds-api.ebscohost.com (192.229.162.143) port 80 (#0)
+> GET /edsapi/rest/Retrieve?an=141725219&dbid=agp HTTP/1.1
+Host: eds-api.ebscohost.com
+Accept: */*
+x-authenticationToken: AEAYXQcJgRZ89iwr8rYgaJXGaAW-Vl6D--l7IkN1c3RvbWVySWQiOiJqYXljaGFuZyIsIkdyb3VwSWQiOiJtYWluIn0
+x-sessionToken: b7e9a3d5-262f-4986-b27a-2f73acc111ff.aChBCvB0BtwvohAok+7WBy2E+nOijdUO+YPO/bgXLik=
+
+< HTTP/1.1 200 OK
+< Cache-Control: private
+< Content-Type: application/xml; charset=utf-8
+< Date: Wed, 01 Apr 2020 01:58:31 GMT
+* Server Microsoft-IIS/8.5 is not blacklisted
+< Server: Microsoft-IIS/8.5
+< X-AspNet-Version: 4.0.30319
+< x-authenticationToken: AEAYXQcJgRZ89iwr8rYgaJXGaAW-Vl6D--l7IkN1c3RvbWVySWQiOiJqYXljaGFuZyIsIkdyb3VwSWQiOiJtYWluIn0
+< x-msg-correlId: b73deeb7-5362-4340-b670-1121e08866db
+< X-Powered-By: ASP.NET
+< x-sessionNo: 1579637559
+< x-sessionToken: b7e9a3d5-262f-4986-b27a-2f73acc111ff.aChBCvB0BtwvohAok+7WBy2E+nOijdUO+YPO/bgXLik=
+< Content-Length: 3413
+< 
+* Connection #0 to host eds-api.ebscohost.com left intact
