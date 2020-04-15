@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSV Converter TO JSON</title>
+</head>
+<body>
+  <div id="csvConverter">
+    <label class="upload-csv">
+      Upload CSV
+      <input type="file" accept=".csv" @change="onFileChange">
+    </label>
+    <textarea>{{convertResult}}</textarea>
+  </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el:'#csvConverter',
+    data: {
+      convertResult: ''
+    },
+    beforeMount: function() {
+    },
+    methods:{
+      onFileChange(e) {
+        let csvFile = e.target.files || e.dataTransfer.files;
+        if (!csvFile.length)
+          return;
+        this.getCsvData(csvFile[0]);
+      },
+      getCsvData: function(file) {
+        let reader = new FileReader();
+        let vm = this;
+
+        reader.onload = (e) => {
+          vm.convertResult = '';
+          const rawData = e.target.result;
+          const convertData = vm.dealCsvDataAndPush(rawData);
+          console.log(convertData);
+          vm.convertResult = JSON.stringify(convertData);
+        };
+
+        // reader.readAsBinaryString(file);
+        reader.readAsText(file);
+      },
+      dealCsvDataAndPush(rawData) {
+        let result = [];
+        const dataList = rawData.split("\n");
+        let keyList = [];
+        for(let loop = 0; loop < dataList.length; loop++) {
+          const tempData = dataList[loop].split(",");
+          if(loop === 0) {
+            tempData.forEach( key => {
+              keyList.push(this.cleanString(key));
+            })
+          } else {
+            const objData = dataList[loop].split(",");
+            tempObj = [];
+            keyList.forEach( (key,index) => {
+              tempObj[key] = objData[index];
+            })
+            result.push(Object.assign({}, tempObj));
+          }
+        }
+        // console.log(keyList);
+        return result;
+      },
+      cleanString(input) {
+        let output = "";
+        for (var i=0; i<input.length; i++) {
+          if (input.charCodeAt(i) <= 127) {
+            output += input.charAt(i);
+          }
+        }
+        return output;
+      }
+    }
+  });
+</script>

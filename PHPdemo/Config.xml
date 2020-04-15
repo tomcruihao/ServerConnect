@@ -3,7 +3,7 @@
     <Version>EDS API-PHP Demo 1.4</Version>
     <EndPoints>
         <EndPoint>http://eds-api.ebscohost.com/edsapi/rest</EndPoint>
-        <AuthenticationEndPoint>https://eds-api.ebscohost.com/Authservice/rest</AuthenticationEndPoint>                           
+        <AuthenticationEndPoint>https://eds-api.ebscohost.com/Authservice/rest</AuthenticationEndPoint>
     </EndPoints>
     <AbstractLength>300</AbstractLength>
     <ClientCredentials>

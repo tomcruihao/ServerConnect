@@ -19,9 +19,7 @@ $Info = $api->getInfo();
 // If user come back from the detailed record 
 // The same search will not call API again
 if(isset($_REQUEST['back'] )&&isset($_SESSION['results'])){
-    
     $results = $_SESSION['results'];
-    
 }else if(isset($_REQUEST['option'])){
 // All page options will be handled here 
 // New Search or refined search will call the API

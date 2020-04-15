@@ -74,7 +74,7 @@
 					    url=decodeURIComponent(objPlumX.attr('href'));
 					}
 					catch (e) {
-					    console.log(e) // 把例外物件傳給錯誤處理器
+					    console.log(e); // 把例外物件傳給錯誤處理器
 					    console.log(`failed URL: ${objPlumX.attr('href')}`);
 					}
 					

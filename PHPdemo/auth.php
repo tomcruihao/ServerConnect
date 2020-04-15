@@ -1,46 +1,44 @@
 <?php
-include('app/app.php');
-include('rest/EBSCOAPI.php');
+  include('app/app.php');
+  include('rest/EBSCOAPI.php');
 
-$query = isset($_REQUEST['query'])?$_REQUEST['query']:'';
-$fieldCode = isset($_REQUEST['fieldcode'])?$_REQUEST['fieldcode']:'';
-$db = isset($_REQUEST['db'])?$_REQUEST['db']:'';
-$an = isset($_REQUEST['an'])?$_REQUEST['an']:'';
-$highlight = isset($_REQUEST['highlight'])?$_REQUEST['highlight']:'';
-$resultId = isset($_REQUEST['resultId'])?$_REQUEST['resultId']:'';
-$recordCount = isset($_REQUEST['recordCount'])?$_REQUEST['recordCount']:'';
+  $query = isset($_REQUEST['query'])?$_REQUEST['query']:'';
+  $fieldCode = isset($_REQUEST['fieldcode'])?$_REQUEST['fieldcode']:'';
+  $db = isset($_REQUEST['db'])?$_REQUEST['db']:'';
+  $an = isset($_REQUEST['an'])?$_REQUEST['an']:'';
+  $highlight = isset($_REQUEST['highlight'])?$_REQUEST['highlight']:'';
+  $resultId = isset($_REQUEST['resultId'])?$_REQUEST['resultId']:'';
+  $recordCount = isset($_REQUEST['recordCount'])?$_REQUEST['recordCount']:'';
 
-$userid = $_REQUEST['userId'];
-$password = $_REQUEST['password'];
-$flag = FALSE; // set flag to identify the login status
-$profile = "";
-$UserId = '';
+  $userid = $_REQUEST['userId'];
+  $password = $_REQUEST['password'];
+  $flag = FALSE; // set flag to identify the login status
+  $profile = "";
+  $UserId = '';
 
-$xml ="Config.xml";
-      $dom = new DOMDocument();
-      $dom->load($xml);      
-      $clientCredentials = $dom ->getElementsByTagName('ClientCredentials')->item(0);
-      $users = $clientCredentials ->getElementsByTagName('User');
-      foreach($users as $user){
-       $UserId = $user -> getElementsByTagName('UserId')->item(0)->nodeValue;
-       $Password = $user -> getElementsByTagName('Password') -> item(0) -> nodeValue;       
-       
-       if($userid == $UserId && $password == $Password){          
-           $flag = $UserId;
-           break;
-       }
-      }
-   
-     // Log in fail will redrect user to login page with the fail parameter as y
-     // all the functions below are used to track the page which the user visited
-     // and after successfully login will return the that page with loged in status
-     if($flag==FALSE){
-         
-         $path = $_REQUEST['path'];
-    
-    if($path=="record"){
+  $xml = "Config.xml";
+  $dom = new DOMDocument();
+  $dom->load($xml);      
+  $clientCredentials = $dom ->getElementsByTagName('ClientCredentials')->item(0);
+  $users = $clientCredentials ->getElementsByTagName('User');
 
-    $params = array(
+  foreach($users as $user){
+    $UserId = $user -> getElementsByTagName('UserId')->item(0)->nodeValue;
+    $Password = $user -> getElementsByTagName('Password') -> item(0) -> nodeValue;       
+
+    if($userid == $UserId && $password == $Password){          
+      $flag = $UserId;
+      break;
+    }
+  }
+
+  // Log in fail will redrect user to login page with the fail parameter as y
+  // all the functions below are used to track the page which the user visited
+  // and after successfully login will return the that page with loged in status
+  if($flag == FALSE){
+    $path = $_REQUEST['path'];
+    if($path=="record") {
+      $params = array(
         'path'=>'record',
         'db'=>$db,
         'an'=>$an,
@@ -50,20 +48,19 @@ $xml ="Config.xml";
         'resultId'=>$resultId,
         'recordCount'=>$recordCount,
         'fail'=>'y'
-    );
-    $params = http_build_query($params);
-    header("location: login.php?$params");
-    }
-    
-    else if($path=="PDF"){
-    $params = array(
+      );
+      $params = http_build_query($params);
+      header("location: login.php?$params");
+    } else if($path=="PDF") {
+      $params = array(
         'path'=>'PDF',
         'db'=>$db,
         'an'=>$an,
         'fail'=>'y'
-    );
-    $params = http_build_query($params);
-    header("location: login.php?$params");
+      );
+
+      $params = http_build_query($params);
+      header("location: login.php?$params");
     }
     
     else if($path=="HTML"){
