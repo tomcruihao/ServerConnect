@@ -81,6 +81,39 @@
           </div>
         </div>
       </div>
+      <div class="latestNews-wrap important-news">
+        <h3>焦點消息</h3>
+        <div class="row">
+          <div class="title">是否顯示</div>
+          <div class="content">
+            <div class="switch-wrap">
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="onoffswitch" v-model="hotNewsField.turnOn">
+                <label class="onoffswitch-label" for="onoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">消息</div>
+          <div class="content">
+            <div class="select-wrap">
+              <select v-model="hotNewsField.newsID">
+                <option value="">請選擇</option>
+                <option v-for="(latestNews, index) in latestNewsList" :value="latestNews.uuid">{{latestNews.local.title}}
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="button-frame">
+          <button @click="updateHotnewSetting()">
+            <img src="../img/icon/edit.svg"/>{{$t('message.btn_update')}}
+          </button>
+        </div>
+      </div>
       <div v-for="(latestNews, index) in latestNewsList" class="latestNews-wrap">
         <div class="button-wrap">
           <button @click="updateNews(latestNews)"><img src="../img/icon/edit.svg"/></button>
@@ -294,7 +327,14 @@
           displayNumber: 0,
           tag: 'local'
         },
-        latestNewsList: []
+        hotNewsField: {
+          turnOn: false,
+          newsID: ''
+        },
+        latestNewsList: [],
+        settings: {
+          localization: false
+        }
       },
       created: function() {
         this.getLatestNewsListInfo();
@@ -316,8 +356,10 @@
             success: function(res) {
               self.latestNewsField.bulletinTitle.en = res.bulletinTitle.en;
               self.latestNewsField.bulletinTitle.local = res.bulletinTitle.local;
-
               self.latestNewsField.displayNumber = res.displayNumber;
+
+              self.hotNewsField = res.hotNews;
+
               let temp_newsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
               for(let index in temp_newsList) {
                 temp_newsList[index]['tag'] = 'local';
@@ -327,11 +369,6 @@
           });
         },
         updateNewsField: function() {
-          // let newsFieldData = {
-          //   'bulletinTitle': this.title,
-          //   'displayNumber': this.displayNumber
-          // }
-
           fillForm.setDisplayForm('updateNewsField', this.latestNewsField);
         },
         updateNews: function(news) {
@@ -339,6 +376,30 @@
         },
         deleteNews: function(news) {
           dialogue.setDialogue('deleteNews', news);
+        },
+        updateHotnewSetting: function() {
+          console.log(this.hotNewsField);
+          let self = this;
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
+            data: {
+              type: 'hotNewsField',
+              processData: JSON.stringify(self.hotNewsField)
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              dialogue.setDialogue('updateNews_success');
+              this.getLatestNewsListInfo();
+            }
+          });
         }
       }
     });

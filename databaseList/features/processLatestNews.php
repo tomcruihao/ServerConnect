@@ -12,7 +12,6 @@
 
   // parameters
   $type = $_POST["type"];
-  // $resource = $_POST["resource"];
   $receivedData = json_decode($_POST["processData"], true);
 
   // get news list
@@ -64,7 +63,17 @@
     // write back
     file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
-  }
+  } else if($type === 'hotNewsField') {
+    // echo 'Go HERE';
+    // echo $receivedData['turnOn'];
+    // echo $receivedData['newsID'];
+    $latestNewsData['hotNews']['turnOn'] = $receivedData['turnOn'];
+    $latestNewsData['hotNews']['newsID'] = $receivedData['newsID'];
+
+    // write back
+    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+    response('success', 'success');
+  } 
 
 
   function response($errorType, $message) {

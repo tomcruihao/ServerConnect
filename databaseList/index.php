@@ -591,6 +591,15 @@
         success: function(res) {
           self.bulletinTitle.en = res.bulletinTitle.en;
           self.bulletinTitle.local = res.bulletinTitle.local;
+
+          if(res.hotNews.turnOn) {
+            for(let newIndex in res.newsList) {
+              if(res.hotNews.newsID === res.newsList[newIndex].uuid) {
+                self.displayHotNews(res.newsList[newIndex]);
+              }
+            }
+          }
+
           const sortingList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           // self.latestNewsList.local = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
@@ -615,7 +624,6 @@
         },
         success: function(res) {
           self.popularDatabases = res;
-          console.log(res);
         }
       });
     },
@@ -625,8 +633,47 @@
       } else {
         this.lang = 'local';
       }
+
+      // check hot news
     },
     methods:{
+      displayHotNews: function(news) {
+        let self = this;
+        $.ajax({
+          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/checkSessionForFrontStageUser.php',
+          type: 'POST',
+          xhrFields: {
+            withCredentials: true
+          },
+          data: {
+            type: 'hotNewsField',
+            processData: JSON.stringify(self.hotNewsField)
+          },
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(res) {
+            if(res.type === 'not yet') {
+              let lang = localStorage.getItem('lang');
+              let message = {
+                'title': '',
+                'content': ''
+              }
+              if(lang === 'local') {
+                message.title = news.local.title;
+                message.content = news.local.content;
+              } else {
+                message.title = news.en.title;
+                message.content = news.en.content;
+              }
+
+              dialogue.setDialogue('latestNews', message);
+            }
+          }
+        });
+      },
       search: function(subject, className) {
         searchBy(subject, className);
         this.set_mobile_show_switch(false);
