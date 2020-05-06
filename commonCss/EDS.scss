@@ -1,0 +1,234 @@
+/* anchor color */
+$borderStyle: 2px solid #e7e7e7;
+
+a {
+  color: #005bc6;
+  text-decoration: none;
+}
+
+input:focus, textarea:focus, select:focus, button {
+  outline: none;
+}
+
+body {
+  font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif !important;
+
+  .find-field-inner {
+    display: flex;
+    align-items: center;
+
+    .find-field-controls {
+      flex: 1;
+
+      .find-field-inputs-row {
+        display: flex;
+        flex-wrap: wrap;
+    
+        .inputs{
+          flex: 1;
+        }
+        #SearchButton {
+          &:hover{
+            background-color: #405133 !important;
+          }
+        }
+      }
+    }
+  }
+
+
+  // The left hand side field
+  #column1 {
+    padding: 15px !important;
+    box-shadow: rgba(141, 141, 141, 0.54) 0px 0px 6px 1px;
+    background-color: #f7f7f7;
+
+    .rl-lim-heading {
+      text-decoration: none;
+      background-color: #d3d3d3 !important;
+      border-radius: 8px !important;
+      padding: 8px !important;
+      color: #333333;
+      font-weight: bold !important;
+      border-top: solid 2px #f2f2f0;
+      position: relative;
+
+      &:before {
+        content: " ";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 0px;
+        top: 8px;
+        background-size: cover;
+        background-image: url("http://gss.ebscohost.com/chchang/ServerConnect/commonCss/icons/arrow_right.svg");
+      }
+
+      &.active {
+        &:before {
+          background-image: url("http://gss.ebscohost.com/chchang/ServerConnect/commonCss/icons/arrow_down.svg");
+        }
+      }
+
+      i {
+        display: none;
+      }
+    }
+  }
+
+  // main content
+  #content {
+
+    #recommender {
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.1);
+      border: $borderStyle;
+
+      h3 {
+        font-size: 1.5em;
+        color: #155724;
+      }
+      .recList {
+        li {
+          a {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+
+    .placard-container {
+      border: $borderStyle;
+      .placard {
+        display: block;
+      }
+    }
+
+    .externalLinks {
+      height: 40px;
+      overflow: hidden;
+    }
+
+    .content-header {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+
+      .page-title {
+        flex: 1;
+      }
+      #optionsControls {
+        display: flex;
+        .options-controls-li {
+          .dd-menu {
+            padding: 5px 15px !important;
+            border: 1px solid #999 !important;
+          }
+          section {
+            .dd-menu {
+              padding: 5px 15px !important;
+            }
+          }
+        }          
+      }
+    }
+
+    .result-list {
+      .result-list-li {
+        margin-top: 15px;
+        padding: 15px;
+        border: $borderStyle !important;
+        background-color: #fffefa !important;
+
+        &:hover {
+          background-color: #ffffff !important;
+        }
+        
+        .rtac-table {
+          border: 1px solid #e7e7e7;
+        }
+      }
+    }
+  }
+
+  // The right hand side field
+  #column2 {
+    background-color: #f7f7f7;
+    padding: 15px !important;
+
+    .collapse-toggle {
+      padding-left: 5px !important;
+      background-color: #d3d3d3 !important;
+      border-radius: 8px !important;
+      position: relative;
+
+      &:before {
+        content: " ";
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 0px;
+        top: 8px;
+        background-size: cover;
+        background-image: url("http://gss.ebscohost.com/chchang/ServerConnect/commonCss/icons/arrow_right.svg");
+      }
+
+      &.active {
+        &:before {
+          background-image: url("http://gss.ebscohost.com/chchang/ServerConnect/commonCss/icons/arrow_down.svg");
+        }
+      }
+
+      i {
+        display: none;
+      }
+    }
+  }
+}
+
+/* hide the help button. The help button is beside the search button */
+#helpLink{
+  display:none !important;
+}
+
+/* hide the clear button. The clear button is in the search-box */
+.clear-button, .clear-button:link {
+  display: none;
+}
+
+#refineSearch {
+  background-color: #d3d3d3 !important;
+  border-radius: 8px !important;
+}
+
+@media (max-width: 830px) {
+  #mainContentArea {
+    #content {
+      padding: 0 15px;
+      margin-right: 0;
+      margin-left: 0;
+
+      .content-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .page-title, #optionsControls {
+          width: 100%;
+        }
+        #optionsControls {
+          justify-content: center;      
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .find-field-submit {
+    width: 100%;
+  }
+}

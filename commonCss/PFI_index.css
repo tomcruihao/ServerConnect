@@ -1,0 +1,100 @@
+/* anchor color */
+a {
+  color: #005bc6;
+  text-decoration: none;
+}
+
+input:focus, textarea:focus, select:focus, button {
+  outline: none;
+}
+
+body {
+  font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif !important;
+}
+
+body .find-field-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .find-field-inner .find-field-controls {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body .find-field-inner .find-field-controls .find-field-inputs-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body .find-field-inner .find-field-controls .find-field-inputs-row .inputs {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body .find-field-inner .find-field-controls .find-field-inputs-row #SearchButton:hover {
+  background-color: #405133 !important;
+}
+
+body #content .letterrow .letteroption {
+  width: auto !important;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
+body #content .letterrow .letteroption a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2px 10px;
+  text-decoration: none;
+  color: #005bc6 !important;
+  border: 1px solid #cccccc;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #content .facet-list {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body #content .facet-list .facet-list-item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+}
+
+body #content .facet-list .facet-list-item a {
+  margin-right: 5px;
+}
+
+/* hide the help button. The help button is beside the search button */
+#helpLink {
+  display: none !important;
+}
+
+/* hide the clear button. The clear button is in the search-box */
+.clear-button, .clear-button:link {
+  display: none;
+}
+
+@media screen and (max-width: 479px) {
+  .find-field-submit {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=PFI_index.css.map */

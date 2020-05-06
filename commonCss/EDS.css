@@ -1,0 +1,249 @@
+/* anchor color */
+a {
+  color: #005bc6;
+  text-decoration: none;
+}
+
+input:focus, textarea:focus, select:focus, button {
+  outline: none;
+}
+
+body {
+  font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif !important;
+}
+
+body .find-field-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .find-field-inner .find-field-controls {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body .find-field-inner .find-field-controls .find-field-inputs-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body .find-field-inner .find-field-controls .find-field-inputs-row .inputs {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body .find-field-inner .find-field-controls .find-field-inputs-row #SearchButton:hover {
+  background-color: #405133 !important;
+}
+
+body #column1 {
+  padding: 15px !important;
+  -webkit-box-shadow: rgba(141, 141, 141, 0.54) 0px 0px 6px 1px;
+          box-shadow: rgba(141, 141, 141, 0.54) 0px 0px 6px 1px;
+  background-color: #f7f7f7;
+}
+
+body #column1 .rl-lim-heading {
+  text-decoration: none;
+  background-color: #d3d3d3 !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  color: #333333;
+  font-weight: bold !important;
+  border-top: solid 2px #f2f2f0;
+  position: relative;
+}
+
+body #column1 .rl-lim-heading:before {
+  content: " ";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0px;
+  top: 8px;
+  background-size: cover;
+  background-image: url("http://gss.ebscohost.com/chchang/ServerConnect/commonCss/icons/arrow_right.svg");
+}
+
+body #column1 .rl-lim-heading.active:before {
+  background-image: url("http://gss.ebscohost.com/chchang/ServerConnect/commonCss/icons/arrow_down.svg");
+}
+
+body #column1 .rl-lim-heading i {
+  display: none;
+}
+
+body #content #recommender {
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 2px solid #e7e7e7;
+}
+
+body #content #recommender h3 {
+  font-size: 1.5em;
+  color: #155724;
+}
+
+body #content #recommender .recList li a {
+  font-size: 1.2em;
+}
+
+body #content .placard-container {
+  border: 2px solid #e7e7e7;
+}
+
+body #content .placard-container .placard {
+  display: block;
+}
+
+body #content .externalLinks {
+  height: 40px;
+  overflow: hidden;
+}
+
+body #content .content-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #content .content-header .page-title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body #content .content-header #optionsControls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #content .content-header #optionsControls .options-controls-li .dd-menu {
+  padding: 5px 15px !important;
+  border: 1px solid #999 !important;
+}
+
+body #content .content-header #optionsControls .options-controls-li section .dd-menu {
+  padding: 5px 15px !important;
+}
+
+body #content .result-list .result-list-li {
+  margin-top: 15px;
+  padding: 15px;
+  border: 2px solid #e7e7e7 !important;
+  background-color: #fffefa !important;
+}
+
+body #content .result-list .result-list-li:hover {
+  background-color: #ffffff !important;
+}
+
+body #content .result-list .result-list-li .rtac-table {
+  border: 1px solid #e7e7e7;
+}
+
+body #column2 {
+  background-color: #f7f7f7;
+  padding: 15px !important;
+}
+
+body #column2 .collapse-toggle {
+  padding-left: 5px !important;
+  background-color: #d3d3d3 !important;
+  border-radius: 8px !important;
+  position: relative;
+}
+
+body #column2 .collapse-toggle:before {
+  content: " ";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0px;
+  top: 8px;
+  background-size: cover;
+  background-image: url("http://gss.ebscohost.com/chchang/ServerConnect/commonCss/icons/arrow_right.svg");
+}
+
+body #column2 .collapse-toggle.active:before {
+  background-image: url("http://gss.ebscohost.com/chchang/ServerConnect/commonCss/icons/arrow_down.svg");
+}
+
+body #column2 .collapse-toggle i {
+  display: none;
+}
+
+/* hide the help button. The help button is beside the search button */
+#helpLink {
+  display: none !important;
+}
+
+/* hide the clear button. The clear button is in the search-box */
+.clear-button, .clear-button:link {
+  display: none;
+}
+
+#refineSearch {
+  background-color: #d3d3d3 !important;
+  border-radius: 8px !important;
+}
+
+@media (max-width: 830px) {
+  #mainContentArea #content {
+    padding: 0 15px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  #mainContentArea #content .content-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #mainContentArea #content .content-header .page-title, #mainContentArea #content .content-header #optionsControls {
+    width: 100%;
+  }
+  #mainContentArea #content .content-header #optionsControls {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .find-field-submit {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=EDS.css.map */
