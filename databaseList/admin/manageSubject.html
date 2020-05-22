@@ -121,6 +121,7 @@
     <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
   </footer>
   <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeDialogue()"></div>
     <div class="dialogue-message-frame" v-if="type === 'logout'">
       <div class="dialogue-head">
         <h4>{{$t('message.dialogue_title_info')}}</h4>

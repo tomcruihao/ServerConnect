@@ -53,6 +53,12 @@
     <section id="generalSetting" class="setting-wrap">
       <h2>{{$t('message.generalSetting')}}</h2>
       <div class="row">
+        <div class="title">{{$t('message.setting_show_popular_resources')}}</div>
+        <div class="content">
+          {{$t('message.setting_total_resources')}}({{maxNumberOfResource}}) <input type="number" :max="maxNumberOfResource" min="1" v-model="settings.numberOfPopularDatabases">
+        </div>
+      </div>
+      <div class="row">
         <div class="title">{{$t('message.setting_proxy')}}</div>
         <div class="content">
           <input type="text" v-model="settings.proxy">
@@ -124,6 +130,7 @@
     <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
   </footer>
   <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeDialogue()"></div>
     <div class="dialogue-message-frame" v-if="type === 'logout'">
       <div class="dialogue-head">
         <h4>{{$t('message.dialogue_title_info')}}</h4>
@@ -419,21 +426,40 @@
     i18n,
     data: {
       settings: {
+        numberOfPopularDatabases: 0,
         proxy: '',
         localization: true,
         GA_ID: ''
       },
       settings_backup: {
+        numberOfPopularDatabases: 0,
         proxy: '',
         localization: true,
         GA_ID: ''
       },
       btn_recovery: {
         show: false
-      }
+      },
+      maxNumberOfResource: 9999
     },
     created: function() {
       this.getSettings();
+    },
+    mounted: function() {
+      // getResourceNumber and set in maxNumberOfResource
+      let self = this;
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getNumberOfResources.php',
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          self.maxNumberOfResource = res.number;
+        }
+      });
     },
     watch: {
       settings: {
@@ -471,6 +497,9 @@
       },
       updateSettings: function() {
         let self = this;
+        if(this.maxNumberOfResource < this.settings.numberOfPopularDatabases) {
+          this.settings.numberOfPopularDatabases = self.maxNumberOfResource;
+        }
 
         $.ajax({
           url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSettings.php',

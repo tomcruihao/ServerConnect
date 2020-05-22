@@ -41,7 +41,7 @@ h4 {
       align-items: center;
 
       .title {
-        width: 150px;
+        width: 200px;
         font-weight: bold;
       }
 
@@ -158,9 +158,21 @@ h4 {
     display: flex;
   }
   
+  .cover {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    cursor: pointer;
+  }
+
   .dialogue-message-frame {
     width: 94%;
     max-width: 700px;
+    position: relative;
+    z-index: 1;
 
     .dialogue-head {
       width: 100%;

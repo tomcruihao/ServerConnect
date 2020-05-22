@@ -9,7 +9,12 @@ error_reporting(E_ALL);
   header("Access-Control-Allow-Origin: http://gss.ebscohost.com/");
   header('Content-Type: application/json;charset=UTF-8');
 
-  $amountOfDatabases = 5;
+  // get setting list
+  $jsonFile_direct = '../data/settings.json';
+  $getSettingJsonData = file_get_contents($jsonFile_direct);
+  $settings = json_decode($getSettingJsonData, true);
+
+  $amountOfDatabases = $settings['numberOfPopularDatabases'];
 
 
   $getResourceData = file_get_contents('../data/eResourceList.json');

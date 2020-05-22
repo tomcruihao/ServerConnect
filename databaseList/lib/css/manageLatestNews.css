@@ -642,9 +642,21 @@ input[type="text"], input[type="date"], input[type="number"] {
   display: flex;
 }
 
+.mask .cover {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  cursor: pointer;
+}
+
 .mask .dialogue-message-frame {
   width: 94%;
   max-width: 600px;
+  position: relative;
+  z-index: 1;
 }
 
 .mask .dialogue-message-frame .dialogue-head {

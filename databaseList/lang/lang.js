@@ -45,6 +45,7 @@ const messages = {
       resource_select_no: 'no',
       resource_btn_modify: 'Modify',
       resource_btn_add: 'Add',
+      resource_expired_display: 'Display this resource when expired',
       // setting page
       h1_settings: 'Settings',
       generalSetting: 'General Settings',
@@ -58,6 +59,8 @@ const messages = {
       setting_password_not_matching: 'Your password and confirm password are not match',
       setting_import_csv_data: 'Import resource list (txt file)',
       setting_proxy: 'Proxy/Redirector Prefix URL',
+      setting_total_resources: 'Total Resources',
+      setting_show_popular_resources: 'The number of Popular resources to show',
       // latest news management page
       h1_latestNews: 'News Management',
       latest_form_setting: 'News Block Settings',
@@ -66,6 +69,10 @@ const messages = {
       latest_publish_date: 'Date',
       latest_publish_title: 'Title',
       latest_publish_content: 'Content',
+      latest_hot_news: 'Hot News',
+      latest_hot_news_show_or_not_show: 'Show',
+      latest_hot_news_message: 'Choose Message',
+      latest_hot_news_message_select: 'Select',
       // Subject management page
       h1_subject: 'Facets Management',
       subject_setting: 'Facets Management',
@@ -109,6 +116,24 @@ const messages = {
       btn_resource_type: 'Type',
       btn_login: 'Login',
       btn_change: 'Change',
+      // resourceTable
+      resource_table_resourceName: "Title",
+      resource_table_resourceUrlTitle: "Access Link",
+      resource_table_resourceUrlDisplayName: "Link",
+      resource_table_isProxy: "Proxy",
+      resource_table_resourceType: "Type",
+      resource_table_startDate: "Start Date",
+      resource_table_expireDate: "End Date",
+      resource_table_faculty: "School",
+      resource_table_department: "Department",
+      resource_table_subject: "Subject",
+      resource_table_category: "Category",
+      resource_table_type: "Type",
+      resource_table_publisher: "Publisher",
+      resource_table_language: "Language",
+      resource_table_resourceDescribe: "Description",
+      resource_table_relevanceUrlDescribe: "Information Link",
+      resource_table_moreDetail: "more...",
       // tag
       tag_chinese: 'Chinese',
       tag_english: 'English'
@@ -160,6 +185,7 @@ const messages = {
       resource_select_no: '否',
       resource_btn_modify: '修改',
       resource_btn_add: '新增',
+      resource_expired_display: '過期是否顯示',
       // setting page
       h1_settings: '設定',
       generalSetting: '一般設定',
@@ -173,6 +199,8 @@ const messages = {
       setting_password_not_matching: '密碼和確認密碼不匹配',
       setting_import_csv_data: '上傳資源 txt 檔案',
       setting_proxy: 'Proxy/Redirector 前綴網址',
+      setting_total_resources: '資源數',
+      setting_show_popular_resources: '熱門資源顯示數量',
       // latest news management page
       h1_latestNews: '消息管理',
       latest_form_setting: '消息區塊設定',
@@ -181,6 +209,10 @@ const messages = {
       latest_publish_date: '發佈日期',
       latest_publish_title: '標題',
       latest_publish_content: '內容',
+      latest_hot_news: '焦點消息',
+      latest_hot_news_show_or_not_show: '是否顯示',
+      latest_hot_news_message: '是否顯示',
+      latest_hot_news_message_select: '請選擇',
       // Subject management page
       h1_subject: '後分類管理',
       subject_setting: '後分類管理',
@@ -224,6 +256,24 @@ const messages = {
       btn_resource_type: '類型',
       btn_login: '登入',
       btn_change: ' 變更',
+      // resourceTable
+      resource_table_resourceName: "資源名稱",
+      resource_table_resourceUrlTitle: "連結",
+      resource_table_resourceUrlDisplayName: "點我連結",
+      resource_table_isProxy: "代理",
+      resource_table_resourceType: "資源類型",
+      resource_table_startDate: "起訂日期",
+      resource_table_expireDate: "迄訂日期",
+      resource_table_faculty: "適用學院",
+      resource_table_department: "適用科系",
+      resource_table_subject: "主題",
+      resource_table_category: "分類",
+      resource_table_type: "類型",
+      resource_table_publisher: "出版商",
+      resource_table_language: "語言",
+      resource_table_resourceDescribe: "資源簡述",
+      resource_table_relevanceUrlDescribe: "相關連結",
+      resource_table_moreDetail: "更多...",
       // tag
       tag_chinese: '中文',
       tag_english: '英文'
@@ -251,3 +301,45 @@ var i18n = new VueI18n({
   locale: lang, // set locale
   messages, // set locale messages
 })
+
+
+// Statement heading of Resource List
+let listTitles = [];
+listTitles['en'] = {
+  "resourceName": messages.en.message.resource_table_resourceName,
+  "resourceUrlTitle": messages.en.message.resource_table_resourceUrlTitle,
+  "resourceUrlDisplayName": messages.en.message.resource_table_resourceUrlDisplayName,
+  "isProxy": messages.en.message.resource_table_isProxy,
+  "resourceType": messages.en.message.resource_table_resourceType,
+  "startDate": messages.en.message.resource_table_startDate,
+  "expireDate": messages.en.message.resource_table_expireDate,
+  "faculty": messages.en.message.resource_table_faculty,
+  "department": messages.en.message.resource_table_department,
+  "subject": messages.en.message.resource_table_subject,
+  "category": messages.en.message.resource_table_category,
+  "type": messages.en.message.resource_table_type,
+  "publisher": messages.en.message.resource_table_publisher,
+  "language": messages.en.message.resource_table_language,
+  "resourceDescribe": messages.en.message.resource_table_resourceDescribe,
+  "relevanceUrlDescribe": messages.en.message.resource_table_relevanceUrlDescribe,
+  "moreDetail": messages.en.message.resource_table_moreDetail
+}
+listTitles['local'] = {
+  "resourceName": messages.local.message.resource_table_resourceName,
+  "resourceUrlTitle": messages.local.message.resource_table_resourceUrlTitle,
+  "resourceUrlDisplayName": messages.local.message.resource_table_resourceUrlDisplayName,
+  "isProxy": messages.local.message.resource_table_isProxy,
+  "resourceType": messages.local.message.resource_table_resourceType,
+  "startDate": messages.local.message.resource_table_startDate,
+  "expireDate": messages.local.message.resource_table_expireDate,
+  "faculty": messages.local.message.resource_table_faculty,
+  "department": messages.local.message.resource_table_department,
+  "subject": messages.local.message.resource_table_subject,
+  "category": messages.local.message.resource_table_category,
+  "type": messages.local.message.resource_table_type,
+  "publisher": messages.local.message.resource_table_publisher,
+  "language": messages.local.message.resource_table_language,
+  "resourceDescribe": messages.local.message.resource_table_resourceDescribe,
+  "relevanceUrlDescribe": messages.local.message.resource_table_relevanceUrlDescribe,
+  "moreDetail": messages.local.message.resource_table_moreDetail
+}

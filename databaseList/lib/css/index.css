@@ -865,9 +865,21 @@ section {
   display: flex;
 }
 
+.mask-dia .cover {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  cursor: pointer;
+}
+
 .mask-dia .dialogue-message-frame {
   width: 94%;
   max-width: 700px;
+  position: relative;
+  z-index: 1;
 }
 
 .mask-dia .dialogue-message-frame .dialogue-head {
@@ -895,10 +907,14 @@ section {
 
 .mask-dia .dialogue-message-frame .dialogue-body {
   min-height: 150px;
+  max-height: 60vh;
   padding: 15px 15px 80px;
   background-color: #ffffff;
   border-radius: 0px 0px 10px 10px;
   position: relative;
+  overflow-y: scroll;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .mask-dia .dialogue-message-frame .dialogue-body .row {
@@ -935,178 +951,6 @@ section {
   color: #ffffdb;
   background-color: #ffa701;
   border-radius: 5px;
-}
-
-.mask {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: none;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.mask .dialogue-message-frame {
-  width: 94%;
-  max-width: 600px;
-}
-
-.mask .dialogue-message-frame .dialogue-head {
-  width: 100%;
-  padding: 5px 15px;
-  font-size: 1.2rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #00B0ED;
-  border-radius: 10px 10px 0px 0px;
-  position: relative;
-}
-
-.mask .dialogue-message-frame .dialogue-head h4 {
-  margin: 0;
-  color: #ffffdb;
-}
-
-.mask .dialogue-message-frame .dialogue-head .close {
-  position: absolute;
-  right: 5px;
-  top: 5px;
-  cursor: pointer;
-}
-
-.mask .dialogue-message-frame .dialogue-body {
-  min-height: 150px;
-  padding: 15px 15px 80px;
-  background-color: #ffffff;
-  border-radius: 0px 0px 10px 10px;
-  position: relative;
-}
-
-.mask .dialogue-message-frame .dialogue-body .row .title {
-  padding: 10px 0;
-}
-
-.mask .dialogue-message-frame .dialogue-body .btn-frame {
-  width: 100%;
-  height: 50px;
-  padding: 15px 0;
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-}
-
-.mask .dialogue-message-frame .dialogue-body .btn-frame button {
-  width: 80px;
-  height: 38px;
-  margin-left: 15px;
-  font-size: 1.2rem;
-  color: #ffffdb;
-  background-color: #ffa701;
-  border-radius: 5px;
-}
-
-.mask .dialogue-frame {
-  width: 94%;
-  max-width: 600px;
-  padding: 15px;
-  position: absolute;
-  background-color: #ffffff;
-  border-radius: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.mask .dialogue-frame .dialogue-content {
-  max-height: 550px;
-  overflow-y: scroll;
-}
-
-.mask .dialogue-frame .dialogue-content label {
-  width: 100%;
-  padding: 10px 5px;
-  display: block;
-  border-bottom: 1px solid #cccccc;
-  cursor: pointer;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.mask .dialogue-frame .dialogue-content .row {
-  margin-bottom: 15px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.mask .dialogue-frame .dialogue-content .row .title {
-  width: 200px;
-  font-weight: bold;
-}
-
-.mask .dialogue-frame .dialogue-content .row .content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.mask .dialogue-frame .dialogue-content .row .content textarea {
-  width: 100%;
-  height: 300px;
-  border-radius: 10px;
-  border: 2px solid #cccccc;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.mask .dialogue-frame .dialogue-content .row .content a {
-  text-decoration: none;
-}
-
-.mask .dialogue-frame .dialogue-content .row .content.over {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.mask .dialogue-frame .btn-frame {
-  width: 100%;
-  margin-top: 15px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.mask .dialogue-frame .btn-frame button {
-  width: 150px;
-  height: 38px;
-  background-color: #4CAF50;
-  color: #ffffdb;
-}
-
-.mask.show {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 @media screen and (max-width: 600px) {

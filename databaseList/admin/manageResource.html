@@ -162,6 +162,13 @@
               <div class="content">{{database.relevanceUrl}}</div>
             </div>
             <div class="row">
+              <div class="title">{{$t('message.resource_expired_display')}}</div>
+              <div class="content">
+                <div v-if="database.expiredChecking === 'true'">{{$t('message.resource_select_yes')}}</div>
+                <div v-else>{{$t('message.resource_select_no')}}</div>
+              </div>
+            </div>
+            <div class="row">
               <div class="title">{{$t('message.resource_startDate')}}</div>
               <div class="content">{{database.startDate}}</div>
             </div>
@@ -187,6 +194,7 @@
     <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
   </footer>
   <div class="mask" id="fillForm" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeForm()"></div>
     <div class="dialogue-frame">
       <img src="../img/icon/close.svg" class="close" @click="closeForm">
       <div class="tag-wrap">
@@ -292,6 +300,15 @@
             <input type="date" v-model="resource.expireDate">
           </div>
           <div class="row">
+            <div class="title">{{$t('message.resource_expired_display')}}</div>
+            <div class="content">
+              <select v-model="resource.expiredChecking">
+                <option value="true">{{$t('message.resource_select_yes')}}</option>
+                <option value="false">{{$t('message.resource_select_no')}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
             <div class="title">{{$t('message.resource_isProxy')}}</div>
             <div class="content">
               <select v-model="resource.isProxy">
@@ -309,10 +326,12 @@
       <div class="btn-frame">
         <button v-if="btnType === 'add'" @click="sendForm">{{$t('message.resource_btn_add')}}</button>
         <button v-else-if="btnType === 'modify'" @click="sendForm">{{$t('message.resource_btn_modify')}}</button>
+        <button @click="copy">Copy</button>
       </div>
     </div>
   </div>
   <div class="mask" id="dialogue" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeDialogue()"></div>
     <div class="dialogue-message-frame" v-if="type === 'logout'">
       <div class="dialogue-head">
         <h4>{{$t('message.dialogue_title_info')}}</h4>
@@ -398,6 +417,10 @@
     function getEditorData_en() {
       return CKEDITOR.instances.editor_en.getData();
     }
+    function setEditorData_en() {
+      let localeData = CKEDITOR.instances.editor_local.getData();
+      CKEDITOR.instances.editor_en.setData(localeData);
+    }
 
     var dataList = new Vue({
       el:'#listField',
@@ -462,6 +485,7 @@
         template: {
           "resourceUrl": "",
           "isProxy": false,
+          "expiredChecking": false,
           "startDate": "",
           "expireDate": "",
           "relevanceUrl": "",
@@ -493,6 +517,10 @@
         }
       },
       methods:{
+        copy: function() {
+          this.resource.en = JSON.parse(JSON.stringify(this.resource.local));
+          setEditorData_en();
+        },
         setForm: function(type, database) {
           if(type === 'modify') {
             // check the time formate

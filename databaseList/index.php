@@ -1,6 +1,7 @@
 <!DOCTYPE xtml PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
 <?php
+  date_default_timezone_set('Asia/Taipei');
   $jsonFile_direct = 'data/eResourceList.json';
 
   // get resource list
@@ -22,6 +23,7 @@
     $temp_local = [];
     $temp_en = [];
     $isProxy = false;
+    $display = true;
 
     foreach($value as $vkey => $vValue) {
       // put content without languages
@@ -51,8 +53,22 @@
       $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
 
-    array_push($result_en, $temp_en);
-    array_push($result_local, $temp_local);
+    // echo $value['expiredChecking'].' start '.($value['startDate'] !== '').' end '.($value['expireDate'] !== '')."<br>";
+    if(!filter_var($value['expiredChecking'], FILTER_VALIDATE_BOOLEAN) && $value['startDate'] !== '' && $value['expireDate'] !== '') {
+      $currentTime = date("Y-m-d");
+      $isProxy = filter_var($vValue, FILTER_VALIDATE_BOOLEAN);
+      $temp_startTime = strtotime($value['startDate']);
+      $temp_endTime = strtotime($value['expireDate']);
+      
+      if($currentTime > $temp_endTime || $currentTime < $temp_startTime){
+        $display = false;
+      }
+    }
+
+    if($display) {
+      array_push($result_en, $temp_en);
+      array_push($result_local, $temp_local);
+    }
   }
   
   $result['en'] = $result_en;
@@ -252,6 +268,7 @@
     <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
   </footer>
   <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeDialogue()"></div>
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{dialogueMessage.title}}</h4>
@@ -655,7 +672,9 @@
             console.log(exception);
           },
           success: function(res) {
-            if(res.type === 'not yet') {
+            console.log(res);
+            console.log(res.data === 'not yet');
+            if(res.data.indexOf('not yet') !== -1) {
               let lang = localStorage.getItem('lang');
               let message = {
                 'title': '',
@@ -669,6 +688,7 @@
                 message.content = news.en.content;
               }
 
+              console.log('send');
               dialogue.setDialogue('latestNews', message);
             }
           }
@@ -702,46 +722,7 @@
     }
   })
 
-  let listTitles = [];
-  listTitles['en'] = {
-    "resourceName": "Title",
-    "resourceUrlTitle": "Access Link",
-    "resourceUrlDisplayName": "Link",
-    "isProxy": "Proxy",
-    "resourceType": "Type",
-    "startDate": "Start Date",
-    "expireDate": "End Date",
-    "faculty": "School",
-    "department": "Department",
-    "subject": "Subject",
-    "category": "Category",
-    "type": "Type",
-    "publisher": "Publisher",
-    "language": "Language",
-    "resourceDescribe": "Description",
-    "relevanceUrlDescribe": "Information Link",
-    "moreDetail": "more..."
-  }
-  listTitles['local'] = {
-    "resourceName": "資源名稱",
-    "resourceUrlTitle": "連結",
-    "resourceUrlDisplayName": "點我連結",
-    "isProxy": "代理",
-    "resourceType": "資源類型",
-    "startDate": "起訂日期",
-    "expireDate": "迄訂日期",
-    "faculty": "適用學院",
-    "department": "適用科系",
-    "subject": "主題",
-    "category": "分類",
-    "type": "類型",
-    "publisher": "出版商",
-    "language": "語言",
-    "resourceDescribe": "資源簡述",
-    "relevanceUrlDescribe": "相關連結",
-    "moreDetail": "更多..."
-  }
-
+// note: Need to include the lang.js before
   function genDatalistStructure(local = false) {
     let ul_Dom = document.getElementById("resourceList");
     if(local){
@@ -898,25 +879,52 @@
     }
   });
 
-  function directTo(id, url) {
-    window.open(url, '_blank');
-    $.ajax({
-      url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLogClick.php',
-      type: 'POST',
-      data: {
-        directionID: id
-      },
-      error: function(jqXHR, exception) {
-        //use url variable here
-        console.log(jqXHR);
-        console.log(exception);
-      },
-      success: function(res) {
-        console.log(res);
-        // self.bulletinTitle = res.bulletinTitle;
-        // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
-        // self.displayNumber = res.displayNumber;
-      }
+  async function directTo(id, url) {
+    let exist = await checkSessionExist();
+    if(exist) {
+      window.open(url, '_blank');
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLogClick.php',
+        type: 'POST',
+        data: {
+          directionID: id
+        },
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          console.log(res);
+          // self.bulletinTitle = res.bulletinTitle;
+          // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+          // self.displayNumber = res.displayNumber;
+        }
+      });
+    } else {
+      window.location.replace("authLogin.html");
+    }
+  }
+  function checkSessionExist() {
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/verifyUserSession.php',
+        type: 'GET',
+        xhrFields: {
+          withCredentials: true
+        },
+        error: function(jqXHR, exception) {
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          if(res.type === 'pass') {
+            resolve(true);
+          } else {
+            resolve(false);
+          }          
+        }
+      });
     });
   }
   function errorMsg (code) {
@@ -1037,7 +1045,7 @@
   document.addEventListener("DOMContentLoaded", function(event) {
     // Init list
     var options = {
-      valueNames: ['numbering', 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'zhuyin', 'strokes', 'englishAlphabet'],
+      valueNames: ['numbering', 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'zhuyin', 'strokes', 'englishAlphabet'],
       page: 20,
       pagination: {
         innerWindow: 1,

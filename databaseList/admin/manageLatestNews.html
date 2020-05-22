@@ -82,9 +82,9 @@
         </div>
       </div>
       <div class="latestNews-wrap important-news">
-        <h3>焦點消息</h3>
+        <h3>{{$t('message.latest_hot_news')}}</h3>
         <div class="row">
-          <div class="title">是否顯示</div>
+          <div class="title">{{$t('message.latest_hot_news_show_or_not_show')}}</div>
           <div class="content">
             <div class="switch-wrap">
               <div class="onoffswitch">
@@ -98,11 +98,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="title">消息</div>
+          <div class="title">{{$t('message.latest_hot_news_message')}}</div>
           <div class="content">
             <div class="select-wrap">
               <select v-model="hotNewsField.newsID">
-                <option value="">請選擇</option>
+                <option value="">{{$t('message.Select')}}</option>
                 <option v-for="(latestNews, index) in latestNewsList" :value="latestNews.uuid">{{latestNews.local.title}}
               </select>
             </div>
@@ -153,6 +153,7 @@
     </div>
   </div>
   <div class="mask" id="fillForm" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeForm"></div>
     <div class="dialogue-message-frame">
       <div class="dialogue-head">
         <h4>{{headTitle}}</h4>
@@ -212,6 +213,7 @@
         </div>
         <div class="btn-frame">
           <button @click="sendForm">{{btnName}}</button>
+          <button @click="copy">Copy</button>
         </div>
       </div>
     </div>
@@ -221,6 +223,7 @@
     <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
   </footer>
   <div id="dialogue" class="mask" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeDialogue"></div>
     <div class="dialogue-message-frame" v-if="type === 'logout'">
       <div class="dialogue-head">
         <h4>{{$t('message.dialogue_title_info')}}</h4>
@@ -280,6 +283,10 @@
         CKEDITOR.replace( 'editor_en' );
         CKEDITOR.replace( 'editor_local' );
       }, 500);
+    }
+    function setEditorData_en() {
+      let localeData = CKEDITOR.instances.editor_local.getData();
+      CKEDITOR.instances.editor_en.setData(localeData);
     }
     function getEditorData(type) {
       // remove script tags
@@ -430,6 +437,10 @@
         }
       },
       methods:{
+        copy() {
+          this.news.en = JSON.parse(JSON.stringify(this.news.local));
+          setEditorData_en();
+        },
         changeTag(Obj, type) {
           Obj.tag = type;
         },

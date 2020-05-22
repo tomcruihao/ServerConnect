@@ -18,7 +18,7 @@ error_reporting(E_ALL);
   // parameters
   $recievedSettings = json_decode($_POST["settings"], true);
 
-  // get resource list
+  // get setting list
   $getSettingJsonData = file_get_contents($jsonFile_direct);
   $settings = json_decode($getSettingJsonData, true);
 

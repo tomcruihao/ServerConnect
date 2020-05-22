@@ -22,36 +22,39 @@
         <img src="img/logo_back.svg" alt="EBSCO" title="EBSCO"/>
       </div>
       <div class="subject">請選擇您的身份</div>
-      <div class="row">
-        <div class="title">單位</div>
-        <div class="content">
-          <div class="select-frame">
-            <select v-model="option1.value" @change="changeOption1($event)">
-              <option value="">請選擇</option>
-              <option v-for="option in option1.options" :value="option.value">{{option.displayName}}
-            </select>
+      <div class="row" v-if="option_departmentData.length !== 0">
+        <div v-for="level1_item in option_departmentData">
+          {{level1_item}}
+          <!-- <div v-if="lavel1_item.child.length === 0">
+            <input type="radio" v-model="authen.department" :value="lavel1_item.value">
           </div>
-          <div class="select-frame" v-if="option2.options.length !== 0">
-            <select v-model="option2.value" @change="changeOption2($event)">
-              <option value="">請選擇</option>
-              <option v-for="option in option2.options" :value="option.value">{{option.displayName}}
-            </select>
-          </div>
-          <div class="select-frame" v-if="option3.options.length !== 0">
-            <select v-model="option3.value">
-              <option value="">請選擇</option>
-              <option v-for="option in option3.options" :value="option.value">{{option.displayName}}
-            </select>
-          </div>
+          <div v-else>
+            <div v-for="(level2_item, lavel2_index) in level1_item.child">
+              <div v-if="level2_item.child.length === 0">
+                <input type="radio" v-model="authen.department" :value="level2_item.value">
+              </div>
+              <div v-else>
+                <div v-for="(level3_item, lavel3_index) in level2_item.child">
+                  <input type="radio" v-model="authen.department" :value="level3_item.value">
+                </div>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
       <div class="row">
         <div class="title">身份</div>
         <div class="content">
           <div class="select-frame">
-            <select v-model="identity">
+            <select v-model="authen.identity">
               <option value="">請選擇</option>
-              <option v-for="option_id in option_identityData" :value="option_id.value">{{option_id.displayName}}
+              <option value="13">行政人員</option>
+              <option value="16">其他</option>
+              <option value="14">研究助理</option>
+              <option value="38">校友</option>
+              <option value="15">校外人士</option>
+              <option value="teacher">教師</option>
+              <option value="student">學生</option>
             </select>
           </div>
         </div>
@@ -87,21 +90,11 @@
       el:'#loginForm',
       i18n,
       data: {
-        identity: '',
-        option1: {
-          value: '',
-          options: []
+        authen: {
+          department: 0,
+          identity: ''
         },
-        option2: {
-          value: '',
-          options: []
-        },
-        option3: {
-          value: '',
-          options: []
-        },
-        option_departmentData: [],
-        option_identityData: []
+        option_departmentData: []
       },
       created: function() {
         let self = this;
@@ -113,8 +106,9 @@
             console.log(jqXHR);
             console.log(exception);
           },
-          success: function(response) {
-            self.addResult(response);
+          success: function(res) {
+            console.log(res);
+            self.option_departmentData = res;
           }
         });
       },
@@ -122,11 +116,6 @@
 
       },
       methods:{
-        addResult(result) {
-          this.option_departmentData = result.department;
-          this.option_identityData = result.identity;
-          this.option1.options = JSON.parse(JSON.stringify(result.department));
-        },
         async changeOption1(event) {
           this.option2 = {
             value: '',
@@ -157,53 +146,8 @@
             }
           })
         },
-        async logIn() {
-          let depID = '';
-          let self = this;
-
-          // check department
-          if(this.option3.value !== '') {
-            depID = this.option3.value;
-          } else if(this.option2.value !== '' && this.option3.options.length === 0) {
-            depID = this.option2.value;
-          } else if(this.option1.value !== '' && this.option2.options.length === 0) {
-            depID = this.option1.value;
-          } else {
-            alert('請完整選擇單位');
-            return;
-          }
-
-          // check identity
-          if(this.identity === '') {
-            alert('請選擇身份');
-            return;
-          }
-
-          let userInfo = {
-            departmentID: depID,
-            identity: this.identity
-          }
-
-          $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/addIdentityInSession.php',
-            type: 'POST',
-            xhrFields: {
-              withCredentials: true
-            },
-            data: {
-              user: JSON.stringify(userInfo)
-            },
-            error: function(jqXHR, exception) {
-              console.log(jqXHR);
-              console.log(exception);
-            },
-            success: function(res) {
-              if(res.status === 'success' && res.type === 'pass') {
-                window.location.replace("index.php");
-              }
-            }
-          });
-
+        logIn() {
+          console.log('checkValue');
         }
       }
     });

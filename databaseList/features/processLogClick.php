@@ -4,6 +4,8 @@
   header('Content-Type: application/json');
   date_default_timezone_set('Asia/Taipei');
 
+  session_start();
+
   $getLogData = file_get_contents('../data/logUserCountClick.json');
   $logData = json_decode($getLogData, true);
 
@@ -14,6 +16,15 @@
   $log['clickedDateTime'] = date("Y-m-d h:i:s");
   $log['ip'] = getUserIpAddr();
   $log['uuid'] = $resourceID;
+
+  if(isset($_SESSION['departmentID']) && isset($_SESSION['identity'])) {
+    $log['userIdentity'] = $_SESSION['identity'];
+    $log['userdepartment'] = $_SESSION['departmentID'];
+  } else {
+    $log['userIdentity'] = 'N/A';
+    $log['userdepartment'] = 'N/A';
+  }
+
 
   array_push($logData['log'], $log);
   // write back

@@ -480,10 +480,22 @@ section {
   &.show {
     display: flex;
   }
+
+  .cover {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    cursor: pointer;
+  }
   
   .dialogue-message-frame {
     width: 94%;
     max-width: 700px;
+    position: relative;
+    z-index: 1;
 
     .dialogue-head {
       width: 100%;
@@ -510,10 +522,13 @@ section {
 
     .dialogue-body {
       min-height: 150px;
+      max-height: 60vh;
       padding: 15px 15px 80px;
       background-color: #ffffff;
       border-radius: 0px 0px 10px 10px;
       position: relative;
+      overflow-y: scroll;
+      box-sizing: border-box;
 
       .row {
         display: flex;
@@ -547,157 +562,6 @@ section {
         }
       }
     }
-  }
-}
-
-.mask {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: none;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-
-  .dialogue-message-frame {
-    width: 94%;
-    max-width: 600px;
-
-    .dialogue-head {
-      width: 100%;
-      padding: 5px 15px;
-      font-size: 1.2rem;
-      
-      box-sizing: border-box;
-      background-color: #00B0ED;
-      border-radius: 10px 10px 0px 0px;
-      position: relative;
-
-      h4 {
-        margin: 0;
-        color: $text_white;
-      }
-
-      .close {
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        cursor: pointer;
-      }
-    }
-
-    .dialogue-body {
-      min-height: 150px;
-      padding: 15px 15px 80px;
-      background-color: #ffffff;
-      border-radius: 0px 0px 10px 10px;
-      position: relative;
-
-      .row {
-        .title {
-          padding: 10px 0;
-        }
-      }
-
-      .btn-frame {
-        width: 100%;
-        height: 50px;
-        padding: 15px 0;
-        position: absolute;
-        bottom: 0;
-        text-align: center;
-
-        button {
-          width: 80px;
-          height: 38px;
-          margin-left: 15px;
-          font-size: 1.2rem;
-          color: $text_white;
-          background-color: #ffa701;
-          border-radius: 5px;
-        }
-      }
-    }
-  }
-
-  .dialogue-frame {
-    width: 94%;
-    max-width: 600px;
-    padding: 15px;
-    position: absolute;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-sizing: border-box;
-
-    .dialogue-content {
-      max-height: 550px;
-      overflow-y: scroll;
-
-      label {
-        width: 100%;
-        padding: 10px 5px;
-        display: block;
-        border-bottom: 1px solid $border_color;
-        cursor: pointer;
-        box-sizing: border-box;
-      }
-
-      .row {
-        margin-bottom: 15px;
-        box-sizing: border-box;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    
-        .title {
-          width: 200px;
-          font-weight: bold;
-        }
-    
-        .content {
-          flex: 1;
-
-          textarea {
-            width: 100%;
-            height: 300px;
-            border-radius: 10px;
-            border: 2px solid #cccccc;
-            box-sizing: border-box;
-          }
-
-          a {
-            text-decoration: none;
-          }
-
-          &.over {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-          }
-        }
-      }
-    }
-
-    .btn-frame {
-      width: 100%;
-      margin-top: 15px;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-
-      button {
-        width: 150px;
-        height: 38px;
-        background-color: $button_color;
-        color: $text_white;
-      }
-    }
-  }
-  &.show{
-    display: flex;
   }
 }
 
