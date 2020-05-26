@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ebook list</title>
+    <link href="../assets/dist/css/requirementList.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-frame">
+        <img class="logo" src="../assets/brand/eBooks_Logo.png" alt="">
+      </div>
+      <section id="ebookListField" class="ebooklist-field">
+        <div class="button-wrap">
+          <button class="csv" @click="generateReport()">导出CSV</button>
+          <button class="delete" @click="deleteEbooks()">删除</button>
+        </div>
+        <div class="grid">
+          <div class="head header">
+            <div class="row">
+              <div class="checkbox">#</div>
+              <div class="title">书名</div>
+              <div class="isbn">ISBN</div>
+              <div class="apply-user-name">申请人姓名</div>
+              <div class="apply-date">申请日期</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid" v-for="(ebook, index) in ebookList">
+          <div class="head">
+            <div class="row">
+              <div class="checkbox">
+                <input type="checkbox" :value="ebook.uuid" v-model="checkedItems" />
+              </div>
+              <div class="title" @click="toggle(ebook)">{{ebook.purchaseInfo.title}}</div>
+              <div class="isbn">{{ebook.purchaseInfo.isbn}}</div>
+              <div class="apply-user-name">{{ebook.userInfo.name}}</div>
+              <div class="apply-date">{{ebook.applyDateTime}}</div>
+            </div>
+          </div>
+          <div class="content" :class="[ebook.activate === true ? 'activate': '']">
+            <div class="row">
+              <div class="material">
+                <div class="title">
+                  出版社
+                </div>
+                <div class="content-value">
+                  {{ebook.purchaseInfo.publisher}}
+                </div>
+              </div>
+              <div class="material">
+                <div class="title">
+                  出版日期
+                </div>
+                <div class="content-value">
+                  {{ebook.purchaseInfo.date}}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="material">
+                <div class="title">
+                  书本详细
+                </div>
+                <div class="content-value">
+                  <label class="link" @click="linkToDDA(ebook.an, ebook.dbCode)">鏈接</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="material">
+                <div class="title">
+                  学号/工号
+                </div>
+                <div class="content-value">
+                  {{ebook.userInfo.userNumber}}
+                </div>
+              </div>
+              <div class="material">
+                <div class="title">
+                  电话号码
+                </div>
+                <div class="content-value">
+                  {{ebook.userInfo.phone}}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="material">
+                <div class="title">
+                  Email
+                </div>
+                <div class="content-value">
+                  {{ebook.userInfo.email}}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="material">
+                <div class="title">
+                  身份信息
+                </div>
+                <div class="content-value">
+                  {{ebook.userInfo.userIdentity}}
+                </div>
+              </div>
+              <div class="material">
+                <div class="title">
+                  单位/学院
+                </div>
+                <div class="content-value">
+                  {{ebook.userInfo.faculty}}
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="material">
+                <div class="title">
+                  备注信息
+                </div>
+                <div class="content-value">
+                  {{ebook.note}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="../assets/dist/js/verifyAuth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="../assets/dist/js/jquery.js"></script>
+  <script type="text/javascript">
+    var ebookListField = new Vue({
+      el:'#ebookListField',
+      data: {
+        ebookList: [
+          {
+            applyDateTime: "",
+            note: "",
+            purchaseInfo: {
+              isbn: "",
+              title: "",
+              publisher: "",
+              date: ""
+            },
+            userInfo: {
+              email: "",
+              faculty: "",
+              name: "",
+              phone: "",
+              userIdentity: "",
+              userNumber: "",
+            },
+            uuid: '',
+            an: '',
+            dbCode: ''
+          }
+        ],
+        checkedItems: [],
+        linkBasicUrl: 'https://search.ebscohost.com/login.aspx?direct=true&lang=zh-cn&site=eds-live&authtype=uid&profile=eds-dda&user=bnu&password=LibUse@2020'
+      },
+      created: function() {
+        this.buildEbookList();
+      },
+      methods:{
+        buildEbookList() {
+          let self = this;
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/features/getEbookRequirementList.php',
+            type: 'GET',
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              // self.ebookList = res;
+              let temp = res;
+              for(let index in temp) {
+                temp[index]['activate'] = false;
+              }
+              self.ebookList = temp;
+            }
+          });
+        },
+        deleteEbooks() {
+          let self = this;
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/features/processEbookRequirement.php',
+            type: 'POST',
+            data: {
+              type: 'delete',
+              list: JSON.stringify(self.checkedItems)
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              if(res.status === 'success') {
+                self.buildEbookList();
+              }
+            }
+          });
+        },
+        generateReport() {
+          const metadata = ['书名', 'ISBN', '出版社', '出版日期', '申请人姓名', '申请日期', '学号/工号', '电话号码', 'Email', '身份信息', '单位/学院', '备注信息'];
+          let prefix = 'data:text/csv;charset=utf-8,';
+          let string_metadata = ""; // first cell empty
+          let string_content = "";
+          let universalBOM = "\uFEFF";
+
+          let now = new Date();
+
+          let fileName = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} Report`;
+
+          // create data array and metadata.
+          metadata.forEach((val, index) => {
+            if(index === 0) {
+              string_metadata = `${val}`;
+            } else {
+              string_metadata = `${string_metadata},${val}`;
+            }            
+          });
+          string_metadata = `${string_metadata}\n`;
+
+          // create content
+          this.ebookList.forEach(val => {
+            string_content = `${string_content}${val.purchaseInfo.title},${val.purchaseInfo.isbn},${val.purchaseInfo.publisher},${val.purchaseInfo.date},${val.userInfo.name},${val.applyDateTime},${val.userInfo.userNumber},${val.userInfo.phone},${val.userInfo.email},${val.userInfo.userIdentity},${val.userInfo.faculty},${val.note}\n`;
+          });
+          
+          const csv = `${string_metadata}${string_content}`;
+
+          // create hidden anchor and click it
+          let hiddenElement = document.createElement('a');
+          hiddenElement.href = prefix + encodeURIComponent(universalBOM+csv);
+          hiddenElement.target = '_blank';
+          hiddenElement.download = `${fileName}.csv`;
+          hiddenElement.click();
+        },
+        linkToDDA(an, dbCode) {
+          const link = `${this.linkBasicUrl}&db=${dbCode}&AN=${an}`;
+          window.open(link, '_blank');
+        },
+        toggle(obj) {
+          console.log('test');
+          console.log(obj);
+          obj.activate = !obj.activate;
+        }
+      }
+    });
+  </script>
+</html>

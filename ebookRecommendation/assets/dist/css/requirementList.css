@@ -1,0 +1,214 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+body {
+  margin: 0;
+  padding: 0 0;
+  font-family: 'Noto Sans TC', 'Helvetica', 'Microsoft JhengHei', 'sans-serif';
+  font-size: 16px;
+  background: #f2f2f2;
+}
+
+ol, ul {
+  padding: 0;
+  margin: 0;
+}
+
+ol li, ul li {
+  list-style-type: none;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #3333ff;
+  word-break: break-all;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input:focus, textarea:focus, select:focus, button {
+  outline: none;
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="number"] {
+  width: 100%;
+  height: 36px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: 2px solid #cccccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input[type="text"].disabled, input[type="password"].disabled, input[type="date"].disabled, input[type="number"].disabled {
+  background-color: #dddddd;
+}
+
+.btn-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #7b8cde;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  padding: 0 15px;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container .logo-frame {
+  width: 100%;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.container .logo-frame .logo {
+  width: 100%;
+  max-width: 472px;
+}
+
+.container .ebooklist-field .button-wrap {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .ebooklist-field .button-wrap button {
+  padding: 0.375rem .75rem;
+  margin: 0 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .ebooklist-field .button-wrap button.delete {
+  color: #ffffff;
+  background-color: #dc3545;
+}
+
+.container .ebooklist-field .button-wrap button.csv {
+  color: #ffffff;
+  background-color: #28a745;
+}
+
+.container .ebooklist-field .grid .head {
+  background-color: #ffffff;
+  border-bottom: #dddddd;
+}
+
+.container .ebooklist-field .grid .head.header {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.container .ebooklist-field .grid .head.header .title {
+  color: #ffffff !important;
+  cursor: default;
+}
+
+.container .ebooklist-field .grid .head .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .ebooklist-field .grid .head .row .checkbox {
+  width: 30px;
+  padding: 10px;
+}
+
+.container .ebooklist-field .grid .head .row .title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 10px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.container .ebooklist-field .grid .head .row .isbn {
+  width: 120px;
+  padding: 10px;
+}
+
+.container .ebooklist-field .grid .head .row .apply-user-name {
+  width: 100px;
+  padding: 10px;
+}
+
+.container .ebooklist-field .grid .head .row .apply-date {
+  width: 150px;
+  padding: 10px;
+}
+
+.container .ebooklist-field .grid .content {
+  height: 0;
+  overflow: hidden;
+  background-color: #d1ecf1;
+}
+
+.container .ebooklist-field .grid .content.activate {
+  height: auto;
+}
+
+.container .ebooklist-field .grid .content .row {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .ebooklist-field .grid .content .row .material {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+}
+
+.container .ebooklist-field .grid .content .row .material .title {
+  width: 100px;
+}
+
+.container .ebooklist-field .grid .content .row .material .content-value {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.container .ebooklist-field .grid .content .row .material .content-value .link {
+  color: #007bff;
+  cursor: pointer;
+}
+/*# sourceMappingURL=requirementList.css.map */
