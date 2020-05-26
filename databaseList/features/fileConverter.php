@@ -10,7 +10,7 @@ error_reporting(E_ALL);
   header('Content-Type: text/html;charset=UTF-8');
 
   // received the csv data and move to csv folder
-  $csvFilePath = "../csvFiles/ResourceListNew.csv";
+  $csvFilePath = "../csvFiles/result.csv";
   // $csvFilePath = receivedFileAndGetPath();
 
   $getCSV_data = file_get_contents($csvFilePath);
@@ -21,8 +21,6 @@ error_reporting(E_ALL);
   $processData = str_replace('","', "，", $processData);
   $rows = explode("\n", $processData);
   print_r($rows);
-
-
 
   // $handle = fopen($csvFilePath, 'r');
   // while (!feof($handle)) {

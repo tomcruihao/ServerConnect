@@ -11,11 +11,27 @@
 
   $result = [];
 
-  foreach($resourceList as $key => $value) {
-    $resourceList[$key]['local'] = $resourceList[$key]['tw'];
-    unset($resourceList[$key]['tw']);
+  foreach($resourceList as $key_resource => $resource) {
+    // find all language
+    $tempAry = [];
+    foreach($resource as $key_r => $row) {
+      if (strpos($key_r, '__')) {
+        $array_language = explode("__",$key_r);
+        $tempAry[$array_language[0]][$array_language[1]] = $row;
+        unset($resourceList[$key_resource][$key_r]);
+      }
+    }
+
+    foreach($tempAry as $t_key => $t_row) {
+      $resourceList[$key_resource][$t_key] = $t_row;
+    }
   }
-  print_r($resourceList);
+
+  // foreach($resourceList as $key => $value) {
+  //   $resourceList[$key]['local'] = $resourceList[$key]['tw'];
+  //   unset($resourceList[$key]['tw']);
+  // }
+  // print_r($resourceList);
 
   // foreach($resourceList['en'] as $key => $value) {
   //   // $enTemp[$value['uuid']] = $value;
@@ -103,6 +119,7 @@
   // }
 
   // // write back
+
   file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
   $res = array('status' => 'success', 'type' => 'success');
