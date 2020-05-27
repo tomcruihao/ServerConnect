@@ -1,8 +1,8 @@
 <?php
-// ini_set("display_errors", 1);
-// ini_set("track_errors", 1);
-// ini_set("html_errors", 1);
-// error_reporting(E_ALL);
+ini_set("display_errors", 1);
+ini_set("track_errors", 1);
+ini_set("html_errors", 1);
+error_reporting(E_ALL);
 
   header("Access-Control-Allow-Headers: *");
   header("Access-Control-Allow-Credentials: true");
@@ -15,6 +15,9 @@
 
   $getResourceData = file_get_contents('../data/eResourceList.json');
   $resourceData = json_decode($getResourceData, true);
+
+  $getIdentity = file_get_contents('../data/authIdentity.json');
+  $identityData = json_decode($getIdentity, true);
 
   $getLogJsonData = file_get_contents('../data/logUserCountClick.json');
   $logData = json_decode($getLogJsonData, true);
@@ -39,10 +42,8 @@
   }
 
   // create map and countable template
-  // $resourceIdArray = [];
   $template = [];
   foreach($resourceData as $resource) {
-    // $resourceIdArray[$resource['id']] = $resource['resourceName'];
     $template[$resource['uuid']] = array(
       "name" => $resource['local']['resourceName'],
       "clickTimes" => 0,
@@ -50,6 +51,7 @@
     $template['total'] = 0;
   }
 
+  // choose date formate
   if($generateType === 'month') {
     $interval= new DateInterval('P1M');
     $dateFormat = 'Y-m';
@@ -58,27 +60,42 @@
     $dateFormat = 'Y-m-d';
   }
 
-  // create an array which the key is period of date/month
-  $report = array_period($interval, $dateFormat, $startTime, $endTime);
-  foreach($report as $key => $field) {
-    $report[$key] = new ArrayObject($template);
-  }
+  if($generateType === 'month' || $generateType === 'day') {
+    // create an array which the key is period of date/month
+    $report = array_period($interval, $dateFormat, $startTime, $endTime);
+    foreach($report as $key => $field) {
+      $report[$key] = new ArrayObject($template);
+    }
 
-  // create log counting array
-  foreach($clickedData_filtered_by_date as $log) {
-    $logDateTime = new DateTime($log['clickedDateTime']);
-    $string_time = $logDateTime->format($dateFormat);
-    // $ary_tempDate = explode(" ", $log['clickedDateTime']);
-    // $date = $ary_tempDate[0];
+    // create log counting array
+    foreach($clickedData_filtered_by_date as $log) {
+      $logDateTime = new DateTime($log['clickedDateTime']);
+      $string_time = $logDateTime->format($dateFormat);
+      // $ary_tempDate = explode(" ", $log['clickedDateTime']);
+      // $date = $ary_tempDate[0];
 
-    $report[$string_time][$log['uuid']]['clickTimes']++;
-    $report[$string_time]['total']++;
-    // if (array_key_exists($log['id'], $report[$string_time])) {
-    //   $report[$string_time][$log['id']]['clickTimes']++;
-    // } else {
-    //   $report[$string_time][$log['id']]['name'] = $resourceIdArray[$log['id']];
-    //   $report[$string_time][$log['id']]['clickTimes'] = 1;
-    // }
+      $report[$string_time][$log['uuid']]['clickTimes']++;
+      $report[$string_time]['total']++;
+      // if (array_key_exists($log['id'], $report[$string_time])) {
+      //   $report[$string_time][$log['id']]['clickTimes']++;
+      // } else {
+      //   $report[$string_time][$log['id']]['name'] = $resourceIdArray[$log['id']];
+      //   $report[$string_time][$log['id']]['clickTimes'] = 1;
+      // }
+    }
+  } else if($generateType === 'userDepartment' || $generateType === 'userIdentity') {
+    $report = array_identityAndDeparture($generateType, $identityData);
+    foreach($report as $key => $field) {
+      $report[$key] = new ArrayObject($template);
+    }
+    
+    // create log counting array
+    foreach($clickedData_filtered_by_date as $log) {
+      $report[$log[$generateType]][$log['uuid']]['clickTimes']++;
+      $report[$log[$generateType]]['total']++;
+    }
+
+    $report = array_replaceIdentityKeyName($generateType,$report, $identityData);
   }
 
   $response = [];
@@ -86,6 +103,31 @@
   $response['report'] = $report;
 
   echo json_encode($response, JSON_UNESCAPED_UNICODE);
+
+  function array_replaceIdentityKeyName($generateType, $array_original, $array_reference) {
+    $array_result = [];
+    
+    foreach ($array_original as $key => $value) {
+      // print_r($array_reference[$generateType]);
+      foreach ($array_reference[$generateType] as $rkey => $rValue) {
+        if($rValue['id'] === $key) {
+          $array_result[$rValue['name']] = $value;
+        }
+      }
+      // $array_result[$array_reference[$generateType][$key]['name']] = $value;
+    }
+
+    return $array_result;
+  }
+
+  function array_identityAndDeparture($type, $identityData) {
+    $array_result = [];
+
+    foreach ($identityData[$type] as $key => $value) {
+      $array_result[$value["id"]] = [];
+    }
+    return $array_result;
+  }
 
   function array_period($interval, $dateFormat, $startTime, $endTime) {
     $array_result = [];

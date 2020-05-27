@@ -88,6 +88,8 @@ const messages = {
       clickingReport_display_by: 'Display by',
       clickingReport_day: 'Day',
       clickingReport_month: 'Month',
+      clickingReport_departmemnt: 'Department',
+      clickingReport_userIdentity: 'User Identity',
       clickingReport_download_the_report: 'Report Download',
       // dialogue
       dialogue_title: 'Title',
@@ -228,6 +230,8 @@ const messages = {
       clickingReport_display_by: '顯示方式',
       clickingReport_day: '日',
       clickingReport_month: '月',
+      clickingReport_departmemnt: '部門',
+      clickingReport_userIdentity: '身份',
       clickingReport_download_the_report: '下載報表',
       // dialogue
       dialogue_title: '標題',

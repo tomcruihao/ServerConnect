@@ -19,10 +19,10 @@
 
   if(isset($_SESSION['departmentID']) && isset($_SESSION['identity'])) {
     $log['userIdentity'] = $_SESSION['identity'];
-    $log['userdepartment'] = $_SESSION['departmentID'];
+    $log['userDepartment'] = $_SESSION['departmentID'];
   } else {
     $log['userIdentity'] = 'N/A';
-    $log['userdepartment'] = 'N/A';
+    $log['userDepartment'] = 'N/A';
   }
 
 
