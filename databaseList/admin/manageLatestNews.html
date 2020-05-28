@@ -469,7 +469,7 @@
           let sentData = JSON.stringify(self.newsField);
 
           $.ajax({
-            url: `${apiPath}processLatestNews.php`,
+            url: `${apiPath}/processLatestNews.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
