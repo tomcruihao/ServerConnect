@@ -8,7 +8,7 @@ var header = new Vue({
   created: function() {
     let self = this;
     $.ajax({
-      url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getHeader_back.php',
+      url: `${apiPath}/getHeader_back.php`,
       type: 'GET',
       error: function(jqXHR, exception) {
         //use url variable here
@@ -30,7 +30,7 @@ var header = new Vue({
     },
     logout() {
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/logout.php',
+        url: `${apiPath}/logout.php`,
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here

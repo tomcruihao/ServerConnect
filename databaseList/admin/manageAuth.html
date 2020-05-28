@@ -82,6 +82,7 @@
 </body>
 </html>
 <!-- <script src="../lib/js/verifyAuth.js"></script> -->
+<script src="../lib/js/basicParameters.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
 <script src="../lang/lang.js"></script>
@@ -147,7 +148,7 @@
         this.show = false;
       },
       backToLogin: function() {
-        window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+        window.location.replace(backStagePath);
       },
       deleteSubjectBlock: function() {
         subjectField.set_deleteSubjectBlock();
@@ -168,7 +169,7 @@
     created: function() {
       let self = this;
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getAuthList.php',
+        url: `${apiPath}/getAuthList.php`,
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here
@@ -187,7 +188,7 @@
       checkFeatureEnabled(event) {
         let self = this;
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processAuth.php',
+          url: `${apiPath}/processAuth.php`,
           type: 'POST',
           xhrFields: {
             withCredentials: true

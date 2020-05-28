@@ -179,6 +179,7 @@
   </div>
 </body>
 </html>
+<script src="../lib/js/basicParameters.js"></script>
 <script src="../lib/js/verifyAuth.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
@@ -245,7 +246,7 @@
         this.show = false;
       },
       backToLogin: function() {
-        window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+        window.location.replace(backStagePath);
       },
       deleteSubjectBlock: function() {
         subjectField.set_deleteSubjectBlock();
@@ -340,7 +341,7 @@
       buildSubjectList: function () {
         let self = this;
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
+          url: `${apiPath}/getSubject.php`,
           type: 'GET',
           error: function(jqXHR, exception) {
             //use url variable here
@@ -374,7 +375,7 @@
         }
 
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
+          url: `${apiPath}/processSubject.php`,
           type: 'POST',
           xhrFields: {
             withCredentials: true
@@ -390,7 +391,7 @@
           },
           success: function(res) {
             if(res.status === 'expired') {
-              window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+              window.location.replace(backStagePath);
             } else {
               self.buildSubjectList();
             }
@@ -401,7 +402,7 @@
         let self = this;
         let post_subject = JSON.stringify(subject);
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
+          url: `${apiPath}/processSubject.php`,
           type: 'POST',
           xhrFields: {
             withCredentials: true
@@ -418,7 +419,6 @@
           success: function(res) {
             if(res.status === 'expired') {
               dialogue.setDialogue('expired', 'expired');
-              // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
             } else {
               let messageInfo = {
                 title: '',
@@ -470,7 +470,7 @@
         let post_subjectBlock = JSON.stringify(this.delete_tempSubject);
 
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSubject.php',
+          url: `${apiPath}/processSubject.php`,
           type: 'POST',
           xhrFields: {
             withCredentials: true
@@ -487,7 +487,6 @@
           success: function(res) {
             if(res.status === 'expired') {
               dialogue.setDialogue('expired', 'expired');
-              // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
             } else {
               self.buildSubjectList();
             }

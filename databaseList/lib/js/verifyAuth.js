@@ -14,7 +14,7 @@ function verifyToken () {
 }
 
 function directToIndex() {
-  window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+  window.location.replace(backStagePath);
 }
 
 verifyToken();

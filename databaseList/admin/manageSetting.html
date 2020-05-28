@@ -227,6 +227,7 @@
   </div>
 </body>
 </html>
+<script src="../lib/js/basicParameters.js"></script>
 <script src="../lib/js/verifyAuth.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
@@ -258,7 +259,7 @@
         form_data.append('file', file_data);
 
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/fileConverter.php',
+          url: `${apiPath}features/fileConverter.php`,
           dataType: 'text',
           cache: false,
           contentType: false,
@@ -272,7 +273,7 @@
       },
       buildStrokes: function() {
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/buildStrokeInResourceList.php',
+          url: `${apiPath}/buildStrokeInResourceList.php`,
           type: 'POST',
           xhrFields: {
             withCredentials: true
@@ -383,7 +384,7 @@
         if(newPwd.localeCompare(newConfirmPwd) === 0) {
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processAccountAndPassword.php',
+            url: `${apiPath}features/processAccountAndPassword.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
@@ -399,7 +400,6 @@
             success: function(res) {
               if(res.status === "old_password_wrong") {
                 self.showLoginError(res.status);
-                // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 self.setDialogue('account_update_success');
                 // update success and relogin
@@ -413,7 +413,7 @@
         // update, when success, logout this account
       },
       backToLogin: function() {
-        window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+        window.location.replace(backStagePath);
       },
       closeDialogue: function() {
         this.show = false;
@@ -449,7 +449,7 @@
       // getResourceNumber and set in maxNumberOfResource
       let self = this;
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getNumberOfResources.php',
+        url: `${apiPath}/getNumberOfResources.php`,
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here
@@ -477,7 +477,7 @@
       getSettings: function() {
         let self = this;
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSetting.php',
+          url: `${apiPath}getSetting.php`,
           type: 'GET',
           error: function(jqXHR, exception) {
             //use url variable here
@@ -502,7 +502,7 @@
         }
 
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processSettings.php',
+          url: `${apiPath}processSettings.php`,
           type: 'POST',
           xhrFields: {
             withCredentials: true

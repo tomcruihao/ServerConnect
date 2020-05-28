@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../lib/css/admin_index.css"/>
+  </head>
+<body>
+  <div class="app-content">
+    <div id="loginForm" class="login-frame">
+      <div class="logo">
+        <img src="../img/logo_back.svg" alt="EBSCO" title="EBSCO"/>
+      </div>
+      <div class="row">
+        <div class="title">帳號</div>
+        <div class="content">
+          <input type="text" v-model="user.account">
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">密碼</div>
+        <div class="content">
+          <input type="password" v-model="user.password">
+        </div>
+      </div>
+      <div class="btn-wrap">
+        <button @click="logIn">送出</button>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/js/basicParameters.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="../lib/js/jquery.js"></script>
+  <script type="text/javascript">
+    var loginForm = new Vue({
+      el:'#loginForm',
+      data: {
+        user: {
+          account: '',
+          password: ''
+        },
+        errorCode: {
+          show: false,
+          type: ''
+        },
+        verifyCodeInput: '',
+        imageData: '',
+        codeText : ''
+      },
+      mounted() {
+      },
+      methods:{
+        logIn() {
+          if(this.verifyCodeInput.toUpperCase() === this.codeText.toUpperCase()) {
+            let self = this;
+
+            $.ajax({
+              url: `${apiPath}/passwordGenerator.php`,
+              xhrFields: {
+                withCredentials: true
+              },
+              type: 'POST',
+              data: {
+                user: JSON.stringify(self.user)
+              },
+              error: function(jqXHR, exception) {
+                //use url variable here
+                console.log(jqXHR);
+                console.log(exception);
+              },
+              success: function(res) {
+                console.log(res);
+              }
+            });            
+          } else {
+            this.showLoginError('verifyError');
+          }
+        },
+        showLoginError(type) {
+          let self = this;
+          this.errorCode.show = true;
+          this.errorCode.type = type;
+          setTimeout(function(){
+            self.errorCode.show = false;
+            self.errorCode.type = '';
+          }, 3000);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

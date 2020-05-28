@@ -382,6 +382,7 @@
   <script src="../lang/lang.js"></script>
   <script src="../lib/js/jquery.js"></script>
   <script src="../lib/js/header_back.js"></script>
+  <script src="../lib/js/basicParameters.js"></script>
   <script type="text/javascript">
     var mainTitle = new Vue({
       el:'#mainTitle',
@@ -443,7 +444,7 @@
         getDatabaseList: function() {
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getResourceListOriginal.php',
+            url: `${basicApiPath}/getResourceListOriginal.php`,
             type: 'GET',
             error: function(jqXHR, exception) {
               //use url variable here
@@ -564,7 +565,7 @@
           let resourceData = JSON.stringify(this.resource);
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
+            url: `${basicApiPath}/processResource.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
@@ -581,7 +582,6 @@
             success: function(res) {
               if(res.status === "expired") {
                 dialogue.setDialogue('expired', 'expired');
-                // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 dataList.getDatabaseList();
                 self.closeForm();
@@ -635,7 +635,7 @@
         deleteResource: function() {
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processResource.php',
+            url: `${basicApiPath}/processResource.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
@@ -652,7 +652,6 @@
             success: function(res) {
               if(res.status === 'expired') {
                 dialogue.setDialogue('expired', 'expired');
-                // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 dataList.getDatabaseList();
                 self.setDialogue('delete_success');
@@ -661,7 +660,7 @@
           });
         },
         backToLogin: function() {
-          window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+          window.location.replace(backStagePath);
         },
         closeDialogue: function() {
           this.show = false;

@@ -125,6 +125,7 @@
       </div>
     </div>
   </div>
+  <script src="../lib/js/basicParameters.js"></script>
   <script src="../lib/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
@@ -241,7 +242,7 @@
           if(this.searchRange.startDate !== '' && this.searchRange.endDate !== '') {
             let self = this;
             $.ajax({
-              url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLogReport.php',
+              url: `${apiPath}/processLogReport.php`,
               type: 'GET',
               data: {
                 'searchRange': JSON.stringify(self.searchRange)
@@ -295,7 +296,7 @@
           this.show = true;
         },
         backToLogin: function() {
-          window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+          window.location.replace(backStagePath);
         },
         closeDialogue: function() {
           this.show = false;

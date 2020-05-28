@@ -229,6 +229,7 @@
   </div>
 </body>
 </html>
+<script src="lib/js/basicParameters.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
@@ -284,7 +285,7 @@
     created: function() {
       let self = this;
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
+        url: `${apiPath}/getLatestNews.php`,
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here
@@ -315,7 +316,7 @@
   function directTo(id, url) {
     window.open(url, '_blank');
     $.ajax({
-      url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLogClick.php',
+      url: `${apiPath}/processLogClick.php`,
       type: 'POST',
       error: function(jqXHR, exception) {
         //use url variable here

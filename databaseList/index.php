@@ -281,6 +281,7 @@
   </div>
 </body>
 </html>
+<script src="lib/js/basicParameters.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
 <script src="lang/lang.js"></script>
@@ -372,7 +373,7 @@
     created: function() {
       let self = this;
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSetting.php',
+        url: `${apiPath}/getSetting.php`,
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here
@@ -453,7 +454,7 @@
     created: function() {
       let self = this;
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getStrokes.php',
+        url: `${apiPath}/getStrokes.php`,
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here
@@ -552,7 +553,7 @@
       let self = this;
 
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getSubject.php',
+        url: `${apiPath}/getSubject.php`,
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here
@@ -598,7 +599,7 @@
       });
 
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
+        url: `${apiPath}/getLatestNews.php`,
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here
@@ -632,7 +633,7 @@
       });
 
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getPopularDatabases.php',
+        url: `${apiPath}/getPopularDatabases.php`,
         type: 'GET',
         error: function(jqXHR, exception) {
           //use url variable here
@@ -657,7 +658,7 @@
       displayHotNews: function(news) {
         let self = this;
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/checkSessionForFrontStageUser.php',
+          url: `${apiPath}/checkSessionForFrontStageUser.php`,
           type: 'POST',
           xhrFields: {
             withCredentials: true
@@ -884,7 +885,7 @@
     if(exist) {
       window.open(url, '_blank');
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLogClick.php',
+        url: `${apiPath}/processLogClick.php`,
         type: 'POST',
         data: {
           directionID: id
@@ -908,7 +909,7 @@
   function checkSessionExist() {
     return new Promise((resolve, reject) => {
       $.ajax({
-        url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/verifyUserSession.php',
+        url: `${apiPath}/verifyUserSession.php`,
         type: 'GET',
         xhrFields: {
           withCredentials: true

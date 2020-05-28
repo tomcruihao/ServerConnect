@@ -268,6 +268,7 @@
       </div>
     </div>
   </div>
+  <script src="../lib/js/basicParameters.js"></script>
   <script src="../lib/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
@@ -353,7 +354,7 @@
         getLatestNewsListInfo: function() {
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getLatestNews.php',
+            url: `${apiPath}/getLatestNews.php`,
             type: 'GET',
             error: function(jqXHR, exception) {
               //use url variable here
@@ -388,7 +389,7 @@
           console.log(this.hotNewsField);
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            url: `${apiPath}/processLatestNews.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
@@ -468,7 +469,7 @@
           let sentData = JSON.stringify(self.newsField);
 
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            url: `${apiPath}processLatestNews.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
@@ -485,7 +486,6 @@
             success: function(res) {
               if(res.status === "expired") {
                 dialogue.setDialogue('expired', 'expired');
-                // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 dataList.getLatestNewsListInfo();
                 self.closeForm();
@@ -505,7 +505,7 @@
           let self = this;
 
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            url: `${apiPath}/processLatestNews.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
@@ -522,7 +522,6 @@
             success: function(res) {
               if(res.status === "expired") {
                 dialogue.setDialogue('expired', 'expired');
-                // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 dataList.getLatestNewsListInfo();
                 self.closeForm();
@@ -582,7 +581,7 @@
         deleteNews: function() {
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/processLatestNews.php',
+            url: `${apiPath}/processLatestNews.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
@@ -599,7 +598,6 @@
             success: function(res) {
               if(res.status === "expired") {
                 dialogue.setDialogue('expired', 'expired');
-                // window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
               } else {
                 dataList.getLatestNewsListInfo();
                 self.setDialogue('deleteNews_success');
@@ -608,7 +606,7 @@
           });
         },
         backToLogin: function() {
-          window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/databaseList/admin/");
+          window.location.replace(backStagePath);
         },
         closeDialogue: function() {
           this.show = false;

@@ -61,6 +61,7 @@
       </div>
     </div>
   </div>
+  <script src="lib/js/basicParameters.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
   <script src="lang/lang.js"></script>
@@ -106,7 +107,7 @@
       created: function() {
         let self = this;
         $.ajax({
-          url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/getAuthList.php',
+          url: `${apiPath}/getAuthList.php`,
           type: 'GET',
           error: function(jqXHR, exception) {
             //use url variable here
@@ -185,7 +186,7 @@
           }
 
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/databaseList/features/addIdentityInSession.php',
+            url: `${apiPath}/addIdentityInSession.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
