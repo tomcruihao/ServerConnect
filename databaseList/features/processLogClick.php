@@ -13,7 +13,7 @@
   $resourceID = $_POST["directionID"];
 
   $log = [];
-  $log['clickedDateTime'] = date("Y-m-d h:i:s");
+  $log['clickedDateTime'] = date("Y-m-d H:i:s");
   $log['ip'] = getUserIpAddr();
   $log['uuid'] = $resourceID;
 
