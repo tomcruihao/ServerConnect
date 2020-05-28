@@ -376,13 +376,13 @@
       </div>
     </div>
   </div>
+  <script src="../lib/js/basicParameters.js"></script>
   <script src="../lib/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
   <script src="../lang/lang.js"></script>
   <script src="../lib/js/jquery.js"></script>
   <script src="../lib/js/header_back.js"></script>
-  <script src="../lib/js/basicParameters.js"></script>
   <script type="text/javascript">
     var mainTitle = new Vue({
       el:'#mainTitle',
@@ -444,7 +444,7 @@
         getDatabaseList: function() {
           let self = this;
           $.ajax({
-            url: `${basicApiPath}/getResourceListOriginal.php`,
+            url: `${apiPath}/getResourceListOriginal.php`,
             type: 'GET',
             error: function(jqXHR, exception) {
               //use url variable here
@@ -565,7 +565,7 @@
           let resourceData = JSON.stringify(this.resource);
           let self = this;
           $.ajax({
-            url: `${basicApiPath}/processResource.php`,
+            url: `${apiPath}/processResource.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
@@ -635,7 +635,7 @@
         deleteResource: function() {
           let self = this;
           $.ajax({
-            url: `${basicApiPath}/processResource.php`,
+            url: `${apiPath}/processResource.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
