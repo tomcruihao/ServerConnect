@@ -417,28 +417,24 @@
       temp_anchorList: {},
       buttons: [
         {
-          btnName: '資源名稱',
           sortName: 'resourceName',
           options: {
             order: ''
           }
         },
         {
-          btnName: '主題',
           sortName: 'subject',
           options: {
             order: ''
           }
         },
         {
-          btnName: '分類',
           sortName: 'category',
           options: {
             order: ''
           }
         },
         {
-          btnName: '類型',
           sortName: 'type',
           options: {
             order: ''
