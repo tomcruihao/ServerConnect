@@ -243,6 +243,16 @@ section {
               align-items: center;
             }
 
+            .relevanceUrlDescribe {
+              a {
+                display: flex;
+                color: $anchor_color;
+                img {
+                  margin-right: 5px;
+                }
+              }
+            }
+
             &:nth-of-type(2n-1) {
               background-color: $resource_even_field_bgcolor_2;
             }

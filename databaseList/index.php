@@ -805,7 +805,7 @@
                               </div>\
                               <div class="row">\
                                 <div class="title">${listTitles[ary_lang].relevanceUrlDescribe}</div class="title">\
-                                <div class="relevanceUrlDescribe">${res.relevanceUrlDescribe}</div>\
+                                <div class="relevanceUrlDescribe"><a href="${res.relevanceUrlDescribe}" target="_blank">${res.relevanceUrlDescribe}</a></div>\
                               </div>\
                               <div class="row hide">\
                                 <div class="title">注音</div class="title">\

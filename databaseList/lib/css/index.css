@@ -606,6 +606,17 @@ section {
           align-items: center;
 }
 
+.content-field article .list li .box .row .relevanceUrlDescribe a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #008cce;
+}
+
+.content-field article .list li .box .row .relevanceUrlDescribe a img {
+  margin-right: 5px;
+}
+
 .content-field article .list li .box .row:nth-of-type(2n-1) {
   background-color: #ffffff;
 }
