@@ -169,10 +169,10 @@
         <div class="sort-wrap">
           <div class="sort-title">{{$t('message.index_sort')}}:</div>
           <div class="btn-wrap">
-            <button @click="processSort(buttons[0])" v-bind:class="buttons[0].options.order">{{$t('message.btn_resource_name')}}</button>
-            <button @click="processSort(buttons[1])" v-bind:class="buttons[1].options.order">{{$t('message.btn_resource_subject')}}</button>
-            <button @click="processSort(buttons[2])" v-bind:class="buttons[2].options.order">{{$t('message.btn_resource_catalog')}}</button>
-            <button @click="processSort(buttons[3])" v-bind:class="buttons[3].options.order">{{$t('message.btn_resource_type')}}</button>
+            <button @click="processSort(buttons[0])" v-bind:class="buttons[0].options.order">{{$t('message.btn_sort_1')}}</button>
+            <button @click="processSort(buttons[1])" v-bind:class="buttons[1].options.order">{{$t('message.btn_sort_2')}}</button>
+            <button @click="processSort(buttons[2])" v-bind:class="buttons[2].options.order">{{$t('message.btn_sort_3')}}</button>
+            <button @click="processSort(buttons[3])" v-bind:class="buttons[3].options.order">{{$t('message.btn_sort_4')}}</button>
             <!-- <button v-for="(buttonInfo, index) in buttons" @click="processSort(buttonInfo)" v-bind:class="buttonInfo.options.order">{{buttonInfo.btnName}}</button> -->
           </div>
         </div>
@@ -417,25 +417,29 @@
       temp_anchorList: {},
       buttons: [
         {
+          btnName: 'btn_sort_1',
           sortName: 'resourceName',
           options: {
             order: ''
           }
         },
         {
-          sortName: 'subject',
+          btnName: 'btn_sort_2',
+          sortName: 'language',
           options: {
             order: ''
           }
         },
         {
+          btnName: 'btn_sort_3',
+          sortName: 'publisher',
+          options: {
+            order: ''
+          }
+        },
+        {
+          btnName: 'btn_sort_4',
           sortName: 'category',
-          options: {
-            order: ''
-          }
-        },
-        {
-          sortName: 'type',
           options: {
             order: ''
           }
