@@ -259,7 +259,7 @@
         form_data.append('file', file_data);
 
         $.ajax({
-          url: `${apiPath}features/fileConverter.php`,
+          url: `${apiPath}/fileConverter.php`,
           dataType: 'text',
           cache: false,
           contentType: false,
@@ -384,7 +384,7 @@
         if(newPwd.localeCompare(newConfirmPwd) === 0) {
           let self = this;
           $.ajax({
-            url: `${apiPath}features/processAccountAndPassword.php`,
+            url: `${apiPath}/processAccountAndPassword.php`,
             type: 'POST',
             xhrFields: {
               withCredentials: true
@@ -477,7 +477,7 @@
       getSettings: function() {
         let self = this;
         $.ajax({
-          url: `${apiPath}getSetting.php`,
+          url: `${apiPath}/getSetting.php`,
           type: 'GET',
           error: function(jqXHR, exception) {
             //use url variable here
@@ -502,7 +502,7 @@
         }
 
         $.ajax({
-          url: `${apiPath}processSettings.php`,
+          url: `${apiPath}/processSettings.php`,
           type: 'POST',
           xhrFields: {
             withCredentials: true
