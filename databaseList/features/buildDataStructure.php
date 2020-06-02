@@ -4,7 +4,7 @@
   header('Content-Type: application/json');
 
   // $jsonFile_direct = '../data/eResourceList.json';
-  $jsonFile_direct = '../data/test.json';
+  $jsonFile_direct = '../data/eResourceList.json';
 
   // get resource list
   $getResourceListJsonData = file_get_contents($jsonFile_direct);
@@ -36,6 +36,7 @@
       $resourceList[$key_resource][$t_key] = $t_row;
     }
   }
+  
 
   // foreach($resourceList as $key => $value) {
   //   $resourceList[$key]['local'] = $resourceList[$key]['tw'];
@@ -129,7 +130,6 @@
   // }
 
   // // write back
-
   file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
   $res = array('status' => 'success', 'type' => 'success');
