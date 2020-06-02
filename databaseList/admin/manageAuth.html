@@ -69,12 +69,58 @@
           </div>
         </div>
       </section>
-      <section class="setting-wrap">
-        <div v-for="option in departmentData">
-          
-        </div>
-        {{identityData}}
+      <section>
+        <ul>
+          <li v-for="department_L1 in departmentData" class="level-1">
+            <div class="row">
+              <input type="text" v-model="department_L1.displayName" @change="updateIdentityList(department_L1)">
+              <div class="icon-wrap">
+                <div class="icon-frame">
+                  <img src="../img/icon/add.svg" @click="add('root')"/>
+                </div>
+                <div class="icon-frame" v-if="department_L1.child.length === 0">
+                  <img src="../img/icon/delete.svg" @click="delete(departmentData)"/>
+                </div>
+              </div>
+            </div>
+            <ul v-if="department_L1.child.length > 0">
+              <li v-for="department_L2 in department_L1.child" class="level-2">
+                <div class="row">
+                  <input type="text" v-model="department_L2.displayName" @change="updateIdentityList(department_L1)">
+                  <div class="icon-wrap">
+                    <div class="icon-frame">
+                      <img src="../img/icon/add.svg" @click="add(department_L1)"/>
+                    </div>
+                    <div class="icon-frame" v-if="department_L2.child.length === 0">
+                      <img src="../img/icon/delete.svg" @click="delete(department_L1, department_L2)"/>
+                    </div>
+                  </div>
+                </div>
+                <ul v-if="department_L2.child.length > 0">
+                  <li v-for="department_L3 in department_L2.child" class="level-3">
+                    <div class="row">
+                      <input type="text" v-model="department_L3.displayName" @change="updateIdentityList(department_L3)">
+                      <div class="icon-wrap">
+                        <div class="icon-frame">
+                          <img src="../img/icon/delete.svg" @click="delete(department_L2, department_L3)"/>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </section>
+      <section class="setting-wrap">
+        <div v-for="identity in identityData">
+          <input type="text" v-model="identity.displayName">
+        </div>
+      </section>
+      <div>
+        <button @click="updateToServer()">Update</button>
+      </div>
     </div>
   </div>
   <footer class="footer">
@@ -110,54 +156,6 @@
       }
     }
   })
-  var dialogue = new Vue({
-    el:'#dialogue',
-    i18n,
-    data: {
-      show: false,
-      type: '',
-      dialogHead_title: '',
-      message: {
-        title: '',
-        content: '',
-        warning: ''
-      }
-    },
-    computed: {
-      dialogueMessage: {
-        get: function () {
-          return this.message;
-        }
-        // ,set: function () {
-        // }
-      }
-    },
-    methods:{
-      setDialogue: function(type, messageInfo) {
-        this.type = type;
-        this.message = messageInfo;
-        this.show = true;
-        switch (type) {
-          case 'deleteSubjectBlock':
-            this.dialogHead_title = '注意';
-            break;
-          default:
-            this.dialogHead_title = '訊息';
-            break;
-        }
-      },
-      closeDialogue: function() {
-        this.show = false;
-      },
-      backToLogin: function() {
-        window.location.replace(backStagePath);
-      },
-      deleteSubjectBlock: function() {
-        subjectField.set_deleteSubjectBlock();
-        this.show = false;
-      }
-    }
-  });
   var roleField = new Vue({
     el:'#roleField',
     i18n,
@@ -166,7 +164,8 @@
         featureEnabled: false
       },
       departmentData: [],
-      identityData: []
+      identityData: [],
+      ref_list: []
     },
     created: function() {
       let self = this;
@@ -182,11 +181,41 @@
           self.addResult(response);
         }
       });
+      $.ajax({
+        url: `${apiPath}/getAuthIdentityList.php`,
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(response) {
+          self.ref_list = response;
+        }
+      });
     },
     mounted: function () {
-      // console.log(this.$t('message.minwt'));
     },
     methods:{
+      add(Obj_parent) {
+        alert('no yet');
+      },
+      delete(Obj_parent, Obj_child) {
+        alert('no yet');
+        // someArray.splice(x, 1);
+      },
+      updateToServer() {
+        console.log(this.ref_list);
+      },
+      updateIdentityList(Obj) {
+        // console.log(this.ref_list.userDepartment);
+        for(index in this.ref_list.userDepartment) {
+          if(String(Obj.value) === String(this.ref_list.userDepartment[index].id)) {
+            this.ref_list.userDepartment[index].value = Obj.displayName;
+            break;
+          }
+        }
+      },
       checkFeatureEnabled(event) {
         let self = this;
         $.ajax({

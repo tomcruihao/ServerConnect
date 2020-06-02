@@ -4,3 +4,60 @@
 @import "footer";
 @import "languageTitle";
 @import "toggle";
+
+.app-content {
+  width: 100%;
+  padding: 0 15px;
+  max-width: 960px;
+  margin: 20px auto;
+  box-sizing: border-box;
+
+  .container {
+    section {
+      margin-bottom: 30px;
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+
+        .icon-wrap {
+          width: 80px;
+          margin-left: 15px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .icon-frame {
+            width: 34px;
+            height: 34px;
+            background-color: $button_add_bgcolor;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+
+      ul {
+
+        li {
+          width: 100%;
+          padding: 10px 0px 0px 30px;
+          box-sizing: border-box;
+
+          &.level-1 {
+            padding: 30px 0px 0px 30px;
+            background-color: #cce5ff;
+          }
+          &.level-2 {
+            background-color: #d4edda;
+          }
+          &.level-3 {
+            background-color: #fff3cd;
+          }
+        }
+      }
+    }
+  }
+}
