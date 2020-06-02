@@ -16,6 +16,12 @@
     // gen UUID
     $resourceList[$key_resource]['uuid'] = gen_uuid();
 
+    if(strcmp($resourceList[$key_resource]['isProxy'], "是") === 0) {
+      $resourceList[$key_resource]['isProxy'] = true;
+    } else if(strcmp($resourceList[$key_resource]['isProxy'], "否") === 0) {
+      $resourceList[$key_resource]['isProxy'] = false;
+    }
+
     // find all language
     $tempAry = [];
     foreach($resource as $key_r => $row) {
