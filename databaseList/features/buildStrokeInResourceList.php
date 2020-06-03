@@ -103,29 +103,43 @@
     }
   }
 
-  // $strokes_map = array_fill(1,70, false);
-
   // match with the local map
+  // The current Time is to check the expiry date of eResource
+  $currentTime = strtotime(date("Y-m-d"));
+
   foreach($newResourceList as $key_lang => $row) {
-    if(!empty(trim($row['local']['zhuyin']))) {
-      $zhuyin_map[$row['local']['zhuyin']] = true;
+    $isInExpiryDate = true;
+
+    if (!filter_var($row['expiredChecking'], FILTER_VALIDATE_BOOLEAN) && $row['startDate'] !== '' && $row['expireDate'] !== '') {
+      $temp_startTime = strtotime($row['startDate']);
+      $temp_endTime = strtotime($row['expireDate']);
+
+      if($currentTime > $temp_endTime || $currentTime < $temp_startTime) {
+        $isInExpiryDate = false;
+      }
     }
 
-    if(preg_match("/^[a-zA-Z]$/", $row['local']['englishAlphabet'])) {
-      $char_uppercase = strtoupper($row['local']['englishAlphabet']);
-      $englishAlphabet_local_map[$char_uppercase] = true;
-    }
+    // add the stroke, zhuyin in list
+    if($isInExpiryDate) {
+      // match with the local map
+      if(!empty(trim($row['local']['zhuyin']))) {
+        $zhuyin_map[$row['local']['zhuyin']] = true;
+      }
+  
+      if(preg_match("/^[a-zA-Z]$/", $row['local']['englishAlphabet'])) {
+        $char_uppercase = strtoupper($row['local']['englishAlphabet']);
+        $englishAlphabet_local_map[$char_uppercase] = true;
+      }
+  
+      if($row['local']['strokes'] !== '0') {
+        $strokes_map[$row['local']['strokes']] = true;
+      }
 
-    if($row['local']['strokes'] !== '0') {
-      $strokes_map[$row['local']['strokes']] = true;
-    }
-  }
-
-  // match with the en map
-  foreach($newResourceList as $key_lang => $row) {
-    if(preg_match("/^[a-zA-Z]$/", $row['en']['englishAlphabet'])) {
-      $char_uppercase = strtoupper($row['en']['englishAlphabet']);
-      $englishAlphabet_en_map[$char_uppercase] = true;
+      // match with the en map
+      if(preg_match("/^[a-zA-Z]$/", $row['en']['englishAlphabet'])) {
+        $char_uppercase = strtoupper($row['en']['englishAlphabet']);
+        $englishAlphabet_en_map[$char_uppercase] = true;
+      }
     }
   }
 
