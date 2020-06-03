@@ -14,7 +14,7 @@
       <section id="ebookListField" class="ebooklist-field">
         <div class="button-wrap">
           <button class="csv" @click="generateReport()">导出CSV</button>
-          <button class="delete" @click="deleteEbooks()">删除</button>
+          <button class="delete" @click="callDialogueDeleteEbooks()">删除</button>
         </div>
         <div class="grid">
           <div class="head header">
@@ -43,7 +43,7 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  出版社
+                  出版社:
                 </div>
                 <div class="content-value">
                   {{ebook.purchaseInfo.publisher}}
@@ -51,7 +51,7 @@
               </div>
               <div class="material">
                 <div class="title">
-                  出版日期
+                  出版日期:
                 </div>
                 <div class="content-value">
                   {{ebook.purchaseInfo.date}}
@@ -61,17 +61,19 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  书本详细
+                  书本详细:
                 </div>
                 <div class="content-value">
-                  <label class="link" @click="linkToDDA(ebook.an, ebook.dbCode)">鏈接</label>
+                  <label class="link" @click="linkToDDA(ebook.an, ebook.dbCode)">
+                    <img class="icon-star" src="../assets/brand/icon/link.svg">链接
+                  </label>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="material">
                 <div class="title">
-                  学号/工号
+                  学号/工号:
                 </div>
                 <div class="content-value">
                   {{ebook.userInfo.userNumber}}
@@ -79,7 +81,7 @@
               </div>
               <div class="material">
                 <div class="title">
-                  电话号码
+                  电话号码:
                 </div>
                 <div class="content-value">
                   {{ebook.userInfo.phone}}
@@ -89,7 +91,7 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  Email
+                  Email:
                 </div>
                 <div class="content-value">
                   {{ebook.userInfo.email}}
@@ -99,7 +101,7 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  身份信息
+                  身份信息:
                 </div>
                 <div class="content-value">
                   {{ebook.userInfo.userIdentity}}
@@ -107,7 +109,7 @@
               </div>
               <div class="material">
                 <div class="title">
-                  单位/学院
+                  单位/学院:
                 </div>
                 <div class="content-value">
                   {{ebook.userInfo.faculty}}
@@ -117,7 +119,7 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  备注信息
+                  备注信息:
                 </div>
                 <div class="content-value">
                   {{ebook.note}}
@@ -128,11 +130,49 @@
         </div>
       </section>
     </div>
+    <div id="dialogue" class="mask" v-if="show" :class="{ show: show }">
+      <!-- <div class="cover" @click="closeDialogue"></div> -->
+      <div class="dialogue-message-frame" v-if="type === 'delete'">
+        <div class="dialogue-head">
+          <h4>信息</h4>
+        </div>
+        <div class="dialogue-body">
+          您确定要删除吗?
+          <div class="btn-frame">
+            <button @click="deleteEbooks()">确定</button>
+            <button @click="close('dialogue')">关闭</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="../assets/dist/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="../assets/dist/js/jquery.js"></script>
   <script type="text/javascript">
+    var dialogue = new Vue({
+      el:'#dialogue',
+      data: {
+        show: false,
+        type: ''
+      },
+      methods:{
+        deleteEbooks() {
+          ebookListField.deleteEbooks();
+        },
+        setDialogue: function(type = '') {
+          this.type = type;
+          this.show = true;
+        },
+        close: function(type) {
+          if(type === 'dialogue') {
+            this.show = false;
+          } else if(type === 'window'){
+            window.close();
+          }
+        }
+      }
+    });
     var ebookListField = new Vue({
       el:'#ebookListField',
       data: {
@@ -186,6 +226,9 @@
             }
           });
         },
+        callDialogueDeleteEbooks() {
+          dialogue.setDialogue('delete');
+        },
         deleteEbooks() {
           let self = this;
           $.ajax({
@@ -208,7 +251,7 @@
           });
         },
         generateReport() {
-          const metadata = ['书名', 'ISBN', '出版社', '出版日期', '申请人姓名', '申请日期', '学号/工号', '电话号码', 'Email', '身份信息', '单位/学院', '备注信息'];
+          const metadata = ['书名', 'ISBN', '出版社', '出版日期', '申请人姓名', '申请日期', '学号/工号', '电话号码', 'Email', '身份信息', '单位/学院', '书本详细', '备注信息'];
           let prefix = 'data:text/csv;charset=utf-8,';
           let string_metadata = ""; // first cell empty
           let string_content = "";
@@ -230,7 +273,8 @@
 
           // create content
           this.ebookList.forEach(val => {
-            string_content = `${string_content}${val.purchaseInfo.title},${val.purchaseInfo.isbn},${val.purchaseInfo.publisher},${val.purchaseInfo.date},${val.userInfo.name},${val.applyDateTime},${val.userInfo.userNumber},${val.userInfo.phone},${val.userInfo.email},${val.userInfo.userIdentity},${val.userInfo.faculty},${val.note}\n`;
+            let link = `${this.linkBasicUrl}&db=${val.dbCode}&AN=${val.an}`;
+            string_content = `${string_content}"${val.purchaseInfo.title}",${val.purchaseInfo.isbn},"${val.purchaseInfo.publisher}",${val.purchaseInfo.date},"${val.userInfo.name}",${val.applyDateTime},"${val.userInfo.userNumber}","${val.userInfo.phone}","${val.userInfo.email}","${val.userInfo.userIdentity}","${val.userInfo.faculty}",${link},"${val.note}"\n`;
           });
           
           const csv = `${string_metadata}${string_content}`;

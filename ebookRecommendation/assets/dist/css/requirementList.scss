@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import "dialogue";
 
 body{
   margin: 0;
@@ -161,11 +162,14 @@ input[type="text"], input[type="password"], input[type="date"], input[type="numb
 
             .title {
               width: 100px;
+              font-weight: bolder;
             }
             .content-value {
               flex: 1;
 
               .link {
+                display: flex;
+                align-items: center;
                 color: #007bff;
                 cursor: pointer;
               }
