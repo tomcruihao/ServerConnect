@@ -14,7 +14,15 @@
 
   foreach($resourceList as $key_resource => $resource) {
     // gen UUID
-    $resourceList[$key_resource]['uuid'] = gen_uuid();
+    if (array_key_exists('uuid', $resourceList[$key_resource])) {
+      if(empty($resourceList[$key_resource]['uuid'])) {
+        $resourceList[$key_resource]['uuid'] = gen_uuid();
+      }
+    } else {
+      $resourceList[$key_resource]['uuid'] = gen_uuid();
+    }
+
+    // $resourceList[$key_resource]['uuid'] = gen_uuid();
 
     if(strcmp($resourceList[$key_resource]['isProxy'], "是") === 0) {
       $resourceList[$key_resource]['isProxy'] = true;
@@ -133,7 +141,6 @@
   file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
   $res = array('status' => 'success', 'type' => 'success');
-  echo json_encode($res, JSON_UNESCAPED_UNICODE);
 
   // uuid V4
   function gen_uuid() {

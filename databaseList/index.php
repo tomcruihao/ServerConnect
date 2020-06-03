@@ -53,14 +53,12 @@
       $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
 
-    // echo $value['expiredChecking'].' start '.($value['startDate'] !== '').' end '.($value['expireDate'] !== '')."<br>";
-    if(!filter_var($value['expiredChecking'], FILTER_VALIDATE_BOOLEAN) && $value['startDate'] !== '' && $value['expireDate'] !== '') {
+    if (!filter_var($value['expiredChecking'], FILTER_VALIDATE_BOOLEAN) && $value['startDate'] !== '' && $value['expireDate'] !== '') {
       $currentTime = strtotime(date("Y-m-d"));
-      $isProxy = filter_var($vValue, FILTER_VALIDATE_BOOLEAN);
       $temp_startTime = strtotime($value['startDate']);
       $temp_endTime = strtotime($value['expireDate']);
-      
-      if($currentTime > $temp_endTime || $currentTime < $temp_startTime){
+
+      if($currentTime > $temp_endTime || $currentTime < $temp_startTime) {
         $display = false;
       }
     }
