@@ -73,36 +73,36 @@
         <ul>
           <li v-for="department_L1 in departmentData" class="level-1">
             <div class="row">
-              <input type="text" v-model="department_L1.displayName" @change="updateIdentityList(department_L1)">
+              <input type="text" v-model="department_L1.displayName" @change="updateRefDepartmentList(department_L1)">
               <div class="icon-wrap">
                 <div class="icon-frame">
-                  <img src="../img/icon/add.svg" @click="add('root')"/>
+                  <img src="../img/icon/add.svg" @click="addIdentity(departmentData)"/>
                 </div>
                 <div class="icon-frame" v-if="department_L1.child.length === 0">
-                  <img src="../img/icon/delete.svg" @click="delete(departmentData)"/>
+                  <img src="../img/icon/delete.svg" @click="deleteIdentity('root', department_L1, 'department')"/>
                 </div>
               </div>
             </div>
             <ul v-if="department_L1.child.length > 0">
               <li v-for="department_L2 in department_L1.child" class="level-2">
                 <div class="row">
-                  <input type="text" v-model="department_L2.displayName" @change="updateIdentityList(department_L1)">
+                  <input type="text" v-model="department_L2.displayName" @change="updateRefDepartmentList(department_L1)">
                   <div class="icon-wrap">
                     <div class="icon-frame">
-                      <img src="../img/icon/add.svg" @click="add(department_L1)"/>
+                      <img src="../img/icon/add.svg" @click="addIdentity(department_L1)"/>
                     </div>
                     <div class="icon-frame" v-if="department_L2.child.length === 0">
-                      <img src="../img/icon/delete.svg" @click="delete(department_L1, department_L2)"/>
+                      <img src="../img/icon/delete.svg" @click="deleteIdentity(department_L1, department_L2, 'department')"/>
                     </div>
                   </div>
                 </div>
                 <ul v-if="department_L2.child.length > 0">
                   <li v-for="department_L3 in department_L2.child" class="level-3">
                     <div class="row">
-                      <input type="text" v-model="department_L3.displayName" @change="updateIdentityList(department_L3)">
+                      <input type="text" v-model="department_L3.displayName" @change="updateRefDepartmentList(department_L3)">
                       <div class="icon-wrap">
                         <div class="icon-frame">
-                          <img src="../img/icon/delete.svg" @click="delete(department_L2, department_L3)"/>
+                          <img src="../img/icon/delete.svg" @click="deleteIdentity(department_L2, department_L3, 'department')"/>
                         </div>
                       </div>
                     </div>
@@ -114,6 +114,21 @@
         </ul>
       </section>
       <section class="setting-wrap">
+        <ul>
+          <li v-for="identity in identityData" class="level-1">
+            <div class="row">
+              <input type="text" v-model="identityData.displayName" @change="updateRefIdentityList(department_L1)">
+              <div class="icon-wrap">
+                <div class="icon-frame">
+                  <img src="../img/icon/add.svg" @click="addIdentity(departmentData)"/>
+                </div>
+                <div class="icon-frame" v-if="department_L1.child.length === 0">
+                  <img src="../img/icon/delete.svg" @click="deleteIdentity('root', department_L1, 'department')"/>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
         <div v-for="identity in identityData">
           <input type="text" v-model="identity.displayName">
         </div>
@@ -197,21 +212,70 @@
     mounted: function () {
     },
     methods:{
-      add(Obj_parent) {
+      addIdentity(Obj_parent) {
         alert('no yet');
       },
-      delete(Obj_parent, Obj_child) {
-        alert('no yet');
-        // someArray.splice(x, 1);
+      deleteIdentity(Obj_parent, Obj_child, field = null) {
+        let position = 0;
+        if(Obj_parent === 'root' && field === 'department') {
+          for(index in this.departmentData) {
+            if(this.departmentData[index].value === Obj_child.value) {
+              position = index;
+              break;
+            }
+          }
+          this.departmentData.splice(position, 1);
+        } else if(Obj_parent === 'root' && field === 'identity') {
+          // for(index in this.departmentData) {
+          //   if(this.departmentData[index].value === Obj_child.value) {
+          //     position = index;
+          //     break;
+          //   }
+          // }
+          // this.departmentData.splice(position, 1);
+        } else {
+          for(index in Obj_parent.child) {
+            if(Obj_parent.child[index].value === Obj_child.value) {
+              position = index;
+              break;
+            }
+          }
+          Obj_parent.child.splice(position, 1);
+          this.deleteInRefList()
+        }
+        this.deleteInRefList(Obj_child.value, field);
+      },
+      deleteInRefList(number, part) {
+        let position = 0;
+
+        if(part === 'department') {
+          for(index in this.ref_list.userDepartment) {
+            if(this.ref_list.userDepartment[index].id.toString() === number.toString()) {
+              position = index;
+              break;
+            }
+          }
+          this.ref_list.userDepartment.splice(position, 1);
+        } else if(part === 'identity') {
+
+        }
       },
       updateToServer() {
         console.log(this.ref_list);
       },
-      updateIdentityList(Obj) {
-        // console.log(this.ref_list.userDepartment);
+      updateRefDepartmentList(Obj) {
         for(index in this.ref_list.userDepartment) {
           if(String(Obj.value) === String(this.ref_list.userDepartment[index].id)) {
             this.ref_list.userDepartment[index].value = Obj.displayName;
+            break;
+          }
+        }
+      },
+      updateRefIdentityList(Obj) {
+        // console.log(this.ref_list.userDepartment);
+        for(index in this.ref_list.userIdentity) {
+          if(String(Obj.value) === String(this.ref_list.userIdentity[index].id)) {
+            this.ref_list.userIdentity[index].value = Obj.displayName;
             break;
           }
         }
