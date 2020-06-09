@@ -117,13 +117,13 @@
         <ul>
           <li v-for="identity in identityData" class="level-1">
             <div class="row">
-              <input type="text" v-model="identityData.displayName" @change="updateRefIdentityList(department_L1)">
+              <input type="text" v-model="identity.displayName" @change="updateRefIdentityList(identity)">
               <div class="icon-wrap">
                 <div class="icon-frame">
                   <img src="../img/icon/add.svg" @click="addIdentity(departmentData)"/>
                 </div>
-                <div class="icon-frame" v-if="department_L1.child.length === 0">
-                  <img src="../img/icon/delete.svg" @click="deleteIdentity('root', department_L1, 'department')"/>
+                <div class="icon-frame" v-if="identity.child.length === 0">
+                  <img src="../img/icon/delete.svg" @click="deleteIdentity('root', identity, 'identity')"/>
                 </div>
               </div>
             </div>
