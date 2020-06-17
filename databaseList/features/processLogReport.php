@@ -84,18 +84,26 @@ error_reporting(E_ALL);
       // }
     }
   } else if($generateType === 'userDepartment' || $generateType === 'userIdentity') {
-    $report = array_identityAndDeparture($generateType, $identityData);
+    $report = array_identityAndDepartment($generateType, $identityData);
     foreach($report as $key => $field) {
       $report[$key] = new ArrayObject($template);
     }
-    
+
+    // for N/A value
+    $report['other'] = new ArrayObject($template);
+
     // create log counting array
     foreach($clickedData_filtered_by_date as $log) {
-      $report[$log[$generateType]][$log['uuid']]['clickTimes']++;
-      $report[$log[$generateType]]['total']++;
+      if(strcmp($log[$generateType], "N/A") == 0) {
+        $report['other'][$log['uuid']]['clickTimes']++;
+        $report['other']['total']++;
+      } else {
+        $report[$log[$generateType]][$log['uuid']]['clickTimes']++;
+        $report[$log[$generateType]]['total']++;
+      }
     }
 
-    $report = array_replaceIdentityKeyName($generateType,$report, $identityData);
+    $report = array_replaceIdentityKeyName($generateType, $report, $identityData);
   }
 
   $response = [];
@@ -108,23 +116,26 @@ error_reporting(E_ALL);
     $array_result = [];
     
     foreach ($array_original as $key => $value) {
-      // print_r($array_reference[$generateType]);
       foreach ($array_reference[$generateType] as $rkey => $rValue) {
         if($rValue['id'] === $key) {
           $array_result[$rValue['name']] = $value;
         }
       }
-      // $array_result[$array_reference[$generateType][$key]['name']] = $value;
     }
+
+    $array_result['other'] = $array_original['other'];
 
     return $array_result;
   }
 
-  function array_identityAndDeparture($type, $identityData) {
+  function array_identityAndDepartment($type, $identityData) {
     $array_result = [];
 
     foreach ($identityData[$type] as $key => $value) {
-      $array_result[$value["id"]] = [];
+      // if delete mark not in array then add it to result
+      if (!array_key_exists('deleted', $value)) {
+        $array_result[$value["id"]] = [];
+      }
     }
     return $array_result;
   }

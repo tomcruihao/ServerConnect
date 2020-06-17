@@ -432,6 +432,36 @@ header nav .nav-list li.multi:before {
           box-sizing: border-box;
 }
 
+.app-content .container .btn-wrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.app-content .container .btn-wrap button {
+  min-width: 150px;
+  min-height: 38px;
+  padding: 5px 15px;
+  margin-left: 15px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .app-content .container section {
   margin-bottom: 30px;
 }
@@ -446,7 +476,7 @@ header nav .nav-list li.multi:before {
 }
 
 .app-content .container section .row .icon-wrap {
-  width: 80px;
+  width: 180px;
   margin-left: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -457,6 +487,12 @@ header nav .nav-list li.multi:before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.app-content .container section .row .icon-wrap select {
+  width: 110px;
+  height: 32px;
+  background-color: #ffffff;
 }
 
 .app-content .container section .row .icon-wrap .icon-frame {
@@ -473,6 +509,7 @@ header nav .nav-list li.multi:before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .app-content .container section ul li {
@@ -493,5 +530,9 @@ header nav .nav-list li.multi:before {
 
 .app-content .container section ul li.level-3 {
   background-color: #fff3cd;
+}
+
+.app-content .container section ul li:last-child {
+  padding-bottom: 10px;
 }
 /*# sourceMappingURL=manageAuth.css.map */

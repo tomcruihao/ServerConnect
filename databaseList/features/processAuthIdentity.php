@@ -6,34 +6,20 @@
   header('Content-Type: application/json;charset=UTF-8');
   date_default_timezone_set('Asia/Taipei');
 
-  include 'verifyToken.php';
+  // include 'verifyToken.php';
 
-  $jsonFile_direct = '../data/authList.json';
+  $jsonFile_direct = '../data/authIdentity.json';
 
   // parameters
-  $type = $_POST["type"];
   $receivedData = json_decode($_POST["processData"], true);
 
   // get news list
   $getLatestNewsJsonData = file_get_contents($jsonFile_direct);
   $authData = json_decode($getLatestNewsJsonData, true);
 
-
-
-  if ($type === 'updateSetting') {
-    $authData['settings'] = $receivedData;
-
-    // write back
-    file_put_contents($jsonFile_direct, json_encode($authData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
-  } else if ($type === 'updateList') {
-    $authData['department'] = $receivedData['department'];
-    $authData['identity'] = $receivedData['identity'];
-
-    file_put_contents($jsonFile_direct, json_encode($authData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
-  }
-
+  $authData = $receivedData;
+  file_put_contents($jsonFile_direct, json_encode($authData, JSON_UNESCAPED_UNICODE));
+  response('success', 'success');
 
   function response($errorType, $message) {
     $res = array('status' => $errorType, 'type' => $message);

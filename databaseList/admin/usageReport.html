@@ -67,8 +67,8 @@
           <select v-model="searchRange.type">
             <option value="day">{{$t('message.clickingReport_day')}}</option>
             <option value="month">{{$t('message.clickingReport_month')}}</option>
-            <option value="userDepartment">{{$t('message.clickingReport_departmemnt')}}</option>
-            <option value="userIdentity">{{$t('message.clickingReport_userIdentity')}}</option>
+            <option value="userDepartment" v-if="identityEnabled">{{$t('message.clickingReport_departmemnt')}}</option>
+            <option value="userIdentity" v-if="identityEnabled">{{$t('message.clickingReport_userIdentity')}}</option>
           </select>
         </div>
         <div class="date-wrap">
@@ -154,6 +154,7 @@
         }
       }
     })
+
     var reportTable = new Vue({
       el:'#reportTable',
       i18n,
@@ -164,7 +165,23 @@
           startDate: '',
           endDate: ''
         },
-        reportData: []
+        reportData: [],
+        identityEnabled: false
+      },
+      created: function() {
+        // get the identity setting
+        let self = this;
+        $.ajax({
+          url: `${apiPath}/getAuthList.php`,
+          type: 'GET',
+          error: function(jqXHR, exception) {
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(response) {
+            self.identityEnabled = response.settings.featureEnabled;
+          }
+        });
       },
       computed: {
         selector_years: {
@@ -251,7 +268,7 @@
               },
               error: function(jqXHR, exception) {
                 //use url variable here
-                console.log(jqXHR);
+                // console.log(jqXHR);
                 console.log(exception);
                 self.searching = false;
               },
@@ -285,6 +302,7 @@
         }
       }
     });
+
     var dialogue = new Vue({
       el:'#dialogue',
       i18n,

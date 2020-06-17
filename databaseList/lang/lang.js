@@ -81,6 +81,12 @@ const messages = {
       subject_create_subject: 'New Item',
       subject_create_subject_item: 'Add New Facet Block',
       subject_facet_field: 'Facet Field',
+      // identity management page
+      h1_identity: 'Identity Management',
+      identity_validateIdentity: 'Identity Validate feature',
+      select_options: 'Options',
+      select_sameLevel: 'Add item for same level',
+      select_nextLevel: 'Add item for next level',
       // Clicking Report page
       h1_clickingReport: 'Clicking Report',
       clickingReport_start_date: 'Start Day',
@@ -223,6 +229,12 @@ const messages = {
       subject_create_subject: '新增分類項目',
       subject_create_subject_item: '新增後分類區塊',
       subject_facet_field: '後分類欄位',
+      // identity management page
+      h1_identity: '身份管理',
+      identity_validateIdentity: '身份驗證功能',
+      select_options: '請選擇',
+      select_sameLevel: '增加同層項目',
+      select_nextLevel: '增加子項目',
       // Clicking Report page
       h1_clickingReport: '使用率報表',
       clickingReport_start_date: '起始時間',

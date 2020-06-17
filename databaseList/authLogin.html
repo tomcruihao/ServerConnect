@@ -28,19 +28,19 @@
           <div class="select-frame">
             <select v-model="option1.value" @change="changeOption1($event)">
               <option value="">請選擇</option>
-              <option v-for="option in option1.options" :value="option.value">{{option.displayName}}
+              <option v-for="option in option1.options" v-if="!option.hasOwnProperty('deleted')" :value="option.value">{{option.displayName}}
             </select>
           </div>
           <div class="select-frame" v-if="option2.options.length !== 0">
             <select v-model="option2.value" @change="changeOption2($event)">
               <option value="">請選擇</option>
-              <option v-for="option in option2.options" :value="option.value">{{option.displayName}}
+              <option v-for="option in option2.options" v-if="!option.hasOwnProperty('deleted')" :value="option.value">{{option.displayName}}
             </select>
           </div>
           <div class="select-frame" v-if="option3.options.length !== 0">
             <select v-model="option3.value">
               <option value="">請選擇</option>
-              <option v-for="option in option3.options" :value="option.value">{{option.displayName}}
+              <option v-for="option in option3.options" v-if="!option.hasOwnProperty('deleted')" :value="option.value">{{option.displayName}}
             </select>
           </div>
         </div>

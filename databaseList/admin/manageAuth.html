@@ -43,7 +43,7 @@
   </header>
   <div class="app-content">
     <div id="mainTitle" class="mainTitle">
-      <h1 v-text="$t('message.h1_subject')"></h1>
+      <h1 v-text="$t('message.h1_identity')"></h1>
       <div class="lang-wrap">
         <div>{{$t('message.chooseLanguage')}}:</div>
         <select v-model="selector_lang" @change="setLang($event)">
@@ -55,7 +55,7 @@
     <div class="container" id="roleField">
       <section>
         <div class="row">
-          <div class="title">身份驗證功能</div>
+          <div class="title">{{$t('message.identity_validateIdentity')}}</div>
           <div class="content">
             <div class="switch-wrap">
               <div class="onoffswitch">
@@ -71,38 +71,52 @@
       </section>
       <section>
         <ul>
-          <li v-for="department_L1 in departmentData" class="level-1">
+          <li v-for="department_L1 in departmentData" v-if="!department_L1.hasOwnProperty('deleted')" class="level-1">
             <div class="row">
               <input type="text" v-model="department_L1.displayName" @change="updateRefDepartmentList(department_L1)">
               <div class="icon-wrap">
+                <!-- <div class="icon-frame">
+                  <img src="../img/icon/add.svg" @click="addIdentity(department_L1, 'department')"/>
+                </div> -->
+                <select v-model="selector_items" @change="onChange(selector_items)">
+                  <option value="">{{$t('message.select_options')}}</option>
+                  <option :value="'root'">{{$t('message.select_sameLevel')}}</option>
+                  <option :value="department_L1">{{$t('message.select_nextLevel')}}</option>
+                </select>
                 <div class="icon-frame">
-                  <img src="../img/icon/add.svg" @click="addIdentity(departmentData)"/>
-                </div>
-                <div class="icon-frame" v-if="department_L1.child.length === 0">
-                  <img src="../img/icon/delete.svg" @click="deleteIdentity('root', department_L1, 'department')"/>
+                  <img src="../img/icon/delete.svg" @click="deleteIdentity(department_L1, 'department')"/>
                 </div>
               </div>
             </div>
             <ul v-if="department_L1.child.length > 0">
-              <li v-for="department_L2 in department_L1.child" class="level-2">
+              <li v-for="department_L2 in department_L1.child" v-if="!department_L2.hasOwnProperty('deleted')" class="level-2">
                 <div class="row">
                   <input type="text" v-model="department_L2.displayName" @change="updateRefDepartmentList(department_L1)">
                   <div class="icon-wrap">
+                    <select v-model="selector_items" @change="onChange(selector_items)">
+                      <option value="">{{$t('message.select_options')}}</option>
+                      <option :value="department_L1">{{$t('message.select_sameLevel')}}</option>
+                      <option :value="department_L2">{{$t('message.select_nextLevel')}}</option>
+                    </select>
+                    <!-- <div class="icon-frame">
+                      <img src="../img/icon/add.svg" @click="addIdentity(department_L2, 'department')"/>
+                    </div> -->
                     <div class="icon-frame">
-                      <img src="../img/icon/add.svg" @click="addIdentity(department_L1)"/>
-                    </div>
-                    <div class="icon-frame" v-if="department_L2.child.length === 0">
-                      <img src="../img/icon/delete.svg" @click="deleteIdentity(department_L1, department_L2, 'department')"/>
+                      <img src="../img/icon/delete.svg" @click="deleteIdentity(department_L2, 'department')"/>
                     </div>
                   </div>
                 </div>
                 <ul v-if="department_L2.child.length > 0">
-                  <li v-for="department_L3 in department_L2.child" class="level-3">
+                  <li v-for="department_L3 in department_L2.child" class="level-3" v-if="!department_L3.hasOwnProperty('deleted')">
                     <div class="row">
                       <input type="text" v-model="department_L3.displayName" @change="updateRefDepartmentList(department_L3)">
                       <div class="icon-wrap">
+                        <select v-model="selector_items" @change="onChange(selector_items)">
+                          <option value="">{{$t('message.select_options')}}</option>
+                          <option :value="department_L2">{{$t('message.select_sameLevel')}}</option>
+                        </select>
                         <div class="icon-frame">
-                          <img src="../img/icon/delete.svg" @click="deleteIdentity(department_L2, department_L3, 'department')"/>
+                          <img src="../img/icon/delete.svg" @click="deleteIdentity(department_L3, 'department')"/>
                         </div>
                       </div>
                     </div>
@@ -115,26 +129,23 @@
       </section>
       <section class="setting-wrap">
         <ul>
-          <li v-for="identity in identityData" class="level-1">
+          <li v-for="identity in identityData" v-if="!identity.hasOwnProperty('deleted')" class="level-1">
             <div class="row">
               <input type="text" v-model="identity.displayName" @change="updateRefIdentityList(identity)">
               <div class="icon-wrap">
-                <div class="icon-frame">
-                  <img src="../img/icon/add.svg" @click="addIdentity(departmentData)"/>
-                </div>
+                <!-- <div class="icon-frame">
+                  <img src="../img/icon/add.svg" @click="addIdentity(identity, 'identity')"/>
+                </div> -->
                 <div class="icon-frame" v-if="identity.child.length === 0">
-                  <img src="../img/icon/delete.svg" @click="deleteIdentity('root', identity, 'identity')"/>
+                  <img src="../img/icon/delete.svg" @click="deleteIdentity(identity, 'identity')"/>
                 </div>
               </div>
             </div>
           </li>
         </ul>
-        <div v-for="identity in identityData">
-          <input type="text" v-model="identity.displayName">
-        </div>
       </section>
-      <div>
-        <button @click="updateToServer()">Update</button>
+      <div class="btn-wrap">
+        <button @click="updateToServer()">{{$t('message.btn_update')}}</button>
       </div>
     </div>
   </div>
@@ -144,7 +155,7 @@
   </footer>
 </body>
 </html>
-<!-- <script src="../lib/js/verifyAuth.js"></script> -->
+<script src="../lib/js/verifyAuth.js"></script>
 <script src="../lib/js/basicParameters.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
@@ -153,7 +164,7 @@
 <script src="../lib/js/header_back.js"></script>
 <script type="text/javascript">
   var mainTitle = new Vue({
-    el:'#mainTitle',
+    el: '#mainTitle',
     i18n,
     data: {
       selector_lang: ''
@@ -166,7 +177,7 @@
         i18n.locale = event.target.value;
         localStorage.setItem('lang', event.target.value);
 
-        subjectField.setLocale(event.target.value);
+        // subjectField.setLocale(event.target.value);
         header.setLocale(event.target.value);
       }
     }
@@ -180,102 +191,215 @@
       },
       departmentData: [],
       identityData: [],
-      ref_list: []
+      ref_list: [],
+      selector_items: ''
     },
     created: function() {
-      let self = this;
-      $.ajax({
-        url: `${apiPath}/getAuthList.php`,
-        type: 'GET',
-        error: function(jqXHR, exception) {
-          //use url variable here
-          console.log(jqXHR);
-          console.log(exception);
-        },
-        success: function(response) {
-          self.addResult(response);
-        }
-      });
-      $.ajax({
-        url: `${apiPath}/getAuthIdentityList.php`,
-        type: 'GET',
-        error: function(jqXHR, exception) {
-          //use url variable here
-          console.log(jqXHR);
-          console.log(exception);
-        },
-        success: function(response) {
-          self.ref_list = response;
-        }
-      });
+      this.init();
     },
     mounted: function () {
     },
     methods:{
-      addIdentity(Obj_parent) {
-        alert('no yet');
+      init() {
+        let self = this;
+        $.ajax({
+          url: `${apiPath}/getAuthList.php`,
+          type: 'GET',
+          error: function(jqXHR, exception) {
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(response) {
+            self.addResult(response);
+          }
+        });
+        $.ajax({
+          url: `${apiPath}/getAuthIdentityList.php`,
+          type: 'GET',
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(response) {
+            self.ref_list = response;
+          }
+        });
       },
-      deleteIdentity(Obj_parent, Obj_child, field = null) {
-        let position = 0;
-        if(Obj_parent === 'root' && field === 'department') {
-          for(index in this.departmentData) {
-            if(this.departmentData[index].value === Obj_child.value) {
-              position = index;
-              break;
+      addIdentity(Object, field) {
+        let number = -1;
+        if(field === 'department') {
+          for(index in this.ref_list.userDepartment) {
+            let temp = parseInt(this.ref_list.userDepartment[index].id, 10);
+            if(temp > number) {
+              number = temp;
             }
           }
-          this.departmentData.splice(position, 1);
-        } else if(Obj_parent === 'root' && field === 'identity') {
-          // for(index in this.departmentData) {
-          //   if(this.departmentData[index].value === Obj_child.value) {
-          //     position = index;
-          //     break;
-          //   }
-          // }
-          // this.departmentData.splice(position, 1);
-        } else {
-          for(index in Obj_parent.child) {
-            if(Obj_parent.child[index].value === Obj_child.value) {
-              position = index;
-              break;
+
+          number++;
+
+          let obj_forAuthList = {
+            "value": number,
+            "displayName": "",
+            "child": []
+          }
+          console.log(Object);
+          Object.child.push(obj_forAuthList);
+
+          let obj_forAuthIdentity = {
+            "id": number,
+            "name": ""
+          }
+          this.ref_list.userDepartment.push(obj_forAuthIdentity);
+        } else if(field === 'identity') {
+
+        } else if(field === 'departmentRoot') {
+          for(index in this.ref_list.userDepartment) {
+            let temp = parseInt(this.ref_list.userDepartment[index].id, 10);
+            if(temp > number) {
+              number = temp;
             }
           }
-          Obj_parent.child.splice(position, 1);
-          this.deleteInRefList()
+
+          number++;
+
+          let obj_forAuthList = {
+            "value": number,
+            "displayName": "",
+            "child": []
+          }
+          console.log(Object);
+          Object.push(obj_forAuthList);
+
+          let obj_forAuthIdentity = {
+            "id": number,
+            "name": ""
+          }
+          this.ref_list.userDepartment.push(obj_forAuthIdentity);
+        } else if(field === 'identityRoot') {
+          for(index in this.ref_list.userIdentity) {
+            let temp = parseInt(this.ref_list.userIdentity[index].id, 10);
+            if(temp > number) {
+              number = temp;
+            }
+          }
+
+          number++;
+
+          let obj_forAuthList = {
+            "value": number,
+            "displayName": "",
+            "child": []
+          }
+          Object.push(obj_forAuthList);
+
+          let obj_forAuthIdentity = {
+            "id": number,
+            "name": ""
+          }
+          this.ref_list.userIdentity.push(obj_forAuthIdentity);
         }
-        this.deleteInRefList(Obj_child.value, field);
+      },
+      deleteIdentity(Object, field) {
+        // check child node all deleted
+        let exist = false;
+        console.log(Object.child);
+        console.log(Object.child.length);
+        if(Object.child.length !== 0) {
+          for(index in Object.child) {
+            if(!Object.child[index].hasOwnProperty('deleted')) {
+              exist = true;
+            }
+          }
+        }
+
+        if(!exist) {
+          // mark delete for this Obj
+          this.$set(Object, 'deleted', false);
+          this.deleteInRefList(Object.value, field);
+        } else {
+          alert('請先刪除所有子項目!');
+        }
       },
       deleteInRefList(number, part) {
-        let position = 0;
-
         if(part === 'department') {
           for(index in this.ref_list.userDepartment) {
             if(this.ref_list.userDepartment[index].id.toString() === number.toString()) {
-              position = index;
+              this.ref_list.userDepartment[index]['deleted'] = true;
               break;
             }
           }
-          this.ref_list.userDepartment.splice(position, 1);
         } else if(part === 'identity') {
-
+          for(index in this.ref_list.userDepartment) {
+            if(this.ref_list.userIdentity[index].id.toString() === number.toString()) {
+              this.ref_list.userIdentity[index]['deleted'] = true;
+              break;
+            }
+          }
         }
       },
       updateToServer() {
-        console.log(this.ref_list);
+        let list = {
+          'department': this.departmentData,
+          'identity': this.identityData
+        }
+        
+        // ref_list
+        let self = this;
+        $.ajax({
+          url: `${apiPath}/processAuth.php`,
+          type: 'POST',
+          xhrFields: {
+            withCredentials: true
+          },
+          data: {
+            type: 'updateList',
+            processData: JSON.stringify(list)
+          },
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(response) {
+            self.init();
+            alert("更新成功");
+          }
+        });
+
+        $.ajax({
+          url: `${apiPath}/processAuthIdentity.php`,
+          type: 'POST',
+          xhrFields: {
+            withCredentials: true
+          },
+          data: {
+            processData: JSON.stringify(self.ref_list)
+          },
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(response) {
+            self.init();
+            console.log(response);
+          }
+        });
+        // console.log(this.ref_list);
       },
       updateRefDepartmentList(Obj) {
         for(index in this.ref_list.userDepartment) {
           if(String(Obj.value) === String(this.ref_list.userDepartment[index].id)) {
-            this.ref_list.userDepartment[index].value = Obj.displayName;
+            this.ref_list.userDepartment[index].name = Obj.displayName;
             break;
           }
         }
       },
       updateRefIdentityList(Obj) {
-        // console.log(this.ref_list.userDepartment);
         for(index in this.ref_list.userIdentity) {
           if(String(Obj.value) === String(this.ref_list.userIdentity[index].id)) {
-            this.ref_list.userIdentity[index].value = Obj.displayName;
+            this.ref_list.userIdentity[index].name = Obj.displayName;
             break;
           }
         }
@@ -306,6 +430,65 @@
         this.departmentData = result.department;
         this.identityData = result.identity;
         this.settings = result.settings;
+      },
+      onChange(item) {
+        let number = -1;
+        if(typeof item === 'string') {
+          if(item === 'root') {
+            for(index in this.ref_list.userDepartment) {
+              let temp = parseInt(this.ref_list.userDepartment[index].id, 10);
+              if(temp > number) {
+                number = temp;
+              }
+            }
+
+            number++;
+
+            let obj_forAuthList = {
+              "value": number,
+              "displayName": "",
+              "child": []
+            }
+            this.departmentData.push(obj_forAuthList);
+
+            let obj_forAuthIdentity = {
+              "id": number,
+              "name": ""
+            }
+            this.ref_list.userDepartment.push(obj_forAuthIdentity);
+          }
+        } else if(typeof item === 'object') {
+          for(index in this.ref_list.userDepartment) {
+            let temp = parseInt(this.ref_list.userDepartment[index].id, 10);
+            if(temp > number) {
+              number = temp;
+            }
+          }
+
+          number++;
+
+          let obj_forAuthList = {
+            "value": number,
+            "displayName": "",
+            "child": []
+          }
+          
+          item.child.push(obj_forAuthList);
+
+          let obj_forAuthIdentity = {
+            "id": number,
+            "name": ""
+          }
+          this.ref_list.userDepartment.push(obj_forAuthIdentity);
+        }
+        this.selector_items = '';
+        
+        // for(index in this.dataInfo) {
+        //   if(this.dataInfo[index].id === event.target.value) {
+        //     // console.log(this.dataInfo[index]);
+        //     this.displayInfo = JSON.parse(JSON.stringify(this.dataInfo[index]));
+        //   }
+        // }
       }
     }
   });

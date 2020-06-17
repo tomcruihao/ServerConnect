@@ -45,6 +45,15 @@
       },
       {
         "title": {
+          "en": "Identity Settings",
+          "local": "身份管理"
+        },
+        "link": "manageAuth.html",
+        "focus": false,
+        "child": []
+      },
+      {
+        "title": {
           "en": "Generic Settings",
           "local": "一般設定"
         },
