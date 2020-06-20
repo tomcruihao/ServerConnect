@@ -148,6 +148,8 @@
           <div class="atoz-field">
             <div class="link-field">
               <a href="javascript:searchAll()" id="searchTotal" class="clicked">{{$t('message.index_show_all')}}</a>
+	          <a href="javascript:searchBy('中文','language');" id="searchChi">{{$t('message.index_show_chi')}}</a>
+              <a href="javascript:searchBy('西文','language');" id="searchEng">{{$t('message.index_show_eng')}}</a>
             </div>
           </div>
         </div>
@@ -322,6 +324,7 @@
 </script>
 
 <script type="text/javascript">
+  var searchLang ='';
   var dataList = <?php echo $getJsonData; ?>;
 
   var ary_dataList = new Array();
@@ -951,10 +954,13 @@
   function initAndAddClickedClass(anchor = null) {
     document.querySelectorAll('.link-field > a').forEach(res => {
       res.classList.remove("clicked");
-
-      if (anchor !== null) {
-        anchor.className = 'clicked';
-      } else {
+	  if(anchor !== null){
+		anchor.className = 'clicked';
+	  } else if (searchLang == 'Chi'){
+		document.getElementById('searchChi').className = 'clicked';
+	  } else if (searchLang == 'Eng'){
+		document.getElementById('searchEng').className = 'clicked';
+	  } else {
         document.getElementById('searchTotal').className = 'clicked';
       }
     });
@@ -998,6 +1004,10 @@
   //   resetNumbering();
   // }
   function searchBy(term, field = '') {
+  	if(term === '西文'){searchLang = 'Eng';}
+  	else if(term === '中文'){searchLang = 'Chi';}
+  	else {searchLang = '';}
+  	initAndAddClickedClass();
     if(field !== '') {
       contactList.search(term, [field]);
     } else {
@@ -1006,6 +1016,7 @@
     resetNumbering();
   }
   function searchAll(anchor) {
+	searchLang = '';
     initAndAddClickedClass();
 
     // remove all condition of search

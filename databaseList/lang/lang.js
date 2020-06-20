@@ -1,12 +1,14 @@
 const messages = {
   en: {
     message: {
-      chooseLanguage:'Language',
+      chooseLanguage:'🌐 Language',
       header_logout: 'Logout',
       // index page
       h1_resource_list: 'e-Resource List',
       index_total: 'ALL',
       index_show_all: 'Show All',
+      index_show_chi: 'Chinese',
+      index_show_eng: 'Non-Chinese',
       index_atoz: 'A to Z',
       index_zhuyin: 'Zhu Yin',
       index_strokes: 'Strokes',
@@ -149,12 +151,14 @@ const messages = {
   },
   local: {
     message: {
-      chooseLanguage:'選擇語言',
+      chooseLanguage:'🌐 選擇語言',
       header_logout: '登出',
       // index page
       h1_resource_list: '電子資源',
       index_total: '全部',
       index_show_all: '全部',
+      index_show_chi: '中文',
+      index_show_eng: '西文',
       index_atoz: 'A to Z',
       index_zhuyin: '注音',
       index_strokes: '筆劃',
