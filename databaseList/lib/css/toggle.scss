@@ -24,7 +24,7 @@
     overflow: hidden;
     cursor: pointer;
     border-radius: 9px; 
-    border: 2px solid grey;
+    border: 1px solid #4CAF50;
   }
 
   .onoffswitch-inner {
@@ -78,11 +78,11 @@
 
   .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px;
-    background-color: #2196F3;
+    background-color: #ffffff;
   }
 
   .onoffswitch-checkbox:checked + .onoffswitch-label{
-    border: 2px solid #5990CF;
-    background-color: #ffffff;
+    border: 1px solid #4CAF50;
+    background-color: #4CAF50;
   }
 }

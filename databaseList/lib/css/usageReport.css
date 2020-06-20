@@ -467,6 +467,7 @@ header nav .nav-list li.multi:before {
 }
 
 .app-content .report-wrap .report-list-wrap {
+  min-height: 40vh;
   padding: 15px;
 }
 

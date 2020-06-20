@@ -1,1 +1,155 @@
-{"settings":{"featureEnabled":true},"department":[{"value":"1","displayName":"訪客","child":[]},{"value":"2","displayName":"行政單位","child":[{"value":"3","displayName":"校內行政單位","child":[]},{"value":"4","displayName":"圖書館","child":[],"deleted":false}]},{"value":"5","displayName":"志業單位","child":[{"value":"6","displayName":"慈中.慈小","child":[]},{"value":"7","displayName":"慈濟大學","child":[]},{"value":"8","displayName":"慈濟基金會","child":[]},{"value":"9","displayName":"慈濟醫院","child":[]}]},{"value":"10","displayName":"校友","child":[]},{"value":"11","displayName":"教學單位","child":[{"value":"12","displayName":"全人教育中心","child":[{"value":"13","displayName":"全人教育中心","child":[]}]},{"value":"14","displayName":"健康科技管理學院","child":[{"value":"15","displayName":"行銷與流通管理系","child":[]},{"value":"16","displayName":"資訊科學與管理系","child":[]},{"value":"17","displayName":"醫務暨健康管理系","child":[]}]},{"value":"18","displayName":"護理學院","child":[{"value":"19","displayName":"長照所","child":[]},{"value":"20","displayName":"長照科","child":[]},{"value":"21","displayName":"長照醫學影像放射科學系(所)所","child":[]}]}]}],"identity":[{"value":"1","displayName":"行政人員","child":[]},{"value":"2","displayName":"其他","child":[]},{"value":"3","displayName":"研究助理","child":[]},{"value":"4","displayName":"校友","child":[]},{"value":"5","displayName":"校外人士","child":[]},{"value":"6","displayName":"教師","child":[]},{"value":"7","displayName":"學生","child":[]}]}
+{
+  "settings": {
+    "featureEnabled": true
+  },
+  "department": [
+    {
+      "value": "1",
+      "displayName": "訪客",
+      "child": []
+    },
+    {
+      "value": "2",
+      "displayName": "行政單位",
+      "child": [
+        {
+          "value": "3",
+          "displayName": "校內行政單位",
+          "child": []
+        },
+        {
+          "value": "4",
+          "displayName": "圖書館",
+          "child": []
+        }
+      ]
+    },
+    {
+      "value": "5",
+      "displayName": "志業單位",
+      "child": [
+        {
+          "value": "6",
+          "displayName": "慈中.慈小",
+          "child": []
+        },
+        {
+          "value": "7",
+          "displayName": "慈濟大學",
+          "child": []
+        },
+        {
+          "value": "8",
+          "displayName": "慈濟基金會",
+          "child": []
+        },
+        {
+          "value": "9",
+          "displayName": "慈濟醫院",
+          "child": []
+        }
+      ]
+    },
+    {
+      "value": "10",
+      "displayName": "校友",
+      "child": []
+    },
+    {
+      "value": "11",
+      "displayName": "教學單位",
+      "child": [
+        {
+          "value": "12",
+          "displayName": "全人教育中心",
+          "child": [
+            {
+              "value": "13",
+              "displayName": "全人教育中心",
+              "child": []
+            }
+          ]
+        },
+        {
+          "value": "14",
+          "displayName": "健康科技管理學院",
+          "child": [
+            {
+              "value": "15",
+              "displayName": "行銷與流通管理系",
+              "child": []
+            },
+            {
+              "value": "16",
+              "displayName": "資訊科學與管理系",
+              "child": []
+            },
+            {
+              "value": "17",
+              "displayName": "醫務暨健康管理系",
+              "child": []
+            }
+          ]
+        },
+        {
+          "value": "18",
+          "displayName": "護理學院",
+          "child": [
+            {
+              "value": "19",
+              "displayName": "長照所",
+              "child": []
+            },
+            {
+              "value": "20",
+              "displayName": "長照科",
+              "child": []
+            },
+            {
+              "value": "21",
+              "displayName": "長照醫學影像放射科學系(所)所",
+              "child": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "identity": [
+    {
+      "value": "1",
+      "displayName": "行政人員",
+      "child": []
+    },
+    {
+      "value": "2",
+      "displayName": "其他",
+      "child": []
+    },
+    {
+      "value": "3",
+      "displayName": "研究助理",
+      "child": []
+    },
+    {
+      "value": "4",
+      "displayName": "校友",
+      "child": []
+    },
+    {
+      "value": "5",
+      "displayName": "校外人士",
+      "child": []
+    },
+    {
+      "value": "6",
+      "displayName": "教師",
+      "child": []
+    },
+    {
+      "value": "7",
+      "displayName": "學生",
+      "child": []
+    }
+  ]
+}

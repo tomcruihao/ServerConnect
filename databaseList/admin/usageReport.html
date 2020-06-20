@@ -215,11 +215,15 @@
           let reportType = '';
           if(this.searchRange.type === 'day') {
             reportType = 'Daily';
-          } else {
+          } else if(this.searchRange.type === 'month')  {
             reportType = 'Monthly';
+          } else if(this.searchRange.type === 'userDepartment')  {
+            reportType = 'Department';
+          } else if(this.searchRange.type === 'userIdentity')  {
+            reportType = 'Role';
           }
 
-          let fileName = `${now.getFullYear()}-${now.getMonth()+1}-${now.getDate()} ${reportType} Report`;
+          let fileName = `${reportType} Report - Period from ${this.searchRange.startDate} to ${this.searchRange.endDate}`;
 
           // create data array and metadata.
           this.reportData.forEach(row => {

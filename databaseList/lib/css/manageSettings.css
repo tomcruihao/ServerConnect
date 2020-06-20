@@ -354,7 +354,7 @@ header nav .nav-list li.multi:before {
   overflow: hidden;
   cursor: pointer;
   border-radius: 9px;
-  border: 2px solid grey;
+  border: 1px solid #4CAF50;
 }
 
 .switch-wrap .onoffswitch-inner {
@@ -415,12 +415,12 @@ header nav .nav-list li.multi:before {
 
 .switch-wrap .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px;
-  background-color: #2196F3;
+  background-color: #ffffff;
 }
 
 .switch-wrap .onoffswitch-checkbox:checked + .onoffswitch-label {
-  border: 2px solid #5990CF;
-  background-color: #ffffff;
+  border: 1px solid #4CAF50;
+  background-color: #4CAF50;
 }
 
 h4 {

@@ -153,6 +153,33 @@
     <img src="../img/logo_white.svg">
     <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
   </footer>
+  <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeDialogue()"></div>
+    <div class="dialogue-message-frame" v-if="type === 'logout'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_logout')}}
+        <div class="btn-frame">
+          <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'expired'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_expired')}}
+        <div class="btn-frame">
+          <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 <script src="../lib/js/verifyAuth.js"></script>
@@ -362,8 +389,12 @@
             console.log(exception);
           },
           success: function(response) {
-            self.init();
-            alert("更新成功");
+            if(response.status === 'expired') {
+              dialogue.setDialogue('expired');
+            } else {
+              self.init();
+              alert("更新成功");
+            }
           }
         });
 
@@ -489,6 +520,51 @@
         //     this.displayInfo = JSON.parse(JSON.stringify(this.dataInfo[index]));
         //   }
         // }
+      }
+    }
+  });
+
+  var dialogue = new Vue({
+    el:'#dialogue',
+    i18n,
+    data: {
+      show: false,
+      type: '',
+      error: {
+        type: ''
+      }
+    },
+    created: function() {
+      // let userInfo = JSON.parse(localStorage.getItem('user'));
+      // this.userAccount = userInfo.user;
+    },
+    computed: {
+      dialogueMessage: {
+        get: function () {
+          return this.message;
+        }
+        // ,set: function () {
+        // }
+      }
+    },
+    methods:{
+      setDialogue: function(status, data = '') {
+        console.log(status);
+        this.type = status;
+        this.show = true;
+      },
+      showLoginError(type) {
+        let self = this;
+        this.error.type = type;
+        setTimeout(function(){
+          self.error.type = '';
+        }, 3000);
+      },
+      backToLogin: function() {
+        window.location.replace(backStagePath);
+      },
+      closeDialogue: function() {
+        this.show = false;
       }
     }
   });
