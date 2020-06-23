@@ -9,9 +9,12 @@ html, body {
 
 .slider {
   width: 90%;
-  margin: 100px auto;
+  height: 200px;
+  margin: 0px auto;
 }
-
+.slick-list {
+  background-color: #ffffff;
+}
 .slick-slide {
   margin: 0px 20px;
 }
@@ -41,7 +44,7 @@ a {
   padding: 3px;
   text-align: center;
   font-size: 16px;
-  color: #ffffff;
+  color: #ffffff !important;
   background-color: rgba(0, 0, 0, 0.7);
   text-align: center;
   overflow: hidden;

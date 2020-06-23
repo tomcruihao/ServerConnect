@@ -9,25 +9,21 @@ error_reporting(E_ALL);
   header("Content-Security-Policy: upgrade-insecure-requests");
   date_default_timezone_set('Asia/Taipei');
 
-  $randomBookQuantity = 50;
-  $apiConnection = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=s3448411.main.eit&pwd=ebs7077&db=eon&query=LO system.nl-s3448411&numrec=".$randomBookQuantity;
-  
-  $keyword = str_replace(' ', '+', $_GET['uquery']);
+  $randomBookQuantity = 200;
+  $apiConnection = "https://eit.ebscohost.com/Services/SearchService.asmx/Search?prof=s3448411.main.eit&pwd=ebs7077&db=eon&query=LO+system.nl-s3448411&numrec=".$randomBookQuantity;
 
   $profile = $_GET['profile'];
   $custID = $_GET['custID'];
 
-  // $keyword = "blockchain";
-
-  $bookInfoList = getBookInfoFromServer($apiConnection, $keyword, $profile, $custID);
+  $bookInfoList = getBookInfoFromServer($apiConnection, $profile, $custID);
 
   echo json_encode($bookInfoList, JSON_NUMERIC_CHECK);
 
-  function getBookInfoFromServer($apiUrl, $keyword, $profile, $custID) {
+  function getBookInfoFromServer($apiUrl, $profile, $custID) {
     $result = array();
 
     // get value from API
-    $connectApiUrl = $apiUrl."&query=".$keyword;
+    $connectApiUrl = $apiUrl;
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $connectApiUrl);
@@ -49,9 +45,11 @@ error_reporting(E_ALL);
       $parseUrlParam = parse_url($rec->plink);
 
       $imgUrl = 'http://rps2images.ebscohost.com/rpsweb/othumb?id='.$doid.'&s=l';
-      $directionUrl = 'http://search.ebscohost.com/login.aspx?direct=true&db=nlebk&AN='.$AN.'&site=ehost-live&custid='.$custID.'&authtype=ip,uid&groupid=main&profileid='.$profile.'&scope=site';
+      // $directionUrl = 'http://search.ebscohost.com/login.aspx?direct=true&db=eon&an='.$AN.'&site=ehost-live&custid='.$custID.'&authtype=ip,uid&groupid=main&profileid='.$profile.'&scope=site';
+      $directionUrl = $rec->plink;
+      $directionUrl = $directionUrl.'&user=jaychang&password=Qwer1!34';
       $onErrorImgUrl = 'http://rps2images.ebscohost.com/rpsweb/othumb?id=NL$'.$AN.'$EPUB&s=l';
-      $title = $rec->header->controlInfo->bkinfo->btl;
+      $title = $rec->header->controlInfo->artinfo->tig->atl;
       $tempItem = array('title' => strval($title), 'imgUrl' => strval($imgUrl), 'directionUrl' => strval($directionUrl), 'onErrorUrlImg' => strval($onErrorImgUrl));
       array_push($result, $tempItem);
     }

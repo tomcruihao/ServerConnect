@@ -66,7 +66,6 @@
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           let result = '';
-          console.log(this.response);
           let apiValue = JSON.parse(this.response);
           for(let count in apiValue) {
             result = result + `<div class="ebook-wrap"><a href="${apiValue[count].directionUrl}" target="_blank"><div class="image-frame"><img src="${apiValue[count].imgUrl}" onerror="this.src='${apiValue[count].onErrorUrlImg}'" title="${apiValue[count].title}"></div><h2>${apiValue[count].title}</h2></a></div>`;
@@ -100,6 +99,7 @@
     }
   }
   async function initial() {
+    console.log('test123');
     $("#ebook").append(await makeEbookField());
     const carousel = await genCarousel();
   }
