@@ -70,6 +70,7 @@
         </div>
       </section>
       <section>
+        <h2>{{$t('message.identity_title_department')}}</h2>
         <ul>
           <li v-for="department_L1 in departmentData" v-if="!department_L1.hasOwnProperty('deleted')" class="level-1">
             <div class="row">
@@ -125,9 +126,15 @@
               </li>
             </ul>
           </li>
+          <li v-if="noData.department" class="level-1">
+            <div class="btn-wrap">
+              <button @click="onChange('root')">{{$t('message.identity_addNewItem')}}</button>
+            </div>
+          </li>
         </ul>
       </section>
       <section class="setting-wrap">
+        <h2>{{$t('message.identity_title_Identity')}}</h2>
         <ul>
           <li v-for="identity in identityData" v-if="!identity.hasOwnProperty('deleted')" class="level-1">
             <div class="row">
@@ -136,10 +143,19 @@
                 <!-- <div class="icon-frame">
                   <img src="../img/icon/add.svg" @click="addIdentity(identity, 'identity')"/>
                 </div> -->
+                <select v-model="selector_items" @change="onChange(selector_items)">
+                  <option value="">{{$t('message.select_options')}}</option>
+                  <option :value="'root_identity'">{{$t('message.select_sameLevel')}}</option>
+                </select>
                 <div class="icon-frame" v-if="identity.child.length === 0">
                   <img src="../img/icon/delete.svg" @click="deleteIdentity(identity, 'identity')"/>
                 </div>
               </div>
+            </div>
+          </li>
+          <li v-if="noData.identity" class="level-1">
+            <div class="btn-wrap">
+              <button @click="onChange('root_identity')">{{$t('message.identity_addNewItem')}}</button>
             </div>
           </li>
         </ul>
@@ -182,8 +198,8 @@
   </div>
 </body>
 </html>
-<script src="../lib/js/verifyAuth.js"></script>
 <script src="../lib/js/basicParameters.js"></script>
+<script src="../lib/js/verifyAuth.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
 <script src="../lang/lang.js"></script>
@@ -219,12 +235,42 @@
       departmentData: [],
       identityData: [],
       ref_list: [],
-      selector_items: ''
+      selector_items: '',
+      noData: {
+        department: false,
+        identity: false
+      }
     },
     created: function() {
       this.init();
     },
     mounted: function () {
+    },
+    watch: {
+      departmentData: {
+        handler: function(val, oldVal) {
+          let result = true;
+          this.departmentData.forEach(res => {
+            if(!res.hasOwnProperty('deleted')) {
+              result = false;
+            }
+          });
+          this.noData.department = result;
+        },
+        deep: true
+      },
+      identityData: {
+        handler: function(val, oldVal) {
+          let result = true;
+          this.identityData.forEach(res => {
+            if(!res.hasOwnProperty('deleted')) {
+              result = false;
+            }
+          });
+          this.noData.identity = result;
+        },
+        deep: true
+      }
     },
     methods:{
       init() {
@@ -487,6 +533,28 @@
               "name": ""
             }
             this.ref_list.userDepartment.push(obj_forAuthIdentity);
+          } else if (item === 'root_identity') {
+            for(index in this.ref_list.userIdentity) {
+              let temp = parseInt(this.ref_list.userIdentity[index].id, 10);
+              if(temp > number) {
+                number = temp;
+              }
+            }
+
+            number++;
+
+            let obj_forAuthList = {
+              "value": number,
+              "displayName": "",
+              "child": []
+            }
+            this.identityData.push(obj_forAuthList);
+
+            let obj_forAuthIdentity = {
+              "id": number,
+              "name": ""
+            }
+            this.ref_list.userIdentity.push(obj_forAuthIdentity);
           }
         } else if(typeof item === 'object') {
           for(index in this.ref_list.userDepartment) {

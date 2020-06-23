@@ -84,6 +84,9 @@ const messages = {
       // identity management page
       h1_identity: 'Identity Management',
       identity_validateIdentity: 'Identity Validate feature',
+      identity_addNewItem: 'Add New Item',
+      identity_title_department: 'Department',
+      identity_title_Identity: 'Identity',
       select_options: 'Options',
       select_sameLevel: 'Add item for same level',
       select_nextLevel: 'Add item for next level',
@@ -232,6 +235,9 @@ const messages = {
       // identity management page
       h1_identity: '身份管理',
       identity_validateIdentity: '身份驗證功能',
+      identity_addNewItem: '新增項目',
+      identity_title_department: '部門',
+      identity_title_Identity: '身份',
       select_options: '請選擇',
       select_sameLevel: '增加同層項目',
       select_nextLevel: '增加子項目',
