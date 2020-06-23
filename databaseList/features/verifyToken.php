@@ -28,7 +28,7 @@
     $userList = json_decode($getUserListJsonData, true);
 
     foreach($userList as $row) {
-      if(strcasecmp($row['account'], $_SESSION['userAccount']) == 0) {
+      if(strcasecmp($row['account'], $_SESSION['userAccount']) == 0 && strcasecmp($row['uuid'], $_SESSION['uuid']) == 0) {
         $result = true;
       }
     }

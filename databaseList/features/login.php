@@ -30,6 +30,7 @@
     if(strcasecmp($row['account'], $received_user['account']) == 0) {
       if(strcasecmp($row['pwd'], $encryptedPwd) == 0) {
         $auth = true;
+        $uuid = $row['uuid'];
       }
     }
   }
@@ -44,6 +45,7 @@
 
     $_SESSION['userAccount'] = $received_user['account'];
     $_SESSION['expiredTime'] = $expiredTime;
+    $_SESSION['uuid'] = $uuid;
 
     $tokenInfo = [];
     $tokenInfo['user'] = $received_user['account'];
