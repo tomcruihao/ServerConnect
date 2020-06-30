@@ -1,0 +1,13 @@
+.mainTitle {
+  padding: 15px;
+  background-color: #005c88;
+
+  .lang-wrap {
+    display: flex;
+    justify-content: flex-end;
+
+    select {
+      margin-left: 5px;
+    }
+  }
+}

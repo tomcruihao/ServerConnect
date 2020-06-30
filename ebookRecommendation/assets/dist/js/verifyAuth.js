@@ -14,7 +14,7 @@ function verifyToken () {
 }
 
 function directToIndex() {
-  window.location.replace("https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/admin/index.html");
+  window.location.replace("https://gss.ebscohost.com/chchang/resource/ns265393/ebookRecommendation/admin/index.html");
 }
 
 verifyToken();

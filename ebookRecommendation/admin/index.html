@@ -7,6 +7,15 @@
     <link rel="stylesheet" type="text/css" href="../assets/dist/css/admin_index.css"/>
   </head>
 <body>
+  <div id="mainTitle" class="mainTitle">
+    <div class="lang-wrap">
+      <img class="icon-star" src="../assets/brand/icon/language.svg">
+      <select v-model="selector_lang" @change="setLang($event)">
+        <option value="en">English</option>
+        <option value="local">中文</option>
+      </select>
+    </div>
+  </div>
   <div class="app-content">
     <div id="loginForm" class="login-frame">
       <div class="logo">
@@ -46,6 +55,25 @@
   <script src="../assets/dist/js/jquery.js"></script>
   <script src="../assets/dist/js/verifyCode/canvas-verification-code.js"></script>
   <script type="text/javascript">
+    var mainTitle = new Vue({
+      el:'#mainTitle',
+      i18n,
+      data: {
+        selector_lang: '',
+        show: true
+      },
+      created: function() {
+      },
+      mounted: function() {
+        this.selector_lang = i18n.locale;
+      },
+      methods: {
+        async setLang(event) {
+          i18n.locale = event.target.value;
+        }
+      }
+    })
+
     var loginForm = new Vue({
       el:'#loginForm',
       data: {
@@ -73,7 +101,7 @@
             let self = this;
 
             $.ajax({
-              url: 'https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/features/login.php',
+              url: 'https://gss.ebscohost.com/chchang/resource/ns265393/ebookRecommendation/features/login.php',
               xhrFields: {
                 withCredentials: true
               },

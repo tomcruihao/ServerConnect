@@ -1,0 +1,18 @@
+.mainTitle {
+  padding: 15px;
+  background-color: #005c88;
+}
+
+.mainTitle .lang-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.mainTitle .lang-wrap select {
+  margin-left: 5px;
+}
+/*# sourceMappingURL=maintitle.css.map */

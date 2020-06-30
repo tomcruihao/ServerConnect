@@ -7,23 +7,32 @@
     <link href="../assets/dist/css/requirementList.css" type="text/css" rel="stylesheet">
   </head>
   <body>
+    <div id="mainTitle" class="mainTitle">
+      <div class="lang-wrap">
+        <img class="icon-star" src="../assets/brand/icon/language.svg">
+        <select v-model="selector_lang" @change="setLang($event)">
+          <option value="en">English</option>
+          <option value="local">中文</option>
+        </select>
+      </div>
+    </div>
     <div class="container">
       <div class="logo-frame">
         <img class="logo" src="../assets/brand/eBooks_Logo.png" alt="">
       </div>
       <section id="ebookListField" class="ebooklist-field">
         <div class="button-wrap">
-          <button class="csv" @click="generateReport()">导出CSV</button>
-          <button class="delete" @click="callDialogueDeleteEbooks()">删除</button>
+          <button class="csv" @click="generateReport()">{{$t('message.button_exportCsv')}}</button>
+          <button class="delete" @click="callDialogueDeleteEbooks()">{{$t('message.button_delete')}}</button>
         </div>
         <div class="grid">
           <div class="head header">
             <div class="row">
               <div class="checkbox">#</div>
-              <div class="title">书名</div>
-              <div class="isbn">ISBN</div>
-              <div class="apply-user-name">申请人姓名</div>
-              <div class="apply-date">申请日期</div>
+              <div class="title">{{$t('message.applying_ebookInfo_bookTitle')}}</div>
+              <div class="isbn">{{$t('message.applying_ebookInfo_isbn')}}</div>
+              <div class="apply-user-name">{{$t('message.applying_userInfo_yourName')}}</div>
+              <div class="apply-date">{{$t('message.requirement_applyDate')}}</div>
             </div>
           </div>
         </div>
@@ -43,7 +52,7 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  出版社:
+                  {{$t('message.applying_ebookInfo_publisher')}}:
                 </div>
                 <div class="content-value">
                   {{ebook.purchaseInfo.publisher}}
@@ -51,7 +60,7 @@
               </div>
               <div class="material">
                 <div class="title">
-                  出版日期:
+                  {{$t('message.applying_ebookInfo_publishDate')}}:
                 </div>
                 <div class="content-value">
                   {{ebook.purchaseInfo.date}}
@@ -61,11 +70,11 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  书本详细:
+                  {{$t('message.applying_ebookInfo_publishDate')}}:
                 </div>
                 <div class="content-value">
                   <label class="link" @click="linkToDDA(ebook.an, ebook.dbCode)">
-                    <img class="icon-star" src="../assets/brand/icon/link.svg">链接
+                    <img class="icon-star" src="../assets/brand/icon/link.svg">{{$t('message.requirement_link')}}
                   </label>
                 </div>
               </div>
@@ -73,7 +82,7 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  学号/工号:
+                  {{$t('message.applying_userInfo_bussinessUnit')}}:
                 </div>
                 <div class="content-value">
                   {{ebook.userInfo.userNumber}}
@@ -81,7 +90,7 @@
               </div>
               <div class="material">
                 <div class="title">
-                  电话号码:
+                  {{$t('message.applying_userInfo_phone')}}:
                 </div>
                 <div class="content-value">
                   {{ebook.userInfo.phone}}
@@ -91,7 +100,7 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  Email:
+                  {{$t('message.applying_userInfo_email')}}:
                 </div>
                 <div class="content-value">
                   {{ebook.userInfo.email}}
@@ -101,7 +110,7 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  身份信息:
+                  {{$t('message.applying_userInfo_capacity')}}:
                 </div>
                 <div class="content-value">
                   {{ebook.userInfo.userIdentity}}
@@ -109,7 +118,7 @@
               </div>
               <div class="material">
                 <div class="title">
-                  单位/学院:
+                  {{$t('message.applying_userInfo_faculty')}}:
                 </div>
                 <div class="content-value">
                   {{ebook.userInfo.faculty}}
@@ -119,7 +128,7 @@
             <div class="row">
               <div class="material">
                 <div class="title">
-                  备注信息:
+                  {{$t('message.applying_ebookInfo_comment')}}:
                 </div>
                 <div class="content-value">
                   {{ebook.note}}
@@ -134,24 +143,46 @@
       <!-- <div class="cover" @click="closeDialogue"></div> -->
       <div class="dialogue-message-frame" v-if="type === 'delete'">
         <div class="dialogue-head">
-          <h4>信息</h4>
+          <h4>{{$t('message.dialogue_info')}}</h4>
         </div>
         <div class="dialogue-body">
-          您确定要删除吗?
+          {{$t('message.dialogue_deleteInfo')}}?
           <div class="btn-frame">
-            <button @click="deleteEbooks()">确定</button>
-            <button @click="close('dialogue')">关闭</button>
+            <button @click="deleteEbooks()">{{$t('message.button_confirm')}}</button>
+            <button @click="close('dialogue')">{{$t('message.button_close')}}</button>
           </div>
         </div>
       </div>
     </div>
   </body>
-  <script src="../assets/dist/js/verifyAuth.js"></script>
+  <script src="../assets/dist/js/verifyAuth.js?v=1"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="../assets/dist/js/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+  <script src="../lang/lang.js"></script>
   <script type="text/javascript">
+    var mainTitle = new Vue({
+      el:'#mainTitle',
+      i18n,
+      data: {
+        selector_lang: '',
+        show: true
+      },
+      created: function() {
+      },
+      mounted: function() {
+        this.selector_lang = i18n.locale;
+      },
+      methods: {
+        async setLang(event) {
+          i18n.locale = event.target.value;
+        }
+      }
+    })
+
     var dialogue = new Vue({
       el:'#dialogue',
+      i18n,
       data: {
         show: false,
         type: ''
@@ -175,6 +206,7 @@
     });
     var ebookListField = new Vue({
       el:'#ebookListField',
+      i18n,
       data: {
         ebookList: [
           {
@@ -200,7 +232,7 @@
           }
         ],
         checkedItems: [],
-        linkBasicUrl: 'https://search.ebscohost.com/login.aspx?direct=true&lang=zh-cn&site=eds-live&authtype=uid&profile=eds-dda&user=bnu&password=LibUse@2020'
+        linkBasicUrl: 'https://search.ebscohost.com/login.aspx?direct=true&lang=zh-cn&site=eds-live&authtype=uid&profile=eds-dda&user=aiib2020&password=Lib_2020'
       },
       created: function() {
         this.buildEbookList();
@@ -209,7 +241,7 @@
         buildEbookList() {
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/features/getEbookRequirementList.php',
+            url: 'https://gss.ebscohost.com/chchang/resource/ns265393/ebookRecommendation/features/getEbookRequirementList.php',
             type: 'GET',
             error: function(jqXHR, exception) {
               //use url variable here
@@ -232,7 +264,7 @@
         deleteEbooks() {
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/features/processEbookRequirement.php',
+            url: 'https://gss.ebscohost.com/chchang/resource/ns265393/ebookRecommendation/features/processEbookRequirement.php',
             type: 'POST',
             data: {
               type: 'delete',
@@ -246,6 +278,7 @@
             success: function(res) {
               if(res.status === 'success') {
                 self.buildEbookList();
+                dialogue.close('dialogue');
               }
             }
           });
@@ -291,8 +324,6 @@
           window.open(link, '_blank');
         },
         toggle(obj) {
-          console.log('test');
-          console.log(obj);
           obj.activate = !obj.activate;
         }
       }

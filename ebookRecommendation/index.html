@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
+    <meta name="author" content="Jay Chang">
     <title>EBSCO ebooks DDA Plus</title>
-    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/"> -->
 
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
@@ -33,18 +31,26 @@
     <link href="form-validation.css" rel="stylesheet">
   </head>
   <body class="bg-light">
-    <div class="container" id="formField">
+    <div id="mainTitle" class="mainTitle">
+      <div class="lang-wrap">
+        <div><img class="icon-star" src="assets/brand/icon/language.svg"></div>
+        <select v-model="selector_lang" @change="setLang($event)">
+          <option value="en">English</option>
+          <option value="local">中文</option>
+        </select>
+      </div>
+    </div>
+    <div class="container">
       <div class="py-5 text-center">
         <img class="logo" src="assets/brand/eBooks_Logo.png" alt="">
       </div>
-
-      <section>
+      <section id="formField">
         <div class="row">
           <div class="col-md-12 order-md-1">
-            <h4 class="mb-3">读者信息</h4>
+            <h4 class="mb-3">{{$t('message.applying_userInfo_title')}}</h4>
               <div class="mb-3">
                 <label>
-                  姓名
+                  {{$t('message.applying_userInfo_yourName')}}
                   <span class="text-muted">
                     <img class="icon-star" src="assets/brand/icon/star.svg">
                   </span>
@@ -53,33 +59,65 @@
               </div>
               <div class="mb-3">
                 <label>
-                  学号/工号
+                  {{$t('message.applying_userInfo_bussinessUnit')}}
                   <span class="text-muted">
                     <img class="icon-star" src="assets/brand/icon/star.svg">
                   </span>
                 </label>
-                <input type="text" class="form-control" v-model="formData.userInfo.userNumber">
+                <!-- <input type="text" class="form-control" v-model="formData.userInfo.userNumber"> -->
+                <select v-model="formData.userInfo.userNumber" class="custom-select d-block w-100">
+                  <option value="">{{$t('message.applying_options_pleaseSelectYourBusinessUnit')}}</option>
+                  <option value="Complaints-resolution, Evaluation and Integrity Unit - CEIU">Complaints-resolution, Evaluation and Integrity Unit - CEIU</option>
+                  <option value="Office of the President - PRE">Office of the President - PRE</option>
+                  <option value="International Advisory Panel - IAP">International Advisory Panel - IAP</option>
+                  <option value="Vice President, Investment Operations Region 1 - VPIO1">Vice President, Investment Operations Region 1 - VPIO1</option>
+                  <option value="Technical Department Region 1 - TEC1">Technical Department Region 1 - TEC1</option>
+                  <option value="Banking Department Region 1 - BNK1">Banking Department Region 1 - BNK1</option>
+                  <option value="Client Relations and Programming Unit Region 1 - CRP1">Client Relations and Programming Unit Region 1 - CRP1</option>
+                  <option value="Vice President, Investment Operations Region 2 - VPIO2">Vice President, Investment Operations Region 2 - VPIO2</option>
+                  <option value="Technical Department Region 2 - TEC2">Technical Department Region 2 - TEC2</option>
+                  <option value="Banking Department Region 2 - BNK2">Banking Department Region 2 - BNK2</option>
+                  <option value="Client Relations and Programming Unit Region 2 - CRP2">Client Relations and Programming Unit Region 2 - CRP2</option>
+                  <option value="Operational Services Department - OSD">Operational Services Department - OSD</option>
+                  <option value="Implementation Monitoring Unit - IMU">Implementation Monitoring Unit - IMU</option>
+                  <option value="Vice President, Policy and Strategy - VPPS">Vice President, Policy and Strategy - VPPS</option>
+                  <option value="Strategy, Policy and Budget Department - SPB">Strategy, Policy and Budget Department - SPB</option>
+                  <option value="Economics Unit - ECON">Economics Unit - ECON</option>
+                  <option value="Vice President, Chief Administration Officer - VPCAO">Vice President, Chief Administration Officer - VPCAO</option>
+                  <option value="Human Resources Department - HRD">Human Resources Department - HRD</option>
+                  <option value="Facilities and Administration Services Department - FAS">Facilities and Administration Services Department - FAS</option>
+                  <option value="Information Technology Division - ITD">Information Technology Division - ITD</option>
+                  <option value="Vice President, Corporate Secretary - VPSEC">Vice President, Corporate Secretary - VPSEC</option>
+                  <option value="Chief Financial Officer - CFO">Chief Financial Officer - CFO</option>
+                  <option value="Office of the Controller - CTL">Office of the Controller - CTL</option>
+                  <option value="Office of the Treasurer - TRE">Office of the Treasurer - TRE</option>
+                  <option value="Office of the General Counsel - OGC">Office of the General Counsel - OGC</option>
+                  <option value="Risk Management Department - RMD">Risk Management Department - RMD</option>
+                  <option value="Communications Department - COM">Communications Department - COM</option>
+                  <option value="Internal Audit Office - IAO">Internal Audit Office - IAO</option>
+                  <option value="Ethics Office - ETH">Ethics Office - ETH</option>
+                </select>
               </div>
               <div class="row">
                 <div class="col-md-12 mb-3">
-                  <label>身份信息</label>
+                  <label>{{$t('message.applying_userInfo_capacity')}}</label>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio1" value="staff" v-model="formData.userInfo.userIdentity">
-                        <label class="form-check-label" for="radio1">教职工</label>
+                        <label class="form-check-label" for="radio1">{{$t('message.applying_options_staff')}}</label>
                       </div>
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio2" value="doctoral" v-model="formData.userInfo.userIdentity">
-                        <label class="form-check-label" for="radio2">博士生</label>
+                        <label class="form-check-label" for="radio2">{{$t('message.applying_options_doctoral')}}</label>
                       </div>
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio3" value="postgraduate" v-model="formData.userInfo.userIdentity">
-                        <label class="form-check-label" for="radio3">研究生</label>
+                        <label class="form-check-label" for="radio3">{{$t('message.applying_options_postgraduate')}}</label>
                       </div>
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radio4" value="undergraduate" v-model="formData.userInfo.userIdentity">
-                        <label class="form-check-label" for="radio4">本科生</label>
+                        <label class="form-check-label" for="radio4">{{$t('message.applying_options_postgraduate')}}</label>
                       </div>
                     </div>
                   </div>
@@ -88,7 +126,7 @@
       
               <div class="mb-3">
                 <label for="email">
-                  Email
+                  {{$t('message.applying_userInfo_email')}}
                   <span class="text-muted">
                     <img class="icon-star" src="assets/brand/icon/star.svg">
                   </span>
@@ -97,19 +135,19 @@
               </div>
       
               <div class="mb-3">
-                <label for="faculty">单位/学院</label>
+                <label for="faculty">{{$t('message.applying_userInfo_faculty')}}</label>
                 <input type="text" class="form-control" id="faculty" v-model="formData.userInfo.faculty">
               </div>
       
               <div class="mb-3">
-                <label for="phoneNum">电话号码</label>
+                <label for="phoneNum">{{$t('message.applying_userInfo_phone')}}</label>
                 <input type="text" class="form-control" id="phoneNum" v-model="formData.userInfo.phone">
               </div>
               <hr class="mb-3">
-              <h4 class="mt-3">申请购买电子书信息</h4>
+              <h4 class="mt-3">{{$t('message.applying_ebookInfo_title')}}</h4>
               <div class="mt-3">
                 <label for="firstName">
-                  ISBN
+                  {{$t('message.applying_ebookInfo_isbn')}}
                   <span class="text-muted">
                     <img class="icon-star" src="assets/brand/icon/star.svg">
                   </span>
@@ -117,26 +155,26 @@
                 <input type="text" class="form-control" v-model="formData.purchaseInfo.isbn">
               </div>
               <div class="mt-3">
-                <label for="firstName">书名</label>
+                <label for="firstName">{{$t('message.applying_ebookInfo_bookTitle')}}</label>
                 <input type="text" class="form-control" v-model="formData.purchaseInfo.title">
               </div>
               <div class="mt-3">
-                <label for="firstName">出版社</label>
+                <label for="firstName"></label>
                 <input type="text" class="form-control" v-model="formData.purchaseInfo.publisher">
               </div>
               <div class="mt-3">
-                <label for="firstName">出版日期</label>
+                <label for="firstName">{{$t('message.applying_ebookInfo_publishDate')}}</label>
                 <input type="date" class="form-control" v-model="formData.purchaseInfo.date">
               </div>
               <hr class="mb-3">
-              <h4 class="mt-3">备注信息</h4>
+              <h4 class="mt-3">{{$t('message.applying_ebookInfo_comment')}}</h4>
               <div class="mb-3">
                 <div class="form-group">
                   <textarea class="form-control" rows="5" v-model="formData.note"></textarea>
                 </div>
               </div>
               <hr class="mb-4">
-              <button class="btn btn-primary btn-lg btn-block" @click="submit">提交</button>
+              <button class="btn btn-primary btn-lg btn-block" @click="submit">{{$t('message.applying_submit')}}</button>
           </div>
         </div>
       </section>
@@ -160,23 +198,23 @@
       <!-- <div class="cover" @click="closeDialogue"></div> -->
       <div class="dialogue-message-frame" v-if="type === 'notFillAll'">
         <div class="dialogue-head">
-          <h4>错误</h4>
+          <h4>{{$t('message.dialogue_title_error')}}</h4>
         </div>
         <div class="dialogue-body">
-          请确实将星号处的信息完整
+          {{$t('message.dialogue_content_fillAllBlank')}}
           <div class="btn-frame">
-            <button @click="close('dialogue')">关闭</button>
+            <button @click="close('dialogue')">{{$t('message.button_close')}}</button>
           </div>
         </div>
       </div>
       <div class="dialogue-message-frame" v-if="type === 'success'">
         <div class="dialogue-head">
-          <h4>请求成功</h4>
+          <h4>{{$t('message.dialogue_title_success')}}</h4>
         </div>
         <div class="dialogue-body">
-          您的信息已经收到了, 请点击关闭
+          {{$t('message.dialogue_content_applicationHasBeenReceived')}}
           <div class="btn-frame">
-            <button @click="close('window')">关闭</button>
+            <button @click="close('window')">{{$t('message.button_close')}}</button>
           </div>
         </div>
       </div>
@@ -187,11 +225,32 @@
     <script src="assets/dist/js/bootstrap.bundle.js"></script>
     <script src="form-validation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+    <script src="lang/lang.js"></script>
   </body>
 </html>
 <script>
+  var mainTitle = new Vue({
+    el:'#mainTitle',
+    i18n,
+    data: {
+      selector_lang: '',
+      show: true
+    },
+    created: function() {
+    },
+    mounted: function() {
+      this.selector_lang = i18n.locale;
+    },
+    methods: {
+      async setLang(event) {
+        i18n.locale = event.target.value;
+      }
+    }
+  })
   var dialogue = new Vue({
     el:'#dialogue',
+    i18n,
     data: {
       show: false,
       type: ''
@@ -211,101 +270,102 @@
     }
   });
   var formField = new Vue({
-      el:'#formField',
-      data: {
-        client: '',
-        formData: {
-          userInfo: {
-            name: '',
-            userNumber: '',
-            userIdentity: '',
-            email: '',
-            faculty: '',
-            phone: ''
-          },
-          purchaseInfo: {
-            isbn: '',
-            title: '',
-            publisher: '',
-            date: ''
-          },
-          note: '',
-          an: '',
-          dbCode: ''
-        }
-      },
-      created: function() {
-        // example: https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/index.html?client=ns055233_ebooks&lng=1&title=%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9%E7%B5%8C%E6%B8%88&aulast=&publisher=%E6%96%87%E7%9C%9E%E5%A0%82&date=20180101&isbn=9784830950018&sid=EBSCO:edsebk&an=2395336&dbCode=edsebk
-        // http://search.ebscohost.com/login.aspx?authtype=uid&profile=eds-dda&user=bnu&password=LibUse@2020
-        const paramTable = ['client','lng','title','aulast','publisher','date','isbn','sid','an','dbCode']
-        let url_string = window.location.href;
-        let url = new URL(url_string);
-
-        for(index in paramTable) {
-          let paramVal = url.searchParams.get(paramTable[index]);
-
-          if(paramVal !== null) {
-            switch(paramTable[index]) {
-              case 'client':
-                this.client = paramVal;
-                break;
-              case 'title':
-                this.formData.purchaseInfo.title = paramVal;
-                break;
-              case 'publisher':
-                this.formData.purchaseInfo.publisher = paramVal;
-                break;
-              case 'date':
-                let dateOutput = [paramVal.slice(0, 4), '-', paramVal.slice(4, 6), '-', paramVal.slice(6)].join('');
-                console.log(dateOutput);
-                this.formData.purchaseInfo.date = dateOutput;
-                break;
-              case 'isbn':
-                this.formData.purchaseInfo.isbn = paramVal;
-                break;
-              case 'an':
-                this.formData.an = paramVal;
-                break;
-              case 'dbCode':
-                this.formData.dbCode = paramVal;
-                break;
-            }
-          }
-        }
-      },
-      methods:{
-        checkFill() {
-          if(this.formData.userInfo.name.trim() === '' || this.formData.userInfo.userNumber.trim() === '' || this.formData.userInfo.email.trim() === '' || this.formData.purchaseInfo.isbn.trim() === '') {
-            return false;
-          } else {
-            return true;
-          }
+    el:'#formField',
+    i18n,
+    data: {
+      client: '',
+      formData: {
+        userInfo: {
+          name: '',
+          userNumber: '',
+          userIdentity: '',
+          email: '',
+          faculty: '',
+          phone: ''
         },
-        submit() {
-          let formPass = this.checkFill();
-          if(formPass) {
-            let self = this;
-            $.ajax({
-              url: 'https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/features/processEbookRequirement.php',
-              type: 'POST',
-              data: {
-                type: 'add',
-                formData: JSON.stringify(self.formData)
-              },
-              error: function(jqXHR, exception) {
-                //use url variable here
-                console.log(jqXHR);
-                console.log(exception);
-              },
-              success: function(res) {
-                console.log(res);
-                dialogue.setDialogue('success');
-              }
-            });
-          } else {
-            dialogue.setDialogue('notFillAll');
+        purchaseInfo: {
+          isbn: '',
+          title: '',
+          publisher: '',
+          date: ''
+        },
+        note: '',
+        an: '',
+        dbCode: ''
+      }
+    },
+    created: function() {
+      // example: https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/index.html?client=ns055233_ebooks&lng=1&title=%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9%E7%B5%8C%E6%B8%88&aulast=&publisher=%E6%96%87%E7%9C%9E%E5%A0%82&date=20180101&isbn=9784830950018&sid=EBSCO:edsebk&an=2395336&dbCode=edsebk
+      // http://search.ebscohost.com/login.aspx?authtype=uid&profile=eds-dda&user=bnu&password=LibUse@2020
+      const paramTable = ['client','lng','title','aulast','publisher','date','isbn','sid','an','dbCode']
+      let url_string = window.location.href;
+      let url = new URL(url_string);
+
+      for(index in paramTable) {
+        let paramVal = url.searchParams.get(paramTable[index]);
+
+        if(paramVal !== null) {
+          switch(paramTable[index]) {
+            case 'client':
+              this.client = paramVal;
+              break;
+            case 'title':
+              this.formData.purchaseInfo.title = paramVal;
+              break;
+            case 'publisher':
+              this.formData.purchaseInfo.publisher = paramVal;
+              break;
+            case 'date':
+              let dateOutput = [paramVal.slice(0, 4), '-', paramVal.slice(4, 6), '-', paramVal.slice(6)].join('');
+              console.log(dateOutput);
+              this.formData.purchaseInfo.date = dateOutput;
+              break;
+            case 'isbn':
+              this.formData.purchaseInfo.isbn = paramVal;
+              break;
+            case 'an':
+              this.formData.an = paramVal;
+              break;
+            case 'dbCode':
+              this.formData.dbCode = paramVal;
+              break;
           }
         }
       }
-    });
+    },
+    methods:{
+      checkFill() {
+        if(this.formData.userInfo.name.trim() === '' || this.formData.userInfo.userNumber.trim() === '' || this.formData.userInfo.email.trim() === '' || this.formData.purchaseInfo.isbn.trim() === '') {
+          return false;
+        } else {
+          return true;
+        }
+      },
+      submit() {
+        let formPass = this.checkFill();
+        if(formPass) {
+          let self = this;
+          $.ajax({
+            url: 'https://gss.ebscohost.com/chchang/resource/ns265393/ebookRecommendation/features/processEbookRequirement.php',
+            type: 'POST',
+            data: {
+              type: 'add',
+              formData: JSON.stringify(self.formData)
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              console.log(res);
+              dialogue.setDialogue('success');
+            }
+          });
+        } else {
+          dialogue.setDialogue('notFillAll');
+        }
+      }
+    }
+  });
 </script>

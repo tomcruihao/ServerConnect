@@ -67,6 +67,24 @@ input[type="text"].disabled, input[type="password"].disabled, input[type="date"]
   background-color: #7b8cde;
 }
 
+.mainTitle {
+  padding: 15px;
+  background-color: #005c88;
+}
+
+.mainTitle .lang-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.mainTitle .lang-wrap select {
+  margin-left: 5px;
+}
+
 .app-content {
   width: 100%;
   max-width: 960px;
