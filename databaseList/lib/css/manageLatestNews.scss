@@ -149,9 +149,8 @@ input[type="text"], input[type="date"], input[type="number"] {
       .toggle-wrap {
         padding: 5px 0;
         text-align: end;
-        label {
+        img {
           cursor: pointer;
-          color: $anchor_color;
         }
       }
     }

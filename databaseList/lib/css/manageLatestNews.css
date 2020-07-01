@@ -638,9 +638,8 @@ input[type="text"], input[type="date"], input[type="number"] {
   text-align: end;
 }
 
-.app-content .latestNews-field .latestNews-wrap .toggle-wrap label {
+.app-content .latestNews-field .latestNews-wrap .toggle-wrap img {
   cursor: pointer;
-  color: #008cce;
 }
 
 .mask {

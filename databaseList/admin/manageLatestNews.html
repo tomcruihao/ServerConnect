@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>最新消息</title>
-    <link rel="stylesheet" type="text/css" href="../lib/css/manageLatestNews.css?v=1.0"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageLatestNews.css?v=1.1"/>
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
   </head>
 <body>
@@ -152,8 +152,8 @@
           </div>
         </div>
         <div class="toggle-wrap">
-          <label v-if="latestNews.expand" @click="contentToggle(latestNews)">{{$t('message.tag_close')}}</label>
-          <label v-else @click="contentToggle(latestNews)">{{$t('message.tag_expand')}}</label>
+          <img v-if="latestNews.expand" @click="contentToggle(latestNews)" src="../img/icon/expand_less.svg" alt="less" title="less"/>
+          <img v-else @click="contentToggle(latestNews)" src="../img/icon/expand_more.svg" alt="expand" title="expand"/>
         </div>
       </div>
     </div>
