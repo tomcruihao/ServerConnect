@@ -147,7 +147,9 @@ const messages = {
       resource_table_moreDetail: "more...",
       // tag
       tag_chinese: 'Chinese',
-      tag_english: 'English'
+      tag_english: 'English',
+      tag_expand: 'Expand',
+      tag_close: 'Close'
     }
   },
   local: {
@@ -298,7 +300,9 @@ const messages = {
       resource_table_moreDetail: "更多...",
       // tag
       tag_chinese: '中文',
-      tag_english: '英文'
+      tag_english: '英文',
+      tag_expand: '展開',
+      tag_close: '收起'
     }
   }
 }

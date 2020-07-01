@@ -554,8 +554,9 @@ input[type="text"], input[type="date"], input[type="number"] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #7b8cde;
 }
 
@@ -591,6 +592,15 @@ input[type="text"], input[type="date"], input[type="number"] {
           justify-content: center;
 }
 
+.app-content .latestNews-field .latestNews-wrap .multi-lang-field {
+  max-height: 90px;
+  overflow: hidden;
+}
+
+.app-content .latestNews-field .latestNews-wrap .multi-lang-field.expand {
+  max-height: none;
+}
+
 .app-content .latestNews-field .latestNews-wrap .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -621,6 +631,16 @@ input[type="text"], input[type="date"], input[type="number"] {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.app-content .latestNews-field .latestNews-wrap .toggle-wrap {
+  padding: 5px 0;
+  text-align: end;
+}
+
+.app-content .latestNews-field .latestNews-wrap .toggle-wrap label {
+  cursor: pointer;
+  color: #008cce;
 }
 
 .mask {

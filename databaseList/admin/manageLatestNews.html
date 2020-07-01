@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>最新消息</title>
-    <link rel="stylesheet" type="text/css" href="../lib/css/manageLatestNews.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageLatestNews.css?v=1.0"/>
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
   </head>
 <body>
@@ -125,7 +125,7 @@
           <button @click="changeTag(latestNews, 'local')" :class="[latestNews.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
           <button @click="changeTag(latestNews, 'en')" :class="[latestNews.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
         </div>
-        <div class="multi-lang-field" v-if="latestNews.tag === 'local'">
+        <div class="multi-lang-field" v-bind:class="{ expand: latestNews.expand}" v-if="latestNews.tag === 'local'">
           <div class="row">
             <div class="title">{{$t('message.latest_publish_title')}}</div>
             <div class="content">{{latestNews.local.title}}</div>
@@ -135,7 +135,7 @@
             <div class="content" v-html="latestNews.local.content"></div>
           </div>
         </div>
-        <div class="multi-lang-field" v-else-if="latestNews.tag === 'en'">
+        <div class="multi-lang-field" v-bind:class="{ expand: latestNews.expand}" v-else-if="latestNews.tag === 'en'">
           <div class="row">
             <div class="title">{{$t('message.latest_publish_title')}}</div>
             <div class="content">{{latestNews.en.title}}</div>
@@ -150,6 +150,10 @@
             <div class="title">{{$t('message.latest_publish_date')}}</div>
             <div class="content">{{latestNews.publishDate}}</div>
           </div>
+        </div>
+        <div class="toggle-wrap">
+          <label v-if="latestNews.expand" @click="contentToggle(latestNews)">{{$t('message.tag_close')}}</label>
+          <label v-else @click="contentToggle(latestNews)">{{$t('message.tag_expand')}}</label>
         </div>
       </div>
     </div>
@@ -274,7 +278,7 @@
   <script src="../lib/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
-  <script src="../lang/lang.js"></script>
+  <script src="../lang/lang.js?v=1.0"></script>
   <script src="../lib/js/jquery.js"></script>
   <script src="../lib/js/header_back.js"></script>
   <script type="text/javascript">
@@ -350,6 +354,9 @@
         this.getLatestNewsListInfo();
       },
       methods:{
+        contentToggle(Obj) {
+          Obj.expand = !Obj.expand;
+        },
         changeTag(Obj, type) {
           Obj.tag = type;
         },
@@ -373,6 +380,7 @@
               let temp_newsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
               for(let index in temp_newsList) {
                 temp_newsList[index]['tag'] = 'local';
+                temp_newsList[index]['expand'] = false;
               }
               self.latestNewsList = temp_newsList;
             }

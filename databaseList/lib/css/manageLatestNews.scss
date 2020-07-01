@@ -83,7 +83,7 @@ input[type="text"], input[type="date"], input[type="number"] {
           border-radius: 50%;
           display: flex;
           justify-content: center;
-          align-content: center;
+          align-items: center;
           background-color: #7b8cde;
         }
       }
@@ -107,6 +107,16 @@ input[type="text"], input[type="date"], input[type="number"] {
           justify-content: center;
         }
       }
+
+      .multi-lang-field {
+        max-height: 90px;
+        overflow: hidden;
+
+        &.expand {
+          max-height: none;
+        }
+      }
+
       .row {
         display: flex;
         flex-wrap: wrap;
@@ -133,6 +143,15 @@ input[type="text"], input[type="date"], input[type="number"] {
             text-overflow: ellipsis;
             white-space: nowrap;
           }
+        }
+      }
+
+      .toggle-wrap {
+        padding: 5px 0;
+        text-align: end;
+        label {
+          cursor: pointer;
+          color: $anchor_color;
         }
       }
     }
