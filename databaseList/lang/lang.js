@@ -61,6 +61,7 @@ const messages = {
       setting_proxy: 'Proxy/Redirector Prefix URL',
       setting_total_resources: 'Total Resources',
       setting_show_popular_resources: 'The number of Popular resources to show',
+      setting_exportDatabaseFile: 'Export Database List',
       // latest news management page
       h1_latestNews: 'News Management',
       latest_form_setting: 'News Block Settings',
@@ -212,6 +213,7 @@ const messages = {
       setting_proxy: 'Proxy/Redirector 前綴網址',
       setting_total_resources: '資源數',
       setting_show_popular_resources: '熱門資源顯示數量',
+      setting_exportDatabaseFile: '匯出資料庫',
       // latest news management page
       h1_latestNews: '消息管理',
       latest_form_setting: '消息區塊設定',

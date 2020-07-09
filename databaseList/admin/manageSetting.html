@@ -104,6 +104,14 @@
             <button @click="buildStrokes()">{{$t('message.btn_execute')}}</button>
           </div>
         </div>
+        <div class="row">
+          <div class="title">
+            {{$t('message.setting_exportDatabaseFile')}}
+          </div>
+          <div class="content">
+            <button @click="exportFile()">{{$t('message.btn_execute')}}</button>
+          </div>
+        </div>
         <!-- <div class="row">
           <div class="title">
             {{$t('message.setting_import_csv_data')}}
@@ -251,6 +259,9 @@
     mounted: function() {
     },
     methods: {
+      exportFile() {
+        window.open(`${apiPath}/exportDatabases.php`);
+      },
       onFileChange(e) {
         let csvFile = e.target.files || e.dataTransfer.files;
         if (!csvFile.length)
