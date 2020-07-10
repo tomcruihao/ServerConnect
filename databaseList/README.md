@@ -1,6 +1,18 @@
 # Database Listing System
 
 # Release Note
+## 2020/July/10
+### Import Database List
+```
+databaseList/admin/manageSetting.html
+databaseList/features/buildDataStructure.php
+databaseList/features/exportDatabases.php
+databaseList/features/fileConverter.php
+databaseList/lang/lang.js
+databaseList/lib/css/manageSettings.css
+databaseList/lib/css/manageSettings.css.map
+databaseList/lib/css/manageSettings.scss
+```
 
 ## 2020/July/09
 ### Export Database List
