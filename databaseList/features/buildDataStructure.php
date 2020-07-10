@@ -137,7 +137,7 @@
   //   }
   // }
 
-  // // write back
+  // write back
   file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
   $res = array('status' => 'success', 'type' => 'success');

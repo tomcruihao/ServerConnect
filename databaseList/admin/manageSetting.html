@@ -112,14 +112,17 @@
             <button @click="exportFile()">{{$t('message.btn_execute')}}</button>
           </div>
         </div>
-        <!-- <div class="row">
+        <div class="row">
           <div class="title">
             {{$t('message.setting_import_csv_data')}}
           </div>
           <div class="content">
-            <input type="file" accept=".csv" @change="onFileChange">
+            <label class="btn">
+              {{$t('message.btn_execute')}}
+              <input type="file" accept=".txt" @change="onFileChange" class="hide">
+            </label>
           </div>
-        </div> -->
+        </div>
       </div>
     </section>
     <section id="accountInfoField" class="user-info-wrap">
@@ -162,6 +165,20 @@
         {{$t('message.dialogue_content_expired')}}
         <div class="btn-frame">
           <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'import_success'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body">
+        <div class="row">
+          <div class="content">{{$t('message.dialogue_content_import_successful')}}</div>
+        </div>
+        <div class="btn-frame">
+          <button @click="closeDialogue">{{$t('message.btn_close')}}</button>
         </div>
       </div>
     </div>
@@ -263,11 +280,11 @@
         window.open(`${apiPath}/exportDatabases.php`);
       },
       onFileChange(e) {
-        let csvFile = e.target.files || e.dataTransfer.files;
-        if (!csvFile.length)
+        let txtFile = e.target.files || e.dataTransfer.files;
+        if (!txtFile.length)
           return;
 
-        let file_data = csvFile[0];
+        let file_data = txtFile[0];
         let form_data = new FormData();
         form_data.append('file', file_data);
 
@@ -279,8 +296,8 @@
           processData: false,
           data: form_data,
           type: 'post',
-          success: function(res){
-            console.log(res);
+          success: function(res) {
+            dialogue.setDialogue('import_success');
           }
         });
       },

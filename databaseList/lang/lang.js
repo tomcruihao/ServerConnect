@@ -113,6 +113,7 @@ const messages = {
       dialogue_content_updateSuccess: 'Update Successful',
       dialogue_content_account_updateSuccess: 'Your account has updated successfully, please re-login',
       dialogue_content_logout: 'Log out successfully',
+      dialogue_content_import_successful: 'Import Successful',
       // button
       btn_recover: 'Recover',
       btn_update: 'Update',
@@ -265,6 +266,7 @@ const messages = {
       dialogue_content_updateSuccess: '更新成功',
       dialogue_content_account_updateSuccess: '帳號更新成功, 請重新登入',
       dialogue_content_logout: '登出成功',
+      dialogue_content_import_successful: '匯入成功',
       // button
       btn_recover: '復原',
       btn_update: '更新',

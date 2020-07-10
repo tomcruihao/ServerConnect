@@ -11,7 +11,7 @@ error_reporting(E_ALL);
   header('Content-Type: application/json;charset=UTF-8');
   date_default_timezone_set('Asia/Taipei');
 
-  // include 'verifyToken.php';
+  include 'verifyToken.php';
 
   $jsonFile_direct = '../data/eResourceList.json';
   $fileDir = '../csvFiles/exportResources.txt';
@@ -61,13 +61,10 @@ error_reporting(E_ALL);
     }
     $content = $content."\n";
   }
-
   $content = mb_convert_encoding($content, 'UTF-8', "auto");
   file_put_contents($fileDir, $content);
 
-
-  
-
+  // download the file
   if (file_exists($fileDir)) {
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream');
@@ -80,16 +77,6 @@ error_reporting(E_ALL);
     exit;
     echo "<script>window.close();</script>";
   }
-  // $page_file_temp = $_SERVER["PHP_SELF"];
-  // echo $page_file_temp;
-  // $page_directory = dirname($page_file_temp);
-  // echo $page_directory;
-
-  // $fp = fopen('../csvFiles/exportResources.txt', 'w');
-  // foreach ($resourceList as $fields) {
-  //   print_r($fields);
-  // }
-  
 
   function getMataData($resource) {
     $result = array();
