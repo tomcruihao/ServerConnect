@@ -1,0 +1,228 @@
+<section>
+  <div id="ebook" class="regular slider"></div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<style>
+  .slider {
+    height: 250px;
+  }
+  canvas {
+    background-color: #000;
+  }
+</style>
+<script>
+  var keyword = 'economy';
+  var connectToBackendUrl = "https://gss.ebscohost.com/chchang/resource/ns265393/carousel/getEbookList.php";
+  var tempNoImage = [];
+
+  function appendLibrary() {
+    // append the js and css
+    var head = document.getElementsByTagName('HEAD')[0];  
+
+    // Create new link Element 
+    let link_slick = document.createElement('link');
+    link_slick.rel = 'stylesheet';  
+    link_slick.type = 'text/css'; 
+    link_slick.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css';
+
+    let link_slickTheme = document.createElement('link');
+    link_slickTheme.rel = 'stylesheet';  
+    link_slickTheme.type = 'text/css'; 
+    link_slickTheme.href = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css';
+
+    let link_indexCss = document.createElement('link');
+    link_indexCss.rel = 'stylesheet';  
+    link_indexCss.type = 'text/css'; 
+    link_indexCss.href = 'https://gss.ebscohost.com/chchang/ServerConnect/carousel/lib/css/index.css';
+
+    let script = document.createElement("script");
+    script.src = 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js';
+    script.defer = true;
+
+    // Append link element to HTML head 
+    head.appendChild(link_slick);
+    head.appendChild(link_slickTheme);
+    head.appendChild(link_indexCss);
+    head.appendChild(script);
+  }
+  appendLibrary();
+
+  const carouselParam = {
+    dots: true,
+    infinite: true, 
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      }
+    ]
+  };
+
+  function getImgInfo(imgObj) {
+    if(Array.isArray(imgObj)) {
+      return imgObj[imgObj.length - 1];
+    } else {
+      return imgObj;
+    }
+  }
+
+  function getTitle(array_items) {
+    let result = '';
+
+    array_items.forEach(element => {
+      if(element.Name === 'Title') {
+        result = element.Data;
+      }
+    });
+
+    return result;
+  }
+
+  let makeEbookField = () => {
+    return new Promise((resolve, reject) => {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          let result = '';
+          let apiValue = JSON.parse(this.response);
+          console.log(apiValue);
+
+          let bookList = apiValue.SearchResult.Data.Records;
+          for(let index in bookList) {
+            let bookTitle = getTitle(bookList[index].Items);
+            let imageInfo = {
+              Size: "medium",
+              Target: "https://dummyimage.com/104x144/000000/ffffff&text="+bookTitle
+            };
+
+            if(bookList[index].hasOwnProperty('ImageInfo')) {
+              imageInfo = getImgInfo(bookList[index].ImageInfo);
+              result = result + `<div class="ebook-wrap"><a href="${bookList[index].PLink}" target="_blank"><div class="image-frame"><img src="${imageInfo.Target}" onerror="this.src='img/noImg.png'" title="${bookTitle}"></div><h2>${bookTitle}</h2></a></div>`;
+            } else {
+              let tempID = 'noImg'+index;
+              let imageInfo = {
+                'title': bookTitle,
+                'id': tempID
+              }
+              tempNoImage.push(imageInfo);
+              result = result + `<div class="ebook-wrap"><a href="${bookList[index].PLink}" target="_blank"><div class="image-frame"><canvas id="${tempID}"></canvas></div><h2>${bookTitle}</h2></a></div>`;
+            }
+          }
+
+          resolve(result);
+        }
+      };
+
+      let urlWithParam = connectToBackendUrl+'?kw='+keyword;
+
+      xhttp.open("GET", urlWithParam, true);
+      xhttp.send();
+    })
+  }
+  async function genCarousel() {
+    var execLoop = setInterval(checkExist, 200);
+    var countExeLoop = 0;
+    function checkExist() {
+      console.log('checkExist');
+      countExeLoop = countExeLoop + 1;
+      if (jQuery().slick) {
+        console.log('Exist!');
+        clearInterval(execLoop);
+        $(".regular").slick(carouselParam);
+      } else if(countExeLoop > 10) {
+        appendLibrary();
+        countExeLoop = 0;
+      }
+    }
+  }
+  function dealNoImage() {
+    console.log(tempNoImage);
+    tempNoImage.forEach(function(item) {
+      let canvas = document.getElementById(item.id),
+          ctx = canvas.getContext('2d'),
+          input = item.title,
+          width = +(canvas.width = 130),
+          height = +(canvas.height = 180),
+          fontFamily = "Arial",
+          fontSize = "14px",
+          fontColour = "#E0E0E0";
+
+      ctx.save();
+      ctx.clearRect(0, 0, width, height);
+      ctx.font = "bold " + fontSize + " " + fontFamily;
+      ctx.textAlign = "center";
+      
+
+      ctx.fillStyle = fontColour;
+      var lines = fragmentText(input, width - parseInt(fontSize,0), ctx);
+      var lineWidth, lineHeight;
+      var linePadding = 5;
+      lines.forEach(function(line, i) {
+          lineHeight = parseInt(fontSize, 0);
+          lineWidth = ctx.measureText(line).width;
+          ctx.globalCompositeOperation = 'source-over';
+          // background color of text
+          ctx.fillStyle = fontColour;
+          ctx.fillRect(5, (i * (lineHeight + linePadding))+5, lineWidth + linePadding, (lineHeight + linePadding));
+          ctx.globalCompositeOperation = 'destination-out';
+          ctx.fillText(line, ((lineWidth + linePadding) / 2)+5, ((i + 1) * (lineHeight + linePadding) - linePadding - 1)+5);
+      });
+      
+      ctx.restore();
+    });
+  }
+  function fragmentText(text, maxWidth, ctx) {
+    var words = text.split(' '),
+        lines = [],
+        line = "";
+    if (ctx.measureText(text).width < maxWidth) {
+        return [text];
+    }
+    while (words.length > 0) {
+        var split = false;
+        while (ctx.measureText(words[0]).width >= maxWidth) {
+            var tmp = words[0];
+            words[0] = tmp.slice(0, -1);
+            if (!split) {
+                split = true;
+                words.splice(1, 0, tmp.slice(-1));
+            } else {
+                words[1] = tmp.slice(-1) + words[1];
+            }
+        }
+        if (ctx.measureText(line + words[0]).width < maxWidth) {
+            line += words.shift() + " ";
+        } else {
+            lines.push(line);
+            line = "";
+        }
+        if (words.length === 0) {
+            lines.push(line);
+        }
+    }
+    return lines;
+  }
+
+  async function initial() {
+    $("#ebook").append(await makeEbookField());
+    dealNoImage();
+    const carousel = await genCarousel();
+  }
+  $(document).on('ready', function() {
+    setTimeout(initial, 1000);
+  });
+</script>

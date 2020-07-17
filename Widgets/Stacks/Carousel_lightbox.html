@@ -1,0 +1,191 @@
+<div id="lightboxFieldMark"></div>
+<style>
+  .mask-dia {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .mask-dia.show-dialogue {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .mask-dia .cover {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    cursor: pointer;
+  }
+
+  .mask-dia .dialogue-message-frame {
+    width: 94%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mask-dia .dialogue-message-frame .dialogue-head {
+    width: 100%;
+    padding: 5px 20px 5px 15px;
+    font-size: 1.2rem;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: #008cce;
+    border-radius: 10px 10px 0px 0px;
+    position: relative;
+  }
+
+  .mask-dia .dialogue-message-frame .dialogue-head h4 {
+    margin: 0;
+    color: #ffffdb;
+  }
+
+  .mask-dia .dialogue-message-frame .dialogue-head .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+  }
+
+  .mask-dia .dialogue-message-frame .dialogue-body {
+    height: 80vh;
+    padding: 30px 30px 80px;
+    background-color: #ffffff;
+    border-radius: 0px 0px 10px 10px;
+    position: relative;
+    overflow-y: scroll;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+  .mask-dia .dialogue-message-frame .dialogue-body .ebook-iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mask-dia .dialogue-message-frame .dialogue-body .btn-frame {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
+
+  .mask-dia .dialogue-message-frame .dialogue-body .btn-frame button {
+    width: 80px;
+    height: 38px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #787878;
+    font-weight: bold;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+</style>
+<script>
+  let basicUrl_tas = 'https://search.ebscohost.com/login.aspx?direct=true&site=eds-live&authtype=uid,ip&profile=eds';
+
+  document.addEventListener("DOMContentLoaded", async function(event) {
+    await createLightbox();
+    replaceOriginalCarouselLink();
+    replaceFlipsterCarouselLink();
+    document.getElementById("lightboxFieldMark").parentNode.parentNode.setAttribute("style", 'display: none;');
+  });
+
+  async function createLightbox() {
+    return new Promise((resolve, reject) => {
+      let body = document.querySelector('body');
+      
+
+      let newDiv = document.createElement('div');
+      newDiv.setAttribute("id", 'mask-dia');
+      newDiv.setAttribute("class", 'mask-dia');
+      newDiv.innerHTML = '<button class="cover" onclick="closeDialogue()"></button>\
+                            <div class="dialogue-message-frame">\
+                              <div class="dialogue-body">\
+                                <iframe src="#" id="bookDetail" class="ebook-iframe"></iframe>\
+                                <div class="btn-frame">\
+                                  <button onclick="closeDialogue()">\
+                                    <img src="https://gss.ebscohost.com/chchang/resource/imgs/icons/close-gray.svg"> Close\
+                                  </button>\
+                                </div>\
+                              </div>\
+                            </div>'
+      body.appendChild(newDiv);
+      resolve();
+    });
+  }
+
+  function replaceFlipsterCarouselLink() {
+    let checkExist = setInterval(function() {
+      try {
+        let flipster = document.querySelectorAll('#ebook > .slick-prev');
+        if (flipster.length > 0) {
+          clearInterval(checkExist);
+          let elements = document.querySelectorAll('.ebook-wrap > a');
+          elements.forEach(res => {
+            let originalUrl = res.getAttribute("href").replace("http:", "https:");
+
+            res.removeAttribute("target");
+            res.setAttribute("href", `javascript:popupDialogue_flipster('${originalUrl}')`);
+          });
+        }
+      }
+      catch(err) {
+        document.getElementById("demo").innerHTML = err.message;
+      }
+
+    }, 2000);
+  }
+
+  function replaceOriginalCarouselLink() {
+    let elements = document.querySelectorAll(".views-field .img-wrapper a");
+    elements.forEach(res => {
+      let originalUrl = res.getAttribute("href");
+      let tempUrl = new URL(`${window.location.origin}${originalUrl}`);
+      
+      let an = tempUrl.searchParams.get('an');
+      let db = tempUrl.searchParams.get('db');
+
+      res.removeAttribute("target");
+      res.setAttribute("href", `javascript:popupDialogue("${an}", "${db}")`);
+    });
+  }
+
+  function popupDialogue_flipster(link) {
+    // document.getElementById('mask-dia').classList.add("show-dialogue");
+    // document.getElementById('bookDetail').src = link;
+    var features =' left=' + window.outerWidth*0.1 + ' top=' + window.outerHeight*0.1 + ' width=' + window.outerWidth*0.8 + ', height=' + window.outerHeight*0.8 + ',location=0, resizable=0, scrollbars, toolbar=0, menubar=0';
+    var url = 'http://gss.ebscohost.com/chchang/resource/js/s3448411/flipster.php?url='+encodeURIComponent(link);
+    console.log(features);
+    window.open(url, "Detail",features);
+  }
+
+  function popupDialogue(an, db) {
+    let linkUrl = `${basicUrl_tas}&AN=${an}&db=${db}`;
+
+    document.getElementById('mask-dia').classList.add("show-dialogue");
+    document.getElementById('bookDetail').src = linkUrl;
+  }
+
+  function closeDialogue() {
+    document.getElementById('mask-dia').classList.remove("show-dialogue");
+  }
+</script>

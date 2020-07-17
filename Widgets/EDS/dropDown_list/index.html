@@ -1,0 +1,30 @@
+<script type="text/javascript">
+  let linkInfo = [
+    {"title": "天津高校图书馆联合系统", "link": 'http://211.81.31.7/'},
+    {"title": "CNKI Scholar", "link": 'http://scholar.cnki.net/'},
+    {"title": "E读学术搜索", "link": 'http://www.yidu.edu.cn/'},
+    {"title": "CALIS外文期刊网", "link": 'http://ccc.calis.edu.cn/'},
+    {"title": "CALIS高校书刊联合目录", "link": 'http://opac.calis.edu.cn/simpleSearch.do'}
+  ]
+  var outerLi = document.createElement('li');
+  outerLi.className = 'nav-item submenu-trigger';
+  outerLi.setAttribute("role", 'menuitem');
+  outerLi.setAttribute("tabindex", '-1');
+  outerLi.innerHTML = `<a title="友情链接" tabindex="-1" href="http://www.lib.tjfsu.edu.cn/" class="link color-s1" role="menubar">友情链接<span class="icon" aria-haspop="true" tabindex="-1"></span></a>`;
+  
+  let innerUl = document.createElement('ul');
+  innerUl.className = 'submenu border-p1';
+  innerUl.setAttribute("role", 'menu');
+
+  for(let count in linkInfo) {
+    let innerLi = document.createElement('li');
+    innerLi.className = 'subnav-item border-p1 bg-p1';
+    innerLi.setAttribute("tabindex", '-1');
+    innerLi.innerHTML = `<a title="${linkInfo[count].title}" href="${linkInfo[count].link}" class="submenu-link" tabindex="-1" target="_blank">${linkInfo[count].title}</a>`;
+    innerUl.appendChild(innerLi);
+  }
+
+  outerLi.appendChild(innerUl);
+
+  document.getElementById('SearchNavigationMenubar').appendChild(outerLi);
+</script>

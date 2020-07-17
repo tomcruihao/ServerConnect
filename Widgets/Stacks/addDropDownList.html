@@ -1,0 +1,128 @@
+<script type="text/javascript">
+  const classKeyword = 'menu-mlid';
+  let menuList = document.querySelectorAll("#block-menu-block-4 ul > li");
+  menuList.forEach((menu, index) => {
+    if(menu.className.indexOf(classKeyword) >= 0) {
+      if(menu.querySelectorAll("ul").length) {
+        let newLabel = document.createElement('label');
+        newLabel.setAttribute("for", 'checkbox_' + index);
+        newLabel.innerHTML = '<div class="icon"></div>';
+        let newCheckBox = document.createElement('input');
+        newCheckBox.type = 'checkbox';
+        newCheckBox.className = 'collapse-checkbox';
+        newCheckBox.id = 'checkbox_' + index;
+
+        // note: please add checkbox above the label html
+        menu.insertBefore(newLabel, menu.firstChild);
+        menu.insertBefore(newCheckBox, menu.firstChild);
+      }
+    }
+  });
+</script>
+<style type="text/css">.menu > li {
+    position: relative;
+  }
+  .collapse-checkbox {
+    display: none;
+  }
+  .collapse-checkbox +label {
+    width: 100%;
+    height: 32px;
+    margin: 0;
+    position: absolute;
+    top: 0px;
+    z-index: 1000;
+  }
+  .collapse-checkbox +label .icon {
+    content: " ";
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(315deg);
+    position: absolute;
+    top: 7px;
+    right: 7px;
+  }
+  .collapse-checkbox:checked + label .icon {
+    transform: rotate(405deg);
+  }
+  .collapse-checkbox ~ ul {
+    overflow: hidden;
+    max-height: 0px;
+    transition: transform 1s;
+  }
+  .collapse-checkbox:checked ~ ul {
+    max-height: 1000px;
+  }
+  #block-menu-block-4 ul li.leaf {
+  background-color: #591a47;
+  }
+</style>
+
+
+/////////////////////OLD //////////////////////////
+<script type="text/javascript">
+  const classKeyword = 'menu-mlid';
+  let menuList = document.querySelectorAll("#block-menu-block-4 ul > li");
+  menuList.forEach((menu, index) => {
+    if(menu.className.indexOf(classKeyword) >= 0) {
+      if(menu.querySelectorAll("ul").length) {
+        let newLabel = document.createElement('label');
+        newLabel.setAttribute("for", 'checkbox_' + index);
+        let newCheckBox = document.createElement('input');
+        newCheckBox.type = 'checkbox';
+        newCheckBox.className = 'collapse-checkbox';
+        newCheckBox.id = 'checkbox_' + index;
+
+        // note: please add checkbox above the label html
+        menu.insertBefore(newLabel, menu.firstChild);
+        menu.insertBefore(newCheckBox, menu.firstChild);
+      }
+    }
+  });
+</script>
+<style type="text/css">.menu > li {
+    position: relative;
+  }
+  .collapse-checkbox {
+    display: none;
+  }
+  .collapse-checkbox +label {
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    position: relative;
+    transform: rotate(315deg);
+    transition: transform 0.25s;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1000;
+  }
+  .collapse-checkbox +label:after {
+    content: " ";
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    z-index: 1000;
+  }
+  .collapse-checkbox:checked + label {
+    transform: rotate(405deg);
+  }
+  .collapse-checkbox ~ ul {
+    overflow: hidden;
+    max-height: 0px;
+    transition: transform 1s;
+  }
+  .collapse-checkbox:checked ~ ul {
+    max-height: 1000px;
+  }
+  #block-menu-block-4 ul li.leaf {
+  background-color: #591a47;
+  }
+</style>
