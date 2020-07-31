@@ -1,0 +1,47 @@
+section {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+
+  .feature-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .control-panel {
+      display: flex;
+
+      .converter-type {
+        margin-right: 20px;
+      }
+
+      .uploadFile-label {
+        width: 100px;
+        height: 40px;
+        background-color: #17a2b8;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        cursor: pointer;
+
+        input {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .result {
+    margin-top: 20px;
+    border: 2px solid #bbbbbb;
+    tr {
+      th, td {
+        width: 200px;
+        text-align: center;
+      }
+    }
+  }
+}
+

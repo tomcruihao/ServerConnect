@@ -1,0 +1,60 @@
+section {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+section .feature-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section .feature-wrap .control-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .feature-wrap .control-panel .converter-type {
+  margin-right: 20px;
+}
+
+section .feature-wrap .control-panel .uploadFile-label {
+  width: 100px;
+  height: 40px;
+  background-color: #17a2b8;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+section .feature-wrap .control-panel .uploadFile-label input {
+  display: none;
+}
+
+section .result {
+  margin-top: 20px;
+  border: 2px solid #bbbbbb;
+}
+
+section .result tr th, section .result tr td {
+  width: 200px;
+  text-align: center;
+}
+/*# sourceMappingURL=index.css.map */
