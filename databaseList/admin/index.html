@@ -10,7 +10,7 @@
   <div class="app-content">
     <div id="mainTitle" class="mainTitle">
       <div class="lang-wrap">
-        <div>{{$t('message.chooseLanguage')}}:</div>
+        <img src="../img/icon/language.svg"/>
         <select v-model="selector_lang" @change="setLang($event)">
           <option value="en">English</option>
           <option value="local">中文</option>
@@ -107,11 +107,6 @@
                 withCredentials: true
               },
               type: 'POST',
-              // headers: {
-              //   'ver': '1.0',
-              //   'fileType': 'mp4',
-              //   'md5': '47e954ec481d097e96261d993ec43ba5'
-              // },
               data: {
                 user: JSON.stringify(self.user)
               },

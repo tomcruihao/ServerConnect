@@ -44,7 +44,6 @@
       $resourceList[$key_resource][$t_key] = $t_row;
     }
   }
-  
 
   // foreach($resourceList as $key => $value) {
   //   $resourceList[$key]['local'] = $resourceList[$key]['tw'];

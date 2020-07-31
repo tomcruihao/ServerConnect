@@ -18,8 +18,6 @@
   $getLatestNewsJsonData = file_get_contents($jsonFile_direct);
   $authData = json_decode($getLatestNewsJsonData, true);
 
-
-
   if ($type === 'updateSetting') {
     $authData['settings'] = $receivedData;
 

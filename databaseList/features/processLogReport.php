@@ -1,9 +1,4 @@
 <?php
-ini_set("display_errors", 1);
-ini_set("track_errors", 1);
-ini_set("html_errors", 1);
-error_reporting(E_ALL);
-
   header("Access-Control-Allow-Headers: *");
   header("Access-Control-Allow-Credentials: true");
   header("Access-Control-Allow-Origin: http://gss.ebscohost.com/");
@@ -71,17 +66,9 @@ error_reporting(E_ALL);
     foreach($clickedData_filtered_by_date as $log) {
       $logDateTime = new DateTime($log['clickedDateTime']);
       $string_time = $logDateTime->format($dateFormat);
-      // $ary_tempDate = explode(" ", $log['clickedDateTime']);
-      // $date = $ary_tempDate[0];
 
       $report[$string_time][$log['uuid']]['clickTimes']++;
       $report[$string_time]['total']++;
-      // if (array_key_exists($log['id'], $report[$string_time])) {
-      //   $report[$string_time][$log['id']]['clickTimes']++;
-      // } else {
-      //   $report[$string_time][$log['id']]['name'] = $resourceIdArray[$log['id']];
-      //   $report[$string_time][$log['id']]['clickTimes'] = 1;
-      // }
     }
   } else if($generateType === 'userDepartment' || $generateType === 'userIdentity') {
     $report = array_identityAndDepartment($generateType, $identityData);

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>資料庫</title>
+    <title>Database Manage</title>
     <link rel="stylesheet" type="text/css" href="../lib/css/manageResource.css"/>
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
   </head>
@@ -49,7 +49,7 @@
     <section id="mainTitle" class="mainTitle">
       <h1 v-text="$t('message.h1_resource_management')"></h1>
       <div class="lang-wrap">
-        <div>{{$t('message.chooseLanguage')}}:</div>
+        <img src="../img/icon/language.svg"/>
         <select v-model="selector_lang" @change="setLang($event)">
           <option value="en">English</option>
           <option value="local">中文</option>

@@ -112,39 +112,6 @@
       </ul>
     </div>
   </section>
-
-  <!-- <header id="header">
-    <div class="logo">
-      <a href="index.php">
-        <img src="img/logo.png" alt="EBSCO" title="EBSCO"/>
-      </a>
-    </div>
-    <nav>
-      <label for="mobile_btn" class="mobile-btn-frame">
-        <img src="img/icon/dehaze.svg"/>
-      </label>
-      <input type="checkbox" id="mobile_btn">
-      <ul class="nav-list">
-        <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
-          <div v-if="link.child.length === 0">
-            <a :href="link.link" class="nav-tag" v-if="lang === 'en'">{{link.title.en}}</a>
-            <a :href="link.link" class="nav-tag" v-else-if="lang === 'local'">{{link.title.local}}</a>
-          </div>
-          <div v-else>
-            <label class="nav-tag" :for="'tag'+index" v-if="lang === 'en'">{{link.title.en}}</label>
-            <label class="nav-tag" :for="'tag'+index" v-else-if="lang === 'local'">{{link.title.local}}</label>
-            <input type="checkbox" :id="'tag'+index">
-            <ul>
-              <li v-for="(childLink, c_index) in link.child">
-                <a :href="childLink.link" v-if="lang === 'en'">{{childLink.title.en}}</a>
-                <a :href="childLink.link" v-if="lang === 'local'">{{childLink.title.local}}</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </header> -->
   <section>
     <div>
       <div class="search-wrap">
@@ -152,137 +119,12 @@
           <input type="text" class="search" placeholder="搜尋資源" id="searchBoxArea" onkeyup="searchKeyword()"/>
         </div>
       </div>
-      <!-- <div id="filterField">
-        <div class="search-wrap">
-          <div class="search-frame">
-            <input type="text" class="search" :placeholder="$t('message.index_placeholder_text')" v-model="searchTerm"/>
-          </div>
-        </div>
-        <div class="atoz-wrap">
-          <div class="atoz-title">{{$t('message.index_total')}}:</div>
-          <div class="atoz-field">
-            <div class="link-field">
-              <a href="javascript:searchAll()" id="searchTotal" class="clicked">{{$t('message.index_show_all')}}</a>
-            </div>
-          </div>
-        </div>
-        <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('englishAlphabet')">
-          <div class="atoz-title">{{$t('message.index_atoz')}}:</div>
-          <div class="atoz-field">
-            <div class="link-field" v-for="(alphabet, index) in anchorList.englishAlphabet">
-              <a :id="'alpha'+index" @click="search(alphabet, 'englishAlphabet', 'alpha'+index)">{{alphabet}}</a>
-            </div>
-          </div>
-        </div>
-        <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('zhuyin')">
-          <div class="atoz-title">{{$t('message.index_zhuyin')}}:</div>
-          <div class="atoz-field">
-            <div class="link-field" v-for="(zhuyin, index) in anchorList.zhuyin">
-              <a :id="'zhutin'+index" @click="search(zhuyin, 'zhuyin', 'zhutin'+index)">{{zhuyin}}</a>
-            </div>
-          </div>
-        </div>
-        <div class="atoz-wrap" v-if="Object.keys(anchorList).includes('strokes')">
-          <div class="atoz-title">{{$t('message.index_strokes')}}:</div>
-          <div class="atoz-field">
-            <div class="link-field" v-for="(strokes, index) in anchorList.strokes">
-              <a :id="'strokes'+index" @click="search(strokes, 'strokes', 'strokes'+index)">{{strokes}}</a>
-            </div>
-          </div>
-        </div>
-        <div class="sort-wrap">
-          <div class="sort-title">{{$t('message.index_sort')}}:</div>
-          <div class="btn-wrap">
-            <button @click="processSort(buttons[0])" v-bind:class="buttons[0].options.order">{{$t('message.btn_sort_1')}}</button>
-            <button @click="processSort(buttons[1])" v-bind:class="buttons[1].options.order">{{$t('message.btn_sort_2')}}</button>
-            <button @click="processSort(buttons[2])" v-bind:class="buttons[2].options.order">{{$t('message.btn_sort_3')}}</button>
-            <button @click="processSort(buttons[3])" v-bind:class="buttons[3].options.order">{{$t('message.btn_sort_4')}}</button>
-          </div>
-        </div>
-      </div> -->
       <div class="content-field" id="databaseList">
         <article>
           <ol class="list" id="resourceList">
           </ol>
           <ul class="pagination"></ul>
         </article>
-        <!-- <aside id="aside" v-bind:class="{ show: mobile_frame }">
-          <button class="btn-accordion" @click="set_mobile_show_switch(true)">
-            <img src="img/icon/view_list.svg">
-          </button>
-          <div class="aside-mobile-header">
-            <div class="title">{{$t('message.index_bulletin')}}</div>
-            <img src="img/icon/clear.svg" class="close" @click="set_mobile_show_switch(false)">
-          </div>
-          <div class="aside-content">
-            <div class="bulletin-board-frame" id="latestNews">
-              <div>
-                <h3 v-if="lang === 'en'">{{bulletinTitle.en}}</h3>
-                <h3 v-else-if="lang === 'local'">{{bulletinTitle.local}}</h3>
-              </div>
-              <ul v-if="lang === 'en'">
-                <li v-for="(latestNews, index) in latestNewsList" class="latest-news">
-                  <span class="latest-title" @click="showContent(latestNews.en)">{{latestNews.en.title}}</span>
-                  <div class="datetime">{{latestNews.publishDate}}</div>
-                </li>
-                <li class="more" v-if="latestNewsList.length >= displayNumber">
-                  <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
-                </li>
-              </ul>
-              <ul v-else-if="lang === 'local'">
-                <li v-for="(latestNews, index) in latestNewsList" class="latest-news">
-                  <span class="latest-title" @click="showContent(latestNews.local)">{{latestNews.local.title}}</span>
-                  <div class="datetime">{{latestNews.publishDate}}</div>
-                </li>
-                <li class="more" v-if="latestNewsList.length >= displayNumber">
-                  <a href="allLatestNews.html">{{$t('message.index_more')}}...</a>
-                </li>
-              </ul>
-            </div>
-            <div class="bulletin-board-frame">
-              <div>
-                <h3>{{$t('message.index_popular_frameTitle')}}</h3>
-              </div>
-              <ul>
-                <li class="popular-databases">
-                  <span class="meta-title">{{$t('message.index_popular_title')}}</span>
-                  <div class="meta-clickAmount">{{$t('message.index_popular_clickAmount')}}</div>
-                </li>
-                <li v-for="(database, index) in popularDatabases" class="popular-databases">
-                  <span class="title" @click="linkTo(database.uuid, database.resourceUrl)" v-if="lang === 'en'">
-                    {{database.name.en}}
-                  </span>
-                  <span class="title" @click="linkTo(database.uuid, database.resourceUrl)" v-else>
-                    {{database.name.local}}
-                  </span>
-                  <div class="clickAmount">{{database.clickTimes}}</div>
-                </li>
-              </ul>
-            </div>
-            <div id="subjectField">
-              <div v-if="lang === 'en'">
-                <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects.en">
-                  <h3>{{subjectInfo.subjectTitle}}</h3>
-                  <ul>
-                    <li v-for="(subject, index) in subjectInfo.subjectList">
-                      <span @click="search(subject.name, subject.className)">{{subject.name}}</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div v-else-if="lang === 'local'">
-                <div class="bulletin-board-frame" v-for="(subjectInfo, index) in subjects.local">
-                  <h3>{{subjectInfo.subjectTitle}}</h3>
-                  <ul>
-                    <li v-for="(subject, index) in subjectInfo.subjectList">
-                      <span @click="search(subject.name, subject.className)">{{subject.name}}</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </aside> -->
       </div>
     </div>
   </section>
@@ -313,20 +155,11 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $GA_ID; ?>"></script>
 <script>
-  // window.dataLayer = window.dataLayer || [];
-  // function gtag(){dataLayer.push(arguments);}
-  // gtag('js', new Date());
-
-  // gtag('config', 'UA-XXXXX');
-
-  // 
   const GA_ID = '<?php echo $GA_ID; ?>';
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
- 
 
   ga('create', GA_ID, 'auto');
   ga('send', 'pageview');
@@ -561,43 +394,6 @@
     });
   }
 
-  // function searchAtoZ(upperCharacter, anchor) {
-  //   initAndAddClickedClass(anchor);
-
-  //   let lowCharater = upperCharacter.toLowerCase();
-  //   // contactList.search(param);
-  //   contactList.filter(function(item) {
-  //     // the item includes html tag to impact the result
-  //     var regex = /(<([^>]+)>)/ig;
-  //     removeTagResult = item.values().resourceName.replace(regex, "").trim();
-
-  //     if (removeTagResult.charAt(0) === upperCharacter || removeTagResult.charAt(0) === lowCharater) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   });
-  // }
-
-  // function searchAtoZ(upperCharacter, anchor) {
-  //   initAndAddClickedClass(anchor);
-  
-  //   contactList.search(upperCharacter, ['englishAlphabet']);
-  //   resetNumbering();
-  // }
-
-  // function searchZhuYin(zhuYinChar, anchor) {
-  //   initAndAddClickedClass(anchor);
-  
-  //   contactList.search(zhuYinChar, ['zhuyin']);
-  //   resetNumbering();
-  // }
-
-  // function searchStrokes(stroke, anchor) {
-  //   initAndAddClickedClass(anchor);
-  //   contactList.search(stroke, ['strokes']);
-  //   resetNumbering();
-  // }
   function searchKeyword() {
     searchBy(document.getElementById("searchBoxArea").value);
   }
@@ -619,43 +415,6 @@
     contactList.filter();
     resetNumbering();
   }
-
-  // async function fillAnchor(allAnchor) {
-  //   // create hyper link of a to z
-  //   let englishAnchor = await createAnchor('english', allAnchor.englishAlphabet);
-  //   document.getElementById("atozField").appendChild(englishAnchor);
-
-  //   // create hyper link of ZhuYin
-  //   let zhuYinAnchor = await createAnchor('zhuyin', allAnchor.zhuyin);
-  //   document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
-
-  //   // create hyper link of strokes
-  //   let strokesAnchor = await createAnchor('strokes', allAnchor.strokes);
-  //   document.getElementById("strokesField").appendChild(strokesAnchor);
-  // }
-
-  // function createAnchor(type, rows) {
-  //   return new Promise((resolve, reject) => {
-  //     let linkWrap = document.createElement('div')
-  //     linkWrap.className = 'link-field';
-  //     rows.forEach(res => {
-  //       let anchor = document.createElement('a');
-  //       let alphabet = res;
-  //       let anchorText = document.createTextNode(alphabet);
-  //       anchor.setAttribute('href', `javascript:void(0);`);
-  //       if(type === 'zhuyin') {
-  //         anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
-  //       } else if (type === 'english') {
-  //         anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
-  //       } else if (type === 'strokes') {
-  //         anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
-  //       }
-  //       anchor.appendChild(anchorText);
-  //       linkWrap.appendChild(anchor);
-  //     })
-  //     resolve(linkWrap);
-  //   })
-  // }
 
   document.addEventListener("DOMContentLoaded", function(event) {
     // Init list

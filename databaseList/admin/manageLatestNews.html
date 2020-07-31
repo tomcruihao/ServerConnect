@@ -49,7 +49,7 @@
     <div id="mainTitle" class="mainTitle">
       <h1 v-text="$t('message.h1_latestNews')"></h1>
       <div class="lang-wrap">
-        <div>{{$t('message.chooseLanguage')}}:</div>
+        <img src="../img/icon/language.svg"/>
         <select v-model="selector_lang" @change="setLang($event)">
           <option value="en">English</option>
           <option value="local">中文</option>
@@ -308,7 +308,6 @@
       }
 
       let processData = editorData.replace(pattern, "");
-
       return processData;
     }
 
@@ -507,7 +506,6 @@
         },
         sendForm: function() {
           // get the CKEditor data
-          
           this.news.en.content = getEditorData('en');
           this.news.local.content = getEditorData('local');
 
@@ -554,8 +552,8 @@
         status: '',
         show: false,
         type: '',
-        title: '測試標題',
-        message: '測試內容',
+        title: 'title',
+        message: 'content',
         newsTitle: '',
         news: ''
       },
@@ -564,26 +562,26 @@
           this.type = type;
           switch (type) {
             case 'deleteNews':
-              this.title = '注意';
-              this.message = `您確定要刪除`;
+              this.title = 'Warning';
+              this.message = `Do you want to delete?`;
               this.newsTitle = news.title;
               this.news = JSON.stringify(news);
               break;
             case 'addNews_success':
-              this.title = '訊息';
-              this.message = '新增成功';
+              this.title = 'Message';
+              this.message = 'Added';
               break;
             case 'updateNews_success':
-              this.title = '訊息';
-              this.message = '修改成功';
+              this.title = 'Message';
+              this.message = 'Modified';
               break;
             case 'updateNewsField_success':
-              this.title = '訊息';
-              this.message = '修改成功';
+              this.title = 'Message';
+              this.message = 'Modified';
               break;
             case 'deleteNews_success':
-              this.title = '訊息';
-              this.message = '刪除成功';
+              this.title = 'Message';
+              this.message = 'Deleted';
               break;
           }
           this.show = true;

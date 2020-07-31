@@ -9,24 +9,25 @@
 <body>
   <div class="app-content">
     <div id="loginForm" class="login-frame">
-      <div class="logo">
-        <img src="../img/logo_back.svg" alt="EBSCO" title="EBSCO"/>
-      </div>
+      <h2 class="logo">
+        Account and Password Generator
+      </h2>
       <div class="row">
-        <div class="title">帳號</div>
+        <div class="title">Account</div>
         <div class="content">
           <input type="text" v-model="user.account">
         </div>
       </div>
       <div class="row">
-        <div class="title">密碼</div>
+        <div class="title">Password</div>
         <div class="content">
           <input type="password" v-model="user.password">
         </div>
       </div>
       <div class="btn-wrap">
-        <button @click="logIn">送出</button>
+        <button @click="getPwd">Submit</button>
       </div>
+      <div>The password result is: {{responsePwd}}</div>
     </div>
   </div>
   <script src="../lib/js/basicParameters.js"></script>
@@ -46,36 +47,34 @@
         },
         verifyCodeInput: '',
         imageData: '',
-        codeText : ''
+        codeText : '',
+        responsePwd: ''
       },
       mounted() {
       },
       methods:{
-        logIn() {
-          if(this.verifyCodeInput.toUpperCase() === this.codeText.toUpperCase()) {
-            let self = this;
+        getPwd() {
+          this.responsePwd = '';
+          let self = this;
 
-            $.ajax({
-              url: `${apiPath}/passwordGenerator.php`,
-              xhrFields: {
-                withCredentials: true
-              },
-              type: 'POST',
-              data: {
-                user: JSON.stringify(self.user)
-              },
-              error: function(jqXHR, exception) {
-                //use url variable here
-                console.log(jqXHR);
-                console.log(exception);
-              },
-              success: function(res) {
-                console.log(res);
-              }
-            });            
-          } else {
-            this.showLoginError('verifyError');
-          }
+          $.ajax({
+            url: `${apiPath}/passwordGenerator.php`,
+            xhrFields: {
+              withCredentials: true
+            },
+            type: 'POST',
+            data: {
+              user: JSON.stringify(self.user)
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              self.responsePwd = res.data;
+            }
+          });
         },
         showLoginError(type) {
           let self = this;

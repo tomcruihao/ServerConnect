@@ -1,1 +1,19 @@
-[{"subjectID":"d11b19fc-4c6e-416e-b201-9ff9d9cc4bdd","subjectTitle":{"en":"en_全文資料庫","local":"全文資料庫"},"subjectList":[{"className":"category","name":{"en":"en_全文資料庫","local":"全文資料庫"}},{"className":"faculty","name":{"en":"en_索摘資料庫","local":"文學院"}}],"tag":"local"},{"subjectID":"7b51a6eb-ec64-49de-a053-b6f6be5c1894","subjectTitle":{"en":"Faculty","local":"適用學院"},"subjectList":[{"className":"faculty","name":{"en":"en_文學院","local":"文學院"}},{"className":"faculty","name":{"en":"en_藝術學院","local":"藝術學院"}},{"name":{"en":"Engineering Faculty","local":"工程學院"},"className":"subject"}],"tag":"en"},{"subjectTitle":{"en":"Resource","local":"資源"},"subjectList":[{"name":{"en":"OPEN ACCESS","local":"免費OA"},"className":"resourceType"}],"subjectID":"09cbb2ee-bc32-47c9-9114-04747a60c1f3","tag":"en"}]
+[
+  {
+    "subjectID":"d11b19fc-4c6e-416e-b201-9ff9d9cc4bdd",
+    "subjectTitle":{
+      "en":"Build a subject",
+      "local":"Build a subject"
+    },
+    "subjectList":[
+      {
+        "className":"category",
+        "name":{
+          "en":"Temp Name",
+          "local":"Temp Local Name"
+        }
+      }
+    ],
+    "tag":"local"
+  }
+]

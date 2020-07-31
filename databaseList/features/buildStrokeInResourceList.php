@@ -14,11 +14,6 @@
   $getStrokesJsonData = file_get_contents('../data/UniHanO.json');
   $strokes = json_decode($getStrokesJsonData, true);
 
-  // foreach($strokes as $key => $row) {
-  //   $firstChar = $row['char'];
-  //   echo mb_detect_encoding($firstChar);
-  // }
-
   // for local
   foreach($resourceList as $key_lang => $resource) {
     $chars = preg_split('/(?<!^)(?!$)/u', $resource['local']['resourceName']);
@@ -58,7 +53,7 @@
     if(!in_array($firstChar, $alphas, TRUE)) {
       $firstChar = '';
     }
-    // $firstChar = $chars[0];
+
     $resourceList[$key_lang]['en']['englishAlphabet'] = $firstChar;
     $resourceList[$key_lang]['en']['zhuyin'] = '';
     $resourceList[$key_lang]['en']['strokes'] = '0';
@@ -176,8 +171,6 @@
   
   // write back
   file_put_contents($jsonFile_strokes_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
-  // $res = array('status' => 'success', 'type' => 'success');
-  // echo json_encode($res, JSON_UNESCAPED_UNICODE);
   
   $res = array('status' => 'success', 'type' => 'success');
   echo json_encode($res, JSON_UNESCAPED_UNICODE);

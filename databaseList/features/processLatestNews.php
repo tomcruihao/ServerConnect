@@ -47,7 +47,6 @@
   } else if ($type === 'deleteNews') {
     foreach($latestNewsData['newsList'] as $key => $row) {
       if(strcasecmp($row['uuid'], $receivedData['uuid']) == 0) {
-        // unset($latestNewsData['newsList'][$key]);
         array_splice($latestNewsData['newsList'], $key, 1);
         break;
       }
@@ -64,9 +63,6 @@
     file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
   } else if($type === 'hotNewsField') {
-    // echo 'Go HERE';
-    // echo $receivedData['turnOn'];
-    // echo $receivedData['newsID'];
     $latestNewsData['hotNews']['turnOn'] = $receivedData['turnOn'];
     $latestNewsData['hotNews']['newsID'] = $receivedData['newsID'];
 

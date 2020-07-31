@@ -45,7 +45,7 @@
     <div id="mainTitle" class="mainTitle">
       <h1 v-text="$t('message.h1_identity')"></h1>
       <div class="lang-wrap">
-        <div>{{$t('message.chooseLanguage')}}:</div>
+        <img src="../img/icon/language.svg"/>
         <select v-model="selector_lang" @change="setLang($event)">
           <option value="en">English</option>
           <option value="local">中文</option>
@@ -76,9 +76,6 @@
             <div class="row">
               <input type="text" v-model="department_L1.displayName" @change="updateRefDepartmentList(department_L1)">
               <div class="icon-wrap">
-                <!-- <div class="icon-frame">
-                  <img src="../img/icon/add.svg" @click="addIdentity(department_L1, 'department')"/>
-                </div> -->
                 <select v-model="selector_items" @change="onChange(selector_items)">
                   <option value="">{{$t('message.select_options')}}</option>
                   <option :value="'root'">{{$t('message.select_sameLevel')}}</option>
@@ -99,9 +96,6 @@
                       <option :value="department_L1">{{$t('message.select_sameLevel')}}</option>
                       <option :value="department_L2">{{$t('message.select_nextLevel')}}</option>
                     </select>
-                    <!-- <div class="icon-frame">
-                      <img src="../img/icon/add.svg" @click="addIdentity(department_L2, 'department')"/>
-                    </div> -->
                     <div class="icon-frame">
                       <img src="../img/icon/delete.svg" @click="deleteIdentity(department_L2, 'department')"/>
                     </div>
@@ -140,9 +134,6 @@
             <div class="row">
               <input type="text" v-model="identity.displayName" @change="updateRefIdentityList(identity)">
               <div class="icon-wrap">
-                <!-- <div class="icon-frame">
-                  <img src="../img/icon/add.svg" @click="addIdentity(identity, 'identity')"/>
-                </div> -->
                 <select v-model="selector_items" @change="onChange(selector_items)">
                   <option value="">{{$t('message.select_options')}}</option>
                   <option :value="'root_identity'">{{$t('message.select_sameLevel')}}</option>
@@ -219,8 +210,6 @@
       setLang(event) {
         i18n.locale = event.target.value;
         localStorage.setItem('lang', event.target.value);
-
-        // subjectField.setLocale(event.target.value);
         header.setLocale(event.target.value);
       }
     }
@@ -376,8 +365,7 @@
       deleteIdentity(Object, field) {
         // check child node all deleted
         let exist = false;
-        console.log(Object.child);
-        console.log(Object.child.length);
+
         if(Object.child.length !== 0) {
           for(index in Object.child) {
             if(!Object.child[index].hasOwnProperty('deleted')) {
@@ -463,7 +451,6 @@
             console.log(response);
           }
         });
-        // console.log(this.ref_list);
       },
       updateRefDepartmentList(Obj) {
         for(index in this.ref_list.userDepartment) {
@@ -581,13 +568,6 @@
           this.ref_list.userDepartment.push(obj_forAuthIdentity);
         }
         this.selector_items = '';
-        
-        // for(index in this.dataInfo) {
-        //   if(this.dataInfo[index].id === event.target.value) {
-        //     // console.log(this.dataInfo[index]);
-        //     this.displayInfo = JSON.parse(JSON.stringify(this.dataInfo[index]));
-        //   }
-        // }
       }
     }
   });
@@ -603,16 +583,12 @@
       }
     },
     created: function() {
-      // let userInfo = JSON.parse(localStorage.getItem('user'));
-      // this.userAccount = userInfo.user;
     },
     computed: {
       dialogueMessage: {
         get: function () {
           return this.message;
         }
-        // ,set: function () {
-        // }
       }
     },
     methods:{

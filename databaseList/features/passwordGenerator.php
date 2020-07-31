@@ -11,7 +11,6 @@
     $received_user = json_decode($_POST["user"], true);
     $encryptedPwd = sha1(md5($received_user['account'].$received_user['password']));
 
-    // echo $encryptedPwd;
     response('success', 'success', $encryptedPwd);
   }
 

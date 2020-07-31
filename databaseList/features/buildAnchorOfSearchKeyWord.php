@@ -36,8 +36,6 @@
     }
   }
 
-  // $strokes_map = array_fill(1,70, false);
-
   // match with the local map
   foreach($resourceList as $key_lang => $row) {
     if(!empty(trim($row['local']['zhuyin']))) {

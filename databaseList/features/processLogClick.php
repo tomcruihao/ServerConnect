@@ -9,7 +9,6 @@
   $getLogData = file_get_contents('../data/logUserCountClick.json');
   $logData = json_decode($getLogData, true);
 
-  // $receivedData = json_decode($_POST["directionID"], true);
   $resourceID = $_POST["directionID"];
 
   $log = [];

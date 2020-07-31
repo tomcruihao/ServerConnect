@@ -1,9 +1,4 @@
 <?php
-ini_set("display_errors", 1);
-ini_set("track_errors", 1);
-ini_set("html_errors", 1);
-error_reporting(E_ALL);
-
   header("Access-Control-Allow-Headers: *");
   header("Access-Control-Allow-Credentials: true");
   header("Access-Control-Allow-Origin: http://gss.ebscohost.com/");
@@ -28,9 +23,7 @@ error_reporting(E_ALL);
     $resource['uuid'] = gen_uuid();
 
     // get stroke and zhuyin info
-
     $getStroke = getStrokeInfo($resource['local']['resourceName'], $resource['en']['resourceName']);
-
 
     $resource['en']['stroke'] = $getStroke['strokes'];
     $resource['en']['zhuyin'] = $getStroke['zhuyin'];
@@ -38,10 +31,6 @@ error_reporting(E_ALL);
     $resource['local']['stroke'] = $getStroke['strokes'];
     $resource['local']['zhuyin'] = $getStroke['zhuyin'];
     $resource['local']['englishAlphabet'] = $getStroke['englishAlphabet'];
-
-    // $getStroke = getStrokeInfo($resource['resourceName']);
-    // $resource['stroke'] = $getStroke['strokes'];
-    // $resource['zhuyin'] = $getStroke['zhuyin'];
 
     array_push($resourceList, $resource);
 
@@ -71,7 +60,6 @@ error_reporting(E_ALL);
   } else if ($type === 'delete') {
     foreach($resourceList as $key => $row) {
       if(strcasecmp($row['uuid'], $resource['uuid']) == 0) {
-        // unset($resourceList['rows'][$key]);
         array_splice($resourceList, $key, 1);
         break;
       }

@@ -1,17 +1,10 @@
 <?php
-ini_set("display_errors", 1);
-ini_set("track_errors", 1);
-ini_set("html_errors", 1);
-error_reporting(E_ALL);
-
   header("Access-Control-Allow-Origin: *");
   header("Content-Security-Policy: upgrade-insecure-requests");
   header('Content-Type: application/json');
 
-  // received the csv data and move to csv folder
-  // http://gss.ebscohost.com/chchang/ServerConnect/databaseList/csvFiles/exportResources.txt
+  // /databaseList/csvFiles/exportResources.txt
   $jsonFile_direct = '../data/eResourceList.json';
-  // $txtFilePath = "../csvFiles/exportResources.txt";
   $txtFilePath = receivedFileAndGetPath();
 
   // get data from file
@@ -68,7 +61,6 @@ error_reporting(E_ALL);
   }
 
   // write back
-  // echo json_encode($resourceList, JSON_UNESCAPED_UNICODE);
   file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 
   $res = array('status' => 'success', 'type' => 'success');

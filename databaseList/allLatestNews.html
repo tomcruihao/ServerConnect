@@ -44,7 +44,7 @@
       <section id="mainTitle" class="mainTitle">
         <h1 v-text="$t('message.h1_all_latestNews')"></h1>
         <div class="lang-wrap" v-if="localization_show">
-          <div>{{$t('message.chooseLanguage')}}:</div>
+          <img src="img/icon/language.svg"/>
           <select v-model="selector_lang" @change="setLang($event)">
             <option value="en">English</option>
             <option value="local">中文</option>
