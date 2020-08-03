@@ -16,6 +16,7 @@
       <div class="control-panel">
         <select v-model="convertType" class="converter-type">
           <option value="10to13">ISBN10 to ISBN13</option>
+          <option value="13to10">ISBN13 to ISBN10</option>
         </select>
         <label class="uploadFile-label">
           Upload File
@@ -95,29 +96,41 @@
           reader.readAsBinaryString(file);
         },
         dealCsvDataAndPush(rawData) {
+          this.ary_table = [];
           const dataList = rawData.split("\n");
-          // this.ebookList.pop();
           for(let loop = 1; loop < dataList.length; loop++) {
+            let convertResult = '';
+            switch(this.convertType) {
+              case "10to13":
+                convertResult = this.convert10to13(dataList[loop]);
+                break;
+              case "13to10":
+                convertResult = this.convert13to10(dataList[loop]);
+                break;
+            }
+
             let obj = {
               originalISBN: dataList[loop],
-              newISBN: this.convert_fun(dataList[loop])
+              newISBN: convertResult
             }
             this.ary_table.push(obj);
-            // console.log(dataList[loop]);
-            // console.log('@@@@@' + this.convert_fun(dataList[loop]));
           }
         },
-        convert_fun(string_isbn) {
+        convert10to13(string_isbn) {
           let chksum = 0;
           let chkresult = 0;
           let tempInput = string_isbn.substring(0,9);
           let chkcode = new Array(1,3,1,3,1,3,1,3,1,3,1,3);
+
+          if (string_isbn.length > 11) {
+            return 'Wrong';
+          }
+          
           tempInput = '978' + tempInput;
 
           for (let i = 0; i < tempInput.length; i++) {
             if (tempInput.charAt(i) != 0 && (!parseFloat(tempInput.charAt(i)))) {
-              alert('Wrong!!');
-              return;
+              return 'Wrong';
             }
 
             chksum = chksum + tempInput.charAt(i) * chkcode[i];
@@ -130,10 +143,35 @@
 
           return tempInput + this.numToString(chkresult);
         },
+        convert13to10(string_isbn) {
+          let chksum = 0;
+          let chkresult = 0;
+          if (string_isbn.substring(0,3) != '978') {
+            return 'Wrong';
+          }
+      
+          let tempInput = string_isbn.substring(3,12);
+
+          for (let i = 0; i < tempInput.length; i++) {
+            if (tempInput.charAt(i) != 0 && (!parseFloat(tempInput.charAt(i)))) {
+              return 'Wrong';
+            }
+            chksum = chksum + tempInput.charAt(i)*(10-i);
+          }
+
+          chkresult = 11 - (chksum % 11);
+
+          if (chkresult == 10) {
+            chkresult='X';
+          } else {
+            if (chkresult == 11) {
+              chkresult='0';
+            }
+          }
+          return tempInput + this.numToString(chkresult);
+        }
       }
     });
-
-
 
   // // 書號
   // var orgstr=document.form1.orgdata.value;
