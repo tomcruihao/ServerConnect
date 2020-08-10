@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>設定</title>
-    <link rel="stylesheet" type="text/css" href="../lib/css/manageSettings.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageSettings.css?v=1"/>
   </head>
 <body>
   <header id="header">
@@ -117,10 +117,12 @@
             {{$t('message.setting_import_csv_data')}}
           </div>
           <div class="content">
-            <label class="btn">
+            <button @click="askDatabaseUpload()">{{$t('message.btn_execute')}}</button>
+            <input type="file" accept=".txt" @change="onFileChange" class="hide" id="importDatabaseFile">
+            <!-- <label class="btn">
               {{$t('message.btn_execute')}}
-              <input type="file" accept=".txt" @change="onFileChange" class="hide">
-            </label>
+              <input type="file" accept=".txt" @change="onFileChange" class="hide" id="importDatabaseFile">
+            </label> -->
           </div>
         </div>
       </div>
@@ -153,6 +155,19 @@
         {{$t('message.dialogue_content_logout')}}
         <div class="btn-frame">
           <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'databaseUpload'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_databaseUpload')}}?
+        <div class="btn-frame">
+          <button @click="clickUploadButton()">{{$t('message.btn_confirm')}}</button>
+          <button @click="closeDialogue">{{$t('message.btn_cancel')}}</button>
         </div>
       </div>
     </div>
@@ -258,7 +273,7 @@
 <script src="../lib/js/verifyAuth.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
-<script src="../lang/lang.js"></script>
+<script src="../lang/lang.js?v=1"></script>
 <script src="../lib/js/jquery.js"></script>
 <script src="../lib/js/header_back.js"></script>
 <script type="text/javascript">
@@ -278,6 +293,9 @@
     methods: {
       exportFile() {
         window.open(`${apiPath}/exportDatabases.php`);
+      },
+      askDatabaseUpload () {
+        dialogue.setDialogue('databaseUpload');
       },
       onFileChange(e) {
         let txtFile = e.target.files || e.dataTransfer.files;
@@ -317,7 +335,7 @@
             dialogue.setDialogue('update_success');
           }
         });
-      },
+      }
     }
   })
   var mainTitle = new Vue({
@@ -389,6 +407,11 @@
       }
     },
     methods:{
+      clickUploadButton() {
+        let fileUploadBtn = document.querySelector('#importDatabaseFile');
+        fileUploadBtn.click();
+        this.closeDialogue();
+      },
       changeAccountDisabledStatus() {
         this.accountDialogue.accountDisabled = false;
       },

@@ -725,9 +725,14 @@ h4 {
 .mask-dia .dialogue-message-frame .dialogue-body .btn-frame button {
   width: 80px;
   height: 38px;
+  margin-left: 20px;
   font-size: 1.2rem;
   color: #ffffff;
   background-color: #ffa701;
   border-radius: 5px;
+}
+
+.mask-dia .dialogue-message-frame .dialogue-body .btn-frame button:first-child {
+  margin-left: 0px;
 }
 /*# sourceMappingURL=manageSettings.css.map */
