@@ -4,7 +4,7 @@ const messages = {
       chooseLanguage:'Language',
       header_logout: 'Logout',
       // index page
-      h1_resource_list: 'e-Resource List',
+      h1_resource_list: 'Database List',
       index_total: 'ALL',
       index_show_all: 'Show All',
       index_atoz: 'A to Z',
