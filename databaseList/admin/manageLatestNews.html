@@ -104,7 +104,7 @@
           <div class="content">
             <div class="select-wrap">
               <select v-model="hotNewsField.newsID">
-                <option value="">{{$t('message.Select')}}</option>
+                <option value="">{{$t('message.select_options')}}</option>
                 <option v-for="(latestNews, index) in latestNewsList" :value="latestNews.uuid">{{latestNews.local.title}}
               </select>
             </div>
