@@ -158,7 +158,7 @@ const messages = {
       chooseLanguage:'選擇語言',
       header_logout: '登出',
       // index page
-      h1_resource_list: '電子資源',
+      h1_resource_list: '電子資料庫列表',
       index_total: '全部',
       index_show_all: '全部',
       index_atoz: 'A to Z',
