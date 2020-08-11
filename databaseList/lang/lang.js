@@ -304,8 +304,7 @@ const messages = {
       resource_table_moreDetail: "更多...",
       // tag
       tag_chinese: '中文',
-      tag_english: '英文',
-      tag_test: 'test'
+      tag_english: '英文'
     }
   }
 }
