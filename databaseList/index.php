@@ -234,7 +234,7 @@
                   <span class="meta-title">{{$t('message.index_popular_title')}}</span>
                   <div class="meta-clickAmount">{{$t('message.index_popular_clickAmount')}}</div>
                 </li>
-                <li v-for="(database, index) in popularDatabases" class="popular-databases">
+                <li v-if="popularDatabases.length !== 0" v-for="(database, index) in popularDatabases" class="popular-databases">
                   <span class="title" @click="linkTo(database.uuid, database.resourceUrl)" v-if="lang === 'en'">
                     {{database.name.en}}
                   </span>

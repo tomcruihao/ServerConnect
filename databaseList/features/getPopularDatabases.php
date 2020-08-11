@@ -33,7 +33,7 @@
     );
   }
 
-  // // create log counting array
+  // create log counting array
   foreach($logData['log'] as $log) {
     if($log['uuid'] !== null) {
       $databaseList[$log['uuid']]['clickTimes']++;
@@ -49,7 +49,7 @@
   $result = array();
   $counter = 0;
   foreach(array_reverse($databaseList) as $database) {
-    if($counter < $amountOfDatabases) {
+    if($counter < $amountOfDatabases && $database['clickTimes'] != 0) {
       array_push($result, $database);
       $counter++;
     } else {
