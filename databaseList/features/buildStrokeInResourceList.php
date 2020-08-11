@@ -1,7 +1,5 @@
 <?php
-  header("Access-Control-Allow-Origin: *");
-  header("Content-Security-Policy: upgrade-insecure-requests");
-  header('Content-Type: application/json');
+  include '_header.php';
 
   $jsonFile_resource_direct = '../data/eResourceList.json';
   $jsonFile_strokes_direct = '../data/strokeList.json';

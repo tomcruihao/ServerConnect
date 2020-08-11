@@ -1,7 +1,5 @@
 <?php
-  header("Access-Control-Allow-Origin: *");
-  header("Content-Security-Policy: upgrade-insecure-requests");
-  header('Content-Type: application/json');
+  include '_header.php';
 
   // /databaseList/csvFiles/exportResources.txt
   $jsonFile_direct = '../data/eResourceList.json';
