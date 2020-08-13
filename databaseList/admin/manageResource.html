@@ -108,7 +108,7 @@
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_resourceDescribe')}}</div>
-                <div class="content">{{database.local.resourceDescribe}}</div>
+                <div class="content" v-html="database.local.resourceDescribe"></div>
               </div>
               <div class="row">
                 <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>

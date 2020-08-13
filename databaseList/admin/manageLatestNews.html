@@ -100,7 +100,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="title">{{$t('message.latest_hot_news_message')}}</div>
+          <div class="title">{{$t('message.latest_hot_news_message_select')}}</div>
           <div class="content">
             <div class="select-wrap">
               <select v-model="hotNewsField.newsID">
@@ -218,8 +218,11 @@
           </div>
         </div>
         <div class="btn-frame">
-          <button @click="sendForm">{{btnName}}</button>
-          <button @click="copy">Copy</button>
+          <button @click="sendForm">
+            <span v-if="type === 'addNews'">{{$t('message.btn_add')}}</span>
+            <span v-else>{{$t('message.btn_update')}}</span>
+          </button>
+          <button @click="copy">{{$t('message.btn_copy')}}</button>
         </div>
       </div>
     </div>
@@ -256,14 +259,32 @@
     </div>
     <div class="dialogue-message-frame" v-else>
       <div class="dialogue-head">
-        <h4>{{title}}</h4>
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
         <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
       </div>
       <div class="dialogue-body" v-if="type === 'deleteNews'">
-        {{message}} <span class="resource-name">{{newsTitle}}</span>?
+        {{$t('message.dialogue_content_deleteNews')}}?
         <div class="btn-frame">
           <button @click="deleteNews">{{$t('message.btn_confirm')}}</button>
           <button @click="closeDialogue">{{$t('message.btn_cancel')}}</button>
+        </div>
+      </div>
+      <div class="dialogue-body" v-else-if="type === 'addNews_success'">
+        {{$t('message.dialogue_content_addSuccess')}}
+        <div class="btn-frame">
+          <button @click="closeDialogue">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+      <div class="dialogue-body" v-else-if="type === 'updateNews_success'">
+        {{$t('message.dialogue_content_updateSuccess')}}
+        <div class="btn-frame">
+          <button @click="closeDialogue">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+      <div class="dialogue-body" v-else-if="type === 'deleteNews_success'">
+        {{$t('message.dialogue_content_deleteSuccess')}}
+        <div class="btn-frame">
+          <button @click="closeDialogue">{{$t('message.btn_close')}}</button>
         </div>
       </div>
       <div class="dialogue-body" v-else>
@@ -278,7 +299,7 @@
   <script src="../lib/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
-  <script src="../lang/lang.js?v=1.0"></script>
+  <script src="../lang/lang.js?v=1.5"></script>
   <script src="../lib/js/jquery.js"></script>
   <script src="../lib/js/header_back.js"></script>
   <script type="text/javascript">
@@ -562,18 +583,8 @@
           this.type = type;
           switch (type) {
             case 'deleteNews':
-              this.title = 'Warning';
-              this.message = `Do you want to delete?`;
               this.newsTitle = news.title;
               this.news = JSON.stringify(news);
-              break;
-            case 'addNews_success':
-              this.title = 'Message';
-              this.message = 'Added';
-              break;
-            case 'updateNews_success':
-              this.title = 'Message';
-              this.message = 'Modified';
               break;
             case 'updateNewsField_success':
               this.title = 'Message';
