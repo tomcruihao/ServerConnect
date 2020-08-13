@@ -55,6 +55,16 @@
     <section id="generalSetting" class="setting-wrap">
       <h2>{{$t('message.generalSetting')}}</h2>
       <div class="row">
+        <div class="title">{{$t('message.setting_show_database_number')}}</div>
+        <div class="content">
+          <select v-model="settings.numberOfDatabaseShowing">
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
         <div class="title">{{$t('message.setting_show_popular_resources')}}</div>
         <div class="content">
           {{$t('message.setting_total_resources')}}({{maxNumberOfResource}}) <input type="number" :max="maxNumberOfResource" min="1" v-model="settings.numberOfPopularDatabases">
@@ -273,7 +283,7 @@
 <script src="../lib/js/verifyAuth.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
-<script src="../lang/lang.js?v=1"></script>
+<script src="../lang/lang.js?v=1.1"></script>
 <script src="../lib/js/jquery.js"></script>
 <script src="../lib/js/header_back.js"></script>
 <script type="text/javascript">
@@ -482,13 +492,15 @@
         numberOfPopularDatabases: 0,
         proxy: '',
         localization: true,
-        GA_ID: ''
+        GA_ID: '',
+        numberOfDatabaseShowing: 0
       },
       settings_backup: {
         numberOfPopularDatabases: 0,
         proxy: '',
         localization: true,
-        GA_ID: ''
+        GA_ID: '',
+        numberOfDatabaseShowing: 0
       },
       btn_recovery: {
         show: false

@@ -1,6 +1,22 @@
 # Database Listing System
 
 # Release Note
+## 2020/August/13
+### Bug Fix, add commonly resource, adjust style
+```
+databaseList/admin/manageResource.html
+databaseList/admin/manageSetting.html
+databaseList/data/commonlyResource.json
+databaseList/data/settings.json
+databaseList/features/getCommonlyResources.php
+databaseList/features/getResourceListOriginal.php
+databaseList/index.php
+databaseList/lang/lang.js
+databaseList/lib/css/index.css
+databaseList/lib/css/index.css.map
+databaseList/lib/css/index.scss
+databaseList/admin/manageLatestNews.html
+```
 
 ## 2020/August/11
 ### Integrate stroke, popular database 0 click issue, extract php header

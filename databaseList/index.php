@@ -13,6 +13,7 @@
 
   $proxy = $settingData['proxy'];
   $GA_ID = $settingData['GA_ID'];
+  $numberOfDatabaseOnPage = $settingData['numberOfDatabaseShowing'];
 
   $result = [];
   $result_en = [];
@@ -78,7 +79,7 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>圖書館 - 電子資料庫 powered by EBSCO Database Listing</title>
-  <link rel="stylesheet" type="text/css" href="lib/css/index.css"/>
+  <link rel="stylesheet" type="text/css" href="lib/css/index.css?v=1"/>
   <script>
     function isIE() {
       ua = navigator.userAgent;
@@ -125,7 +126,12 @@
       </ul>
     </nav>
   </header>
-  <section>
+  <section class="loading-field">
+    <div class="loading-wrap">
+      <div>Loading...</div>
+    </div>
+  </section>
+  <section class="main-field">
     <div id="mainTitle" class="mainTitle">
       <h1 v-text="$t('message.h1_resource_list')"></h1>
       <div class="lang-wrap"  v-if="show">
@@ -227,6 +233,21 @@
             </div>
             <div class="bulletin-board-frame">
               <div>
+                <h3>{{$t('message.index_commonly_title')}}</h3>
+              </div>
+              <ul>
+                <li v-if="commonlyResources.length !== 0" v-for="(resource, index) in commonlyResources" class="popular-databases">
+                  <span class="title" @click="linkTo(resource.en.uuid, resource.en.resourceUrl)" v-if="lang === 'en'">
+                    {{resource.en.resourceName}}
+                  </span>
+                  <span class="title" @click="linkTo(resource.local.uuid, resource.local.resourceUrl)" v-else>
+                    {{resource.local.resourceName}}
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div class="bulletin-board-frame">
+              <div>
                 <h3>{{$t('message.index_popular_frameTitle')}}</h3>
               </div>
               <ul>
@@ -294,7 +315,7 @@
 <script src="lib/js/basicParameters.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
-<script src="lang/lang.js"></script>
+<script src="lang/lang.js?v=1"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
 <script src="lib/js/header_front.js"></script>
@@ -557,7 +578,8 @@
       popularDatabases: [],
       displayNumber: 0,
       latestNewsList: [],
-      mobile_frame: false
+      mobile_frame: false,
+      commonlyResources: []
     },
     created: function() {
       let self = this;
@@ -654,6 +676,19 @@
           self.popularDatabases = res;
         }
       });
+
+      $.ajax({
+        url: `${apiPath}/getCommonlyResources.php`,
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          self.processCommonlyResource(res);
+        }
+      });
     },
     mounted: function() {
       if("lang" in localStorage) {
@@ -665,6 +700,29 @@
       // check hot news
     },
     methods:{
+      processCommonlyResource: function(ary_resources) {
+        let tempAry = [];
+        ary_resources.forEach((element) => {
+          let en_resource = '';
+          let local_resource = '';
+          dataList.en.forEach(element_en => {
+            if(element_en.uuid === element) {
+              en_resource = element_en;
+            }
+          });
+          dataList.local.forEach(element_local => {
+            if(element_local.uuid === element) {
+              local_resource = element_local;
+            }
+          });
+          let Obj = {
+            en: en_resource,
+            local: local_resource
+          }
+          this.commonlyResources.push(Obj);
+        });
+        
+      },
       displayHotNews: function(news) {
         let self = this;
         $.ajax({
@@ -699,7 +757,6 @@
                 message.content = news.en.content;
               }
 
-              console.log('send');
               dialogue.setDialogue('latestNews', message);
             }
           }
@@ -960,43 +1017,6 @@
     });
   }
 
-  // function searchAtoZ(upperCharacter, anchor) {
-  //   initAndAddClickedClass(anchor);
-
-  //   let lowCharater = upperCharacter.toLowerCase();
-  //   // contactList.search(param);
-  //   contactList.filter(function(item) {
-  //     // the item includes html tag to impact the result
-  //     var regex = /(<([^>]+)>)/ig;
-  //     removeTagResult = item.values().resourceName.replace(regex, "").trim();
-
-  //     if (removeTagResult.charAt(0) === upperCharacter || removeTagResult.charAt(0) === lowCharater) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   });
-  // }
-
-  // function searchAtoZ(upperCharacter, anchor) {
-  //   initAndAddClickedClass(anchor);
-  
-  //   contactList.search(upperCharacter, ['englishAlphabet']);
-  //   resetNumbering();
-  // }
-
-  // function searchZhuYin(zhuYinChar, anchor) {
-  //   initAndAddClickedClass(anchor);
-  
-  //   contactList.search(zhuYinChar, ['zhuyin']);
-  //   resetNumbering();
-  // }
-
-  // function searchStrokes(stroke, anchor) {
-  //   initAndAddClickedClass(anchor);
-  //   contactList.search(stroke, ['strokes']);
-  //   resetNumbering();
-  // }
   function searchBy(term, field = '') {
     if(field !== '') {
       contactList.search(term, [field]);
@@ -1016,48 +1036,16 @@
     resetNumbering();
   }
 
-  // async function fillAnchor(allAnchor) {
-  //   // create hyper link of a to z
-  //   let englishAnchor = await createAnchor('english', allAnchor.englishAlphabet);
-  //   document.getElementById("atozField").appendChild(englishAnchor);
-
-  //   // create hyper link of ZhuYin
-  //   let zhuYinAnchor = await createAnchor('zhuyin', allAnchor.zhuyin);
-  //   document.getElementById("zhuYinField").appendChild(zhuYinAnchor);
-
-  //   // create hyper link of strokes
-  //   let strokesAnchor = await createAnchor('strokes', allAnchor.strokes);
-  //   document.getElementById("strokesField").appendChild(strokesAnchor);
-  // }
-
-  // function createAnchor(type, rows) {
-  //   return new Promise((resolve, reject) => {
-  //     let linkWrap = document.createElement('div')
-  //     linkWrap.className = 'link-field';
-  //     rows.forEach(res => {
-  //       let anchor = document.createElement('a');
-  //       let alphabet = res;
-  //       let anchorText = document.createTextNode(alphabet);
-  //       anchor.setAttribute('href', `javascript:void(0);`);
-  //       if(type === 'zhuyin') {
-  //         anchor.addEventListener('click', function(){ searchZhuYin(`${alphabet}`, anchor); }, false);
-  //       } else if (type === 'english') {
-  //         anchor.addEventListener('click', function(){ searchAtoZ(`${alphabet}`, anchor); }, false);
-  //       } else if (type === 'strokes') {
-  //         anchor.addEventListener('click', function(){ searchStrokes(`${alphabet}`, anchor); }, false);
-  //       }
-  //       anchor.appendChild(anchorText);
-  //       linkWrap.appendChild(anchor);
-  //     })
-  //     resolve(linkWrap);
-  //   })
-  // }
-
   document.addEventListener("DOMContentLoaded", function(event) {
+    // Close the loading page
+    document.querySelector(".loading-field").setAttribute("style", "display: none");
+    document.querySelector(".main-field").setAttribute("style", "display: block");
+    
+
     // Init list
     var options = {
       valueNames: ['numbering', 'resourceName', 'resourceType', 'startDate', 'expireDate', 'faculty', 'subject', 'category', 'type', 'publisher', 'language', 'resourceDescribe', 'zhuyin', 'strokes', 'englishAlphabet'],
-      page: 20,
+      page: '<?php echo $numberOfDatabaseOnPage; ?>',
       pagination: {
         innerWindow: 1,
         outerWindow: 1

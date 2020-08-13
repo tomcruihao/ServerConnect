@@ -337,6 +337,34 @@ section {
           box-sizing: border-box;
 }
 
+.loading-field {
+  width: 100%;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loading-field .loading-wrap {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.main-field {
+  display: none;
+}
+
 .search-wrap {
   padding-top: 20px;
 }
@@ -396,7 +424,7 @@ section {
 }
 
 .atoz-wrap .atoz-field .link-field a {
-  padding: 5px 10px;
+  padding: 5px;
   margin: 0px 5px;
   border-radius: 10px;
   display: inline-block;

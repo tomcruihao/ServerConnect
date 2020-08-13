@@ -17,6 +17,7 @@ const messages = {
       index_popular_frameTitle: 'Popular Resources',
       index_popular_title: 'Resource Name',
       index_popular_clickAmount: 'Clicks',
+      index_commonly_title: 'Commonly Resources',
       adminIndex_verifyCode: 'Verify Code',
       // All Latest News page
       h1_all_latestNews: 'Latest News',
@@ -61,6 +62,7 @@ const messages = {
       setting_proxy: 'Proxy/Redirector Prefix URL',
       setting_total_resources: 'Total Resources',
       setting_show_popular_resources: 'The number of Popular resources to show',
+      setting_show_database_number: 'The number of resources to show',
       setting_exportDatabaseFile: 'Export Database List',
       // latest news management page
       h1_latestNews: 'News Management',
@@ -177,6 +179,7 @@ const messages = {
       index_popular_frameTitle: '熱門資源',
       index_popular_title: '題名',
       index_popular_clickAmount: '次數',
+      index_commonly_title: '常用資源',
       // All Latest News page
       h1_all_latestNews: '最新消息',
       // admin index page
@@ -221,6 +224,7 @@ const messages = {
       setting_proxy: 'Proxy/Redirector 前綴網址',
       setting_total_resources: '資源數',
       setting_show_popular_resources: '熱門資源顯示數量',
+      setting_show_database_number: '資源顯示數量',
       setting_exportDatabaseFile: '匯出資料庫',
       // latest news management page
       h1_latestNews: '消息管理',

@@ -13,6 +13,26 @@ section {
   padding: 0 15px;
   box-sizing: border-box;
 }
+.loading-field {
+  width: 100%;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .loading-wrap {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+
+.main-field {
+  display: none;
+}
 
 .search-wrap {
   padding-top: 20px;
@@ -56,7 +76,7 @@ section {
 
     .link-field {
       a {
-        padding: 5px 10px;
+        padding: 5px;
         margin: 0px 5px;
         border-radius: 10px;
         display: inline-block;

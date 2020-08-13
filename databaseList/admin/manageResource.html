@@ -78,7 +78,7 @@
                 <div class="title">{{$t('message.resource_resourceName')}}</div>
                 <div class="content">{{database.local.resourceName}}</div>
               </div>
-              <div class="row">
+              <!-- <div class="row">
                 <div class="title">{{$t('message.resource_resourceType')}}</div>
                 <div class="content">{{database.local.resourceType}}</div>
               </div>
@@ -113,14 +113,14 @@
               <div class="row">
                 <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
                 <div class="content">{{database.local.relevanceUrlDescribe}}</div>
-              </div>
+              </div> -->
             </div>
             <div v-else-if="database.tag === 'en'">
               <div class="row">
                 <div class="title">{{$t('message.resource_resourceName')}}</div>
                 <div class="content">{{database.en.resourceName}}</div>
               </div>
-              <div class="row">
+              <!-- <div class="row">
                 <div class="title">{{$t('message.resource_resourceType')}}</div>
                 <div class="content">{{database.en.resourceType}}</div>
               </div>
@@ -155,11 +155,11 @@
               <div class="row">
                 <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
                 <div class="content">{{database.en.relevanceUrlDescribe}}</div>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="common-field">
-            <div class="row">
+            <!-- <div class="row">
               <div class="title">{{$t('message.resource_relevanceUrl')}}</div>
               <div class="content">{{database.relevanceUrl}}</div>
             </div>
@@ -169,7 +169,7 @@
                 <div v-if="database.expiredChecking === 'true'">{{$t('message.resource_select_yes')}}</div>
                 <div v-else>{{$t('message.resource_select_no')}}</div>
               </div>
-            </div>
+            </div> -->
             <div class="row">
               <div class="title">{{$t('message.resource_startDate')}}</div>
               <div class="content">{{database.startDate}}</div>
@@ -178,10 +178,10 @@
               <div class="title">{{$t('message.resource_expireDate')}}</div>
               <div class="content">{{database.expireDate}}</div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="title">{{$t('message.resource_isProxy')}}</div>
               <div class="content">{{database.isProxy}}</div>
-            </div>
+            </div> -->
             <div class="row">
               <div class="title">{{$t('message.resource_resourceUrl')}}</div>
               <div class="content">{{database.resourceUrl}}</div>
@@ -440,13 +440,16 @@
           this.lang = 'local';
         }
 
-        this.getDatabaseList();
+        this.getDatabaseList(10);
+      },
+      mounted: function() {
+        this.getDatabaseList(0);
       },
       methods:{
-        getDatabaseList: function() {
+        getDatabaseList: function(number = 0) {
           let self = this;
           $.ajax({
-            url: `${apiPath}/getResourceListOriginal.php`,
+            url: `${apiPath}/getResourceListOriginal.php?number=${number}`,
             type: 'GET',
             error: function(jqXHR, exception) {
               //use url variable here
