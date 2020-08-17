@@ -1,0 +1,304 @@
+@import "init.scss";
+@import "variables";
+@import "header";
+@import "footer";
+@import "languageTitle";
+@import "tagStyle";
+
+$resource_field_bgcolor: #ffffff;
+
+h4 {
+  color: #ff0000;
+}
+button {
+  cursor: pointer;
+  outline: none;
+}
+input:focus, textarea:focus, select:focus, button {
+  outline: none;
+}
+
+.add-new-button {
+  text-decoration: none;
+  text-align: center;
+  padding: 0;
+  border-radius: 30px;
+  background-color: #2B78FE;
+  box-shadow: 0 2px 2px #888888;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1;
+  img {
+    width: 60px;
+    height: 60px;
+  }
+}
+.app-content {
+  width: 100%;
+  padding: 0 15px;
+  max-width: 960px;
+  margin: 20px auto;
+  box-sizing: border-box;
+
+  .list-field {
+    width: 100%;
+    box-sizing: border-box;
+
+    .search-wrap {
+      display: flex;
+
+      .search-frame {
+        width: calc(100% - 120px);
+        max-width: 500px;
+        height: 40px;
+        padding: 7px;
+        border: 2px solid $border_color;
+        border-radius: 30px;
+        box-sizing: border-box;
+        background-color: #ffffff;
+    
+        .search {
+          width: 100%;
+          height: 100%;
+          font-size: 1.2rem;
+          box-sizing: border-box;
+          outline: none;
+          border: none;
+        }
+      }
+      button {
+        width: 100px;
+        height: 40px;
+        margin-left: 20px;
+        box-sizing: border-box;
+        color: #ffffff;
+        background-color: $button_update_bgcolor;
+      }
+    }
+    
+    .list-container {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .resource-wrap {
+        width: 33%;
+        min-height: 80px;
+        padding: 0 5px;
+        border: 5px solid #f2f2f2;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        cursor: pointer;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  &.show {
+    display: flex;
+  }
+
+  .cover {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    cursor: pointer;
+  }
+
+  .dialogue-message-frame {
+    width: 94%;
+    max-width: 500px;
+    position: relative;
+    z-index: 1;
+
+    .dialogue-head {
+      width: 100%;
+      padding: 5px 15px;
+      font-size: 20px;
+
+      box-sizing: border-box;
+      background-color: #00B0ED;
+      border-radius: 10px 10px 0px 0px;
+      position: relative;
+
+      h4 {
+        margin: 0;
+        color: #ffffff;
+      }
+
+      .close {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        cursor: pointer;
+      }
+    }
+    .dialogue-body {
+      min-height: 150px;
+      padding: 15px 15px 50px;
+      background-color: #ffffff;
+      border-radius: 0px 0px 10px 10px;
+      position: relative;
+      font-size: 1.2rem;
+
+      .resource-name {
+        font-weight: bold;
+        color: crimson;
+      }
+      .btn-frame {
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+
+        button {
+          width: 80px;
+          height: 38px;
+          margin-left: 15px;
+          font-size: 1.2rem;
+          color: #ffffff;
+          background-color: #ffa701;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  .dialogue-frame {
+    width: 94%;
+    max-width: 800px;
+    max-height: 100%;
+    padding: 30px 15px 15px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+    .close {
+      position: absolute;
+      cursor: pointer;
+      top: 5px;
+      right: 5px;
+    }
+
+    .dialogue-content {
+      max-height: 550px;
+      padding-top: 10px;
+      overflow-y: scroll;
+    
+      .row {
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+    
+        .title {
+          width: 200px;
+          font-weight: bold;
+        }
+    
+        .content {
+          flex: 1;
+
+          textarea {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            border: 2px solid #cccccc;
+            box-sizing: border-box;
+          }
+
+          &.over {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+    .btn-frame {
+      width: 100%;
+      margin-top: 15px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+
+      button {
+        width: 150px;
+        height: 38px;
+        background-color: $button_color;
+        color: #ffffff;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+  
+  @media screen and (max-width: 600px) {
+    .databaseList-table {
+      border: 0;
+                          
+      caption {
+        font-size: 1.3em;
+      }
+                          
+      thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+                          
+      tr {
+        background-color: lightgrey;
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+      }
+                          
+      td {
+        color: #D20B2A;
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+      }
+                          
+      td:before {
+        color: black;
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+                          
+      td:last-child {
+        border-bottom: 0;
+      }
+    }
+  }

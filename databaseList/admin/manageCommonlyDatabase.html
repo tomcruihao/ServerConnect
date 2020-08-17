@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Database Manage</title>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageCommonlyDatabase.css"/>
+  </head>
+<body>
+  <header id="header">
+    <div class="logo">
+	   <a href="#">
+      <img src="../img/logo.png" alt="EBSCO" title="EBSCO"/>
+     </a>
+    </div>
+    <nav>
+      <input type="checkbox" id="mobile_btn">
+      <ul class="nav-list">
+        <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
+          <div v-if="link.child.length === 0">
+            <a :href="link.link" class="nav-tag" v-if="lang === 'en'">{{link.title.en}}</a>
+            <a :href="link.link" class="nav-tag" v-else-if="lang === 'local'">{{link.title.local}}</a>
+          </div>
+          <div v-else>
+            <label class="nav-tag" :for="'tag'+index" v-if="lang === 'en'">{{link.title.en}}</label>
+            <label class="nav-tag" :for="'tag'+index" v-else-if="lang === 'local'">{{link.title.local}}</label>
+            <input type="checkbox" :id="'tag'+index">
+            <ul>
+              <li v-for="(childLink, c_index) in link.child">
+                <a :href="childLink.link" v-if="lang === 'en'">{{childLink.title.en}}</a>
+                <a :href="childLink.link" v-if="lang === 'local'">{{childLink.title.local}}</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a class="nav-tag" @click="logout">{{$t('message.header_logout')}}</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="app-content">
+    <section id="mainTitle" class="mainTitle">
+      <h1 v-text="$t('message.h1_resource_management')"></h1>
+      <div class="lang-wrap">
+        <img src="../img/icon/language.svg"/>
+        <select v-model="selector_lang" @change="setLang($event)">
+          <option value="en">English</option>
+          <option value="local">中文</option>
+        </select>
+      </div>
+    </section>
+    <div id="listField" class="list-field">
+      <div class="search-wrap">
+        <div class="search-frame">
+          <input type="text" class="search" :placeholder="$t('message.placeholder_searchResource')" v-model="searchKeyword" />
+        </div>
+        <button @click="updateList()">{{$t('message.btn_update')}}</button>
+      </div>
+      <div class="list-container">
+        <label v-for="(database, index) in databaseList" class="resource-wrap" v-if="(database.title.en.toUpperCase().match(searchKeyword.toUpperCase()) != null || database.title.local.toUpperCase().match(searchKeyword.toUpperCase()) != null)">
+          <input type="checkbox" v-model="database.checked">
+          <div v-if="lang === 'local'">
+            {{database.title.local}}
+          </div>
+          <div v-else-if="lang === 'en'">
+            <div class="content">{{database.title.en}}</div>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <img src="../img/logo_white.svg">
+    <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
+  </footer>
+  <div class="mask" id="dialogue" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeDialogue()"></div>
+    <div class="dialogue-message-frame" v-if="type === 'logout'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_logout')}}
+        <div class="btn-frame">
+          <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'expired'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_expired')}}
+        <div class="btn-frame">
+          <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialogue-message-frame" v-else>
+      <div class="dialogue-head">
+        <h4>{{title}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body" v-if="type === 'deleteResource'">
+        {{message}} <span class="resource-name">{{resourceName}}</span>?
+        <div class="btn-frame">
+          <button @click="deleteResource">確定</button>
+          <button @click="closeDialogue">取消</button>
+        </div>
+      </div>
+      <div class="dialogue-body" v-else>
+        {{$t('message.dialogue_content_updateSuccess')}}
+        <div class="btn-frame">
+          <button @click="closeDialogue">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/js/basicParameters.js"></script>
+  <script src="../lib/js/verifyAuth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+  <script src="../lang/lang.js?v=1.1"></script>
+  <script src="../lib/js/jquery.js"></script>
+  <script src="../lib/js/header_back.js"></script>
+  <script type="text/javascript">
+    var mainTitle = new Vue({
+      el:'#mainTitle',
+      i18n,
+      data: {
+        selector_lang: ''
+      },
+      mounted: function() {
+        this.selector_lang = i18n.locale;
+      },
+      methods: {
+        setLang(event) {
+          i18n.locale = event.target.value;
+          localStorage.setItem('lang', event.target.value);
+          dataList.setLocale(event.target.value);
+          header.setLocale(event.target.value);
+        }
+      }
+    })
+
+    var dataList = new Vue({
+      el:'#listField',
+      i18n,
+      data: {
+        searchKeyword: '',
+        databaseList: [],
+        lang: ''
+      },
+      created: async function() {
+        if("lang" in localStorage) {
+          this.lang = localStorage.getItem('lang');
+        } else {
+          this.lang = 'local';
+        }
+
+        let allResourceList = await this.getResourceList();
+        let commonlyResourceList = await this.getCommlyResourceList();
+
+        commonlyResourceList.forEach(element => {
+          for(let i = 0; i < allResourceList.length; i++) {
+            if(allResourceList[i].uuid === element) {
+              allResourceList[i].checked = true;
+              break;
+            }
+          }
+        });
+
+        this.databaseList = allResourceList;
+      },
+      methods:{
+        updateList: function() {
+          let self = this;
+          let result = [];
+
+          this.databaseList.forEach(element => {
+            if(element.checked) {
+              result.push(element.uuid);
+            }
+          });
+          
+          $.ajax({
+            url: `${apiPath}/processCommonlyResource.php`,
+            type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
+            data: {
+              // resourceList: JSON.stringify(result)
+              resourceList: result
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              console.log(res);
+              dialogue.setDialogue('modify_success');
+            }
+          });
+        },
+        getCommlyResourceList: function() {
+          return new Promise((resolve, reject) => {
+            let self = this;
+            $.ajax({
+              url: `${apiPath}/getCommonlyResources.php`,
+              type: 'GET',
+              error: function(jqXHR, exception) {
+                //use url variable here
+                console.log(jqXHR);
+                console.log(exception);
+              },
+              success: function(res) {
+                resolve(res);
+              }
+            });
+          });
+        },
+        getResourceList: function() {
+          return new Promise((resolve, reject) => {
+            let self = this;
+            $.ajax({
+              url: `${apiPath}/getResourceListOriginal.php`,
+              type: 'GET',
+              error: function(jqXHR, exception) {
+                //use url variable here
+                console.log(jqXHR);
+                console.log(exception);
+              },
+              success: function(res) {
+                let resourceList = [];
+                res.forEach(element => {
+                  let tempObj = {
+                    uuid: element.uuid,
+                    title: {
+                      en: element.en.resourceName,
+                      local: element.local.resourceName
+                    },
+                    checked: false
+                  }
+                  resourceList.push(tempObj);
+                });
+                resolve(resourceList);
+              }
+            });
+          });
+        },
+        setLocale: function(language) {
+          this.lang = language;
+        }
+      }
+    });
+    
+    var dialogue = new Vue({
+      el:'#dialogue',
+      i18n,
+      data: {
+        show: false,
+        type: '',
+        title: '測試標題',
+        message: '測試內容',
+        resourceName: '',
+        resource: ''
+      },
+      methods:{
+        setDialogue: function(type, database = '') {
+          this.type = type;
+          switch (type) {
+            case 'modify_success':
+              this.title = '訊息';
+              this.message = '修改成功';
+              break;
+            case 'delete_success':
+              this.title = '訊息';
+              this.message = '刪除成功';
+              break;
+          }
+          this.show = true;
+        },
+        backToLogin: function() {
+          window.location.replace(backStagePath);
+        },
+        closeDialogue: function() {
+          this.show = false;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

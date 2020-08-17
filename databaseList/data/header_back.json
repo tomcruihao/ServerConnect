@@ -36,6 +36,15 @@
       },
       {
         "title": {
+          "en": "Commonly Resource",
+          "local": "常用資源"
+        },
+        "link": "manageCommonlyDatabase.html",
+        "focus": false,
+        "child": []
+      },
+      {
+        "title": {
           "en": "News",
           "local": "消息管理"
         },

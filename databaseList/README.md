@@ -1,6 +1,19 @@
 # Database Listing System
 
 # Release Note
+
+## 2020/August/17
+### New Feature - Commonly Resource management
+```
+databaseList/admin/manageCommonlyDatabase.html
+databaseList/data/header_back.json
+databaseList/features/processCommonlyResource.php
+databaseList/lang/lang.js
+databaseList/lib/css/manageCommonlyDatabase.css
+databaseList/lib/css/manageCommonlyDatabase.css.map
+databaseList/lib/css/manageCommonlyDatabase.scss
+```
+
 ## 2020/August/13
 ### Bug Fix, add commonly resource, adjust style
 ```

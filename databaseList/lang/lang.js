@@ -121,6 +121,8 @@ const messages = {
       dialogue_content_import_successful: 'Import Successful',
       dialogue_content_databaseUpload: 'The database list will be overwritten. Are you sure to upload it',
       dialogue_content_deleteNews: 'Are you sure to delete this News',
+      // placeholder
+      placeholder_searchResource: 'Search Resource',
       // button
       btn_add: 'Add',
       btn_copy: 'Copy',
@@ -283,6 +285,8 @@ const messages = {
       dialogue_content_import_successful: '匯入成功',
       dialogue_content_databaseUpload: '資料庫列表將會被覆蓋, 您確定要上傳嗎',
       dialogue_content_deleteNews: '您確定要刪除這則消息嗎',
+      // placeholder
+      placeholder_searchResource: '搜尋資源名稱',
       // button
       btn_add: '新增',
       btn_copy: '複製',
