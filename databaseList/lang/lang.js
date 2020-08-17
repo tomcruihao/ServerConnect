@@ -103,6 +103,8 @@ const messages = {
       clickingReport_departmemnt: 'Department',
       clickingReport_userIdentity: 'User Identity',
       clickingReport_download_the_report: 'Report Download',
+      // commonly resource
+      h1_commonlyResource: 'Commonly Resource Management',
       // dialogue
       dialogue_title: 'Title',
       dialogue_title_warning: 'Warning',
@@ -267,6 +269,8 @@ const messages = {
       clickingReport_departmemnt: '部門',
       clickingReport_userIdentity: '身份',
       clickingReport_download_the_report: '下載報表',
+      // commonly resource
+      h1_commonlyResource: '常用資源管理',
       // dialogue
       dialogue_title: '標題',
       dialogue_title_warning: '警告',
