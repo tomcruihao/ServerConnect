@@ -79,7 +79,7 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>圖書館 - 電子資料庫 powered by EBSCO Database Listing</title>
-  <link rel="stylesheet" type="text/css" href="lib/css/index.css?v=1"/>
+  <link rel="stylesheet" type="text/css" href="lib/css/index.css?v=1.1"/>
   <script>
     function isIE() {
       ua = navigator.userAgent;
@@ -231,12 +231,12 @@
                 </li>
               </ul>
             </div>
-            <div class="bulletin-board-frame">
+            <div class="bulletin-board-frame" v-if="commonlyResources.resources.length !== 0 && commonlyResources.enabled === 'true'">
               <div>
                 <h3>{{$t('message.index_commonly_title')}}</h3>
               </div>
               <ul>
-                <li v-if="commonlyResources.length !== 0" v-for="(resource, index) in commonlyResources" class="popular-databases">
+                <li v-for="(resource, index) in commonlyResources.resources" class="popular-databases">
                   <span class="title" @click="linkTo(resource.en.uuid, resource.en.resourceUrl)" v-if="lang === 'en'">
                     {{resource.en.resourceName}}
                   </span>
@@ -579,7 +579,10 @@
       displayNumber: 0,
       latestNewsList: [],
       mobile_frame: false,
-      commonlyResources: []
+      commonlyResources: {
+        enabled: false,
+        resources: []
+      }
     },
     created: function() {
       let self = this;
@@ -700,28 +703,30 @@
       // check hot news
     },
     methods:{
-      processCommonlyResource: function(ary_resources) {
-        let tempAry = [];
-        ary_resources.forEach((element) => {
-          let en_resource = '';
-          let local_resource = '';
-          dataList.en.forEach(element_en => {
-            if(element_en.uuid === element) {
-              en_resource = element_en;
+      processCommonlyResource: function(Obj_commonlyResourcesInfo) {
+        if(Obj_commonlyResourcesInfo.enabled) {
+          let tempAry = [];
+          Obj_commonlyResourcesInfo.resources.forEach((element) => {
+            let en_resource = '';
+            let local_resource = '';
+            dataList.en.forEach(element_en => {
+              if(element_en.uuid === element) {
+                en_resource = element_en;
+              }
+            });
+            dataList.local.forEach(element_local => {
+              if(element_local.uuid === element) {
+                local_resource = element_local;
+              }
+            });
+            let Obj = {
+              en: en_resource,
+              local: local_resource
             }
+            this.commonlyResources.resources.push(Obj);
+            this.commonlyResources.enabled = Obj_commonlyResourcesInfo.enabled;
           });
-          dataList.local.forEach(element_local => {
-            if(element_local.uuid === element) {
-              local_resource = element_local;
-            }
-          });
-          let Obj = {
-            en: en_resource,
-            local: local_resource
-          }
-          this.commonlyResources.push(Obj);
-        });
-        
+        }
       },
       displayHotNews: function(news) {
         let self = this;

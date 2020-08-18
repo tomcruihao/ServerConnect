@@ -5,17 +5,29 @@
   $jsonFile_direct = '../data/commonlyResource.json';
 
   // parameters
-  $resource = $_POST["resourceList"];
+  $type = $_POST["type"];
+  $resourceList = '';
+  $enableFeature = '';
+
+  if(isset($_POST["enableFeature"])) {
+    $enableFeature = $_POST["enableFeature"];
+  }
+  if(isset($_POST["resourceList"])) {
+    $resourceList = $_POST["resourceList"];
+  }
 
   // get resource list
-  $getResourceListJsonData = file_get_contents($jsonFile_direct);
-  $resourceList = json_decode($getResourceListJsonData, true);
+  $getResourceInfoJsonData = file_get_contents($jsonFile_direct);
+  $resourceInfo = json_decode($getResourceInfoJsonData, true);
 
-  $resourceList = $resource;
+  if($type === 'enableFeature') {
+    $resourceInfo["enabled"] = $enableFeature;
+  } else if($type === 'updateResource') {
+    $resourceInfo["resources"] = $resourceList;
+  }
 
   // write back
-  file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
-
+  file_put_contents($jsonFile_direct, json_encode($resourceInfo, JSON_UNESCAPED_UNICODE));
   $res = array('status' => 'success', 'type' => 'success');
   echo json_encode($res, JSON_UNESCAPED_UNICODE);
 ?>

@@ -1,11 +1,14 @@
-[
-  "cbb9c77f-c5e9-4097-9226-b9c84c233c58",
-  "a4447acd-947c-46c5-b139-817e730b4726",
-  "e718fbbc-e8da-41e4-a925-ef9e4fcde49b",
-  "c5f32feb-d04b-4f98-8700-44b55fce5efe",
-  "313415a1-cb66-4a2b-96fd-9d3ea85fd29f",
-  "2f8bd2cd-dc29-49e5-8efb-e1186ee2eddf",
-  "ceacd98e-8b59-4c92-866f-5bcf68c16115",
-  "4e6b9675-ba2d-4e34-b1f1-fdd24871c922",
-  "d2f702c8-6068-4cf1-98bc-899cb7e49f67"
-]
+{
+  "enabled": true,
+  "resources": [
+    "cbb9c77f-c5e9-4097-9226-b9c84c233c58",
+    "a4447acd-947c-46c5-b139-817e730b4726",
+    "e718fbbc-e8da-41e4-a925-ef9e4fcde49b",
+    "c5f32feb-d04b-4f98-8700-44b55fce5efe",
+    "313415a1-cb66-4a2b-96fd-9d3ea85fd29f",
+    "2f8bd2cd-dc29-49e5-8efb-e1186ee2eddf",
+    "ceacd98e-8b59-4c92-866f-5bcf68c16115",
+    "4e6b9675-ba2d-4e34-b1f1-fdd24871c922",
+    "d2f702c8-6068-4cf1-98bc-899cb7e49f67"
+  ]
+}

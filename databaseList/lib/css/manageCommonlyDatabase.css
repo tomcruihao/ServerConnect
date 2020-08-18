@@ -368,6 +368,101 @@ header nav .nav-list li.multi:before {
   background-color: #ffffff;
 }
 
+.switch-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.switch-wrap .onoffswitch {
+  position: relative;
+  width: 60px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.switch-wrap .onoffswitch-checkbox {
+  display: none;
+}
+
+.switch-wrap .onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 9px;
+  border: 1px solid #4CAF50;
+}
+
+.switch-wrap .onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  -webkit-transition: margin 0.3s ease-in 0s;
+  transition: margin 0.3s ease-in 0s;
+  opacity: 1;
+}
+
+.switch-wrap .onoffswitch-inner:before, .switch-wrap .onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 26px;
+  padding: 0;
+  line-height: 26px;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.switch-wrap .onoffswitch-inner:before {
+  content: "";
+  padding-left: 17px;
+  opacity: 1;
+  color: #F01818;
+}
+
+.switch-wrap .onoffswitch-inner:after {
+  content: "";
+  padding-right: 17px;
+  opacity: 1;
+  color: #631616;
+  text-align: right;
+}
+
+.switch-wrap .onoffswitch-switch {
+  display: block;
+  width: 20px;
+  margin: 3px;
+  background: grey;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 34px;
+  border-radius: 9px;
+  -webkit-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s;
+}
+
+.switch-wrap .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+
+.switch-wrap .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+  background-color: #ffffff;
+}
+
+.switch-wrap .onoffswitch-checkbox:checked + .onoffswitch-label {
+  border: 1px solid #4CAF50;
+  background-color: #4CAF50;
+}
+
 h4 {
   color: #ff0000;
 }
@@ -415,10 +510,23 @@ input:focus, textarea:focus, select:focus, button {
           box-sizing: border-box;
 }
 
+.app-content .list-field .row {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .app-content .list-field .search-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .app-content .list-field .search-wrap .search-frame {
@@ -454,6 +562,7 @@ input:focus, textarea:focus, select:focus, button {
 }
 
 .app-content .list-field .list-container {
+  min-height: calc(100vh - 250px);
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -463,6 +572,25 @@ input:focus, textarea:focus, select:focus, button {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.app-content .list-field .list-container .loading-wrap {
+  margin: 0 auto;
+  font-size: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-content .list-field .list-container .loading-wrap .icon-loading {
+  width: 50px;
+  height: 50px;
 }
 
 .app-content .list-field .list-container .resource-wrap {
@@ -481,6 +609,18 @@ input:focus, textarea:focus, select:focus, button {
   background-color: #fff;
   cursor: pointer;
   overflow: hidden;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.app-content .list-field .list-container .resource-wrap.checked {
+  background-color: #d4edda;
+}
+
+.app-content .list-field .list-container .resource-wrap input[type="checkbox"] {
+  display: none;
 }
 
 .mask {

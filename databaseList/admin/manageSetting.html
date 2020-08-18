@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>設定</title>
-    <link rel="stylesheet" type="text/css" href="../lib/css/manageSettings.css?v=1"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageSettings.css?v=1.1"/>
   </head>
 <body>
   <header id="header">
@@ -58,9 +58,12 @@
         <div class="title">{{$t('message.setting_show_database_number')}}</div>
         <div class="content">
           <select v-model="settings.numberOfDatabaseShowing">
+            <option value="5">5</option>
             <option value="10">10</option>
-            <option value="15">15</option>
             <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
           </select>
         </div>
       </div>

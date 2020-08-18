@@ -2,6 +2,27 @@
 
 # Release Note
 
+## 2020/August/18
+### Change the JSON structure of commonly resouce
+```
+databaseList/data/commonlyResource.json
+databaseList/admin/manageCommonlyDatabase.html
+databaseList/admin/manageSetting.html
+databaseList/lib/css/index.css
+databaseList/lib/css/index.css.map
+databaseList/lib/css/index.scss
+databaseList/lib/css/manageCommonlyDatabase.css
+databaseList/lib/css/manageCommonlyDatabase.css.map
+databaseList/lib/css/manageCommonlyDatabase.scss
+databaseList/lib/css/manageSettings.css
+databaseList/lib/css/manageSettings.css.map
+databaseList/lib/css/manageSettings.scss
+databaseList/features/processCommonlyResource.php
+databaseList/index.php
+databaseList/lang/lang.js
+databaseList/img/frontstage_background.jpg
+```
+
 ## 2020/August/17
 ### New Feature - Commonly Resource management
 ```

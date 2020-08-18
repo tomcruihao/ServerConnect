@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Database Manage</title>
-    <link rel="stylesheet" type="text/css" href="../lib/css/manageCommonlyDatabase.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageCommonlyDatabase.css?v=1.2"/>
   </head>
 <body>
   <header id="header">
@@ -53,22 +53,43 @@
       </div>
     </section>
     <div id="listField" class="list-field">
-      <div class="search-wrap">
-        <div class="search-frame">
-          <input type="text" class="search" :placeholder="$t('message.placeholder_searchResource')" v-model="searchKeyword" />
+      <div v-if="commonlyResourceInfo.resources.length !== 0">
+        <div class="row">
+          <div class="title">{{$t('message.commonlyResource_showOnFrontStage')}}</div>
+          <div class="content">
+            <div class="switch-wrap">
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="onoffswitch" v-model="commonlyResourceInfo.enabled" @change="checkFeatureEnabled($event)">
+                <label class="onoffswitch-label" for="onoffswitch">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
-        <button @click="updateList()">{{$t('message.btn_update')}}</button>
+        <div class="search-wrap">
+          <div class="search-frame">
+            <input type="text" class="search" :placeholder="$t('message.placeholder_searchResource')" v-model="searchKeyword" />
+          </div>
+          <button @click="updateList()">{{$t('message.btn_update')}}</button>
+        </div>
+        <div class="list-container">
+          <label v-for="(resource, index) in commonlyResourceInfo.resources" class="resource-wrap" v-bind:class="{ checked: resource.checked}" v-if="(resource.title.en.toUpperCase().match(searchKeyword.toUpperCase()) != null || resource.title.local.toUpperCase().match(searchKeyword.toUpperCase()) != null)">
+            <input type="checkbox" v-model="resource.checked">
+            <div v-if="lang === 'local'">
+              {{resource.title.local}}
+            </div>
+            <div v-else-if="lang === 'en'">
+              <div class="content">{{resource.title.en}}</div>
+            </div>
+          </label>
+        </div>
       </div>
-      <div class="list-container">
-        <label v-for="(database, index) in databaseList" class="resource-wrap" v-if="(database.title.en.toUpperCase().match(searchKeyword.toUpperCase()) != null || database.title.local.toUpperCase().match(searchKeyword.toUpperCase()) != null)">
-          <input type="checkbox" v-model="database.checked">
-          <div v-if="lang === 'local'">
-            {{database.title.local}}
-          </div>
-          <div v-else-if="lang === 'en'">
-            <div class="content">{{database.title.en}}</div>
-          </div>
-        </label>
+      <div class="list-container" v-else>
+        <div class="loading-wrap">
+          Loading...<img src="../img/icon/Spinner.svg" alt="loading" title="loading" class="icon-loading"/>
+        </div>
       </div>
     </div>
   </div>
@@ -126,7 +147,7 @@
   <script src="../lib/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
-  <script src="../lang/lang.js?v=1.1"></script>
+  <script src="../lang/lang.js?v=1.2"></script>
   <script src="../lib/js/jquery.js"></script>
   <script src="../lib/js/header_back.js"></script>
   <script type="text/javascript">
@@ -154,7 +175,10 @@
       i18n,
       data: {
         searchKeyword: '',
-        databaseList: [],
+        commonlyResourceInfo: {
+          enabled: false,
+          resources: []
+        },
         lang: ''
       },
       created: async function() {
@@ -165,9 +189,9 @@
         }
 
         let allResourceList = await this.getResourceList();
-        let commonlyResourceList = await this.getCommlyResourceList();
-
-        commonlyResourceList.forEach(element => {
+        let commonlyResourceList = await this.getCommonlyResourceList();
+        
+        commonlyResourceList.resources.forEach(element => {
           for(let i = 0; i < allResourceList.length; i++) {
             if(allResourceList[i].uuid === element) {
               allResourceList[i].checked = true;
@@ -176,19 +200,46 @@
           }
         });
 
-        this.databaseList = allResourceList;
+        if(commonlyResourceList.enabled === 'true') {
+          this.commonlyResourceInfo.enabled = true;
+        } else {
+          this.commonlyResourceInfo.enabled = false;
+        }
+        this.commonlyResourceInfo.resources = allResourceList;
       },
       methods:{
+        checkFeatureEnabled(event) {
+          let self = this;
+          $.ajax({
+            url: `${apiPath}/processCommonlyResource.php`,
+            type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
+            data: {
+              type: 'enableFeature',
+              enableFeature: self.commonlyResourceInfo.enabled
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(response) {
+              console.log(response);
+            }
+          });
+        },
         updateList: function() {
           let self = this;
           let result = [];
 
-          this.databaseList.forEach(element => {
+          this.commonlyResourceInfo.resources.forEach(element => {
             if(element.checked) {
               result.push(element.uuid);
             }
           });
-          
+
           $.ajax({
             url: `${apiPath}/processCommonlyResource.php`,
             type: 'POST',
@@ -197,6 +248,7 @@
             },
             data: {
               // resourceList: JSON.stringify(result)
+              type: 'updateResource',
               resourceList: result
             },
             error: function(jqXHR, exception) {
@@ -205,12 +257,11 @@
               console.log(exception);
             },
             success: function(res) {
-              console.log(res);
               dialogue.setDialogue('modify_success');
             }
           });
         },
-        getCommlyResourceList: function() {
+        getCommonlyResourceList: function() {
           return new Promise((resolve, reject) => {
             let self = this;
             $.ajax({
@@ -274,7 +325,7 @@
         resource: ''
       },
       methods:{
-        setDialogue: function(type, database = '') {
+        setDialogue: function(type, resource = '') {
           this.type = type;
           switch (type) {
             case 'modify_success':

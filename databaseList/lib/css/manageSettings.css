@@ -477,6 +477,11 @@ h4 {
   white-space: nowrap;
 }
 
+.app-content .setting-wrap .row .content select {
+  width: 50px;
+  height: 38px;
+}
+
 .app-content .toolkit-setting-wrap .toolkits .row {
   padding: 5px 0;
   display: -webkit-box;

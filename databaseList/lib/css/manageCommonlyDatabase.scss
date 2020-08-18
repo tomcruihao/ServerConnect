@@ -4,6 +4,7 @@
 @import "footer";
 @import "languageTitle";
 @import "tagStyle";
+@import "toggle";
 
 $resource_field_bgcolor: #ffffff;
 
@@ -45,8 +46,15 @@ input:focus, textarea:focus, select:focus, button {
     width: 100%;
     box-sizing: border-box;
 
+    .row {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
     .search-wrap {
       display: flex;
+      justify-content: space-between;
 
       .search-frame {
         width: calc(100% - 120px);
@@ -78,10 +86,24 @@ input:focus, textarea:focus, select:focus, button {
     }
     
     .list-container {
+      min-height: calc(100vh - 250px);
       margin-top: 20px;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      justify-content: space-between;
+
+      .loading-wrap {
+        margin: 0 auto;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+
+        .icon-loading {
+          width: 50px;
+          height: 50px;
+        }
+      }
 
       .resource-wrap {
         width: 33%;
@@ -94,6 +116,16 @@ input:focus, textarea:focus, select:focus, button {
         background-color: #fff;
         cursor: pointer;
         overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        
+        &.checked {
+          background-color: #d4edda;
+        }
+
+        input[type="checkbox"] {
+          display: none;
+        }
       }
     }
   }
