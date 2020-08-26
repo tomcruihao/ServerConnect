@@ -2,6 +2,64 @@
 
 # Release Note
 
+## 2020/August/26
+### New Feature - Expiring Checking
+```
+databaseList/admin/manageAuth.html
+databaseList/admin/manageCommonlyDatabase.html
+databaseList/admin/manageExpiryResource.html
+databaseList/admin/manageLatestNews.html
+databaseList/admin/manageResource.html
+databaseList/admin/manageSetting.html
+databaseList/admin/manageSubject.html
+databaseList/admin/usageReport.html
+databaseList/lib/css/admin_index.css
+databaseList/lib/css/admin_index.css.map
+databaseList/lib/css/allLatestNews.css
+databaseList/lib/css/allLatestNews.css.map
+databaseList/lib/css/authLogin.css
+databaseList/lib/css/authLogin.css.map
+databaseList/lib/css/header.scss
+databaseList/lib/css/index.css
+databaseList/lib/css/index.css.map
+databaseList/lib/css/index_ie.css
+databaseList/lib/css/index_ie.css.map
+databaseList/lib/css/init.css
+databaseList/lib/css/init.css.map
+databaseList/lib/css/init.scss
+databaseList/lib/css/landing.css
+databaseList/lib/css/landing.css.map
+databaseList/lib/css/landing_select_result.css
+databaseList/lib/css/landing_select_result.css.map
+databaseList/lib/css/manageAuth.css
+databaseList/lib/css/manageAuth.css.map
+databaseList/lib/css/manageCommonlyDatabase.css
+databaseList/lib/css/manageCommonlyDatabase.css.map
+databaseList/lib/css/manageExpiryResource.css
+databaseList/lib/css/manageExpiryResource.css.map
+databaseList/lib/css/manageExpiryResource.scss
+databaseList/lib/css/manageLatestNews.css
+databaseList/lib/css/manageLatestNews.css.map
+databaseList/lib/css/manageLatestNews.scss
+databaseList/lib/css/manageResource.css
+databaseList/lib/css/manageResource.css.map
+databaseList/lib/css/manageSettings.css
+databaseList/lib/css/manageSettings.css.map
+databaseList/lib/css/manageSettings.scss
+databaseList/lib/css/manageSubject.css
+databaseList/lib/css/manageSubject.css.map
+databaseList/lib/css/usageReport.css
+databaseList/lib/css/usageReport.css.map
+databaseList/lib/css/usageReport.scss
+databaseList/features/checkDatabaseExpiry.php
+databaseList/features/getExpiryResourceSetting.php
+databaseList/features/processCheckExpirySettings.php
+databaseList/lang/lang.js
+databaseList/index.php
+databaseList/data/expiryCheckSetting.json
+databaseList/lib/js/header_back.js
+```
+
 ## 2020/August/18
 ### Change the JSON structure of commonly resouce
 ```
