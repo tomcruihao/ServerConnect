@@ -3,6 +3,7 @@ const messages = {
     message: {
       chooseLanguage:'Language',
       header_logout: 'Logout',
+      header_expiryResourceSetting: 'Expiry Resource Setting',
       // index page
       h1_resource_list: 'Database List',
       index_total: 'ALL',
@@ -42,11 +43,10 @@ const messages = {
       resource_isProxy: 'Apply Proxy/Redirector',
       resource_resourceUrl: 'Access Link',
       resource_relevanceUrl: 'Information Link',
-      resource_select_yes: 'yes',
-      resource_select_no: 'no',
       resource_btn_modify: 'Modify',
       resource_btn_add: 'Add',
       resource_expired_display: 'Display this resource when expired',
+      resource_stop_checking_expiring: 'Stop Checking Expiring',
       // setting page
       h1_settings: 'Settings',
       generalSetting: 'General Settings',
@@ -61,7 +61,7 @@ const messages = {
       setting_import_csv_data: 'Import resource list (txt file)',
       setting_proxy: 'Proxy/Redirector Prefix URL',
       setting_total_resources: 'Total Resources',
-      setting_show_popular_resources: 'The number of Popular resources to show',
+      setting_show_popular_resources: 'The number of Popular resources to show(0 means won\'t show on front-page)',
       setting_show_database_number: 'The number of resources to show',
       setting_exportDatabaseFile: 'Export Database List',
       // latest news management page
@@ -76,6 +76,12 @@ const messages = {
       latest_hot_news_show_or_not_show: 'Show',
       latest_hot_news_message: 'Choose Message',
       latest_hot_news_message_select: 'Select',
+      // expiry checking page
+      h1_expiring: 'Expiry Management',
+      expiring_turn_on_the_feature: 'Turn on the feature',
+      expiring_days_before_expiry: 'Days before expiry',
+      expiring_resource_status: 'Resource Status',
+      expiring_no_resource: 'No Resource',
       // Subject management page
       h1_subject: 'Facets Management',
       subject_setting: 'Facets Management',
@@ -136,6 +142,7 @@ const messages = {
       btn_cancel: 'Cancel',
       btn_search: 'Search',
       btn_close: 'Close',
+      btn_modify: 'Modify',
       btn_download_report: 'Download Report',
       btn_sort_1: 'Resource Name',
       btn_sort_2: 'Language',
@@ -143,6 +150,9 @@ const messages = {
       btn_sort_4: 'Category',
       btn_login: 'Login',
       btn_change: 'Change',
+      // selector
+      selector_yes: 'yes',
+      selector_no: 'no',
       // resourceTable
       resource_table_resourceName: "Title",
       resource_table_resourceUrlTitle: "Access Link",
@@ -170,6 +180,7 @@ const messages = {
     message: {
       chooseLanguage:'選擇語言',
       header_logout: '登出',
+      header_expiryResourceSetting: '過期資源設定',
       // index page
       h1_resource_list: '電子資料庫列表',
       index_total: '全部',
@@ -209,11 +220,10 @@ const messages = {
       resource_isProxy: '套用Proxy/Redirector',
       resource_resourceUrl: '資源連結',
       resource_relevanceUrl: '相關資源連結',
-      resource_select_yes: '是',
-      resource_select_no: '否',
       resource_btn_modify: '修改',
       resource_btn_add: '新增',
       resource_expired_display: '過期是否顯示',
+      resource_stop_checking_expiring: '停止過期檢查',
       // setting page
       h1_settings: '設定',
       generalSetting: '一般設定',
@@ -228,7 +238,7 @@ const messages = {
       setting_import_csv_data: '上傳資源 txt 檔案',
       setting_proxy: 'Proxy/Redirector 前綴網址',
       setting_total_resources: '資源數',
-      setting_show_popular_resources: '熱門資源顯示數量',
+      setting_show_popular_resources: '熱門資源顯示數量(0表示不會顯示在前台)',
       setting_show_database_number: '資源顯示數量',
       setting_exportDatabaseFile: '匯出資料庫',
       // latest news management page
@@ -243,6 +253,12 @@ const messages = {
       latest_hot_news_show_or_not_show: '是否顯示',
       latest_hot_news_message: '是否顯示',
       latest_hot_news_message_select: '請選擇顯示的消息',
+      // expiry checking page
+      h1_expiring: '快過期資源管理',
+      expiring_turn_on_the_feature: '開啟功能',
+      expiring_days_before_expiry: '資源過期前幾天通知',
+      expiring_resource_status: '資源狀態',
+      expiring_no_resource: '沒有資源',
       // Subject management page
       h1_subject: '後分類管理',
       subject_setting: '後分類管理',
@@ -303,6 +319,7 @@ const messages = {
       btn_cancel: '取消',
       btn_search: '搜尋',
       btn_close: '關閉',
+      btn_modify: '修改',
       btn_download_report: '下載報表',
       btn_sort_1: '資源名稱',
       btn_sort_2: '語言',
@@ -310,6 +327,9 @@ const messages = {
       btn_sort_4: '分類',
       btn_login: '登入',
       btn_change: ' 變更',
+      // selector
+      selector_yes: '是',
+      selector_no: '否',
       // resourceTable
       resource_table_resourceName: "資源名稱",
       resource_table_resourceUrlTitle: "連結",

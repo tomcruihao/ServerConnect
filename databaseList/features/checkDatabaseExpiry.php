@@ -1,56 +1,85 @@
 <?php
   // Server setting: crontab -e
-  use PHPMailer\PHPMailer\PHPMailer;
 
   include '_header.php';
 
-  $jsonFile_direct = dirname(dirname(__FILE__)).'/data/eResourceList.json';
+  $jsonFilePath_eResource = dirname(dirname(__FILE__)).'/data/eResourceList.json';
+  $jsonFilePath_expirySetting = dirname(dirname(__FILE__)).'/data/expiryCheckSetting.json';
 
   // get resource list
-  $getResourceListJsonData = file_get_contents($jsonFile_direct);
+  $getResourceListJsonData = file_get_contents($jsonFilePath_eResource);
   $resourceList = json_decode($getResourceListJsonData, true);
 
-  foreach($resourceList as $key => $value) {
-    $expired = true;
-    if ($value['startDate'] !== '' && $value['expireDate'] !== '') {
-      $currentTime = strtotime(date("Y-m-d"));
-      $temp_startTime = strtotime($value['startDate']);
-      $temp_endTime = strtotime($value['expireDate']);
-      
-      if($currentTime > $temp_endTime || $currentTime < $temp_startTime) {
-        print_r($value['uuid'])."\n";
+  // get setting info
+  $getExpirySettings = file_get_contents($jsonFilePath_expirySetting);
+  $expirySettingInfo = json_decode($getExpirySettings, true);
+  $daysBeforeExpiry = $expirySettingInfo['settings']['daysBeforeExpiry'];
+
+  $result = [];
+  $currentTime = new DateTime('now');
+
+  if($expirySettingInfo['settings']['notification_enabled'] == 'true') {
+    foreach($resourceList as $key => $value) {
+      $expired = true;
+  
+      // check attribute 'stopCheckingExpiring' exist or not
+      if (!array_key_exists('stopCheckingExpiring', $value)) {
+        $value['stopCheckingExpiring'] = false;
+      }
+  
+      if (!filter_var($value['stopCheckingExpiring'], FILTER_VALIDATE_BOOLEAN) && trim($value['expireDate']) !== '') {
+        $processEndTime = str_replace('/', '-', $value['expireDate']);
+        $temp_endTime = new DateTime($processEndTime);
+        $temp_startTime = new DateTime($processEndTime);
+        $temp_startTime->modify( '-'.$daysBeforeExpiry.' day' );
+  
+        $tempResult = '';
+        $tempResult = check_in_range($temp_startTime, $temp_endTime, $currentTime);
+  
+        if($tempResult == 'expired') {
+          $value['expiredStatus'] = 'expired';
+          array_push($result, $value);
+        } else if($tempResult == 'expiring') {
+          $value['expiredStatus'] = 'expiring';
+          array_push($result, $value);
+        }
+  
+        // if($currentTime > $temp_endTime || $currentTime < $temp_startTime) {
+        //   $tempArray = array(
+        //     "uuid" => $value['uuid'],
+        //     "startDate" => $value['startDate'],
+        //     "expireDate" => $value['expireDate']
+        //   );
+        //   array_push($result, $value['uuid']);
+        // }
       }
     }
   }
+  
+  echo json_encode(array("resourceList" => $result));
 
 
-  require_once dirname(dirname(__FILE__))."/lib/PHPMailer/PHPMailer.php";
-  require_once dirname(dirname(__FILE__))."/lib/PHPMailer/SMTP.php";
-  require_once dirname(dirname(__FILE__))."/lib/PHPMailer/Exception.php";
+  function check_in_range($start_date, $end_date, $currentTime) {
+    // Convert to timestamp
+    // $start_ts = strtotime($start_date);
+    // $end_ts = strtotime($end_date);
+    // $current_ts = strtotime($currentTime);
 
-  // $mail = new PHPMailer();
+    // echo date_format($start_date, 'Y-m-d H:i:s');
+    // echo date_format($end_date, 'Y-m-d H:i:s');
+    // echo date_format($currentTime, 'Y-m-d H:i:s');
+    // echo '###1. '.($currentTime > $end_date);
+    // echo '###2. '.($end_date > $currentTime);
+    // echo '###3. '.($currentTime > $start_date);
+    // echo '@@@@@@@@@@@@@@@@@@@@@@@@@@@';
 
-  // $mail->isSMTP();
-  // $mail->Host = "smtp.gmail.com";
-  // $mail->SMTPAuth = true;
-  // $mail->Username = "tomcruihao@gmail.com";
-  // $mail->Password = "";
-  // $mail->Port = "587";
-  // $mail->SMTPSecure = "TLS";
+    if($currentTime > $end_date) {
+      return 'expired';
+    } else if($end_date > $currentTime && $currentTime > $start_date){
+      return 'expiring';
+    } else {
+      return '';
+    }
+  }
 
-  // // email Settings
-  // $mail->isHTML(true);
-  // $mail->setFrom("tomcruihao@gmail.com", "Jay");
-  // $mail->addAddress("chchang@ebsco.com", "chchang");
-  // $mail->Subject = "Test Subject";
-  // $mail->Body = "Test Body";
-
-  // if ($mail->send()) {
-  //   echo "mail is sent";
-  // } else {
-  //   echo "Nope";
-  //   echo $mail->ErrorInfo;
-  // }
-
-  // exit(json_encode(array("response" => $response)));
 ?>

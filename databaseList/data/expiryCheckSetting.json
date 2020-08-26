@@ -1,0 +1,7 @@
+{
+  "checkDateTime": "",
+  "settings": {
+    "daysBeforeExpiry": 90,
+    "notification_enabled": "true"
+  }
+}

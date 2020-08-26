@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Database Manage</title>
-    <link rel="stylesheet" type="text/css" href="../lib/css/manageResource.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageResource.css?v=3.0"/>
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
   </head>
 <body>
@@ -17,6 +17,12 @@
     <nav>
       <input type="checkbox" id="mobile_btn">
       <ul class="nav-list">
+        <li>
+          <div class="expiring-checking-wrap">
+            <div class="expiring-number" v-if="expiringNumber !== 0">{{expiringNumber}}</div>
+            <a class="nav-tag" href="manageExpiryResource.html">{{$t('message.header_expiryResourceSetting')}}</a>
+          </div>
+        </li>
         <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
           <div v-if="link.child.length === 0">
             <a :href="link.link" class="nav-tag" v-if="lang === 'en'">{{link.title.en}}</a>
@@ -166,8 +172,8 @@
             <div class="row">
               <div class="title">{{$t('message.resource_expired_display')}}</div>
               <div class="content">
-                <div v-if="database.expiredChecking === 'true'">{{$t('message.resource_select_yes')}}</div>
-                <div v-else>{{$t('message.resource_select_no')}}</div>
+                <div v-if="database.expiredChecking === 'true'">{{$t('message.selector_yes')}}</div>
+                <div v-else>{{$t('message.selector_no')}}</div>
               </div>
             </div> -->
             <div class="row">
@@ -305,8 +311,8 @@
             <div class="title">{{$t('message.resource_expired_display')}}</div>
             <div class="content">
               <select v-model="resource.expiredChecking">
-                <option value="true">{{$t('message.resource_select_yes')}}</option>
-                <option value="false">{{$t('message.resource_select_no')}}</option>
+                <option value="true">{{$t('message.selector_yes')}}</option>
+                <option value="false">{{$t('message.selector_no')}}</option>
               </select>
             </div>
           </div>
@@ -314,8 +320,8 @@
             <div class="title">{{$t('message.resource_isProxy')}}</div>
             <div class="content">
               <select v-model="resource.isProxy">
-                <option value="true">{{$t('message.resource_select_yes')}}</option>
-                <option value="false">{{$t('message.resource_select_no')}}</option>
+                <option value="true">{{$t('message.selector_yes')}}</option>
+                <option value="false">{{$t('message.selector_no')}}</option>
               </select>
             </div>
           </div>
@@ -382,9 +388,9 @@
   <script src="../lib/js/verifyAuth.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
-  <script src="../lang/lang.js"></script>
+  <script src="../lang/lang.js?v=1.1"></script>
   <script src="../lib/js/jquery.js"></script>
-  <script src="../lib/js/header_back.js"></script>
+  <script src="../lib/js/header_back.js?v=1.0"></script>
   <script type="text/javascript">
     var mainTitle = new Vue({
       el:'#mainTitle',

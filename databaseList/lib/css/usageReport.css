@@ -34,6 +34,15 @@ button {
   cursor: pointer;
 }
 
+select {
+  height: 36px;
+  border: 2px solid #cccccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 50px;
+  border-radius: 5px;
+}
+
 input:focus, textarea:focus, select:focus, button {
   outline: none;
 }
@@ -141,6 +150,24 @@ header nav .nav-list li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+header nav .nav-list li .expiring-checking-wrap {
+  position: relative;
+}
+
+header nav .nav-list li .expiring-checking-wrap .expiring-number {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 0.8rem;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 1;
 }
 
 header nav .nav-list li .nav-tag {
@@ -447,11 +474,6 @@ header nav .nav-list li.multi:before {
 
 .app-content .report-wrap .search-wrap .date-wrap .title {
   min-width: 90px;
-}
-
-.app-content .report-wrap .search-wrap .date-wrap select {
-  height: 36px;
-  border: 2px solid #cccccc;
 }
 
 .app-content .report-wrap .search-wrap button {

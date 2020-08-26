@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Expiry Resource Management</title>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageExpiryResource.css?v=3.0"/>
+  </head>
+<body>
+  <header id="header">
+    <div class="logo">
+      <a href="#">
+        <img src="../img/logo.png" alt="EBSCO" title="EBSCO"/>
+      </a>
+    </div>
+    <nav>
+      <input type="checkbox" id="mobile_btn">
+      <ul class="nav-list">
+        <li>
+          <div class="expiring-checking-wrap">
+            <div class="expiring-number" v-if="expiringNumber !== 0">{{expiringNumber}}</div>
+            <a class="nav-tag" href="manageExpiryResource.html">{{$t('message.header_expiryResourceSetting')}}</a>
+          </div>
+        </li>
+        <li v-for="(link, index) in links" v-bind:class="{ multi: link.child.length != 0}">
+          <div v-if="link.child.length === 0">
+            <a :href="link.link" class="nav-tag" v-if="lang === 'en'">{{link.title.en}}</a>
+            <a :href="link.link" class="nav-tag" v-else-if="lang === 'local'">{{link.title.local}}</a>
+          </div>
+          <div v-else>
+            <label class="nav-tag" :for="'tag'+index" v-if="lang === 'en'">{{link.title.en}}</label>
+            <label class="nav-tag" :for="'tag'+index" v-else-if="lang === 'local'">{{link.title.local}}</label>
+            <input type="checkbox" :id="'tag'+index">
+            <ul>
+              <li v-for="(childLink, c_index) in link.child">
+                <a :href="childLink.link" v-if="lang === 'en'">{{childLink.title.en}}</a>
+                <a :href="childLink.link" v-if="lang === 'local'">{{childLink.title.local}}</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a class="nav-tag" @click="logout">{{$t('message.header_logout')}}</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="app-content">
+    <section id="mainTitle" class="mainTitle">
+      <h1>{{$t('message.h1_expiring')}}</h1>
+      <div class="lang-wrap">
+        <img src="../img/icon/language.svg"/>
+        <select v-model="selector_lang" @change="setLang($event)">
+          <option value="en">English</option>
+          <option value="local">中文</option>
+        </select>
+      </div>
+    </section>
+    <section id="expirySettingField" class="setting-wrap">
+      <div class="row">
+        <div class="title">{{$t('message.expiring_turn_on_the_feature')}}</div>
+        <div class="content">
+          <div class="switch-wrap">
+            <div class="onoffswitch">
+              <input type="checkbox" class="onoffswitch-checkbox" id="onoffswitch" v-model="settings.notification_enabled">
+              <label class="onoffswitch-label" for="onoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="title">{{$t('message.expiring_days_before_expiry')}}</div>
+        <div class="content">
+          <select v-model="settings.daysBeforeExpiry">
+            <option value="7">7</option>
+            <option value="10">14</option>
+            <option value="30">30</option>
+            <option value="60">60</option>
+            <option value="90">90</option>
+          </select>
+        </div>
+      </div>
+      <div class="button-wrap">
+        <button @click="update">
+          {{$t('message.btn_update')}}
+        </button>
+      </div>
+    </section>
+    <div id="expiryDataListField" class="list-field">
+      <h2>{{$t('message.expiring_resource_status')}}</h2>
+      <div class="list-container" v-if="loading">
+        <div class="spinner-wrap">
+          <img src="../img/icon/Spinner.svg"/>
+        </div>
+      </div>
+      <div class="list-container" v-else-if="databaseList.length !== 0">
+        <div v-for="(database, index) in databaseList" class="resource-wrap" :class="[database.expiredStatus === 'expired' ? 'expired': 'expiring']">
+          <div class="tag-wrap">
+            <button @click="changeTag(database, 'local')" :class="[database.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+            <button @click="changeTag(database, 'en')" :class="[database.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
+          </div>
+          <div class="multi-lang-field">
+            <div v-if="database.tag === 'local'">
+              <div class="row">
+                <div class="title">{{$t('message.resource_resourceName')}}</div>
+                <div class="content">{{database.local.resourceName}}</div>
+              </div>
+            </div>
+            <div v-else-if="database.tag === 'en'">
+              <div class="row">
+                <div class="title">{{$t('message.resource_resourceName')}}</div>
+                <div class="content">{{database.en.resourceName}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="common-field">
+            <div class="row">
+              <div class="title">{{$t('message.resource_startDate')}}</div>
+              <div class="content">{{database.startDate}}</div>
+            </div>
+            <div class="row">
+              <div class="title">{{$t('message.resource_expireDate')}}</div>
+              <div class="content">{{database.expireDate}}</div>
+            </div>
+            <div class="row">
+              <div class="title">{{$t('message.resource_stop_checking_expiring')}}</div>
+              <div class="content">
+                <div v-if="Boolean(database.stopCheckingExpiring)">{{$t('message.selector_yes')}}</div>
+                <div v-else>{{$t('message.selector_no')}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-wrap">
+            <button @click="updateResource(database)">{{$t('message.btn_modify')}}</button>
+          </div>
+        </div>
+      </div>
+      <div class="list-container" v-else>
+        <div class="spinner-wrap">
+          {{$t('message.expiring_no_resource')}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <img src="../img/logo_white.svg">
+    <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
+  </footer>
+  <div id="dialogue" class="mask" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeDialogue"></div>
+    <div class="dialogue-message-frame" v-if="type === 'logout'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_logout')}}
+        <div class="btn-frame">
+          <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'expired'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="backToLogin()">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_expired')}}
+        <div class="btn-frame">
+          <button @click="backToLogin()">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'update_success'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body">
+        {{$t('message.dialogue_content_updateSuccess')}}
+        <div class="btn-frame">
+          <button @click="closeDialogue">{{$t('message.btn_close')}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="dialogue-message-frame" v-else-if="type === 'update_resource'">
+      <div class="dialogue-head">
+        <h4>{{$t('message.dialogue_title_info')}}</h4>
+        <img src="../img/icon/closeWhite.svg" class="close" @click="closeDialogue">
+      </div>
+      <div class="dialogue-body">
+        <div class="row">
+          <div class="title">{{$t('message.resource_stop_checking_expiring')}}</div>
+          <div class="content">
+            <select v-model="resource.stopCheckingExpiring">
+              <option value="true">{{$t('message.selector_yes')}}</option>
+              <option value="false">{{$t('message.selector_no')}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">{{$t('message.resource_expireDate')}}</div>
+          <input type="date" v-model="resource.expireDate">
+        </div>
+        <div class="btn-frame">
+          <button @click="updateResource">{{$t('message.btn_update')}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/js/basicParameters.js"></script>
+  <script src="../lib/js/verifyAuth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+  <script src="../lang/lang.js?v=3.0"></script>
+  <script src="../lib/js/jquery.js"></script>
+  <script src="../lib/js/header_back.js?v=1.0"></script>
+  <script type="text/javascript">
+    var mainTitle = new Vue({
+      el:'#mainTitle',
+      i18n,
+      data: {
+        selector_lang: ''
+      },
+      mounted: function() {
+        this.selector_lang = i18n.locale;
+      },
+      methods: {
+        setLang(event) {
+          i18n.locale = event.target.value;
+          localStorage.setItem('lang', event.target.value);
+          dataList.setLocale(event.target.value);
+          header.setLocale(event.target.value);
+        }
+      }
+    })
+
+    var expirySettingField = new Vue({
+      el:'#expirySettingField',
+      i18n,
+      data: {
+        settings: {
+          daysBeforeExpiry: 5,
+          notification_enabled: false
+        }
+      },
+      created: function() {
+        if("lang" in localStorage) {
+          this.lang = localStorage.getItem('lang');
+        } else {
+          this.lang = 'local';
+        }
+
+        this.getSettings();
+      },
+      mounted: function() {
+
+      },
+      methods: {
+        getSettings() {
+          let self = this;
+          $.ajax({
+            url: `${apiPath}/getExpiryResourceSetting.php`,
+            type: 'GET',
+            data: {
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(response) {
+              let temp = JSON.parse(JSON.stringify(response.settings));
+              temp.notification_enabled = temp.notification_enabled === 'false' ? false : true;
+              console.log(temp);
+              self.settings = temp;
+            }
+          });
+        },
+        setLang(event) {
+
+        },
+        update() {
+          // JSON.stringify(this.template)
+          let self = this;
+
+          $.ajax({
+            url: `${apiPath}/processCheckExpirySettings.php`,
+            type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
+            data: {
+              type: 'update',
+              settings: self.settings
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              if(res.status === 'expired') {
+                dialogue.setDialogue('expired', 'expired');
+              } else {
+                dialogue.setDialogue('update_success');
+                self.getSettings();
+                expiryDataList.getDatabaseList();
+              }
+            }
+          });
+        }
+      }
+    })
+    
+    var expiryDataList = new Vue({
+      el:'#expiryDataListField',
+      i18n,
+      data: {
+        lang: '',
+        databaseList: [],
+        loading: false
+      },
+      created: function() {
+        if("lang" in localStorage) {
+          this.lang = localStorage.getItem('lang');
+        } else {
+          this.lang = 'local';
+        }
+
+        this.getDatabaseList();
+      },
+      mounted: function() {
+        // this.getDatabaseList(0);
+      },
+      methods:{
+        updateResource: function(resource) {
+          console.log('test');
+          console.log(resource);
+          dialogue.setDialogue('update_resource', resource)
+        },
+        getDatabaseList: function() {
+          this.loading = true;
+          let self = this;
+          $.ajax({
+            url: `${apiPath}/checkDatabaseExpiry.php`,
+            type: 'GET',
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+              self.loading = false;
+            },
+            success: function(res) {
+              let temp = res.resourceList;
+              for(let index in temp) {
+                temp[index]['tag'] = self.lang;
+              }
+              self.databaseList = temp;
+              self.loading = false;
+            }
+          });
+        },
+        modifyResource: function(database) {
+          fillForm.setForm('modify', database);
+        },
+        deleteResource: function(database) {
+          dialogue.setDialogue('deleteResource', database);
+        },
+        setLocale: function(language) {
+          this.lang = language;
+        },
+        changeTag(obj, lang) {
+          obj.tag = lang;
+        }
+      }
+    });
+
+    var dialogue = new Vue({
+      el:'#dialogue',
+      i18n,
+      data: {
+        show: false,
+        type: '',
+        resource: ''
+      },
+      methods:{
+        setDialogue: function(type, database = '') {
+          // if(database.expireDate.trim() !== '') {
+          //   database.expireDate = this.processDateFormate(database.expireDate);
+          // }
+          this.type = type;
+          switch (type) {
+            case 'update_resource':
+              this.resource = JSON.parse(JSON.stringify(database));
+              break;
+          }
+          this.show = true;
+        },
+        backToLogin: function() {
+          window.location.replace(backStagePath);
+        },
+        closeDialogue: function() {
+          this.show = false;
+        },
+        processDateFormate(date) {
+          date = date.replace(/\//g, '-');
+          let temp = date.split("-");
+          if(temp[1].length < 2) {
+            temp[1] = `0${temp[1]}`;
+          }
+          if(temp[2].length < 2) {
+            temp[2] = `0${temp[2]}`;
+          }
+          return `${temp[0]}-${temp[1]}-${temp[2]}`;
+        },
+        updateResource() {
+          let self = this;
+          $.ajax({
+            url: `${apiPath}/processResource.php`,
+            type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
+            data: {
+              type: 'modify',
+              resource: JSON.stringify(self.resource)
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              if(res.status === "expired") {
+                dialogue.setDialogue('expired', 'expired');
+              } else {
+                self.type = 'update_success';
+                expiryDataList.getDatabaseList();
+                // dataList.getDatabaseList();
+                // self.closeForm();
+                // let dialogueType = `${self.sendType}_success`
+                // dialogue.setDialogue(dialogueType);
+              }
+            }
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

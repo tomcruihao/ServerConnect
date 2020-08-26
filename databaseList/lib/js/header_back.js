@@ -3,7 +3,8 @@ var header = new Vue({
   i18n,
   data: {
     links: '',
-    lang: ''
+    lang: '',
+    expiringNumber: 0
   },
   created: function() {
     let self = this;
@@ -20,6 +21,8 @@ var header = new Vue({
         // self.settings = res;          
       }
     });
+
+    this.getExpiryCheckingResult();
   },
   mounted: function() {
     this.lang = i18n.locale;
@@ -27,6 +30,21 @@ var header = new Vue({
   methods: {
     setLocale: function(language) {
       this.lang = language;
+    },
+    getExpiryCheckingResult() {
+      let self = this;
+      $.ajax({
+        url: `${apiPath}/checkDatabaseExpiry.php`,
+        type: 'GET',
+        error: function(jqXHR, exception) {
+          //use url variable here
+          console.log(jqXHR);
+          console.log(exception);
+        },
+        success: function(res) {
+          self.expiringNumber = res.resourceList.length;
+        }
+      });
     },
     logout() {
       $.ajax({

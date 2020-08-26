@@ -55,6 +55,23 @@ header {
         align-items: center;
         justify-content: center;
 
+        .expiring-checking-wrap {
+          position: relative;
+          .expiring-number {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            color: #ffffff;
+            font-size: 0.8rem;
+            text-align: center;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            z-index: 1;
+          }
+        }
+
         .nav-tag {
           width: 100%;
           display: block;
