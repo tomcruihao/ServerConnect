@@ -54,6 +54,18 @@
         // }
       }
     }
+
+    // sort the date time
+    usort($result, function($a, $b) {
+      $ad = new DateTime($a['expireDate']);
+      $bd = new DateTime($b['expireDate']);
+    
+      if ($ad == $bd) {
+        return 0;
+      }
+    
+      return $ad < $bd ? -1 : 1;
+    });
   }
   
   echo json_encode(array("resourceList" => $result));
@@ -81,5 +93,4 @@
       return '';
     }
   }
-
 ?>

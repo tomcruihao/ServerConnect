@@ -3,6 +3,17 @@
 # Release Note
 
 ## 2020/August/26
+### Expiring Checking synchronize with header, date sorting, remove the start date on expiring form and Add resource form in Expiring page
+```
+databaseList/lib/css/manageExpiryResource.css
+databaseList/lib/css/manageExpiryResource.css.map
+databaseList/lib/css/manageExpiryResource.scss
+databaseList/admin/manageExpiryResource.html
+databaseList/features/checkDatabaseExpiry.php
+databaseList/lang/lang.js
+```
+
+## 2020/August/26
 ### New Feature - Expiring Checking
 ```
 databaseList/admin/manageAuth.html

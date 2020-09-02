@@ -755,6 +755,89 @@ header nav .nav-list li.multi:before {
   white-space: nowrap;
 }
 
+.mask .dialogue-frame {
+  width: 94%;
+  max-width: 800px;
+  max-height: 100%;
+  padding: 30px 15px 15px;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mask .dialogue-frame .close {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 5px;
+}
+
+.mask .dialogue-frame .dialogue-content {
+  max-height: 550px;
+  padding-top: 10px;
+  overflow-y: scroll;
+}
+
+.mask .dialogue-frame .dialogue-content .row {
+  margin-bottom: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mask .dialogue-frame .dialogue-content .row .title {
+  width: 200px;
+  font-weight: bold;
+}
+
+.mask .dialogue-frame .dialogue-content .row .content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.mask .dialogue-frame .dialogue-content .row .content textarea {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  border: 2px solid #cccccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mask .dialogue-frame .dialogue-content .row .content.over {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mask .dialogue-frame .btn-frame {
+  width: 100%;
+  margin-top: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mask .dialogue-frame .btn-frame button {
+  width: 150px;
+  height: 38px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
 .mask .dialogue-body .row {
   margin-bottom: 10px;
   display: -webkit-box;

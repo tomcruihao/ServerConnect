@@ -4,7 +4,8 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Expiry Resource Management</title>
-    <link rel="stylesheet" type="text/css" href="../lib/css/manageExpiryResource.css?v=3.0"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageExpiryResource.css?v=4.0"/>
+    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
   </head>
 <body>
   <header id="header">
@@ -151,6 +152,150 @@
     <img src="../img/logo_white.svg">
     <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
   </footer>
+  <div class="mask" id="fillForm" v-if="show" :class="{ show: show }">
+    <div class="cover" @click="closeForm()"></div>
+    <div class="dialogue-frame">
+      <img src="../img/icon/close.svg" class="close" @click="closeForm">
+      <div class="tag-wrap">
+        <button @click="changeTag(resource, 'local')" :class="[resource.tag === 'local'? 'taged': '']">{{$t('message.tag_chinese')}}</button>
+        <button @click="changeTag(resource, 'en')" :class="[resource.tag === 'en'? 'taged': '']">{{$t('message.tag_english')}}</button>
+      </div>
+      <div class="dialogue-content">
+        <div class="multiple-lang-field" v-show="resource.tag === 'en'">
+          <div class="row">
+            <div class="title">{{$t('message.resource_resourceName')}}</div>
+            <input type="text" v-model="resource.en.resourceName">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_resourceType')}}</div>
+            <input type="text" v-model="resource.en.resourceType">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_faculty')}}</div>
+            <input type="text" v-model="resource.en.faculty">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_department')}}</div>
+            <input type="text" v-model="resource.en.department">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_subject')}}</div>
+            <input type="text" v-model="resource.en.subject">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_category')}}</div>
+            <input type="text" v-model="resource.en.category">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_publisher')}}</div>
+            <input type="text" v-model="resource.en.publish">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_language')}}</div>
+            <input type="text" v-model="resource.en.language">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_resourceDescribe')}}</div>
+            <textarea v-model="resource.en.resourceDescribe" name="editor_en"></textarea>
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
+            <input type="text" v-model="resource.en.relevanceUrlDescribe">
+          </div>
+        </div>
+        <div class="multiple-lang-field" v-show="resource.tag === 'local'">
+          <div class="row">
+            <div class="title">{{$t('message.resource_resourceName')}}</div>
+            <input type="text" v-model="resource.local.resourceName">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_resourceType')}}</div>
+            <input type="text" v-model="resource.local.resourceType">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_faculty')}}</div>
+            <input type="text" v-model="resource.local.faculty">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_department')}}</div>
+            <input type="text" v-model="resource.local.department">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_subject')}}</div>
+            <input type="text" v-model="resource.local.subject">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_category')}}</div>
+            <input type="text" v-model="resource.local.category">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_publisher')}}</div>
+            <input type="text" v-model="resource.local.publish">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_language')}}</div>
+            <input type="text" v-model="resource.local.language">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_resourceDescribe')}}</div>
+            <textarea v-model="resource.local.resourceDescribe" name="editor_local"></textarea>
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_relevanceUrlDescribe')}}</div>
+            <input type="text" v-model="resource.local.relevanceUrlDescribe">
+          </div>
+        </div>
+        <div class="common-field">
+          <div class="row">
+            <div class="title">{{$t('message.resource_relevanceUrl')}}</div>
+            <input type="text" v-model="resource.relevanceUrl">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_startDate')}}</div>
+            <input type="date" v-model="resource.startDate">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_expireDate')}}</div>
+            <input type="date" v-model="resource.expireDate">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_expired_display')}}</div>
+            <div class="content">
+              <select v-model="resource.expiredChecking">
+                <option value="true">{{$t('message.selector_yes')}}</option>
+                <option value="false">{{$t('message.selector_no')}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_isProxy')}}</div>
+            <div class="content">
+              <select v-model="resource.isProxy">
+                <option value="true">{{$t('message.selector_yes')}}</option>
+                <option value="false">{{$t('message.selector_no')}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_resourceUrl')}}</div>
+            <input type="text" v-model="resource.resourceUrl">
+          </div>
+          <div class="row">
+            <div class="title">{{$t('message.resource_stop_checking_expiring')}}</div>
+            <div class="content">
+              <select v-model="resource.stopCheckingExpiring">
+                <option value="true">{{$t('message.selector_yes')}}</option>
+                <option value="false">{{$t('message.selector_no')}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-frame">
+        <button @click="sendForm">{{$t('message.resource_btn_modify')}}</button>
+      </div>
+    </div>
+  </div>
   <div id="dialogue" class="mask" v-if="show" :class="{ show: show }">
     <div class="cover" @click="closeDialogue"></div>
     <div class="dialogue-message-frame" v-if="type === 'logout'">
@@ -222,6 +367,19 @@
   <script src="../lib/js/jquery.js"></script>
   <script src="../lib/js/header_back.js?v=1.0"></script>
   <script type="text/javascript">
+    function getEditorData_local() {
+      return CKEDITOR.instances.editor_local.getData();
+    }
+    function getEditorData_en() {
+      return CKEDITOR.instances.editor_en.getData();
+    }
+    function replaceCKEditor() {
+      setTimeout(()=>{
+        CKEDITOR.replace( 'editor_en' );
+        CKEDITOR.replace( 'editor_local' );
+      }, 1000);
+    }
+
     var mainTitle = new Vue({
       el:'#mainTitle',
       i18n,
@@ -235,7 +393,6 @@
         setLang(event) {
           i18n.locale = event.target.value;
           localStorage.setItem('lang', event.target.value);
-          dataList.setLocale(event.target.value);
           header.setLocale(event.target.value);
         }
       }
@@ -283,9 +440,6 @@
             }
           });
         },
-        setLang(event) {
-
-        },
         update() {
           // JSON.stringify(this.template)
           let self = this;
@@ -312,6 +466,7 @@
                 dialogue.setDialogue('update_success');
                 self.getSettings();
                 expiryDataList.getDatabaseList();
+                header.getExpiryCheckingResult();
               }
             }
           });
@@ -341,9 +496,8 @@
       },
       methods:{
         updateResource: function(resource) {
-          console.log('test');
           console.log(resource);
-          dialogue.setDialogue('update_resource', resource)
+          fillForm.setForm(resource);
         },
         getDatabaseList: function() {
           this.loading = true;
@@ -378,6 +532,120 @@
         },
         changeTag(obj, lang) {
           obj.tag = lang;
+        }
+      }
+    });
+
+    var fillForm = new Vue({
+      el:'#fillForm',
+      i18n,
+      data: {
+        show: false,
+        resource: '',
+        template: {
+          "resourceUrl": "",
+          "isProxy": false,
+          "expiredChecking": false,
+          "startDate": "",
+          "expireDate": "",
+          "relevanceUrl": "",
+          "tag": "local",
+          "en":{
+            "resourceName": "",
+            "resourceType": "",
+            "faculty": "",
+            "department": "",
+            "subject": "",
+            "category": "",
+            "publish": "",
+            "language": "",
+            "resourceDescribe": "",
+            "relevanceUrlDescribe": ""
+          },
+          "local":{
+            "resourceName": "",
+            "resourceType": "",
+            "faculty": "",
+            "department": "",
+            "subject": "",
+            "category": "",
+            "publish": "",
+            "language": "",
+            "resourceDescribe": "",
+            "relevanceUrlDescribe": ""
+          }
+        }
+      },
+      methods:{
+        copy: function() {
+          this.resource.en = JSON.parse(JSON.stringify(this.resource.local));
+          setEditorData_en();
+        },
+        setForm: function(database) {
+
+          // check the time formate
+          if(database.startDate.trim() !== '') {
+            database.startDate = this.processDateFormate(database.startDate);
+          }
+          if(database.expireDate.trim() !== '') {
+            database.expireDate = this.processDateFormate(database.expireDate);
+          }
+          this.resource = JSON.parse(JSON.stringify(database));
+          this.show = true;
+          replaceCKEditor();
+        },
+        processDateFormate(date) {
+          date = date.replace(/\//g, '-');
+          let temp = date.split("-");
+          if(temp[1].length < 2) {
+            temp[1] = `0${temp[1]}`;
+          }
+          if(temp[2].length < 2) {
+            temp[2] = `0${temp[2]}`;
+          }
+          return `${temp[0]}-${temp[1]}-${temp[2]}`;
+        },
+        changeTag(resource, langType) {
+          resource.tag = langType;
+        },
+        sendForm() {
+          // get the CKEditor data
+          let editorData_local = getEditorData_local();
+          let editorData_en = getEditorData_en();
+          this.resource.local.resourceDescribe = editorData_local;
+          this.resource.en.resourceDescribe = editorData_en;
+          
+          let resourceData = JSON.stringify(this.resource);
+          let self = this;
+          $.ajax({
+            url: `${apiPath}/processResource.php`,
+            type: 'POST',
+            xhrFields: {
+              withCredentials: true
+            },
+            data: {
+              type: 'modify',
+              resource: resourceData
+            },
+            error: function(jqXHR, exception) {
+              //use url variable here
+              console.log(jqXHR);
+              console.log(exception);
+            },
+            success: function(res) {
+              if(res.status === "expired") {
+                dialogue.setDialogue('expired', 'expired');
+              } else {
+                self.closeForm();
+                dialogue.setDialogue('update_success');
+                expiryDataList.getDatabaseList();
+                header.getExpiryCheckingResult();
+              }
+            }
+          });
+        },
+        closeForm: function() {
+          this.show = false;
         }
       }
     });
@@ -443,10 +711,7 @@
               } else {
                 self.type = 'update_success';
                 expiryDataList.getDatabaseList();
-                // dataList.getDatabaseList();
-                // self.closeForm();
-                // let dialogueType = `${self.sendType}_success`
-                // dialogue.setDialogue(dialogueType);
+                header.getExpiryCheckingResult();
               }
             }
           });

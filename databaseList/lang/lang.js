@@ -3,7 +3,7 @@ const messages = {
     message: {
       chooseLanguage:'Language',
       header_logout: 'Logout',
-      header_expiryResourceSetting: 'Expiry Resource Setting',
+      header_expiryResourceSetting: 'Expiry Resource',
       // index page
       h1_resource_list: 'Database List',
       index_total: 'ALL',
@@ -46,7 +46,7 @@ const messages = {
       resource_btn_modify: 'Modify',
       resource_btn_add: 'Add',
       resource_expired_display: 'Display this resource when expired',
-      resource_stop_checking_expiring: 'Stop Checking Expiring',
+      resource_stop_checking_expiring: 'Stop Checking',
       // setting page
       h1_settings: 'Settings',
       generalSetting: 'General Settings',
