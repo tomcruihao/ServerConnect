@@ -68,7 +68,7 @@
       array_push($result_local, $temp_local);
     }
   }
-  
+
   $result['en'] = $result_en;
   $result['local'] = $result_local;
 
@@ -85,8 +85,8 @@
       ua = navigator.userAgent;
       /* MSIE used to detect old browsers and Trident used to newer ones*/
       var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
-      
-      return is_ie; 
+
+      return is_ie;
     }
     if(isIE()) {
       window.location.replace("index_ie.php");
@@ -330,14 +330,14 @@
 
   // gtag('config', 'UA-XXXXX');
 
-  // 
+  //
   const GA_ID = '<?php echo $GA_ID; ?>';
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
- 
+
 
   ga('create', `${GA_ID}`, 'auto');
   ga('send', 'pageview');
@@ -414,7 +414,7 @@
         },
         success: function(res) {
           self.show = res.localization;
-          // self.settings = res;          
+          // self.settings = res;
         }
       });
     },
@@ -502,7 +502,7 @@
                 break;
               case 'local':
                 self.anchorList = JSON.parse(JSON.stringify(res.local));
-                break;            
+                break;
               default:
                 self.anchorList = JSON.parse(JSON.stringify(res.local));
                 break;
@@ -526,7 +526,7 @@
       search: function(trem, row, id) {
         const anchor = document.querySelector(`#${id}`);
         initAndAddClickedClass(anchor);
-  
+
         contactList.search(trem, [row]);
         resetNumbering();
       },
@@ -549,7 +549,7 @@
             break;
           case 'local':
             this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.local));
-            break;            
+            break;
           default:
             this.anchorList = JSON.parse(JSON.stringify(this.temp_anchorList.local));
             break;
@@ -615,7 +615,7 @@
               tempSubList_en.push(obj_en);
               tempSubList_local.push(obj_local);
             })
-            
+
             let temp_obj_en = {
               "subjectID": val.subjectID,
               "subjectTitle": val.subjectTitle.en,
@@ -878,7 +878,7 @@
                               </div>\
                               <div class="row">\
                                 <div class="title">${listTitles[ary_lang].relevanceUrlDescribe}</div class="title">\
-                                <div class="relevanceUrlDescribe"><a href="${res.relevanceUrlDescribe}" target="_blank">${res.relevanceUrlDescribe}</a></div>\
+                                <div class="relevanceUrlDescribe"><a href="${res.relevanceUrl}" target="_blank">${res.relevanceUrlDescribe}</a></div>\
                               </div>\
                               <div class="row hide">\
                                 <div class="title">注音</div class="title">\
@@ -996,7 +996,7 @@
             resolve(true);
           } else {
             resolve(false);
-          }          
+          }
         }
       });
     });
@@ -1046,7 +1046,7 @@
     // Close the loading page
     document.querySelector(".loading-field").setAttribute("style", "display: none");
     document.querySelector(".main-field").setAttribute("style", "display: block");
-    
+
 
     // Init list
     var options = {
@@ -1063,7 +1063,7 @@
     let url_string = window.location.href;
     let url = new URL(url_string);
     let param_keyword = url.searchParams.get("keyword");
-    
+
     // if param have value, set the keyword to search-box
     if(param_keyword) {
       filterField.setKeyword(param_keyword);
