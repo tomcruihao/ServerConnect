@@ -296,7 +296,7 @@
   </section>
   <footer class="footer">
     <img src="img/logo_white.svg">
-    <p>© 2020 EBSCO Industries, Inc. All rights reserved</p>
+    <p>© 2020 EBSCO Information Services. All rights reserved</p>
   </footer>
   <div class="mask-dia" id="dialogue" v-if="show" :class="{ show: show }">
     <div class="cover" @click="closeDialogue()"></div>
