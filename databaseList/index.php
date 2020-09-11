@@ -53,12 +53,16 @@
       $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
 
-    if (!filter_var($value['expiredChecking'], FILTER_VALIDATE_BOOLEAN) && $value['startDate'] !== '' && $value['expireDate'] !== '') {
-      $currentTime = strtotime(date("Y-m-d"));
-      $temp_startTime = strtotime($value['startDate']);
-      $temp_endTime = strtotime($value['expireDate']);
+    if (!filter_var($value['expiredChecking'], FILTER_VALIDATE_BOOLEAN) && trim($value['expireDate']) !== '') {
+      $currentTime = new DateTime('now');
+      $processEndTime = str_replace('/', '-', $value['expireDate']);
+      $temp_endTime = new DateTime($processEndTime);
 
-      if($currentTime > $temp_endTime || $currentTime < $temp_startTime) {
+      // $currentTime = strtotime(date("Y-m-d"));
+      // $temp_startTime = strtotime($value['startDate']);
+      // $temp_endTime = strtotime($value['expireDate']);
+
+      if($currentTime > $temp_endTime){
         $display = false;
       }
     }

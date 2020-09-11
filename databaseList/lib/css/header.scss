@@ -45,6 +45,8 @@ header {
     .nav-list {
       height: $header_height;
       display: flex;
+      font-size: 0.9rem;
+      text-align: center;
 
       li {
         width: 130px;

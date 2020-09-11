@@ -133,6 +133,8 @@ header nav .nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 header nav .nav-list li {
