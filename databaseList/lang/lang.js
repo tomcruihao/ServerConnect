@@ -112,6 +112,7 @@ const messages = {
       // commonly resource
       h1_commonlyResource: 'Commonly Resource Management',
       commonlyResource_showOnFrontStage: 'Show on front stage',
+      commonlyResource_noResource: 'The commonly list has no resource inside',
       // dialogue
       dialogue_title: 'Title',
       dialogue_title_warning: 'Warning',
@@ -289,6 +290,7 @@ const messages = {
       // commonly resource
       h1_commonlyResource: '常用資源管理',
       commonlyResource_showOnFrontStage: '前臺顯示',
+      commonlyResource_noResource: '沒有資源',
       // dialogue
       dialogue_title: '標題',
       dialogue_title_warning: '警告',

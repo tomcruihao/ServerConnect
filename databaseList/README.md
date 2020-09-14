@@ -2,6 +2,17 @@
 
 # Release Note
 
+## 2020/September/14
+### Sorting commonly resource
+```
+databaseList/admin/manageCommonlyDatabase.html
+databaseList/img/icon/drag_handle.svg
+databaseList/lang/lang.js
+databaseList/lib/css/manageCommonlyDatabase.css
+databaseList/lib/css/manageCommonlyDatabase.css.map
+databaseList/lib/css/manageCommonlyDatabase.scss
+```
+
 ## 2020/September/07
 ### Fix expiring issue, tune the navi style
 ```

@@ -549,13 +549,68 @@ input:focus, textarea:focus, select:focus, button {
           justify-content: space-between;
 }
 
-.app-content .list-field .search-wrap {
+.app-content .list-field .commonly-list-container .commonly-list .dragArea .commonly-item {
+  padding: 5px 10px;
+  background-color: #ffffff;
+  position: relative;
+  cursor: -webkit-grab;
+  cursor: grab;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ddd;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+}
+
+.app-content .list-field .commonly-list-container .commonly-list .dragArea .commonly-item .resource-name {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.app-content .list-field .commonly-list-container .commonly-list .dragArea .commonly-item .icon-wrap {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #ff0000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.app-content .list-field .commonly-list-container .commonly-list .dragArea .commonly-item .icon-wrap img {
+  width: 20px;
+}
+
+.app-content .list-field .btn-wrap {
+  width: 100%;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.app-content .list-field .btn-wrap button {
+  width: 100px;
+  height: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #ffffff;
+  background-color: #4CAF50;
 }
 
 .app-content .list-field .search-wrap .search-frame {
@@ -580,17 +635,7 @@ input:focus, textarea:focus, select:focus, button {
   border: none;
 }
 
-.app-content .list-field .search-wrap button {
-  width: 100px;
-  height: 40px;
-  margin-left: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  color: #ffffff;
-  background-color: #4CAF50;
-}
-
-.app-content .list-field .list-container {
+.app-content .list-field .total-list-container {
   min-height: calc(100vh - 250px);
   margin-top: 20px;
   display: -webkit-box;
@@ -606,7 +651,7 @@ input:focus, textarea:focus, select:focus, button {
           justify-content: space-between;
 }
 
-.app-content .list-field .list-container .loading-wrap {
+.app-content .list-field .total-list-container .loading-wrap {
   margin: 0 auto;
   font-size: 2rem;
   display: -webkit-box;
@@ -617,12 +662,12 @@ input:focus, textarea:focus, select:focus, button {
           align-items: center;
 }
 
-.app-content .list-field .list-container .loading-wrap .icon-loading {
+.app-content .list-field .total-list-container .loading-wrap .icon-loading {
   width: 50px;
   height: 50px;
 }
 
-.app-content .list-field .list-container .resource-wrap {
+.app-content .list-field .total-list-container .resource-wrap {
   width: 33%;
   min-height: 80px;
   padding: 0 5px;
@@ -636,7 +681,7 @@ input:focus, textarea:focus, select:focus, button {
       -ms-flex-align: center;
           align-items: center;
   background-color: #fff;
-  cursor: pointer;
+  cursor: copy;
   overflow: hidden;
   text-align: center;
   -webkit-box-pack: center;
@@ -644,11 +689,11 @@ input:focus, textarea:focus, select:focus, button {
           justify-content: center;
 }
 
-.app-content .list-field .list-container .resource-wrap.checked {
+.app-content .list-field .total-list-container .resource-wrap.checked {
   background-color: #d4edda;
 }
 
-.app-content .list-field .list-container .resource-wrap input[type="checkbox"] {
+.app-content .list-field .total-list-container .resource-wrap input[type="checkbox"] {
   display: none;
 }
 

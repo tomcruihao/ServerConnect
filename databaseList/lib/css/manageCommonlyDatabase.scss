@@ -52,10 +52,58 @@ input:focus, textarea:focus, select:focus, button {
       justify-content: space-between;
     }
 
-    .search-wrap {
-      display: flex;
-      justify-content: space-between;
+    .commonly-list-container {
+      .commonly-list {
+        .dragArea {
+          .commonly-item {
+            padding: 5px 10px;
+            background-color: #ffffff;
+            position: relative;
+            cursor: grab;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid #ddd;
+            display: flex;
 
+            .resource-name {
+              flex: 1;
+            }
+
+            .icon-wrap {
+              width: 25px;
+              height: 25px;
+              border-radius: 50%;
+              background-color: #ff0000;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+
+              img {
+                width: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .btn-wrap {
+      width: 100%;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        width: 100px;
+        height: 40px;
+        box-sizing: border-box;
+        color: #ffffff;
+        background-color: $button_update_bgcolor;
+      }
+    }
+
+    .search-wrap {
       .search-frame {
         width: calc(100% - 120px);
         max-width: 500px;
@@ -75,17 +123,9 @@ input:focus, textarea:focus, select:focus, button {
           border: none;
         }
       }
-      button {
-        width: 100px;
-        height: 40px;
-        margin-left: 20px;
-        box-sizing: border-box;
-        color: #ffffff;
-        background-color: $button_update_bgcolor;
-      }
     }
     
-    .list-container {
+    .total-list-container {
       min-height: calc(100vh - 250px);
       margin-top: 20px;
       display: flex;
@@ -114,7 +154,7 @@ input:focus, textarea:focus, select:focus, button {
         display: flex;
         align-items: center;
         background-color: #fff;
-        cursor: pointer;
+        cursor: copy;
         overflow: hidden;
         text-align: center;
         justify-content: center;
