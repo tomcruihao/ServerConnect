@@ -53,6 +53,11 @@
       $temp_local['resourceUrl'] = $proxy.$temp_local['resourceUrl'];
     }
 
+    // check attribute 'stopCheckingExpiring' exist or not
+    if (!array_key_exists('expiredChecking', $value)) {
+      $value['expiredChecking'] = true;
+    }
+
     if (!filter_var($value['expiredChecking'], FILTER_VALIDATE_BOOLEAN) && trim($value['expireDate']) !== '') {
       $currentTime = new DateTime('now');
       $processEndTime = str_replace('/', '-', $value['expireDate']);
