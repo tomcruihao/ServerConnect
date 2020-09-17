@@ -290,7 +290,7 @@ const messages = {
       // commonly resource
       h1_commonlyResource: '常用資源管理',
       commonlyResource_showOnFrontStage: '前臺顯示',
-      commonlyResource_noResource: '沒有資源',
+      commonlyResource_noResource: '目前沒有選擇任何常用資源',
       // dialogue
       dialogue_title: '標題',
       dialogue_title_warning: '警告',
