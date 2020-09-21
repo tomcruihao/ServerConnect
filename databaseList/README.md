@@ -2,6 +2,13 @@
 
 # Release Note
 
+## 2020/September/21
+### Fix the issue when popular resource not exist in resource list
+```
+databaseList/features/getPopularDatabases.php
+databaseList/index.php
+```
+
 ## 2020/September/14
 ### Sorting commonly resource
 ```

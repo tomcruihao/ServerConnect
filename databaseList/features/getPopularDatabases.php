@@ -35,7 +35,7 @@
 
   // create log counting array
   foreach($logData['log'] as $log) {
-    if($log['uuid'] !== null) {
+    if($log['uuid'] !== null && array_key_exists($log['uuid'], $databaseList)) {
       $databaseList[$log['uuid']]['clickTimes']++;
     }
   }
