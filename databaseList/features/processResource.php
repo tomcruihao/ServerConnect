@@ -20,10 +20,10 @@
     // get stroke and zhuyin info
     $getStroke = getStrokeInfo($resource['local']['resourceName'], $resource['en']['resourceName']);
 
-    $resource['en']['stroke'] = $getStroke['strokes'];
+    $resource['en']['strokes'] = $getStroke['strokes'];
     $resource['en']['zhuyin'] = $getStroke['zhuyin'];
     $resource['en']['englishAlphabet'] = $getStroke['englishAlphabet'];
-    $resource['local']['stroke'] = $getStroke['strokes'];
+    $resource['local']['strokes'] = $getStroke['strokes'];
     $resource['local']['zhuyin'] = $getStroke['zhuyin'];
     $resource['local']['englishAlphabet'] = $getStroke['englishAlphabet'];
 
@@ -39,10 +39,10 @@
         $getStroke = getStrokeInfo($resource['local']['resourceName'], $resource['en']['resourceName']);
 
         $resourceList[$key] = $resource;
-        $resourceList[$key]['en']['stroke'] = $getStroke['strokes'];
+        $resourceList[$key]['en']['strokes'] = $getStroke['strokes'];
         $resourceList[$key]['en']['zhuyin'] = $getStroke['zhuyin'];
         $resourceList[$key]['en']['englishAlphabet'] = $getStroke['englishAlphabet'];
-        $resourceList[$key]['local']['stroke'] = $getStroke['strokes'];
+        $resourceList[$key]['local']['strokes'] = $getStroke['strokes'];
         $resourceList[$key]['local']['zhuyin'] = $getStroke['zhuyin'];
         $resourceList[$key]['local']['englishAlphabet'] = $getStroke['englishAlphabet'];
         break;
