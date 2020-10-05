@@ -113,6 +113,8 @@ const messages = {
       h1_commonlyResource: 'Commonly Resource Management',
       commonlyResource_showOnFrontStage: 'Show on front stage',
       commonlyResource_noResource: 'The commonly list has no resource inside',
+      commonlyResource_resourceList: 'ALL Resources',
+      commonlyResource_commonResourceList: 'Commonly Resource List',
       // dialogue
       dialogue_title: 'Title',
       dialogue_title_warning: 'Warning',
@@ -291,6 +293,8 @@ const messages = {
       h1_commonlyResource: '常用資源管理',
       commonlyResource_showOnFrontStage: '前臺顯示',
       commonlyResource_noResource: '目前沒有選擇任何常用資源',
+      commonlyResource_resourceList: '所有資源',
+      commonlyResource_commonResourceList: '常用資源清單',
       // dialogue
       dialogue_title: '標題',
       dialogue_title_warning: '警告',

@@ -57,6 +57,14 @@
     }
   }
 
+  // backup the original data
+  $currentTime = date("Y_m_d H:i:s");
+  if(!is_dir('../backup')){
+    // Directory does not exist, so lets create it.
+    mkdir('../backup', 0755, true);
+  }
+  copy($jsonFile_direct, '../backup/'.$currentTime.'.json');
+
   // write back
   file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
 

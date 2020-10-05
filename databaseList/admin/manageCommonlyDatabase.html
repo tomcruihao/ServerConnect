@@ -75,6 +75,7 @@
           </div>
         </div>
         <div class="commonly-list-container">
+          <h2>{{$t('message.commonlyResource_commonResourceList')}}</h2>
           <ul class="commonly-list" v-if="commonlyResourceInfo.resources.length !== 0">
             <draggable :list="commonlyResourceInfo.resources" class="dragArea" :move="beforeMove" @end="onEnd">
               <li v-for="commonlyResource in commonlyResourceInfo.resources" class="commonly-item">
@@ -98,6 +99,7 @@
           <button @click="updateList()">{{$t('message.btn_update')}}</button>
         </div>
         <hr>
+        <h2>{{$t('message.commonlyResource_resourceList')}}</h2>
         <div class="search-wrap">
           <div class="search-frame">
             <input type="text" class="search" :placeholder="$t('message.placeholder_searchResource')" v-model="searchKeyword" />
@@ -177,7 +179,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.7.0/Sortable.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.16.0/vuedraggable.min.js"></script>
-  <script src="../lang/lang.js?v=1.3"></script>
+  <script src="../lang/lang.js?v=1.4"></script>
   <script src="../lib/js/jquery.js"></script>
   <script src="../lib/js/header_back.js?v=1.0"></script>
   <script type="text/javascript">
