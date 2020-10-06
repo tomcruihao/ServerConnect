@@ -523,26 +523,12 @@ h4 {
   font-weight: bold;
 }
 
-.app-content .toolkit-setting-wrap .toolkits .row .content label, .app-content .toolkit-setting-wrap .toolkits .row .content button {
+.app-content .toolkit-setting-wrap .toolkits .row .content button {
   width: 120px;
   height: 36px;
   background-color: #4CAF50;
   color: #ffffff;
   font-size: 1rem;
-}
-
-.app-content .toolkit-setting-wrap .toolkits .row .content label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 .app-content .toolkit-setting-wrap .toolkits .row .content .hide {

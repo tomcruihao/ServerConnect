@@ -4,7 +4,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>設定</title>
-    <link rel="stylesheet" type="text/css" href="../lib/css/manageSettings.css?v=4.0"/>
+    <link rel="stylesheet" type="text/css" href="../lib/css/manageSettings.css?v=4.2"/>
   </head>
 <body>
   <header id="header">
@@ -121,6 +121,20 @@
           </div>
           <div class="content">
             <button @click="buildStrokes()">{{$t('message.btn_execute')}}</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title">{{$t('message.setting_exportContentIncludeHtml')}}</div>
+          <div class="content">
+            <div class="switch-wrap">
+              <div class="onoffswitch">
+                <input type="checkbox" class="onoffswitch-checkbox" id="includeHTML" v-model="settings.exportContentIncludeHtml"  @change="includeHtml($event)">
+                <label class="onoffswitch-label" for="includeHTML">
+                  <span class="onoffswitch-inner"></span>
+                  <span class="onoffswitch-switch"></span>
+                </label>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -292,7 +306,7 @@
 <script src="../lib/js/verifyAuth.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
-<script src="../lang/lang.js?v=2.0"></script>
+<script src="../lang/lang.js?v=3.1"></script>
 <script src="../lib/js/jquery.js"></script>
 <script src="../lib/js/header_back.js?v=1.0"></script>
 <script type="text/javascript">
@@ -305,16 +319,45 @@
       },
       btn_stroke_list: {
         loading: false
+      },
+      settings: {
+        exportContentIncludeHtml: true
       }
     },
     mounted: function() {
     },
     methods: {
+      setSettingValue(obj_setting) {
+        console.log(obj_setting);
+        this.settings = obj_setting;
+      },
       exportFile() {
         window.open(`${apiPath}/exportDatabases.php`);
       },
       askDatabaseUpload () {
         dialogue.setDialogue('databaseUpload');
+      },
+      includeHtml(event) {
+        let self = this;
+        settings.setexportContentIncludeHtmlValue(this.settings.exportContentIncludeHtml);
+        $.ajax({
+          url: `${apiPath}/processSettings.php`,
+          type: 'POST',
+          xhrFields: {
+            withCredentials: true
+          },
+          data: {
+            exportContentIncludeHtml: JSON.stringify(self.settings.exportContentIncludeHtml)
+          },
+          error: function(jqXHR, exception) {
+            //use url variable here
+            console.log(jqXHR);
+            console.log(exception);
+          },
+          success: function(response) {
+            console.log(response);
+          }
+        });
       },
       onFileChange(e) {
         let txtFile = e.target.files || e.dataTransfer.files;
@@ -560,14 +603,23 @@
           },
           success: function(res) {
             self.settings = res;
-            // Object.assign(self.settings_backup, self.settings);
             self.settings_backup = JSON.parse(JSON.stringify(self.settings));
+
+            const obj_keys = Object.keys(res);
+            for(key_index in obj_keys) {
+              if(obj_keys[key_index].indexOf('exportContentIncludeHtml') !== -1) {
+                toolsField.setSettingValue(res);
+              }
+            }
           }
         });
       },
       recoverySettings: function() {
         // Object.assign(this.settings, this.settings_backup);
         this.settings = JSON.parse(JSON.stringify(this.settings_backup));
+      },
+      setexportContentIncludeHtmlValue(bool_exportContentIncludeHtmlValue) {
+        this.settings["exportContentIncludeHtml"] = bool_exportContentIncludeHtmlValue;
       },
       updateSettings: function() {
         let self = this;

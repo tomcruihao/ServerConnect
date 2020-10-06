@@ -3,11 +3,20 @@
   include 'verifyToken.php';
 
   $jsonFile_direct = '../data/eResourceList.json';
+  $settingFile_direct = '../data/settings.json';
   $fileDir = '../csvFiles/exportResources.txt';
 
   // get resource list
   $getResourceListJsonData = file_get_contents($jsonFile_direct);
   $resourceList = json_decode($getResourceListJsonData, true);
+
+  // get setting info and setting the param "exportContentIncludeHtml"
+  $getSettingJsonData = file_get_contents($settingFile_direct);
+  $settingInfo = json_decode($getSettingJsonData, true);
+  $exportContentIncludeHtml = true;
+  if(array_key_exists('exportContentIncludeHtml', $settingInfo)) {
+    $exportContentIncludeHtml = $settingInfo['exportContentIncludeHtml'];
+  }
 
   $resourceListLength = count($resourceList);
 
@@ -41,6 +50,9 @@
   for ($index = 0; $index < $resourceListLength ; $index++ ) {
     $tempCounter = 0;
     foreach($tempList as $tkey => $tValue) {
+      if(!$exportContentIncludeHtml) {
+        $tempList[$tkey][$index] = preg_replace('/<[^>]*>/', '', $tempList[$tkey][$index]);
+      }
       if($tempCounter == 0) {
         $content = $content."\"".preg_replace("/\r|\n/", "", $tempList[$tkey][$index])."\"";
       } else {

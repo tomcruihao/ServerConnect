@@ -70,20 +70,20 @@ h4 {
           font-weight: bold;
         }
         .content {
-          label, button {
+          button {
             width: 120px;
             height: 36px;
             background-color: $button_update_bgcolor;
             color: #ffffff;
             font-size: 1rem;
           }
-          label {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-            cursor: pointer;
-          }
+          // label {
+          //   display: flex;
+          //   justify-content: center;
+          //   align-items: center;
+          //   border-radius: 5px;
+          //   cursor: pointer;
+          // }
           .hide {
             display: none;
           }

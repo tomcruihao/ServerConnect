@@ -64,6 +64,7 @@ const messages = {
       setting_show_popular_resources: 'The number of Popular resources to show(0 means won\'t show on front-page)',
       setting_show_database_number: 'The number of resources to show',
       setting_exportDatabaseFile: 'Export Database List',
+      setting_exportContentIncludeHtml: 'Export content include HTML',
       // latest news management page
       h1_latestNews: 'News Management',
       latest_form_setting: 'News Block Settings',
@@ -244,6 +245,7 @@ const messages = {
       setting_show_popular_resources: '熱門資源顯示數量(0表示不會顯示在前台)',
       setting_show_database_number: '資源顯示數量',
       setting_exportDatabaseFile: '匯出資料庫',
+      setting_exportContentIncludeHtml: '匯出的內容包含html',
       // latest news management page
       h1_latestNews: '消息管理',
       latest_form_setting: '消息區塊設定',
