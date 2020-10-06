@@ -2,6 +2,20 @@
 
 # Release Note
 
+## 2020/Octorber/06
+### Fix the issue when popular resource not exist in resource list
+```
+databaseList/features/fileConverter.php
+databaseList/admin/manageCommonlyDatabase.html
+databaseList/admin/manageSetting.html
+databaseList/features/exportDatabases.php
+databaseList/features/processSettings.php
+databaseList/lib/css/manageSettings.css
+databaseList/lib/css/manageSettings.css.map
+databaseList/lib/css/manageSettings.scss
+databaseList/lang/lang.js
+```
+
 ## 2020/September/21
 ### Fix the issue when popular resource not exist in resource list
 ```
