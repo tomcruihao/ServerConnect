@@ -17,14 +17,16 @@
   $resourceList = [];
 
   foreach($rows as $row_key => $row_val) {
-    $array_temp = [];
-    $resourceContent = explode("\t", $rows[$row_key]);
+    if ($rows[$row_key] !== '') {
+      $array_temp = [];
+      $resourceContent = explode("\t", $rows[$row_key]);
 
-    foreach($resourceContent as $index => $resourceContent_val) {
-      $array_temp[$resourceKeys[$index]] = str_replace('"', '', $resourceContent_val);
+      foreach($resourceContent as $index => $resourceContent_val) {
+        $array_temp[$resourceKeys[$index]] = str_replace('"', '', $resourceContent_val);
+      }
+
+      array_push($resourceList, $array_temp);
     }
-
-    array_push($resourceList, $array_temp);
   }
 
   foreach($resourceList as $key_resource => $resource) {

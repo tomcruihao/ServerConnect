@@ -3,7 +3,7 @@
 # Release Note
 
 ## 2020/Octorber/13
-### Process the exporting file the type is Utf-8 Bom
+### Process the exporting file the type is Utf-8 Bom and to process the redundant row
 ```
 databaseList/features/fileConverter.php
 databaseList/index.php
