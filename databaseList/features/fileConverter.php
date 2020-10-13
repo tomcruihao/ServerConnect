@@ -7,6 +7,7 @@
 
   // get data from file
   $fileData = remove_utf8_bom(file_get_contents($txtFilePath));
+  $fileData = str_replace("\r", '', $fileData);
   $rows = explode("\n", $fileData);
   $resourceKeys = explode("\t", $rows[0]);
 
