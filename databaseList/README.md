@@ -2,6 +2,13 @@
 
 # Release Note
 
+## 2020/Octorber/13
+### Process the exporting file the type is Utf-8 Bom
+```
+databaseList/features/fileConverter.php
+databaseList/index.php
+```
+
 ## 2020/Octorber/06
 ### Fix the issue when popular resource not exist in resource list
 ```

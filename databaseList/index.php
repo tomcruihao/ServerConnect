@@ -720,12 +720,15 @@
             let en_resource = '';
             let local_resource = '';
             dataList.en.forEach(element_en => {
-              if(element_en.uuid === element) {
+              console.log(element_en.uuid.toString());
+              console.log(element_en);
+              if(element_en.uuid.toString().indexOf(element) !== -1) {
                 en_resource = element_en;
               }
             });
             dataList.local.forEach(element_local => {
-              if(element_local.uuid === element) {
+              if(element_local.uuid.toString().indexOf(element) !== -1) {
+                console.log(element_local);
                 local_resource = element_local;
               }
             });

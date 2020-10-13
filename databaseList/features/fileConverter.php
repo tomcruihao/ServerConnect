@@ -6,7 +6,7 @@
   $txtFilePath = receivedFileAndGetPath();
 
   // get data from file
-  $fileData = file_get_contents($txtFilePath);
+  $fileData = remove_utf8_bom(file_get_contents($txtFilePath));
   $rows = explode("\n", $fileData);
   $resourceKeys = explode("\t", $rows[0]);
 
@@ -252,6 +252,12 @@
 
     // write back
     file_put_contents($jsonFile_strokes_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
+  }
+
+  function remove_utf8_bom($text) {
+    $bom = pack('H*','EFBBBF');
+    $text = preg_replace("/^$bom/", '', $text);
+    return $text;
   }
 
   // uuid V4
