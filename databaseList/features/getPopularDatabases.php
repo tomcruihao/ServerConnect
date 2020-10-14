@@ -11,7 +11,6 @@
 
   $amountOfDatabases = $settings['numberOfPopularDatabases'];
 
-
   $getResourceData = file_get_contents('../data/eResourceList.json');
   $resourceData = json_decode($getResourceData, true);
 
@@ -22,13 +21,15 @@
   // create map and countable database list
   $databaseList = [];
   foreach($resourceData as $resource) {
+    $proxy = $resource['isProxy'] === $settingData['proxy'] ? $settings : '';
+
     $databaseList[$resource['uuid']] = array(
       "uuid" => $resource['uuid'],
       "name" => array(
         "en" => $resource['en']['resourceName'],
         "local" => $resource['local']['resourceName'],
       ),
-      "resourceUrl" => $resource['resourceUrl'],
+      "resourceUrl" => $proxy.$resource['resourceUrl'],
       "clickTimes" => 0,
     );
   }

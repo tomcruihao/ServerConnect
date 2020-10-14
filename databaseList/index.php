@@ -90,14 +90,18 @@
   <title>圖書館 - 電子資料庫 powered by EBSCO Database Listing</title>
   <link rel="stylesheet" type="text/css" href="lib/css/index.css?v=1.1"/>
   <script>
-    function isIE() {
-      ua = navigator.userAgent;
-      /* MSIE used to detect old browsers and Trident used to newer ones*/
-      var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
-
-      return is_ie;
+    var ua = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i),
+      browser;
+    if (navigator.userAgent.match(/Edge/i) || navigator.userAgent.match(/Trident.*rv[ :]*11\./i)) {
+      browser = "msie";
     }
-    if(isIE()) {
+    else {
+      browser = ua[1].toLowerCase();
+    }
+
+    var browserType = navigator.userAgent;
+
+    if(browserType.indexOf("MSIE ") > -1 || browserType.indexOf("Trident/") > -1) {
       window.location.replace("index_ie.php");
     }
   </script>
@@ -720,15 +724,12 @@
             let en_resource = '';
             let local_resource = '';
             dataList.en.forEach(element_en => {
-              console.log(element_en.uuid.toString());
-              console.log(element_en);
               if(element_en.uuid.toString().indexOf(element) !== -1) {
                 en_resource = element_en;
               }
             });
             dataList.local.forEach(element_local => {
               if(element_local.uuid.toString().indexOf(element) !== -1) {
-                console.log(element_local);
                 local_resource = element_local;
               }
             });
@@ -966,9 +967,12 @@
   });
 
   async function directTo(id, url) {
-    let exist = await checkSessionExist();
-    if(exist) {
-      window.open(url, '_blank');
+    // let exist = await checkSessionExist();
+    // if(exist) {
+      if(browser != 'safari') {
+        window.open(url, '_blank');
+      }
+
       $.ajax({
         url: `${apiPath}/processLogClick.php`,
         type: 'POST',
@@ -981,15 +985,18 @@
           console.log(exception);
         },
         success: function(res) {
+          if(browser == 'safari') {
+            window.location = url;
+          }
           console.log(res);
           // self.bulletinTitle = res.bulletinTitle;
           // self.latestNewsList = res.newsList.slice().sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
           // self.displayNumber = res.displayNumber;
         }
       });
-    } else {
-      window.location.replace("authLogin.html");
-    }
+    // } else {
+    //   window.location.replace("authLogin.html");
+    // }
   }
   function checkSessionExist() {
     return new Promise((resolve, reject) => {

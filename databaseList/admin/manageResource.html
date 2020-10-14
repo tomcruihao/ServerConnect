@@ -543,7 +543,14 @@
               database.expireDate = this.processDateFormate(database.expireDate);
             }
             this.btnType = 'modify';
+
             this.resource = JSON.parse(JSON.stringify(database));
+            try {
+              this.resource.isProxy = String(this.resource.isProxy).toLowerCase() === 'true' ? true : false;
+            }
+            catch (e) {
+              console.log(e);
+            }
           } else if(type === 'add') {
             this.btnType = 'add';
             this.resource = JSON.parse(JSON.stringify(this.template));

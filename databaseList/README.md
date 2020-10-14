@@ -2,6 +2,14 @@
 
 # Release Note
 
+## 2020/Octorber/14
+### Detect the safari browser, fix popular resource proxy issue, fix incorrect message issue
+```
+databaseList/admin/manageResource.html
+databaseList/features/getPopularDatabases.php
+databaseList/index.php
+```
+
 ## 2020/Octorber/13
 ### Process the exporting file the type is Utf-8 Bom and to process the redundant row
 ```
