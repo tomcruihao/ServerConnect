@@ -21,7 +21,8 @@
   // create map and countable database list
   $databaseList = [];
   foreach($resourceData as $resource) {
-    $proxy = $resource['isProxy'] === $settingData['proxy'] ? $settings : '';
+    $proxy = strtolower(strval($resource['isProxy'])) === 'true' ? $settings['proxy'] : '';
+    
 
     $databaseList[$resource['uuid']] = array(
       "uuid" => $resource['uuid'],

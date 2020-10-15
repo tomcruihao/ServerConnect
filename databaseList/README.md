@@ -3,6 +3,12 @@
 # Release Note
 
 ## 2020/Octorber/14
+### fix popular resource link has no proxy issue
+```
+databaseList/features/getPopularDatabases.php
+```
+
+## 2020/Octorber/14
 ### Detect the safari browser, fix popular resource proxy issue, fix incorrect message issue
 ```
 databaseList/admin/manageResource.html
