@@ -2,7 +2,16 @@
 
 # Release Note
 
-## 2020/Octorber/14
+## 2020/Octorber/20
+### Add convert the encode parameter page, change the lang for setting page
+```
+databaseList/README.md
+databaseList/admin/manageSetting.html
+databaseList/convertandRedirect.php
+databaseList/lang/lang.js
+```
+
+## 2020/Octorber/15
 ### fix popular resource link has no proxy issue
 ```
 databaseList/features/getPopularDatabases.php
