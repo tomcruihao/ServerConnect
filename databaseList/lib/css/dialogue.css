@@ -21,6 +21,16 @@
   display: flex;
 }
 
+.mask .cover {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  cursor: pointer;
+}
+
 .mask .dialogue-message-frame {
   width: 94%;
   max-width: 600px;
@@ -51,7 +61,7 @@
 
 .mask .dialogue-message-frame .dialogue-body {
   min-height: 150px;
-  padding: 15px 15px 50px;
+  padding: 15px;
   background-color: #ffffff;
   border-radius: 0px 0px 10px 10px;
   position: relative;
@@ -65,9 +75,7 @@
 
 .mask .dialogue-message-frame .dialogue-body .btn-frame {
   width: 100%;
-  height: 50px;
-  position: absolute;
-  bottom: 0;
+  padding: 10px 0;
   text-align: center;
 }
 

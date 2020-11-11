@@ -16,6 +16,9 @@
     $tempAry = [];
 
     for($loop = 0 ; $loop < $number ; $loop++) {
+      if($resourceData[$loop] == null) {
+        break;
+      }
       array_push($tempAry, $resourceData[$loop]);
     }
 
