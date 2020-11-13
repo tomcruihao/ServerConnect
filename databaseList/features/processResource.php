@@ -1,7 +1,7 @@
 <?php
   include '_header.php';
-
   include 'verifyToken.php';
+  include '_response.php';
 
   $jsonFile_direct = '../data/eResourceList.json';
 
@@ -28,10 +28,6 @@
     $resource['local']['englishAlphabet'] = $getStroke['englishAlphabet'];
 
     array_push($resourceList, $resource);
-
-    // write back
-    file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
   } else if($type === 'modify') {
     foreach($resourceList as $key => $row) {
       if(strcasecmp($row['uuid'], $resource['uuid']) == 0) {
@@ -48,10 +44,6 @@
         break;
       }
     }
-
-    // write back
-    file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
   } else if ($type === 'delete') {
     foreach($resourceList as $key => $row) {
       if(strcasecmp($row['uuid'], $resource['uuid']) == 0) {
@@ -59,10 +51,14 @@
         break;
       }
     }
+  }
 
-    // write back
+  // write back to json file
+  if(is_writable($jsonFile_direct)) {
     file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
     response('success', 'success');
+  } else {
+    responseError(1001);
   }
 
   function getStrokeInfo($str_resourceName_local, $str_resourceName_en) {
