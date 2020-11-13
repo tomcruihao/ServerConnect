@@ -1,6 +1,7 @@
 <?php
   include '_header.php';
   include 'verifyToken.php';
+  include '_response.php';
 
   $jsonFile_direct = '../data/commonlyResource.json';
 
@@ -27,7 +28,11 @@
   }
 
   // write back
-  file_put_contents($jsonFile_direct, json_encode($resourceInfo, JSON_UNESCAPED_UNICODE));
-  $res = array('status' => 'success', 'type' => 'success');
-  echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  if(is_writable($jsonFile_direct)) {
+    file_put_contents($jsonFile_direct, json_encode($resourceInfo, JSON_UNESCAPED_UNICODE));
+    $res = array('status' => 'success', 'type' => 'success');
+    echo json_encode($res, JSON_UNESCAPED_UNICODE);
+  } else {
+    responseError(1001);
+  }
 ?>

@@ -1,8 +1,8 @@
 <?php
-  header("Access-Control-Allow-Origin: *");
-  header("Content-Security-Policy: upgrade-insecure-requests");
-  header('Content-Type: application/json');
-  date_default_timezone_set('Asia/Taipei');
+  include '_header.php';
+  include '_response.php';
+
+  $jsonFile_direct = '../data/logUserCountClick.json';
 
   session_start();
 
@@ -24,10 +24,14 @@
     $log['userDepartment'] = 'N/A';
   }
 
-
   array_push($logData['log'], $log);
+
   // write back
-  file_put_contents('../data/logUserCountClick.json', json_encode($logData, JSON_UNESCAPED_UNICODE));
+  if(is_writable($jsonFile_direct)) {
+    file_put_contents($jsonFile_direct, json_encode($logData, JSON_UNESCAPED_UNICODE));
+  } else {
+    responseError(1001);
+  }
 
   function getUserIpAddr(){
     if(!empty($_SERVER['HTTP_CLIENT_IP'])) {

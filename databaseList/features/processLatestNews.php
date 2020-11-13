@@ -1,7 +1,7 @@
 <?php
   include '_header.php';
-
   include 'verifyToken.php';
+  include '_response.php';
 
   $jsonFile_direct = '../data/latestNews.json';
 
@@ -24,8 +24,12 @@
     array_push($latestNewsData['newsList'], $receivedData);
 
     // write back
-    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
 
   } else if($type === 'updateNews') {
     // search the news
@@ -37,8 +41,13 @@
     }
 
     // write back
-    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
+
   } else if ($type === 'deleteNews') {
     foreach($latestNewsData['newsList'] as $key => $row) {
       if(strcasecmp($row['uuid'], $receivedData['uuid']) == 0) {
@@ -48,22 +57,34 @@
     }
 
     // write back
-    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
   } else if($type === 'updateNewsField') {
     $latestNewsData['bulletinTitle'] = $receivedData['bulletinTitle'];
     $latestNewsData['displayNumber'] = $receivedData['displayNumber'];
 
     // write back
-    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
   } else if($type === 'hotNewsField') {
     $latestNewsData['hotNews']['turnOn'] = $receivedData['turnOn'];
     $latestNewsData['hotNews']['newsID'] = $receivedData['newsID'];
 
     // write back
-    file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($latestNewsData, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
   } 
 
 

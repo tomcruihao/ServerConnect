@@ -1,7 +1,7 @@
 <?php
   include '_header.php';
-
-  // include 'verifyToken.php';
+  include 'verifyToken.php';
+  include '_response.php';
 
   $jsonFile_direct = '../data/expiryCheckSetting.json';
 
