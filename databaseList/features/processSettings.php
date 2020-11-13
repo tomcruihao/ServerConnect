@@ -1,7 +1,7 @@
 <?php
   include '_header.php';
-
   include 'verifyToken.php';
+  include '_response.php';
 
   $jsonFile_direct = '../data/settings.json';
 
@@ -11,8 +11,13 @@
 
   if(isset($_POST['exportContentIncludeHtml'])) {
     $settings['exportContentIncludeHtml'] = $_POST['exportContentIncludeHtml'] === 'true'? true: false;
-    file_put_contents($jsonFile_direct, json_encode($settings, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($settings, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
   } else {
     // parameters
     $recievedSettings = json_decode($_POST["settings"], true);
@@ -21,8 +26,12 @@
     $settings = $recievedSettings;
 
     // write the setting back to the file
-    file_put_contents($jsonFile_direct, json_encode($settings, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($settings, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
   }
 
   function response($errorType, $message) {
