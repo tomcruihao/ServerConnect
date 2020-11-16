@@ -10,23 +10,6 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.css" rel="stylesheet">
     <link href="assets/dist/css/index.css" rel="stylesheet">
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
   </head>
@@ -64,39 +47,7 @@
                     <img class="icon-star" src="assets/brand/icon/star.svg">
                   </span>
                 </label>
-                <!-- <input type="text" class="form-control" v-model="formData.userInfo.userNumber"> -->
-                <select v-model="formData.userInfo.userNumber" class="custom-select d-block w-100">
-                  <option value="">{{$t('message.applying_options_pleaseSelectYourBusinessUnit')}}</option>
-                  <option value="Complaints-resolution, Evaluation and Integrity Unit - CEIU">Complaints-resolution, Evaluation and Integrity Unit - CEIU</option>
-                  <option value="Office of the President - PRE">Office of the President - PRE</option>
-                  <option value="International Advisory Panel - IAP">International Advisory Panel - IAP</option>
-                  <option value="Vice President, Investment Operations Region 1 - VPIO1">Vice President, Investment Operations Region 1 - VPIO1</option>
-                  <option value="Technical Department Region 1 - TEC1">Technical Department Region 1 - TEC1</option>
-                  <option value="Banking Department Region 1 - BNK1">Banking Department Region 1 - BNK1</option>
-                  <option value="Client Relations and Programming Unit Region 1 - CRP1">Client Relations and Programming Unit Region 1 - CRP1</option>
-                  <option value="Vice President, Investment Operations Region 2 - VPIO2">Vice President, Investment Operations Region 2 - VPIO2</option>
-                  <option value="Technical Department Region 2 - TEC2">Technical Department Region 2 - TEC2</option>
-                  <option value="Banking Department Region 2 - BNK2">Banking Department Region 2 - BNK2</option>
-                  <option value="Client Relations and Programming Unit Region 2 - CRP2">Client Relations and Programming Unit Region 2 - CRP2</option>
-                  <option value="Operational Services Department - OSD">Operational Services Department - OSD</option>
-                  <option value="Implementation Monitoring Unit - IMU">Implementation Monitoring Unit - IMU</option>
-                  <option value="Vice President, Policy and Strategy - VPPS">Vice President, Policy and Strategy - VPPS</option>
-                  <option value="Strategy, Policy and Budget Department - SPB">Strategy, Policy and Budget Department - SPB</option>
-                  <option value="Economics Unit - ECON">Economics Unit - ECON</option>
-                  <option value="Vice President, Chief Administration Officer - VPCAO">Vice President, Chief Administration Officer - VPCAO</option>
-                  <option value="Human Resources Department - HRD">Human Resources Department - HRD</option>
-                  <option value="Facilities and Administration Services Department - FAS">Facilities and Administration Services Department - FAS</option>
-                  <option value="Information Technology Division - ITD">Information Technology Division - ITD</option>
-                  <option value="Vice President, Corporate Secretary - VPSEC">Vice President, Corporate Secretary - VPSEC</option>
-                  <option value="Chief Financial Officer - CFO">Chief Financial Officer - CFO</option>
-                  <option value="Office of the Controller - CTL">Office of the Controller - CTL</option>
-                  <option value="Office of the Treasurer - TRE">Office of the Treasurer - TRE</option>
-                  <option value="Office of the General Counsel - OGC">Office of the General Counsel - OGC</option>
-                  <option value="Risk Management Department - RMD">Risk Management Department - RMD</option>
-                  <option value="Communications Department - COM">Communications Department - COM</option>
-                  <option value="Internal Audit Office - IAO">Internal Audit Office - IAO</option>
-                  <option value="Ethics Office - ETH">Ethics Office - ETH</option>
-                </select>
+                <input type="text" class="form-control" v-model="formData.userInfo.userNumber">
               </div>
               <div class="row">
                 <div class="col-md-12 mb-3">
@@ -159,7 +110,7 @@
                 <input type="text" class="form-control" v-model="formData.purchaseInfo.title">
               </div>
               <div class="mt-3">
-                <label for="firstName"></label>
+                <label for="firstName">{{$t('message.applying_ebookInfo_publisher')}}</label>
                 <input type="text" class="form-control" v-model="formData.purchaseInfo.publisher">
               </div>
               <div class="mt-3">
@@ -174,6 +125,15 @@
                 </div>
               </div>
               <hr class="mb-4">
+              <div class="mt-3 remember-me-wrap">
+                <label class="remember-me-title">
+                  <input type="checkbox" id="checkbox_rememberMe" name="checkbox_rememberMe" v-model="formData.rememberUserInfo">
+                  <div class="remember-me-wording">
+                    {{$t('message.applying_remember_user_info')}}
+                  </div>
+                </label>
+                <div class="remember-me-subtitle">{{$t('message.applying_remember_user_info_note')}}</div>
+              </div>
               <button class="btn btn-primary btn-lg btn-block" @click="submit">{{$t('message.applying_submit')}}</button>
           </div>
         </div>
@@ -264,7 +224,12 @@
         if(type === 'dialogue') {
           this.show = false;
         } else if(type === 'window'){
-          window.close();
+          // for open by script and direct open window
+          if(window.opener === null) {
+            this.show = false;
+          } else {
+            window.close();
+          }
         }
       }
     }
@@ -291,12 +256,17 @@
         },
         note: '',
         an: '',
-        dbCode: ''
+        dbCode: '',
+        rememberUserInfo: false
       }
     },
     created: function() {
       // example: https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/index.html?client=ns055233_ebooks&lng=1&title=%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9%E7%B5%8C%E6%B8%88&aulast=&publisher=%E6%96%87%E7%9C%9E%E5%A0%82&date=20180101&isbn=9784830950018&sid=EBSCO:edsebk&an=2395336&dbCode=edsebk
       // http://search.ebscohost.com/login.aspx?authtype=uid&profile=eds-dda&user=bnu&password=LibUse@2020
+
+      // check the localstorage has value or not
+      this.checkLocalstorageValue();
+
       const paramTable = ['client','lng','title','aulast','publisher','date','isbn','sid','an','dbCode']
       let url_string = window.location.href;
       let url = new URL(url_string);
@@ -334,6 +304,39 @@
       }
     },
     methods:{
+      checkUserInfoStatus() {
+        if(this.formData.rememberUserInfo) {
+          localStorage.setItem('rememberUserInfo', JSON.stringify(this.formData.rememberUserInfo));
+          localStorage.setItem('userInfo', JSON.stringify(this.formData.userInfo));
+        } else {
+          // remove localstorage data
+          if("rememberUserInfo" in localStorage) {
+            localStorage.removeItem('rememberUserInfo');
+          }
+
+          if("userInfo" in localStorage) {
+            localStorage.removeItem('userInfo');
+          }
+        }
+      },
+      checkLocalstorageValue() {
+        let tempUserInfo = '';
+        // get checkbox info
+        if("rememberUserInfo" in localStorage) {
+          this.formData.rememberUserInfo = JSON.parse(localStorage.getItem('rememberUserInfo'));
+        }
+
+        // if local storage has value, get the value and put into the text box
+        if("userInfo" in localStorage) {
+          tempUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+          Object.keys(tempUserInfo).forEach(key => {
+            if(key in this.formData.userInfo) {
+              this.formData.userInfo[key] = tempUserInfo[key];
+            }
+          });
+        }
+      },
       checkFill() {
         if(this.formData.userInfo.name.trim() === '' || this.formData.userInfo.userNumber.trim() === '' || this.formData.userInfo.email.trim() === '' || this.formData.purchaseInfo.isbn.trim() === '') {
           return false;
@@ -342,11 +345,12 @@
         }
       },
       submit() {
+        this.checkUserInfoStatus();
         let formPass = this.checkFill();
         if(formPass) {
           let self = this;
           $.ajax({
-            url: 'https://gss.ebscohost.com/chchang/resource/ns265393/ebookRecommendation/features/processEbookRequirement.php',
+            url: 'https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation/features/processEbookRequirement.php',
             type: 'POST',
             data: {
               type: 'add',
