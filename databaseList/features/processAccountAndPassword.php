@@ -1,7 +1,7 @@
 <?php
   include '_header.php';
-
   include 'verifyToken.php';
+  include '_response.php';
 
   $jsonFile_direct = '../data/u5er.json';
 
@@ -25,8 +25,12 @@
         $userList[$key]["pwd"] = $newPassword;
 
         // write back
-        file_put_contents($jsonFile_direct, json_encode($userList, JSON_UNESCAPED_UNICODE));
-        response('success', 'success');
+        if(is_writable($jsonFile_direct)) {
+          file_put_contents($jsonFile_direct, json_encode($userList, JSON_UNESCAPED_UNICODE));
+          response('success', 'success');
+        } else {
+          responseError(1001);
+        }
         break;
       } else {
         response('old_password_wrong', 'old_password_wrong');

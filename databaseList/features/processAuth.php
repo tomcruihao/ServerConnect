@@ -1,7 +1,7 @@
 <?php
   include '_header.php';
-
   include 'verifyToken.php';
+  include '_response.php';
 
   $jsonFile_direct = '../data/authList.json';
 
@@ -17,14 +17,23 @@
     $authData['settings'] = $receivedData;
 
     // write back
-    file_put_contents($jsonFile_direct, json_encode($authData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($authData, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
   } else if ($type === 'updateList') {
     $authData['department'] = $receivedData['department'];
     $authData['identity'] = $receivedData['identity'];
 
-    file_put_contents($jsonFile_direct, json_encode($authData, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    // write back
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($authData, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
   }
 
 

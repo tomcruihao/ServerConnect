@@ -1,5 +1,6 @@
 <?php
   include '_header.php';
+  include '_response.php';
 
   $jsonFile_resource_direct = '../data/eResourceList.json';
   $jsonFile_strokes_direct = '../data/strokeList.json';
@@ -58,7 +59,11 @@
   }
 
   // write back
-  file_put_contents($jsonFile_resource_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  if(is_writable($jsonFile_direct)) {
+    file_put_contents($jsonFile_resource_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  } else {
+    responseError(1001);
+  }
 
   // sleep 3sec
   sleep(3);
@@ -168,7 +173,11 @@
   }
   
   // write back
-  file_put_contents($jsonFile_strokes_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
+  if(is_writable($jsonFile_direct)) {
+    file_put_contents($jsonFile_strokes_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
+  } else {
+    responseError(1001);
+  }
   
   $res = array('status' => 'success', 'type' => 'success');
   echo json_encode($res, JSON_UNESCAPED_UNICODE);

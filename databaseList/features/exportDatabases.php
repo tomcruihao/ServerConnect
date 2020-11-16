@@ -1,6 +1,7 @@
 <?php
   include '_header.php';
   include 'verifyToken.php';
+  include '_response.php';
 
   $jsonFile_direct = '../data/eResourceList.json';
   $settingFile_direct = '../data/settings.json';
@@ -63,7 +64,12 @@
     $content = $content."\n";
   }
   $content = mb_convert_encoding($content, 'UTF-8', "auto");
-  file_put_contents($fileDir, $content);
+  if(is_writable($jsonFile_direct)) {
+    file_put_contents($fileDir, $content);
+  } else {
+    responseError(1001);
+  }
+  
 
   // download the file
   if (file_exists($fileDir)) {

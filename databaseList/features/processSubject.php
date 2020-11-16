@@ -1,7 +1,7 @@
 <?php
   include '_header.php';
-
   include 'verifyToken.php';
+  include '_response.php';
 
   $jsonFile_direct = '../data/subject.json';
 
@@ -22,8 +22,12 @@
     array_push($subjectList, $received_subject);
 
     // write back
-    file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
   } else if($type === 'modify') {
     foreach($subjectList as $key => $row) {
       if(strcasecmp($row['subjectID'], $received_subject['subjectID']) == 0) {
@@ -33,8 +37,12 @@
     }
 
     // write back
-    file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
   } else if($type === 'delete') {
     foreach($subjectList as $key => $row) {
       if(strcasecmp($row['subjectID'], $received_subject['subjectID']) == 0) {
@@ -44,8 +52,12 @@
     }
 
     // write back
-    file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
-    response('success', 'success');
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_direct, json_encode($subjectList, JSON_UNESCAPED_UNICODE));
+      response('success', 'success');
+    } else {
+      responseError(1001);
+    }
   }
 
   function response($errorType, $message) {

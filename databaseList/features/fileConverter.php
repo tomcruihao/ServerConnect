@@ -1,5 +1,6 @@
 <?php
   include '_header.php';
+  include '_response.php';
 
   // /databaseList/csvFiles/exportResources.txt
   $jsonFile_direct = '../data/eResourceList.json';
@@ -69,7 +70,11 @@
   copy($jsonFile_direct, '../backup/'.$currentTime.'.json');
 
   // write back
-  file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  if(is_writable($jsonFile_direct)) {
+    file_put_contents($jsonFile_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+  } else {
+    responseError(1001);
+  }
 
   sleep(2);
 
@@ -144,7 +149,11 @@
     }
 
     // write back
-    file_put_contents($jsonFile_resource_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_resource_direct, json_encode($resourceList, JSON_UNESCAPED_UNICODE));
+    } else {
+      responseError(1001);
+    }
 
     // sleep 3sec
     sleep(3);
@@ -254,7 +263,11 @@
     }
 
     // write back
-    file_put_contents($jsonFile_strokes_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
+    if(is_writable($jsonFile_direct)) {
+      file_put_contents($jsonFile_strokes_direct, json_encode($result, JSON_UNESCAPED_UNICODE));
+    } else {
+      responseError(1001);
+    }
   }
 
   function remove_utf8_bom($text) {
