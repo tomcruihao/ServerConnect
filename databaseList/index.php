@@ -967,8 +967,8 @@
   });
 
   async function directTo(id, url) {
-    // let exist = await checkSessionExist();
-    // if(exist) {
+    let exist = await checkSessionExist();
+    if(exist) {
       if(browser != 'safari') {
         window.open(url, '_blank');
       }
@@ -994,9 +994,9 @@
           // self.displayNumber = res.displayNumber;
         }
       });
-    // } else {
-    //   window.location.replace("authLogin.html");
-    // }
+    } else {
+      window.location.replace("authLogin.html");
+    }
   }
   function checkSessionExist() {
     return new Promise((resolve, reject) => {

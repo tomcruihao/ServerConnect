@@ -65,7 +65,7 @@
     <div id="listField" class="list-field">
       <div class="search-wrap">
         <div class="search-frame">
-          <input type="text" class="search" placeholder="搜尋資源名稱" v-model="searchKeyword" />
+          <input type="text" class="search" :placeholder="$t('message.tag_chinese')" v-model="searchKeyword" />
         </div>
       </div>
       <div class="list-container">
@@ -334,7 +334,7 @@
       <div class="btn-frame">
         <button v-if="btnType === 'add'" @click="sendForm">{{$t('message.resource_btn_add')}}</button>
         <button v-else-if="btnType === 'modify'" @click="sendForm">{{$t('message.resource_btn_modify')}}</button>
-        <button @click="copy">Copy</button>
+        <button @click="copy">{{$t('message.btn_copy')}}</button>
       </div>
     </div>
   </div>
@@ -372,14 +372,14 @@
       <div class="dialogue-body" v-if="type === 'deleteResource'">
         {{message}} <span class="resource-name">{{resourceName}}</span>?
         <div class="btn-frame">
-          <button @click="deleteResource">確定</button>
-          <button @click="closeDialogue">取消</button>
+          <button @click="deleteResource">{{$t('message.btn_confirm')}}</button>
+          <button @click="closeDialogue">{{$t('message.btn_cancel')}}</button>
         </div>
       </div>
       <div class="dialogue-body" v-else>
         {{message}}
         <div class="btn-frame">
-          <button @click="closeDialogue">確定</button>
+          <button @click="closeDialogue">{{$t('message.btn_confirm')}}</button>
         </div>
       </div>
     </div>

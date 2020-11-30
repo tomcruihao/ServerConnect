@@ -1,6 +1,7 @@
 const messages = {
   en: {
     message: {
+      loading: 'Loading',
       chooseLanguage:'Language',
       header_logout: 'Logout',
       header_expiryResourceSetting: 'Expiry Resource',
@@ -23,11 +24,15 @@ const messages = {
       // All Latest News page
       h1_all_latestNews: 'Latest News',
       // admin index page
+      adminIndex_header_title: 'Database Listing management system',
+      adminIndex_title: 'Database Listing Admin',
+      adminIndex_subtitle: 'Database Listing management system',
       adminIndex_account: 'Account',
       adminIndex_password: 'Password',
       adminIndex_account_pwd_rror: 'Invalid Account/Password',
       // Resource Management page
       h1_resource_management: 'Resource Setting',
+      resource_textPlaceholder_searchResource: 'Resource Name',
       resource_resourceName: 'Title',
       resource_resourceType: 'Type',
       resource_faculty: 'School',
@@ -182,6 +187,7 @@ const messages = {
   },
   local: {
     message: {
+      loading: '載入中',
       chooseLanguage:'選擇語言',
       header_logout: '登出',
       header_expiryResourceSetting: '過期資源設定',
@@ -203,12 +209,16 @@ const messages = {
       // All Latest News page
       h1_all_latestNews: '最新消息',
       // admin index page
+      adminIndex_header_title: '資源管理系統',
+      adminIndex_title: '電子資料庫管理介面',
+      adminIndex_subtitle: 'Database Listing management system',
       adminIndex_account: '帳號',
       adminIndex_password: '密碼',
       adminIndex_account_pwd_rror: '帳號密碼錯誤',
       adminIndex_verifyCode: '驗證碼',
       // Resource Management page
       h1_resource_management: '資源管理',
+      resource_textPlaceholder_searchResource: '資源名稱',
       resource_resourceName: '資源名稱',
       resource_resourceType: '資源類型',
       resource_faculty: '適用學院',
