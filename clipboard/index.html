@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Jay Chang">
+    <title>Get Detail</title>
+  </head>
+  <body class="bg-light">
+    <div class="container" id="clipBoard">
+      <textarea style="width:100%;height:300px;">{{info}}</textarea>
+      <button @click="copyToClipboard()">复制</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  </body>
+</html>
+<script>
+  var clipBoard = new Vue({
+    el:'#clipBoard',
+    data: {
+      info: 'Info:'
+    },
+    created: async function() {
+      // example: https://gss.ebscohost.com/chchang/ServerConnect/ebookRecommendation_tw/index.html?client=ns196796&verifyCode=yourCode&lng=1&title=%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%83%AC%E3%82%B9%E7%B5%8C%E6%B8%88&articleTitle=article_title&publicationType=publicationType&publicationYear=2020&author=author&volume=volume1&issue=issue1&startPage=100&pageNumber=1000&DOI=DOINumber&issn=12345678&isbn=1234567890123&pubmed_ID=999&sid=EBSCO:edsebk&an={AN}&dbCode={dbCode}
+
+      // get url parameters and store
+      await this.getParameters();
+    },
+    mounted: async function() {
+    },
+    methods:{
+      copyToClipboard() {
+        const el = document.createElement('textarea');
+        el.value = this.info;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert('已复制到剪贴板');
+
+        window.close();
+      },
+      getParameters() {
+        return new Promise((resolve, reject) => {
+          const paramTable = ['title', 'articleTitle', 'publicationType', 'publicationYear','author','volume','issue', 'startPage', 'pageNumber', 'DOI', 'issn', 'isbn','sid','pubmed_ID','an'];
+          let url_string = window.location.href;
+          let url = new URL(url_string);
+
+          for(index in paramTable) {
+            let paramVal = url.searchParams.get(paramTable[index]);
+
+            if(paramVal !== null) {
+              switch(paramTable[index]) {
+                case 'sid':
+                  this.info = `${this.info}\nSID: ${paramVal}`;
+                  break;
+                case 'pubmed_ID':
+                  this.info = `${this.info}\nPubmed ID: ${paramVal}`;
+                  break;
+                case 'DOI':
+                  this.info = `${this.info}\nDOI: ${paramVal}`;
+                  break;
+                case 'pageNumber':
+                  this.info = `${this.info}\nPage Number: ${paramVal}`;
+                  break;
+                case 'startPage':
+                  this.info = `${this.info}\nStart Page: ${paramVal}`;
+                  break;
+                case 'issue':
+                  this.info = `${this.info}\nISSUE: ${paramVal}`;
+                  break;
+                case 'volume':
+                  this.info = `${this.info}\nVolume: ${paramVal}`;
+                  break;
+                case 'author':
+                  this.info = `${this.info}\nAuthor: ${paramVal}`;
+                  break;
+                case 'publicationYear':
+                  this.info = `${this.info}\nPublication Year: ${paramVal}`;
+                  break;
+                case 'publicationType':
+                  this.info = `${this.info}\nPublication Type: ${paramVal}`;
+                  break;
+                case 'title':
+                  this.info = `${this.info}\nTitle: ${paramVal}`;
+                  break;
+                case 'articleTitle':
+                  this.info = `${this.info}\nArticle Title: ${paramVal}`;
+                  break;
+                case 'issn':
+                  this.info = `${this.info}\nISSN: ${paramVal}`;
+                  break;
+                case 'isbn':
+                  this.info = `${this.info}\nISBN: ${paramVal}`;
+                  break;
+                case 'an':
+                  this.info = `${this.info}\nAN: ${paramVal}`;
+                  break;
+              }
+            }
+          }
+
+          resolve();
+        })
+      }
+    }
+  });
+</script>
