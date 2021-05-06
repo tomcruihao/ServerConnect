@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EBSCO Discipline Search - Search</title>
+    <link href="lib/css/search.css" type="text/css" rel="stylesheet">
+  </head>
+<body>
+  <div class="app-content">
+    <div id="mainTitle" class="mainTitle">
+      <div class="lang-wrap">
+        <img src="img/icon/language.svg"/>
+        <select v-model="selector_lang" @change="setLang($event)">
+          <option value="en">English</option>
+          <option value="local">中文</option>
+        </select>
+      </div>
+    </div>
+    <section id="main" class="main">
+      <div class="search-wrap">
+        <select v-model="selector_disciplin" class="selector-discipline">
+          <option value="" disabled>Please select a discipline</option>
+          <option v-for="discipline in disciplines" :value="discipline.value">{{discipline.name}}</option>
+        </select>
+        <button class="btn-search" @click="search()">Search</button>
+      </div>
+      <div class="result">
+        <div v-if="searching">
+          {{$t('message.searching')}}...
+        </div>
+        <div v-else>
+          <div v-if="result.length !== 0">
+            <button class="btn-download" @click="generateReport()">{{$t('message.btn_download')}}</button>
+            <table>
+              <tr>
+                <th>Title</th>
+                <th>ISXN</th>
+              </tr>
+              <tr v-for="obj_title in result">
+                <td>{{obj_title.title}}</td>
+                <td>{{obj_title.isxn}}</td>
+              </tr>
+            </table>
+          </div>
+          <div v-else>
+            {{$t('message.empty')}}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/8.15.3/vue-i18n.min.js"></script>
+  <script src="lang/lang.js"></script>
+  <script src="lib/js/jquery.js"></script>
+
+  <script type="text/javascript">
+    var mainTitle = new Vue({
+      el:'#mainTitle',
+      i18n,
+      data: {
+        selector_lang: ''
+      },
+      mounted: function() {
+        this.selector_lang = i18n.locale;
+      },
+      methods: {
+        setLang(event) {
+          i18n.locale = event.target.value;
+          localStorage.setItem('lang', event.target.value);
+        }
+      }
+    })
+    
+    var mainTitle = new Vue({
+      el:'#main',
+      i18n,
+      data: {
+        selector_disciplin: '',
+        disciplines: [
+          {"name":"Agriculture & Agribusiness", "value": "LO system.dis-agri"},
+          {"name":"Anatomy & Physiology", "value": "LO system.dis-anat"},
+          {"name":"Anthropology", "value": "LO system.dis-anth"},
+          {"name":"Applied Sciences", "value": "LO system.dis-appl"},
+          {"name":"Architecture", "value": "LO system.dis-arch"},
+          {"name":"Arts & Entertainment", "value": "LO system.dis-arts"},
+          {"name":"Astronomy & Astrophysics", "value": "LO system.dis-astr"},
+          {"name":"Biography", "value": "LO system.dis-biog"},
+          {"name":"Biology", "value": "LO system.dis-biol"},
+          {"name":"Biotechnology", "value": "LO system.dis-biot"},
+          {"name":"Botany", "value": "LO system.dis-bota"},
+          {"name":"Business & Management", "value": "LO system.dis-busi"},
+          {"name":"Chemistry", "value": "LO system.dis-chem"},
+          {"name":"Communication & Mass Media", "value": "LO system.dis-comm"},
+          {"name":"Complementary & Alternative Medicine", "value": "LO system.dis-calm"},
+          {"name":"Computer Science", "value": "LO system.dis-comp"},
+          {"name":"Construction & Building", "value": "LO system.dis-cons"},
+          {"name":"Consumer Health", "value": "LO system.dis-cohe"},
+          {"name":"Dance", "value": "LO system.dis-danc"},
+          {"name":"Dentistry", "value": "LO system.dis-dent"},
+          {"name":"Diplomacy & International Relations", "value": "LO system.dis-dipl"},
+          {"name":"Drama & Theater Arts", "value": "LO system.dis-dram"},
+          {"name":"Earth & Atmospheric Sciences", "value": "LO system.dis-eart"},
+          {"name":"Economics", "value": "LO system.dis-econ"},
+          {"name":"Education", "value": "LO system.dis-educ"},
+          {"name":"Engineering", "value": "LO system.dis-engi"},
+          {"name":"Environmental Sciences", "value": "LO system.dis-envi"},
+          {"name":"Ethnic & Cultural Studies", "value": "LO system.dis-ethn"},
+          {"name":"Film", "value": "LO system.dis-film"},
+          {"name":"Forestry", "value": "LO system.dis-fore"},
+          {"name":"Geography & Cartography", "value": "LO system.dis-geog"},
+          {"name":"Geology", "value": "LO system.dis-geol"},
+          {"name":"Health & Medicine", "value": "LO system.dis-heal"},
+          {"name":"History", "value": "LO system.dis-hist"},
+          {"name":"Information Technology", "value": "LO system.dis-info"},
+          {"name":"Language & Linguistics", "value": "LO system.dis-lang"},
+          {"name":"Law", "value": "LO system.dis-lawx"},
+          {"name":"Library & Information Science", "value": "LO system.dis-libr"},
+          {"name":"Life Sciences", "value": "LO system.dis-life"},
+          {"name":"Literature & Writing", "value": "LO system.dis-lite"},
+          {"name":"Marketing", "value": "LO system.dis-mark"},
+          {"name":"Mathematics", "value": "LO system.dis-math"},
+          {"name":"Military History & Science", "value": "LO system.dis-mili"},
+          {"name":"Mining & Mineral Resources", "value": "LO system.dis-mini"},
+          {"name":"Music", "value": "LO system.dis-musi"},
+          {"name":"Nursing & Allied Health", "value": "LO system.dis-nurs"},
+          {"name":"Nutrition & Dietetics", "value": "LO system.dis-nutr"},
+          {"name":"Oceanography", "value": "LO system.dis-ocea"},
+          {"name":"Pharmacy & Pharmacology", "value": "LO system.dis-phar"},
+          {"name":"Physical Therapy & Occupational Therapy", "value": "LO system.dis-ptot"},
+          {"name":"Physics", "value": "LO system.dis-phys"},
+          {"name":"Political Science", "value": "LO system.dis-posc"},
+          {"name":"Politics & Government", "value": "LO system.dis-pogv"},
+          {"name":"Power & Energy", "value": "LO system.dis-powe"},
+          {"name":"Psychology", "value": "LO system.dis-psyc"},
+          {"name":"Public Health", "value": "LO system.dis-publ"},
+          {"name":"Religion & Philosophy", "value": "LO system.dis-reli"},
+          {"name":"Science", "value": "LO system.dis-scie"},
+          {"name":"Social Sciences & Humanities", "value": "LO system.dis-sshu"},
+          {"name":"Social Work", "value": "LO system.dis-sowo"},
+          {"name":"Sociology", "value": "LO system.dis-socy"},
+          {"name":"Sports & Leisure", "value": "LO system.dis-spls"},
+          {"name":"Sports Medicine", "value": "LO system.dis-spme"},
+          {"name":"Technology", "value": "LO system.dis-tech"},
+          {"name":"Veterinary Medicine", "value": "LO system.dis-vetm"},
+          {"name":"Visual Arts", "value": "LO system.dis-visu"},
+          {"name":"Women's Studies & Feminism", "value": "LO system.dis-wofe"},
+          {"name":"Zoology", "value": "LO system.dis-zool"}
+        ],
+        result: [],
+        searching: false
+      },
+      mounted: function() {
+      },
+      methods: {
+        search() {
+          if(this.selector_disciplin !== '') {
+            // initial
+            this.result = [];
+            this.searching = true;
+            let self = this;
+
+            let keyword = this.selector_disciplin;
+            $.ajax({
+              url: `https://gss.ebscohost.com/chchang/ServerConnect/pfi/discipline_search/features/discipline.php`,
+              xhrFields: {
+                withCredentials: true
+              },
+              type: 'GET',
+              data: {
+                keyword: keyword
+              },
+              error: function(jqXHR, exception) {
+                //use url variable here
+                console.log(jqXHR);
+                console.log(exception);
+                self.searching = false;
+              },
+              success: function(res) {
+                if(res.status === 'error') {
+                  alert('error');
+                  self.searching = false;
+                } else {
+                  let ary_result = [];
+                  res.forEach(element => {
+                    try {
+                      let obj_title = {
+                        'isxn': element.RecordInfo.BibRecord.BibEntity.Identifiers[0].Value,
+                        'title': element.RecordInfo.BibRecord.BibEntity.Titles[0].TitleFull
+                      }
+                      ary_result.push(obj_title);
+                    } catch (error) {
+                      console.log(error)
+                    }
+                  });
+                  self.result = ary_result;
+                  self.searching = false;
+                }
+              }
+            });
+          } else {
+            alert('Please select a discipline');
+          }
+        },
+        generateReport() {
+          if(this.result.length === 0) {
+            alert('請有內容再下載');
+            return;
+          }
+
+          let prefix = 'data:text/csv;charset=utf-8,';
+          let string_metadata = ""; // first cell empty
+          let string_content = "";
+          let universalBOM = "\uFEFF";
+
+          let now = new Date();
+
+          // get file name
+          let fileName = '';
+          this.disciplines.forEach(val => {
+            if(val.value === this.selector_disciplin) {
+              fileName = val.name;
+            }
+          });
+
+          // create metadata
+          string_metadata = `"Title Name","ISXN"\n`;
+
+          // create content
+          this.result.forEach(val => {
+            // let link = `${this.linkBasicUrl}&db=${val.dbCode}&AN=${val.an}`;
+            string_content = `${string_content}"${val.title}",="${val.isxn}"\n`;
+          });
+
+          const csv = `${string_metadata}${string_content}`;
+
+          // create hidden anchor and click it
+          let hiddenElement = document.createElement('a');
+          hiddenElement.href = prefix + encodeURIComponent(universalBOM+csv);
+          hiddenElement.target = '_blank';
+          hiddenElement.download = `${fileName}.csv`;
+          hiddenElement.click();
+        }
+      }
+    })
+  </script>
+</body>
+</html>

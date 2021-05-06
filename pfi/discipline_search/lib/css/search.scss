@@ -1,0 +1,44 @@
+@import "init.scss";
+@import "variables";
+
+
+.app-content {
+  width: 100%;
+  max-width: 960px;
+  padding: 15px;
+  margin: 0 auto;
+
+  .mainTitle {
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    justify-content: flex-end;
+
+    .lang-wrap {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .main {
+    .search-wrap {
+      .selector-discipline {
+        height: 38px;
+      }
+      .btn-search {
+        height: 38px;
+        background-color: $bulletin_header_bgcolor;
+        color: #fff;
+      }
+    }
+    .result {
+      padding-top: 20px;
+
+      .btn-download {
+        height: 38px;
+        background-color: $button_color;
+        color: white;
+      }
+    }
+  }
+}

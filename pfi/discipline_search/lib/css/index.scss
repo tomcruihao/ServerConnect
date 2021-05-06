@@ -1,0 +1,93 @@
+@import "init.scss";
+@import "variables";
+@import "header";
+@import "languageTitle";
+
+
+.app-content {
+  width: 100%;
+  max-width: 960px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .mainTitle {
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 20px;
+  }
+
+  .login-frame {
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #333333;
+    padding: 30px;
+    background-color: #ffffff;
+
+    .logo {
+      text-align: center;
+
+      img{
+        height: 60px;
+      }
+    }
+
+    .row {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+
+      &.verify-code {
+        .content {
+          display: flex;
+          justify-content: space-between;
+          .error {
+            width: 150px;
+            height: 100%;
+          }
+          .codeBackground {
+            display: flex;
+            align-items: center;
+            input {
+              width: 120px;
+              margin-left: 5px;
+            }
+            img {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+      .title {
+        width: 100px;
+        color: #666666;
+      }
+      .content {
+        flex: 1;
+
+        .error {
+          color: red;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .btn-wrap {
+      width: 100%;
+      margin-top: 15px;
+      text-align: end;
+
+      button {
+        background-color: $button_login_bgcolor;
+        color: #ffffff;
+        font-size: 1rem;
+      }
+    }
+  }
+}

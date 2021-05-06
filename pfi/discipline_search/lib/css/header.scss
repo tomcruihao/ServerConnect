@@ -1,0 +1,216 @@
+$header_height: 60px;
+$header_bgcolor: #005c88;
+
+$mobile_header_height: 40px;
+$mobile_header_padding: 5px;
+
+header {
+  height: $header_height;
+  padding: 0 14px;
+  background-color: $header_bgcolor;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    height: $header_height;
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      
+      img {
+        height: $header_height;
+      }
+      .brand-name {
+        margin-left: 10px;
+        color: #ffffff;
+        font-size: 1.2rem;
+      }
+    }
+    img {
+      height: $header_height;
+    }
+  }
+  nav {
+    height: $header_height;
+
+    input {
+      display: none;
+    }
+
+    .mobile-btn-frame {
+      display: none;
+    }
+
+    .nav-list {
+      height: $header_height;
+      display: flex;
+      font-size: 0.9rem;
+      text-align: center;
+
+      li {
+        width: 130px;
+        height: $header_height;
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .expiring-checking-wrap {
+          position: relative;
+          .expiring-number {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            color: #ffffff;
+            font-size: 0.8rem;
+            text-align: center;
+            border-radius: 50%;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            z-index: 1;
+          }
+        }
+
+        .nav-tag {
+          width: 100%;
+          display: block;
+          box-sizing: border-box;
+          color: #ffffff;
+          text-align: center;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        ul {
+          display: none;
+          background-color: $header_bgcolor;
+          position: absolute;
+          top: $header_height;
+          right: 0;
+          z-index: 1;
+
+          li {
+            height: $header_height;
+            display: flex;
+            justify-content: center;
+
+            a {
+              color: #ffffff;
+              text-decoration: none;
+            }
+          }
+        }
+
+        &:hover {
+          background-color: #008cce;
+
+          ul {
+            display: block;
+          }
+        }
+        &.multi {
+          &:before {
+            content: " ";
+            border-top: $triangle_sign_width solid #ffffff;
+            border-left: $triangle_sign_width solid transparent;
+            border-right: $triangle_sign_width solid transparent;
+            position: absolute;
+            top: ($header_height / 2 - ($triangle_sign_width / 2));
+            right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  header {
+    height: $mobile_header_height;
+
+    .logo {
+      height: $mobile_header_height;
+      a {
+        img {
+          height: $mobile_header_height;
+        }
+        .brand-name {
+          font-size: 0.8rem;
+        }
+      }
+
+    }
+    nav {
+      height: $mobile_header_height;
+      position: relative;
+      padding: $mobile_header_padding;
+
+      .mobile-btn-frame {
+        line-height: $mobile_header_height;
+        display: flex;
+        width: ($mobile_header_height - ($mobile_header_padding * 2));
+        height: ($mobile_header_height - ($mobile_header_padding * 2));
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      input {
+        &:checked + .nav-list {
+          height: auto;
+        }
+      }
+
+      .nav-list {
+        width: 100vw;
+        height: 0;
+        overflow: hidden;
+        background-color: $header_bgcolor;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: $mobile_header_height;
+        z-index: 1;
+
+        li {
+          width: 100vw;
+          height: auto;
+          min-height: $mobile_header_height;
+          flex-wrap: wrap;
+
+          .nav-tag {
+            height: $mobile_header_height;
+            line-height: $mobile_header_height;
+          }
+
+          input {
+            &:checked + ul {
+              height: auto;
+            }
+          }
+
+          ul {
+            height: 0;
+            overflow: hidden;
+            display: block;
+            background-color: #777777;
+            position: unset;
+  
+            li {
+              height: $mobile_header_height;
+            }
+          }
+
+          &.multi {
+            &:before {
+              top: ($mobile_header_height / 2 - ($triangle_sign_width / 2));
+            }
+          }
+        }
+      }
+    }
+  }
+}

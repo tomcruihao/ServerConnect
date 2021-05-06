@@ -1,0 +1,40 @@
+.tag-wrap button {
+  width: 120px;
+  height: 35px;
+  border-radius: 0px 10px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: 0px;
+  background-color: #eeeeee;
+  font-size: 1rem;
+}
+
+.tag-wrap button.taged {
+  height: 40px;
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.tag-wrap-s button {
+  width: 120px;
+  height: 30px;
+  border-radius: 0px 10px 0 0;
+  border: 1px solid #cccccc;
+  border-bottom: 0px;
+  background-color: #eeeeee;
+  font-size: 0.8rem;
+}
+
+.tag-wrap-s button.taged {
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.multi-lang-field, .common-field {
+  padding: 10px;
+  -webkit-box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: -2px 0px 2px -1px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+/*# sourceMappingURL=tagStyle.css.map */
