@@ -6,15 +6,15 @@
 
   function getRealurl($url) {
     $ch = curl_init();
-	$timeout = 0;
-	curl_setopt ($ch, CURLOPT_URL, $url);
-	curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-	curl_setopt($ch, CURLOPT_HEADER, TRUE);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    $timeout = 0;
+    curl_setopt ($ch, CURLOPT_URL, $url);
+    curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+    curl_setopt($ch, CURLOPT_HEADER, TRUE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
     $html = curl_exec($ch);
 
@@ -27,13 +27,13 @@
 
   function getContent($url) {
     $ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, $url);
-	// curl_setopt($ch, CURLOPT_HEADER, TRUE);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($ch, CURLOPT_URL, $url);
+    // curl_setopt($ch, CURLOPT_HEADER, TRUE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
     $html = curl_exec($ch);
     echo $html;
@@ -54,6 +54,7 @@
   $url = getRealurl($getOriginalUrl);
 
   $getDomainName = parse_url($url);
+  $protocol = $getDomainName["scheme"];
   $domainName = $getDomainName["host"];
   $port = $getDomainName["port"];
 
@@ -62,7 +63,7 @@
   if ($port) {
     getContent($domainName.":".$port."/opac/ajax_item.php?marc_no=".$url_extract[1]);
   } else {
-    getContent('https://'.$domainName."/opac/ajax_item.php?marc_no=".$url_extract[1]);
+    getContent($protocol.'://'.$domainName."/opac/ajax_item.php?marc_no=".$url_extract[1]);
     // file_get_contents($domainName."/opac/ajax_item.php?marc_no=".$url_extract[1]);
   }
 ?>

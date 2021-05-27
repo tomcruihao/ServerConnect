@@ -1,7 +1,7 @@
 <?php
   header("Access-Control-Allow-Origin: *");
   header("Content-Type:text/html; charset=utf-8");
-  date_default_timezone_set('Asia/Taipei');
+  date_default_timezone_set('Asia/Shanghai');
 
 
   $jsonFilePath = './univ.json';
@@ -29,7 +29,7 @@
   $timestamp = getCurrentTime();
   $stringBinding = $marcNum.$timestamp.$appKey;
 
-  $sign = md5($stringBinding);
+  $sign = strtolower(md5($stringBinding));
   
 
   echo $connectingUrl.'?marc_no='.$marcNum.'&appid='.$appID.'&time='.$timestamp.'&sign='.$sign;
